@@ -1,0 +1,52 @@
+body{
+    padding:0;
+    margin:0;
+}
+
+.main{
+    width:100%;
+    height:auto;
+    background-color:antiquewhite;
+    position:relative;
+    margin:auto;
+}
+
+/*-----Content-----*/
+.content{
+      width: 1200px;
+      min-height: 1200px;
+      height: auto;
+      margin: auto;
+      background-color: aqua;
+}
+
+.faixa_titulo_da_pagina{
+      width: 1200px;
+      height: 100px;
+      margin: auto;
+      background-color: green;
+}
+
+.slider{
+      width: 97%;
+      height: 660px;
+      border: solid 1px;
+      margin: auto;
+}
+
+.suporte_dica{
+      width: 29.16%;
+      height: 287px;
+      background-color: orange;
+      margin-top: 63px;
+      margin-left: 3%;
+      float: left;
+}
+
+.imagem_dica{
+
+}
+
+.titulo_dica{
+
+}

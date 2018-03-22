@@ -1,0 +1,214 @@
+*{
+      padding: 0px;
+}
+
+.faixa1_footer{
+      width: 100%;
+      height: 264px;
+      background-color: rgb(176, 37, 39);
+      margin: auto;
+      margin-top: 35px;
+      opacity: 0.99;
+}
+
+.menu_footer{
+      width: 1200px;
+      height: 215px;
+      margin: auto;
+      padding-top: 30px;
+}
+
+.menu_mapa{
+      width: 100%;
+      height: 40px;
+}
+
+.item_mapa{
+      width: 16.66%;
+      height: 100%;
+      float: left;
+      list-style: none;
+      text-align: center;
+      vertical-align: middle;
+      margin: auto;
+      line-height: 40px;
+      color: black;
+      font-weight: bold;
+      font-size: 21px;
+      color: white;
+      font-family: sans-serif;
+}
+
+.submenu_mapa_hhealth{
+      width: 100%;
+      height: 160px;
+}
+
+.item_submenu_mapa_hhealth{
+      list-style: none;
+      text-align: center;
+      color: white;
+      font-family: sans-serif;
+      font-size: 18px;
+}
+
+.submenu_mapa_contatos{
+      width: 100%;
+      height: 80px;
+}
+
+.item_submenu_mapa_contatos{
+      list-style: none;
+      text-align: center;
+      color: white;
+      font-size: 18px;
+      font-family: sans-serif;
+}
+
+.faixa2_footer{
+      width: 100%;
+      height: 50px;
+      background-color:#16518D;
+      opacity: 0.99;
+}
+
+.limitador_faixa2_footer{
+      width: 1200px;
+      height: 40px;
+      margin: auto;
+      padding-top: 5px;
+}
+
+.informacoes{
+      width: 25%;
+      height: 40px;
+      float: left;
+      margin: auto;
+}
+
+.informacoes_img1{
+      width: 15%;
+      height: 40px;
+      float: left;
+      /*background-image: url(../imagens/phone-receiver.png);
+      background-repeat: no-repeat;*/
+}
+
+.informacoes_img1 img{
+      margin-left: 7px;
+      margin-top: 3px;
+}
+
+.informacoes_txt1{
+      width: 85%;
+      height: 40px;
+      float: right;
+      text-align: center;
+      line-height: 40px;
+      font-size: 21px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+}
+
+.informacoes_img2{
+      width: 15%;
+      height: 40px;
+      float: left;
+}
+
+.informacoes_img2 img{
+      margin-left: 7px;
+      margin-top: 3px;
+}
+
+.informacoes_txt2{
+      width: 85%;
+      height: 40px;
+      float: right;
+      text-align: center;
+      line-height: 40px;
+      font-size: 21px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+}
+
+.informacoes_img3{
+      width: 15%;
+      height: 40px;
+      float: left;
+}
+
+.informacoes_img3 img{
+      margin-left: 7px;
+      margin-top: 3px;
+}
+
+.informacoes_txt3{
+      width: 85%;
+      height: 40px;
+      float: right;
+      text-align: center;
+      line-height: 40px;
+      font-size: 21px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+}
+
+.informacoes_img4{
+      width: 15%;
+      height: 40px;
+      float: left;
+}
+
+.informacoes_img4 img{
+      margin-left: 7px;
+      margin-top: 3px;
+}
+
+.informacoes_txt4{
+      width: 85%;
+      height: 40px;
+      float: right;
+      text-align: center;
+      line-height: 40px;
+      font-size: 21px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+}
+
+.faixa3_footer{
+      width: 100%;
+      height: 70px;
+      background-color:#16518D;
+      opacity: 0.99;
+      text-align: center;
+      line-height: 70px;
+      font-size: 30px;
+      color: white;
+      font-weight: bold;
+      font-family: sans-serif;
+}
+
+.limitador_faixa3_footer{
+      width: 1200px;
+      height: 40px;
+      margin: auto;
+      margin-top: 1px;
+}
+
+.faixa4_footer{
+      width: 100%;
+      height: 100px;
+      background-color: rgb(176, 37, 39);
+      opacity: 0.99;
+}
+
+.limitador_faixa4_footer{
+      width: 1200px;
+      height: 100px;
+      margin: auto;
+}
