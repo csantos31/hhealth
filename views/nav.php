@@ -8,10 +8,12 @@
                     <li class="item_nav">
                         Hospital
                         <ul class="submenu_nav_hhealth">
-                              <a href="home.php">
+                              <a href="index.php">
                                     <li class="item_submenu_nav_hhealth">Home</li>
                               </a>
-                              <li class="item_submenu_nav_hhealth">Especialidades</li>
+                              <a href="views/especialidades.php">
+                                    <li class="item_submenu_nav_hhealth">Especialidades</li>
+                              </a>
                               <li class="item_submenu_nav_hhealth">Ambientes</li>
                               <li class="item_submenu_nav_hhealth">Sobre</li>
                         </ul>

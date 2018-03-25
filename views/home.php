@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="css/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
+        <title>Hospital HHealth</title>
     </head>
 
     <body>
@@ -104,7 +105,7 @@
                     </div>
 
                     <div class="content_btn_faixa_2_home">
-                        <input type="submit" name="" value="Ver todos os ambiente do hospital ">
+                        <p>Ver todos os ambiente do hospital</p>
                     </div>
                 </div>
 

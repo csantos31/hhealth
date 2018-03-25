@@ -168,7 +168,8 @@
 
 .content_img_faixa_2_home{
     width:1200px;
-    height:500px;
+    height:470px;
+    background-color: orange;
 
 }
 
@@ -182,21 +183,21 @@
     background-image: url(../imagens/download.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+
 }
 
 /*-------botão------*/
 .content_btn_faixa_2_home{
     width:1200px;
-    height:100px;
-    background-color:aliceblue;
+    height:20px;
 }
 
-.content_btn_faixa_2_home [type=submit]{
-    width:300px;
-    height:30px;
-    border-radius:10px;
-    margin-top:40px;
-    margin-left:800px;
+.content_btn_faixa_2_home p{
+      margin-right: 30px;
+      text-align: right;
+      font-weight: bold;
+      font-size: 18px;
+      font-family: sans-serif;
 }
 
 /*--------faixa 3--------*/
@@ -236,5 +237,5 @@
 
 .footer{
       width: 100%;
-      height: 430px;
+      height: 264px;
 }
