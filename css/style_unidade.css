@@ -1,31 +1,34 @@
 /*
-
-  Data: 25/03/2018
+  Data:26/03/2018
   Desenvolvedor: Gleyver Coutinho Castro
-  Obs: Página de estilização sobre_hhealth
-
+  Obs: pagina de estilização de unidade
 */
 
-/* Estilizações padrões */
+/*------------- Tags padrões -----------------*/
+
+/* Tag que modifica todas as divs */
 *{
-  margin: 0px;
+  margin:0px;
   padding: 0px;
 }
 
 
-/* div que segura todo conteúdo da página */
+
+/* Div que segura todo conteudo da página*/
 #main{
   width: 100%;
-  height: 1800px;
+  min-height: 1900px;
+  height: auto;
 }
 
-/* div que segura o conteúdo da página */
-#content_sobre_hhealth{
+
+/*--------------------------- conteúdo e titulo hospital ---------------------------*/
+#content{
   width: 1200px;
   min-height: 900px;
   height: auto;
-  margin:auto;
-  background-color: #FF0000;
+  background-color: #B22222;
+  margin: auto;
 }
 
 /* Div que segura titulo da Página */
@@ -50,85 +53,17 @@
   margin: auto;
 }
 
-/*--------------- Tudo que é relaciado a barra de pesquisa ---------------*/
-#suporte_barra_pesquisa{
-  height: 40px;
-  width: 490px;
-  /* float: right; */
-  margin-left: 700px;
-  background-color: #ccc;
-  margin-top: 15px;
-}
-
-/* campo do formulário */
-#input_pesquisa{
-  height: 26px;
-  width: 460px;
-  border:#ddd solid 1px;
-  float:left;
-  padding:5px 20px 5px 5px;
-  border-radius: 30px;
-  font-size: 16px;
-}
-
-/* formatação do elemento */
-#lupa{
-  height: 30px;
-  float:left;
-  margin:5px 0px 0px -30px;
-  cursor:pointer
-}
-
-/* formatação do conteúdo  */
-#lupa::after{
-  font-family:FontAwesome;
-  font-size:24px;
-  content:"\f002"
-}
-
-/*--------------- Tudo que é relacionado a unidade ---------------*/
-.suporte_unidade{
-  height: 460px;
-  width: 98%;
-  /* background-color: #CCC; */
-  margin: 15px auto;
-}
-
-/* Segura o subtitulo da pagina de unidades*/
-.suporte_titulo_item_unidade{
-  height: 73px;
+/*--------------------------- conteúdo dps do titulo ---------------------------*/
+#imagem_content{
+  height:475px;
   width: 100%;
-  background-color: #c2c2c2;
-  border: solid 1px #000;
-  margin: auto;
-
+  background-color: #8B0000;
+  margin-top: 10px;
 }
 
-/* subtitulo */
-.titulo_item{
-  height: 53px;
-  width: 170px;
-  background-color: #F0F00F;
-  font-size: 30px;
-  font-weight: bold;
-  padding-top: 20px;
-  margin: auto;
-}
 
-/* Imagem da unidade */
-.imagem_unidade{
-  height: 322px;
-  width: 680px;
+#imagem_hospital{
+  height: 474px;
+  width: 774px;
   background-color: #000;
-  margin-top: 20px;
-  float: left;
-}
-
-.mapa_unidade{
-  height: 322px;
-  width: 446px;
-  background-color: #000;
-  margin-top: 20px;
-  margin-left: 50px;
-  float: left;
 }

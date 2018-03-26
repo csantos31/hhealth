@@ -12,7 +12,7 @@
         <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' type='text/css'>
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_unidade.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_unidades.css">
 
         <meta charset="utf-8">
         <title>Unidades</title>

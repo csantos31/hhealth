@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Agendamento</title>
-    <link rel="stylesheet" href="../css/area_paciente/style_nav.css">
-    <link rel="stylesheet" href="../css/area_paciente/style_agendamento.css">
+    <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
+    <link rel="stylesheet" href="../../css/area_paciente/style_agendamento.css">
   </head>
   <body>
     <?php include_once('include_area_paciente/nav_paciente.php'); ?>
