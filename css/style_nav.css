@@ -49,7 +49,7 @@
 }
 
 .menu_nav li:hover{
-      background-color: rgb(176, 37, 39);
+      background-color: #eaecef;
 }
 
 .menu_nav li:hover>.submenu_nav_hhealth {
@@ -74,7 +74,8 @@
 }
 
 .submenu_nav_hhealth li:hover{
-      background-color: rgb(176, 37, 39);
+      /*background-color: rgb(176, 37, 39);*/
+      background-color: #eaecef;
 }
 
 .item_submenu_nav_hhealth{

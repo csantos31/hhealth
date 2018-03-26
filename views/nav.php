@@ -4,6 +4,9 @@
                   </div>
             </a>
           <nav class="nav_menu">
+                <div class="faixa_texte">
+
+                </div>
                 <ul class="menu_nav">
                     <li class="item_nav">
                         Hospital
