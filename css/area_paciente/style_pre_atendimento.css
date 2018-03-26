@@ -1,0 +1,140 @@
+/*
+
+  Data: 24/03/2018
+  Desenvolvedor: Gleyver Coutinho Castro
+  Obs: Página de estilização da area do paciente
+
+*/
+
+/*--------------------------- Tags padrões --------------------------- */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/*--------------------------- Conteúdo da página -------------------------*/
+#content{
+  height: 900px;
+  width: 1200px;
+  /*background-color: rgb(176, 37, 39);*/
+  background-color: #fff;
+  margin: auto;
+}
+
+/* Div que segura titulo da Página */
+#suporte_titulo{
+  height: 70px;
+  width: 100%;
+}
+
+/* Titulo */
+#titulo_pagina{
+  height: 50px;
+  width: 200px;
+  margin: auto;
+  padding-top: 20px;
+  font-size: 32px;
+}
+
+.faixa_branca{
+  height: 1px;
+  width: 95%;
+  background-color: #ccc;
+  margin: auto;
+}
+
+/*------------------------- Formulario da agendamento -------------------------*/
+#content_formulario{
+  width: 900px;
+  height: 470px;
+  margin: 80px auto;
+
+}
+
+
+.item_form{
+  height: 60px;
+  width: 400px;
+  margin: auto;
+  margin-top: 10px;
+}
+
+/* -------------Titulos dos formularios -----------*/
+.titulo_item_form_maioria{
+  height: 30px;
+  width: 200px;
+  margin: auto;
+}
+
+
+#titulo_item_form_especialidade{
+  height: 30px;
+  width: 100px;
+  margin: auto;
+}
+
+
+
+#titulo_item_form_exame{
+  height: 30px;
+  width: 130px;
+  margin: auto;
+}
+
+
+/*----------- Tamanho dos inputs e select -----------*/
+.input_text{
+  height: 22px;
+  width: 99%;
+
+}
+
+.slct_form{
+  height: 22px;
+  width: 100%;
+}
+
+
+/* ultima div*/
+#suporte_data{
+  height: 60px;
+  width: 100%;
+  float: left;
+}
+
+#titulo_data{
+  height: 25px;
+  width: 200px;
+  margin: auto;
+}
+
+#suporte_hora{
+  height: 60px;
+  width: 190px;
+  float: left;
+}
+
+#titulo_hora{
+  height: 25px;
+  width: 40px;
+  margin: auto;
+}
+
+.item_data_hora{
+  width: 180px;
+  margin-left: 10px;
+}
+
+#suporte_btn_agendar{
+  height: 30px;
+  width: 200px;
+  margin: auto;
+  margin-top: 15px;
+}
+
+#bnt_submit_agenda{
+  width: 200px;
+  height: 30px;
+
+
+}
