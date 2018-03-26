@@ -12,7 +12,7 @@
     <div id="content">
       <div id="suporte_titulo">
         <div id="titulo_pagina">
-          <strong>Agendamento</strong>
+          <strong>Pré atendimento</strong>
         </div>
       </div>
       <div class="faixa_branca">
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div id="suporte_btn_agendar">
-              <input type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar uma consulta?')" id="bnt_submit_agenda">
+              <input type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar um atendimento?')" id="bnt_submit_agenda">
           </div>
         </form>
       </div>
