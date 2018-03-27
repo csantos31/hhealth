@@ -1,12 +1,12 @@
 /*CSS*/
 footer{
 	width: 100%;
-	height: 100px;
-	background-color: #AA201C;
+	height: 60px;
+	background-color: rgb(255,150,150 );
 }
 p{
 	text-align: center;
 	font-size: 24px;
-	padding-top: 50px;
-	color: #fff;
+	padding-top: 20px;
+	color: #000;
 }
