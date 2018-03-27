@@ -108,7 +108,7 @@
                                            <div class="imagens_pequenas_ambiente">
                                                  <img src="../imagens/odontologia5.jpg" alt="" class="gallery3">
                                            </div>
-                                           <div class="imagens_pequenas_ambiente">
+                                           <div  class="imagens_pequenas_ambiente">
                                                  <img src="../imagens/odontologia6.jpg" alt="" class="gallery3">
                                            </div>
                                         </div>
