@@ -1,134 +1,135 @@
-/*
-
-  Data: 25/03/2018
-  Desenvolvedor: Gleyver Coutinho Castro
-  Obs: Página de estilização sobre_hhealth
-
-*/
-
-/* Estilizações padrões */
 *{
-  margin: 0px;
   padding: 0px;
+  margin: 0px auto;
 }
 
-
-/* div que segura todo conteúdo da página */
-#main{
-  width: 100%;
-  height: 1800px;
+.main{
+    width:100%;
+    height:auto;
+    position:relative;
+    margin:auto;
 }
 
-/* div que segura o conteúdo da página */
-#content_sobre_hhealth{
-  width: 1200px;
-  min-height: 900px;
-  height: auto;
-  margin:auto;
-  background-color: #FF0000;
+.div_suporte_conteudo{
+      width: 100%;
+      height: 210px;
 }
 
-/* Div que segura titulo da Página */
-#suporte_titulo{
-  height: 70px;
-  width: 100%;
+.suporte_content{
+      width: 100%;
+      min-height:1200px;
+      height:auto;
+      position: relative;
+      background-color: white;
 }
 
-/* Titulo */
-#titulo_pagina{
-  height: 50px;
-  width: 200px;
-  margin: auto;
-  padding-top: 20px;
-  font-size: 32px;
+.content{
+    width:1200px;
+    min-height:900px;
+    height:auto;
+    margin:auto;
+    position: relative;
+    padding-top: 20px;
 }
 
-.faixa_branca{
-  height: 1px;
-  width: 100%;
-  background-color: #ccc;
-  margin: auto;
+.faixa_titulo_da_pagina{
+      width: 100%;
+      height: 70px;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 70px;
+      font-weight: bold;
+      font-size: 24px;
 }
 
-/*--------------- Tudo que é relaciado a barra de pesquisa ---------------*/
-#suporte_barra_pesquisa{
-  height: 40px;
-  width: 490px;
-  /* float: right; */
-  margin-left: 700px;
-  background-color: #ccc;
-  margin-top: 15px;
+.faixa_busca{
+      width: 100%;
+      height: 30px;
+      font-family: sans-serif;
+      line-height: 30px;
+
 }
 
-/* campo do formulário */
-#input_pesquisa{
-  height: 26px;
-  width: 460px;
-  border:#ddd solid 1px;
-  float:left;
-  padding:5px 20px 5px 5px;
-  border-radius: 30px;
-  font-size: 16px;
+.centraliza_input{
+      width: 543px;
+      height: 30px;
+      float: left;
+      margin-left: 572px;
 }
 
-/* formatação do elemento */
-#lupa{
-  height: 30px;
-  float:left;
-  margin:5px 0px 0px -30px;
-  cursor:pointer
+.centraliza_input input{
+      width: 100%;
+      height: 30px;
+      border-radius: 7px;
+
 }
 
-/* formatação do conteúdo  */
-#lupa::after{
-  font-family:FontAwesome;
-  font-size:24px;
-  content:"\f002"
+.ajusta_lupa{
+      height: 30px;
+      float: right;
+      width: 30px;
+      background-color: black;
+      margin-right: 44px;
+
 }
 
-/*--------------- Tudo que é relacionado a unidade ---------------*/
+.ajusta_lupa img{
+      padding: 8px;
+
+}
+
 .suporte_unidade{
-  height: 460px;
-  width: 98%;
-  /* background-color: #CCC; */
-  margin: 15px auto;
+      width: 100%;
+      height: 396px;
+      margin-top: 40px;
+      padding-left: 38px;
+      padding-right: 38px;
 }
 
-/* Segura o subtitulo da pagina de unidades*/
-.suporte_titulo_item_unidade{
-  height: 73px;
-  width: 100%;
-  background-color: #c2c2c2;
-  border: solid 1px #000;
-  margin: auto;
-
+.faixa_nome_da_unidade{
+      width: 100%;
+      height: 40px;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      font-size: 22px;
+      float: left;
+      margin: auto;
 }
 
-/* subtitulo */
-.titulo_item{
-  height: 53px;
-  width: 170px;
-  background-color: #F0F00F;
-  font-size: 30px;
-  font-weight: bold;
-  padding-top: 20px;
-  margin: auto;
+.faixa_imagem_e_mapa{
+      width: 100%;
+      height: 396px;
 }
 
-/* Imagem da unidade */
-.imagem_unidade{
-  height: 322px;
-  width: 680px;
-  background-color: #000;
-  margin-top: 20px;
-  float: left;
+.imagem{
+      width: 700px;
+      height: 357px;
+      float: left;
 }
 
-.mapa_unidade{
-  height: 322px;
-  width: 446px;
-  background-color: #000;
-  margin-top: 20px;
-  margin-left: 50px;
-  float: left;
+.imagem img{
+      width: 100%;
+      height: 357px;
+}
+
+.mapa_da_unidade{
+      width: 476px;
+      height: 357px;
+      float: left;
+      margin-left: 24px;
+}
+
+.mapa_da_unidade img{
+      width: 100%;
+      height: 357px;
+}
+
+.footer{
+      width: 100%;
+      height: 299px;
+      position: relative;
+      background-color: white;
+      padding-top: 35px;
 }

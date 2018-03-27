@@ -11,14 +11,18 @@
                     <li class="item_nav">
                         Hospital
                         <ul class="submenu_nav_hhealth">
-                              <a href="index.php">
+                              <a href="../index.php">
                                     <li class="item_submenu_nav_hhealth">Home</li>
                               </a>
                               <a href="views/especialidades.php">
                                     <li class="item_submenu_nav_hhealth">Especialidades</li>
                               </a>
-                              <li class="item_submenu_nav_hhealth">Ambientes</li>
-                              <li class="item_submenu_nav_hhealth">Sobre</li>
+                              <a href="ambientes.php">
+                                    <li class="item_submenu_nav_hhealth">Ambientes</li>
+                              </a>
+                              <a href="sobre_hhealth.php">
+                                    <li class="item_submenu_nav_hhealth">Sobre</li>
+                              </a>
                         </ul>
                     </li>
                     <a href="views/dicas_saude.php">
