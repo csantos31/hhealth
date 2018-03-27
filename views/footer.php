@@ -35,6 +35,9 @@
               </ul>
           </li>
       </ul>
+      <div class="linha_branca">
+
+      </div>
 </div>
 
 </div>
@@ -75,13 +78,8 @@
 
   </div>
 </div>
-<div class="faixa3_footer"><!--footer faixa3-->
-  <div class="limitador_faixa3_footer">
-        Acesso Rápido
-  </div>
-</div>
 <div class="faixa4_footer"><!--footer faixa4-->
       <div class="limitador_faixa4_footer">
-
+            © COPYRIGHT 2018
       </div>
 </div>

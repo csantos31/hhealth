@@ -12,14 +12,13 @@
       <div id="suporte_header">
         <!-- Faixa invisivel para segura uma parte -->
         <div id="faixa">
-
         </div>
 
         <!-- Imagem e coisas do paciente -->
         <div id="suporte_parte_paciente">
           <div id="suporte_texto_bem_vindo">
             <!-- Bem vindo -->
-            <strong>Bem Vindo, </strong><?php echo ""; ?>
+            <strong>Bem Vindo, João </strong><?php echo ""; ?>
 
             <!-- logout ,da pagina -->
             <div id="suporte_logout">
@@ -34,7 +33,7 @@
 
           <!-- Imagem do paciente -->
           <figure id="figure_paciente">
-            <!-- <img src="" alt=""> -->
+             <img src="../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário"> 
           </figure>
 
         </div>
@@ -42,7 +41,7 @@
         <!-- Imagem do logo -->
         <div id="suporte_imagem">
           <figure id="suporte_figure_logo">
-            <!-- <img src="" alt=""> -->
+            <img src="../../imagens/logo_hhealth.png" alt="logo hhealth" title="logo hhealth">
           </figure>
         </div>
 

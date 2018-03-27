@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
       <head>
             <meta charset="utf-8">
             <title></title>
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
-            <link rel="stylesheet" type="text/css" href="../css/style_exames_e_consultas.css">
+            <link rel="stylesheet" type="text/css" href="../css/style_exames.css">
       </head>
       <body>
             <div class="main">

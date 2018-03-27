@@ -4,7 +4,7 @@
   Descrição: Página HTML trabalhe conosco
 -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Trabalhe Conosco</title>
