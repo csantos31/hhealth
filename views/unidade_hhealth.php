@@ -115,7 +115,19 @@
             </div>
           </div>
           <div id="texto_div">
+            <div  id="suporte_texto">
+              O vídeo fornece uma maneira poderosa de ajudá-lo a provar seu argumento. Ao clicar em Vídeo Online, você pode colar o código de inserção do vídeo que deseja adicionar. Você também pode digitar uma palavra-chave para pesquisar online o vídeo mais adequado ao seu documento.<br/><br/>
+            Para dar ao documento uma aparência profissional, o Word fornece designs de cabeçalho, rodapé, folha de rosto e caixa de texto que se complementam entre si. Por exemplo, você pode adicionar uma folha de rosto, um cabeçalho e uma barra lateral correspondentes. Clique em Inserir e escolha os elementos desejados nas diferentes galerias.
+            Temas e estilos também ajudam a manter seu documento coordenado. Quando você clica em Design e escolhe um novo tema, as imagens, gráficos e elementos gráficos SmartArt são alterados para corresponder ao novo tema. Quando você aplica estilos, os títulos são alterados para coincidir com o novo tema.<br/><br/>
+            Economize tempo no Word com novos botões que são mostrados no local em que você precisa deles. Para alterar a maneira como uma imagem se ajusta ao seu documento, clique nela e um botão de opções de layout será exibido ao lado. Ao trabalhar em uma tabela, clique no local onde deseja adicionar uma linha ou uma coluna e clique no sinal de adição.
+            A leitura também é mais fácil no novo modo de exibição de Leitura. Você pode recolher partes do documento e colocar o foco no texto desejado. Se for preciso interromper a leitura antes de chegar ao fim dela, o Word lembrará em que ponto você parou - até mesmo em outro dispositivo.<br/><br/>
+            O vídeo fornece uma maneira poderosa de ajudá-lo a provar seu argumento. Ao clicar em Vídeo Online, você pode colar o código de inserção do vídeo que deseja adicionar. Você também pode digitar uma palavra-chave para pesquisar online o vídeo mais adequado ao seu documento.<br/><br/>
+            Para dar ao documento uma aparência profissional, o Word fornece designs de cabeçalho, rodapé, folha de rosto e caixa de texto que se complementam entre si. Por exemplo, você pode adicionar uma folha de rosto, um cabeçalho e uma barra lateral correspondentes. Clique em Inserir e escolha os elementos desejados nas diferentes galerias.
+            Temas e estilos também ajudam a manter seu documento coordenado. Quando você clica em Design e escolhe um novo tema, as imagens, gráficos e elementos gráficos SmartArt são alterados para corresponder ao novo tema. Quando você aplica estilos, os títulos são alterados para coincidir com o novo tema.<br/><br/>
+            O vídeo fornece uma maneira poderosa de ajudá-lo a provar seu argumento. Ao clicar em Vídeo Online, você pode colar o código de inserção do vídeo que deseja adicionar. Você também pode digitar uma palavra-chave para pesquisar online o vídeo mais adequado ao seu documento.<br/><br/>
 
+
+            </div>
           </div>
         </div>
 
@@ -125,23 +137,29 @@
         </div>
 
         <!-- Div localização -->
-        <div id="localizao_div">
+        <div id="localizacao_div">
           <div id="suporte_localização">
             <div class="texto_localização">
               Rua dos cáracois , 9532 Itapevi, Saõ Paulo
             </div>
+            <div class="faixa_branca_footer">
+
+            </div>
             <div class="texto_localização">
               Bairro: Jd. Briquet  Cep: 06958 - 986
             </div>
+            <div class="faixa_branca_footer">
+
+            </div>
             <div id="suporte_telefone_email">
               <div class="icon_contato">
-
+                <img src="../imagens/icons/email.png" alt="" class="icons_contatos">
               </div>
               <div id="telefone">
                 (11) 99999-4179
               </div>
               <div class="icon_contato">
-
+                <img src="../imagens/icons/phone_black.png" alt="" class="icons_contatos">
               </div>
               <div id="email">
                 hhealth@hospital.com

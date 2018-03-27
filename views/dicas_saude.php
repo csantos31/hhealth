@@ -2,34 +2,131 @@
 <html lang="pt-br" dir="ltr">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="../css/style_padrao.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_dicas_saude.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <title>Hospital HHealth</title>
     </head>
 
     <body>
-
-        <div class="main"><!--Div Main que segura todas as divs-->
-             <div class="suporte_menu">
-                   <div class="menu"><!--**MENU**-->
-                      <?php require_once('nav.php'); ?>
-                  </div>
+      <div id="main"><!--Div Main que segura todas as divs-->
+         <?php require_once('nav.php'); ?>
+         <div id="content_main">
+           <!-- titulo da página -->
+           <div id="suporte_titulo">
+             <div id="titulo_pagina">
+               <strong>Dicas</strong>
              </div>
-            <div class="div_suporte_conteudo">
+           </div>
+           <!-- Faixa branca embaixo do menu -->
+           <div class="faixa_branca">
 
-            </div>
-            <div class="content"><!--**CONTENT**-->
-                  <div class="faixa_titulo_da_pagina">
-                        Dicas de Saúde
+           </div>
+
+           <div id="segura_slider">
+
+           </div>
+
+           <div class="suporte_imagens_dicas">
+             <div class="suporte_itens">
+               <div class="imagens">
+                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+               </div>
+               <div class="titulo_dicas">
+                 <div class="suporte_titulo_dicas">
+                    titulos dicas
+                 </div>
+               </div>
+             </div>
+             <div class="suporte_itens">
+               <div class="imagens">
+                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+               </div>
+               <div class="titulo_dicas">
+                 <div class="suporte_titulo_dicas">
+                   titulos dicas
+                 </div>
+               </div>
+             </div>
+             <div class="suporte_itens">
+               <div class="imagens">
+                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+               </div>
+               <div class="titulo_dicas">
+                 <div class="suporte_titulo_dicas">
+                   titulos dicas
+                 </div>
+               </div>
+             </div>
+           </div>
+
+            <div class="suporte_imagens_dicas">
+              <div class="suporte_itens">
+                <div class="imagens">
+                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                </div>
+                <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    titulos dicas
                   </div>
-            </div>
-            <footer><!--**FOOTER**-->
-                  <div class="footer">
-                        <?php require_once('footer.php'); ?>
+                </div>
+              </div>
+              <div class="suporte_itens">
+                <div class="imagens">
+                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                </div>
+                <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    titulos dicas
                   </div>
-            </footer>
+                </div>
+              </div>
+              <div class="suporte_itens">
+                <div class="imagens">
+                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                </div>
+                <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    titulos dicas
+                  </div>
+                </div>
+              </div>
+            </div>
+
+             <div class="suporte_imagens_dicas">
+               <div class="suporte_itens">
+                 <div class="imagens">
+                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 </div>
+                 <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    titulos dicas
+                  </div>
+                 </div>
+               </div>
+               <div class="suporte_itens">
+                 <div class="imagens">
+                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 </div>
+                 <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    titulos dicas
+                  </div>
+                 </div>
+               </div>
+               <div class="suporte_itens">
+                 <div class="imagens">
+                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 </div>
+                 <div class="titulo_dicas">
+                  <div class="suporte_titulo_dicas">
+                    <strong> titulos dicas </strong>
+                  </div>
+                 </div>
+               </div>
+            </div>
+          </div>
+          <?php require_once('footer.php'); ?>
         </div>
-
     </body>
 </html>
