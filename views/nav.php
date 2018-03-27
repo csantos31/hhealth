@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
         <div class="suporte_menu">
           <div class="menu"><!--**MENU**-->
             <div class="header"><!--header-->
@@ -8,7 +8,7 @@
                   </a>
                 <nav class="nav_menu">
                       <ul class="menu_nav">
-=======
+
       <div class="header"><!--header-->
             <a href="index.php">
                   <div class="logo">
@@ -37,7 +37,7 @@
                         </ul>
                     </li>
                     <a href="views/dicas_saude.php">
->>>>>>> 343a5d963bf1b3bf92594cbf66edbc2abe96f778
+
                           <li class="item_nav">
                               Hospital
                               <ul class="submenu_nav_hhealth">

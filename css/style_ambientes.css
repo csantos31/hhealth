@@ -81,3 +81,55 @@
       width: 170px;
       height: 128px;
 }
+
+/*SLIDES*/
+/*1*/
+.cover{
+    background-color: white;
+}
+
+.thumbs{
+    cursor: pointer;
+}
+
+.gallery{
+    border: solid 2px #ccc;
+}
+
+.active{
+    border: solid 1px #000;
+}
+
+/*2*/
+.cover2{
+    background-color: white;
+}
+
+.thumbs2{
+    cursor: pointer;
+}
+
+.gallery2{
+    border: solid 2px #ccc;
+}
+
+.active2{
+    border: solid 1px #000;
+}
+
+/*3*/
+.cover3{
+    background-color: white;
+}
+
+.thumbs3{
+    cursor: pointer;
+}
+
+.gallery3{
+    border: solid 2px #ccc;
+}
+
+.active3{
+    border: solid 1px #000;
+}
