@@ -14,9 +14,9 @@
 /* Segura todo conteúdo da página */
 #content{
   width: 1200px;
-  min-height: 1400px;
+  min-height: 1900px;
   height: auto;
-  background-color: #008B8B;
+  background-color: #077B8B;
 }
 
 /*-------------------------- Titulo da página ----------------------------*/
@@ -162,7 +162,8 @@
   height: 413px;
   width: 382px;
   background-color: #CCC;
-
+  /* position: fixed; */
+  float: right;
 }
 
 #titulo_chat_bot{
