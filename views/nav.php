@@ -40,11 +40,11 @@
                     Exames
                   </li>
               </a>
-
-              <li class="item_nav">
-                  Convênios
-              </li>
-
+              <a href="convenios.php">
+                <li class="item_nav">
+                    Convênios
+                </li>
+              </a>
               <li class="item_nav">
                   Contatos
                   <ul class="submenu_nav_contatos">

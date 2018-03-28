@@ -2,10 +2,10 @@
 <html lang="pt-br" dir="ltr">
       <head>
             <meta charset="utf-8">
-            <title></title>
+            <title>Hospital Hhealth</title>
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
-            <link rel="stylesheet" type="text/css" href="../css/style_exames.css">
+            <link rel="stylesheet" type="text/css" href="../css/style_convenios.css">
       </head>
       <body>
             <div class="main">
@@ -19,7 +19,7 @@
 
                 <div id="content_main"><!--Content-->
                     <div class="faixa_titulo">
-                          Agendamentos
+                          Convênios
                     </div>
                     <!-- Faixa branca embaixo do menu -->
                    <div class="faixa_branca">
@@ -27,7 +27,7 @@
                    </div>
                    <!-- Primeira section da div -->
                     <div class="titulo_busque_seu_exame">
-                          <p>Busque seu exame:<p>
+                          <p>Busque seu convênio:<p>
                     </div>
                     <div class="busca">
                           <div class="centraliza_input">
@@ -41,105 +41,84 @@
                     </div>
                     <div class="conteudo_exames">
                         <div class="titulo_exame">
-                            Exames Disponiveis
+                            Convênios Disponiveis
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Cardiologia</a>
+                                <a>Planos de Saúde em Guarulhos</a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
                                 <img src="../imagens/info.png">
                             </div>
 
-                            <div class="acoes_exames"><!--ação 2-->
-                                <img src="../imagens/user.png">
-                            </div>
                         </div>
 
                     </div>
@@ -147,7 +126,7 @@
                     <div class="content_descricao_procedimento">
                         <div class="content_descricao">
                             <div class="titulo_descricao">
-                                <a>Descrição</a>
+                                <a>Convenio</a>
                             </div>
 
                             <div class="conteudo_descricao">
@@ -156,15 +135,6 @@
                             </div>
                         </div>
 
-                        <div class="content_procedimento">
-                            <div class="titulo_procedimento">
-                                <a>Procedimento</a>
-                            </div>
-
-                            <div class="conteudo_procedimento">
-                                <a>Procedimentos híbridos: O futuro da cirurgia cardiovascular é a cirurgia minimamente invasiva, com pequenas incisões e sem o uso da CEC. Com a introdução dos stents para o tratamento das lesões das coronárias em casos selecionados, a cirurgia minimamente invasiva para a revascularização da artéria coronária descendente anterior usando a anastomose da artéria torácica interna é o tratamento ideal para estas lesões, e o tratamento com stents das lesões nos outros vasos se tornou uma alternativa válida à cirurgia convencional de revascularização do miocárdio. O tratamento com cateter das lesões estruturais do coração em cardiopatias congênitas e nas doenças das válvulas cardíacas diminuiu a mortalidade e aumentou a expectativa de vida dos pacientes. A terapia endovascular também se tornou o tratamento de escolha em alguns casos de doenças da aorta e artérias periféricas. A associação do tratamento cirúrgico com o tratamento endovascular é um dos grandes progressos na terapêutica cardiológica. Esta nova tecnologia exige salas especiais para sua realização e foi implantada no IC-FUC em fevereiro de 2011 com a inauguração de sua Sala Para Procedimentos Híbridos - a Sala Híbrida - junto ao Bloco Cirúrgico. </a>
-                            </div>
-                        </div>
 
 
                     </div>
