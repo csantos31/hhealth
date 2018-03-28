@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <title>Hospital Hhealth</title>
         <link rel="stylesheet" type="text/css" href="../css/style_dicas_saude.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
-        <title>Hospital HHealth</title>
     </head>
-
     <body>
-      <div id="main"><!--Div Main que segura todas as divs-->
-         <?php require_once('nav.php'); ?>
+      <div class="main"><!--Div Main que segura todas as divs-->
+         <div class="suporte_menu">
+               <div class="menu"><!--**MENU**-->
+                  <?php require_once('nav.php'); ?>
+              </div>
+         </div>
+         <div class="div_suporte_conteudo">
+
+         </div>
          <div id="content_main">
            <!-- titulo da página -->
            <div id="suporte_titulo">
