@@ -28,13 +28,15 @@
                   </ul>
               </li>
               <a href="dicas_saude.php">
-                    <li class="item_nav">
-                        Dicas de Saúde
-                    </li>
+                <li class="item_nav">
+                    Dicas de Saúde
+                </li>
               </a>
-              <li class="item_nav">
-                  Unidades
-              </li>
+              <a href="unidades_hhealth.php">
+                <li class="item_nav">
+                    Unidades
+                </li>
+              </a>
               <a href="exames.php">
                   <li class="item_nav">
                     Exames
