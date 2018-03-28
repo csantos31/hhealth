@@ -1,5 +1,10 @@
 <?php
 
+require('../verifica.php');
+
+
+
+
 $action = "modo=inserir";
 $nome = null;
 $descricao = null;

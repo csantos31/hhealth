@@ -26,7 +26,10 @@ session_start();
         public function Login_usuario($usuario){
             $_SESSION["login"]=0;
             $count=0;
-            $sql = "SELECT * FROM tbl_usuario WHERE cpf=".$usuario->cpf." AND senha = ".$usuario->senha;
+            $sql = "SELECT * FROM tbl_usuario WHERE cpf = '" .$usuario->cpf . "' AND senha = '".$usuario->senha. "';";
+            
+            echo $sql;
+            
             
             //Instancia da classe do BD
             $conn = new Mysql_db();
@@ -48,7 +51,7 @@ session_start();
             //Executa o Script no BD
            
             if($_SESSION["login"]==1){
-                header('location:views/texte.php');
+                header('location:cms/');
             }else if($_SESSION["login"]==0){
                 header('location:index.php');
             }

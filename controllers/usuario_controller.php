@@ -15,7 +15,7 @@
             //chama o metodo Login da classe Usuario
             Usuario::Login_usuario($usuario);
             
-            echo("Funcionou");
+            
         }
         
         

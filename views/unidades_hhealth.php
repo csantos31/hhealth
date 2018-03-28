@@ -56,7 +56,7 @@
                                    </div>
                                  </a>
 
-                                 <divclass="faixa_imagem_e_mapa">
+                                 <div class="faixa_imagem_e_mapa">
                                        <div class="imagem">
                                              <img src="../imagens/hospital_barueri.jpg" alt="">
                                        </div>

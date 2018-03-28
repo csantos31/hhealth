@@ -1,4 +1,5 @@
 <?php 
+
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
 else
@@ -25,7 +26,7 @@ else
             </div>
 
             <div class="content_logout">
-                <a>Logout</a>
+                <a href="../login.php?destroi_sessao=1">Logout</a>
                 <img src="<?= $caminho ?>imagens/logout.png">
             </div>
         </div>

@@ -1,21 +1,15 @@
-<?php
+<?php 
 
-     session_start();
-
-    if(!isset($_SESSION['login'])){
-        header('location:login.php');
-    }
-
+      require('../verifica.php');
 
 ?>
-
 
 <html>
     <head>
 
-        <link rel="stylesheet" type="text/css" href="views_cms/css/style_cms_home.css">
-        <link rel="stylesheet" type="text/css" href="views_cms/css/style_cms_menu.css">
-        <link rel="stylesheet" type="text/css" href="views_cms/css/style_cms_footer.css">
+        <link rel="stylesheet" type="text/css" href="../views_cms/css/style_cms_home.css">
+        <link rel="stylesheet" type="text/css" href="../views_cms/css/style_cms_menu.css">
+        <link rel="stylesheet" type="text/css" href="../views_cms/css/style_cms_footer.css">
 
     </head>
 
@@ -29,7 +23,7 @@
                     <div class="header_home_cms"><!--conteudo da home do cms-->
                         <div class="content_logo_titulo_cms">
                             <div class="logo_cms">
-                                <img src="views_cms/imagens/logo.png">
+                                <img src="../views_cms/imagens/logo.png">
                             </div>
 
                             <div class="titulo_cms"><!---->
@@ -38,7 +32,7 @@
                         </div>
                         <div class="content_user">
                             <div class="icon_user">
-                                <img src="views_cms/imagens/user.png">
+                                <img src="../views_cms/imagens/user.png">
                             </div>
 
                             <div class="name_user">
@@ -46,8 +40,8 @@
                             </div>
 
                             <div class="content_logout">
-                                <a href="login.php?destroi_sessao">Logout</a>
-                                <img src="views_cms/imagens/logout.png">
+                                <a>Logout</a>
+                                <img src="../views_cms/imagens/logout.png">
                             </div>
                         </div>
 
@@ -56,21 +50,21 @@
 
                 <div class="content_home_cms"><!--conteudo da home do cms-->
                     <div class="menu_lateral_cms"><!--menu lateral-->
-                        <a href="views_cms/nivel_usuario.php">
-                            <div class="linha">
-                                <div class="img_menu_lateral">
-                                    <img src="views_cms/imagens/icon_home.png">
-                                </div>
 
-                                <div class="titulo_menu_lateral">
-                                    <a>Gerenciamento de tipos de quartos</a>
-                                </div>
+                        <div class="linha">
+                            <div class="img_menu_lateral">
+                                <img src="../views_cms/imagens/icon_home.png">
                             </div>
-                        </a>
+
+                            <div class="titulo_menu_lateral">
+                                <a>Gerenciamento de usuários</a>
+                            </div>
+                        </div>
+
                         <a href="views_cms/nivel_usuario.php">
                             <div class="linha">
                                 <div class="img_menu_lateral">
-                                    <img src="views_cms/imagens/icon_home.png">
+                                    <img src="../views_cms/imagens/icon_home.png">
                                 </div>
                                 <div class="titulo_menu_lateral">
                                     <a>Gerenciamento de nível de usuários</a>
@@ -83,8 +77,9 @@
                     </div>
                 </div>
 
-                <?php include('views_cms/footer_cms.php')?>
+                <?php include('../views_cms/footer_cms.php')?>
             </div>
         </div>
+
     </body>
 </html>

@@ -4,7 +4,7 @@
       height: 211px;
       position: fixed;
       background-color: white;
-      z-index: 2;
+      z-index: 900;
 }
 
 .menu{

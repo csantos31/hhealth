@@ -1,5 +1,7 @@
 <?php
 
+      require('../verifica.php');
+
     $action = "modo=inserir";
     $nivel = null;
     $descricao = null;

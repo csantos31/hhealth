@@ -70,6 +70,7 @@ a{
   background-color: #ccc;
   margin-top: 20px;
   margin-left: 11px;
+    position: relative;
 }
 
 /* Segura imagens e dicas */
