@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
       <head>
+<<<<<<< HEAD
+        <!-- Link para estilização da pagina -->
+        <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_unidades.css">
+
+        <meta charset="utf-8">
+        <title>Unidades</title>
+=======
             <meta charset="UTF-8">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_unidades_hhealth.css">
             <title>Hospital HHealth</title>
+>>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
       </head>
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->

@@ -1,5 +1,8 @@
 /*CSS*/
-
+*{
+  margin: 0px;
+  padding: 0px;
+}
 
 .main{
     width:100%;
@@ -17,10 +20,6 @@
     margin:auto;
     border-radius:10px;
 }
-
-
-
-
 
 /*-------------------CONTEUDO CMS---------------------------*/
 .content_home_cms{/*conteudo do cms*/
@@ -80,8 +79,3 @@
     text-align: center;
     color:#000000;
 }
-
-
-
-
-

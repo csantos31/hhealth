@@ -49,7 +49,7 @@
     margin-left:500px;
     padding-top:50px;
     float:left;
-    
+
 }
 
 .icon_user{/*imagem usuário cms*/
@@ -61,7 +61,7 @@
 .icon_user img{
     width:100px;
     height:100px;
-    
+
 }
 
 .name_user{/*nome usuário*/
@@ -82,7 +82,7 @@
     font-family: sans-serif;
     font-weight: bold;
     color:white;
-    
+
 }
 
 .content_logout img{
