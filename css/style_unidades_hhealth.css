@@ -3,6 +3,11 @@
   margin: 0px auto;
 }
 
+a{
+    text-decoration: none;
+    color: #000;
+}
+
 .main{
     width:100%;
     height:auto;

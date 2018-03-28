@@ -9,7 +9,14 @@
   </head>
   <body>
     <div id="main">
-      <?php require_once('nav.php'); ?>
+      <div class="suporte_menu">
+            <div class="menu"><!--**MENU**-->
+              <?php require_once('nav.php'); ?>
+            </div>
+      </div>
+      <div class="div_suporte_conteudo">
+
+      </div>
       <div id="content_main">
         <!-- titulo da página -->
         <div id="suporte_titulo">

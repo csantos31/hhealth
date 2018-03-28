@@ -54,31 +54,37 @@
                <div class="imagens">
                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                </div>
-               <div class="titulo_dicas">
-                 <div class="suporte_titulo_dicas">
-                    titulos dicas
+               <a href="dica_saude.php">
+                 <div class="titulo_dicas">
+                   <div class="suporte_titulo_dicas">
+                      titulos dicas
+                   </div>
                  </div>
-               </div>
+               </a>
              </div>
              <div class="suporte_itens">
                <div class="imagens">
                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                </div>
-               <div class="titulo_dicas">
-                 <div class="suporte_titulo_dicas">
-                   titulos dicas
+               <a href="dica_saude.php">
+                 <div class="titulo_dicas">
+                   <div class="suporte_titulo_dicas">
+                     titulos dicas
+                   </div>
                  </div>
-               </div>
+               </a>
              </div>
              <div class="suporte_itens">
                <div class="imagens">
                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                </div>
-               <div class="titulo_dicas">
-                 <div class="suporte_titulo_dicas">
-                   titulos dicas
+               <a href="dica_saude.php">
+                 <div class="titulo_dicas">
+                   <div class="suporte_titulo_dicas">
+                     titulos dicas
+                   </div>
                  </div>
-               </div>
+               </a>
              </div>
            </div>
 
@@ -87,31 +93,37 @@
                 <div class="imagens">
                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                 </div>
-                <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    titulos dicas
+                <a href="dica_saude.php">
+                  <div class="titulo_dicas">
+                    <div class="suporte_titulo_dicas">
+                      titulos dicas
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
               <div class="suporte_itens">
                 <div class="imagens">
                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                 </div>
-                <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    titulos dicas
+                <a href="dica_saude.php">
+                  <div class="titulo_dicas">
+                    <div class="suporte_titulo_dicas">
+                      titulos dicas
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
               <div class="suporte_itens">
                 <div class="imagens">
                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
                 </div>
-                <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    titulos dicas
+                <a href="dica_saude.php">
+                  <div class="titulo_dicas">
+                    <div class="suporte_titulo_dicas">
+                      titulos dicas
+                    </div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 

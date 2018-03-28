@@ -33,6 +33,11 @@ body{
 
 }
 
+.div_suporte_conteudo{
+      width: 100%;
+      height: 210px;
+}
+
 
 /* Div que segura titulo da Página */
 #suporte_titulo{

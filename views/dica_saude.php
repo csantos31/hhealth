@@ -11,7 +11,14 @@
     <!-- Segura todo conteudo da página -->
     <div id="main">
       <!-- inclui menu da página -->
-      <?php require_once('nav.php'); ?>
+      <div class="suporte_menu">
+            <div class="menu"><!--**MENU**-->
+              <?php require_once('nav.php'); ?>
+            </div>
+      </div>
+      <div class="div_suporte_conteudo">
+
+      </div>
       <div id="content_main">
         <!-- titulo da página -->
         <div class="suporte_titulo">
@@ -63,7 +70,8 @@
             <img src="../imagens/5dicas.jpg" alt="" class="img_dicas">
           </div>
           <div class="suporte_texto_outras_dicas">
-
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
           </div>
         </div>
         <div class="suporte_outras_dicas">
@@ -71,7 +79,8 @@
             <img src="../imagens/5dicas.jpg" alt="" class="img_dicas">
           </div>
           <div class="suporte_texto_outras_dicas">
-
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
           </div>
         </div>
         <div class="suporte_outras_dicas">
@@ -79,7 +88,8 @@
             <img src="../imagens/5dicas.jpg" alt="" class="img_dicas">
           </div>
           <div class="suporte_texto_outras_dicas">
-
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
           </div>
         </div>
       </div>
