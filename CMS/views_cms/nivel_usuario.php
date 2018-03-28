@@ -21,7 +21,6 @@ if(isset($niv)){
 }
 
 ?>
-
 <html>
     <head>
         
@@ -43,16 +42,17 @@ if(isset($niv)){
                 <div class="content_home_cms"><!--conteudo da home do cms-->
                     <div class="menu_lateral_cms"><!--menu lateral-->
                         
-                        <div class="linha">
-                            <div class="img_menu_lateral">
-                                <img src="<?=$caminho?>imagens/icon_home.png">
+                        <a href="<?= $caminho ?>tipo_quarto.php">
+                            <div class="linha">
+                                <div class="img_menu_lateral">
+                                    <img src="<?=$caminho?>imagens/icon_home.png">
+                                </div>
+
+                                <div class="titulo_menu_lateral">
+                                    <a>Gerenciamento de tipos de quartos</a>
+                                </div>
                             </div>
-                            
-                            <div class="titulo_menu_lateral">
-                                <a>Gerenciamento de Páginas</a>
-                            </div>
-                        </div>
-                        
+                        </a>
                         <a href="<?= $caminho ?>nivel_usuario.php">
                             <div class="linha">
                                 <div class="img_menu_lateral">
