@@ -1,192 +1,279 @@
-/*
-  Autor: Gleyver Coutinho Castro
-  Data de alteração: 18/03/2018
-  Obs: Página de estilizaçõa do fale conosco da empresa Hhealth
-*/
-
-/* Altera todas as tags */
 *{
   padding: 0px;
-  margin: 0px auto;
+  margin: 0px;
 }
 
-
-/* Segura todo conteúdo da página */
-#content{
-  width: 1200px;
-  min-height: 1900px;
-  height: auto;
-  background-color: #077B8B;
+.main{
+    width:100%;
+    height:auto;
+    margin:auto;
 }
 
-/*-------------------------- Titulo da página ----------------------------*/
-#content_titulo{
-  width: 100%;
-  height: 100px;
-  background-color:	#B22222;
+.div_suporte_conteudo{
+      width: 100%;
+      height: 210px;
 }
 
-#titulo{
-  width: 220px;
-  height: 100px;
+.suporte_content{
+      width: 100%;
+      min-height:1300px;
+      height:auto;
+      background-color: white;
 }
 
-#alinha_titulo{
-  width: 190px;
-  height: 30px;
-  padding-top: 40px;
-  font-size: 32px;
-  color: #FFF;
+.content{
+    width:1200px;
+    min-height:1300px;
+    margin:auto;
+    padding-top: 20px;
+    float: left;
+    margin-left: 18.75%;
 }
 
-/*----------------------- Figura do fale conosco -------------------------*/
-#cabecalho_fale_conosco{
-  height: 450px;
-  width: 100%;
-  background-color: #D3D3D3;
-  margin-top: 10px;
+.faixa_titulo_da_pagina{
+      width: 100%;
+      height: 70px;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 70px;
+      font-weight: bold;
+      font-size: 24px;
 }
 
-#img_fale_conosco{
-  height: 450px;
-  width: 100%;
+.faixa1{
+      width: 100%;
+      height: 580px;
+      margin-top: 0px;
 }
 
-/*---------------------------- Formulário ---------------------------------*/
-#suporte_form{
-  height: 750px;
-  width: 98%;
-  border: 1px solid #000;
-  border-radius: 10px;
-  margin-top: 30px;
-}
-
-.suporte_linhas{
-  height: 40px;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.titulos_formulario{
-  height: 37px;
-  width: 250px;
-  background-color: #8B0000;
-  float: left;
-  /* border-radius: 10px; */
-}
-
-.titulos_formulario:hover{
-  background-color: #800000;
-}
-
-.alinhamento_nome_form{
-  height: 30px;
-  width: 35%;
-  font-size: 22px;
-  color: #FFF;
-  font-weight: bold;
-  padding-top: 7px;
-  padding-left: 15%;
-}
-
-/*------------------------- Caixa de textos Formulário e SELECT --------------------------*/
-.suporte_caixa_texto{
-  height: 37px;
-  width: 876px;
-  /* background-color: #ccc; */
-  float: left;
-  margin-left: 5px;
-}
-
-.caixa_texto{
-  height: 35px;
-  width: 100%;
-  font-size: 18px;
-}
-
-.caixa_texto_numero_dd{
-  height: 35px;
-  width: 30px;
-  font-size: 18px;
-}
-
-.caixa_texto_numero_telefone{
-  height: 35px;
-  width: 290px;
-  font-size: 18px;
-}
-
-#slct_assunto{
-  width: 331px;
-  height: 35px;
-}
-
-.suporte_caixa_texto_mensagem{
-  width: 876px;
-  height: 322px;
-  /* background-color: #ccc; */
-  float: left;
-  margin-left: 5px;
-}
-
-#text_area{
-  height: 322px;
-  width: 876px;
-  resize: none;
-  font-size: 18px;
-}
-
-.suporte_linhas_botao{
-  height: 40px;
-  width: 96%;
-  margin-top: 10px;
-  /* background-color: #ccc; */
-  float: left;
+.imagem_faleconosco{
+      width: 100%;
+      height: 580px;
 
 }
 
-#suporte_submit{
-  height: 39px;
-  width: 186px;
-  float: right;
+.imagem_faleconosco img{
+      width: 95%;
+      height: 580px;
+      margin-left: 2.5%;
 }
 
-#btn_enviar{
-  height: 39px;
-  width: 186px;
+.formFaleconosco{
+      width: 100%;
+      height: 650px;
+      float: left;
+}
+
+.form_faleconosco{
+      width: 90%;
+      height: 520px;
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 7px;
+      border: solid 1px;
+      padding: 20px;
+      font-family: sans-serif;
+      font-weight: bold;
+}
+
+.linha1{
+      width: 100%;
+      height: 30px;
+}
+
+.txt_nome{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha1 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha2{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_email{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha2 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha3{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_telefone{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha3 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha4{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_celular{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha4 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha5{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_assunto{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltassunto{
+      height: 25px;
+      float: left;
+}
+
+.linha6{
+      width: 100%;
+      height: 230px;
+      margin-top: 20px;
+}
+
+.txt_mensagem{
+      width: 25%;
+      height: 300px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha7{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.linha7 input{
+      /*border-radius: 4px;*/
+      border-top-right-radius: 4px;
+      width: 50px;
+      height: 25px;
+      float: right;
+}
+
+.content_chat{
+      width: 300px;
+      height: 400px;
+      background-color: #E0E2DF;
+      float: right;
+      margin-top: 330px;
+      margin-right: 2%;
+      border-radius: 10px;
+      position: fixed;
+      margin-left: 1550px;
+      z-index: 100;
+}
+
+.faixa_titulo_chat{
+      width: 100%;
+      height: 30px;
+      line-height: 30px;
+      background-color: #7F0000;
+      color: white;
+      text-align: center;
+      font-family: sans-serif;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+}
+
+.content_txt_chat{
+      width: 100%;
+      height: 320px;
+}
+
+.texto1{
+      width: 75%;
+      min-height: 20px;
+      height: auto;
+      background-color: white;
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-top: 20px;
+      margin-left: 10px;
 
 }
 
-/*-------------------------- CHAT BOT --------------------------*/
-#suporte_chat_bot{
-  height: 413px;
-  width: 382px;
-  background-color: #CCC;
-  /* position: fixed; */
-  float: right;
+.texto2{
+      width: 75%;
+      min-height: 20px;
+      height: auto;
+      background-color: white;
+      border-radius: 5px;
+      padding-left: 5px;
+      margin-top: 20px;
+      margin-left: 60px;
+
 }
 
-#titulo_chat_bot{
-  width: 100%;
-  height: 51px;
-  background-color: #8B0000;
+.faixa_enviar_chat{
+      width: 100%;
+      height: 40px;
+      background-color: #7F0000;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      padding-top: 10px;
 }
 
-#chat{
-  height: 300px;
-  width: 100%;
-  /* background: #000; */
-  overflow-y: auto;
+.faixa_enviar_chat input{
+      width: 75%;
+      height: 28px;
+      float: left;
+      margin-left: 10px;
+      margin-top: : 10px;
+      border-radius: 5px;
 }
 
-#escreve_mensagem{
-  height: 49px;
-  width: 352px;
-}
-
-#txt_escreve_mensagem{
-  height: 49px;
-  width: 352px;
-  border-radius: 10px;
-  font-size: 18px;
+.botao_enviar_chat{
+      width: 50px;
+      height: 29px;
+      float: left;
+      margin-left: 5px;
+      line-height: 28px;
+      border-radius: 3px;
+      background-color: #E0E2DF;
 }
