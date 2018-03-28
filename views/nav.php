@@ -35,10 +35,11 @@
               <li class="item_nav">
                   Unidades
               </li>
-
-              <li class="item_nav">
-                  Exames
-              </li>
+              <a href="exames.php">
+                  <li class="item_nav">
+                    Exames
+                  </li>
+              </a>
 
               <li class="item_nav">
                   Convênios

@@ -3,8 +3,8 @@
       <head>
             <meta charset="utf-8">
             <title></title>
+            <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_exames.css">
       </head>
       <body>
@@ -13,16 +13,19 @@
                     <div class="menu"><!--**MENU**-->
                       <?php require_once('nav.php'); ?>
                     </div>
-                </div>
+                 </div>
+                 <div class="div_suporte_conteudo">
+                 </div>
 
-                <div class="div_suporte_conteudo"><!--div de suporte para o menu-->
-
-                </div>
-
-                <div class="content"><!--Content-->
+                <div id="content_main"><!--Content-->
                     <div class="faixa_titulo">
                           Agendamentos
                     </div>
+                    <!-- Faixa branca embaixo do menu -->
+                   <div class="faixa_branca">
+
+                   </div>
+                   <!-- Primeira section da div -->
                     <div class="titulo_busque_seu_exame">
                           <p>Busque seu exame:<p>
                     </div>
