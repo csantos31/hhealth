@@ -1,32 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
-<<<<<<< HEAD
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="../css/style_unidade.css">
-    <link rel="stylesheet" href="../css/style_nav.css">
-    <link rel="stylesheet" href="../css/style_footer.css">
-=======
     <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
     <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
     <link rel="stylesheet" type="text/css" href="../css/style_unidade_hhealth.css">
     <meta charset="utf-8">
->>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
     <title>Hospital HHealth</title>
   </head>
   <body>
     <div id="main">
-<<<<<<< HEAD
-      <?php //include_once('nav.php'); ?>
-      <div id="content">
-        <!-- titulo da página -->
-        <div id="suporte_titulo">
-          <div id="titulo_pagina">
-            <strong>Unidade em 1</strong>
-          </div>
-        </div>
-
-=======
       <?php require_once('nav.php'); ?>
       <div id="content_main">
         <!-- titulo da página -->
@@ -35,7 +17,6 @@
             <strong>Unidade</strong>
           </div>
         </div>
->>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
         <!-- Faixa branca embaixo do menu -->
         <div class="faixa_branca">
 
@@ -43,17 +24,6 @@
         <!-- Primeira section da div -->
         <div id="imagem_content">
           <div id="imagem_hospital">
-<<<<<<< HEAD
-
-          </div>
-          <div id="horario_atendimento">
-            <div class="">
-
-            </div>
-          </div>
-        </div>
-
-=======
             <img src="../imagens/imagem_hospital.jpg" alt="" id="imagem_hosp">
           </div>
           <div id="horario_atendimento">
@@ -197,7 +167,6 @@
             </div>
           </div>
         </div>
->>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
       </div>
       <?php include_once('footer.php'); ?>
     </div>
