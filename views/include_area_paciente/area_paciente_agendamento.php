@@ -5,9 +5,13 @@
     <title>Agendamento</title>
     <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
     <link rel="stylesheet" href="../../css/area_paciente/style_agendamento.css">
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
+>>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
   </head>
   <body>
-    <?php include_once('include_area_paciente/nav_paciente.php'); ?>
+    <?php include_once('../include_area_paciente/nav_paciente.php'); ?>
     <div id="content">
       <div id="suporte_titulo">
         <div id="titulo_pagina">
@@ -93,6 +97,9 @@
       <div class="faixa_branca">
 
       </div>
+    </div>
+    <div class="">
+      <?php include_once('../include_area_paciente/footer_paciente.php'); ?>
     </div>
   </body>
 </html>

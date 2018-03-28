@@ -1,114 +1,124 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Fale Conosco</title>
-    <link rel="stylesheet"  type="text/css" href="css/style_fale_conosco.css">
-  </head>
-  <body>
-    <div id="content">
-      <!-- Titulo da página -->
-      <div id="content_titulo">
-        <div id="titulo">
-          <div id="alinha_titulo">
-            <strong>Fale Conosco</strong>
-          </div>
-        </div>
-      </div>
+<html lang="pt-br" dir="ltr">
+      <head>
+            <meta charset="UTF-8">
+            <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
+            <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
+            <link rel="stylesheet" type="text/css" href="../css/style_fale_conosco.css">
+            <title>Hospital HHealth</title>
+      </head>
+      <body>
+            <div class="main"><!--Div Main que segura todas as divs-->
+                 <div class="suporte_menu">
+                       <div class="menu"><!--**MENU**-->
+                          <?php require_once('nav.php'); ?>
+                      </div>
+                 </div>
+                <div class="div_suporte_conteudo">
 
-      <!-- Figura do cabecalho -->
-      <figure id="cabecalho_fale_conosco">
-        <img src="imagens/imgFaleConosco.png" alt="Imagem fale conosco" id="img_fale_conosco" title="Fale conosco">
-      </figure>
+                </div>
+                <div class="suporte_content">
+                      <div class="content">
+                           <div class="faixa_titulo_da_pagina">
+                                 Fale Conosco
+                           </div>
+                           <div class="faixa1">
+                                 <div class="imagem_faleconosco">
+                                       <img src="../imagens/faleconosco.png" alt="">
+                                 </div>
+                                 <div class="formFaleconosco">
+                                       <form class="form_faleconosco" action="index.html" method="post">
+                                             <div class="linha1">
+                                                   <div class="txt_nome">
+                                                         Nome:
+                                                   </div>
+                                                   <input type="text" name="txtNome" value="">
+                                             </div>
+                                             <div class="linha2">
+                                                   <div class="txt_email">
+                                                         Email:
+                                                   </div>
+                                                   <input type="email" name="txtEmail" value="">
+                                             </div>
+                                             <div class="linha3">
+                                                   <div class="txt_telefone">
+                                                         Telefone:
+                                                   </div>
+                                                   <input type="tel" name="txtTelefone" value="">
+                                             </div>
+                                             <div class="linha4">
+                                                   <div class="txt_celular">
+                                                         Celular:
+                                                   </div>
+                                                   <input type="tel" name="txtCelular" value="">
+                                             </div>
+                                             <div class="linha5">
+                                                   <div class="txt_assunto">
+                                                        Assunto:
+                                                   </div>
+                                                   <select class="sltassunto" name="">
+                                                         <option value="">Selecione um assuonto</option>
+                                                         <option value="1">Teste 1</option>
+                                                         <option value="2">Teste 2</option>
+                                                         <option value="3">Teste 3</option>
+                                                   </select>
 
-      <!-- Div para formulário -->
-      <div id="suporte_form">
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Nome
-            </div>
-          </div>
-          <div class="suporte_caixa_texto">
-            <input type="text" name="txt_nome" value="" class="caixa_texto">
-          </div>
-        </div>
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Email
-            </div>
-          </div>
-          <div class="suporte_caixa_texto">
-            <input type="text" name="txt_email" value="" class="caixa_texto">
-          </div>
-        </div>
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Telefone
-            </div>
-          </div>
-          <div class="suporte_caixa_texto">
-            <input type="text" name="txt_dd_telefone" value="" class="caixa_texto_numero_dd" maxlength="2">
-            <input type="text" name="txt_telefone" value="" class="caixa_texto_numero_telefone" maxlength="8">
-          </div>
-        </div>
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Celular
-            </div>
-          </div>
-          <div class="suporte_caixa_texto">
-            <input type="text" name="txt_dd_celular" value="" class="caixa_texto_numero_dd" maxlength="2">
-            <input type="text" name="txt_celular" value="" class="caixa_texto_numero_telefone" maxlength="8">
-          </div>
-        </div>
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Assunto
-            </div>
-          </div>
-          <div class="suporte_caixa_texto">
-            <select id="slct_assunto" name="slct_assunto">
-              <option value="">Selecione um assunto</option>
-            </select>
-          </div>
-        </div>
-        <div class="suporte_linhas">
-          <div class="titulos_formulario">
-            <div class="alinhamento_nome_form">
-              Mensagem
-            </div>
-          </div>
-          <div class="suporte_caixa_texto_mensagem">
-            <textarea name="text_area" rows="19" cols="114" id="text_area"></textarea>
-          </div>
-        </div>
-        <div class="suporte_linhas_botao">
-          <div id="suporte_submit">
-            <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar">
-          </div>
-        </div>
-      </div>
-      <!-- Chat bot -->
-      <div id="suporte_chat_bot">
-        <div id="titulo_chat_bot">
-          <div class="alinhamento_nome_form">
-            Hhealth
-          </div>
-        </div>
-        <div id="conteudo_chat">
-          <div id="chat">
+                                             </div>
+                                             <div class="linha6">
+                                                   <div class="txt_mensagem">
+                                                         Mensagem:
+                                                   </div>
+                                                   <textarea  style="resize: none" name="textareaMensagem" rows="15" cols="75"></textarea>
+                                             </div>
+                                             <div class="linha7">
+                                                   <input type="submit" name="Enviar" value="Enviar">
+                                             </div>
+                                       </form>
+                                 </div>
+                           </div>
+                      </div>
+                      <div class="content_chat">
+                           <div class="faixa_titulo_chat">
+                                 HHealth
+                           </div>
+                           <div class="content_txt_chat">
+                                 <div class="texto1">
+                                       Oi
+                                 </div>
+                                 <div class="texto2">
+                                       Olá. Em que posso ajudar?
+                                 </div>
+                                 <div class="texto1">
+                                       Eu gostaria de tirar uma dúvida
+                                 </div>
+                                 <div class="texto2">
+                                       Sim, pode falar
+                                 </div>
+                                 <div class="texto1">
+                                       Qual o horário de atendimento do pronto socorro?
+                                 </div>
+                                 <div class="texto2">
+                                       O proto socorro do HHealth funciona 24H por dia
+                                 </div>
+                                 <div class="texto1">
+                                       Muito brigado pela informação!
+                                 </div>
+                           </div>
+                           <div class="faixa_enviar_chat">
+                                 <input type="text" name="txt_digitado_pelo_paciente" value="">
+                                 <div class="botao_enviar_chat">
+                                       Enviar
+                                 </div>
+                           </div>
+                      </div>
 
-          </div>
-          <div id="escreve_mensagem">
-            <input type="text" name="txt_escreve_mensagem" value="" id="txt_escreve_mensagem">
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+                </div>
+
+            </div>
+            <footer><!--**FOOTER**-->
+                  <div class="footer">
+                        <?php require_once('footer.php'); ?>
+                  </div>
+            </footer>
+      </body>
 </html>

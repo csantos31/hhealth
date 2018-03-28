@@ -1,0 +1,17 @@
+.footer_home_cms{
+    width:1920px;
+    height:100px;
+    background-color:#000000;
+    float:left;
+}
+
+.font_footer{
+    width:200px;
+    height:30px;
+    margin:auto;
+    margin-top:40px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color:#ffffff;
+}

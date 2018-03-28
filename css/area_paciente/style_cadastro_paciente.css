@@ -1,0 +1,178 @@
+/*
+
+  Data: 27/03/2018
+  Desenvolvedor: Gleyver Coutinho Castro
+  Obs: Página de estilização da area do paciente
+
+*/
+
+/*--------------------------- Tags padrões --------------------------- */
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+/*--------------------------- Conteúdo da página -------------------------*/
+#content{
+  min-height: 900px;
+  height: auto;
+  width: 1200px;
+  /* background-color: #FF0000; */
+  margin: auto;
+  background-color: #DCDCDC;
+  border: 3px solid #C2C2C2;
+}
+
+/* Div que segura titulo da Página */
+#suporte_titulo{
+  height: 70px;
+  width: 100%;
+}
+
+/* Titulo */
+#titulo_pagina{
+  height: 35px;
+  width: 300px;
+  margin: auto;
+  padding-top: 35px;
+  font-size: 32px;
+}
+
+.faixa_branca{
+  height: 1px;
+  width: 95%;
+  background-color: #ccc;
+  margin: auto;
+}
+
+/*----- formulario da página -------*/
+#formulario_meio{
+  width: 650px;
+  height: 900px;
+  /* background-color: #ccc; */
+  margin: auto;
+}
+
+#formulario_cadastro{
+  width: 100%;
+  height: 900px;
+}
+
+#suporte_imagem_arquivo{
+  width: 300px;
+  height: 200px;
+  background-color: #FFF;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#img_figure, #img_usuario{
+  width: 250px;
+  height: 150px;
+  margin: auto;
+}
+
+#arquivo_foto{
+  width: 100%;
+  height: 30px;
+}
+
+.desc_nome_email{
+  height: 22px;
+  width: 80px;
+  margin: auto;
+}
+
+.desc_telefone{
+  height: 22px;
+  width: 100px;
+  margin: auto;
+}
+
+.div_padrao{
+  height: 30px;
+  width: 400px;
+
+  margin: auto;
+}
+
+
+.div_contato{
+  width: 100%;
+  height: 80px;
+  /* background-color: #fff; */
+  margin-top: 10px;
+}
+
+.contato_telefone{
+  width: 200px;
+  height: 60px;
+  float: left;
+  margin-left: 130px;
+}
+
+.contato_celular{
+  width: 200px;
+  height: 60px;
+  float: left;
+  margin-left: 5px;
+}
+
+/*Como box convenio*/
+#suporte_convenio{
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  /* background-color: #FFF; */
+}
+
+#suporte_combo{
+  width: 100%;
+  height: 35px;
+  margin: auto;
+  /* background-color: #000; */
+}
+
+#convenio{
+  width: 402px;
+  height: 35px;
+  margin-left: 130px;
+  /* background-color: #000; */
+}
+
+#arquivo_convenio{
+  height: 25px;
+  width: 300px;
+  margin-top: 5px;
+  margin-left: 260px;
+
+}
+
+#suporte_btn{
+  height: 40px;
+  width: 170px;
+  margin: auto;
+}
+
+.input_nome_email{
+  width: 380px;
+  height: 28px;
+  border-radius: 30px;
+}
+
+.input_contato_doc, .input_cidade_end{
+  height: 28px;
+  border-radius: 30px;
+  width: 170px;
+}
+
+
+#opn_estado{
+  width: 170px;
+  height: 32px;
+}
+
+#btn_salvar{
+  width: 170px;
+  height: 28px;
+}

@@ -4,13 +4,23 @@
   Descrição: Página HTML trabalhe conosco
 -->
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Trabalhe Conosco</title>
     <link rel="stylesheet"  type="text/css" href="../css/style_trabalhe_conosco.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
   </head>
   <body>
+    <div class="suporte_menu">
+          <div class="menu"><!--**MENU**-->
+             <?php require_once('nav.php'); ?>
+         </div>
+    </div>
+    <div class="div_suporte_conteudo">
+
+    </div>
     <div id="content">
       <!-- Titulo da página -->
       <div id="content_titulo">
@@ -215,8 +225,12 @@
             <input type="submit" name="btn_enviar" value="enviar" id="btn_enviar">
           </div>
         </div>
-
       </div>
     </div>
+    <footer><!--**FOOTER**-->
+          <div class="footer">
+            <?php include_once('footer.php'); ?>
+          </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,255 @@
+
+/*--------------------NIVEL USUARIO----------------------*/
+
+/*titulo nivel*/
+.content_titulo_nivel{
+    width:1350px;
+    height:100px;
+    margin-top:20px;
+}
+
+.titulo_nivel{
+    width:200px;
+    height:30px;
+    margin:auto;
+    margin-top:30px;
+    margin-left:550px;
+    float:left;
+    font-family: sans-serif;
+    font-size:21px;
+    font-weight: bold;
+    color:#000000;
+}
+
+.content_add_nivel{
+    width:250px;
+    height:80px;
+    margin-left:300px;
+    margin-top:10px;
+    float:left;
+}
+
+.img_nivel{
+    width:80px;
+    height:80px;
+    float:left;
+}
+
+
+
+.string_add_nivel{
+    width:150px;
+    height:30px;
+    margin-top:20px;
+    float:left;
+    font-family: sans-serif;
+    font-size:21px;
+    font-weight: bold;
+    color:#000000;
+}
+
+/*cadastro nivel*/
+
+.content_cadastro_nivel{/*content cadastro*/
+    width:800px;
+    height:500px;
+    margin:auto;
+    padding-bottom:30px;
+    border-radius:10px;
+    background-color:#eaecef;
+    box-shadow: 10px 10px 5px grey;;
+}
+
+.img_cadastro_nivel{
+    width:150px;
+    height:150px;
+    margin:auto;
+}
+
+.img_cadastro_nivel img{
+    width:150px;
+    height:150px;
+    margin:auto;
+}
+
+.titulo_cadastro_nivel{
+    width:800px;
+    height:30px;
+    margin:auto;
+    margin-top:10px;
+    font-family: sans-serif;
+    font-size:21px;
+    font-weight: bold;
+    color:#000000;
+    text-align: center;
+}
+
+.faixa_nivel{/*faixa nivel*/
+    width:800px;
+    height:40px;
+    margin-top:20px;
+}
+
+.string_nivel{
+    width:100px;
+    height:30px;
+    margin-left:40px;
+    font-family: sans-serif;
+    font-size:18px;
+    color:#000000;
+    text-align: center;
+    float:left;
+}
+
+.input_nivel [type=text]{
+    width:500px;
+    height:30px;
+    margin-left:10px;
+    border-top:solid 1px #65097c;
+    border-left:solid 1px #65097c;
+    border-right:solid 1px #65097c;
+    border-bottom:solid 1px #65097c;
+}
+
+.content_radio_nivel{
+    width:500px;
+    min-height: 200px;
+    height:auto;
+    margin:auto;
+    margin-top:20px;
+}
+
+.submit_cadastrar_nivel [type=submit]{
+    width:100px;
+    height:40px;
+    font-family: sans-serif;
+    font-size:18px;
+    color:#000000;
+    text-align: center;
+    margin-left:600px;
+    border-radius:10px;
+    background-color:#cc45ef;
+}
+
+
+
+/*tabela visualização nivel*/
+
+
+.tabela_nivel_usuario{
+    width:1050px;
+    min-height:500px;
+    height:auto;
+    margin:auto;
+    margin-top:30px;
+    
+}
+
+.content_titulo_tabela_niveis{
+    width:1050px;
+    height:50px;
+}
+
+.titulo_niveis{
+    width:850px;
+    height:40px;
+    padding-top:10px;
+    border:solid 1px #65097c;
+    border-top:solid 2px #65097c;
+    border-left:solid 3px #65097c;
+    border-right:solid 1px #65097c;
+    border-bottom:solid 2px #65097c;
+    font-family: sans-serif;
+    font-size:18px;
+    color:#000000;
+    font-weight: bold;
+    text-align: center;
+    float:left;
+    background-color:#eaecef;
+}
+
+.titulo_acoes{
+    width:140px;
+    height:40px;
+    padding-top:10px;
+    border-top:solid 2px #65097c;
+    border-left:solid 1px #65097c;
+    border-right:solid 3px #65097c;
+    border-bottom:solid 2px #65097c;
+    float:left;
+    font-family: sans-serif;
+    font-size:18px;
+    font-weight: bold;
+    color:#000000;
+    text-align: center;
+    background-color:#eaecef;
+}
+
+.content_campo_niveis{
+    width:1050px;
+    height:50px;
+}
+
+.campo_niveis{
+    width:850px;
+    height:40px;
+    padding-top:10px;
+    border:solid 1px #65097c;
+    border-top:solid 0px #65097c;
+    border-left:solid 3px #65097c;
+    border-right:solid 1px #65097c;
+    border-bottom:solid 2px #65097c;
+    font-family: sans-serif;
+    font-size:18px;
+    color:#000000;
+    text-align: center;
+    float:left;
+}
+
+
+.campo_acoes{
+    width:140px;
+    height:40px;
+    padding-top:10px;
+    border-top:solid 0px #65097c;
+    border-left:solid 1px #65097c;
+    border-right:solid 3px #65097c;
+    border-bottom:solid 2px #65097c;
+    float:left;
+}
+
+.campo_acoes img{
+    width:30px;
+    height: 30px;
+    margin-left:20px;
+
+}
+
+#txt_desc{
+    width: 450px;
+    height: 70px;
+    border: solid 1px #ccc;
+    resize: none;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+label{
+    font-family: verdana;
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    margin-left: 70px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
