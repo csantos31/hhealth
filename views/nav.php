@@ -1,3 +1,4 @@
+
 <div class="header"><!--header-->
       <a href="index.php">
             <div class="logo">
@@ -14,10 +15,11 @@
                         <a href="../index.php">
                               <li class="item_submenu_nav_hhealth">Home</li>
                         </a>
-                        <a href="views/especialidades.php">
+                        <a href="especialidades.php">
                               <li class="item_submenu_nav_hhealth">Especialidades</li>
                         </a>
-                        <a href="ambientes.php">
+                        
+                        <a  href="ambientes.php" >
                               <li class="item_submenu_nav_hhealth">Ambientes</li>
                         </a>
                         <a href="sobre_hhealth.php">
@@ -25,7 +27,7 @@
                         </a>
                   </ul>
               </li>
-              <a href="views/dicas_saude.php">
+              <a href="dicas_saude.php">
                     <li class="item_nav">
                         Dicas de Saúde
                     </li>
@@ -45,7 +47,7 @@
               <li class="item_nav">
                   Contatos
                   <ul class="submenu_nav_contatos">
-                        <a href="views/fale_conosco.php">
+                        <a href="fale_conosco.php">
                               <li class="item_submenu_nav_contatos">Fale Conosco</li>
                         </a>
                         <li class="item_submenu_nav_contatos">Trabalhe Conosco</li>

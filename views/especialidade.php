@@ -180,7 +180,7 @@
          <img src="../imagens/google-maps.jpg" alt="" id="imagem_unidade">
        </div> -->
        <?php include_once('footer.php') ?>
-     </div>
+    
     </div>
   </body>
 </html>
