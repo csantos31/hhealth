@@ -21,103 +21,130 @@
         </div>
         <div id="formulario_meio">
           <form id="formulario_cadastro" action="index.html" method="post">
-            <div id="suporte_imagem">
+            <div id="suporte_imagem_arquivo">
               <figure id="img_figure">
-                <img src="../../imagens/imagem_usuario.png" alt="" id="img_usuario">
+                <img src="../../imagens/usuario-masculino.jpg" alt="" id="img_usuario">
               </figure>
               <div id="arquivo_foto">
                   <input type="file" name="foto_paciente" value="">
               </div>
             </div>
-            <div id="desc_nome">
+            <div class="desc_nome_email">
               Nome
             </div>
-            <div id="div_nome">
-              <input type="text" name="txt_nome" value="">
+            <div class="div_padrao">
+              <input type="text" name="txt_nome" value="" class="input_nome_email">
             </div>
-            <div class="">
-              <div class="">
-                Telefone
+            <div class="div_contato">
+              <div class="contato_telefone">
+                <div class="desc_telefone">
+                  Telefone
+                </div>
+                <div class="">
+                  <input type="text" name="txt_telefone" value="" class="input_contato_doc">
+                </div>
               </div>
-              <div class="">
-                <input type="text" name="txt_telefone" value="">
-              </div>
-              <div class="">
-                Celular
-              </div>
-              <div class="">
-                <input type="text" name="txt_celular" value="">
-              </div>
-            </div>
-            <div class="">
-              Email
-            </div>
-            <div class="">
-              <input type="text" name="txt_email" value="">
-            </div>
-            <div class="">
-              <div class="">
-                CPF
-              </div>
-              <div class="">
-                <input type="text" name="txt-cpf" value="">
-              </div>
-              <div class="">
-                RG
-              </div>
-              <div class="">
-                <input type="text" name="txt_rg" value="">
+              <div class="contato_celular">
+                <div class="">
+                  Celular
+                </div>
+                <div class="">
+                  <input type="text" name="txt_celular" value="" class="input_contato_doc">
+                </div>
               </div>
             </div>
-            <div class="">
-              <div class="">
-                <input type="file" name="" value="RG">
+
+            <div class="suporte_email">
+              <div class="desc_nome_email">
+                email
               </div>
-              <div class="">
-                <input type="file" name="" value="CPF">
+              <div class="div_padrao">
+                <input type="text" name="txt_email" value="" class="input_nome_email">
               </div>
             </div>
-            <div class="">
-              <select class="" name="">
-                <option value="[object Object]">Escolha o convenio</option>
-              </select>
+
+            <div class="div_contato">
+              <div class="contato_telefone">
+                <div class="desc_telefone">
+                  CPF
+                </div>
+                <div class="">
+                  <input type="text" name="txt_cpf" value="" class="input_contato_doc">
+                </div>
+                <div class="">
+                  <input type="file" name="file_cpf" value="" class="doc_pessoais">
+                </div>
+              </div>
+              <div class="contato_celular">
+                <div class="">
+                  RG
+                </div>
+                <div class="">
+                  <input type="text" name="txt_rg" value="" class="input_contato_doc">
+                </div>
+                <div class="">
+                  <input type="file" name="file_rg" value="" class="doc_pessoais">
+                </div>
+              </div>
             </div>
-            <div class="">
-              <input type="file" name="" value="file_convenio">
-            </div>
-            <div class="">
-              <div class="">
-                Cidade
+
+            <div id="suporte_convenio">
+              <div class="desc_nome_email">
+                Convenio
               </div>
-              <div class="">
-                <input type="text" name="txt_cidade" value="">
-              </div>
-              <div class="">
-                UF
-              </div>
-              <div class="">
-                <select class="" name="">
-                  <option value="[object Object]">estado</option>
+              <div id="suporte_combo">
+                <select class="" name="" id="convenio">
+                  <option value="[object Object]">Convenio...</option>
                 </select>
               </div>
-            </div>
-            <div class="">
-              <div class="">
-                Logradouro
-              </div>
-              <div class="">
-                <input type="text" name="txt_logradouro" value="">
-              </div>
-              <div class="">
-                N°
-              </div>
-              <div class="">
-                <input type="text" name="txt_numero_casa" value="">
+              <div id="arquivo_convenio">
+                <input type="file" name="file_arquivo_convenio" value="">
               </div>
             </div>
-            <div class="">
-              <input type="submit" name="" value="btn_salvar">
+
+             <div class="div_contato">
+              <div class="contato_telefone">
+                <div class="desc_telefone">
+                  Cidade
+                </div>
+                <div class="">
+                  <input type="text" name="txt_cidade" value="" class="input_cidade_end">
+                </div>
+              </div>
+              <div class="contato_celular">
+                <div class="">
+                  UF
+                </div>
+                <div class="">
+                  <select class="" name="" id="opn_estado">
+                    <option value="[object Object]">Estado...</option>
+                  </select>
+                </div>
+              </div>
             </div>
+
+            <div class="div_contato">
+              <div class="contato_telefone">
+                <div class="desc_telefone">
+                  Logradouro
+                </div>
+                <div class="">
+                  <input type="text" name="txt_logradouro" value="" class="input_cidade_end">
+                </div>
+              </div>
+              <div class="contato_celular">
+                <div class="">
+                  N°
+                </div>
+                <div class="">
+                  <input type="text" name="" value="" class="input_cidade_end">
+                </div>
+              </div>
+            </div>
+            <div id="suporte_btn">
+              <input type="submit" name="btn_salvar" value="salvar" id="btn_salvar" onclick="return confirm('Deseja realmente enviar essas informações')">
+            </div>
+
           </form>
         </div>
     </div>
