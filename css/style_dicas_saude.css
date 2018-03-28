@@ -124,7 +124,7 @@ a{
 }
 
 
-/* SLIDER */
+/* ----------------------      SLIDER      -----------------*/
 #superior{
     width: 1135px;
     height: 620px;
@@ -148,7 +148,7 @@ a{
     margin-top: 250px;
     float: left;
     cursor: pointer;
-    z-index: 999;
+    /* z-index: 999; */
 }
 
 #galeria{
@@ -158,11 +158,18 @@ a{
     height: 600px;
     overflow: hidden;
     float: left;
+    /* z-index: -1; */
 }
 
-#galeria img{
+/* #galeria img{
     width: 1000px;
     height: 600px;
+    z-index: -999;
+} */
+
+.image{
+  width: 1000px;
+  height: 600px;
 }
 
 #next{
@@ -176,4 +183,5 @@ a{
 
 #galeria ul li{
     list-style: none;
+    z-index: -999;
 }
