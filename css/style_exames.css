@@ -15,7 +15,6 @@
       width: 100%;
       height: 200px;
       background-color: white;
-      position: fixed;
 }
 
 .div_suporte_conteudo{
@@ -31,6 +30,8 @@
 
 }
 
+
+/*faixa*/
 .faixa_titulo{
       width: 100%;
       height: 100px;
@@ -88,4 +89,54 @@
 .ajusta_lupa img{
       padding: 8px;
 
+}
+
+/*conteudo exames*/
+.conteudo_exames{/*conteudo exames*/
+    width:1000px;
+    min-height:800px;
+    height:auto;
+    margin:auto;
+    margin-top:50px;
+    background-color:burlywood;
+}
+
+.titulo_exame{/*titulo*/
+    width:300px;
+    height:30px;
+    margin:auto;
+    background-color:brown;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 21px;
+    font-family: sans-serif;
+}
+
+.content_faixa_exames{/*faixa nome exame-ações */
+    width:1000px;
+    height:60px;
+    margin-top:20px;
+    background-color:cadetblue;
+}
+
+.content_nome_exames{/*nome exames*/
+    width:800px;
+    height:35px;
+    background-color:bisque;
+    padding-top:15px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: sans-serif;
+    float:left;
+}
+
+.acoes_exames{
+    width:50px;
+    height:50px;
+    margin-left:20px;
+    background-color:chartreuse;
+    float:left;
 }
