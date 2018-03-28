@@ -85,7 +85,7 @@
         /*Busca um registro especifico no BD*/
 		public function SelectById($nivel){
 			$sql = "SELECT * FROM tbl_nivel_acesso WHERE id_nivel =". $nivel->id_nivel;
-
+            
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -98,11 +98,12 @@
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
+                
 				
 				$nivel = new Nivel();
 
-				$nivel->codigo = $rs['id_nivel'];
-				$nivel->nome = $rs['nivel'];
+				$nivel->id_nivel = $rs['id_nivel'];
+				$nivel->nome = $rs['nome'];
 				$nivel->telefone = $rs['descricao'];
 				
 				return $nivel;

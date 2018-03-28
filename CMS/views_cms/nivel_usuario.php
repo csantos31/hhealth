@@ -1,10 +1,30 @@
+<?php
+
+$action = "modo=inserir";
+
+if (isset($_GET['controller']))
+    $caminho ="views_cms/";
+else
+    $caminho = "";
+
+
+/*NIVEL EDIT*/
+if(isset($nivel)){
+    $action = "modo=editar&id=". $nivel->nivel_id; 
+}
+
+
+
+
+?>
+
 <html>
     <head>
         
-        <link rel="stylesheet" type="text/css" href="css/style_cms_home.css">
-        <link rel="stylesheet" type="text/css" href="css/style_cms_menu.css">
-        <link rel="stylesheet" type="text/css" href="css/style_cms_footer.css">
-        <link rel="stylesheet" type="text/css" href="css/style_cms_nivel_usuario.css">
+        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_home.css">
+        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
+        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
+        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_nivel_usuario.css">
     
     </head>
     
@@ -21,7 +41,7 @@
                         
                         <div class="linha">
                             <div class="img_menu_lateral">
-                                <img src="imagens/icon_home.png">
+                                <img src="<?=$caminho?>imagens/icon_home.png">
                             </div>
                             
                             <div class="titulo_menu_lateral">
@@ -29,10 +49,10 @@
                             </div>
                         </div>
                         
-                        <a href="nivel_usuario.php">
+                        <a href="<?= $caminho ?>nivel_usuario.php">
                             <div class="linha">
                                 <div class="img_menu_lateral">
-                                    <img src="imagens/icon_home.png">
+                                    <img src="<?=$caminho?>imagens/icon_home.png">
                                 </div>
                                 <div class="titulo_menu_lateral">
                                     <a>Gerenciamento de nível de usuários</a>
@@ -50,7 +70,7 @@
                             
                             <div class="content_add_nivel">
                                 <div class="img_nivel">
-                                    <img src="imagens/add.png">
+                                    <img src="<?=$caminho?>imagens/add.png">
                                 </div>
                                 
                                 <div class="string_add_nivel">
@@ -62,13 +82,13 @@
                         <div class="content_cadastro_nivel"><!--cadastro de niveis-->
                             
                             <div class="img_cadastro_nivel"><!--imagem-->
-                                <img src="imagens/logo.png">
+                                <img src="<?=$caminho?>imagens/logo.png">
                             </div>
                             
                             <div class="titulo_cadastro_nivel"><!--titulo-->
                                 <a>Cadastro Nível</a>
                             </div>
-                            <form name="frm_nivel" method="post" action="../router.php?controller=nivel&modo=inserir">
+                            <form name="frm_nivel" method="post" action="../router.php?controller=nivel&<?= $action ?>">
                                 <div class="faixa_nivel"><!--input faixa nivel-->
                                 <div class="string_nivel">
                                     <a>Nome:</a>
@@ -104,8 +124,8 @@
                             
                              <?php
                                 // Incluindo a controller e a model para serem utilizadas
-                                include_once('../controller_cms/nivel_controller.php');
-                                include_once('../model_cms/nivel_class.php');
+                                include_once($caminho . '../controller_cms/nivel_controller.php');
+                                include_once($caminho .'../model_cms/nivel_class.php');
 
                                 // Instancio a controller
                                 $controller_nivel  = new controllerNivel();
@@ -122,10 +142,10 @@
                                         <a><?= ($list[$cont]->nome);  ?></a>
                                     </div>
                                     <div class="campo_acoes">
-                                        <a href="../router.php?controller=nivel&modo=buscar_id&codigo=<?php echo($list[$cont]->id_nivel); ?>">
-                                            <img src="imagens/edit.png">
+                                        <a href="<?= $caminho ?>../router.php?controller=nivel&modo=buscar_id&codigo=<?php echo($list[$cont]->id_nivel); ?>">
+                                            <img src="<?=$caminho?>imagens/edit.png">
                                         </a>
-                                        <img src="imagens/shutdown.png">
+                                        <img src="<?=$caminho?>imagens/shutdown.png">
                                     </div>
                                 </div>
                                 <?php 

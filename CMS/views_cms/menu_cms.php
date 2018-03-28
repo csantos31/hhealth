@@ -1,8 +1,14 @@
+<?php 
+if (isset($_GET['controller']))
+    $caminho ="views_cms/";
+else
+    $caminho = "";
+?>
 <div class="suporte_header">
     <div class="header_home_cms"><!--conteudo da home do cms-->
         <div class="content_logo_titulo_cms">
             <div class="logo_cms">
-                <img src="imagens/logo.png">
+                <img src="<?= $caminho ?>imagens/logo.png">
             </div>
 
             <div class="titulo_cms"><!---->
@@ -11,7 +17,7 @@
         </div>
         <div class="content_user">
             <div class="icon_user">
-                <img src="imagens/user.png">
+                <img src="<?= $caminho ?>imagens/user.png">
             </div>
 
             <div class="name_user">
@@ -20,7 +26,7 @@
 
             <div class="content_logout">
                 <a>Logout</a>
-                <img src="imagens/logout.png">
+                <img src="<?= $caminho ?>imagens/logout.png">
             </div>
         </div>
 
