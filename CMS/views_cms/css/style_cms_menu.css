@@ -1,0 +1,93 @@
+/*-------------------HEADER CMS---------------------------*/
+.suporte_header{/*div suporte header*/
+    width:1920px;
+    height:300px;
+    margin:auto;
+    background-color:rgb(176,37,39);
+}
+
+.header_home_cms{/*cabeçalho do cms*/
+    width:1820px;
+    height:300px;
+    margin:auto;
+}
+
+.content_logo_titulo_cms{
+    width:900px;
+    height:150px;
+    padding-top:80px;
+    float:left;
+}
+
+.logo_cms{/*logo do cms*/
+    width:150px;
+    height:150px;
+    float:left;
+}
+
+.logo_cms img{
+    width:150px;
+    height:150px;
+}
+
+.titulo_cms{/*titulo cms*/
+    width:400px;
+    height:50px;
+    margin-top:50px;
+    margin-left:30px;
+    float:left;
+    font-family: sans-serif;
+    font-size:21px;
+    font-weight: bold;
+    color:white;
+}
+
+
+.content_user{/*content user*/
+    width:300px;
+    height:200px;
+    margin-left:500px;
+    padding-top:50px;
+    float:left;
+    
+}
+
+.icon_user{/*imagem usuário cms*/
+    width:100px;
+    height:100px;
+    float:left;
+}
+
+.icon_user img{
+    width:100px;
+    height:100px;
+    
+}
+
+.name_user{/*nome usuário*/
+    width:100px;
+    height:50px;
+    float:left;
+    font-family: sans-serif;
+    font-size:21px;
+    font-weight: bold;
+    color:white;
+}
+
+.content_logout{/*logout cms*/
+    width:100px;
+    height:50px;
+    margin-top:150px;
+    margin-left:150px;
+    font-family: sans-serif;
+    font-weight: bold;
+    color:white;
+    
+}
+
+.content_logout img{
+    width:25px;
+    height:25px;
+    margin-left:10px;
+    margin-top:10px;
+}

@@ -15,16 +15,16 @@
             
             switch($modo){
                     
-                    //verifica as ações a serem executadas pela controller
-                    
-                    case'login':
-                            
-                        //Instancia a classe Usuario
-                        $controller_usuario = new controllerUsuario();
-                    
-                        $controller_usuario->Login();
-                    
-                        break;
+                //verifica as ações a serem executadas pela controller
+
+                case'login':
+
+                    //Instancia a classe Usuario
+                    $controller_usuario = new controllerUsuario();
+
+                    $controller_usuario->Login();
+
+                    break;
             }
             
     }

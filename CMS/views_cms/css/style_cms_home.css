@@ -1,0 +1,87 @@
+/*CSS*/
+
+
+.main{
+    width:100%;
+    min-height: 100%;
+    height:auto;
+    position:absolute;
+    margin:0px;
+    padding:0px;
+}
+
+.content_cms{
+    width:1920px;
+    min-height: 1200px;
+    height:auto;
+    margin:auto;
+    border-radius:10px;
+}
+
+
+
+
+
+/*-------------------CONTEUDO CMS---------------------------*/
+.content_home_cms{/*conteudo do cms*/
+    width:1920px;
+    min-height:900px;
+    height:auto;
+    margin:auto;
+    position:relative;
+}
+
+/*----------Menu Lateral----------*/
+.menu_lateral_cms{/*menu lateral*/
+    width:450px;
+    height:1000px;
+    margin-top:10px;
+    float:left;
+}
+
+.conteudo_home_cms{/*conteudo home*/
+    width:1350px;
+    min-height:500px;
+    height:auto;
+    margin-top:50px;
+    margin-left:50px;
+    border:solid 1px #000000;
+    float:left;
+}
+
+.linha{
+    width:450px;
+    height:100px;
+    background-color:#eaecef;
+    margin-top:10px;
+}
+
+.img_menu_lateral{
+    width:50px;
+    height:50px;
+    margin-left:20px;
+    margin-top:20px;
+    float: left;
+}
+
+.img_menu_lateral img{
+    width:50px;
+    height:50px;
+}
+
+.titulo_menu_lateral{
+    width:300px;
+    height:30px;
+    margin-left:0px;
+    margin-top:40px;
+    float: left;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color:#000000;
+}
+
+
+
+
+
