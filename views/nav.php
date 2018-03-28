@@ -18,7 +18,7 @@
                         <a href="especialidades.php">
                               <li class="item_submenu_nav_hhealth">Especialidades</li>
                         </a>
-                        
+
                         <a  href="ambientes.php" >
                               <li class="item_submenu_nav_hhealth">Ambientes</li>
                         </a>
@@ -51,7 +51,9 @@
                         <a href="fale_conosco.php">
                               <li class="item_submenu_nav_contatos">Fale Conosco</li>
                         </a>
-                        <li class="item_submenu_nav_contatos">Trabalhe Conosco</li>
+                        <a href="trabalhe_conosco.php">
+                          <li class="item_submenu_nav_contatos">Trabalhe Conosco</li>
+                        </a>
                   </ul>
               </li>
           </ul>
