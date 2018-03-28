@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="main">
-      <?php include_once('..nav_paciente.php'); ?>
+      <?php include_once('../include_area_paciente/nav_paciente.php'); ?>
       <div id="content">
         <div id="suporte_titulo">
           <div id="titulo_pagina">
