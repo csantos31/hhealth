@@ -94,49 +94,129 @@
 /*conteudo exames*/
 .conteudo_exames{/*conteudo exames*/
     width:1000px;
-    min-height:800px;
+    min-height:600px;
     height:auto;
     margin:auto;
-    margin-top:50px;
-    background-color:burlywood;
+    margin-top:60px;
 }
 
 .titulo_exame{/*titulo*/
-    width:300px;
+    width:1100px;
     height:30px;
     margin:auto;
-    background-color:brown;
+    padding-top:10px;
+    padding-bottom:10px;
     text-align: center;
     color: black;
     font-weight: bold;
     font-size: 21px;
     font-family: sans-serif;
+    border-top:solid 1px #000000;
+    border-left:solid 1px #000000;
+    border-right:solid 1px #000000;
+    border-bottom:solid 1px #000000;
 }
 
 .content_faixa_exames{/*faixa nome exame-ações */
-    width:1000px;
+    width:1100px;
     height:60px;
-    margin-top:20px;
-    background-color:cadetblue;
+    margin-top:5px;
 }
 
 .content_nome_exames{/*nome exames*/
-    width:800px;
+    width:900px;
     height:35px;
-    background-color:bisque;
     padding-top:15px;
-    text-align: center;
     color: black;
-    font-weight: bold;
     font-size: 18px;
     font-family: sans-serif;
     float:left;
+    border-top:solid 1px #000000;
+    border-left:solid 1px #000000;
+    border-right:solid 1px #000000;
+    border-bottom:solid 1px #000000;
 }
 
 .acoes_exames{
     width:50px;
     height:50px;
     margin-left:20px;
-    background-color:chartreuse;
     float:left;
+
+}
+.acoes_exames img{
+    width:40px;
+    height:40px;
+}
+
+.content_descricao_procedimento{/*content descricao-procedimento*/
+    width:1100px;
+    min-height:600px;
+    height:auto;
+    margin:auto;
+}
+
+/*descricao*/
+.content_descricao{
+    width:1100px;
+    min-height:300px;
+    height:auto;
+}
+
+.titulo_descricao{
+    width:500px;
+    height:40px;
+    margin:auto;
+    padding-top:10px;
+    color: black;
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.conteudo_descricao{
+    width:1000px;
+    min-height:100px;
+    height:auto;
+    margin:auto;
+    margin-top:10px;
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+/*    background-color:#eaecef;*/
+/*    border-radius: 10px;*/
+}
+
+/*procedimento*/
+
+.content_procedimento{
+    width:1100px;
+    min-height:300px;
+    height:auto;
+}
+
+.titulo_procedimento{
+    width:500px;
+    height:40px;
+    margin:auto;
+    padding-top:10px;
+    color: black;
+    text-align: center;
+    font-size: 21px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.conteudo_procedimento{
+    width:1000px;
+    min-height:100px;
+    height:auto;
+    margin:auto;
+    margin-top:10px;
+    color: black;
+    font-size: 18px;
+    font-family: sans-serif;
+    /*background-color:#eaecef;
+    border-radius: 10px;*/
 }
