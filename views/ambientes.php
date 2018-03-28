@@ -90,8 +90,8 @@
                                  </div>
                                  <div class="imagem_grande_ambiente">
                                         <div class="cover3">
-                                            <img src="../imagens/odontologia.jpg" alt="" class="active3"> 
-                                        </div>    
+                                            <img src="../imagens/odontologia.jpg" alt="" class="active3">
+                                        </div>
                                         <div class="thumbs3">
                                            <div class="imagens_pequenas_ambiente">
                                                  <img src="../imagens/odontologia1.jpg" alt="" class="gallery3">

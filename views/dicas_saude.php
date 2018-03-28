@@ -6,6 +6,10 @@
         <link rel="stylesheet" type="text/css" href="../css/style_dicas_saude.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/arc4.js"></script>
+        <script type="text/javascript" src="../js/arc1.js"></script>
+        <script type="text/javascript" src="../js/jquery.cycle.all.js.js"></script>
     </head>
     <body>
       <div class="main"><!--Div Main que segura todas as divs-->
@@ -30,7 +34,19 @@
            </div>
 
            <div id="segura_slider">
-
+             <div id="superior">
+                 <div id="transicao">
+                     <p id="previous">PREV</p>
+                     <div id="galeria">
+                         <ul id="list">
+                             <li><img alt="celular" title="celular" class="image" src="../imagens/5dicas.jpg"></li>
+                             <li><img  alt="elevador" title="elevador" class="image" src="../imagens/cirurgia.jpg"></li>
+                             <li><img alt="suicidio" title="suicidio" class="image" src="../imagens/cirurgia1.jpg"></li>
+                         </ul>
+                     </div>
+                     <p id="next">NEXT</p>
+                 </div>
+             </div>
            </div>
 
            <div class="suporte_imagens_dicas">
