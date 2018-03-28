@@ -1,6 +1,10 @@
 <?php
 
 $action = "modo=inserir";
+$nome = null;
+$descricao = null;
+
+
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
@@ -9,12 +13,12 @@ else
 
 
 /*NIVEL EDIT*/
-if(isset($nivel)){
-    $action = "modo=editar&id=". $nivel->nivel_id; 
+if(isset($niv)){
+    $action = "modo=editar&id=". $niv->id_nivel; 
+    $nome = $niv->nome;
+    $descricao = $niv->descricao;
+    
 }
-
-
-
 
 ?>
 
@@ -88,20 +92,20 @@ if(isset($nivel)){
                             <div class="titulo_cadastro_nivel"><!--titulo-->
                                 <a>Cadastro Nível</a>
                             </div>
-                            <form name="frm_nivel" method="post" action="../router.php?controller=nivel&<?= $action ?>">
+                            <form name="frm_nivel" method="post" action="<?= $caminho ?>../router.php?controller=nivel&<?= $action ?>">
                                 <div class="faixa_nivel"><!--input faixa nivel-->
                                 <div class="string_nivel">
                                     <a>Nome:</a>
                                 </div>
                                 
                                 <div class="input_nivel">
-                                    <input type="text" name="txt_nome" placeholder="Digite o nome do nível">
+                                    <input type="text" name="txt_nome" placeholder="Digite o nome do nível" value="<?= $nome ?>">
                                 </div>
                                 </div>
 
                                 <div class="content_radio_nivel">
                                     <label>Descrição do nível:</label>
-                                    <textarea name="txt_descricao" id="txt_desc"></textarea>
+                                    <textarea name="txt_descricao" id="txt_desc"><?= $descricao ?></textarea>
                                 </div>
 
                                 <div class="submit_cadastrar_nivel">
@@ -145,7 +149,9 @@ if(isset($nivel)){
                                         <a href="<?= $caminho ?>../router.php?controller=nivel&modo=buscar_id&codigo=<?php echo($list[$cont]->id_nivel); ?>">
                                             <img src="<?=$caminho?>imagens/edit.png">
                                         </a>
-                                        <img src="<?=$caminho?>imagens/shutdown.png">
+                                        <a href="<?= $caminho ?>../router.php?controller=nivel&modo=excluir&codigo=<?php echo($list[$cont]->id_nivel); ?>" onclick="return confirm('Tem certeza Marcel?? OLHA A CAAAABRA');">
+                                            <img src="<?=$caminho?>imagens/shutdown.png">
+                                        </a>
                                     </div>
                                 </div>
                                 <?php 

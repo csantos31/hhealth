@@ -36,12 +36,16 @@
 
 				case 'editar':
 				// Instanciando a classe da controller
+					$controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
+					$controller_nivel::Editar();
 					break;
 
 				case 'excluir':
 					// Instanciando a classe da controller
+					$controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
+					$controller_nivel::Excluir();
 					break;
 			}
 

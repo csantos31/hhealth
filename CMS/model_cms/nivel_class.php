@@ -98,13 +98,13 @@
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
+              
                 
-				
 				$nivel = new Nivel();
 
 				$nivel->id_nivel = $rs['id_nivel'];
 				$nivel->nome = $rs['nome'];
-				$nivel->telefone = $rs['descricao'];
+				$nivel->descricao = $rs['descricao'];
 				
 				return $nivel;
 
@@ -116,6 +116,59 @@
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
+        
+        public function Update($nivel){
+			$sql = "UPDATE tbl_nivel_acesso set nome = '".$nivel->nome."', descricao = '".$nivel->descricao. "' WHERE id_nivel =".$nivel->id_nivel;
+		
+
+		      echo $sql;
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				header('location: index.php');
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+		}
+        
+        /*Delete o registro no BD*/
+		public function Delete($nivel_dados){
+
+			$sql = "DELETE FROM tbl_nivel_acesso WHERE id_nivel =". $nivel_dados->id_nivel;
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				header('location: index.php');
+			}else {
+				//Mensagem de erro
+				echo "Error ao deletar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+
+		}
+        
         
     }
 

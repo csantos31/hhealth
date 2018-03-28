@@ -39,6 +39,42 @@
 			require_once('views_cms/nivel_usuario.php');
 		}
         
+        /*Atualiza um registro existente*/
+		public function Editar(){
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idNivel = $_GET['id'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$nivel = new Nivel();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$nivel->id_nivel = $idNivel;
+
+			$nivel->nome = $_POST['txt_nome'];
+			$nivel->descricao = $_POST['txt_descricao'];
+			
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$nivel::Update($nivel);
+			
+		}
+        
+        public function Excluir(){
+
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idNivel = $_GET['codigo'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$nivel = new Nivel();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$nivel->id_nivel = $idNivel;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$nivel::Delete($nivel);
+
+		}
+        
         
     }
 
