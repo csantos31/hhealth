@@ -21,9 +21,6 @@
                 </div>
                 <div class="suporte_content">
                       <div class="content">
-                           <div class="faixa_titulo_da_pagina">
-                                 Unidades
-                           </div>
                            <div class="faixa_busca">
                                  <div class="centraliza_input">
                                        <input type="search" name="" value="" placeholder="Search...">

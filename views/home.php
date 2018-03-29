@@ -61,10 +61,6 @@
                               <div class="faixa_login_home">
                                   <input type="submit" name="btn_entrar" value="Entrar">
                               </div>
-
-                              <div class="faixa_login_home">
-                                  <span>Ou</span>
-                              </div>
                               <div class="faixa_login_home">
                                   <span>Cadastre-se</span>
                               </div>
@@ -106,7 +102,7 @@
                           </div>
 
                           <div class="content_btn_faixa_2_home">
-                              <p>Ver todos os ambiente do hospital</p>
+                              <a href="ambiente_hhealth.php">Ver todos os ambiente do hospital</a>
                           </div>
                       </div>
 

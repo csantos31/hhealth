@@ -24,13 +24,6 @@
          <div id="content_main">
            <!-- titulo da página -->
            <div id="suporte_titulo">
-             <div id="titulo_pagina">
-               <strong>Dicas</strong>
-             </div>
-           </div>
-           <!-- Faixa branca embaixo do menu -->
-           <div class="faixa_branca">
-
            </div>
 
            <div id="segura_slider">

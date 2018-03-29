@@ -1,13 +1,12 @@
-/*
-  Autor: Gleyver Coutinho Castro
-  Data de alteração: 18/03/2018
-  Obs: Página de estilizaçõa do fale conosco da empresa Hhealth
-*/
-
-/* Altera todas as tags */
 *{
   padding: 0px;
-  margin: 0px auto;
+  margin: 0px;
+}
+
+.main{
+    width:100%;
+    height:auto;
+    margin:auto;
 }
 
 .div_suporte_conteudo{
@@ -15,194 +14,376 @@
       height: 210px;
 }
 
-footer{
-  width: 100%;
-  height: 299px;
-  position: relative;
-  background-color: white;
+.suporte_content{
+      width: 100%;
+      min-height:1200px;
+      height:auto;
+      background-color: white;
 }
 
-.footer{
-  width: 100%;
-  height: 299px;
-  position: relative;
-  background-color: white;
+.content{
+    width:1200px;
+    height:1270px;
+    margin:auto;
+    padding-top: 20px;
+}
 
+.faixa_titulo_da_pagina{
+      width: 100%;
+      height: 30px;
+      font-family: sans-serif;
+      text-align: center;
+      line-height: 70px;
+      font-weight: bold;
+      font-size: 24px;
+}
+
+.faixa1{
+      width: 100%;
+      height: 580px;
+}
+
+.formtrabalheconosco{
+      width: 100%;
+      height: 650px;
+      float: left;
+}
+
+.form_trabalheconosco{
+      width: 90%;
+      height: 1070px;
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 7px;
+      border: solid 1px;
+      padding: 20px;
+      font-family: sans-serif;
+      font-weight: bold;
+}
+
+.linha1{
+      width: 100%;
+      height: 30px;
+}
+
+.txt_nome{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha1 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha2{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_email{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha2 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha3{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_telefone{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha3 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha4{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_celular{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha4 input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linha_data{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txtdtNasc{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.txtdataNasc{
+      height: 25px;
+      float: left;
+}
+
+.linha_sexo{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+      line-height: 30px;
+}
+
+.txtsexo{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha_sexo input{
+      margin-left: 10px;
+}
+
+.linhapais{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_pais{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltpais{
+      height: 25px;
+      float: left;
+}
+
+.linhaestadoCivil{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_estadoCivil{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltestadoCivil{
+      height: 25px;
+      float: left;
+}
+
+.linhacep{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_cep{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linhacep input{
+      width: 25%;
+      height: 25px;
+      float: left;
+}
+
+.linhaendereco{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_endereco{
+      width: 25%;
+      height: 25px;
+      float: left;
+}
+
+.linhaendereco input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linhabairro{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_bairro{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.linhabairro input{
+      width: 50%;
+      height: 25px;
+      float: left;
+}
+
+.linhacidade{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_cidade{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltpsltcidadeais{
+      height: 25px;
+      float: left;
+}
+
+.linhaestado{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_estado{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltestado{
+      height: 25px;
+      float: left;
 }
 
 
-/* Segura todo conteúdo da página */
-#content{
-  width: 1200px;
-  min-height: 1600px;
-  height: auto;
-  background-color: #DCDCDC;
-  border: 3px solid #C2C2C2;
-  margin: auto;
+
+
+.linhastatusTrabalho{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
 }
 
-/*-------------------------- Titulo da página ----------------------------*/
-#content_titulo{
-  width: 100%;
-  height: 100px;
-  background-color:	#B22222;
+.txt_statusTrabalho{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
 }
 
-#titulo{
-  width: 340px;
-  height: 100px;
-  margin: auto;
-}
-
-#alinha_titulo{
-  width: 340px;
-  height: 30px;
-  padding-top: 40px;
-  font-size: 32px;
-  color: #FFF;
-}
-
-/*----------------------- Figura do fale conosco -------------------------*/
-#cabecalho_fale_conosco{
-  height: 450px;
-  width: 100%;
-  background-color: #D3D3D3;
-  margin-top: 10px;
-}
-
-#img_fale_conosco{
-  height: 450px;
-  width: 100%;
-}
-
-/*---------------------------- Formulário ---------------------------------*/
-#suporte_form{
-  height: 1450px;
-  width: 98%;
-  border: 1px solid #000;
-  border-radius: 10px;
-  margin-top: 30px;
-  margin-left: 12px;
-}
-
-.suporte_linhas{
-  height: 40px;
-  width: 100%;
-  margin-top: 10px;
-}
-
-.titulos_formulario{
-  height: 37px;
-  width: 250px;
-  background-color: #8B0000;
-  float: left;
-  /* border-radius: 10px; */
-}
-
-.titulos_formulario:hover{
-  background-color: #800000;
-}
-
-.alinhamento_nome_form{
-  height: 30px;
-  width: 35%;
-  font-size: 18px;
-  color: #FFF;
-  font-weight: bold;
-  padding-top: 7px;
-  padding-left: 15%;
-}
-
-.alinhamento_data_form{
-  height: 30px;
-  width: 100%;
-  font-size: 16px;
-  color: #FFF;
-  font-weight: bold;
-  padding-top: 7px;
-  padding-left: 2%;
-}
-
-.alinhamento_data_nascimento_form{
-  height: 30px;
-  width: 70%;
-  font-size: 16px;
-  color: #FFF;
-  font-weight: bold;
-  padding-top: 7px;
-  padding-left: 30%;
-}
-
-/*------------------------- Caixa de textos Formulário e SELECT --------------------------*/
-.suporte_caixa_texto{
-  height: 37px;
-  width: 876px;
-  /* background-color: #ccc; */
-  float: left;
-  margin-left: 5px;
-}
-
-.caixa_texto{
-  height: 35px;
-  width: 100%;
-  font-size: 18px;
-}
-
-.caixa_texto_numero_dd{
-  height: 35px;
-  width: 30px;
-  font-size: 18px;
-}
-
-.caixa_texto_numero_telefone{
-  height: 35px;
-  width: 290px;
-  font-size: 18px;
-}
-
-#slct_assunto{
-  width: 331px;
-  height: 35px;
-}
-
-.suporte_linhas_botao{
-  height: 40px;
-  width: 96%;
-  margin-top: 10px;
-  /* background-color: #ccc; */
-  float: left;
-
-}
-
-#suporte_submit{
-  height: 39px;
-  width: 186px;
-  float: right;
-}
-
-#btn_enviar{
-  height: 39px;
-  width: 186px;
-
+.sltstatusTrabalho{
+      height: 25px;
+      float: left;
 }
 
 
-#slct_assunto{
-  width: 331px;
-  height: 35px;
+
+.linhastatusDeficiencia{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
 }
 
-.suporte_caixa_texto_mensagem{
-  width: 876px;
-  height: 322px;
-  /* background-color: #ccc; */
-  float: left;
-  margin-left: 5px;
+.txt_statusDeficiencia{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
 }
 
-#text_area{
-  height: 322px;
-  width: 876px;
-  resize: none;
-  font-size: 18px;
+.sltstatusDeficiencia{
+      height: 25px;
+      float: left;
+}
+
+
+
+.linhastatusRegistroProfissional{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.txt_statusRegistroProfissional{
+      width: 25%;
+      height: 30px;
+      line-height: 30px;
+      float: left;
+}
+
+.sltstatusRegistroProfissional{
+      height: 25px;
+      float: left;
+}
+
+.linharesumoQualificacoes{
+      width: 100%;
+      height: 230px;
+      margin-top: 20px;
+}
+
+.txt_resumoQualificacoes{
+      width: 25%;
+      height: 300px;
+      line-height: 30px;
+      float: left;
+}
+
+.linha7{
+      width: 100%;
+      height: 30px;
+      margin-top: 20px;
+}
+
+.linha7 input{
+      /*border-radius: 4px;*/
+      border-top-right-radius: 4px;
+      width: 50px;
+      height: 25px;
+      float: right;
 }

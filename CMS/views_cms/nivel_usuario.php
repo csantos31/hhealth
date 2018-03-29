@@ -1,9 +1,5 @@
 <?php
 
-require('../verifica.php');
-
-
-
 
 $action = "modo=inserir";
 $nome = null;

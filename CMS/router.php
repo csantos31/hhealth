@@ -32,7 +32,7 @@
                     $controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
 					$controller_nivel::Buscar();
-					require_once('views_cms/tipo_quarto.php');
+					require_once('views_cms/nivel_usuario.php');
                     
 					break;
 

@@ -21,9 +21,6 @@
                 </div>
                 <div class="suporte_content">
                       <div class="content">
-                           <div class="faixa_titulo_da_pagina">
-                                 Ambientes do nosso Hospital
-                           </div>
                            <div class="suporte_ambiente">
                                  <div class="titulo_ambiente">
                                        Maternidade
