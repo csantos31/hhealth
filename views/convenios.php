@@ -128,11 +128,16 @@
                             <div class="titulo_descricao">
                                 <a>Convenio</a>
                             </div>
+                            <div class="suporte_conteudo_descricao">
+                                  <div class="suporte_img_descricao">
+                                        <img src="../imagens/convenio_amil.jpg" alt="">
+                                  </div>
+                                  <div class="conteudo_descricao">
+                                      Revascularização miocárdica - pontes de safena: A cirurgia de pontes de safena é a cirurgia mais frequentemente realizada no IC-FUC. As artérias coronárias podem ficar obstruídas por placas de gordura que se formam em suas paredes. As pontes de safena passam por sobre estas obstruções, restabelecendo o fluxo de sangue nas áreas atingidas pela obstrução. A cirurgia envolve a sutura (costura) de uma veia (retirada da perna, ou de uma artéria retirada do tórax ou de outra parte do corpo) na aorta e distalmente a lesão obstrutiva da artéria, formando uma ponte que leva o sangue oxigenado ao músculo cardíaco.
 
-                            <div class="conteudo_descricao">
-                                Revascularização miocárdica - pontes de safena: A cirurgia de pontes de safena é a cirurgia mais frequentemente realizada no IC-FUC. As artérias coronárias podem ficar obstruídas por placas de gordura que se formam em suas paredes. As pontes de safena passam por sobre estas obstruções, restabelecendo o fluxo de sangue nas áreas atingidas pela obstrução. A cirurgia envolve a sutura (costura) de uma veia (retirada da perna, ou de uma artéria retirada do tórax ou de outra parte do corpo) na aorta e distalmente a lesão obstrutiva da artéria, formando uma ponte que leva o sangue oxigenado ao músculo cardíaco.
-
+                                  </div>
                             </div>
+
                         </div>
 
 
