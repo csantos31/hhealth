@@ -164,7 +164,7 @@
                                                    <div class="txt_resumoQualificacoes">
                                                          Resumo dasQualificacoes:
                                                    </div>
-                                                   <textarea  style="resize: none" name="textarearesumoQualificacoes" rows="15" cols="75"></textarea>
+                                                   <textarea class="textarea"  style="resize: none" name="textarearesumoQualificacoes"></textarea>
                                              </div>
                                              <div class="linha7">
                                                    <input type="submit" name="Enviar" value="Enviar">

@@ -18,6 +18,40 @@
 
                 </div>
                 <div class="suporte_content">
+                      <div class="content_chat">
+                           <div class="faixa_titulo_chat">
+                                 HHealth
+                           </div>
+                           <div class="content_txt_chat">
+                                 <div class="texto1">
+                                       Oi
+                                 </div>
+                                 <div class="texto2">
+                                       Olá. Em que posso ajudar?
+                                 </div>
+                                 <div class="texto1">
+                                       Eu gostaria de tirar uma dúvida
+                                 </div>
+                                 <div class="texto2">
+                                       Sim, pode falar
+                                 </div>
+                                 <div class="texto1">
+                                       Qual o horário de atendimento do pronto socorro?
+                                 </div>
+                                 <div class="texto2">
+                                       O proto socorro do HHealth funciona 24H por dia
+                                 </div>
+                                 <div class="texto1">
+                                       Muito brigado pela informação!
+                                 </div>
+                           </div>
+                           <div class="faixa_enviar_chat">
+                                 <input type="text" name="txt_digitado_pelo_paciente" value="">
+                                 <div class="botao_enviar_chat">
+                                       Enviar
+                                 </div>
+                           </div>
+                      </div>
                       <div class="content">
                            <div class="faixa_titulo_da_pagina">
                                  Fale Conosco
@@ -68,7 +102,7 @@
                                                    <div class="txt_mensagem">
                                                          Mensagem:
                                                    </div>
-                                                   <textarea  style="resize: none" name="textareaMensagem" rows="15" cols="75"></textarea>
+                                                   <textarea class="textarea"  style="resize: none;" name="textareaMensagem" ></textarea>
                                              </div>
                                              <div class="linha7">
                                                    <input type="submit" name="Enviar" value="Enviar">
@@ -77,40 +111,7 @@
                                  </div>
                            </div>
                       </div>
-                      <div class="content_chat">
-                           <div class="faixa_titulo_chat">
-                                 HHealth
-                           </div>
-                           <div class="content_txt_chat">
-                                 <div class="texto1">
-                                       Oi
-                                 </div>
-                                 <div class="texto2">
-                                       Olá. Em que posso ajudar?
-                                 </div>
-                                 <div class="texto1">
-                                       Eu gostaria de tirar uma dúvida
-                                 </div>
-                                 <div class="texto2">
-                                       Sim, pode falar
-                                 </div>
-                                 <div class="texto1">
-                                       Qual o horário de atendimento do pronto socorro?
-                                 </div>
-                                 <div class="texto2">
-                                       O proto socorro do HHealth funciona 24H por dia
-                                 </div>
-                                 <div class="texto1">
-                                       Muito brigado pela informação!
-                                 </div>
-                           </div>
-                           <div class="faixa_enviar_chat">
-                                 <input type="text" name="txt_digitado_pelo_paciente" value="">
-                                 <div class="botao_enviar_chat">
-                                       Enviar
-                                 </div>
-                           </div>
-                      </div>
+
 
                 </div>
 

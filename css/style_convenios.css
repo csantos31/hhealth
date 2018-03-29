@@ -164,11 +164,24 @@
     font-family: sans-serif;
 }
 
+.suporte_conteudo_descricao{
+      width: 90%;
+      height: 200px;
+      margin: auto;
+}
+
+.suporte_img_descricao{
+      width: 25%;
+      height: 200px;
+      float: left;
+}
+
 .conteudo_descricao{
-    width:1000px;
+    width:68%;
     min-height:100px;
     height:auto;
     margin:auto;
+    float: right;
     margin-top:10px;
     color: black;
     font-size: 18px;
