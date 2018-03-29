@@ -3,13 +3,14 @@
     $action = "modo=inserir";
     $nivel = null;
     $descricao = null;
-
-
+    
 
     if (isset($_GET['controller']))
         $caminho ="views_cms/";
     else
         $caminho = "";
+
+    include($caminho.'../verifica.php');
 
 
     /*NIVEL EDIT*/

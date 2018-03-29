@@ -1,6 +1,6 @@
 <?php 
 
-      require('../verifica.php');
+      require($caminho.'../verifica.php');
 
 ?>
 

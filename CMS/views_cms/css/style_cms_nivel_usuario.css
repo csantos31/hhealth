@@ -3,7 +3,7 @@
 
 /*titulo nivel*/
 .content_titulo_nivel{
-    width:1350px;
+    width:100%;
     height:100px;
     margin-top:20px;
 }
@@ -51,8 +51,9 @@
 /*cadastro nivel*/
 
 .content_cadastro_nivel{/*content cadastro*/
-    width:800px;
-    height:500px;
+    width:60%;
+    min-height:500px;
+    height: auto;
     margin:auto;
     padding-bottom:30px;
     border-radius:10px;
@@ -73,10 +74,10 @@
 }
 
 .titulo_cadastro_nivel{
-    width:800px;
+    width:100%;
     height:30px;
     margin:auto;
-    margin-top:10px;
+    margin-top:50px;
     font-family: sans-serif;
     font-size:21px;
     font-weight: bold;
@@ -85,7 +86,7 @@
 }
 
 .faixa_nivel{/*faixa nivel*/
-    width:800px;
+    width:100%;
     height:40px;
     margin-top:20px;
 }
@@ -102,7 +103,7 @@
 }
 
 .input_nivel [type=text]{
-    width:500px;
+    width:50%;
     height:30px;
     margin-left:10px;
     border-top:solid 1px #65097c;
@@ -112,7 +113,7 @@
 }
 
 .content_radio_nivel{
-    width:500px;
+    width:50%;
     min-height: 200px;
     height:auto;
     margin:auto;
@@ -126,7 +127,7 @@
     font-size:18px;
     color:#000000;
     text-align: center;
-    margin-left:600px;
+    margin-left:70%;
     border-radius:10px;
     background-color:#cc45ef;
 }
@@ -137,10 +138,11 @@
 
 
 .tabela_nivel_usuario{
-    width:1050px;
+    width:85%;
     min-height:500px;
     height:auto;
-    margin:auto;
+    margin-left:auto;
+    margin-right: auto;
     margin-top:30px;
     
 }
@@ -226,7 +228,7 @@
 }
 
 #txt_desc{
-    width: 450px;
+    width: 90%;
     height: 70px;
     border: solid 1px #ccc;
     resize: none;

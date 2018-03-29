@@ -13,6 +13,10 @@ else
     $caminho = "";
 
 
+include($caminho.'../verifica.php');
+
+
+
 /*NIVEL EDIT*/
 if(isset($niv)){
     $action = "modo=editar&id=". $niv->id_nivel; 

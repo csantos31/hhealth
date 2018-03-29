@@ -1,19 +1,19 @@
 /*-------------------HEADER CMS---------------------------*/
 .suporte_header{/*div suporte header*/
-    width:1920px;
+    width:100%;
     height:300px;
     margin:auto;
     background-color:rgb(176,37,39);
 }
 
 .header_home_cms{/*cabeçalho do cms*/
-    width:1820px;
+    width:1200px;
     height:300px;
     margin:auto;
 }
 
 .content_logo_titulo_cms{
-    width:900px;
+    width:400px;
     height:150px;
     padding-top:80px;
     float:left;
@@ -31,7 +31,7 @@
 }
 
 .titulo_cms{/*titulo cms*/
-    width:400px;
+    width:200px;
     height:50px;
     margin-top:50px;
     margin-left:30px;
@@ -46,7 +46,7 @@
 .content_user{/*content user*/
     width:300px;
     height:200px;
-    margin-left:500px;
+    margin-left:40%;
     padding-top:50px;
     float:left;
 
