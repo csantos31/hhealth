@@ -39,6 +39,7 @@
                            <div class="faixa2">
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
+                                             <img src="../imagens/missao.png" alt="">
                                              Missão
                                        </div>
                                  </div>
@@ -66,6 +67,7 @@
                                  </div>
                                  <div class="suporte_img_faixa3">
                                        <div class="circulo_img_faixa3">
+                                             <img src="../imagens/visao.png" alt="">
                                              Missão
                                        </div>
                                  </div>
@@ -73,6 +75,7 @@
                            <div class="faixa4">
                                  <div class="suporte_img_faixa4">
                                        <div class="circulo_img_faixa4">
+                                             <img src="../imagens/valor.png" alt="">
                                              Missão
                                        </div>
                                  </div>

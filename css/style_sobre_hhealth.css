@@ -67,7 +67,6 @@
 .circulo_img_faixa2{
       width: 280px;
       height: 280px;
-      background-color: green;
       margin-left: 10px;
       margin-top: 10px;
       border-radius: 50%;
@@ -114,7 +113,6 @@
 .circulo_img_faixa3{
       width: 280px;
       height: 280px;
-      background-color: #A89C21;
       margin-left: 10px;
       margin-top: 10px;
       border-radius: 50%;
@@ -162,7 +160,6 @@
 .circulo_img_faixa4{
       width: 280px;
       height: 280px;
-      background-color: red;
       margin-left: 10px;
       margin-top: 10px;
       border-radius: 50%;
