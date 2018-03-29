@@ -84,6 +84,7 @@
 
             </div>
             
+            <!--***********************SLIDE***********************-->
             <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px">
               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;" >
               <img class="mySlides" src="imagens/hospital-teste.jpg" alt="" style="width:100%;height:600px;">
@@ -100,7 +101,7 @@
             <script type="text/javascript" src="js/slide_home.js"></script>
             
             
-            <!--SLIDE FICAVA AKI-->
+            
             <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
               <div id="menu_de_acesso_rapido">
                   <div class="item_menu_de_acesso_rapido">
@@ -151,13 +152,40 @@
 
                           </div>
 
-                          <div class="slider_faixa1"><!--slider-->
-                              <div class="faixa1_img_slide_home">
-                              </div>
-
-                              <div class="faixa1_img_slide_home">
-                              </div>
+                          
+                            <!--SLIDER FICA AKI-->
+                          <div id="content">
+                            <div id="carrossel">
+                                <ul>
+                                    <li>
+                                        <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                    </li>
+                                    <li>
+                                        <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                    </li>
+                                    <li>
+                                        <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                    </li>
+                                    <li>
+                                        <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                    </li>
+                                    <li>
+                                        <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                            
+                            <nav id="menu-carrossel">
+                                <a href="#" class="prev" title="Anterior">Anterior</a>
+                                <a href="#" class="next" title="Próximo">Próximo</a>
+                            </nav>
+                            
                           </div>
+                            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+                            <script type="text/javascript" src="js/jcarousellite.js"></script>
+                            <script type="text/javascript" src="js/carrossel.js"></script>
+
                       </div>
 
                       <div class="faixa_2_content_home"><!--faixa2-->

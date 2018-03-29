@@ -162,16 +162,43 @@ body{
     margin-left: 2%;
 }
 
-.faixa1_img_slide_home{
+#content {
+	margin: 0 auto;
+	width: 850px;
+	height:400px;
+    float:left;
+    margin-left: 2%;
+}
+
+#carrossel {
+	float: left;
+	width: 850px;
+	overflow: hidden;
+	height: 300px;
+}
+
+#carrossel ul li {
+	width: 400px;
+	height: 300px;
+	float: left;
+	margin: 0 5px;
+}
+
+#carrossel ul li img{
     width:400px;
     height:300px;
-    background-image: url(../imagens/saude-bucal.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    margin-left:15px;
-    margin-top:40px;
-    float:left;
 }
+
+#menu-carrossel {
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+    margin-bottom:50px;
+    
+}
+
+
 
 /*--------faixa 2------*/
 
