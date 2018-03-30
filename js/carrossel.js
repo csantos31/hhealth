@@ -1,7 +1,10 @@
+
+
 $(function() {
-    $("#carrossel"). jCarouselLite({
+    $(".carrossel"). jCarouselLite({
         btnPrev: '.prev', 
         btnNext: '.next',
         visible: 2
     })
-})
+});
+

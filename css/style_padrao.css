@@ -41,13 +41,13 @@ body{
 
 
 .w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle{
-    
+
     height:53px;width:53px;padding:0
 }
 
 .mySlides {display:none}
 .w3-left, .w3-right, .w3-badge {cursor:pointer;margin-left:20px;}
-.w3-badge {height:25px;width:25px;padding:0;}  
+.w3-badge {height:25px;width:25px;padding:0;}
 
 /*----MENU ACESSO RÁPIDO----*/
 #suporte_menu_de_acesso_rapido{
@@ -155,38 +155,33 @@ body{
 }
 
 
-.slider_faixa1{/*---slider---*/
-    width:850px;
-    height:400px;
-    float:left;
-    margin-left: 2%;
-}
-
-#content {
+/*---slider---*/
+.content_carrossel {
 	margin: 0 auto;
 	width: 850px;
 	height:400px;
     float:left;
-    margin-left: 2%;
+    margin: auto;
 }
 
-#carrossel {
+.carrossel {
 	float: left;
-	width: 850px;
+	width: 750px;
 	overflow: hidden;
 	height: 300px;
+
 }
 
-#carrossel ul li {
-	width: 400px;
+.carrossel ul li {
+	width: 360px;
 	height: 300px;
 	float: left;
-	margin: 0 5px;
+	margin-left: 15px;
 }
 
-#carrossel ul li img{
-    width:400px;
-    height:300px;
+.carrossel ul li img{
+    width:100%;
+    height:100%;
 }
 
 #menu-carrossel {
@@ -195,11 +190,24 @@ body{
 	width: 100%;
 	text-align: center;
     margin-bottom:50px;
-    
+
 }
 
+.passar_carrossel{
+    width: 50px;
+    height: 300px;
+    float: left;
+    padding-top: 120px;
+    
+    
+  
+}
 
-
+.passar_carrossel a img{
+    width:30px;
+    height:30px;
+    margin-left:10px;
+}
 /*--------faixa 2------*/
 
 /*faixa*/

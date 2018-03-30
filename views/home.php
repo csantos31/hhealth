@@ -88,8 +88,12 @@
 
 
                               <!--SLIDER FICA AKI-->
-                            <div id="content">
-                              <div id="carrossel">
+                            <div class="content_carrossel">
+                              <div class="passar_carrossel">
+                                <a href="#" class="prev" title="Anterior"><img src="imagens/icons/seta-voltar.png" alt="Voltar"></a>
+
+                              </div>
+                              <div class="carrossel">
                                   <ul>
                                       <li>
                                           <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
@@ -110,10 +114,12 @@
 
                               </div>
 
-                              <nav id="menu-carrossel">
-                                  <a href="#" class="prev" title="Anterior">Anterior</a>
-                                  <a href="#" class="next" title="Próximo">Próximo</a>
-                              </nav>
+                              <div class="passar_carrossel">
+                                <a href="#" class="next" title="Próximo"><img src="imagens/icons/seta-avancar.png" alt="Avançar"></a>
+
+                              </div>
+
+
 
                             </div>
                               <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -152,20 +158,22 @@
                             </div>
                         </div>
 
-                        <div class="faixa_3_content_home">
-                            <div class="content_faixa_3_unidades_home">
-                                <div class="img_faixa_3_home">
+                        <div class="faixa_3_content_home"><!--Slider-->
+                            <div class="carrossel_local">
+                                <div class="content_faixa_3_unidades_home">
+                                    <div class="img_faixa_3_home">
+                                    </div>
+
+                                    <div class="descricao_faixa_3_home">
+                                    </div>
                                 </div>
 
-                                <div class="descricao_faixa_3_home">
-                                </div>
-                            </div>
+                                <div class="content_faixa_3_unidades_home">
+                                    <div class="img_faixa_3_home">
+                                    </div>
 
-                            <div class="content_faixa_3_unidades_home">
-                                <div class="img_faixa_3_home">
-                                </div>
-
-                                <div class="descricao_faixa_3_home">
+                                    <div class="descricao_faixa_3_home">
+                                    </div>
                                 </div>
                             </div>
                         </div>
