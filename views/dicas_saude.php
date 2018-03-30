@@ -13,11 +13,8 @@
     </head>
     <body>
       <div class="main"><!--Div Main que segura todas as divs-->
-         <div class="suporte_menu">
-               <div class="menu"><!--**MENU**-->
-                  <?php require_once('nav.php'); ?>
-              </div>
-         </div>
+            <!-- Esse require adiciona o menu na página -->
+            <?php require_once('nav.php'); ?>
          <div class="div_suporte_conteudo">
 
          </div>
@@ -153,6 +150,7 @@
                </div>
             </div>
           </div>
+          <!-- Esse require adiciona o menu na página -->
           <?php require_once('footer.php'); ?>
         </div>
     </body>

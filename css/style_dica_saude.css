@@ -13,16 +13,15 @@
 
 #main{
   width: 100%;
-  min-height: 2600px;
   height: auto;
 }
 
 
 #content_main{
   width: 1200px;
-  min-height: 2300px;
+  min-height: 2100px;
   height: auto;
-  background-color:	#F8F8FF;
+  background-color: #F8F8FF;
   margin: auto;
 }
 

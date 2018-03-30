@@ -15,11 +15,8 @@
   </head>
   <body>
     <div class="main"><!--Div Main que segura todas as divs-->
-     <div class="suporte_menu">
-           <div class="menu"><!--**MENU**-->
-              <?php require_once('nav.php'); ?>
-          </div>
-     </div>
+          <!-- Esse require adiciona o menu na página -->
+         <?php require_once('nav.php'); ?>
      <div class="div_suporte_conteudo">
 
      </div>
@@ -179,8 +176,9 @@
        <!-- <div id="mapa_unidade">
          <img src="../imagens/google-maps.jpg" alt="" id="imagem_unidade">
        </div> -->
-       <?php include_once('footer.php') ?>
-    
+       <!-- Esse require adiciona o rodapé na página -->
+       <?php require_once('footer.php'); ?>
+
     </div>
   </body>
 </html>

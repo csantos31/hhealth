@@ -85,7 +85,7 @@ a{
 
 .suporte_unidade{
       width: 100%;
-      height: 396px;
+      height: 426px;
       margin-top: 40px;
       padding-left: 38px;
       padding-right: 38px;
@@ -129,12 +129,4 @@ a{
 .mapa_da_unidade img{
       width: 100%;
       height: 357px;
-}
-
-.footer{
-      width: 100%;
-      height: 299px;
-      position: relative;
-      background-color: white;
-      padding-top: 35px;
 }

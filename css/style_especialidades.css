@@ -16,21 +16,6 @@ a{
   color: #000;
 }
 
-/*---menu---*/
-
-.suporte_menu{
-      width: 100%;
-      height: 211px;
-      position: fixed;
-      background-color: white;
-}
-
-.menu{
-      width: 100%;
-      height: 170px;
-      background-color: rgb(176, 37, 39);
-}
-
 .div_suporte_conteudo{
       width: 100%;
       height: 211px;
@@ -39,8 +24,8 @@ a{
 
 .content{
       width: 1200px;
+      min-height: 2300px;
       height: auto;
-      background-color: aquamarine;
       margin: auto;
 
 }
@@ -81,11 +66,4 @@ a{
       line-height: 85px;
       font-weight: bold;
       font-size: 22px;
-}
-
-.footer{
-      width: 100%;
-      height: 264px;
-      margin: auto;
-      float: left;
 }

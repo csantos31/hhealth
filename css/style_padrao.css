@@ -198,9 +198,9 @@ body{
     height: 300px;
     float: left;
     padding-top: 120px;
-    
-    
-  
+
+
+
 }
 
 .passar_carrossel a img{
@@ -269,8 +269,7 @@ body{
 /*faixa*/
 .faixa_3_content_home{
     width:1200px;
-    height:300px;
-    background-color:darkgray;
+    height:320px;
 }
 
 /*content unidades*/
@@ -297,12 +296,4 @@ body{
     height:150px ;
     background-color:aqua;
     float:left;
-}
-
-.footer{
-      width: 100%;
-      height: 299px;
-      position: relative;
-      background-color: white;
-      padding-top: 35px;
 }

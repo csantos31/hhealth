@@ -11,11 +11,8 @@
       </head>
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->
-                 <div class="suporte_menu">
-                       <div class="menu"><!--**MENU**-->
-                          <?php require_once('nav.php'); ?>
-                      </div>
-                 </div>
+                  <!-- Esse require adiciona o menu na página -->
+                  <?php require_once('nav.php'); ?>
                 <div class="div_suporte_conteudo">
 
                 </div>
@@ -54,45 +51,41 @@
                                         </div>
                                  </div>
                            </div>
-						  <div class="caixa_centro">
-							<div class="faixa_titulo" >
-								Tipo
-							</div>
-							<div class="linha">
+					  <div class="caixa_centro">
+						<div class="faixa_titulo" >
+							Tipo
+						</div>
+						<div class="linha">
 
-      						</div>
-							<div class="tipo">
-								Luxo
-      						</div>
-							<div class="faixa_titulo" >
-								Especificações do quarto
-							</div>
-							<div class="linha">
+						</div>
+						<div class="tipo">
+							Luxo
+						</div>
+						<div class="faixa_titulo" >
+							Especificações do quarto
+						</div>
+						<div class="linha">
 
-      						</div>
-							<div class="lista_especificacoes">
-								<ul>
-									<li>2 cadeiras</li>
-									<li>1 cama paciente</li>
-									<li>1 banheiro</li>
-									<li>1 cama acompanhante</li>
-									<li>1 quadro</li>
-									<li>1 sofá</li>
-									<li>1 mesa de centro</li>
-									<li>1 comôda de roupa</li>
-									<li>1 mesa de refeição</li>
-									<li>4 cadeiras</li>
-								</ul>
-      						</div>
-						  </div>
+						</div>
+						<div class="lista_especificacoes">
+							<ul>
+								<li>2 cadeiras</li>
+								<li>1 cama paciente</li>
+								<li>1 banheiro</li>
+								<li>1 cama acompanhante</li>
+								<li>1 quadro</li>
+								<li>1 sofá</li>
+								<li>1 mesa de centro</li>
+								<li>1 comôda de roupa</li>
+								<li>1 mesa de refeição</li>
+								<li>4 cadeiras</li>
+							</ul>
+						</div>
+					  </div>
                       </div>
-
-                      <footer><!--**FOOTER**-->
-                            <div class="footer">
-                                  <?php require_once('footer.php'); ?>
-                            </div>
-                      </footer>
                 </div>
+                <!-- Esse require adiciona o rodapé na página -->
+                <?php require_once('footer.php'); ?>
             </div>
 
       </body>
