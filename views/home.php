@@ -37,61 +37,19 @@
 
 
              <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
-               <div id="menu_de_acesso_rapido">
-                    <div class="item_menu_de_acesso_rapido">
-                    </div>
-
-                    <div class="item_menu_de_acesso_rapido">
-                    </div>
-
-                    <div class="item_menu_de_acesso_rapido">
-                    </div>
-
-                    <div class="item_menu_de_acesso_rapido">
-                    </div>
-
-                    <div class="item_menu_de_acesso_rapido">
-                    </div>
-               </div>
+                <div id="menu_de_acesso_rapido">
+                  <div class="typewriter">
+                      <h1>Onde você estiver, HHEalth cuidará de você!.</h1>
+                  </div>
+              </div>
              </div>
              <div class="suporte_content">
                     <div class="content"><!--**CONTENT**-->
                         <div class="faixa_1_content_home"><!--faixa1-->
-                            <div class="content_login_usuario_home"><!--login-->
-                                <form name="frm_login" method="post" action="router.php">
-                                    <div class="faixa_login_home">
-                                        <a>Login</a><br>
-                                        <input name="txt_login" type="text" value="" placeholder="Email Adress">
-                                    </div>
-
-                                    <div class="faixa_login_home">
-                                        <a>Senha</a><br>
-                                        <input name="txt_senha" type="password" value="" placeholder="********">
-                                    </div>
-
-                                    <div class="faixa_login_home">
-                                        <p>Esqueci minha senha?</p>
-                                    </div>
-
-                                    <div class="faixa_login_home">
-                                        <input type="submit" name="btn_entrar" value="Entrar">
-                                    </div>
-                                </form>
-                                <div class="faixa_login_home">
-                                    <span>Ou</span>
-                                </div>
-                                <div class="faixa_login_home">
-                                    <span>Cadastre-se</span>
-                                </div>
-
-                            </div>
-
-
                               <!--SLIDER FICA AKI-->
                             <div class="content_carrossel">
                               <div class="passar_carrossel">
                                 <a href="#" class="prev" title="Anterior"><img src="imagens/icons/seta-voltar.png" alt="Voltar"></a>
-
                               </div>
                               <div class="carrossel">
                                   <ul>

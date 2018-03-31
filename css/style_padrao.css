@@ -8,52 +8,82 @@ body{
     height:auto;
     position:relative;
     margin:auto;
+    display: block;
 }
 
 .div_suporte_conteudo{
       width: 100%;
-      height: 210px;
 }
 
-/*-----SLIDER-----*/
-/*.w3-content w3-display-container{*/
-/*    max-width:800px;*/
-/*    margin:auto;*/
-/*}*/
-/*.slide_container img{*/
-/*    width:100%;*/
-/*}*/
+/*---slider---*/
+.content_carrossel {
+	width: 800px;
+	height:350px;
+    padding-top: 25px;
+    float:left;
+    margin: auto;
+    display: flex;
+    border: solid 1px #000;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.w3-content w3-display-container{/*content*/
-    max-width:800px;
+.carrossel {
+	float: left;
+	width: 800px;
+	overflow: hidden;
+	height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.carrossel ul li {
+	width: 360px;
+	height: 300px;
+	float: left;
+	margin-left: 15px;
+}
+
+.carrossel ul li img{
     width:100%;
-    height:400px;
-    margin:auto;
-    background-color:red;
+    height:100%;
 }
 
-.w3-content w3-display-container img{
-    width:100%;
-/*    height:600px;*/
+#menu-carrossel {
+	float: left;
+	clear: both;
+	width: 100%;
+	text-align: center;
+    margin-bottom:50px;
+
 }
 
+.passar_carrossel{
+    width: 20px;
+    height: 300px;
+    float: left;
+    padding-top: 120px;
 
 
 
-.w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle{
-
-    height:53px;width:53px;padding:0
 }
 
-.mySlides {display:none}
-.w3-left, .w3-right, .w3-badge {cursor:pointer;margin-left:20px;}
-.w3-badge {height:25px;width:25px;padding:0;}
+.passar_carrossel a img{
+    width:20px;
+    height:30px;
+    margin-left:10px;
+}
 
 /*----MENU ACESSO RÁPIDO----*/
 #suporte_menu_de_acesso_rapido{
   width: 100%;
-  height: 200px;
-  background-color: #660000;
+  height: 130px;
+  padding-top: 30px; 
+  font-size: 20px;
+  text-align: center;
+  background-color: #F1F6F9;
   position: relative;
 }
 
@@ -97,7 +127,9 @@ body{
 .faixa_1_content_home{
     width:1200px;
     height:400px;
-    margin-top: 0px;;
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
 }
 
 .content_login_usuario_home{/*---login e senha---*/
@@ -110,44 +142,35 @@ body{
 
 .faixa_login_home{
     width:100%;
-    height:50px;
-    margin-top:15px;
+    height:45px;
+    margin-top:10px;
     text-align: center;
     font-family: sans-serif;
     color: white;
 }
 
 .faixa_login_home a{
-    margin-right:61%;
-    font-size: 17px;
-    margin-bottom: -
+    margin-right:64%;
+    font-size: 18px;
 }
 
 .faixa_login_home p{
-    margin-left:35%;
+    margin-left:44%;
     font-size: 12px;
 }
 
 
 .faixa_login_home [type=text],[type=password]{/*caixas de texto -login -senha*/
-    width:75%;
-    height: 21px;
-    margin-top: 5px;
-    border-radius: 4px;
+    width:67%;
     margin-left:0px;
 }
 
 
 .faixa_login_home [type=submit]{/*botão entrar*/
     width:170px;
-    height:25px;
+    height:30px;
     margin-left:0px;
-    border-radius: 3px;
-    font-family: sans-serif;
-    font-size: 15px;
-    color: #660000;
-    font-weight: bold;
-    border-color: white;
+    border-radius:5px;
 }
 
 .faixa_login_home span{
@@ -155,59 +178,25 @@ body{
 }
 
 
-/*---slider---*/
-.content_carrossel {
-	margin: 0 auto;
-	width: 850px;
-	height:400px;
+.slider_faixa1{/*---slider---*/
+    width:1000px;
+    height:390px;
     float:left;
-    margin: auto;
+    margin-left: 9%;
+    border: solid 1px #000;
 }
 
-.carrossel {
-	float: left;
-	width: 750px;
-	overflow: hidden;
-	height: 300px;
-
+.faixa1_img_slide_home{
+    width:470px;
+    height:300px;
+    background-image: url(../imagens/saude-bucal.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-left:15px;
+    margin-top:40px;
+    float:left;
 }
 
-.carrossel ul li {
-	width: 360px;
-	height: 300px;
-	float: left;
-	margin-left: 15px;
-}
-
-.carrossel ul li img{
-    width:100%;
-    height:100%;
-}
-
-#menu-carrossel {
-	float: left;
-	clear: both;
-	width: 100%;
-	text-align: center;
-    margin-bottom:50px;
-
-}
-
-.passar_carrossel{
-    width: 50px;
-    height: 300px;
-    float: left;
-    padding-top: 120px;
-
-
-
-}
-
-.passar_carrossel a img{
-    width:30px;
-    height:30px;
-    margin-left:10px;
-}
 /*--------faixa 2------*/
 
 /*faixa*/
@@ -269,31 +258,81 @@ body{
 /*faixa*/
 .faixa_3_content_home{
     width:1200px;
-    height:320px;
+    height:300px;
 }
 
 /*content unidades*/
 .content_faixa_3_unidades_home{
     width:550px;
     height:300px;
-    background-color:azure;
     margin-left:30px;
     float:left;
 }
 
 /*imagem unidades*/
 .img_faixa_3_home{
-    width:150px;
-    height:150px;
+    width:200px;
+    height:200px;
     background-image: url(../imagens/4992868.jpg);
     background-repeat: no-repeat;
     background-size: 100%;
+    margin-right: 10px;
     float:left;
+    margin-top: 50px;
 }
 
 .descricao_faixa_3_home{
-    width:400px;
-    height:150px ;
-    background-color:aqua;
+    width:340px;
+    height:300px ;
+    background-image: url(../imagens/mapa.png);
+    background-size: 200px;
     float:left;
 }
+
+.footer{
+      width: 100%;
+      height: 299px;
+      position: relative;
+      background-color: white;
+      padding-top: 35px;
+}
+
+/*div typewriter efeito*/
+.typewriter h1 {
+  color: #DA0000;
+  font-family: monospace;
+  overflow: hidden; 
+  border-right: .15em solid orange; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

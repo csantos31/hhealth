@@ -12,7 +12,7 @@ a{
       width: 100%;
       height: 299px;
       position: relative;
-      background-color: #660000;
+      background-color: #fff;
       padding-top: 0px;
       margin: auto;
 }
@@ -47,10 +47,9 @@ a{
       vertical-align: middle;
       margin: auto;
       line-height: 40px;
-      color: black;
+      color: #660000;
       font-weight: bold;
       font-size: 21px;
-      color: white;
       font-family: sans-serif;
 }
 
@@ -62,7 +61,7 @@ a{
 .item_submenu_mapa_hhealth{
       list-style: none;
       text-align: center;
-      color: white;
+      color: #660000;
       font-family: sans-serif;
       font-size: 18px;
 }
@@ -75,7 +74,7 @@ a{
 .item_submenu_mapa_contatos{
       list-style: none;
       text-align: center;
-      color: white;
+      color: #660000;
       font-size: 18px;
       font-family: sans-serif;
 }
@@ -198,7 +197,7 @@ a{
 .faixa4_footer{
       width: 100%;
       height: 50px;
-      background-color: #660000;
+      background-color: #fff;
 }
 
 .limitador_faixa4_footer{
@@ -209,7 +208,7 @@ a{
       text-align: center;
       font-family: sans-serif;
       font-weight: bold;
-      color: white;
+      color: #660000;
 }
 
 }
@@ -281,9 +280,8 @@ a{
             vertical-align: middle;
             margin: auto;
             line-height: 140px;
-            color: black;
+            color: #660000;
             font-size: 61px;
-            color: white;
             font-family: sans-serif;
       }
 
@@ -299,7 +297,7 @@ a{
             font-weight: bold;
             list-style: none;
             text-align: center;
-            color: white;
+            color: #660000;
             font-family: sans-serif;
             font-size: 41px;
       }
@@ -314,7 +312,7 @@ a{
             line-height: 120px;
             list-style: none;
             text-align: center;
-            color: white;
+            color: #660000;
             font-size: 18px;
             font-family: sans-serif;
             font-size: 41px;
@@ -393,7 +391,7 @@ a{
       .faixa4_footer{
             width: 100%;
             height: 120px;
-            background-color: #660000;
+            background-color: #fff;
       }
 
       .limitador_faixa4_footer{
@@ -405,6 +403,6 @@ a{
             font-family: sans-serif;
             font-weight: bold;
             font-size: 31px;
-            color: white;
+            color: #660000;
       }
 }
