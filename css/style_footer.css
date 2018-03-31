@@ -1,3 +1,5 @@
+@media screen and (min-device-width: 1024px){
+
 *{
     padding: 0px;
 }
@@ -208,4 +210,201 @@ a{
       font-family: sans-serif;
       font-weight: bold;
       color: white;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px){
+
+      *{
+          padding: 0px;
+      }
+
+      a{
+            text-decoration: none;
+      }
+
+      .footer{
+            width: 100%;
+            min-width: 1200px;
+            height: 2099px;
+            position: relative;
+            background-color: #660000;
+            padding-top: 0px;
+            margin: auto;
+      }
+
+      .linha_branca{
+            display: none;
+      }
+
+      .menu_footer{
+            width: 100%;
+            height: 1540px;
+            margin: auto;
+            padding-top: 15px;
+      }
+
+      .menu_mapa{
+            width: 100%;
+            height: 500px;
+            margin: auto;
+      }
+
+      .item_mapa{
+            width: 100%;
+            min-height: 140px;
+            height: auto;
+            float: left;
+            list-style: none;
+            text-align: center;
+            vertical-align: middle;
+            margin: auto;
+            line-height: 140px;
+            color: black;
+            font-size: 61px;
+            color: white;
+            font-family: sans-serif;
+      }
+
+      .submenu_mapa_hhealth{
+            width: 100%;
+            height: 460px;
+      }
+
+      .item_submenu_mapa_hhealth{
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            font-weight: bold;
+            list-style: none;
+            text-align: center;
+            color: white;
+            font-family: sans-serif;
+            font-size: 41px;
+      }
+
+      .submenu_mapa_contatos{
+            width: 100%;
+            height: 240px;
+      }
+
+      .item_submenu_mapa_contatos{
+            height: 120px;
+            line-height: 120px;
+            list-style: none;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-size: 41px;
+            font-weight: bold;
+      }
+
+      .faixa2_footer{
+            width: 100%;
+            height: 500px;
+            background-color: white;
+            opacity: 0.99;
+      }
+
+      .limitador_faixa2_footer{
+            width: 100%;
+            min-width: 1200px;
+            height: 490px;
+            margin: auto;
+      }
+
+      .informacoes{
+            width: 100%;
+            height: 120px;
+            float: left;
+            margin: auto;
+      }
+
+      .informacoes_txt1{
+            width: 100%;
+            height: 120px;
+            float: right;
+            text-align: center;
+            line-height: 120px;
+            font-size: 41px;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+      }
+
+      .informacoes_txt2{
+            width: 100%;
+            height: 120px;
+            float: right;
+            text-align: center;
+            line-height: 120px;
+            font-size: 41px;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+      }
+
+      .informacoes_txt3{
+            width: 100%;
+            height: 120px;
+            float: right;
+            text-align: center;
+            line-height: 120px;
+            font-size: 41px;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+      }
+
+      .informacoes_txt4{
+            width: 100%;
+            height: 120px;
+            float: right;
+            text-align: center;
+            line-height: 120px;
+            font-size: 41px;
+            color: black;
+            font-weight: bold;
+            font-family: sans-serif;
+      }
+
+      .faixa4_footer{
+            width: 100%;
+            height: 120px;
+            background-color: #660000;
+      }
+
+      .limitador_faixa4_footer{
+            width: 1200px;
+            height: 120px;
+            margin: auto;
+            line-height: 120px;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 31px;
+            color: white;
+      }
 }
