@@ -75,11 +75,7 @@
                         </a>
                   </ul>
               </li>
-          </ul>
-          <div class="modal_login">
-              <label>Área do paciente:</label>
-              <button id="btn_login">Login</button>
-          </div>    
+          </ul>  
     </nav>
     
     <!--este menu aparece quando o usuário desce a página-->

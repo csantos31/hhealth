@@ -13,6 +13,17 @@
 
     <body>
           <div class="main"><!--Div Main que segura todas as divs-->
+               <div class="modal_login">
+                    <label id="lbl_paciente">Área do paciente:</label>
+                    <button id="btn_login" onclick="document.getElementById('caixa_login_home').style.display='block';">Login</button>
+              </div>
+              <div id="caixa_login_home" >
+                  <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
+                    <div id="borda_minimizar"></div>  
+                  </a>
+                
+              
+              </div>
                <?php require_once('nav.php'); ?>
               
              <div class="div_suporte_conteudo">
@@ -22,8 +33,8 @@
              <!--***********************SLIDE***********************-->
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px;">
                <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;" >
-               <img class="mySlides" src="imagens/hospital-teste.jpg" alt="" style="width:100%;height:600px;">
-               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;">
+               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:600px;">
+               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:600px;">
                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" >
                   <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                   <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
