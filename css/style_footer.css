@@ -15,6 +15,9 @@ a{
       background-color: #fff;
       padding-top: 0px;
       margin: auto;
+      border-top: solid 1px #660000;
+      margin-top: 20px;
+     box-shadow: 5px 10px 5px 10px;
 }
 
 .linha_branca{
@@ -51,6 +54,9 @@ a{
       font-weight: bold;
       font-size: 21px;
       font-family: sans-serif;
+      border-top: solid 1px #660000;
+      box-shadow: 0px 2px 2px 0px #660000;
+    
 }
 
 .submenu_mapa_hhealth{
@@ -84,6 +90,9 @@ a{
       height: 50px;
       background-color: white;
       opacity: 0.99;
+      border-top: solid 1px #660000;
+     box-shadow: 5px 5px 5px 5px #660000;
+    
 }
 
 .limitador_faixa2_footer{
@@ -91,6 +100,8 @@ a{
       height: 40px;
       margin: auto;
       padding-top: 5px;
+    
+    
 }
 
 .informacoes{
@@ -212,25 +223,6 @@ a{
 }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @media screen and (max-device-width: 520px){

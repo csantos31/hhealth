@@ -19,7 +19,7 @@
              </div>
 
              <!--***********************SLIDE***********************-->
-             <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px">
+             <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px;">
                <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;" >
                <img class="mySlides" src="imagens/hospital-teste.jpg" alt="" style="width:100%;height:600px;">
                <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;">
@@ -33,18 +33,8 @@
              </div>
 
              <script type="text/javascript" src="js/slide_home.js"></script>
-
-
-
-             <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
-                <div id="menu_de_acesso_rapido">
-                  <div class="typewriter">
-                      <h1>Onde você estiver, HHEalth cuidará de você!.</h1>
-                  </div>
-              </div>
-             </div>
-             <div class="suporte_content">
-                    <div class="content"><!--**CONTENT**-->
+             <div class="suporte_content" style="postion:relative;" >
+                    <div class="content" position:relative;><!--**CONTENT**-->
                         <div class="faixa_1_content_home"><!--faixa1-->
                               <!--SLIDER FICA AKI-->
                             <div class="content_carrossel">
@@ -57,10 +47,10 @@
                                           <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
                                       </li>
                                       <li>
-                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
                                       </li>
                                       <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
                                       </li>
                                       <li>
                                           <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
@@ -84,6 +74,14 @@
                               <script type="text/javascript" src="js/jcarousellite.js"></script>
                               <script type="text/javascript" src="js/carrossel.js"></script>
 
+                        </div>
+                        
+                        <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
+                            <div id="menu_de_acesso_rapido">
+                              <div class="typewriter">
+                                  <h1>Onde você estiver, HHEalth cuidará de você!.</h1>
+                              </div>
+                          </div>
                         </div>
 
                         <div class="faixa_2_content_home"><!--faixa2-->

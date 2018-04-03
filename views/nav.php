@@ -65,7 +65,7 @@
               </a>
               <li class="item_nav botao_snip">
                   CONTATOS
-                  <ul class="submenu_nav_contatos">
+                <ul class="submenu_nav_contatos">
                         <a href="<?= $path ?>fale_conosco.php">
                               <li class="item_submenu_nav_contatos">Fale Conosco</li>
                         </a>
@@ -76,7 +76,8 @@
               </li>
           </ul>
           <div class="modal_login">
-              <button id="btn_chama_modal">Área do paciente</button>
-        </div>    
+              <label>Área do paciente:</label>
+              <button id="btn_login">Login</button>
+          </div>    
     </nav>
 </div>
