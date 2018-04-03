@@ -105,21 +105,27 @@
 
                             <div class="content_img_faixa_2_home">
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
                             </div>
 
@@ -132,6 +138,7 @@
                             <div class="carrossel_local">
                                 <div class="content_faixa_3_unidades_home">
                                     <div class="img_faixa_3_home">
+                                        <img src="imagens/4992868.jpg" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
@@ -140,6 +147,7 @@
 
                                 <div class="content_faixa_3_unidades_home">
                                     <div class="img_faixa_3_home">
+                                        <img src="imagens/imagem_hospital.jpg" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">

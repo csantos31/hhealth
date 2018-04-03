@@ -229,15 +229,16 @@ body{
 .img_faixa_2_home{
     width:350px;
     height:200px;
-    background-color:yellow;
     margin-left:40px;
     margin-top:30px;
     float:left;
-    background-image: url(../imagens/download.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
 }
+
+.img_faixa_2_home img{
+    width:350px;
+    height:200px;
+}
+
 
 /*-------botão------*/
 .content_btn_faixa_2_home{
@@ -275,12 +276,14 @@ body{
 .img_faixa_3_home{
     width:200px;
     height:200px;
-    background-image: url(../imagens/4992868.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     margin-right: 10px;
     float:left;
     margin-top: 50px;
+}
+
+.img_faixa_3_home img{
+    width:200px;
+    height:200px;
 }
 
 .descricao_faixa_3_home{
