@@ -410,6 +410,58 @@ body{
     background-color: #fff;
 }
 
+.label_email{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 35px;
+    font-family: verdana;
+    font-size: 14px;
+    color: #000;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+#txt_usuario{
+    background-color: #EEEEEE;
+    margin-top: 9px;
+    margin-left: 28px;
+    width: 300px;
+    border: none;
+}
+
+.label_senha{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: verdana;
+    font-size: 14px;
+    color: #000;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+#txt_senha{
+    background-color: #EEEEEE;
+    margin-top: 9px;
+    margin-left: 28px;
+    width: 300px;
+    border: none;
+}
+
+#btn_go_logar{
+    margin-left: 131px;
+    margin-top: 14px;
+    height: 33px;
+    width: 90px;
+    background-color: #37CC73;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+
 
 
 
