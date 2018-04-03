@@ -22,16 +22,17 @@
                     <div id="borda_minimizar"></div>  
                   </a>
                 
-                  
-                  <!--COnTEnT MODAL-->
-                  <div class="label_login">Login</div>
-                  <div class="label_email">Endereço de e-mail:</div>
-                  <input type="text" name="txt_usuario" id="txt_usuario">
-                
-                  <div class="label_senha">Senha:</div>
-                  <input type="password" name="txt_senha" id="txt_senha">
-                  
-                  <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">    
+                  <form name="" method="post" action="router.php?controller=paciente&modo=login">
+                        <!--COnTEnT MODAL-->
+                      <div class="label_login">Login</div>
+                      <div class="label_email">Endereço de e-mail:</div>
+                      <input type="text" name="txt_usuario" id="txt_usuario">
+
+                      <div class="label_senha">Senha:</div>
+                      <input type="password" name="txt_senha" id="txt_senha">
+
+                      <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">    
+                  </form>
               </div>
                <?php require_once('nav.php'); ?>
               
