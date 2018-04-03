@@ -394,6 +394,20 @@ body{
 }
 
 
+.label_login{
+    width: 100px;
+    height: 30px;
+    margin-left: 45px;
+    margin-top: 17px;
+    font-family: verdana;
+    font-weight: 500px;
+    color: red;
+    padding-left: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+
 
 
 

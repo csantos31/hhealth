@@ -22,12 +22,14 @@
                     <div id="borda_minimizar"></div>  
                   </a>
                 
+                  
+                  <!--COnTEnT MODAL-->
+                  <div class="label_login">Login</div>
               
               </div>
                <?php require_once('nav.php'); ?>
               
              <div class="div_suporte_conteudo">
-
              </div>
 
              <!--***********************SLIDE***********************-->
