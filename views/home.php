@@ -40,10 +40,10 @@
              </div>
 
              <!--***********************SLIDE***********************-->
-             <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px;">
-               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;" >
-               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:600px;">
-               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:600px;">
+             <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
+               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:700px;" >
+               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:700px;">
+               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:700px;">
                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" >
                   <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                   <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
