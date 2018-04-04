@@ -4,7 +4,7 @@ $(function() {
     $(".carrossel"). jCarouselLite({
         btnPrev: '.prev', 
         btnNext: '.next',
-        visible: 2
+        visible: 4
     })
 });
 

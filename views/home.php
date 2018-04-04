@@ -79,6 +79,12 @@
                                       <li>
                                           <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
                                       </li>
+                                      <li>
+                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                      </li>
+                                      <li>
+                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                      </li>
                                   </ul>
 
                               </div>

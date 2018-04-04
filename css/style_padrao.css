@@ -17,7 +17,7 @@ body{
 
 /*---slider---*/
 .content_carrossel {
-	width: 100%;
+	width: 1800px;
 	height:350px;
     padding-top: 25px;
     float:left;
@@ -28,12 +28,11 @@ body{
 
 .carrossel {
 	float: left;
-	width: 800px;
+	width: 100%;
 	overflow: hidden;
 	height: 300px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .carrossel ul li {
@@ -122,7 +121,7 @@ body{
 
 /*------faixa 1-------*/
 .faixa_1_content_home{
-    width:1200px;
+    width:1800px;
     height:400px;
     margin-top: 0px;
     margin-left: auto;
