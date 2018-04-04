@@ -2,66 +2,90 @@
 
 session_start();
     class Usuario{
-        
+
         //Atributos da Classe
         public $cpf;
         public $senha;
-        
-        
+        public $id_nivel_funcionario;
+
+
+
         public function __construct(){
             require_once('bd_class.php');/*solicita o arquivo bd_class.php
                                            é ela que faz a conexão com o banco
                                             */
-                                        
+
         }
-        
+
         /*
-        
+
         if(!isset(SESSION) &)
-        
-        
+
+
         */
-        
+
         //faz o login com o usuário
         public function Login_usuario($usuario){
             $_SESSION["login"]=0;
             $count=0;
-            $sql = "SELECT * FROM tbl_usuario WHERE cpf = '" .$usuario->cpf . "' AND senha = '".$usuario->senha. "';";
-            
-            echo $sql;
-            
-            
+            $sql = "SELECT usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
+             AND senha = '".$usuario->senha. "';";
+
+            // echo $sql;
+
+
             //Instancia da classe do BD
             $conn = new Mysql_db();
-            
-            
-           
+
+
+
             //chama o metodo para conectar no BD e guarda o retorno da conexao na variavel $PDO_conn
             $PDO_conn = $conn->Conectar();
-            
-            if($PDO_conn -> query($sql)){
-                $del=$PDO_conn -> query($sql);
-                $count = $del->rowCount();
+
+            // Executa a query e salva em uma variavel
+            $queryExecutada  = $PDO_conn -> query($sql);
+
+            //Conta quantidade de linha
+            $count = $queryExecutada->rowCount();
+
+            if($count == 1){
+
+                //IF para puxar um dado do banco de dados
+                if ($puxaDadosDB = $queryExecutada->fetch(PDO::FETCH_ASSOC)) {
+                  # code...
+                  $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
+
+                  $_SESSION["login"]=$count;
+
+
+                }
+
             }
-                
-             
-            
-            $_SESSION["login"]=$count;                
-            // echo($count."To Aki");   
-            //Executa o Script no BD
-           
-            if($_SESSION["login"]==1){
+
+            if($_SESSION["login"]==1 && $id_nivel_funcionario == 6){
+                header('location:cms/views_cms/area_medico/medico_home.php');
+
+            }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 5){
+
                 header('location:cms/');
+
             }else if($_SESSION["login"]==0){
                 header('location:index.php');
             }
-            
+
+
+
+            // echo($count."To Aki");
+            //Executa o Script no BD
+
+
+
             //Fecha a conexao com o Banco de Dados
             $conn -> Desconectar();
-            
+
             //var_dump($sql);
         }
-        
+
     }
 
 
