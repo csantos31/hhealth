@@ -56,27 +56,27 @@
 
         </div>
         <ul id="suporte_menu">
-          <a href="#">
+          <a href="area_paciente_agendamento.php">
             <li id="item_menu_agendamento">
               Agendamento
             </li>
           </a>
-          <a href="#">
+          <a href="resultado_exames.php">
             <li class="item_menu">
               Resultados Exames
             </li>
           </a>
-          <a href="#">
+          <a href="historico_paciente.php">
             <li id="item_menu_historico">
               Histórico de Atendimento
             </li>
           </a>
-          <a href="#">
+          <a href="receitas.php">
             <li id="item_menu_receita">
               Receitas
             </li>
           </a>
-          <a href="#">
+          <a href="pre_atendimento.php">
             <li class="item_menu">
               Pré-Atendimento
             </li>

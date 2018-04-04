@@ -379,7 +379,7 @@ body{
     width: 350px;
     height: 300px;
    box-shadow: 1px 2px 8px #333;
-    background-image: url(../imagens/bg_login.jpg);
+   background-image: url(../imagens/bg_login.jpg);
     border-radius: 20px;
     background-size: 350px 300px;
     background-repeat: no-repeat;
