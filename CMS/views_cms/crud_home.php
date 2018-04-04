@@ -57,13 +57,13 @@ if(isset($niv)){
 
                         <div class="content_cadastro_nivel"><!--cadastro de niveis-->
                           <div class="menu_gerenciamento_home">
-                            <div class="">
+                            <div class="item_menu_gerenciamento_home">
                               Slider Principal
                             </div>
-                            <div class="">
+                            <div class="item_menu_gerenciamento_home">
                               Slider Secundario
                             </div>
-                            <div class="">
+                            <div class="item_menu_gerenciamento_home">
                               Frase do Hospital
                             </div>
                           </div>
