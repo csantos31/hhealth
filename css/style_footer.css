@@ -12,7 +12,10 @@ a{
       width: 100%;
       height: 299px;
       position: relative;
-      background-color: #fff;
+      /*background-color: #fff;*/
+    
+        background-color: #D60000;
+    
       padding-top: 0px;
       margin: auto;
       border-top: solid 1px #660000;
@@ -50,7 +53,7 @@ a{
       vertical-align: middle;
       margin: auto;
       line-height: 40px;
-      color: #660000;
+      color: #FFF;
       font-weight: bold;
       font-size: 21px;
       font-family: sans-serif;
@@ -67,7 +70,7 @@ a{
 .item_submenu_mapa_hhealth{
       list-style: none;
       text-align: center;
-      color: #660000;
+      color: #FFF;
       font-family: sans-serif;
       font-size: 18px;
 }
@@ -80,7 +83,7 @@ a{
 .item_submenu_mapa_contatos{
       list-style: none;
       text-align: center;
-      color: #660000;
+      color: #FFF;
       font-size: 18px;
       font-family: sans-serif;
 }
