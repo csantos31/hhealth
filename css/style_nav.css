@@ -14,7 +14,7 @@
 }
 
 .header {
-      width: 1200px;
+      width: 1300px;
       height: 110px;
       margin: auto;
 }
@@ -22,9 +22,9 @@
 .logo_marca{
     width: 100px;
     height: 25px;
-    margin-top: 43px;
-    margin-left: 10px;
-    margin-right: 20px;
+    margin-top: 50px;
+    margin-left: 5px;
+    margin-right: 40px;
     float: left;
     text-decoration: none;
     color: #DA0000;
@@ -39,7 +39,7 @@
       background-image: url(../imagens/logo_only_heart.png);
       background-size: 100px;
       padding: 0px;
-      margin-top: 10px;
+      margin-top: 15px;
       float: left;
       
 }
@@ -62,6 +62,7 @@
       width: 11.66%;
       height: 70%;
       float: left;
+      padding-top:5px;
       list-style: none;
       text-align: center;
       vertical-align: middle;
@@ -77,7 +78,7 @@
 }
 
 .menu_nav li{
-    color: #9C1003;
+    color: #DA0000;
 }
 
 .menu_nav li:hover{
@@ -107,7 +108,7 @@
 .submenu_nav_hhealth li:hover{
       /*background-color: rgb(176, 37, 39);*/
     color: #eaecef;
-    background-color: #D21502;
+    background-color: #DA0000;
     font-family: 'BenchNine', Arial, sans-serif;
     /*padding-top: 3px;*/
     vertical-align:middle; 
@@ -131,7 +132,7 @@
 
 .submenu_nav_contatos li:hover{
     color: #eaecef;
-    background-color: #D21502;
+    background-color: #DA0000;
     font-family: 'BenchNine', Arial, sans-serif;
     padding-top: 3px;
     color: #eaecef;
@@ -175,7 +176,7 @@
   width: 24px;
 }
 .botao_snip:before {
-  border-color: #9C1003;
+  border-color: #DA0000;
   border-right-width: 2px;
   border-top-width: 2px;
   right: -5px;
@@ -183,14 +184,14 @@
 }
 .botao_snip:after {
   border-bottom-width: 2px;
-  border-color: #9C1003;
+  border-color: #DA0000;
   border-left-width: 2px;
   bottom: -5px;
   left: -5px;
 }
 .botao_snip:hover,
 .botao_snip.hover {
-  background-color: #9C1003;
+  background-color: #DA0000;
 }
 .botao_snip:hover:before,
 .botao_snip.hover:before,

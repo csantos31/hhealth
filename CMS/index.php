@@ -77,6 +77,16 @@
                                 </div>
                             </div>
                         </a>
+                        <a href="views_cms/nivel_usuario.php">
+                            <div class="linha">
+                                <div class="img_menu_lateral">
+                                    <img src="views_cms/imagens/icon_home.png">
+                                </div>
+                                <div class="titulo_menu_lateral">
+                                    <a>Gerenciamento da home</a>
+                                </div>
+                            </div>
+                        </a>
                     </div>
 
                     <div class="conteudo_home_cms"><!--conteudo menu-->
