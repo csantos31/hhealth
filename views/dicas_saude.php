@@ -26,7 +26,7 @@
            <div id="segura_slider">
              <div id="superior">
                  <div id="transicao">
-                     <p id="previous">PREV</p>
+                     <p id="previous"><img src="../imagens/icons/seta-voltar.png"></p>
                      <div id="galeria">
                          <ul id="list">
                              <li><img alt="celular" title="celular" class="image" src="../imagens/5dicas.jpg"></li>
@@ -34,7 +34,7 @@
                              <li><img alt="suicidio" title="suicidio" class="image" src="../imagens/cirurgia1.jpg"></li>
                          </ul>
                      </div>
-                     <p id="next">NEXT</p>
+                     <p id="next"><img src="../imagens/icons/seta-avancar.png"></p>
                  </div>
              </div>
            </div>

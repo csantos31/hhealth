@@ -36,10 +36,13 @@
                                  Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan,
                                  blandit sed diam.
                            </div>
+                          <div class="div_suporte_conteudo">
+
+                          </div>
                            <div class="faixa2">
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
-                                             <img src="../imagens/missao.png" alt="">
+                                             <img src="../imagens/missao.jpg" alt="">
                                              Missão
                                        </div>
                                  </div>
@@ -54,6 +57,9 @@
                                        </div>
                                  </div>
                            </div>
+                           <div class="div_suporte_conteudo">
+
+                           </div>
                            <div class="faixa3">
                                  <div class="suporte_txt_faixa3">
                                        <div class="txt_faixa3">
@@ -67,15 +73,18 @@
                                  </div>
                                  <div class="suporte_img_faixa3">
                                        <div class="circulo_img_faixa3">
-                                             <img src="../imagens/visao.png" alt="">
+                                             <img src="../imagens/visao.jpg" alt="">
                                              Missão
                                        </div>
                                  </div>
                            </div>
+                           <div class="div_suporte_conteudo">
+
+                           </div>
                            <div class="faixa4">
                                  <div class="suporte_img_faixa4">
                                        <div class="circulo_img_faixa4">
-                                             <img src="../imagens/valor.png" alt="">
+                                             <img src="../imagens/valores.jpg" alt="">
                                              Missão
                                        </div>
                                  </div>

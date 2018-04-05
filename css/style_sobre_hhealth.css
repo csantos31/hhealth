@@ -40,6 +40,7 @@
       font-family: sans-serif;
       text-align: center;
       line-height: 70px;
+      color: #DA0000; 
       font-weight: bold;
       font-size: 24px;
 }
@@ -78,6 +79,12 @@
       font-weight: bold;
       color: white;
       font-size: 30px;
+}
+
+img{
+    width: 300px;
+    height: 290px;
+    border-radius: 50%;
 }
 
 .suporte_txt_faixa2{
