@@ -1,3 +1,8 @@
+<?php 
+    require('verifica_paciente.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>

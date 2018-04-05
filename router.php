@@ -27,6 +27,27 @@
                     break;
             }
             
+             
+            
+        case 'paciente':    
+            require_once('controllers/paciente_controller.php');//inclusão dos arquivos
+            require_once('models/paciente_class.php');
+
+             switch($modo){
+            
+                case'login':
+                
+                  
+    
+                    //Instancia a classe Usuario
+                    $controller_paciente = new controllerPaciente();
+
+                    $controller_paciente->Login();
+
+                    break;
+             
+     }
+            
     }
 
 ?>
