@@ -57,8 +57,13 @@
         </div>
         <ul id="suporte_menu">
           <a href="area_paciente_agendamento.php">
-            <li id="item_menu_agendamento">
+            <li class="item_menu">
               Agendamento
+            </li>
+          </a>
+          <a href="paciente_perfil.php">
+            <li class="item_menu">
+              Perfil
             </li>
           </a>
           <a href="resultado_exames.php">
@@ -67,18 +72,18 @@
             </li>
           </a>
           <a href="historico_paciente.php">
-            <li id="item_menu_historico">
-              Histórico de Atendimento
+            <li class="item_menu">
+              Histórico 
             </li>
           </a>
           <a href="receitas.php">
-            <li id="item_menu_receita">
+            <li class="item_menu">
               Receitas
             </li>
           </a>
           <a href="pre_atendimento.php">
             <li class="item_menu">
-              Pré-Atendimento
+              Pré - Atendimento
             </li>
           </a>
         </ul>

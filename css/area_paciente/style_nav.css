@@ -148,12 +148,12 @@ a{
 /* Itens do menu */
 .item_menu{
   height: 30px;
-  width: 150px;
+  width: 130px;
   float: left;
-  margin-left: 32px;
+  margin-left: 15px;
   background-color: #c0c0c0;
   list-style: none;
-  padding-left: 50px;
+  padding-left: 40px;
 }
 
 #item_menu_historico{
