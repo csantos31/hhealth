@@ -335,13 +335,13 @@ body{
     height: 30px;
     color: #FFF;
     background-color: #9C1003;
-    border-radius: 10%;
+    border: solid 1px;
     font-family: 'BenchNine', Arial, sans-serif;
     font-weight: 700;
     font-size: 18px;
     position: absolute;
-    margin-left: 80%;
-    margin-top: 80px;
+    margin-left: 81%;
+    margin-top: 70px;
     cursor: pointer;
     z-index: 999;
     
@@ -356,7 +356,7 @@ body{
     font-size: 18px;
     position: absolute;
     margin-left: 80%;
-    margin-top: 50px;
+    margin-top: 35px;
     z-index: 998;
 }
 
