@@ -102,31 +102,34 @@
       margin-top: 13px;
       background-color: white;
       padding: 0px;
+      transition: 2s;
       display: none;
 }
 
 .submenu_nav_hhealth li:hover{
-      /*background-color: rgb(176, 37, 39);*/
     color: #eaecef;
     background-color: #DA0000;
+    opacity: 0.9;
+    transition: 0.1s;
     font-family: 'BenchNine', Arial, sans-serif;
-    /*padding-top: 3px;*/
     vertical-align:middle; 
     
 }
 
 .item_submenu_nav_hhealth{
       width: 100%;
-      height: 35px;
+      height: 40px;
+      line-height: 40px;
       list-style: none;
       font-family: sans-serif;
       font-size: 18px;
 }
 
 .submenu_nav_contatos{
-    margin-top: 15px;
+      margin-top: 15px;
       background-color: white;
       padding: 0px;
+      transition: 2s;
       display: none;
 }
 
@@ -143,6 +146,7 @@
       width: 100%;
       height: 40px;
       list-style: none;
+      line-height: 20px;
       font-family: sans-serif;
       font-size: 18px;
 }
@@ -219,7 +223,9 @@
    margin-top:0px;
 }
 
-
+#menu_secundario ul li{
+   margin-top:9px;
+}
 
 
 
