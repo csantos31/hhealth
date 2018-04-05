@@ -33,13 +33,47 @@ if(isset($niv)){
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_nivel_usuario.css">
+        <link rel="stylesheet" type="text/css" href="css/style_modal.css">
+        
+        <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
+        
+        
+        <script>/*Modal*/
+            $(document).ready(function(){
+                
+                $(".ver").click(function(){
+                    
+                    $(".container_modal").toggle(2000);
+                    
+                });
+                
+            });
+            
+            function modal_nivel(){
+                
+                $.ajax({
+                    type:"POST",
+                    url:"modal_nivel.php",
+                    success: function(dados){
+                        $(".modal").html(dados);
+                    }
+                });
+            }
+            
+            
+            
+            
+        </script>
 
     </head>
 
     <body>
-
+        <div class="container_modal"><!--container da modal-->
+            <div class="modal"><!--modal-->
+            </div>
+        </div>
         <div class="main">  <!--Div main que segura todas as div-->
-
+            
 
             <div class="content_cms">
                 <?php include('menu_cms.php')?>
@@ -48,7 +82,7 @@ if(isset($niv)){
 
                     <!-- Include once do menu lateral -->
                     <?php include_once('menu_lateral_cms.php'); ?>
-
+                    
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                         <div class="content_titulo_nivel">
                             <div class="titulo_nivel">
@@ -56,10 +90,14 @@ if(isset($niv)){
                             </div>
 
                             <div class="content_add_nivel">
+                                
                                 <div class="img_nivel">
-                                    <img src="<?=$caminho?>imagens/add.png">
+                                    <a class="ver" href="<?php echo($niv->id_nivel)?>" onclick="modal_nivel()">
+                                        
+                                        <img src="<?=$caminho?>imagens/add.png">
+                                    </a>
                                 </div>
-
+                                
                             </div>
                         </div>
 
