@@ -25,7 +25,7 @@ session_start();
         //faz o login com o usuário
         public function Login_paciente($paciente){
             
-            $_SESSION["login"]=0;
+            $_SESSION["login_paciente"]=0;
             $count=0;
             $sql = "SELECT * FROM tbl_usuario_paciente WHERE usuario = '" .$paciente->cpf . "' AND senha = '".$paciente->senha. "';";
             
@@ -44,14 +44,14 @@ session_start();
                 
              
             
-            $_SESSION["login"]=$count;                
+            $_SESSION["login_paciente"]=$count;                
             // echo($count."To Aki");   
             //Executa o Script no BD
             
            
-            if($_SESSION["login"]==1){
+            if($_SESSION["login_paciente"]==1){
                 header('location:views/include_area_paciente/historico_paciente.php');
-            }else if($_SESSION["login"]==0){
+            }else if($_SESSION["login_paciente"]==0){
                 header('location:index.php');
             }
             

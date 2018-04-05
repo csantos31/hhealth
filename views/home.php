@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if(isset($_GET['destroi_sessao'])){
+        session_destroy();
+        header('location:../index.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
     <head>
@@ -106,7 +117,7 @@
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter">
-                                  <h1>Onde você estiver, HHEalth cuidará de você!.</h1>
+                                  <h1>Onde você estiver, HHealth cuidará de você!.</h1>
                               </div>
                           </div>
                         </div>
