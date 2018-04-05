@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if(isset($_GET['destroi_sessao'])){
+        session_destroy();
+        header('location:../index.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
     <head>

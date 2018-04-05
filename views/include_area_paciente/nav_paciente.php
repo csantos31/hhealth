@@ -22,7 +22,7 @@
 
             <!-- logout ,da pagina -->
             <div id="suporte_logout">
-              <a href="#">
+              <a href="../home.php?destroi_sessao=1">
                 <div id="logout_area_usuario">
                   Logout
                 </div>
