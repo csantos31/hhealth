@@ -18,12 +18,13 @@ include($caminho.'../verifica.php');
 
 
 /*NIVEL EDIT*/
+/*
 if(isset($niv)){
     $action = "modo=editar&id=". $niv->id_nivel;
     $nome = $niv->nome;
     $descricao = $niv->descricao;
 
-}
+}*/
 
 ?>
 <html>
@@ -41,14 +42,19 @@ if(isset($niv)){
         <script>/*Modal*/
             $(document).ready(function(){
                 
-                $(".ver").click(function(){
-                    
-                    $(".container_modal").toggle(2000);
-                    
+                $(".novo").click(function(){    
+                    $(".container_modal").toggle(2000); 
                 });
+                
+                $(".editar").click(function(){
+                    $(".container_modal").fadeIn(2000);
+
+                });
+                
                 
             });
             
+            //Cadastrar
             function Cadastrar(){
                 
                 $.ajax({
@@ -56,6 +62,31 @@ if(isset($niv)){
                     url:"modal_nivel.php",
                     success: function(dados){
                         $(".modal").html(dados);
+                    }
+                });
+            }
+            
+            //Editar
+            function Editar(IdIten){
+                $.ajax({
+                    type:"GET", 
+                    url:"modal_nivel.php",
+                    data: {modo:'buscarId',id:IdIten},
+                    success: function(dados){
+                        $('.modal').html(dados);
+                    }
+                    
+                });
+            }
+            
+            //Excluir
+            function Excluir(idIten){
+                $.ajax({
+                    type:"GET",
+                    data: {id:idIten},
+                    url: "../router.php?controller=nivel&modo=excluir&id="+idIten,
+                    success: function(dados){
+                        $('.tabela_nivel_usuario').html(dados);
                     }
                 });
             }
@@ -94,7 +125,7 @@ if(isset($niv)){
                             <div class="content_add_nivel">
                                 
                                 <div class="img_nivel">
-                                    <a class="ver" href="<?php echo($niv->id_nivel)?>" onclick="Cadastrar()">
+                                    <a class="novo" href="<?php echo($niv->id_nivel)?>" onclick="Cadastrar()">
                                         
                                         <img src="<?=$caminho?>imagens/add.png">
                                     </a>
@@ -166,12 +197,13 @@ if(isset($niv)){
                                         <a><?= ($list[$cont]->nome);  ?></a>
                                     </div>
                                     <div class="campo_acoes">
-                                        <a href="<?= $caminho ?>../router.php?controller=nivel&modo=buscar_id&codigo=<?php echo($list[$cont]->id_nivel); ?>">
+                                        <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_nivel);?>)">
                                         
                                             <img src="<?=$caminho?>imagens/edit.png">
                                         </a>
-                                        <a href="<?= $caminho ?>../router.php?controller=nivel&modo=excluir&codigo=<?php echo($list[$cont]->id_nivel); ?>" onclick="return confirm('Tem certeza Marcel?? OLHA A CAAAABRA');">
+                                        <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_nivel);?>)">
                                             <img src="<?=$caminho?>imagens/shutdown.png">
+                                            <?php echo($list[$cont]->id_nivel);?>
                                         </a>
                                     </div>
                                 </div>

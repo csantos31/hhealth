@@ -134,7 +134,7 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
@@ -159,10 +159,14 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				//require('views_cms/nivel_usuario.php');
+                echo("<script>location.reload();</script>");
+                //echo("funcionou");
 			}else {
 				//Mensagem de erro
 				echo "Error ao deletar no Banco de Dados";
+                echo($nivel_dados->id_nivel);
+                echo($sql);
 			}
 
 			//Fecha a conexão com o banco de dados

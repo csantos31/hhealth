@@ -3,14 +3,41 @@
 //$action = "modo=inserir";
 
 $id="0";
+$nome=null;
+$descricao=null;
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
 else
     $caminho = "";
 
-require_once("../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
-require_once("../model_cms/nivel_class.php");/*da um require na nivel_class*/
+
+if(isset($_GET['modo'])){
+    $modo = $_GET['modo'];
+    
+    if($modo=='buscarId'){
+        $id=$_GET['id'];
+        
+        require_once("../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
+        require_once("../model_cms/nivel_class.php");/*da um require na nivel_class*/
+        
+        // Instancio a controller
+        $controller_nivel  = new controllerNivel();
+
+        //Chama o metodo para Listar todos os registros
+        $list = $controller_nivel::Listar();
+        $buscar_por_id = $controller_nivel::Buscar();
+        
+        $nome=$buscar_por_id->nome;
+       
+    }
+}
+
+
+
+
+
+
 
 include($caminho.'../verifica.php');
 
@@ -79,7 +106,7 @@ include($caminho.'../verifica.php');
                             <a>Cadastro Nível</a>
                         </div>
                     </div>
-
+                    
                     <div class="content_campos"><!--content dos campos de cadastro-->
                         <div class="campo"><!--campos--> <!--nome-->
                             <div class="string_campo">
@@ -87,7 +114,7 @@ include($caminho.'../verifica.php');
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_nome" >
+                                <input type="text" value="<?php echo($nome)?>" name="txt_nome" >
                             </div>
                         </div>
 
@@ -131,7 +158,9 @@ include($caminho.'../verifica.php');
                         
                         <div class="content_radio_nivel">
                                     <label>Descrição do nível:</label>
-                                    <textarea name="txt_descricao" id="txt_desc"></textarea>
+                                    <textarea name="txt_descricao" id="txt_desc">
+                                        <?php echo($descricao)?>
+                                    </textarea>
                                 </div>
 
                         <div class="campo_botao">
