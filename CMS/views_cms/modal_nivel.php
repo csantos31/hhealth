@@ -1,12 +1,16 @@
 <?php
 
-$action = "modo=inserir";
+//$action = "modo=inserir";
+
+$id="0";
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
 else
     $caminho = "";
 
+require_once("../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
+require_once("../model_cms/nivel_class.php");/*da um require na nivel_class*/
 
 include($caminho.'../verifica.php');
 
@@ -43,7 +47,7 @@ include($caminho.'../verifica.php');
 
                  $.ajax({
                     type: "POST",
-                    url: "router.php?controller=nivel&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=nivel&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -65,7 +69,7 @@ include($caminho.'../verifica.php');
             </div>
             
             <div class="content_modal">
-                <form action="nivel_usuario.php" method="post" id="form" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                     
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
@@ -93,7 +97,7 @@ include($caminho.'../verifica.php');
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_nome" >
+                                <input type="text" value="" name="txt_senha" >
                             </div>
                         </div>
 
@@ -103,7 +107,7 @@ include($caminho.'../verifica.php');
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_nome" >
+                                <input type="text" value="" name="txt_alguma" >
                             </div>
                         </div>
 
@@ -132,7 +136,7 @@ include($caminho.'../verifica.php');
 
                         <div class="campo_botao">
                             <div class="botao">
-                                <input type="submit" name="btn_cadastrar" value="Cadastrar">
+                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
                             </div>    
                         </div>
                     </div>

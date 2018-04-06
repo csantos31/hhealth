@@ -29,7 +29,8 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				//header('location: index.php');
+                echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";

@@ -49,7 +49,7 @@ if(isset($niv)){
                 
             });
             
-            function modal_nivel(){
+            function Cadastrar(){
                 
                 $.ajax({
                     type:"POST",
@@ -59,6 +59,8 @@ if(isset($niv)){
                     }
                 });
             }
+            
+            
             
             
             
@@ -92,7 +94,7 @@ if(isset($niv)){
                             <div class="content_add_nivel">
                                 
                                 <div class="img_nivel">
-                                    <a class="ver" href="<?php echo($niv->id_nivel)?>" onclick="modal_nivel()">
+                                    <a class="ver" href="<?php echo($niv->id_nivel)?>" onclick="Cadastrar()">
                                         
                                         <img src="<?=$caminho?>imagens/add.png">
                                     </a>
@@ -165,6 +167,7 @@ if(isset($niv)){
                                     </div>
                                     <div class="campo_acoes">
                                         <a href="<?= $caminho ?>../router.php?controller=nivel&modo=buscar_id&codigo=<?php echo($list[$cont]->id_nivel); ?>">
+                                        
                                             <img src="<?=$caminho?>imagens/edit.png">
                                         </a>
                                         <a href="<?= $caminho ?>../router.php?controller=nivel&modo=excluir&codigo=<?php echo($list[$cont]->id_nivel); ?>" onclick="return confirm('Tem certeza Marcel?? OLHA A CAAAABRA');">
