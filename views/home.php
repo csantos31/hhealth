@@ -29,13 +29,16 @@
                     <button id="btn_login" onclick="document.getElementById('caixa_login_home').style.display='block';">Login</button>
               </div>
               <div id="caixa_login_home" >
-                  <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
-                    <div id="borda_minimizar"></div>  
-                  </a>
-                
+                  <div id="superior_vermelha">
+                        <img id="icon_cad" src="imagens/padlock_icon.png" alt="pass" title="pass">
+                        <div class="label_login">Login</div>
+                          <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
+                            <div id="borda_minimizar"></div>  
+                          </a>
+                  </div>
                   <form name="" method="post" action="router.php?controller=paciente&modo=login">
                         <!--COnTEnT MODAL-->
-                      <div class="label_login">Login</div>
+                      
                       <div class="label_email">Endereço de e-mail:</div>
                       <input type="text" name="txt_usuario" id="txt_usuario">
 
