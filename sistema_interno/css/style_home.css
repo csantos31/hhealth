@@ -1,0 +1,85 @@
+/*STYLE SISTEMA INTERNO HOME*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: verdana, arial 'sans-erif';
+}
+
+#principal{
+    width: 100%;
+    min-height: 700px;
+    height: auto;
+}
+
+header{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 30px;
+    background-color: #FC363B;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+    background-color: #FC363B;
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+.main{
+    width: 80%;
+    min-height: 600px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#container_home{
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+}
+
+.coluna{
+    width: 33.333%;
+    min-height: 500px;
+    height: auto;
+    float: left;
+}
+
+.coluna img{
+    height: 250px;
+    width: 250px;
+    margin-left: 18%;
+    margin-bottom: 20px;
+}
+
+.coluna p{
+    margin-left: 18%;
+    text-align: justify;
+    margin-top: 10px;
+    font-family: verdana, arial, 'sans-serif';
+    font-weight: 600;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
