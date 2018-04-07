@@ -32,10 +32,11 @@
           </div>
 
           <!-- Imagem do paciente -->
-          <figure id="figure_paciente">
-             <img src="../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário"> 
-          </figure>
-
+            <a href="paciente_perfil.php">
+                <figure id="figure_paciente">
+                    <img src="../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário"> 
+                </figure>
+            </a>
         </div>
 
         <!-- Imagem do logo -->
@@ -59,11 +60,6 @@
           <a href="area_paciente_agendamento.php">
             <li class="item_menu">
               Agendamento
-            </li>
-          </a>
-          <a href="paciente_perfil.php">
-            <li class="item_menu">
-              Perfil
             </li>
           </a>
           <a href="resultado_exames.php">

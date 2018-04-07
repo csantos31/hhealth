@@ -37,12 +37,15 @@
                 </div>
             </div>
             <div id="informacoes_usuario">
+                
+                <img id="img_edit" src="../../imagens/edit_icon.png" alt="editar" title="editar"><label>Editar Perfil</label><br>
+                
                 <strong>Documentos</strong><br><br>
                 
                 <b>CPF:</b> <label>000.000.000.00</label><br>
                 <b>RG:</b> <label>00.000.000.X</label><br><br>
                 
-                <strong>Convênio</strong><br><br>
+                <strong>Convênio(s)</strong><br><br>
                 AMIL
                 
                 <img src="../../imagens/convenio_amil.jpg"><br><br>
