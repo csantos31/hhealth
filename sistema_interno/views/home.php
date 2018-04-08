@@ -32,7 +32,9 @@
                         <img src="imagens/doc_icon3.jpg" alt="medicos" title="medicos">
                         <p>Cadastrar níveis de usuário</p>
                         <p>Ver níveis de usuário</p>
-                        <p>Cadastrar especialidades</p>
+                        <a href="views/cadastrar_especialidades.php">
+                            <p>Cadastrar especialidades</p>
+                        </a>
                         <p>Ver especialidades</p>
                     </div>
                 </div>
