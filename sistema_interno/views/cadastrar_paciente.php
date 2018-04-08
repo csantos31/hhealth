@@ -3,7 +3,7 @@
         <title>Sistema Interno HHealth</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_cad_funcionario.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
     </head>
     <body>
         <div id="principal">
@@ -11,22 +11,22 @@
                 SISTEMA INTERNO HHEALTH
             </header>
             <div class="main">
-                <div id="container_cad_funcionario">
-                    <form name="frm_cad_funcionario" method="post" action="router.php">
-                        <p>Cadastro de funcionário</p>
+                <div id="container_cad_paciente">
+                    <form name="frm_cad_paciente" method="post" action="router.php">
+                        <p>Cadastro de paciente</p>
                         <div class="linha">
                             <div id="coluna_foto">
                             </div>
                             <div id="coluna_inputs">
                                 <input type="text" class="input_big" placeholder="NOME">
 
-                                <label>Cargo :</label>
+                                <label>Convênio :</label>
                                 <select id="slt_cargo" class="input_med" name="slt_cargo">
-                                    <option>Cardiologista</option>
-                                    <option>Pneumologista</option>
-                                    <option>Uncologista</option>
-                                    <option>Pediatra</option>
-                                    <option>Medico geral</option>
+                                    <option>Convênio I</option>
+                                    <option>Convênio II</option>
+                                    <option>Convênio III</option>
+                                    <option>Convênio IV</option>
+                                    <option>Convênio V</option>
                                 </select>
 
                                 <input type="text" class="input_big" placeholder="SOBRENOME" type="text" >

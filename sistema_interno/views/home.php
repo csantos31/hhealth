@@ -20,8 +20,9 @@
                     </div>
                     <div class="coluna">
                         <img src="imagens/doc_icon2.jpg" alt="medicos" title="medicos">
-                        
-                        <p>Cadastrar pacientes</p>
+                        <a href="views/cadastrar_paciente.php">
+                            <p>Cadastrar pacientes</p>
+                        </a>
                         <p>Ver pendentes</p>
                         <p>Ver pacientes ativos</p>
                     </div>
