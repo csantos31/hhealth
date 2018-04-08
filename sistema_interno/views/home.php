@@ -13,7 +13,9 @@
                 <div id="container_home">
                     <div class="coluna">
                         <img src="imagens/doc_icon1.jpg" alt="medicos" title="medicos">
-                        <p>Cadastrar funcionários</p>
+                        <a href="views/cadastrar_funcionario.php">
+                            <p>Cadastrar funcionários</p>
+                        </a>
                         <p>Ver funcionários</p>
                     </div>
                     <div class="coluna">

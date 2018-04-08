@@ -6,6 +6,11 @@
     font-family: verdana, arial 'sans-erif';
 }
 
+a{
+    text-decoration: none;
+    color: #333;
+}
+
 #principal{
     width: 100%;
     min-height: 700px;
@@ -68,7 +73,7 @@ footer{
     margin-top: 10px;
     font-family: verdana, arial, 'sans-serif';
     font-weight: 600;
-    
+
 }
 
 
