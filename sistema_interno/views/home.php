@@ -23,7 +23,9 @@
                         <a href="views/cadastrar_paciente.php">
                             <p>Cadastrar pacientes</p>
                         </a>
-                        <p>Ver pendentes</p>
+                        <a href="views/pacientes_pendentes.php">
+                            <p>Ver pendentes</p>
+                        </a>
                         <p>Ver pacientes ativos</p>
                     </div>
                     <div class="coluna">
