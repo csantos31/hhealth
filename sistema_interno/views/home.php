@@ -30,7 +30,9 @@
                     </div>
                     <div class="coluna">
                         <img src="imagens/doc_icon3.jpg" alt="medicos" title="medicos">
-                        <p>Cadastrar níveis de usuário</p>
+                        <a href="views/cadastro_usuario_permissao.php">
+                            <p>Cadastrar níveis de usuário</p>
+                        </a>
                         <p>Ver níveis de usuário</p>
                         <a href="views/cadastrar_especialidades.php">
                             <p>Cadastrar especialidades</p>
