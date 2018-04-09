@@ -11,24 +11,33 @@ if (isset($_GET['controller']))
 else
     $caminho = "";
 
-
+include($caminho.'../../verifica.php');
 if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     
     if($modo=='buscarId'){
         $id=$_GET['id'];
         
-        require_once("../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
-        require_once("../model_cms/nivel_class.php");/*da um require na nivel_class*/
+        require_once("../../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/nivel_class.php");/*da um require na nivel_class*/
         
         // Instancio a controller
         $controller_nivel  = new controllerNivel();
 
         //Chama o metodo para Listar todos os registros
         $list = $controller_nivel::Listar();
-        $buscar_por_id = $controller_nivel::Buscar();
+        /*
+        if(isset($niv)){
+            //$action = "modo=editar&id=". $niv->id_nivel;
+            $nome = $niv->nome;
+            $descricao = $niv->descricao;
+            
+
+        }else{
+            echo($nome);
+        }
+        */
         
-        $nome=$buscar_por_id->nome;
        
     }
 }
@@ -39,7 +48,7 @@ if(isset($_GET['modo'])){
 
 
 
-include($caminho.'../verifica.php');
+
 
 ?>
 
@@ -118,26 +127,6 @@ include($caminho.'../verifica.php');
                             </div>
                         </div>
 
-                        <div class="campo"><!--campos--> <!--Usuário-->
-                            <div class="string_campo">
-                                <a>Usuário:</a>
-                            </div>
-
-                            <div class="input_campo">
-                                <input type="text" value="" name="txt_senha" >
-                            </div>
-                        </div>
-
-                        <div class="campo"><!--campos--> <!--Senha-->
-                            <div class="string_campo">
-                                <a>Senha:</a>
-                            </div>
-
-                            <div class="input_campo">
-                                <input type="text" value="" name="txt_alguma" >
-                            </div>
-                        </div>
-
                         <div class="campo"><!--campos--> <!--Nível-->
                             <div class="string_campo">
                                 <a>Nível:</a>
@@ -157,11 +146,12 @@ include($caminho.'../verifica.php');
                         </div>
                         
                         <div class="content_radio_nivel">
-                                    <label>Descrição do nível:</label>
-                                    <textarea name="txt_descricao" id="txt_desc">
-                                        <?php echo($descricao)?>
-                                    </textarea>
-                                </div>
+                            <label>Descrição do nível:</label>
+                            <textarea name="txt_descricao" id="txt_desc">
+                                <?php echo($descricao)?>
+                                
+                            </textarea>
+                        </div>
 
                         <div class="campo_botao">
                             <div class="botao">

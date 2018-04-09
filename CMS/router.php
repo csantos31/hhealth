@@ -96,6 +96,12 @@
 
 			break;
             
+        /*home*/
+        case '':
+            switch(){
+                    
+            }
+            break;
             
 		default:
 			# code...

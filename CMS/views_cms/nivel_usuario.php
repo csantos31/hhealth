@@ -59,7 +59,7 @@ if(isset($niv)){
                 
                 $.ajax({
                     type:"POST",
-                    url:"modal_nivel.php",
+                    url:"modals/modal_nivel.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -70,7 +70,7 @@ if(isset($niv)){
             function Editar(IdIten){
                 $.ajax({
                     type:"GET", 
-                    url:"modal_nivel.php",
+                    url:"modals/modal_nivel.php",
                     data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -81,6 +81,8 @@ if(isset($niv)){
             
             //Excluir
             function Excluir(idIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
@@ -134,36 +136,7 @@ if(isset($niv)){
                             </div>
                         </div>
 
-                        <div class="content_cadastro_nivel"><!--cadastro de niveis-->
-
-                            <div class="img_cadastro_nivel"><!--imagem-->
-                                <img src="<?=$caminho?>imagens/logo.png">
-                            </div>
-
-                            <div class="titulo_cadastro_nivel"><!--titulo-->
-                                <a>Cadastro Nível</a>
-                            </div>
-                            <form name="frm_nivel" method="post" action="<?= $caminho ?>../router.php?controller=nivel&<?= $action ?>">
-                                <div class="faixa_nivel"><!--input faixa nivel-->
-                                <div class="string_nivel">
-                                    <a>Nome:</a>
-                                </div>
-
-                                <div class="input_nivel">
-                                    <input type="text" name="txt_nome" placeholder="Digite o nome do nível" value="<?= $nome ?>">
-                                </div>
-                                </div>
-
-                                <div class="content_radio_nivel">
-                                    <label>Descrição do nível:</label>
-                                    <textarea name="txt_descricao" id="txt_desc"><?= $descricao ?></textarea>
-                                </div>
-
-                                <div class="submit_cadastrar_nivel">
-                                    <input type="submit" name="btn_cadastrar" value="cadastrar">
-                                </div>
-                            </form>
-                        </div>
+                    
 
                         <div class="tabela_nivel_usuario"><!--tabela nivel-->
                             <div class="content_titulo_tabela_niveis">
