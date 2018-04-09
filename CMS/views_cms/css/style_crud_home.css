@@ -104,6 +104,29 @@
     color:#000000;
 }
 
+.string_titulo{/*titulo*/
+    width:500px;
+    height:25px;
+    padding-top:5px; 
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color:#000000;
+    float:left;
+}
+
+.img_cadastrar{/*img*/
+    width:30px;
+    height:30px;
+    float:left;
+}
+
+.img_cadastrar img{
+    width:30px;
+    height:30px;
+}
+
+
 .conteudo_pagina_home{/*conteudo*/
     width:550px;
     height:200px;

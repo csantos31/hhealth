@@ -134,9 +134,7 @@
     box-shadow: -4px 2px 25px 6px rgba(184,245,188,1);
 }
 
-
-
-#txt_desc{
+#txt_desc{/*text box*/
     width: 90%;
     height: 70px;
     border: solid 1px #ccc;

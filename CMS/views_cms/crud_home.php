@@ -32,12 +32,47 @@ if(isset($niv)){
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_crud_home.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
+        
+        <link rel="stylesheet" type="text/css" href="css/style_modal.css">
+        
+        <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 
+        <script>
+        
+        $(document).ready(function(){
+                
+            $(".novo").click(function(){    
+                $(".container_modal").toggle(2000); 
+            });
+
+            $(".editar").click(function(){
+                $(".container_modal").fadeIn(2000);
+
+            });
+
+
+        });
+            
+        //Cadastrar
+            function Cadastrar(){
+                
+                $.ajax({
+                    type:"POST",
+                    url:"modals/modal_home.php",
+                    success: function(dados){
+                        $(".modal").html(dados);
+                    }
+                });
+            }
+        </script>
 
     </head>
 
     <body>
-
+        <div class="container_modal"><!--container da modal-->
+            <div class="modal"><!--modal-->
+            </div>
+        </div>
         <div class="main">  <!--Div main que segura todas as div-->
 
 
@@ -51,7 +86,18 @@ if(isset($niv)){
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                         <div class="content_conteudo_pagina_home">
                             <div class="titulo_conteudo"><!--titulo-->
-                                <a>Slide</a>
+                                <div class="string_titulo">
+                                    <a>Slide</a>
+                                </div>
+                                
+                                <div class="img_cadastrar">
+                                    
+                                    <a class="novo" href="#" onclick="Cadastrar()">
+                                        <img src="<?=$caminho?>imagens/add.png">
+                                    </a>
+                                
+                                </div>
+                                
                             </div>
                             
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
@@ -65,9 +111,10 @@ if(isset($niv)){
                                             <a>Desativar</a>
                                         </div>
                                         
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
+                                            <div class="icon_opcoes">
+                                                <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            </div>
+                                        
                                     </div>
                                     
                                     <div class="opcoes"><!--Ativar-->
