@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 
  if($_SERVER['PHP_SELF'] == '/hhealth/index.php')
   {
@@ -16,7 +16,7 @@
 <div class="header"><!--header-->
     <a href="index.php">
         <div class="logo">
-            
+
         </div>
     </a>
     <nav class="nav_menu">
@@ -75,9 +75,9 @@
                         </a>
                   </ul>
               </li>
-          </ul>  
+          </ul>
     </nav>
-    
+
     <!--este menu aparece quando o usuário desce a página-->
     <nav id="menu_secundario"><!--menu secundário-->
         <ul class="menu_nav">
@@ -132,6 +132,8 @@
               </li>
           </ul>
     </nav>
+    <input type="checkbox" id="btn_menu">
+    <label for="btn_menu">&#9776;</label>
 </div>
 
 <script>
@@ -140,11 +142,11 @@
         var top = window.pageYOffset || document.documentElement.scrollTop;
         if( top > 150 ) {
             menu_secundario.style.display = "block";
-            
+
             //console.log('Maior que 300');
         }else if(top < 300){
             menu_secundario.style.display = "none";
-            
+
             //console.log('Menor que 300');
         }
     }
