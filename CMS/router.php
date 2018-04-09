@@ -5,7 +5,7 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
-
+    require_once('controller_cms/gerenciamento_home_controller.php');
 	require_once('controller_cms/nivel_controller.php');
 	require_once('model_cms/nivel_class.php');
     require_once('controller_cms/tipo_quarto_controller.php');
@@ -97,10 +97,18 @@
 			break;
             
         /*home*/
-        case '':
-            switch(){
+        case 'home':
+            switch($modo){
+                case 'inserir':
+					// Instanciando a classe da controller
+					$controller_gerenciamento_home =  new controller_home();
+					//Chama o metodo Novo da controller
                     
+					$controller_gerenciamento_home::Novo();
+
+					break;  
             }
+            
             break;
             
 		default:

@@ -2,10 +2,11 @@
 
     class controller_home{
         public function Novo(){
-            require_once 'modulo.php';
+            require_once ('model_cms/gerenciamento_home_class.php');
+            require_once ('modulo_img.php');
             $home = new Home();
-            $home ->frase = $POST['frase'];
-            $home ->status = $POST['status'];
+            $home ->frase = $_POST['txt_frase'];
+            //$home ->status = $_POST['status'];
             
             //variaveis de upload de imagem
             $diretorio_completo1 = null;
@@ -26,7 +27,7 @@
                 $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_home');
                 if($diretorio_completo1 == "Erro"){
                     echo "<script>
-                     alert('arquivo nao movido');
+                     alert($diretorio_completo1);
                      window.history.go(-1);
                      </script>";
                    $mov_upload1=false;
@@ -43,9 +44,10 @@
                 $diretorio_completo2=salvar_imagem($_FILES['fle_img_home2'],'imagem_home');
                 if($diretorio_completo2 == "Erro"){
                     echo "<script>
-                     alert('arquivo nao movido');
+                     alert('$diretorio_completo2');
                      window.history.go(-1);
                      </script>";
+                    
                    $mov_upload2=false;
                 }else{
                     $mov_upload2=true;
@@ -60,7 +62,7 @@
                 $diretorio_completo3=salvar_imagem($_FILES['fle_img_home3'],'imagem_home');
                 if($diretorio_completo3 == "Erro"){
                     echo "<script>
-                     alert('arquivo nao movido');
+                     alert($diretorio_completo3);
                      window.history.go(-1);
                      </script>";
                    $mov_upload3=false;
@@ -72,11 +74,19 @@
             }
             
             $home -> slide1 = $diretorio_completo1;
-            $home -> slide1 = $diretorio_completo2;
+            $home -> slide2 = $diretorio_completo2;
+            $home -> slide3 = $diretorio_completo3;
             
+            $home::Insert($home);
         }
         
-        
+        public function Listar(){
+			//Instancia da classe contatos
+			$home = new Home();
+
+			//Chama o método para selecionar os registros
+			return $home::Select();
+		}
         
         
         

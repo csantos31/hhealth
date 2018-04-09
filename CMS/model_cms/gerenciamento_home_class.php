@@ -14,8 +14,8 @@
         
         /*insere o registro no DB*/
         public static function Insert($home_dados){
-            $sql = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status)
-            VALUES('".$home_dados->slide1."','"$home_dados->slide2"','".$home_dados->slide3."','".$home_dados->frase."','".$home_dados->status."');";
+            $sql = "INSERT INTO tbl_home(slide1,slide2,slide3,frase)
+            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -25,10 +25,12 @@
             
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql)){
-             echo "<script>location.reload();</script>";
+                echo "<script>location.reload();</script>";
+                
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
+                echo $sql;
 			}
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();

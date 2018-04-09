@@ -83,7 +83,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=nivel&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=home&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -119,7 +119,7 @@ if(isset($_GET['modo'])){
                     <div class="content_campos"><!--content dos campos de cadastro-->
                         <div class="campo">
                             <div class="content_file">
-                              <input  id="upload" type="file" name="fle_img_home1" >
+                              <input   type="file" name="fle_img_home1" >
                             </div>
                             
                             <div class="content_preview">
@@ -131,7 +131,7 @@ if(isset($_GET['modo'])){
                         
                         <div class="campo">
                             <div class="content_file">
-                              <input  id="upload" type="file" name="fle_img_home2" >
+                              <input  type="file" name="fle_img_home2" >
                             </div>
                             
                             <div class="content_preview">
@@ -143,7 +143,7 @@ if(isset($_GET['modo'])){
                         
                         <div class="campo">
                             <div class="content_file">
-                              <input  id="upload" type="file" name="fle_img_home3" >
+                              <input   type="file" name="fle_img_home3" >
                             </div>
                             
                             <div class="content_preview">
@@ -155,11 +155,11 @@ if(isset($_GET['modo'])){
                         
                         <div class="campo"><!--campos--> <!--nome-->
                             <div class="string_campo">
-                                <a>Nome:</a>
+                                <a>Frase:</a>
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="<?php echo($nome)?>" name="txt_nome" >
+                                <input type="text" value="" name="txt_frase" >
                             </div>
                         </div>                        
                     

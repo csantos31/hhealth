@@ -99,10 +99,27 @@ if(isset($niv)){
                                 </div>
                                 
                             </div>
-                            
+                            <?php
+                                
+                                // Incluindo a controller e a model para serem utilizadas
+                                include_once($caminho . '../controller_cms/gerenciamento_home_controller.php');
+                                include_once($caminho .'../model_cms/gerenciamento_home_class.php');
+
+                                // Instancio a controller
+                                $controller_gerenciamento_home =  new controller_home();
+
+                                //Chama o metodo para Listar todos os registros
+                                $list = $controller_gerenciamento_home::Listar();
+
+                                $cont = 0;
+                                while ($cont < count($list)) {
+                                
+                                
+                                ?>
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
+                                
                                 <div class="imagem_conteudo"><!--imagem-->
-                                    <img>
+                                    <img src="../<?php echo($list[$cont]->slide1)?>">
                                 </div>
                                 
                                 <div class="content_opcoes"><!--content das opções-->
@@ -147,103 +164,14 @@ if(isset($niv)){
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             
-                            <div class="conteudo_pagina_home"><!--conteudos da pagina-->
-                                <div class="imagem_conteudo"><!--imagem-->
-                                    <img>
-                                </div>
-                                
-                                <div class="content_opcoes"><!--content das opções-->
-                                    <div class="opcoes"><!--Desativar-->
-                                        <div class="string_opcoes">
-                                            <a>Desativar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Ativar-->
-                                        <div class="string_opcoes">
-                                            <a>Ativar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Editar-->
-                                        <div class="string_opcoes">
-                                            <a>Editar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Excluir-->
-                                        <div class="string_opcoes">
-                                            <a>Excluir</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php
+                               $cont +=1;
+                                }
+                            ?>
                             
-                            <div class="conteudo_pagina_home"><!--conteudos da pagina-->
-                                <div class="imagem_conteudo"><!--imagem-->
-                                    <img>
-                                </div>
-                                
-                                <div class="content_opcoes"><!--content das opções-->
-                                    <div class="opcoes"><!--Desativar-->
-                                        <div class="string_opcoes">
-                                            <a>Desativar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Ativar-->
-                                        <div class="string_opcoes">
-                                            <a>Ativar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Editar-->
-                                        <div class="string_opcoes">
-                                            <a>Editar</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="opcoes"><!--Excluir-->
-                                        <div class="string_opcoes">
-                                            <a>Excluir</a>
-                                        </div>
-                                        
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         
                         <div class="content_conteudo_pagina_home">
