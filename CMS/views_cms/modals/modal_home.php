@@ -117,6 +117,42 @@ if(isset($_GET['modo'])){
                     </div>
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
+                        <div class="campo">
+                            <div class="content_file">
+                              <input  id="upload" type="file" name="fle_img_home1" >
+                            </div>
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="" alt="">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="campo">
+                            <div class="content_file">
+                              <input  id="upload" type="file" name="fle_img_home2" >
+                            </div>
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="" alt="">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="campo">
+                            <div class="content_file">
+                              <input  id="upload" type="file" name="fle_img_home3" >
+                            </div>
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="" alt="">
+                              </div>
+                            </div>
+                        </div>
+                        
                         <div class="campo"><!--campos--> <!--nome-->
                             <div class="string_campo">
                                 <a>Nome:</a>
@@ -125,33 +161,8 @@ if(isset($_GET['modo'])){
                             <div class="input_campo">
                                 <input type="text" value="<?php echo($nome)?>" name="txt_nome" >
                             </div>
-                        </div>
-
-                        <div class="campo"><!--campos--> <!--Nível-->
-                            <div class="string_campo">
-                                <a>Nível:</a>
-                            </div>
-
-
-                            <select class="input_combo" name="combo"><!--Combo box-->
-                                <option value="">
-                                    Selecionar Nível
-                                </option>
-
-                                <option value=""> 
-                                    Nível
-                                </option>
-                            </select>
-
-                        </div>
-                        
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
+                        </div>                        
+                    
 
                         <div class="campo_botao">
                             <div class="botao">

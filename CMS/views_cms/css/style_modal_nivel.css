@@ -85,7 +85,7 @@
     font-family: sans-serif;
     text-align: center;
     color:#000000;
-    background-color:red;
+    
 }
 
 .input_campo [type=text]{
@@ -120,6 +120,7 @@
     height:30px;
     margin-left:500px;
     margin-bottom:30px;
+    margin-top:10px;
     background-color:#22ab13;
     font-family: sans-serif;
     font-size: 14;
@@ -144,7 +145,30 @@
     margin-top: 10px;
 }
 
+/*imagem*/
+.content_file{
+    width:500px;
+    height:30px;
+    margin:auto;
+    
+}
+.content_preview{
+    width:150px;
+    height:150px;
+    margin:auto;
+}
 
+.preview_img{
+    width:150px;
+    height:150px;
+    margin:auto;
+}
+
+.preview_img img{
+    width:150px;
+    height:150px;
+    margin:auto;  
+}
 
 
 

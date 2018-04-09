@@ -26,6 +26,9 @@ if(isset($_GET['modo'])){
 
         //Chama o metodo para Listar todos os registros
         $list = $controller_nivel::Listar();
+        $buscar = $controller_nivel::Buscar();
+        
+        $nome=$buscar->nome;
         /*
         if(isset($niv)){
             //$action = "modo=editar&id=". $niv->id_nivel;

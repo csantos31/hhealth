@@ -248,7 +248,18 @@ if(isset($niv)){
                         
                         <div class="content_conteudo_pagina_home">
                             <div class="titulo_conteudo"><!--titulo-->
-                                <a>Slide</a>
+                                <div class="string_titulo">
+                                    <a>Slide</a>
+                                </div>
+                                
+                                <div class="img_cadastrar">
+                                    
+                                    <a class="novo" href="#" onclick="Cadastrar()">
+                                        <img src="<?=$caminho?>imagens/add.png">
+                                    </a>
+                                
+                                </div>
+                                
                             </div>
                             
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
@@ -262,9 +273,10 @@ if(isset($niv)){
                                             <a>Desativar</a>
                                         </div>
                                         
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
+                                            <div class="icon_opcoes">
+                                                <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            </div>
+                                        
                                     </div>
                                     
                                     <div class="opcoes"><!--Ativar-->
@@ -395,10 +407,22 @@ if(isset($niv)){
                                 </div>
                             </div>
                         </div>
-                        
+                                
+                            
                         <div class="content_conteudo_pagina_home">
                             <div class="titulo_conteudo"><!--titulo-->
-                                <a>Slide</a>
+                                <div class="string_titulo">
+                                    <a>Slide</a>
+                                </div>
+                                
+                                <div class="img_cadastrar">
+                                    
+                                    <a class="novo" href="#" onclick="Cadastrar()">
+                                        <img src="<?=$caminho?>imagens/add.png">
+                                    </a>
+                                
+                                </div>
+                                
                             </div>
                             
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
@@ -412,9 +436,10 @@ if(isset($niv)){
                                             <a>Desativar</a>
                                         </div>
                                         
-                                        <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
-                                        </div>
+                                            <div class="icon_opcoes">
+                                                <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            </div>
+                                        
                                     </div>
                                     
                                     <div class="opcoes"><!--Ativar-->
