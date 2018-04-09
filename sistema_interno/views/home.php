@@ -35,7 +35,9 @@
                         <a href="views/cadastrar_especialidades.php">
                             <p>Cadastrar especialidades</p>
                         </a>
-                        <p>Ver especialidades</p>
+                        <a href="views/especialidades.php">
+                            <p>Ver especialidades</p>
+                        </a>
                     </div>
                 </div>
             </div>
