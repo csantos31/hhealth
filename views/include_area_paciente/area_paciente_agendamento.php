@@ -1,3 +1,8 @@
+<?php 
+    require('verifica_paciente.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
@@ -5,10 +10,9 @@
     <title>Agendamento</title>
     <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
     <link rel="stylesheet" href="../../css/area_paciente/style_agendamento.css">
-<<<<<<< HEAD
-=======
+
     <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
->>>>>>> 80ac4ec47de9d052f507a5c427db338c02fb8608
+
   </head>
   <body>
     <?php include_once('../include_area_paciente/nav_paciente.php'); ?>

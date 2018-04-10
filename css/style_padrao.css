@@ -17,7 +17,7 @@ body{
 
 /*---slider---*/
 .content_carrossel {
-	width: 100%;
+	width: 1800px;
 	height:350px;
     padding-top: 25px;
     float:left;
@@ -28,12 +28,11 @@ body{
 
 .carrossel {
 	float: left;
-	width: 800px;
+	width: 100%;
 	overflow: hidden;
 	height: 300px;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .carrossel ul li {
@@ -122,7 +121,7 @@ body{
 
 /*------faixa 1-------*/
 .faixa_1_content_home{
-    width:1200px;
+    width:1800px;
     height:400px;
     margin-top: 0px;
     margin-left: auto;
@@ -229,15 +228,16 @@ body{
 .img_faixa_2_home{
     width:350px;
     height:200px;
-    background-color:yellow;
     margin-left:40px;
     margin-top:30px;
     float:left;
-    background-image: url(../imagens/download.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-
 }
+
+.img_faixa_2_home img{
+    width:350px;
+    height:200px;
+}
+
 
 /*-------botão------*/
 .content_btn_faixa_2_home{
@@ -275,12 +275,14 @@ body{
 .img_faixa_3_home{
     width:200px;
     height:200px;
-    background-image: url(../imagens/4992868.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
     margin-right: 10px;
     float:left;
     margin-top: 50px;
+}
+
+.img_faixa_3_home img{
+    width:200px;
+    height:200px;
 }
 
 .descricao_faixa_3_home{
@@ -333,13 +335,13 @@ body{
     height: 30px;
     color: #FFF;
     background-color: #9C1003;
-    border-radius: 10%;
+    border: solid 1px;
     font-family: 'BenchNine', Arial, sans-serif;
     font-weight: 700;
     font-size: 18px;
     position: absolute;
-    margin-left: 80%;
-    margin-top: 80px;
+    margin-left: 91%;
+    margin-top: 15px;
     cursor: pointer;
     z-index: 999;
     
@@ -354,7 +356,7 @@ body{
     font-size: 18px;
     position: absolute;
     margin-left: 80%;
-    margin-top: 50px;
+    margin-top: 15px;
     z-index: 998;
 }
 
@@ -371,17 +373,25 @@ body{
     font-weight: 300;
     font-size: 18px;
     position: absolute;
-    margin-left: 78%;
-    margin-top: 120px;
+    margin-left: 74%;
+    margin-top: 100px;
     z-index: 998;
     width: 350px;
     height: 300px;
    box-shadow: 1px 2px 8px #333;
-    background-image: url(../imagens/bg_login.jpg);
+   /*background-image: url(../imagens/bg_login.jpg);*/
+    background-color: #fff;
     border-radius: 20px;
     background-size: 350px 300px;
     background-repeat: no-repeat;
     display: none;
+}
+
+#superior_vermelha{
+    width: 350px;
+    height: 59px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #DA0000;
 }
 
 #borda_minimizar{
@@ -392,6 +402,79 @@ body{
     margin-right: 15px;
     border: solid 3px #fff;
 }
+
+
+.label_login{
+    width: 100px;
+    height: 30px;
+    margin-left:17px;
+    margin-top: 13px;
+    font-family: verdana;
+    font-weight: 500px;
+    float: left;
+    color: red;
+    padding-left: 20px;
+    border-radius: 15px;
+    background-color: #fff;
+}
+
+#icon_cad{
+    margin-left: 10px;
+    margin-top: 15px;
+    float: left;
+}
+
+.label_email{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 35px;
+    font-family: verdana;
+    font-size: 14px;
+    color: #000;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+#txt_usuario{
+    background-color: #EEEEEE;
+    margin-top: 9px;
+    margin-left: 28px;
+    width: 300px;
+    border: none;
+}
+
+.label_senha{
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    font-family: verdana;
+    font-size: 14px;
+    color: #000;
+    padding-left: 20px;
+    background-color: #fff;
+}
+
+#txt_senha{
+    background-color: #EEEEEE;
+    margin-top: 9px;
+    margin-left: 28px;
+    width: 300px;
+    border: none;
+}
+
+#btn_go_logar{
+    margin-left: 131px;
+    margin-top: 14px;
+    height: 33px;
+    width: 90px;
+    background-color: #37CC73;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
 
 
 

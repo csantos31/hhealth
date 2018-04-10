@@ -24,9 +24,10 @@
 			return $nivel::Select();
 		}
         
+        
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idNivel = $_GET['codigo'];
+			$idNivel = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
 			$nivel = new Nivel();
@@ -36,7 +37,7 @@
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
 			$niv = $nivel::SelectById($nivel);
-			require_once('views_cms/nivel_usuario.php');
+			//require_once('views_cms/nivel_usuario.php');
 		}
         
         /*Atualiza um registro existente*/
@@ -62,7 +63,7 @@
         public function Excluir(){
 
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idNivel = $_GET['codigo'];
+			$idNivel = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
 			$nivel = new Nivel();

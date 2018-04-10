@@ -1,3 +1,14 @@
+<?php
+
+    session_start();
+
+    if(isset($_GET['destroi_sessao'])){
+        session_destroy();
+        header('location:../index.php');
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
     <head>
@@ -18,23 +29,35 @@
                     <button id="btn_login" onclick="document.getElementById('caixa_login_home').style.display='block';">Login</button>
               </div>
               <div id="caixa_login_home" >
-                  <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
-                    <div id="borda_minimizar"></div>  
-                  </a>
-                
-              
+                  <div id="superior_vermelha">
+                        <img id="icon_cad" src="imagens/padlock_icon.png" alt="pass" title="pass">
+                        <div class="label_login">Login</div>
+                          <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
+                            <div id="borda_minimizar"></div>  
+                          </a>
+                  </div>
+                  <form name="" method="post" action="router.php?controller=paciente&modo=login">
+                        <!--COnTEnT MODAL-->
+                      
+                      <div class="label_email">Endereço de e-mail:</div>
+                      <input type="text" name="txt_usuario" id="txt_usuario">
+
+                      <div class="label_senha">Senha:</div>
+                      <input type="password" name="txt_senha" id="txt_senha">
+
+                      <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">    
+                  </form>
               </div>
                <?php require_once('nav.php'); ?>
               
              <div class="div_suporte_conteudo">
-
              </div>
 
              <!--***********************SLIDE***********************-->
-             <div class="w3-content w3-display-container" style="max-width:100%;heigh:600px;">
-               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:600px;" >
-               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:600px;">
-               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:600px;">
+             <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
+               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:700px;" >
+               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:700px;">
+               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:700px;">
                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" >
                   <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                   <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -70,6 +93,12 @@
                                       <li>
                                           <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
                                       </li>
+                                      <li>
+                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                      </li>
+                                      <li>
+                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                      </li>
                                   </ul>
 
                               </div>
@@ -91,7 +120,7 @@
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter">
-                                  <h1>Onde você estiver, HHEalth cuidará de você!.</h1>
+                                  <h1>Onde você estiver, HHealth cuidará de você!.</h1>
                               </div>
                           </div>
                         </div>
@@ -103,21 +132,27 @@
 
                             <div class="content_img_faixa_2_home">
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
 
                                 <div class="img_faixa_2_home">
+                                    <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
                                 </div>
                             </div>
 
@@ -130,6 +165,7 @@
                             <div class="carrossel_local">
                                 <div class="content_faixa_3_unidades_home">
                                     <div class="img_faixa_3_home">
+                                        <img src="imagens/4992868.jpg" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
@@ -138,6 +174,7 @@
 
                                 <div class="content_faixa_3_unidades_home">
                                     <div class="img_faixa_3_home">
+                                        <img src="imagens/imagem_hospital.jpg" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">

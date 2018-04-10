@@ -16,8 +16,12 @@
 #content{
   height: 900px;
   width: 1200px;
-  background-color: #FF0000;
+  background-color: #FFF;
   margin: auto;
+    border: solid 1px #333;
+    margin-bottom: 5px;
+    margin-top: 3px;
+    box-shadow: 2px 2px 2px 2px #333;
 }
 
 /* Div que segura titulo da Página */

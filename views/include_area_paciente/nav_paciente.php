@@ -22,7 +22,7 @@
 
             <!-- logout ,da pagina -->
             <div id="suporte_logout">
-              <a href="#">
+              <a href="../home.php?destroi_sessao=1">
                 <div id="logout_area_usuario">
                   Logout
                 </div>
@@ -32,10 +32,11 @@
           </div>
 
           <!-- Imagem do paciente -->
-          <figure id="figure_paciente">
-             <img src="../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário"> 
-          </figure>
-
+            <a href="paciente_perfil.php">
+                <figure id="figure_paciente">
+                    <img src="../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário"> 
+                </figure>
+            </a>
         </div>
 
         <!-- Imagem do logo -->
@@ -56,29 +57,29 @@
 
         </div>
         <ul id="suporte_menu">
-          <a href="#">
-            <li id="item_menu_agendamento">
+          <a href="area_paciente_agendamento.php">
+            <li class="item_menu">
               Agendamento
             </li>
           </a>
-          <a href="#">
+          <a href="resultado_exames.php">
             <li class="item_menu">
               Resultados Exames
             </li>
           </a>
-          <a href="#">
-            <li id="item_menu_historico">
-              Histórico de Atendimento
+          <a href="historico_paciente.php">
+            <li class="item_menu">
+              Histórico 
             </li>
           </a>
-          <a href="#">
-            <li id="item_menu_receita">
+          <a href="receitas.php">
+            <li class="item_menu">
               Receitas
             </li>
           </a>
-          <a href="#">
+          <a href="pre_atendimento.php">
             <li class="item_menu">
-              Pré-Atendimento
+              Pré - Atendimento
             </li>
           </a>
         </ul>
