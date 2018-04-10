@@ -1,4 +1,48 @@
 
+/*Tamanho da barra de rolagem*/ 
+
+::-webkit-scrollbar { 
+
+  width: 13px; 
+
+  height: 15px; 
+
+} 
+
+  
+
+/*Cor de fundo da barra de rolagem*/ 
+
+::-webkit-scrollbar-track-piece { 
+
+  background:    white; 
+
+} 
+
+  
+
+/*propriedades da rolagem cor, borda e altura vertical*/ 
+
+::-webkit-scrollbar-thumb:vertical { 
+
+  height: 5px; 
+
+  background:    #CA0000; 
+border-radius:10px;  
+
+} 
+
+  
+
+/*propriedades da rolagem cor, borda e altura horizontal*/ 
+
+::-webkit-scrollbar-thumb:horizontal { 
+
+  width: 5px; 
+
+  background-color: #CA0000; 
+
+} 
 
 body{
     padding:0;

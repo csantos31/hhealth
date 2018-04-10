@@ -189,14 +189,15 @@
   top: -5px;
 }
 .botao_snip:after {
-  border-bottom-width: 2px;
+
   border-color: #DA0000;
-  border-left-width: 2px;
+/*  border-left-width: 2px;*/
   bottom: -5px;
   left: -5px;
 }
 .botao_snip:hover,
 .botao_snip.hover {
+
   background-color: #DA0000;
 }
 .botao_snip:hover:before,
@@ -205,6 +206,7 @@
 .botao_snip.hover:after {
   height: 100%;
   width: 100%;
+      border-bottom-width: 2px;
 }
 
 
