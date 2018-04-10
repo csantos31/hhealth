@@ -6,6 +6,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_fale_conosco.css">
             <title>Hospital HHealth</title>
+            <meta name="viewport" content="initial-scale=1, maximun-scale=1">
       </head>
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->
