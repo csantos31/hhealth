@@ -19,23 +19,13 @@
 
 					break;
 
-				case 'buscar_id':
-					// Instanciando a classe da controller
-					//Chama o metodo Novo da controller
-                    
-                    $controller_nivel =  new controllerNivel();
-					//Chama o metodo Novo da controller
-					$controller_nivel::Buscar();
-					require_once('views_cms/nivel_usuario.php');
-                    
-					break;
-
-
 				case 'editar':
 				// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+                    require_once('controllers/especialidade_controller.php');
+                    require_once('models/especialidade_class.php');
+					$controller_especialidade =  new controllerEspecialidade();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Editar();
+					$controller_especialidade::Editar();
 					break;
 
 				case 'excluir':

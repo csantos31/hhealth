@@ -28,11 +28,11 @@ class Especialidade{
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
                 echo $sql;
-				//echo "Error inserir no Banco de Dados";
+				echo "Error inserir no Banco de Dados";
 			}
 
 			//Fecha a conexão com o banco de dados
@@ -43,7 +43,7 @@ class Especialidade{
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_tipo_quarto ORDER BY id_tipo_quarto DESC;";
+			$sql="SELECT * FROM tbl_especialidade WHERE status = 1 ORDER BY id_especialidade;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -61,12 +61,14 @@ class Especialidade{
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-				$lista_niveis[] = new TipoQuarto();
+                
+				$lista_especialidade[] = new Especialidade();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_niveis[$cont]->id_tipo_quarto = $rs['id_tipo_quarto'];
-				$lista_niveis[$cont]->nivel = $rs['nivel'];
-				$lista_niveis[$cont]->descricao = $rs['descricao'];
+				$lista_especialidade[$cont]->id_especialidade = $rs['id_especialidade'];
+				$lista_especialidade[$cont]->especialidade = $rs['especialidade'];
+				$lista_especialidade[$cont]->texto = $rs['texto'];
+                $lista_especialidade[$cont]->imagem = $rs['imagem'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -75,16 +77,16 @@ class Especialidade{
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_niveis)) {
+			if (isset($lista_especialidade)) {
 				# code...
-				return $lista_niveis;
+				return $lista_especialidade;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
-		public function SelectById($nivel){
-			$sql = "SELECT * FROM tbl_tipo_quarto WHERE id_tipo_quarto =". $nivel->id_tipo_quarto;
+		public function SelectById($especialidade){
+			$sql = "SELECT * FROM tbl_especialidade WHERE id_especialidade =". $especialidade->id_especialidade;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -100,13 +102,15 @@ class Especialidade{
 				//Se der true redireciona a tela
               
                 
-				$nivel = new TipoQuarto();
+				$especialidade = new Especialidade();
 
-				$nivel->id_tipo_quarto = $rs['id_tipo_quarto'];
-				$nivel->nivel = $rs['nivel'];
-				$nivel->descricao = $rs['descricao'];
+				$especialidade->id_especialidade = $rs['id_especialidade'];
+				$especialidade->especialidade = $rs['especialidade'];
+				$especialidade->texto = $rs['texto'];
+                $especialidade->status = $rs['status'];
+                $especialidade->imagem = $rs['imagem'];
 				
-				return $nivel;
+                return $especialidade;
 
 			}else {
 				//Mensagem de erro
@@ -117,8 +121,9 @@ class Especialidade{
 			$conex->Desconectar();
 		}
         
-        public function Update($nivel){
-			$sql = "UPDATE tbl_tipo_quarto set nivel = '".$nivel->nivel."', descricao = '".$nivel->descricao. "' WHERE id_tipo_quarto =".$nivel->id_tipo_quarto;
+        public function UpdateWithFile($especialidade){
+            
+			$sql = "UPDATE  set especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "', imagem = '". $especialidade->imagem ."' WHERE id_especialidade =".$especialidade->id_especialidade;
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -130,7 +135,31 @@ class Especialidade{
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				echo "<script>location.reload();</script>";
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+		}
+    
+        public function UpdateWithoutFile($especialidade){
+            
+			$sql = "UPDATE  set especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "' WHERE id_especialidade =".$especialidade->id_especialidade;
+		
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";

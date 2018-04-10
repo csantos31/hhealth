@@ -40,8 +40,8 @@
             function Editar(IdIten){
                 $.ajax({
                     type:"GET", 
-                    url:"modals/modal_nivel.php",
-                    data: {modo:'buscarId',id:IdIten},
+                    url:"../modals/modal_cad_especialidade.php",
+                    data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
@@ -58,7 +58,7 @@
                     data: {id:idIten},
                     url: "../router.php?controller=nivel&modo=excluir&id="+idIten,
                     success: function(dados){
-                        $('.tabela_nivel_usuario').html(dados);
+                        
                     }
                 });
             }
@@ -95,59 +95,42 @@
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">NOME</div>
-                            <div class="lb_titulo">DESCRIÇÃO</div>
+                            <div class="lb_titulo">FOTO</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">dfjhsdfhsdjkhfsdhfhfds shbfhsbdhgfjhsdgf jhsdfbsdhfhsgfs hjsfdshgfjsf vsjhfgjhfgsg sfsdfhsgfs hsdgjhfsdfsjhgf fhsgfsgyfs sjfgsjhgfuysfys shfsgfsfvhff hsfvsfsgfajhdg</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
+                        
+                        <?php
+                        
+                            include_once('../controllers/especialidade_controller.php');
+                            include_once('../models/especialidade_class.php');
+                        
+                                $controller_especialidade  = new controllerEspecialidade();
+
+                                //Chama o metodo para Listar todos os registros
+                                $list = $controller_especialidade::Listar();
+
+                                $cont = 0;
+                                while ($cont < count($list)) {
+                        ?>
+                                    <div class="linha_tabela">
+                                        <div class="item_tabela"><?= $list[$cont]->especialidade ?></div>
+                                        <div class="item_tabela"><img src="../<?= $list[$cont]->imagem ?>" alt="imaagem da especialidade" title="imagem da especialidade"></div>
+                                        <div class="item_tabela icones_tabela">
+                                        
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_especialidade);?>)">
+                                                <img src="../imagens/edit.png" alt="editar" title="editar">
+                                            </a>
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_especialidade);?>)">
+                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
+                                            </a>
+                                        </div>
+                                    </div>
+                        <?php
+                       
+                                $cont +=1;
+                                }
+                       
+                        ?>
                     </div>
                 </div>
             </div>

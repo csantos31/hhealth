@@ -7,38 +7,33 @@ $especialidade=null;
 $texto=null;
 $arquivo = null;
 
+$variavel_style = "display:none;";
+
+
 if(isset($_GET['modo'])){
+    
+    $variavel_style = "display:block";
+    
     $modo = $_GET['modo'];
     
     if($modo=='buscarId'){
-        $id=$_GET['id'];
+        $id=$_GET['codigo'];
         
-        require_once("../../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/nivel_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/especialidade_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/especialidade_class.php");/*da um require na nivel_class*/
         
         // Instancio a controller
-        $controller_nivel  = new controllerNivel();
+        $controller_especialidade  = new controllerEspecialidade();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_nivel::Listar();
-        /*
-        if(isset($niv)){
-            //$action = "modo=editar&id=". $niv->id_nivel;
-            $nome = $niv->nome;
-            $descricao = $niv->descricao;
-            
-
-        }else{
-            echo($nome);
-        }
-        */
+        $list = $controller_especialidade::Buscar($id);
         
-       
+        $imagem = $list->imagem;
+        $especialidade = $list->especialidade;
+        $texto = $list->texto;
+    
     }
 }
-
-
-
 ?>
 
 <html>
@@ -46,6 +41,19 @@ if(isset($_GET['modo'])){
         <title>Modal</title>
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
         <link rel="stylesheet" type="text/css" href="../css/style_cad_especialidades.css">
+        <style>
+            #imagem_atual{
+                width: 150px;
+                height: 150px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #imagem_atual img{
+                width: 150px;
+                height: 150px;
+            }
+            
+        </style>
         <script>
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
@@ -81,8 +89,6 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
-                         //alert(dados);
-
                     }
                 });
 
@@ -100,7 +106,7 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Cadastro de especialidade</a>
+                            <a>Especialidades</a>
                         </div>
                     </div>
                     
@@ -108,13 +114,13 @@ if(isset($_GET['modo'])){
                         <div class="campo"><!--campos--> <!--nome-->
                             
                             <div class="input_campo">
-                                <input required type="text" class="input_big" placeholder="ESPECIALIDADE" name="txt_especialidade" id="txt_especialidade">
+                                <input value="<?= $especialidade ?>" required type="text" class="input_big" placeholder="ESPECIALIDADE" name="txt_especialidade" id="txt_especialidade">
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
                             
                             <div class="input_campo">
-                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DA ESPECIALIDADE" name="txt_texto" id="txt_texto" style="resize:none;"></textarea>
+                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DA ESPECIALIDADE" name="txt_texto" id="txt_texto" style="resize:none;"><?= $texto ?></textarea>
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
@@ -122,7 +128,10 @@ if(isset($_GET['modo'])){
                             <div class="input_campo">
                                 <b>Selecione uma imagem para esta especialidade :</b>
                                 
-                                <input required type="file" name="file_especialidade" id="file_especialidade">
+                                <input type="file" name="file_especialidade" id="file_especialidade">
+                            </div>
+                            <div id="imagem_atual" style="<?= $variavel_style ?>">
+                                <img src="../<?= $imagem ?>" title="imagem atual" alt="imagem atual">
                             </div>
                         </div>
                         <div class="campo_botao">

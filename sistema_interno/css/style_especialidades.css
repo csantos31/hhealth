@@ -71,6 +71,18 @@ p{
     font-family: verdana;
     padding-top: 7px;
     border-bottom:solid 1px #999;
+    padding-bottom: 5px;
+}
+
+.item_tabela img{
+    width: 150px;
+    height: 150px;
+}
+
+.icones_tabela img{
+    margin-top: 15%;
+    width: 25px;
+    height: 25px;
 }
 
 
