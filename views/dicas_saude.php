@@ -29,9 +29,9 @@
                      <p id="previous"><img src="../imagens/icons/seta-voltar.png"></p>
                      <div id="galeria">
                          <ul id="list">
-                             <li><img alt="celular" title="celular" class="image" src="../imagens/5dicas.jpg"></li>
-                             <li><img  alt="elevador" title="elevador" class="image" src="../imagens/cirurgia.jpg"></li>
-                             <li><img alt="suicidio" title="suicidio" class="image" src="../imagens/cirurgia1.jpg"></li>
+                             <li><img alt="celular" title="celular" class="image" src="../imagens/slide_2.jpg"></li>
+                             <li><img  alt="elevador" title="elevador" class="image" src="../imagens/img_login.jpg"></li>
+                             <li><img alt="suicidio" title="suicidio" class="image" src="../imagens/portada_doctuo.jpg"></li>
                          </ul>
                      </div>
                      <p id="next"><img src="../imagens/icons/seta-avancar.png"></p>
@@ -47,31 +47,31 @@
                <a href="dica_saude.php">
                  <div class="titulo_dicas">
                    <div class="suporte_titulo_dicas">
-                      titulos dicas
+                      Titulos dicas
                    </div>
                  </div>
                </a>
              </div>
              <div class="suporte_itens">
                <div class="imagens">
-                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 <img src="../imagens/dicas.png" alt="" class="item_imagem">
                </div>
                <a href="dica_saude.php">
                  <div class="titulo_dicas">
                    <div class="suporte_titulo_dicas">
-                     titulos dicas
+                     Titulos dicas
                    </div>
                  </div>
                </a>
              </div>
              <div class="suporte_itens">
                <div class="imagens">
-                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
                </div>
                <a href="dica_saude.php">
                  <div class="titulo_dicas">
                    <div class="suporte_titulo_dicas">
-                     titulos dicas
+                     Titulos dicas
                    </div>
                  </div>
                </a>
@@ -81,12 +81,24 @@
             <div class="suporte_imagens_dicas">
               <div class="suporte_itens">
                 <div class="imagens">
-                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                  <img src="../imagens/dicas.png" alt="" class="item_imagem">
                 </div>
                 <a href="dica_saude.php">
                   <div class="titulo_dicas">
                     <div class="suporte_titulo_dicas">
-                      titulos dicas
+                      Titulos dicas
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="suporte_itens">
+                <div class="imagens">
+                  <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
+                </div>
+                <a href="dica_saude.php">
+                  <div class="titulo_dicas">
+                    <div class="suporte_titulo_dicas">
+                      Titulos dicas
                     </div>
                   </div>
                 </a>
@@ -98,19 +110,7 @@
                 <a href="dica_saude.php">
                   <div class="titulo_dicas">
                     <div class="suporte_titulo_dicas">
-                      titulos dicas
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="suporte_itens">
-                <div class="imagens">
-                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
-                </div>
-                <a href="dica_saude.php">
-                  <div class="titulo_dicas">
-                    <div class="suporte_titulo_dicas">
-                      titulos dicas
+                      Titulos dicas
                     </div>
                   </div>
                 </a>
@@ -120,11 +120,11 @@
              <div class="suporte_imagens_dicas">
                <div class="suporte_itens">
                  <div class="imagens">
-                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                   <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
                  </div>
                  <div class="titulo_dicas">
                   <div class="suporte_titulo_dicas">
-                    titulos dicas
+                    Titulos dicas
                   </div>
                  </div>
                </div>
@@ -134,17 +134,17 @@
                  </div>
                  <div class="titulo_dicas">
                   <div class="suporte_titulo_dicas">
-                    titulos dicas
+                    Titulos dicas
                   </div>
                  </div>
                </div>
                <div class="suporte_itens">
                  <div class="imagens">
-                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                   <img src="../imagens/dicas.png" alt="" class="item_imagem">
                  </div>
                  <div class="titulo_dicas">
                   <div class="suporte_titulo_dicas">
-                    <strong> titulos dicas </strong>
+                    <strong> Titulos dicas </strong>
                   </div>
                  </div>
                </div>

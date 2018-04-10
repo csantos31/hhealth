@@ -79,7 +79,7 @@
                                         </div>
 
                                         <div class="input_usuario">
-                                            <input type="text" name="txt_nivel_quarto" placeholder="Digite o nivel" value="<?= $nivel ?>">
+                                            <input type="text" name="txt_nivel_quarto" placeholder=" Digite o nivel" value="<?= $nivel ?>">
                                         </div>
                                     </div>
 
@@ -89,7 +89,7 @@
                                         </div>
 
                                         <div class="input_usuario">
-                                            <input type="text" name="txt_descricao" placeholder="Digite descrição" value="<?= $descricao ?>">
+                                            <input type="text" name="txt_descricao" placeholder=" Digite descrição" value="<?= $descricao ?>">
                                         </div>
                                     </div>
 
