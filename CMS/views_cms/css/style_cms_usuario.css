@@ -56,7 +56,6 @@
     padding-bottom:30px;
     border-radius:10px;
     background-color:#eaecef;
-    box-shadow: 10px 10px 5px grey;
 }
 
 .img_cadastro_usuario{
@@ -112,10 +111,14 @@
     width:500px;
     height:30px;
     margin-left:10px;
-    border-top:solid 1px #65097c;
-    border-left:solid 1px #65097c;
-    border-right:solid 1px #65097c;
-    border-bottom:solid 1px #65097c;
+    border-top:solid 1px #5F0601;
+    border-left:solid 1px #5F0601;
+    border-right:solid 1px #5F0601;
+    border-bottom:solid 1px #5F0601;
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 
@@ -126,9 +129,9 @@
     font-size:18px;
     color:#000000;
     text-align: center;
-    margin-left:600px;
+    margin-left:500px;
     border-radius:10px;
-    background-color:#cc45ef;
+    background-color:#5F0601;
 }
 
 /*tabela visualização nivel*/

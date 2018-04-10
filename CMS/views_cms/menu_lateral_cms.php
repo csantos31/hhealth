@@ -8,7 +8,7 @@
             </div>
 
             <div class="titulo_menu_lateral">
-                <a>Gerenciamento de tipos de quartos</a>
+                <a>Tipos de quarto</a>
             </div>
         </div>
     </a>
@@ -18,7 +18,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Gerenciamento de nível de usuários</a>
+                <a>Nível de usuário</a>
             </div>
         </div>
     </a>
@@ -28,7 +28,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Gerenciamento da home</a>
+                <a>Home</a>
             </div>
         </div>
     </a>

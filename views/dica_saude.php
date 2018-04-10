@@ -16,16 +16,8 @@
 
       </div>
       <div id="content_main">
-        <!-- titulo da página -->
-        <div class="suporte_titulo">
-          <div id="titulo_pagina">
-            <strong>Dica</strong>
-          </div>
-        </div>
         <!-- Faixa branca embaixo do menu -->
-        <div class="faixa_branca">
-
-        </div>
+        
         <div id="suporte_imagem">
           <img src="../imagens/maxresdefault.jpg" alt="" id="img_dicas_saude">
         </div>
@@ -52,13 +44,8 @@
           </div>
         </div>
 
-        <div class="suporte_titulo">
-          <div id="subtitulo">
-            <strong>Outras Dicas</strong>
-          </div>
-        </div>
         <!-- Faixa branca embaixo do menu -->
-        <div class="faixa_branca">
+        <div class="div_suporte_conteudo_1">
 
         </div>
         <div class="suporte_outras_dicas">
@@ -67,7 +54,14 @@
           </div>
           <div class="suporte_texto_outras_dicas">
             Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
-            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
+          </div>
+        </div>
+        <div class="suporte_outras_dicas">
+          <div class="suporte_imagem_outras_dicas">
+            <img src="../imagens/5dicas.jpg" alt="" class="img_dicas">
+          </div>
+          <div class="suporte_texto_outras_dicas">
+            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidae
           </div>
         </div>
         <div class="suporte_outras_dicas">
@@ -76,16 +70,6 @@
           </div>
           <div class="suporte_texto_outras_dicas">
             Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
-            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
-          </div>
-        </div>
-        <div class="suporte_outras_dicas">
-          <div class="suporte_imagem_outras_dicas">
-            <img src="../imagens/5dicas.jpg" alt="" class="img_dicas">
-          </div>
-          <div class="suporte_texto_outras_dicas">
-            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchida
-            Oi eu sou o gleyver e não sei o que escrever aqui para preeencher a div que deve ser preenchidaOi eu sou o gleyve
           </div>
         </div>
       </div>
