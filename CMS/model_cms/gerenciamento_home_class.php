@@ -1,4 +1,11 @@
 <?php
+
+
+/*LEMBRETE PARA WESLEY
+
+ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
+
+*/
     class Home{
         public $id_home;
         public $slide1;
@@ -14,8 +21,11 @@
         
         /*insere o registro no DB*/
         public static function Insert($home_dados){
-            $sql = "INSERT INTO tbl_home(slide1,slide2,slide3,frase)
-            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."');";
+            
+            $sql1="UPDATE tbl_home SET status = 0";
+            
+            $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status)
+            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -24,7 +34,7 @@
             $PDO_conex = $conex->Conectar();
             
             //Excutar o script no banco de dados
-            if($PDO_conex->query($sql)){
+            if($PDO_conex->query($sql1) &&$PDO_conex->query($sql2)){
                 echo "<script>location.reload();</script>";
                 
 			}else {
@@ -101,7 +111,7 @@
                 
 				$home = new Home();
 
-				$home->id_nivel = $rs['id_nivel'];
+				$home->id_nivel = $rs['id_home'];
 				$home->slide1 = $rs['slide1'];
 				$home->slide2 = $rs['slide2'];
                 $home->slide3 = $rs['slide3'];
@@ -120,7 +130,7 @@
 		}
         
         public function Update($home){
-			$sql = "UPDATE tbl_home set slide1 = '".$home->slide1."', slide2 = '".$home->slide2. "',slide3 = '".$home->slide3. "',frase = '".$home->frase. "',status = '".$home->status. "' WHERE id_home =".$home->id_home;
+			$sql = "UPDATE tbl_home set slide1 = '".$home->slide1."', slide2 = '".$home->slide2. "',slide3 = '".$home->slide3. "',frase = '".$home->frase. "' WHERE id_home =".$home->id_home;
 		
 
 		      echo $sql;
@@ -145,7 +155,33 @@
 			$conex->Desconectar();
 		}
         
-        /*Delete o registro no BD*/
+        /*Desativar o registro no BD*/
+        public function DesativarPorId($home){
+            $sql1 = "UPDATE tbl_home set status=0";
+            $sql2 = "UPDATE tbl_home set status=1 WHERE id_home=".$home->id_home;
+            
+            //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql1)&&$PDO_conex->query($sql2)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+                
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+            
+        }
+        
         
 		
         

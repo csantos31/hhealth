@@ -75,7 +75,7 @@ if(isset($niv)){
                     success: function(dados){
                         $('.modal').html(dados);
                     }
-                    
+                     
                 });
             }
             

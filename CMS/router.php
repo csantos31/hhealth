@@ -106,7 +106,22 @@
                     
 					$controller_gerenciamento_home::Novo();
 
-					break;  
+					break; 
+                
+                case 'editar':
+                    
+                    $controller_gerenciamento_home = new controller_home();
+                    
+                    $controller_gerenciamento_home::Editar();
+                    
+                    break;
+                
+                case 'desativar':
+                    $controller_gerenciamento_home = new controller_home();
+                    
+                    $controller_gerenciamento_home::Desativar();
+
+                    break;
             }
             
             break;
