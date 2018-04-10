@@ -18,14 +18,14 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['id'];
         
-        require_once("../../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/nivel_class.php");/*da um require na nivel_class*/
+        require_once("../../controller_cms/gerenciamento_home_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/gerenciamento_home_class.php");/*da um require na nivel_class*/
         
         // Instancio a controller
-        $controller_nivel  = new controllerNivel();
+        //$controller_nivel  = new controllerNivel();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_nivel::Listar();
+        //$list = $controller_nivel::Listar();
         /*
         if(isset($niv)){
             //$action = "modo=editar&id=". $niv->id_nivel;
@@ -38,6 +38,13 @@ if(isset($_GET['modo'])){
         }
         */
         
+        $controller_home = new controller_home();
+        $list = $controller_home::Buscar();
+        
+        $slide1=$list->slide1;
+        $slide2=$list->slide2;
+        $slide3=$list->slide3;
+        $frase=$list->frase;
        
     }
 }
@@ -124,7 +131,7 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="" alt="">
+                                <img id="img" src="../<?php echo($slide1)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -136,7 +143,7 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="" alt="">
+                                <img id="img" src="../<?php echo($slide2)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -148,7 +155,7 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="" alt="">
+                                <img id="img" src="../<?php echo($slide3)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -159,7 +166,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_frase" >
+                                <input type="text" value="<?php echo($frase)?>" name="txt_frase" >
                             </div>
                         </div>                        
                     
