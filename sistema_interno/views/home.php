@@ -26,7 +26,9 @@
                         <a href="views/pacientes_pendentes.php">
                             <p>Ver pendentes</p>
                         </a>
-                        <p>Ver pacientes ativos</p>
+                        <a href="views/pacientes.php">
+                            <p>Ver pacientes ativos</p>
+                        </a>
                     </div>
                     <div class="coluna">
                         <img src="imagens/doc_icon3.jpg" alt="medicos" title="medicos">
