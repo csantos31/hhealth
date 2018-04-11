@@ -1,20 +1,24 @@
 <?php 
 
-class Especialidade{
-      public $id_especialidade;
-      public $especialidade;
-      public $texto;
-      public $imagem;
-      public $status;
-        
+class Endereco{
+    
+    
+      public id_endereco
+      public  cep
+      public  logradouro
+      public  numero
+      public id_estado
+      public cidade
+      public bairro
+    
         //cria um construtor
 		public function __construct(){
             include_once('bd_class.php');
 		}
         
         /*insere o registro no DB*/
-		public static function Insert($especialidade_dados){
-			$sql = "INSERT INTO tbl_especialidade(especialidade, texto, imagem, status) VALUES ('".$especialidade_dados->especialidade."', '".$especialidade_dados->texto."', '".$especialidade_dados->imagem."',1);";
+		public static function Insert($endereco_dados){
+			$sql = "INSERT INTO tbl_endereco(cep, logradouro, numero, id_estado,cidade,bairro) VALUES ('". $endereco_dados->cep ."', '". $endereco_dados->logradouro ."', '". $endereco_dados->numero ."', '". $endereco_dados->id_estado ."' , '". $endereco_dados->cidadde ."', '". $endereco_dados->id_bairro ."');";
             
             //echo $sql;
             

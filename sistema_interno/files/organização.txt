@@ -1,0 +1,13 @@
+popular tabela de estados
+
+criar model e controler para convenio
+
+
+criar model e controler pra endereco
+
+	cadastrar endereco com id_estado
+
+
+criar model e controler para paciente
+	cadastrar paciente com id_estado
+	cadastrar paciente com id_convenio

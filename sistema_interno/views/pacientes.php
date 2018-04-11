@@ -94,7 +94,7 @@
                             <img src="../imagens/add.png">
                         </a>
                     </div>
-                    <p>Especialidades</p>
+                    <p>Pacientes</p>
                     <div class="col_1">
                         <img src="../imagens/doc_icon2.jpg" alt="pacientes pendentes" title="pacientes pendentes">
                     </div>
@@ -107,26 +107,25 @@
                         
                         <?php
                         
-                            include_once('../controllers/especialidade_controller.php');
-                            include_once('../models/especialidade_class.php');
+                            include_once('../controllers/paciente_controller.php');
+                            include_once('../models/paciente_class.php');
                         
-                                $controller_especialidade  = new controllerEspecialidade();
+                                $controller_paciente  = new controllerPaciente();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_especialidade::Listar();
+                                $list = $controller_paciente::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->especialidade ?></div>
-                                        <div class="item_tabela"><img src="../<?= $list[$cont]->imagem ?>" alt="imaagem da especialidade" title="imagem da especialidade"></div>
+                                        <div class="item_tabela"><?= $list[$cont]->nome ?> <?= $list[$cont]->sobrenome ?></div>
+                                        <div class="item_tabela"><img src="../<?= $list[$cont]->foto ?>" alt="imaagem do paciente" title="imagem do paciente"></div>
                                         <div class="item_tabela icones_tabela">
-                                        
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_especialidade);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_especialidade);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>

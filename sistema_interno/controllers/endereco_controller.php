@@ -1,18 +1,13 @@
 <?php 
 
-    class controllerEspecialidade{
+    class controllerEndereco{
        public function Novo(){
-			require_once('modulo_img.php');
            
             //Instancia da classe Contato
-			$especialidade = new Especialidade();
-            
-           
-           $fle_foto = salvar_imagem($_FILES['file_especialidade'],'arquivos');
-           
+			$endereco = new Endereco();
            
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-			$especialidade->especialidade = $_POST['txt_especialidade'];
+			$paciente->especialidade = $_POST['txt_especialidade'];
             $especialidade->texto = $_POST['txt_texto'];
             $especialidade->imagem = $fle_foto;
            
