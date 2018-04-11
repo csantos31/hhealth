@@ -207,6 +207,24 @@
 
 		}
         
+        public function Deletar(){
+            require_once ('model_cms/gerenciamento_home_class.php');
+            require_once ('modulo_img.php');
+            
+            //GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idHome = $_GET['id'];
+            
+            //INSTANCIA A CLASSE CONTATO
+			$home = new Home();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$home->id_home = $idHome;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$home::Deletar($home);
+            
+        }
+        
         
         
         

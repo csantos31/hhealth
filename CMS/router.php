@@ -122,6 +122,16 @@
                     $controller_gerenciamento_home::Desativar();
 
                     break;
+                    
+                case 'deletar':
+                    
+                    //if(confirm('Deseja realmente excluir?')){
+                        $controller_gerenciamento_home = new controller_home();
+                    
+                        $controller_gerenciamento_home::Deletar();
+                    //}
+                    
+                    break;
             }
             
             break;

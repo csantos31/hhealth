@@ -24,8 +24,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             
             $sql1="UPDATE tbl_home SET status = 0";
             
-            $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status)
-            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1');";
+            $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status,ativo)
+            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -76,6 +76,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $lista_home[$cont]->slide3 = $rs['slide3'];
                 $lista_home[$cont]->frase = $rs['frase'];
                 $lista_home[$cont]->status = $rs['status'];
+                $lista_home[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -117,6 +118,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $home->slide3 = $rs['slide3'];
                 $home->frase = $rs['frase'];
                 $home->status = $rs['status'];
+                $home->ativo = $rs['ativo'];
 				
 				return $home;
 
@@ -180,6 +182,33 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
             
+        }
+        
+        
+        /*DELETAR*/
+        public function Deletar($home){
+            $sql="UPDATE tbl_home set ativo=0 WHERE id_home=".$home->id_home;
+        
+            //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+        
+            //Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>confirm('Deseja realmente excluir?');</script>";
+                echo "<script>location.reload();</script>";
+                
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+            
+            //Fecha a conexão com o banco de dados
+			$conex->Desconectar();
         }
         
         

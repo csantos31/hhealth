@@ -131,7 +131,7 @@
 .conteudo_pagina_home{/*conteudo*/
     width:550px;
     height:200px;
-    margin-top:10px;
+    margin-top:30px;
 }
 
 .imagem_conteudo{/*imagem*/
@@ -148,6 +148,7 @@
 .content_opcoes{/*content opções*/
     width:300px;
     height:200px;
+    margin-top:10px;
     float:left;
 }
 

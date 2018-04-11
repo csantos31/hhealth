@@ -76,7 +76,7 @@ if(isset($hom)){
                 });
             }
         
-        //Excluir
+        //Desativar
             function Desativar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
@@ -84,6 +84,20 @@ if(isset($hom)){
                     type:"GET",
                     data: {id:IdIten},
                     url: "../router.php?controller=home&modo=desativar&id="+IdIten,
+                    success: function(dados){
+                        $('.icon_opcoes').html(dados);
+                    }
+                });
+            }
+        
+        //Desativar
+            function Deletar(IdIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                event.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    data: {id:IdIten},
+                    url: "../router.php?controller=home&modo=deletar&id="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -138,6 +152,11 @@ if(isset($hom)){
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
+                                    $ativo=$list[$cont]->ativo;
+                                    if($ativo==1){
+                                        //$list[$cont]->slide1=null;
+                                        
+                                    
                                 
                                 
                                 ?>
@@ -198,7 +217,9 @@ if(isset($hom)){
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_home);?>)">
+                                                <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -206,6 +227,8 @@ if(isset($hom)){
                             </div>
                             
                             <?php
+                                        //return null;
+                                       }
                                $cont +=1;
                                 }
                             ?>
