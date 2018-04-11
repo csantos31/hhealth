@@ -68,32 +68,29 @@
 			$especialidade->especialidade = $_POST['txt_especialidade'];
 			$especialidade->texto = $_POST['txt_texto'];
 			
-            //var_dump($_FILES['file_especialidade']); exit();
-            
-            if($_FILES['file_especialidade']->size > 0){
+            if($_FILES['file_especialidade']['size'] == 0){
+                $especialidade->imagem = null;
+                $especialidade::updateWithoutFile($especialidade);
+            }else{
                 $fle_foto = salvar_imagem($_FILES['file_especialidade'],'arquivos');
                 $especialidade->imagem = $fle_foto;
                 $especialidade::updateWithFile($especialidade);
-            }else{
-                $especialidade->imagem = null;
-                $especialidade::updateWithoutFile($especialidade);
             }
 			
 		}
         
         public function Excluir(){
-
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idNivel = $_GET['codigo'];
+			$idEspecialidade = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$tipo = new TipoQuarto();
+			$especialidade = new Especialidade();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$tipo->id_tipo_quarto = $idNivel;
+			$especialidade->id_especialidade = $idEspecialidade;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$tipo::Delete($tipo);
+			$especialidade::Delete($especialidade);
 
 		}
         

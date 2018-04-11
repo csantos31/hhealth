@@ -29,10 +29,14 @@
 					break;
 
 				case 'excluir':
+                    require_once('controllers/especialidade_controller.php');
+                    require_once('models/especialidade_class.php');
+                    
 					// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_especialidade =  new controllerEspecialidade();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Excluir();
+					$controller_especialidade::Excluir();
+                    
 					break;
 			}
 

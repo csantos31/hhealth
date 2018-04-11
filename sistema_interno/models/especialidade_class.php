@@ -123,7 +123,10 @@ class Especialidade{
         
         public function UpdateWithFile($especialidade){
             
-			$sql = "UPDATE  set especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "', imagem = '". $especialidade->imagem ."' WHERE id_especialidade =".$especialidade->id_especialidade;
+			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "', imagem = '". $especialidade->imagem ."' WHERE id_especialidade =".$especialidade->id_especialidade;
+            
+            
+            
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -147,7 +150,7 @@ class Especialidade{
     
         public function UpdateWithoutFile($especialidade){
             
-			$sql = "UPDATE  set especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "' WHERE id_especialidade =".$especialidade->id_especialidade;
+			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "' WHERE id_especialidade = ".$especialidade->id_especialidade;
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -170,10 +173,10 @@ class Especialidade{
 		}
         
         /*Delete o registro no BD*/
-		public function Delete($nivel_dados){
+		public function Delete($especialidade_dados){
 
-			$sql = "DELETE FROM tbl_tipo_quarto WHERE id_tipo_quarto = ". $nivel_dados->id_tipo_quarto;
-
+			$sql = "UPDATE tbl_especialidade SET status = 0 WHERE id_especialidade = ".$especialidade_dados->id_especialidade;
+		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -184,10 +187,10 @@ class Especialidade{
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				header('location: index.php');
+				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
-				echo "Error ao deletar no Banco de Dados";
+				echo "Error atualizar no Banco de Dados";
 			}
 
 			//Fecha a conexão com o banco de dados

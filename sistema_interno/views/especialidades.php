@@ -53,14 +53,20 @@
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
+                
+                if(confirm('R U Sure?')){
+                
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
-                    url: "../router.php?controller=nivel&modo=excluir&id="+idIten,
+                    url: "../router.php?controller=especialidade&modo=excluir&id="+idIten,
                     success: function(dados){
-                        
+                        console.log(dados);
+                        $('.modal').html(dados);
                     }
                 });
+                    
+                }
             }
             
             
