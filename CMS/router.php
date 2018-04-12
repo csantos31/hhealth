@@ -5,6 +5,7 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
+    require_once('controller_cms/gerenciamento_ambiente_controller.php');
     require_once('controller_cms/gerenciamento_home_controller.php');
 	require_once('controller_cms/nivel_controller.php');
 	require_once('model_cms/nivel_class.php');
@@ -133,7 +134,44 @@
                     
                     break;
             }
-            
+        
+        /*home*/
+        case 'ambiente':
+            switch($modo){
+                case 'inserir':
+					// Instanciando a classe da controller
+					$controller_gerenciamento_ambiente =  new controller_ambiente();
+					//Chama o metodo Novo da controller
+                    
+					$controller_gerenciamento_ambiente::Novo();
+
+					break; 
+                
+                case 'editar':
+                    
+                    $controller_gerenciamento_ambiente = new controller_ambiente();
+                    
+                    $controller_gerenciamento_ambiente::Editar();
+                    
+                    break;
+                
+                case 'desativar':
+                    $controller_gerenciamento_ambiente = new controller_ambiente();
+                    
+                    $controller_gerenciamento_ambiente::Desativar();
+
+                    break;
+                    
+                case 'deletar':
+                    
+                    //if(confirm('Deseja realmente excluir?')){
+                        $controller_gerenciamento_ambiente = new controller_ambiente();
+                    
+                        $controller_gerenciamento_ambiente::Deletar();
+                    //}
+                    
+                    break;
+            }
             break;
             
 		default:
