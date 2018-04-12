@@ -171,14 +171,16 @@ if(isset($niv)){
                                         <a><?= ($list[$cont]->nome);  ?></a>
                                     </div>
                                     <div class="campo_acoes">
-                                        <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_nivel);?>)">
-                                        
-                                            <img src="<?=$caminho?>imagens/edit.png">
-                                        </a>
-                                        <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_nivel);?>)">
-                                            <img src="<?=$caminho?>imagens/shutdown.png">
-                                            <?php echo($list[$cont]->id_nivel);?>
-                                        </a>
+                                        <div class="edit">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_nivel);?>)">
+                                                <img src="<?=$caminho?>imagens/edit.png">
+                                            </a>
+                                        </div>
+                                        <div class="shut">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_nivel);?>)">
+                                                <img src="<?=$caminho?>imagens/shutdown.png">
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <?php

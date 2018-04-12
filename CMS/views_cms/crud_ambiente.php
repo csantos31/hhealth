@@ -50,7 +50,7 @@ include($caminho.'../verifica.php');
                 
                 $.ajax({
                     type:"POST",
-                    url:"modals/modal_home.php",
+                    url:"modals/modal_ambiente.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -61,7 +61,7 @@ include($caminho.'../verifica.php');
             function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"modals/modal_home.php",
+                    url:"modals/modal_ambiente.php",
                     data:{modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -76,7 +76,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=home&modo=desativar&id="+IdIten,
+                    url: "../router.php?controller=ambiente&modo=desativar&id="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -90,7 +90,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=home&modo=deletar&id="+IdIten,
+                    url: "../router.php?controller=ambiente&modo=deletar&id="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -134,14 +134,14 @@ include($caminho.'../verifica.php');
                             <?php
                                 
                                 // Incluindo a controller e a model para serem utilizadas
-                                include_once($caminho . '../controller_cms/gerenciamento_home_controller.php');
-                                include_once($caminho .'../model_cms/gerenciamento_home_class.php');
+                                include_once($caminho . '../controller_cms/gerenciamento_ambiente_controller.php');
+                                include_once($caminho .'../model_cms/gerenciamento_ambiente_class.php');
 
                                 // Instancio a controller
-                                $controller_gerenciamento_home =  new controller_home();
+                                $controller_gerenciamento_ambiente =  new controller_ambiente();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_gerenciamento_home::Listar();
+                                $list = $controller_gerenciamento_ambiente::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
@@ -156,7 +156,7 @@ include($caminho.'../verifica.php');
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
                                 
                                 <div class="imagem_conteudo"><!--imagem-->
-                                    <img src="../<?php echo($list[$cont]->slide1)?>">
+                                    <img src="../<?php echo($list[$cont]->imagem)?>">
                                 </div>
                                 
                                 <div class="content_opcoes"><!--content das opções-->
@@ -180,8 +180,8 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                             <div class="icon_opcoes">
-                                                <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_home);?>)">
-                                                    <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
+                                                <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_ambiente);?>)">
+                                                    <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>" alt="desativar_ativar">
                                                 </a>
                                             </div>
                                         
@@ -197,9 +197,9 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_home);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_ambiente);?>)">
                                                 
-                                                <img src="<?=$caminho?>imagens/edit.png">
+                                                <img src="<?=$caminho?>imagens/edit.png" alt="editar">
                                             </a>
                                         </div>
                                     </div>
@@ -210,8 +210,8 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_home);?>)">
-                                                <img  src="<?=$caminho?>imagens/shutdown.png">
+                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_ambiente);?>)">
+                                                <img  src="<?=$caminho?>imagens/shutdown.png" alt="excluir">
                                             </a>
                                         </div>
                                     </div>
