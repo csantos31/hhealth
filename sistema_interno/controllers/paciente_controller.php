@@ -7,47 +7,66 @@
             //Instancia da classe Contato
 			$paciente = new Paciente();
             
+            /*
+        public id_convenio
+        public id_endereco;
+        public nome;
+        public sobrenome;
+        public dt_nasc;
+        public rg;
+        public cpf;
+       **** public carteirinha_convenio;
+       **** public foto;
+        public status;
+            
+            */
            
-           $fle_foto = salvar_imagem($_FILES['file_especialidade'],'arquivos');
+           $fle_foto1 = salvar_imagem($_FILES['fle_foto'],'arquivos');
+           $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
            
            
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-			$paciente->especialidade = $_POST['txt_especialidade'];
-            $especialidade->texto = $_POST['txt_texto'];
-            $especialidade->imagem = $fle_foto;
+			$paciente->id_convenio = $_POST['slt_convenio'];
+            $paciente->id_endereco = $id_endereco;
+            $paciente->nome = $_POST['txt_nome'];
+            $paciente->sobrenome = $_POST['txt_sobrenome'];
+            $paciente->dt_nasc = $_POST['txt_dt_nasc'];
+            $paciente->rg = $_POST['txt_rg'];
+            $paciente->cpf = $_POST['cpf'];
+            $paciente->foto = $fle_foto1;
+            $paciente->carteirinha_convenio = $fle_foto2;
+           
            
 			//Chama o metodo Insert da classe Contato
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
-			$especialidade::Insert($especialidade);
+			$paciente::Insert($paciente);
 
 		} 
         
 		public function Listar(){
 			//Instancia da classe contatos
-			$especialidade = new Especialidade();
+			$paciente = new Paciente();
 
 			//Chama o método para selecionar os registros
             
-            
-            
-			return $especialidade::Select();
+			return $paciente::Select();
 		}
         
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEspecialidade = $_GET['codigo'];
+			$idPaciente = $_GET['codigo'];
             
 			//INSTANCIA A CLASSE CONTATO
-			$especialidade = new Especialidade();
+			$paciente = new Paciente();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$especialidade->id_especialidade = $idEspecialidade;
+			$paciente->id_paciente = $idPaciente;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$especialidade = $especialidade::SelectById($especialidade);
+			$paciente_new = $paciente::SelectById($paciente);
             
-           return $especialidade;
+           return $paciente_new;
 			//require_once('../modals/modal_cad_especialidade.php');
 		}
         
@@ -57,40 +76,53 @@
             require_once('modulo_img.php');
             
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEspecialidade = $_GET['id'];
+			$idPaciente = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$especialidade = new Especialidade();
+			$paciente = new Paciente();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$especialidade->id_especialidade = $idEspecialidade;
+			$paciente->id_paciente = $idPaciente;
 
-			$especialidade->especialidade = $_POST['txt_especialidade'];
-			$especialidade->texto = $_POST['txt_texto'];
-			
-            if($_FILES['file_especialidade']['size'] == 0){
-                $especialidade->imagem = null;
-                $especialidade::updateWithoutFile($especialidade);
-            }else{
-                $fle_foto = salvar_imagem($_FILES['file_especialidade'],'arquivos');
-                $especialidade->imagem = $fle_foto;
-                $especialidade::updateWithFile($especialidade);
+            
+            
+           $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
+           
+            
+            if($_FILES['fle_foto']['size']!='0'){
+                $fle_foto1 = salvar_imagem($_FILES['fle_foto'],'arquivos'); 
+                $paciente->foto = $fle_foto1;
             }
-			
+            
+            if($_FILES['fle_foto2']['size']!='0'){
+                $fle_foto1 = salvar_imagem($_FILES['fle_foto2'],'arquivos'); 
+                $paciente->carteirinha_convenio = $fle_foto2;
+            }
+           
+			//Carregando os dados digitados pelo usuário nos atributos da classe
+			$paciente->id_convenio = $_POST['slt_convenio'];
+            $paciente->id_endereco = $id_endereco;
+            $paciente->nome = $_POST['txt_nome'];
+            $paciente->sobrenome = $_POST['txt_sobrenome'];
+            $paciente->dt_nasc = $_POST['txt_dt_nasc'];
+            $paciente->rg = $_POST['txt_rg'];
+            $paciente->cpf = $_POST['cpf'];
+            
+            $paciente::update($paciente);
 		}
         
         public function Excluir(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEspecialidade = $_GET['id'];
+			$idPaciente = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$especialidade = new Especialidade();
+			$paciente = new Paciente();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$especialidade->id_especialidade = $idEspecialidade;
+			$paciente->id_paciente = $idPaciente;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$especialidade::Delete($especialidade);
+			$paciente::Delete($paciente);
 
 		}
         

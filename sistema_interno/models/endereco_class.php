@@ -47,7 +47,7 @@ class Endereco{
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_especialidade WHERE status = 1 ORDER BY id_especialidade;";
+			$sql="SELECT * FROM tbl_endereco  ORDER BY id_endereco;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -64,15 +64,19 @@ class Endereco{
 
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-				#Cria um array de objetos na classe contatos
+				#Cria um array de objetos na classe contatos   
                 
-				$lista_especialidade[] = new Especialidade();
+				$lista_endereco[] = new Endereco();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_especialidade[$cont]->id_especialidade = $rs['id_especialidade'];
-				$lista_especialidade[$cont]->especialidade = $rs['especialidade'];
-				$lista_especialidade[$cont]->texto = $rs['texto'];
-                $lista_especialidade[$cont]->imagem = $rs['imagem'];
+				$lista_endereco[$cont]->id_endereco = $rs['id_endereco'];
+                $lista_endereco[$cont]->cep = $rs['cep'];
+                $lista_endereco[$cont]->logradouro = $rs['logradouro'];
+                $lista_endereco[$cont]->numero = $rs['numero'];
+                $lista_endereco[$cont]->id_estado = $rs['id_estado'];
+                $lista_endereco[$cont]->cidade = $rs['cidade'];
+                $lista_endereco[$cont]->bairro = $rs['bairro'];
+				
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -81,16 +85,16 @@ class Endereco{
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_especialidade)) {
+			if (isset($lista_endereco)) {
 				# code...
-				return $lista_especialidade;
+				return $lista_endereco;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
-		public function SelectById($especialidade){
-			$sql = "SELECT * FROM tbl_especialidade WHERE id_especialidade =". $especialidade->id_especialidade;
+		public function SelectById($endereco){
+			$sql = "SELECT * FROM tbl_endereco WHERE id_endereco =". $endereco->id_endereco;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -106,15 +110,17 @@ class Endereco{
 				//Se der true redireciona a tela
               
                 
-				$especialidade = new Especialidade();
+				$endereco = new Endereco();
 
-				$especialidade->id_especialidade = $rs['id_especialidade'];
-				$especialidade->especialidade = $rs['especialidade'];
-				$especialidade->texto = $rs['texto'];
-                $especialidade->status = $rs['status'];
-                $especialidade->imagem = $rs['imagem'];
+				$endereco->id_endereco = $rs['id_endereco'];
+                $endereco->cep = $rs['cep'];
+                $endereco->logradouro = $rs['logradouro'];
+                $endereco->numero = $rs['numero'];
+                $endereco->id_estado = $rs['id_estado'];
+                $endereco->cidade = $rs['cidade'];
+                $endereco->bairro = $rs['bairro'];
 				
-                return $especialidade;
+                return $endereco;
 
 			}else {
 				//Mensagem de erro
@@ -124,37 +130,10 @@ class Endereco{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
-        public function UpdateWithFile($especialidade){
-            
-			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "', imagem = '". $especialidade->imagem ."' WHERE id_especialidade =".$especialidade->id_especialidade;
-            
-            
-            
-		
-			//Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
-
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
-
-			//Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-			}
-
-			//Fecha a conexão com o banco de dados
-			$conex->Desconectar();
-		}
     
-        public function UpdateWithoutFile($especialidade){
+        public function Update($endereco){
             
-			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "' WHERE id_especialidade = ".$especialidade->id_especialidade;
+			$sql = "UPDATE tbl_endereco SET cep='". $endereco->cep ."', logradouro='". $endereco->logradouro ."', numero='". $endereco->numero ."', id_estado='". $endereco->id_estado ."', cidade='". $endereco->cidade ."', bairro='". $endereco->bairro ."' WHERE id_endereco='". $endereco->id_endereco ."';";
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -177,9 +156,9 @@ class Endereco{
 		}
         
         /*Delete o registro no BD*/
-		public function Delete($especialidade_dados){
+		public function Delete($endereco){
 
-			$sql = "UPDATE tbl_especialidade SET status = 0 WHERE id_especialidade = ".$especialidade_dados->id_especialidade;
+			$sql = "DELETE FROM tbl_endereco  WHERE id_endereco = " . $endereco->id;
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

@@ -42,17 +42,27 @@
 
 			break;
             
-        case 'tipo_quarto':
+        case 'paciente':
             
             // Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
             switch ($modo) {
 				case 'inserir':
+                    
+                    require_once('controllers/paciente_controller.php');
+                    require_once('controllers/endereco_controller.php');
+                    require_once('models/paciente_class.php');
+                    require_once('models/endereco_class.php');
+                    
+                    
 					// Instanciando a classe da controller
-					$controller_tipo_quarto =  new controllerTipoQuarto();
+					$controller_endereco =  new controllerEndereco();
 					//Chama o metodo Novo da controller
                     
-					$controller_tipo_quarto::Novo();
+					$id_endereco = $controllerEndereco::Novo();
 
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente::Novo();
+                    
 					break;
 
 				case 'buscar_id':
