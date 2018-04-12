@@ -6,13 +6,18 @@
 ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
 
 */
-    class Home{
-        public $id_home;
-        public $slide1;
-        public $slide2;
-        public $slide3;
-        public $frase;
+    class Ambiente{
+        public $id_ambiente;
+        public $titulo;
+        public $texto;
+        public $imagem;
+        public $imagem2;
+        public $imagem3;
+        public $imagem4;
+        public $imagem5;
+        public $imagem6;
         public $status;
+        public $ativo;
         
         //cria um construtor
         public function __construct(){
@@ -20,12 +25,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         }
         
         /*insere o registro no DB*/
-        public static function Insert($home_dados){
+        public static function Insert($ambiente_dados){
             
-            $sql1="UPDATE tbl_home SET status = 0";
+            $sql1="UPDATE tbl_ambiente SET status = 0";
             
-            $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status,ativo)
-            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1','1');";
+            $sql2 = "INSERT INTO tbl_ambiente(titulo,texto,imagem,imagem2,imagem3,imagem4,imagem5,imagem6,status,ativo)
+            VALUES('".$ambiente_dados->titulo."','".$ambiente_dados->texto."','".$ambiente_dados->imagem."','".$ambiente_dados->imagem2."','".$ambiente_dados->imagem3."','".$ambiente_dados->imagem4."','".$ambiente_dados->imagem5."','".$ambiente_dados->imagem6."','1','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -49,7 +54,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_home ORDER BY id_home DESC;";
+			$sql="SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -67,16 +72,20 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-				$lista_home[] = new Home();
+				$lista_ambiente[] = new Ambiente();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_home[$cont]->id_home = $rs['id_home'];
-				$lista_home[$cont]->slide1 = $rs['slide1'];
-				$lista_home[$cont]->slide2 = $rs['slide2'];
-                $lista_home[$cont]->slide3 = $rs['slide3'];
-                $lista_home[$cont]->frase = $rs['frase'];
-                $lista_home[$cont]->status = $rs['status'];
-                $lista_home[$cont]->ativo = $rs['ativo'];
+				$lista_ambiente[$cont]->id_ambiente = $rs['id_ambiente'];
+				$lista_ambiente[$cont]->titulo = $rs['titulo'];
+				$lista_ambiente[$cont]->texto = $rs['texto'];
+                $lista_ambiente[$cont]->imagem = $rs['imagem'];
+                $lista_ambiente[$cont]->imagem2 = $rs['imagem2'];
+                $lista_ambiente[$cont]->imagem3 = $rs['imagem3'];
+                $lista_ambiente[$cont]->imagem4 = $rs['imagem4'];
+                $lista_ambiente[$cont]->imagem5 = $rs['imagem5'];
+                $lista_ambiente[$cont]->imagem6 = $rs['imagem6'];
+                $lista_ambiente[$cont]->status = $rs['status'];
+                $lista_ambiente[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -85,16 +94,16 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_home)) {
+			if (isset($lista_ambiente)) {
 				# code...
-				return $lista_home;
+				return $lista_ambiente;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
-		public function SelectById($home){
-			$sql = "SELECT * FROM tbl_home WHERE id_home =". $home->id_home;
+		public function SelectById($ambiente){
+			$sql = "SELECT * FROM tbl_ambiente WHERE id_ambiente =". $ambiente->id_ambiente;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -110,17 +119,21 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				//Se der true redireciona a tela
               
                 
-				$home = new Home();
+				$ambiente = new Ambiente();
 
-				$home->id_nivel = $rs['id_home'];
-				$home->slide1 = $rs['slide1'];
-				$home->slide2 = $rs['slide2'];
-                $home->slide3 = $rs['slide3'];
-                $home->frase = $rs['frase'];
-                $home->status = $rs['status'];
-                $home->ativo = $rs['ativo'];
+				$ambiente->id_ambiente = $rs['id_ambiente'];
+                $ambiente->titulo = $rs['titulo'];
+                $ambiente->texto = $rs['texto'];
+				$ambiente->imagem = $rs['imagem'];
+				$ambiente->imagem2 = $rs['imagem2'];
+                $ambiente->imagem3 = $rs['imagem3'];
+                $ambiente->imagem4 = $rs['imagem4'];
+                $ambiente->imagem5 = $rs['imagem5'];
+                $ambiente->imagem6 = $rs['imagem6'];
+                $ambiente->status = $rs['status'];
+                $ambiente->ativo = $rs['ativo'];
 				
-				return $home;
+				return $ambiente;
 
 			}else {
 				//Mensagem de erro
@@ -131,8 +144,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			$conex->Desconectar();
 		}
         
-        public function Update($home){
-			$sql = "UPDATE tbl_home set slide1 = '".$home->slide1."', slide2 = '".$home->slide2. "',slide3 = '".$home->slide3. "',frase = '".$home->frase. "' WHERE id_home =".$home->id_home;
+        public function Update($ambiente){
+			$sql = "UPDATE tbl_ambiente set titulo = '".$ambiente->titulo."', texto = '".$ambiente->titulo. "',imagem = '".$ambiente->imagem. "',imagem2 = '".$ambiente->imagem2. "',imagem3 = '".$ambiente->imagem3. "',imagem4 = '".$ambiente->imagem4. "',imagem5 = '".$ambiente->imagem5. "',imagem6 = '".$ambiente->imagem6. "' WHERE id_ambiente =".$ambiente->id_ambiente;
 		
 
 		      echo $sql;
@@ -158,9 +171,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
         
         /*Desativar o registro no BD*/
-        public function DesativarPorId($home){
-            $sql1 = "UPDATE tbl_home set status=0";
-            $sql2 = "UPDATE tbl_home set status=1 WHERE id_home=".$home->id_home;
+        public function DesativarPorId($ambiente){
+            $sql1 = "UPDATE tbl_ambiente set status=0";
+            $sql2 = "UPDATE tbl_ambiente set status=1 WHERE id_ambiente=".$ambiente->id_ambiente;
             
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -186,8 +199,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         
         /*DELETAR*/
-        public function Deletar($home){
-            $sql="UPDATE tbl_home set ativo=0 WHERE id_home=".$home->id_home;
+        public function Deletar($ambiente){
+            $sql="UPDATE tbl_ambiente set ativo=0 WHERE id_ambiente=".$ambiente->id_ambiente;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -199,12 +212,13 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             //Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				//echo "<script>confirm('Deseja realmente excluir?');</script>";
+				echo "<script>confirm('Deseja realmente excluir?');</script>";
                 echo "<script>location.reload();</script>";
                 
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
+                echo $sql;
 			}
             
             //Fecha a conexão com o banco de dados

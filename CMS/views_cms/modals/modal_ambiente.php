@@ -3,9 +3,15 @@
 //$action = "modo=inserir";
 
 $id="0";
-$nome=null;
-$descricao=null;
-$frase=null;
+$titulo=null;
+$texto=null;
+$imagem=null;
+$imagem2=null;
+$imagem3=null;
+$imagem4=null;
+$imagem5=null;
+$imagem6=null;
+
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
@@ -19,8 +25,8 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['id'];
         
-        require_once("../../controller_cms/gerenciamento_home_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/gerenciamento_home_class.php");/*da um require na nivel_class*/
+        require_once("../../controller_cms/gerenciamento_ambiente_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/gerenciamento_ambiente_class.php");/*da um require na nivel_class*/
         
         // Instancio a controller
         //$controller_nivel  = new controllerNivel();
@@ -39,13 +45,18 @@ if(isset($_GET['modo'])){
         }
         */
         
-        $controller_home = new controller_home();
-        $list = $controller_home::Buscar();
+        $controller_ambiente = new controller_ambiente();
+        $list = $controller_ambiente::Buscar();
         
-        $slide1=$list->slide1;
-        $slide2=$list->slide2;
-        $slide3=$list->slide3;
-        $frase=$list->frase;
+        $titulo=$list->titulo;
+        $texto=$list->texto;
+        $imagem=$list->imagem;
+        $imagem2=$list->imagem2;
+        $imagem3=$list->imagem3;
+        $imagem4=$list->imagem4;
+        $imagem5=$list->imagem5;
+        $imagem6=$list->imagem6;
+        //$frase=$list->frase;
        
     }
 }
@@ -91,7 +102,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=home&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=ambiente&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -125,14 +136,35 @@ if(isset($_GET['modo'])){
                     </div>
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
+                        <div class="campo"><!--campos-->
+                            <div class="string_campo">
+                                <a>Titulo:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input type="text" value="<?php echo($titulo)?>" name="txt_titulo" >
+                            </div>
+                        </div> 
+                        
+                        <div class="campo"><!--campos--> 
+                            <div class="string_campo">
+                                <a>Texto:</a>
+                            </div>
+
+                            <textarea name="txt_texto" id="txt_desc">
+                                <?php echo($texto)?>
+                                
+                            </textarea>
+                        </div> 
+                        
                         <div class="campo">
                             <div class="content_file">
-                              <input type="file" name="fle_img_home1" >
+                              <input  type="file" name="fle_img_home1" >
                             </div>
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide1)?>" alt="">
+                                <img id="img" src="../<?php echo($imagem)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -144,7 +176,7 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide2)?>" alt="">
+                                <img id="img" src="../<?php echo($imagem2)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -156,20 +188,48 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide3)?>" alt="">
+                                <img id="img" src="../<?php echo($imagem3)?>" alt="">
                               </div>
                             </div>
                         </div>
                         
-                        <div class="campo"><!--campos--> <!--nome-->
-                            <div class="string_campo">
-                                <a>Frase:</a>
+                        <div class="campo">
+                            <div class="content_file">
+                              <input   type="file" name="fle_img_home4" >
                             </div>
-
-                            <div class="input_campo">
-                                <input type="text" value="<?php echo($frase)?>" name="txt_frase" >
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="../<?php echo($imagem4)?>" alt="">
+                              </div>
                             </div>
-                        </div>                        
+                        </div>
+                        
+                        <div class="campo">
+                            <div class="content_file">
+                              <input   type="file" name="fle_img_home5" >
+                            </div>
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="../<?php echo($imagem5)?>" alt="">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        <div class="campo">
+                            <div class="content_file">
+                              <input   type="file" name="fle_img_home6" >
+                            </div>
+                            
+                            <div class="content_preview">
+                              <div class="preview_img">
+                                <img id="img" src="../<?php echo($imagem6)?>" alt="">
+                              </div>
+                            </div>
+                        </div>
+                        
+                        
                     
 
                         <div class="campo_botao">
