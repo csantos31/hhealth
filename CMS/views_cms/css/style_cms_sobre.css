@@ -152,7 +152,8 @@
 }
 
 .titulo_niveis{
-    width:80%;
+    width:12.6%;
+    margin-left: 2.7px;
     height:35px;
     padding-top:10px;
     border:solid 1px #5F0601;
@@ -174,10 +175,10 @@
 }
 
 .titulo_acoes{
-    width:19%;
+    width:7.2%;
     height:35px;
     padding-top:10px;
-    margin-left: 4px;
+    margin-left: 5px;
     border-top:solid 2px #5F0601;
     border-left:solid 2px #5F0601;
     border-right:solid 3px #5F0601;
@@ -201,8 +202,9 @@
 }
 
 .campo_niveis{
-    width:80%;
+    width:12.6%;
     height:35px;
+    margin-left: 2.7px;
     line-height: 30px;
     border:solid 1px #5F0601;
     border-top:solid 0px #5F0601;
@@ -221,11 +223,11 @@
 
 
 .campo_acoes{
-    width:19%;
+    width:7.2%;
     height:35px;
     line-height: 30px;
     border:solid 1px #5F0601;
-    margin-left: 4px;
+    margin-left: 5px;
     margin-top: 5px;
     border-top:solid 0px #5F0601;
     border-left:solid 2px #5F0601;
@@ -244,7 +246,7 @@
 }
 
 .edit {
-    width: 46%;
+    width: 35%;
     height: 35px;
     float: left;
 }

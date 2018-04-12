@@ -58,7 +58,7 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="css/style_modal_nivel.css">
+        <link rel="stylesheet" type="text/css" href="css/style_modal_sobre.css">
 
         <script>
             $(document).ready(function(){/*fechar a modal*/
@@ -115,38 +115,38 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Cadastro Nível</a>
+                            <a>Gerenciamento - Sobre</a>
                         </div>
                     </div>
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
-                        <div class="campo"><!--campos--> <!--nome-->
-                            <div class="string_campo">
-                                <a>Nome:</a>
-                            </div>
-
-                            <div class="input_campo">
-                                <input type="text" value="<?php echo($nome)?>" name="txt_nome" >
-                            </div>
+                        <div class="content_radio_nivel">
+                            <label>Descrição do nível:</label>
+                            <textarea name="txt_descricao" id="txt_desc">
+                                <?php echo($descricao)?>
+                                
+                            </textarea>
                         </div>
-                        
-
-                        <div class="campo"><!--campos--> <!--Nível-->
-                            <div class="string_campo">
-                                <a>Nível:</a>
-                            </div>
-
-
-                            <select class="input_combo" name="combo"><!--Combo box-->
-                                <option value="">
-                                    Selecionar Nível
-                                </option>
-
-                                <option value=""> 
-                                    Nível
-                                </option>
-                            </select>
-
+                        <div class="content_radio_nivel">
+                            <label>Descrição do nível:</label>
+                            <textarea name="txt_descricao" id="txt_desc">
+                                <?php echo($descricao)?>
+                                
+                            </textarea>
+                        </div>
+                        <div class="content_radio_nivel">
+                            <label>Descrição do nível:</label>
+                            <textarea name="txt_descricao" id="txt_desc">
+                                <?php echo($descricao)?>
+                                
+                            </textarea>
+                        </div>
+                        <div class="content_radio_nivel">
+                            <label>Descrição do nível:</label>
+                            <textarea name="txt_descricao" id="txt_desc">
+                                <?php echo($descricao)?>
+                                
+                            </textarea>
                         </div>
                         
                         <div class="content_radio_nivel">
