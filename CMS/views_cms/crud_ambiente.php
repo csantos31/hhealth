@@ -119,7 +119,7 @@ include($caminho.'../verifica.php');
                         <div class="content_conteudo_pagina_home">
                             <div class="titulo_conteudo"><!--titulo-->
                                 <div class="string_titulo">
-                                    <a>Slide</a>
+                                    <a>Ambientes</a>
                                 </div>
                                 
                                 <div class="img_cadastrar">

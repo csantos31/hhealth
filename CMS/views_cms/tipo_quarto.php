@@ -32,6 +32,7 @@
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_usuario.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_nivel_usuario.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
     </head>
 
     <body>
