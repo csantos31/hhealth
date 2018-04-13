@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
         <link rel="stylesheet" type="text/css" href="../css/style_especialidades.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_modal.css">
         
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         
@@ -29,7 +28,7 @@
                 
                 $.ajax({
                     type:"POST",
-                    url:"../modals/modal_cad_especialidade.php",
+                    url:"../modals/modal_cad_paciente.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -40,7 +39,7 @@
             function Editar(IdIten){
                 $.ajax({
                     type:"GET", 
-                    url:"../modals/modal_cad_especialidade.php",
+                    url:"../modals/modal_cad_paciente.php",
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -117,10 +116,11 @@
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
+                                    
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->nome ?> <?= $list[$cont]->sobrenome ?></div>
-                                        <div class="item_tabela"><img src="../<?= $list[$cont]->foto ?>" alt="imaagem do paciente" title="imagem do paciente"></div>
+                                        <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
+                                        <div class="item_tabela"><img src="../<?= $list[$cont]['foto']?>" alt="imaagem do paciente" title="imagem do paciente"></div>
                                         <div class="item_tabela icones_tabela">
                                             <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
