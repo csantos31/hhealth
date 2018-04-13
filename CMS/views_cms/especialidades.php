@@ -53,7 +53,6 @@
 
            //Cadastrar
            function Cadastrar(){
-                 event.preventDefault();
                  console.log('entrou_aqui');
                 $.ajax({
                     type:"POST",
@@ -107,7 +106,10 @@
     </head>
 
     <body>
-
+          <div class="container_modal"><!--container da modal-->
+             <div class="modal"><!--modal-->
+             </div>
+          </div>
         <div class="main">  <!--Div main que segura todas as div-->
 
 
