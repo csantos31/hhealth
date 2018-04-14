@@ -63,4 +63,14 @@
             </div>
         </div>
     </a>
+    <a href="<?= $caminho ?>crud_saude.php">
+        <div class="linha">
+            <div class="img_menu_lateral">
+                <img src="<?=$caminho?>imagens/icon_home.png">
+            </div>
+            <div class="titulo_menu_lateral">
+                <a>Dicas de Saúde</a>
+            </div>
+        </div>
+    </a>
 </div>

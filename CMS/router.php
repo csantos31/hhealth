@@ -5,7 +5,8 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
-    require_once('controller_cms/gerenciamento_ambiente_controller.php');
+
+   require_once('controller_cms/gerenciamento_slide_saude_controller.php'); require_once('controller_cms/gerenciamento_ambiente_controller.php');
     require_once('controller_cms/gerenciamento_home_controller.php');
 	require_once('controller_cms/nivel_controller.php');
 	require_once('model_cms/nivel_class.php');
@@ -188,6 +189,80 @@
                         $controller_gerenciamento_ambiente::Deletar();
                     //}
 
+                    break;
+            }
+            /*
+            case 'saude':
+            switch($modo){
+                case 'inserir':
+					// Instanciando a classe da controller
+					$controller_gerenciamento_saude =  new controller_saude();
+					//Chama o metodo Novo da controller
+                    
+					$controller_gerenciamento_saude::Novo();
+
+					break; 
+                
+                case 'editar':
+                    
+                    $controller_gerenciamento_saude = new controller_saude();
+                    
+                    $controller_gerenciamento_saude::Editar();
+                    
+                    break;
+                
+                case 'desativar':
+                    $controller_gerenciamento_saude = new controller_saude();
+                    
+                    $controller_gerenciamento_saude::Desativar();
+
+                    break;
+                    
+                case 'deletar':
+                    
+                    //if(confirm('Deseja realmente excluir?')){
+                        $controller_gerenciamento_saude = new controller_saude();
+                    
+                        $controller_gerenciamento_saude::Deletar();
+                    //}
+                    
+                    break;
+            }*/
+            
+            case 'slide_saude':
+            switch($modo){
+                case 'inserir':
+					// Instanciando a classe da controller
+					$controller_gerenciamento_slide_saude =  new controller_slide_saude();
+					//Chama o metodo Novo da controller
+                    
+					$controller_gerenciamento_slide_saude::Novo();
+
+					break; 
+                
+                case 'editar':
+                    
+                    $controller_gerenciamento_slide_saude = new controller_slide_saude();
+                    
+                    $controller_gerenciamento_slide_saude::Editar();
+                    
+                    break;
+                
+                case 'desativar':
+                    $controller_gerenciamento_slide_saude = new controller_slide_saude();
+                    
+                    $controller_gerenciamento_slide_saude::Desativar();
+
+                    break;
+                    
+                case 'deletar':
+                    
+                    //if(confirm('Deseja realmente excluir?')){
+                        $controller_gerenciamento_slide_saude = new controller_slide_saude();
+                    
+                        $controller_gerenciamento_slide_saude::Deletar();
+                    //}
+                    
                     break;
             }
             break;
