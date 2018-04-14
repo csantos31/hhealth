@@ -19,11 +19,11 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
 
-        require_once("../controllers/especialidade_controller.php");/*da um require na nivel_controller*/
+        require_once("../controller_cms/especialidades_controller.php");/*da um require na nivel_controller*/
         require_once("../models/especialidade_class.php");/*da um require na nivel_class*/
 
         // Instancio a controller
-        $controller_especialidade  = new controllerEspecialidade();
+        $controller_especialidade  = new controller_especialidades();
 
         //Chama o metodo para Listar todos os registros
         $list = $controller_especialidade::Buscar($id);

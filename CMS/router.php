@@ -21,7 +21,7 @@
 					// Instanciando a classe da controller
 					$controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
-                    
+
 					$controller_nivel::Novo();
 
 					break;
@@ -29,12 +29,12 @@
 				case 'buscar_id':
 					// Instanciando a classe da controller
 					//Chama o metodo Novo da controller
-                    
+
                     $controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
 					$controller_nivel::Buscar();
 					require_once('views_cms/nivel_usuario.php');
-                    
+
 					break;
 
 
@@ -54,16 +54,16 @@
 			}
 
 			break;
-            
+
         case 'tipo_quarto':
-            
+
             // Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
             switch ($modo) {
 				case 'inserir':
 					// Instanciando a classe da controller
 					$controller_tipo_quarto =  new controllerTipoQuarto();
 					//Chama o metodo Novo da controller
-                    
+
 					$controller_tipo_quarto::Novo();
 
 					break;
@@ -71,12 +71,12 @@
 				case 'buscar_id':
 					// Instanciando a classe da controller
 					//Chama o metodo Novo da controller
-                    
+
                     $controller_tipo_quarto =  new controllerTipoQuarto();
 					//Chama o metodo Novo da controller
 					$controller_tipo_quarto::Buscar();
 					require_once('views_cms/tipo_quarto.php');
-                    
+
 					break;
 
 
@@ -96,7 +96,7 @@
 			}
 
 			break;
-            
+
         /*home*/
         case 'home':
             switch($modo){
@@ -104,37 +104,55 @@
 					// Instanciando a classe da controller
 					$controller_gerenciamento_home =  new controller_home();
 					//Chama o metodo Novo da controller
-                    
+
 					$controller_gerenciamento_home::Novo();
 
-					break; 
-                
+					break;
+
                 case 'editar':
-                    
+
                     $controller_gerenciamento_home = new controller_home();
-                    
+
                     $controller_gerenciamento_home::Editar();
-                    
+
                     break;
-                
+
                 case 'desativar':
                     $controller_gerenciamento_home = new controller_home();
-                    
+
                     $controller_gerenciamento_home::Desativar();
 
                     break;
-                    
+
                 case 'deletar':
-                    
+
                     //if(confirm('Deseja realmente excluir?')){
                         $controller_gerenciamento_home = new controller_home();
-                    
+
                         $controller_gerenciamento_home::Deletar();
                     //}
-                    
+
                     break;
             }
-        
+
+		// especialidades
+		case 'especialidades':
+			# code...
+			switch ($modo) {
+				case 'inserir':
+					# code...
+					// Instanciando a classe da controller
+					$controller_gerenciamento_especialidades = controller_especialidades();
+					$controller_gerenciamento_especialidades::Nova_especialidade();
+
+					break;
+
+				default:
+					# code...
+					break;
+			}
+			break;
+
         /*home*/
         case 'ambiente':
             switch($modo){
@@ -142,38 +160,38 @@
 					// Instanciando a classe da controller
 					$controller_gerenciamento_ambiente =  new controller_ambiente();
 					//Chama o metodo Novo da controller
-                    
+
 					$controller_gerenciamento_ambiente::Novo();
 
-					break; 
-                
+					break;
+
                 case 'editar':
-                    
+
                     $controller_gerenciamento_ambiente = new controller_ambiente();
-                    
+
                     $controller_gerenciamento_ambiente::Editar();
-                    
+
                     break;
-                
+
                 case 'desativar':
                     $controller_gerenciamento_ambiente = new controller_ambiente();
-                    
+
                     $controller_gerenciamento_ambiente::Desativar();
 
                     break;
-                    
+
                 case 'deletar':
-                    
+
                     //if(confirm('Deseja realmente excluir?')){
                         $controller_gerenciamento_ambiente = new controller_ambiente();
-                    
+
                         $controller_gerenciamento_ambiente::Deletar();
                     //}
-                    
+
                     break;
             }
             break;
-            
+
 		default:
 			# code...
 			break;
