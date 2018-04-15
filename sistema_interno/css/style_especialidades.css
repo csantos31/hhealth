@@ -10,7 +10,7 @@ p{
 #container_cad_especialidade{
     width: 100%;
     min-height: 300px;
-    overflow: hidden;
+    overflow: auto;
     padding: 16px;
     border: solid 1px #333;
     margin-bottom: 30px;
@@ -84,15 +84,3 @@ p{
     width: 25px;
     height: 25px;
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,27 +1,26 @@
-<?php 
+<?php
 
 class Endereco{
-    
-    
-      public id_endereco
-      public  cep
-      public  logradouro
-      public  numero
-      public id_estado
-      public cidade
-      public bairro
-    
+
+      public $id_endereco;
+      public  $cep;
+      public  $logradouro;
+      public  $numero;
+      public $id_estado;
+      public $cidade;
+      public $bairro;
+
         //cria um construtor
 		public function __construct(){
             include_once('bd_class.php');
 		}
-        
+
         /*insere o registro no DB*/
 		public static function Insert($endereco_dados){
 			$sql = "INSERT INTO tbl_endereco(cep, logradouro, numero, id_estado,cidade,bairro) VALUES ('". $endereco_dados->cep ."', '". $endereco_dados->logradouro ."', '". $endereco_dados->numero ."', '". $endereco_dados->id_estado ."' , '". $endereco_dados->cidadde ."', '". $endereco_dados->id_bairro ."');";
-            
+
             //echo $sql;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -43,7 +42,7 @@ class Endereco{
 			$conex->Desconectar();
 
 		}
-        
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
@@ -64,8 +63,8 @@ class Endereco{
 
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-				#Cria um array de objetos na classe contatos   
-                
+				#Cria um array de objetos na classe contatos
+
 				$lista_endereco[] = new Endereco();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
@@ -76,7 +75,7 @@ class Endereco{
                 $lista_endereco[$cont]->id_estado = $rs['id_estado'];
                 $lista_endereco[$cont]->cidade = $rs['cidade'];
                 $lista_endereco[$cont]->bairro = $rs['bairro'];
-				
+
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -91,11 +90,37 @@ class Endereco{
 			}
 
 		}
-        
+
+    public function SelectAllStates(){
+			//Query para selecionar a tabela contatos
+			$sql="SELECT * FROM tbl_estado";
+
+			$conex = new Mysql_db();
+			$PDO_conex = $conex->Conectar();
+			$select = $PDO_conex->query($sql);
+
+			//Contador
+			$cont = 0;
+
+      $lista_estados = array();
+
+			while ($rs = $select->fetchALL(PDO::FETCH_ASSOC)) {
+				#Cria um array de objetos na classe contatos
+
+				$lista_estados= $rs;
+
+				// Soma mais um no contador
+				$cont+=1;
+			}
+
+			$conex::Desconectar();
+				return $lista_estados;
+		}
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($endereco){
 			$sql = "SELECT * FROM tbl_endereco WHERE id_endereco =". $endereco->id_endereco;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -108,8 +133,8 @@ class Endereco{
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
+
 				$endereco = new Endereco();
 
 				$endereco->id_endereco = $rs['id_endereco'];
@@ -119,7 +144,7 @@ class Endereco{
                 $endereco->id_estado = $rs['id_estado'];
                 $endereco->cidade = $rs['cidade'];
                 $endereco->bairro = $rs['bairro'];
-				
+
                 return $endereco;
 
 			}else {
@@ -130,11 +155,11 @@ class Endereco{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-    
+
         public function Update($endereco){
-            
+
 			$sql = "UPDATE tbl_endereco SET cep='". $endereco->cep ."', logradouro='". $endereco->logradouro ."', numero='". $endereco->numero ."', id_estado='". $endereco->id_estado ."', cidade='". $endereco->cidade ."', bairro='". $endereco->bairro ."' WHERE id_endereco='". $endereco->id_endereco ."';";
-		
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -154,12 +179,12 @@ class Endereco{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*Delete o registro no BD*/
 		public function Delete($endereco){
 
 			$sql = "DELETE FROM tbl_endereco  WHERE id_endereco = " . $endereco->id;
-		
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -180,8 +205,8 @@ class Endereco{
 			$conex->Desconectar();
 
 		}
-        
-        
+
+
     }
 
 

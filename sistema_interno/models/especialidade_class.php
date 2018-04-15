@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Especialidade{
       public $id_especialidade;
@@ -6,18 +6,18 @@ class Especialidade{
       public $texto;
       public $imagem;
       public $status;
-        
+
         //cria um construtor
 		public function __construct(){
             include_once('bd_class.php');
 		}
-        
+
         /*insere o registro no DB*/
 		public static function Insert($especialidade_dados){
 			$sql = "INSERT INTO tbl_especialidade(especialidade, texto, imagem, status) VALUES ('".$especialidade_dados->especialidade."', '".$especialidade_dados->texto."', '".$especialidade_dados->imagem."',1);";
-            
+
             //echo $sql;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -39,7 +39,7 @@ class Especialidade{
 			$conex->Desconectar();
 
 		}
-        
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
@@ -58,10 +58,11 @@ class Especialidade{
 			//Contador
 			$cont = 0;
 
+      if(!empty($select)){
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-                
+
 				$lista_especialidade[] = new Especialidade();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
@@ -73,6 +74,9 @@ class Especialidade{
 				// Soma mais um no contador
 				$cont+=1;
 			}
+    }else{
+      $lista_especialidade = array();
+    }
 
 			$conex::Desconectar();
 
@@ -83,11 +87,11 @@ class Especialidade{
 			}
 
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($especialidade){
 			$sql = "SELECT * FROM tbl_especialidade WHERE id_especialidade =". $especialidade->id_especialidade;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -100,8 +104,8 @@ class Especialidade{
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
+
 				$especialidade = new Especialidade();
 
 				$especialidade->id_especialidade = $rs['id_especialidade'];
@@ -109,7 +113,7 @@ class Especialidade{
 				$especialidade->texto = $rs['texto'];
                 $especialidade->status = $rs['status'];
                 $especialidade->imagem = $rs['imagem'];
-				
+
                 return $especialidade;
 
 			}else {
@@ -120,14 +124,14 @@ class Especialidade{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         public function UpdateWithFile($especialidade){
-            
+
 			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "', imagem = '". $especialidade->imagem ."' WHERE id_especialidade =".$especialidade->id_especialidade;
-            
-            
-            
-		
+
+
+
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -147,11 +151,11 @@ class Especialidade{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-    
+
         public function UpdateWithoutFile($especialidade){
-            
+
 			$sql = "UPDATE tbl_especialidade SET especialidade = '".$especialidade->especialidade."', texto = '".$especialidade->texto. "' WHERE id_especialidade = ".$especialidade->id_especialidade;
-		
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -171,12 +175,12 @@ class Especialidade{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*Delete o registro no BD*/
 		public function Delete($especialidade_dados){
 
 			$sql = "UPDATE tbl_especialidade SET status = 0 WHERE id_especialidade = ".$especialidade_dados->id_especialidade;
-		
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -197,8 +201,8 @@ class Especialidade{
 			$conex->Desconectar();
 
 		}
-        
-        
+
+
     }
 
 

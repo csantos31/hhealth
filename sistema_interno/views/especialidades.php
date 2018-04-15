@@ -5,28 +5,28 @@
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
         <link rel="stylesheet" type="text/css" href="../css/style_especialidades.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal.css">
-        
+
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-        
-        
+
+
         <script>/*Modal*/
             $(document).ready(function(){
-                
-                $(".novo").click(function(){    
-                    $(".container_modal").toggle(2000); 
+
+                $(".novo").click(function(){
+                    $(".container_modal").toggle(2000);
                 });
-                
+
                 $(".editar").click(function(){
                     $(".container_modal").fadeIn(2000);
 
                 });
-                
-                
+
+
             });
-            
+
             //Cadastrar
             function Cadastrar(){
-                
+
                 $.ajax({
                     type:"POST",
                     url:"../modals/modal_cad_especialidade.php",
@@ -35,27 +35,27 @@
                     }
                 });
             }
-            
+
             //Editar
             function Editar(IdIten){
                 $.ajax({
-                    type:"GET", 
+                    type:"GET",
                     url:"../modals/modal_cad_especialidade.php",
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
-                    
+
                 });
             }
-            
+
             //Excluir
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
-                
+
                 if(confirm('Tem certeza?')){
-                
+
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
@@ -65,17 +65,17 @@
                         $('.modal').html(dados);
                     }
                 });
-                    
+
                 }
             }
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         </script>
-        
+
     </head>
     <body>
         <div class="container_modal"><!--container da modal-->
@@ -104,25 +104,29 @@
                             <div class="lb_titulo">FOTO</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
-                        
+
                         <?php
-                        
+
                             include_once('../controllers/especialidade_controller.php');
                             include_once('../models/especialidade_class.php');
-                        
+
                                 $controller_especialidade  = new controllerEspecialidade();
 
                                 //Chama o metodo para Listar todos os registros
                                 $list = $controller_especialidade::Listar();
 
+                                if(!empty($list)){
                                 $cont = 0;
+
+
+
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
                                         <div class="item_tabela"><?= $list[$cont]->especialidade ?></div>
                                         <div class="item_tabela"><img src="../<?= $list[$cont]->imagem ?>" alt="imaagem da especialidade" title="imagem da especialidade"></div>
                                         <div class="item_tabela icones_tabela">
-                                        
+
                                             <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_especialidade);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
@@ -132,10 +136,11 @@
                                         </div>
                                     </div>
                         <?php
-                       
+
                                 $cont +=1;
                                 }
-                       
+                              }
+
                         ?>
                     </div>
                 </div>

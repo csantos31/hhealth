@@ -15,7 +15,7 @@
     width:50px;
     height:50px;
     margin-left:600px;
-    
+
 }
 
 .close_modal img{
@@ -36,19 +36,19 @@
 
 .content_logo{/*conetnt logo titulo*/
     width:650px;
-    height:150px;
+    height:50px;
     margin:auto;
 }
 
 .logo{/*logo*/
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
     margin:auto;
 }
 
 .logo img{/*imagem logo*/
-    width:100px;
-    height:100px;
+    width:50px;
+    height:50px;
 }
 
 .titulo{/*titulo*/
@@ -67,7 +67,16 @@
     min-height:300px;
     height:auto;
      padding: 17px;
-   
+
+}
+
+.content_campos_p{/*content dos campos*/
+    width:300px;
+    min-height:300px;
+    height:auto;
+     padding: 17px;
+     float: left;
+
 }
 
 .campo{/*campos*/
@@ -75,8 +84,18 @@
     min-height:35px;
     height:auto;
     margin-top:20px;
-    
+
 }
+
+.campo_p{/*campos*/
+    width:300px;
+    min-height:35px;
+    height:auto;
+    margin-top:20px;
+    float: left;
+
+}
+
 
 .string_campo{/*String dos campos nome,usuario...*/
     width:100px;
@@ -91,6 +110,15 @@
 
 .input_campo [type=text]{
     width:500px;
+    height:30px;
+    float:left;
+    border-top:#ffffff;
+    border-left:#ffffff;
+    box-shadow:0 1px 4px 0 rgba(255, 170, 170);
+}
+
+.input_campo_p [type=text]{
+    width:180px;
     height:30px;
     float:left;
     border-top:#ffffff;
@@ -168,12 +196,3 @@
     z-index: 99999;
 
 }
-
-
-
-
-
-
-
-
-

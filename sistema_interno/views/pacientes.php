@@ -4,28 +4,28 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
         <link rel="stylesheet" type="text/css" href="../css/style_especialidades.css">
-        
+
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-        
-        
+
+
         <script>/*Modal*/
             $(document).ready(function(){
-                
-                $(".novo").click(function(){    
-                    $(".container_modal").toggle(2000); 
+
+                $(".novo").click(function(){
+                    $(".container_modal").toggle(2000);
                 });
-                
+
                 $(".editar").click(function(){
                     $(".container_modal").fadeIn(2000);
 
                 });
-                
-                
+
+
             });
-            
+
             //Cadastrar
             function Cadastrar(){
-                
+
                 $.ajax({
                     type:"POST",
                     url:"../modals/modal_cad_paciente.php",
@@ -34,27 +34,27 @@
                     }
                 });
             }
-            
+
             //Editar
             function Editar(IdIten){
                 $.ajax({
-                    type:"GET", 
+                    type:"GET",
                     url:"../modals/modal_cad_paciente.php",
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
-                    
+
                 });
             }
-            
+
             //Excluir
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
-                
+
                 if(confirm('Tem certeza?')){
-                
+
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
@@ -64,17 +64,17 @@
                         $('.modal').html(dados);
                     }
                 });
-                    
+
                 }
             }
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         </script>
-        
+
     </head>
     <body>
         <div class="container_modal"><!--container da modal-->
@@ -88,7 +88,7 @@
             <div class="main">
                 <div id="container_cad_paciente">
                    <div class="img_nivel">
-                        <a class="novo" href="#" onclick="Cadastrar()">
+                        <a class="novo" onclick="Cadastrar()" style="cursor:pointer;">
 
                             <img src="../imagens/add.png">
                         </a>
@@ -103,12 +103,12 @@
                             <div class="lb_titulo">FOTO</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
-                        
+
                         <?php
-                        
+
                             include_once('../controllers/paciente_controller.php');
                             include_once('../models/paciente_class.php');
-                        
+
                                 $controller_paciente  = new controllerPaciente();
 
                                 //Chama o metodo para Listar todos os registros
@@ -116,7 +116,7 @@
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
-                                    
+
                         ?>
                                     <div class="linha_tabela">
                                         <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
@@ -131,10 +131,10 @@
                                         </div>
                                     </div>
                         <?php
-                       
+
                                 $cont +=1;
                                 }
-                       
+
                         ?>
                     </div>
                 </div>
