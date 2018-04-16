@@ -18,7 +18,7 @@
                   $especialidade->titulo = $_POST['txt_texto'];
                   $especialidade->imagem = $_POST['file_especialidade'];
 
-                  //Chama o metodo Insert da classe Contato
+                  /*Chama o metodo Insert da classe Contato*/
                   $especialidade::Insert($especialidade);
             }
       }
