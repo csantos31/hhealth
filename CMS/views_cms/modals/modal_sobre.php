@@ -3,8 +3,14 @@
 //$action = "modo=inserir";
 
 $id="0";
-$nome=null;
-$descricao=null;
+$sobre=null;
+$missao=null;
+$visao=null;
+$valores=null;
+$imagem1=null;
+$imagem2=null;
+$imagem3=null;
+
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
@@ -18,40 +24,27 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['id'];
         
-        require_once("../../controller_cms/nivel_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/nivel_class.php");/*da um require na nivel_class*/
+        require_once("../../controller_cms/gerenciamento_sobre_controller.php");/*da um require na sobre_controller*/
+        require_once("../../model_cms/gerenciamento_sobre_class.php");/*da um require na sobre_class*/
         
         // Instancio a controller
-        $controller_nivel  = new controllerNivel();
+        $controller_sobre = new controllerSobre();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_nivel::Listar();
-        $buscar = $controller_nivel::Buscar();
+        $list = $controller_sobre::Listar();
+        $buscar = $controller_sobre::Buscar();
         
-        $nome=$buscar->nome;
-        /*
-        if(isset($niv)){
-            //$action = "modo=editar&id=". $niv->id_nivel;
-            $nome = $niv->nome;
-            $descricao = $niv->descricao;
-            
-
-        }else{
-            echo($nome);
-        }
-        */
+        $sobre=$list->sobre;
+        $missao=$list->missao;
+        $visao=$list->visao;
+        $valores=$list->valores;
+        $imagem1=$list->imagem1;
+        $imagem2=$list->imagem2;
+        $imagem3=$list->imagem3;
         
        
     }
 }
-
-
-
-
-
-
-
-
 
 ?>
 
@@ -86,7 +79,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=nivel&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=sobre&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -119,48 +112,96 @@ if(isset($_GET['modo'])){
                         </div>
                     </div>
                     
-                    <div class="content_campos"><!--content dos campos de cadastro-->
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
-                        
-                        <div class="content_radio_nivel">
-                            <label>Descrição do nível:</label>
-                            <textarea name="txt_descricao" id="txt_desc">
-                                <?php echo($descricao)?>
-                                
-                            </textarea>
-                        </div>
+                    <div class="part"> 
+                    
+                        <div class="content_campos"><!--content dos campos de cadastro-->
+                            <div class="campo"><!--campos-->
+                                <div class="string_campo">
+                                    <a>Sobre:</a>
+                                </div>
 
-                        <div class="campo_botao">
-                            <div class="botao">
-                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
-                            </div>    
+                                <div class="input_campo">
+                                    <input type="text" value="<?php echo($sobre)?>" name="txt_sobre" >
+                                </div>
+                            </div> 
+
+                           <div class="campo"><!--campos-->
+                                <div class="string_campo">
+                                    <a>Missão:</a>
+                                </div>
+
+                                <div class="input_campo">
+                                    <input type="text" value="<?php echo($missao)?>" name="txt_missao" >
+                                </div>
+                            </div> 
+
+                            <div class="campo"><!--campos-->
+                                <div class="string_campo">
+                                    <a>Visão:</a>
+                                </div>
+
+                                <div class="input_campo">
+                                    <input type="text" value="<?php echo($visao)?>" name="txt_visao" >
+                                </div>
+                            </div> 
+
+                            <div class="campo"><!--campos-->
+                                <div class="string_campo">
+                                    <a>Valores:</a>
+                                </div>
+
+                                <div class="input_campo">
+                                    <input type="text" value="<?php echo($valores)?>" name="txt_valores" >
+                                </div>
+                            </div> 
+                        </div>
+                    
+                    </div>
+                    <div class="part">
+                    
+                        <div class="content_campos"><!--content dos campos de cadastro-->
+
+                            <div class="campo">
+                                <div class="content_file">
+                                  <input  type="file" name="fle_img_sobre1" >
+                                </div>
+
+                                <div class="content_preview">
+                                  <div class="preview_img">
+                                    <img id="img" src="../<?php echo($imagem1)?>" alt="">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="content_file">
+                                  <input  type="file" name="fle_img_sobre2" >
+                                </div>
+
+                                <div class="content_preview">
+                                  <div class="preview_img">
+                                    <img id="img" src="../<?php echo($imagem2)?>" alt="">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <div class="content_file">
+                                  <input   type="file" name="fle_img_sobre3" >
+                                </div>
+
+                                <div class="content_preview">
+                                  <div class="preview_img">
+                                    <img id="img" src="../<?php echo($imagem3)?>" alt="">
+                                  </div>
+                                </div>
+                            </div>
+
+                            <div class="campo_botao">
+                                <div class="botao">
+                                    <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
+                                </div>    
+                            </div>
                         </div>
                     </div>
                 </form>

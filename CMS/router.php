@@ -5,8 +5,8 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
-
-   require_once('controller_cms/gerenciamento_slide_saude_controller.php'); require_once('controller_cms/gerenciamento_ambiente_controller.php');
+    require_once('controller_cms/gerenciamento_sobre_controller.php');
+    require_once('controller_cms/gerenciamento_slide_saude_controller.php'); require_once('controller_cms/gerenciamento_ambiente_controller.php');
     require_once('controller_cms/gerenciamento_home_controller.php');
 	require_once('controller_cms/nivel_controller.php');
 	require_once('model_cms/nivel_class.php');
@@ -187,6 +187,43 @@
                         $controller_gerenciamento_ambiente = new controller_ambiente();
 
                         $controller_gerenciamento_ambiente::Deletar();
+                    //}
+
+                    break;
+            }
+            
+            case 'sobre':
+            switch($modo){
+                case 'inserir':
+					// Instanciando a classe da controller
+					$controller_gerenciamento_sobre =  new controllerSobre();
+					//Chama o metodo Novo da controller
+
+					$controller_gerenciamento_sobre::Novo();
+
+					break;
+
+                case 'editar':
+
+                    $controller_gerenciamento_sobre = new controllerSobre();
+
+                    $controller_gerenciamento_sobre::Editar();
+
+                    break;
+
+                case 'desativar':
+                    $controller_gerenciamento_sobre = new controllerSobre();
+
+                    $controller_gerenciamento_sobre::Desativar();
+
+                    break;
+
+                case 'deletar':
+
+                    //if(confirm('Deseja realmente excluir?')){
+                        $controller_gerenciamento_sobre = new controllerSobre();
+
+                        $controller_gerenciamento_sobre::Deletar();
                     //}
 
                     break;
