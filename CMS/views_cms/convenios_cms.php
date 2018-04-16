@@ -27,11 +27,11 @@
 <html>
     <head>
 
-        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_especialidades.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_convenios.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
-        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal_cadastro_especialidades.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal_cadastro_convenios.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal.css">
 
 
@@ -56,7 +56,7 @@
                  console.log('entrou_aqui');
                 $.ajax({
                     type:"POST",
-                    url:"modals/modal_cadastro_especialidade.php",
+                    url:"modals/modal_cadastro_convenio.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -124,7 +124,7 @@
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                           <div class="content_titulo_usuario">
                              <div class="titulo_cadastro1_usuario">
-                                 <a> Tipos de quartos</a>
+                                 <a> Convênios</a>
                              </div>
 
                              <div class="content_add_usuario">
@@ -136,10 +136,10 @@
 
                              </div>
                          </div>
-                         <div class="tabela_especialidades">
+                         <div class="tabela_convenios">
                                <div class="titulo_da_tabela">
                                     <div class="titulo">
-                                          Nome da Especialidade
+                                          Nome do Convênio
                                     </div>
                                     <div class="titulo">
                                           Imagem
@@ -149,13 +149,13 @@
                                     </div>
                                </div>
                                <div class="conteudo_tabela">
-                                     <div class="nome_especialidade">
-                                           Nome da Especialidade
+                                     <div class="nome_convenio">
+                                           Nome do Convênio
                                      </div>
-                                     <div class="img_especialidade">
+                                     <div class="img_convenio">
                                            <img src="../imagens/img login.jpg" alt="">
                                      </div>
-                                     <div class="opcoes_especialidade">
+                                     <div class="opcoes_convenio">
                                            <div class="alinha_direita">
                                                  <img src="../../sistema_interno/imagens/edit.png" alt="">
                                            </div>
