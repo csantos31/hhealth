@@ -68,6 +68,19 @@ include($caminho.'../verifica.php');
                     }
                 });
             }
+        //Ativar
+        function Ativar(IdIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                event.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    data: {id:IdIten},
+                    url: "../router.php?controller=slide_saude&modo=ativar&id="+IdIten,
+                    success: function(dados){
+                        $('.icon_opcoes').html(dados);
+                    }
+                });
+            }
         
         //Desativar
             function Desativar(IdIten){
@@ -104,7 +117,7 @@ include($caminho.'../verifica.php');
                 
                 $.ajax({
                     type:"POST",
-                    url:"modals/modal_slide_saude.php",
+                    url:"modals/modal_dica_saude.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -115,7 +128,7 @@ include($caminho.'../verifica.php');
             function Editar2(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"modals/modal_home.php",
+                    url:"modals/modal_dica_saude.php",
                     data:{modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -123,6 +136,20 @@ include($caminho.'../verifica.php');
                 });
             }
         
+        //Ativar
+        function Ativar2(IdIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                event.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    data: {id:IdIten},
+                    url: "../router.php?controller=saude_n&modo=ativar&id="+IdIten,
+                    success: function(dados){
+                        $('.icon_opcoes').html(dados);
+                    }
+                });
+            }
+            
         //Desativar
             function Desativar2(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
@@ -130,7 +157,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=home&modo=desativar&id="+IdIten,
+                    url: "../router.php?controller=saude_n&modo=desativar&id="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -144,7 +171,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=home&modo=deletar&id="+IdIten,
+                    url: "../router.php?controller=saude_n&modo=deletar&id="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -195,14 +222,19 @@ include($caminho.'../verifica.php');
                                 $controller_gerenciamento_slide_saude =  new controller_slide_saude();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_gerenciamento_slide_saude::Listar();
+                                $list_slide_saude = $controller_gerenciamento_slide_saude::Listar();
 
-                                $cont = 0;
-                                while ($cont < count($list)) {
-                                    $ativo=$list[$cont]->ativo;
+                                $cont1 = 0;
+                                while ($cont1 < count($list_slide_saude)) {
+                                    $ativo=$list_slide_saude[$cont1]->ativo;
+                                    $status=$list_slide_saude[$cont1]->status;
                                     if($ativo==1){
                                         //$list[$cont]->slide1=null;
-                                        
+                                        if($status==1){
+                                            $Desativar="Desativar";
+                                        }else{
+                                            $Desativar="Ativar";
+                                        }
                                     
                                 
                                 
@@ -210,7 +242,7 @@ include($caminho.'../verifica.php');
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
                                 
                                 <div class="imagem_conteudo"><!--imagem-->
-                                    <img src="../<?php echo($list[$cont]->slide)?>">
+                                    <img src="../<?php echo($list_slide_saude[$cont1]->slide)?>">
                                 </div>
                                 
                                 <div class="content_opcoes"><!--content das opções-->
@@ -219,10 +251,10 @@ include($caminho.'../verifica.php');
                                     <?php
                                         $ativar=null;
                                         $imagem=null;
-                                        if($list[$cont]->status==1){
+                                        if($list_slide_saude[$cont1]->status==1){
                                             $ativar="Desativar";
                                             $imagem='turn_on.png';
-                                        }else if($list[$cont]->status==0){
+                                        }else if($list_slide_saude[$cont1]->status==0){
                                             $ativar="Ativar";
                                             $imagem='shutdown.png';
                                         }
@@ -234,7 +266,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                             <div class="icon_opcoes">
-                                                <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_slide_saude);?>)">
+                                                <a href="#" class="desativar" onclick="<?php echo($Desativar)?>(<?php echo($list_slide_saude[$cont1]->id_slide_saude);?>)">
                                                     <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
                                                 </a>
                                             </div>
@@ -251,7 +283,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_slide_saude);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list_slide_saude[$cont1]->id_slide_saude);?>)">
                                                 
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
@@ -264,7 +296,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_slide_saude);?>)">
+                                            <a href="#" class="excluir" onclick="<?php echo($Desativar)?>(<?php echo($list_slide_saude[$cont1]->id_slide_saude);?>)">
                                                 <img  src="<?=$caminho?>imagens/shutdown.png">
                                             </a>
                                         </div>
@@ -276,7 +308,7 @@ include($caminho.'../verifica.php');
                             <?php
                                         //return null;
                                        }
-                               $cont +=1;
+                               $cont1 +=1;
                                 }
                             ?>
                             
@@ -300,21 +332,28 @@ include($caminho.'../verifica.php');
                             <?php
                                 
                                 // Incluindo a controller e a model para serem utilizadas
-                                include_once($caminho . '../controller_cms/gerenciamento_home_controller.php');
-                                include_once($caminho .'../model_cms/gerenciamento_home_class.php');
+                                include_once($caminho . '../controller_cms/gerenciamento_dica_saude_controller.php');
+                                include_once($caminho .'../model_cms/gerenciamento_dica_saude_class.php');
 
                                 // Instancio a controller
-                                $controller_gerenciamento_home =  new controller_home();
+                                $controller_gerenciamento_dica_saude =  new controller_dica_saude();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_gerenciamento_home::Listar();
+                                $list = $controller_gerenciamento_dica_saude::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
                                     $ativo=$list[$cont]->ativo;
+                                    $status=$list[$cont]->status;
+                                    $Desativar=null;
+                                    
                                     if($ativo==1){
                                         //$list[$cont]->slide1=null;
-                                        
+                                        if($status==1){
+                                            $Desativar="Desativar2";
+                                        }else{
+                                            $Desativar="Ativar2";
+                                        }
                                     
                                 
                                 
@@ -322,7 +361,7 @@ include($caminho.'../verifica.php');
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
                                 
                                 <div class="imagem_conteudo"><!--imagem-->
-                                    <img src="../<?php echo($list[$cont]->slide1)?>">
+                                    <img src="../<?php echo($list[$cont]->imagem)?>">
                                 </div>
                                 
                                 <div class="content_opcoes"><!--content das opções-->
@@ -346,7 +385,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                             <div class="icon_opcoes">
-                                                <a href="#" class="desativar" onclick="Desativar2(<?php echo($list[$cont]->id_home);?>)">
+                                                <a href="#" class="desativar" onclick="<?php echo($Desativar)?>(<?php echo($list[$cont]->id_dica_saude);?>)">
                                                     <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
                                                 </a>
                                             </div>
@@ -363,8 +402,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar2(<?php echo($list[$cont]->id_home);?>)">
-                                                
+                                            <a href="#" class="editar" onclick="Editar2(<?php echo($list[$cont]->id_dica_saude);?>)">
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
                                         </div>
@@ -376,7 +414,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="Deletar2(<?php echo($list[$cont]->id_home);?>)">
+                                            <a href="#" class="excluir" onclick="Deletar2(<?php echo($list[$cont]->id_dica_saude);?>)">
                                                 <img  src="<?=$caminho?>imagens/shutdown.png">
                                             </a>
                                         </div>
