@@ -1,10 +1,12 @@
 <?php
 
-    class controller_slide_saude{
+    class controller_dica_saude{
         public function Novo(){
-            require_once ('model_cms/gerenciamento_slide_saude_class.php');
+            require_once ('model_cms/gerenciamento_dica_saude_class.php');
             require_once ('modulo_img.php');
-            $slide_saude = new Slide_saude();
+            $dica_saude = new Dica_saude();
+            $dica_saude->titulo = $_POST['txt_titulo'];
+            $dica_saude->descricao = $_POST['txt_desc'];
             //$home ->frase = $_POST['txt_frase'];
             //$home ->status = $_POST['status'];
             
@@ -17,7 +19,7 @@
             //pega slide1
             if(!empty($_FILES['fle_img_home1']['name'])){
                 $img_file1 = true;
-                $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_slide_saude');
+                $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_dica_saude');
                 if($diretorio_completo1 == "Erro"){
                     echo "<script>
                      alert($diretorio_completo1);
@@ -32,43 +34,45 @@
             }
             
             
-            $slide_saude -> slide = $diretorio_completo1;
+            $dica_saude -> imagem = $diretorio_completo1;
             
-            $slide_saude::Insert($slide_saude);
+            $dica_saude::Insert($dica_saude);
         }
         
         public function Listar(){
 			//Instancia da classe contatos
-			$slide_saude = new Slide_saude();
+			$dica_saude = new Dica_saude();
 
 			//Chama o método para selecionar os registros
-			return $slide_saude::Select();
+			return $dica_saude::Select();
 		}
         
         public function Buscar(){
-            $idSlideSaude = $_GET['id'];
+            $idDicaSaude = $_GET['id'];
             
-            $slide_saude = new Slide_saude();
+            $dica_saude = new Dica_saude();
             
-            $slide_saude->id_slide_saude=$idSlideSaude;
+            $dica_saude->id_dica_saude=$idDicaSaude;
            
-            $sli_sau = $slide_saude::SelectById($slide_saude);
+            $dic_sau = $dica_saude::SelectById($dica_saude);
             
             
             
-            return $sli_sau;
+            return $dic_sau;
         }
         
         public function Editar(){
-            require_once ('model_cms/gerenciamento_slide_saude_class.php');
+            require_once ('model_cms/gerenciamento_dica_saude_class.php');
             require_once ('modulo_img.php');
             //guarda o id da home passado na view
-            $idSlideSaude = $_GET['id'];
+            $idDicaSaude = $_GET['id'];
             
             //Instancia a classe home
-            $slide_saude = new Slide_saude();
+            $dica_saude = new Dica_saude();
             
-            $slide_saude->id_slide_saude = $idSlideSaude;
+            $dica_saude->id_dica_saude = $idDicaSaude;
+            $dica_saude->titulo = $_POST['txt_titulo'];
+            $dica_saude->descricao = $_POST['txt_desc'];
             //$home ->frase = $_POST['txt_frase'];
             //$home ->status = $_POST['status'];
             
@@ -82,7 +86,7 @@
             //pega slide1
             if(!empty($_FILES['fle_img_home1']['name'])){
                 $img_file1 = true;
-                $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_slide_saude');
+                $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_dica_saude');
                 if($diretorio_completo1 == "Erro"){
                     echo "<script>
                      alert($diretorio_completo1);
@@ -99,64 +103,64 @@
            
            
             
-            $slide_saude -> slide = $diretorio_completo1;
-            $slide_saude::Update($slide_saude);
+            $dica_saude -> imagem = $diretorio_completo1;
+            $dica_saude::Update($dica_saude);
         }
         
         public function Ativar(){
-            require_once ('model_cms/gerenciamento_slide_saude_class.php');
+            require_once ('model_cms/gerenciamento_dica_saude_class.php');
             require_once ('modulo_img.php');
 
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idSlideSaude = $_GET['id'];
+			$idDicaSaude = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$slide_saude = new Slide_saude();
+			$dica_saude = new Dica_saude();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$slide_saude->id_slide_saude = $idSlideSaude;
+			$dica_saude->id_dica_saude = $idDicaSaude;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$slide_saude::AtivarPorId($slide_saude);
+			$dica_saude::AtivarPorId($dica_saude);
             
 
 		}
         
         
         public function Desativar(){
-            require_once ('model_cms/gerenciamento_slide_saude_class.php');
+            require_once ('model_cms/gerenciamento_dica_saude_class.php');
             require_once ('modulo_img.php');
 
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idSlideSaude = $_GET['id'];
+			$idDicaSaude = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$slide_saude = new Slide_saude();
+			$dica_saude = new Dica_saude();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$slide_saude->id_slide_saude = $idSlideSaude;
+			$dica_saude->id_dica_saude = $idDicaSaude;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$slide_saude::DesativarPorId($slide_saude);
+			$dica_saude::DesativarPorId($dica_saude);
             
 
 		}
         
         public function Deletar(){
-            require_once ('model_cms/gerenciamento_slide_saude_class.php');
+            require_once ('model_cms/gerenciamento_dica_saude_class.php');
             require_once ('modulo_img.php');
             
             //GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idSlideSaude = $_GET['id'];
+			$idDicaSaude = $_GET['id'];
             
             //INSTANCIA A CLASSE CONTATO
-			$slide_saude = new Slide_saude();
+			$dica_saude = new Dica_saude();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$slide_saude->id_slide_saude = $idSlideSaude;
+			$dica_saude->id_dica_saude = $idDicaSaude;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$slide_saude::Deletar($slide_saude);
+			$dica_saude::Deletar($dica_saude);
             
         }
         

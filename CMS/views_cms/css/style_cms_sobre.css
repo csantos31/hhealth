@@ -203,7 +203,8 @@
 
 .campo_niveis{
     width:12.6%;
-    height:35px;
+    min-height: 35px;
+    height: auto;
     margin-left: 2.7px;
     line-height: 30px;
     border:solid 1px #5F0601;
@@ -221,6 +222,12 @@
     float:left;
 }
 
+
+.campo_niveis img{
+    width: 50px;
+    min-height: 35px;
+    height: auto;
+}
 
 .campo_acoes{
     width:7.2%;

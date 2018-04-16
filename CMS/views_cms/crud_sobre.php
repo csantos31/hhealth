@@ -125,16 +125,13 @@ if(isset($niv)){
                                 <a>Sobre</a>
                             </div>
 
-                            <div class="content_add_nivel">
-                                
-                                <div class="img_nivel">
-                                    <a class="novo" href="<?php echo($niv->id_nivel)?>" onclick="Cadastrar()">
-                                        
+                            <div class="img_cadastrar">
+                                    
+                                    <a class="novo" href="#" onclick="Cadastrar()">
                                         <img src="<?=$caminho?>imagens/add.png">
                                     </a>
-                                </div>
                                 
-                            </div>
+                                </div>
                         </div>
 
                     
@@ -176,50 +173,55 @@ if(isset($niv)){
 
                              <?php
                                 // Incluindo a controller e a model para serem utilizadas
-                                include_once($caminho . '../controller_cms/nivel_controller.php');
-                                include_once($caminho .'../model_cms/nivel_class.php');
+                                include_once($caminho . '../controller_cms/gerenciamento_sobre_controller.php');
+                                include_once($caminho .'../model_cms/gerenciamento_sobre_class.php');
 
-                                // Instancio a controller
-                                $controller_nivel  = new controllerNivel();
+                               $controller_gerenciamento_sobre =  new controllerSobre();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_nivel::Listar();
+                                $list = $controller_gerenciamento_sobre::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
+                                    $ativo=$list[$cont]->ativo;
+                                    if($ativo==1){
+                                        //$list[$cont]->slide1=null;
+                                        
+                                    }
                                ?>
 
                                 <div class="content_campo_niveis">
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><?= ($list[$cont]->sobre);  ?></a>
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><?= ($list[$cont]->missao);  ?></a>
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><?= ($list[$cont]->visao);  ?></a>
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><?= ($list[$cont]->valores);  ?></a>
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a> <img src="../<?= $list[$cont]->imagem1 ?> "> </a>
+                                        
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><img src="../<?= $list[$cont]->imagem2 ?> "></a>
                                     </div>
                                     <div class="campo_niveis">
-                                        <a><?= ($list[$cont]->nome);  ?></a>
+                                        <a><img src="../<?= $list[$cont]->imagem2 ?> "></a>
                                     </div>
                                                                         
-                                    <div class="campo_acoes">
+                                    <div class="campo_acoes">   
                                         <div class="edit">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_nivel);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_sobre);?>)">
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
                                         </div>
                                         <div class="shut">
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_nivel);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_sobre);?>)">
                                                 <img src="<?=$caminho?>imagens/shutdown.png">
                                             </a>
                                         </div>

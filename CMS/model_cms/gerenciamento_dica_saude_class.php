@@ -6,9 +6,11 @@
 ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
 
 */
-    class Slide_saude{
-        public $id_slide_saude;
-        public $slide;
+    class Dica_saude{
+        public $id_dica_saude;
+        public $titulo;
+        public $descricao;
+        public $imagem;
         public $status;
         public $ativo;
         
@@ -18,12 +20,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         }
         
         /*insere o registro no DB*/
-        public static function Insert($slide_dados){
+        public static function Insert($dados_saude){
             
             //$sql1="UPDATE tbl_home SET status = 0";
             
-            $sql = "INSERT INTO tbl_slide_saude(imagem,status,ativo)
-            VALUES('".$slide_dados->slide."','1','1');";
+            $sql = "INSERT INTO tbl_dica_saude(titulo,descricao,imagem,status,ativo)
+            VALUES('".$dados_saude->titulo."','".$dados_saude->descricao."','".$dados_saude->imagem."','1','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -34,7 +36,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql)){
                 echo "<script>location.reload();</script>";
-                
+                echo $sql;
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
@@ -47,7 +49,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_slide_saude ORDER BY id_slide_saude DESC;";
+			$sql="SELECT * FROM tbl_dica_saude ORDER BY id_dica_saude DESC;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -65,13 +67,15 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-				$lista_slide_saude[] = new Slide_saude();
+				$lista_dica_saude[] = new Dica_saude();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_slide_saude[$cont]->id_slide_saude = $rs['id_slide_saude'];
-				$lista_slide_saude[$cont]->slide = $rs['imagem'];
-                $lista_slide_saude[$cont]->status = $rs['status'];
-                $lista_slide_saude[$cont]->ativo = $rs['ativo'];
+				$lista_dica_saude[$cont]->id_dica_saude = $rs['id_dica_saude'];
+                $lista_dica_saude[$cont]->titulo = $rs['titulo'];
+                $lista_dica_saude[$cont]->descricao = $rs['descricao'];
+				$lista_dica_saude[$cont]->imagem = $rs['imagem'];
+                $lista_dica_saude[$cont]->status = $rs['status'];
+                $lista_dica_saude[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -80,16 +84,16 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_slide_saude)) {
+			if (isset($lista_dica_saude)) {
 				# code...
-				return $lista_slide_saude;
+				return $lista_dica_saude;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
 		public function SelectById($dados_saude){
-			$sql = "SELECT * FROM tbl_slide_saude WHERE id_slide_saude =". $dados_saude->id_slide_saude;
+			$sql = "SELECT * FROM tbl_dica_saude WHERE id_dica_saude =". $dados_saude->id_dica_saude;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -105,14 +109,16 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				//Se der true redireciona a tela
               
                 
-				$slide_saude = new Slide_saude();
+				$dica_saude = new Dica_saude();
 
-				$slide_saude->id_slide_saude = $rs['id_slide_saude'];
-				$slide_saude->slide = $rs['imagem'];
-                $slide_saude->status = $rs['status'];
-                $slide_saude->ativo = $rs['ativo'];
+				$dica_saude->id_dica_saude = $rs['id_dica_saude'];
+                $dica_saude->titulo = $rs['titulo'];
+                $dica_saude->descricao = $rs['descricao'];
+				$dica_saude->imagem = $rs['imagem'];
+                $dica_saude->status = $rs['status'];
+                $dica_saude->ativo = $rs['ativo'];
 				
-				return $slide_saude;
+				return $dica_saude;
 
 			}else {
 				//Mensagem de erro
@@ -124,7 +130,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
         
         public function Update($dados_saude){
-			$sql = "UPDATE tbl_slide_saude set imagem = '".$dados_saude->slide."' WHERE id_slide_saude =".$dados_saude->id_slide_saude;
+			$sql = "UPDATE tbl_dica_saude set titulo='".$dados_saude->titulo."',descricao='".$dados_saude->descricao."',imagem = '".$dados_saude->imagem."' WHERE id_dica_saude =".$dados_saude->id_dica_saude;
 		
 
 		      echo $sql;
@@ -148,10 +154,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        /*Ativar o registro no BD*/
-        public function AtivarPorId($dados_saude){
+        
+        /*Desativar o registro no BD*/
+        public function DesativarPorId($dados_saude){
             //$sql1 = "UPDATE tbl_home set status=0";
-            $sql = "UPDATE tbl_slide_saude set status=1 WHERE id_slide_saude=".$dados_saude->id_slide_saude;
+            $sql = "UPDATE tbl_dica_saude set status=0 WHERE id_dica_saude=".$dados_saude->id_dica_saude;
             
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -167,8 +174,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 
 			}else {
 				//Mensagem de erro
-				//echo $sql;
-                echo "Error atualizar no Banco de Dados";
+				//echo "Error atualizar no Banco de Dados";
+                echo $sql;
 			}
 
 			//Fecha a conexão com o banco de dados
@@ -177,9 +184,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         }
         
         /*Desativar o registro no BD*/
-        public function DesativarPorId($dados_saude){
+        public function AtivarPorId($dados_saude){
             //$sql1 = "UPDATE tbl_home set status=0";
-            $sql = "UPDATE tbl_slide_saude set status=0 WHERE id_slide_saude=".$dados_saude->id_slide_saude;
+            $sql = "UPDATE tbl_dica_saude set status=1 WHERE id_dica_saude=".$dados_saude->id_dica_saude;
             
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -195,8 +202,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 
 			}else {
 				//Mensagem de erro
-				//echo $sql;
-                echo "Error atualizar no Banco de Dados";
+//				/echo "Error atualizar no Banco de Dados";
+                echo $sql;
 			}
 
 			//Fecha a conexão com o banco de dados
@@ -207,7 +214,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         /*DELETAR*/
         public function Deletar($dados_saude){
-            $sql="UPDATE tbl_slide_saude set ativo=0 WHERE id_slide_saude=".$dados_saude->id_slide_saude;
+            $sql="UPDATE tbl_dica_saude set ativo=0 WHERE id_dica_saude=".$dados_saude->id_dica_saude;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
