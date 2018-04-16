@@ -1,36 +1,24 @@
 <?php
 //$action = "modo=inserir";
-
 $id="0";
 $especialidade=null;
 $texto=null;
 $arquivo = null;
-
 $variavel_style = "display:none;";
-
-
 if(isset($_GET['modo'])){
-
     $variavel_style = "display:block";
-
     $modo = $_GET['modo'];
-
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
-
         require_once("../controllers/especialidade_controller.php");/*da um require na nivel_controller*/
         require_once("../models/especialidade_class.php");/*da um require na nivel_class*/
-
         // Instancio a controller
         $controller_especialidade  = new controllerEspecialidade();
-
         //Chama o metodo para Listar todos os registros
         $list = $controller_especialidade::Buscar($id);
-
         $imagem = $list->imagem;
         $especialidade = $list->especialidade;
         $texto = $list->texto;
-
     }
 }
 ?>
@@ -51,7 +39,6 @@ if(isset($_GET['modo'])){
                 width: 150px;
                 height: 150px;
             }
-
         </style>
         <script>
             $(document).ready(function(){/*fechar a modal*/
@@ -73,10 +60,8 @@ if(isset($_GET['modo'])){
                       modo='inserir';
                   else
                       modo='editar';
-
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
-
                  $.ajax({
                     type: "POST",
                     url: "../router.php?controller=paciente&modo="+modo+"&id="+id,
@@ -87,10 +72,10 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                         $('.modal').html(dados);
+                         //$('.modal').html(dados);
+                        alert(dados);
                     }
                 });
-
              });
          </script>
         <div class="main_modal"><!--main que segura tudo-->
@@ -139,11 +124,11 @@ if(isset($_GET['modo'])){
                             <div class="input_campo_p">
                                <label>Convênio :</label>
                                 <select id="slt_cargo" class="input_med2" name="slt_convenio">
-                                    <option>Convênio I</option>
-                                    <option>Convênio II</option>
-                                    <option>Convênio III</option>
-                                    <option>Convênio IV</option>
-                                    <option>Convênio V</option>
+                                    <option value="1">Convênio I</option>
+                                    <option value="2">Convênio II</option>
+                                    <option value="3">Convênio III</option>
+                                    <option value="4">Convênio IV</option>
+                                    <option value="5">Convênio V</option>
                                 </select>
                             </div>
                         </div>
@@ -174,7 +159,7 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo_p">
                           <div class="input_campo_p">
-                              <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_nome" id="txt_numero">
+                              <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
                           </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->

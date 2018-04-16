@@ -48,9 +48,9 @@
             switch ($modo) {
 				case 'inserir':
 
-                    require_once('controllers/paciente_controller.php');
+                    
                     require_once('controllers/endereco_controller.php');
-                    require_once('models/paciente_class.php');
+                    
                     require_once('models/endereco_class.php');
 
 
@@ -59,7 +59,11 @@
 					//Chama o metodo Novo da controller
 
 					$id_endereco = $controller_endereco::Novo();
-
+                    
+                    $_POST['id_endereco'] = $id_endereco;
+                    
+                    require_once('controllers/paciente_controller.php');
+                    require_once('models/paciente_class.php');
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::Novo();
 

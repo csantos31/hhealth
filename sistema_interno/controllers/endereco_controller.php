@@ -27,8 +27,9 @@
 			//Chama o metodo Insert da classe Contato
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
-			$id = $endereco::Insert($endereco);
-            return $id;
+			$id_ende = $endereco::Insert($endereco);
+           
+            return $id_ende;
 
 		}
 

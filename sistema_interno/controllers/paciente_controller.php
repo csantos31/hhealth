@@ -27,12 +27,12 @@
 
 			//Carregando os dados digitados pelo usuário nos atributos da classe
 			$paciente->id_convenio = $_POST['slt_convenio'];
-            $paciente->id_endereco = $id_endereco;
+            $paciente->id_endereco = $_POST['id_endereco'];
             $paciente->nome = $_POST['txt_nome'];
             $paciente->sobrenome = $_POST['txt_sobrenome'];
             $paciente->dt_nasc = $_POST['txt_dt_nasc'];
             $paciente->rg = $_POST['txt_rg'];
-            $paciente->cpf = $_POST['cpf'];
+            $paciente->cpf = $_POST['txt_cpf'];
             $paciente->foto = $fle_foto1;
             $paciente->carteirinha_convenio = $fle_foto2;
 

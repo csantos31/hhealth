@@ -19,11 +19,11 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
 
-        require_once("../controller_cms/especialidades_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/especialidade_class.php");/*da um require na nivel_class*/
+        require_once("../controller_cms/convenios_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/convenio_class.php");/*da um require na nivel_class*/
 
         // Instancio a controller
-        $controller_especialidade  = new controller_especialidades();
+        $controller_especialidade  = new controller_convenios();
 
         //Chama o metodo para Listar todos os registros
         $list = $controller_especialidade::Buscar($id);
@@ -39,7 +39,7 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="../css/style_modal_cadastro_especialidades.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_modal_cadastro_convenios.css">
         <style>
             #imagem_atual{
                 width: 150px;
@@ -79,7 +79,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=especialidade&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=convenio&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -105,7 +105,7 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Especialidades</a>
+                            <a>Convênios</a>
                         </div>
                     </div>
 
@@ -113,21 +113,21 @@ if(isset($_GET['modo'])){
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_big" placeholder="ESPECIALIDADE" name="txt_especialidade" id="txt_especialidade">
+                                <input value="<?= $especialidade ?>" required type="text" class="input_big" placeholder="CONVÊNIO" name="txt_convenio" id="txt_convenio">
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DA ESPECIALIDADE" name="txt_texto" id="txt_texto" style="resize:none;"><?= $texto ?></textarea>
+                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CONVÊNIO" name="txt_texto" id="txt_texto" style="resize:none;"><?= $texto ?></textarea>
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                                <b>Selecione uma imagem para esta especialidade :</b>
+                                <b>Selecione uma imagem para o convenio :</b>
 
-                                <input type="file" name="file_especialidade" id="file_especialidade">
+                                <input type="file" name="file_convenio" id="file_convenio">
                             </div>
                             <div id="imagem_atual" style="<?= $variavel_style ?>">
                                 <img src="../<?= $imagem ?>" title="imagem atual" alt="imagem atual">
@@ -135,7 +135,7 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo_botao">
                             <div class="botao">
-                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
+                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar" >
                             </div>
                         </div>
                     </div>
