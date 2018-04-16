@@ -79,7 +79,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=especialidade&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=convenio&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -135,7 +135,7 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo_botao">
                             <div class="botao">
-                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
+                                <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar" >
                             </div>
                         </div>
                     </div>
