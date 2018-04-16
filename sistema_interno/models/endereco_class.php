@@ -17,7 +17,7 @@ class Endereco{
 
         /*insere o registro no DB*/
 		public static function Insert($endereco_dados){
-			$sql = "INSERT INTO tbl_endereco(cep, logradouro, numero, id_estado,cidade,bairro) VALUES ('". $endereco_dados->cep ."', '". $endereco_dados->logradouro ."', '". $endereco_dados->numero ."', '". $endereco_dados->id_estado ."' , '". $endereco_dados->cidadde ."', '". $endereco_dados->id_bairro ."');";
+			$sql = "INSERT INTO tbl_endereco(cep, logradouro, numero, id_estado,cidade,bairro) VALUES ('". $endereco_dados->cep ."', '". $endereco_dados->logradouro ."', '". $endereco_dados->numero ."', '". $endereco_dados->id_estado ."' , '". $endereco_dados->cidade ."', '". $endereco_dados->bairro ."');";
 
             //echo $sql;
 
@@ -29,8 +29,17 @@ class Endereco{
 			$PDO_conex = $conex->Conectar();
 
 			//Executa o script no banco de dados
+            
+        
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
+                
+                $endereco = new Endereco;
+                
+                $id_endereco = $endereco::SelectLast();
+                
+                return $id_endereco;
+                
 				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
@@ -39,8 +48,41 @@ class Endereco{
 			}
 
 			//Fecha a conexão com o banco de dados
-			$conex->Desconectar();
+			$conex->Desconectar(); 
+            
+		}
+    
+        /*Busca um registro especifico no BD*/
+		public function SelectLast(){
+			$sql = "SELECT id_endereco FROM tbl_endereco ORDER BY id_endereco DESC LIMIT 1";
 
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			$select = $PDO_conex->query($sql);
+
+			//Executa o script no banco de dados
+			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+				//Se der true redireciona a tela
+
+
+				$endereco = new Endereco();
+
+				$endereco = $rs['id_endereco'];
+
+                return $endereco;
+
+			}else {
+				//Mensagem de erro
+				echo "Error ao selecionar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
 		}
 
         /*Lista todos os registro no BD*/
