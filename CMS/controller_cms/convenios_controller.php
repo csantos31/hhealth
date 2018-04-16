@@ -47,6 +47,15 @@
                   /*Chama o metodo Insert da classe Contato*/
                   $convenios::Insert($convenios);
             }
+
+            public function Listar(){
+
+                  // Instancia a classe $convenios
+                  $convenios = new Convenio();
+
+                  // Chama o metodo para selecionar os registros
+                  return $convenios::Select();
+            }
       }
 
  ?>

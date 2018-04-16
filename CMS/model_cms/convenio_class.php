@@ -43,6 +43,51 @@
                   //Fechar a conexão com o banco de dados
                   $conex->Desconectar();
             }
+
+            // Lista toos os registros do banco de dados
+            public function Select(){
+
+                  //Query para selecionar a tabela contatos
+                  $sql1="SELECT * FROM tbl_convenio ORDER BY id_convenio DESC;";
+
+                  //Instancio o banco e cria uma variavel
+                  $conex = new Mysql_db();
+
+                  /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
+                  $PDO_conex = $conex->Conectar();
+
+                  //Executa o select no banco de dados e guarda o retorno na variavel select
+                  $select = $PDO_conex->query($sql1);
+
+                  // contador
+                  $cont = 0;
+
+                  //Estrutura de repetição para pegar dados
+                  while ($rs = $select->fetch(PDO::FETCH_ASSOC)){
+
+                        // Cria um array de dados na classe $list_contatos
+                        $list_convenios[] = new Convenio();
+
+                        // Guarda os dados vindos do banco no indice de objetos criado
+                        $list_convenios[$cont]->id_convenio = $rs['id_convenio'];
+                        $list_convenios[$cont]->titulo = $rs['titulo'];
+                        $list_convenios[$cont]->texto = $rs['texto'];
+                        $list_convenios[$cont]->imagem = $rs['imagem'];
+                        $list_convenios[$cont]->status_imagem = $rs['status_imagem'];
+
+                        // Soma mais um no contador
+				$cont+=1;
+
+                        //Fechar a conexão com o banco de dados
+                        $conex->Desconectar();
+
+                        //Apenas retorna o $list_contatos se existir dados no banco de daos
+      			if (isset($list_convenios)) {
+      				# code...
+      				return $list_convenios;
+      			}
+                  }
+            }
       }
 
  ?>
