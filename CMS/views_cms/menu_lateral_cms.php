@@ -53,13 +53,13 @@
             </div>
         </div>
     </a>
-    <a href="<?= $caminho ?>especialidades.php">
+    <a href="<?= $caminho ?>convenios_cms.php">
         <div class="linha">
             <div class="img_menu_lateral">
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Especialidades</a>
+                <a>Convênios</a>
             </div>
         </div>
     </a>

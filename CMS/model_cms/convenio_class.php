@@ -3,10 +3,10 @@
       /**
        *
        */
-      class Especialidade
+      class Convênio
       {
 
-            public $id_especialidade;
+            public $id_convenio;
             public $titulo;
             public $texto;
             public $imagem;
@@ -19,12 +19,12 @@
                   include_once('bd_class.php');
             }
 
-            public static function Insert($especialidade_dados){
+            public static function Insert($convenio_dados){
 
-                  $sql1="UPDATE tbl_especialidade SET status=0";
+                  $sql1="UPDATE tbl_convenio SET status=0";
 
-                  $sql2="INSERT tbl_especialidade(id_especialidade, titulo, texto, imagem, status_imagem)
-                  VALUES('".especialidade_dados->titulo."', '".especialidade_dados->texto."', '".especialidade_dados->imagem."', '".especialidade_dados->status_imagem."');";
+                  $sql2="INSERT tbl_convenio(id_convenio, titulo, texto, imagem, status_imagem)
+                  VALUES('".convenio_dados->titulo."', '".convenio_dados->texto."', '".convenio_dados->imagem."', '".convenio_dados->status_imagem."');";
 
                   //Instancia o banco e cria uma variavel
                   $conex = new Mysql_db();
