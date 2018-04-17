@@ -40,6 +40,7 @@
       border-color: #5F0601;
       border-radius: 25px;
       margin: auto;
+      padding-bottom: 35px;
 }
 
 .titulo_da_tabela{
@@ -51,7 +52,27 @@
       border-top-right-radius: 25px;
 }
 
-.titulo{
+.nome-titulo{
+      width: 33%;
+      height: 50px;
+      float: left;
+      font-weight: bold;
+      font-family: sans-serif;
+      line-height: 50px;
+      text-align: center;
+}
+
+.img-titulo{
+      width: 33%;
+      height: 50px;
+      float: left;
+      font-weight: bold;
+      font-family: sans-serif;
+      line-height: 50px;
+      text-align: center;
+}
+
+.opcoes-titulo{
       width: 33%;
       height: 50px;
       float: left;
@@ -65,7 +86,7 @@
       width: 100%;
       height: 200px;
       border: solid 1px;
-      border-color: #5F0601;   
+      border-color: #5F0601;
 }
 
 .nome_convenio{
@@ -97,18 +118,30 @@
 }
 
 .alinha_direita{
-      width: 50%;
+      width: 20%;
+      height: 200px;
+      float: left;
+      margin-left: 25%;
+}
+
+.alinha_direita img{
+      float: left;
+      margin-top: 80px;
+}
+
+.alinha_meio{
+      width: 20%;
       height: 200px;
       float: left;
 }
 
-.alinha_direita img{
-      float: right;
+.alinha_meio img{
+      float: left;
       margin-top: 80px;
 }
 
 .alinha_esquerda{
-      width: 49%;
+      width: 20%;
       height: 200px;
       float: left;
 }

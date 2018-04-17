@@ -56,6 +56,7 @@
                   // Chama o metodo para selecionar os registros
                   return $convenios::Select();
             }
+
       }
 
  ?>
