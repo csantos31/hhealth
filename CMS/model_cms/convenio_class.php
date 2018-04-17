@@ -22,7 +22,7 @@
 
                   $sql2="INSERT tbl_convenio(titulo, texto, imagem, status_imagem)
                   VALUES('".$convenio_dados->titulo."', '".$convenio_dados->texto."', '".$convenio_dados->imagem."', 1);";
-                  echo ($sql2);
+                  // echo ($sql2);
 
 
                   //Instancia o banco e cria uma variavel
@@ -33,7 +33,7 @@
 
                   //Excutar o script no banco de dados
                   if($PDO_conex->query($sql2)){
-                      //echo "<script>location.reload();</script>";
+                      echo "<script>location.reload();</script>";
 
       			}else {
       				//Mensagem de erro
@@ -76,16 +76,17 @@
                         $list_convenios[$cont]->status_imagem = $rs['status_imagem'];
 
                         // Soma mais um no contador
-				$cont+=1;
+				                $cont+=1;
 
                         //Fechar a conexão com o banco de dados
                         $conex->Desconectar();
 
                         //Apenas retorna o $list_contatos se existir dados no banco de daos
-      			if (isset($list_convenios)) {
-      				# code...
-      				return $list_convenios;
-      			}
+
+                  }
+                  if (isset($list_convenios)) {
+                        # code...
+                        return $list_convenios;
                   }
             }
       }

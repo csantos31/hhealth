@@ -1,5 +1,5 @@
 <?php
-
+      $status=null;
     $action = "modo=inserir";
     $nivel = null;
     $descricao = null;
@@ -148,12 +148,30 @@
                                           Opções
                                     </div>
                                </div>
+                               <?php
+
+                                     // Incluindo a controller e a model para serem utilizadas
+                                     include_once($caminho . '../controller_cms/convenios_controller.php');
+                                     include_once($caminho .'../model_cms/convenio_class.php');
+
+                                     $convenios_controller = new controller_convenios();
+
+                                     $list = $convenios_controller::Listar();
+
+                                     $cont = 0;
+
+                                     while ($cont < count($list)) {
+                                           # code...
+                                           $ativo=$list[$cont]->status_imagem;
+                                           if($status==1){
+                                           }
+                                ?>
                                <div class="conteudo_tabela">
                                      <div class="nome_convenio">
-                                           Nome do Convênio
+                                           <?php echo($list[$cont]->titulo); ?>
                                      </div>
                                      <div class="img_convenio">
-                                           <img src="../imagens/img login.jpg" alt="">
+                                           <img src="../<?php echo($list[$cont]->imagem); ?>" alt="">
                                      </div>
                                      <div class="opcoes_convenio">
                                            <div class="alinha_direita">
@@ -164,6 +182,11 @@
                                            </div>
                                      </div>
                                </div>
+                               <?php
+
+                                     $cont +=1;
+                                     }
+                                ?>
 
                          </div>
                     </div>
