@@ -45,17 +45,11 @@ if(isset($_GET['modo'])){
         }
         */
 
-        $controller_ambiente = new controller_ambiente();
-        $list = $controller_ambiente::Buscar();
+        $controller_exame = new controller_exame();
+        $list = $controller_exame::Buscar();
 
         $titulo=$list->titulo;
         $texto=$list->texto;
-        $imagem=$list->imagem;
-        $imagem2=$list->imagem2;
-        $imagem3=$list->imagem3;
-        $imagem4=$list->imagem4;
-        $imagem5=$list->imagem5;
-        $imagem6=$list->imagem6;
         //$frase=$list->frase;
 
     }

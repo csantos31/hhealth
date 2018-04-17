@@ -31,16 +31,15 @@ if(isset($_GET['modo'])){
         $controller_sobre = new controllerSobre();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_sobre::Listar();
         $buscar = $controller_sobre::Buscar();
         
-        $sobre=$list->sobre;
-        $missao=$list->missao;
-        $visao=$list->visao;
-        $valores=$list->valores;
-        $imagem1=$list->imagem1;
-        $imagem2=$list->imagem2;
-        $imagem3=$list->imagem3;
+        $sobre=$buscar->sobre;
+        $missao=$buscar->missao;
+        $visao=$buscar->visao;
+        $valores=$buscar->valores;
+        $imagem1=$buscar->imagem1;
+        $imagem2=$buscar->imagem2;
+        $imagem3=$buscar->imagem3;
         
        
     }
@@ -163,7 +162,7 @@ if(isset($_GET['modo'])){
 
                             <div class="campo">
                                 <div class="content_file">
-                                  <input  type="file" name="fle_img_sobre1" >
+                                  <input  type="file" name="fle_img_sobre1">
                                 </div>
 
                                 <div class="content_preview">

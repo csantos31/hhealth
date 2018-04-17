@@ -9,7 +9,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $id_ambiente;
         public $titulo;
         public $texto_descricao;
-        public $texto_procedimento
+        public $texto_procedimento;
         public $status;
         public $ativo;
 
@@ -24,7 +24,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             $sql1="UPDATE tbl_ambiente SET status = 0";
 
             $sql2 = "INSERT INTO tbl_exame(titulo,texto,procedimento,status,ativo)
-            VALUES('".$ambiente_dados->titulo."','".$ambiente_dados->texto_descricao."','".$ambiente_dados->texto_procedimento."','1','1');";
+            VALUES('".$exames_dados->titulo."','".$exames_dados->texto_descricao."','".$exames_dados->texto_procedimento."','1','1');";
 
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -39,7 +39,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
       			}else {
       				//Mensagem de erro
       				echo "Error inserir no Banco de Dados";
-                      echo $sql;
+                      echo $sql2;
       			}
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();
@@ -48,7 +48,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
   		public function Select(){
   			//Query para selecionar a tabela contatos
-  			$sql="SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC;";
+  			$sql="SELECT * FROM tbl_exame WHERE status =1 ORDER BY id_exame DESC;";
 
   			//Instancio o banco e crio uma variavel
   			$conex = new Mysql_db();
@@ -66,20 +66,15 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
   			//Estrutura de repetição para pegar dados
   			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
   				#Cria um array de objetos na classe contatos
-  				$lista_ambiente[] = new Ambiente();
+  				$lista_exame[] = new Exame();
 
   				// Guarda os dados no banco de dados em cada indice do objeto criado
-  				$lista_ambiente[$cont]->id_ambiente = $rs['id_ambiente'];
-  				$lista_ambiente[$cont]->titulo = $rs['titulo'];
-  				$lista_ambiente[$cont]->texto = $rs['texto'];
-                  $lista_ambiente[$cont]->imagem = $rs['imagem'];
-                  $lista_ambiente[$cont]->imagem2 = $rs['imagem2'];
-                  $lista_ambiente[$cont]->imagem3 = $rs['imagem3'];
-                  $lista_ambiente[$cont]->imagem4 = $rs['imagem4'];
-                  $lista_ambiente[$cont]->imagem5 = $rs['imagem5'];
-                  $lista_ambiente[$cont]->imagem6 = $rs['imagem6'];
-                  $lista_ambiente[$cont]->status = $rs['status'];
-                  $lista_ambiente[$cont]->ativo = $rs['ativo'];
+  				$lista_exame[$cont]->id_ambiente = $rs['id_ambiente'];
+  				$lista_exame[$cont]->titulo = $rs['titulo'];
+  				$lista_exame[$cont]->texto_descricao = $rs['texto'];
+          $lista_exame[$cont]->texto_procedimento = $rs['procedimento'];
+          $lista_exame[$cont]->status = $rs['status'];
+          $lista_exame[$cont]->ativo = $rs['ativo'];
 
   				// Soma mais um no contador
   				$cont+=1;
@@ -88,9 +83,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
   			$conex::Desconectar();
 
   			//Apenas retorna o $list_contatos se existir dados no banco de daos
-  			if (isset($lista_ambiente)) {
+  			if (isset($lista_exame)) {
   				# code...
-  				return $lista_ambiente;
+  				return $lista_exame;
   			}
 
   		}

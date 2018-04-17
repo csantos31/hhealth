@@ -5,10 +5,31 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_fale_conosco.css">
+            
             <title>Hospital HHealth</title>
             <meta name="viewport" content="initial-scale=1, maximun-scale=1">
       </head>
       <body>
+          <script type="text/javascript">
+              
+              $(document).read(function(){
+                 
+                  document.getElementById('form').submit(function(event){
+                      
+                  event.preventDefault();
+                  //Recupera o id gravado no Form pelo atribute-id
+                  var id = $(this).data("id");
+                  var modo = "";
+                  if(id == '0')
+                      modo='inserir';
+                  else
+                      modo='editar';
+
+
+                });
+                  
+            });
+         </script>
             <div class="main"><!--Div Main que segura todas as divs-->
                   <!-- Esse require adiciona o menu na página -->
                  <?php require_once('nav.php'); ?>
@@ -25,42 +46,36 @@
                                        <img src="../imagens/faleconosco.png" alt="">
                                  </div>
                                  <div class="formFaleconosco">
-                                       <form class="form_faleconosco" action="index.html" method="post">
+                                       <form class="form_faleconosco" action="" id="form" method="post">
                                              <div class="linha1">
                                                    <div class="txt_nome">
                                                          Nome:
                                                    </div>
-                                                   <input type="text" name="txtNome" value="">
+                                                   <input type="text" name="txt_nome" value="">
                                              </div>
                                              <div class="linha2">
                                                    <div class="txt_email">
                                                          Email:
                                                    </div>
-                                                   <input type="email" name="txtEmail" value="">
+                                                   <input type="email" name="txt_email" value="">
                                              </div>
                                              <div class="linha3">
                                                    <div class="txt_telefone">
                                                          Telefone:
                                                    </div>
-                                                   <input type="tel" name="txtTelefone" value="">
+                                                   <input type="tel" name="txt_telefone" value="">
                                              </div>
                                              <div class="linha4">
                                                    <div class="txt_celular">
                                                          Celular:
                                                    </div>
-                                                   <input type="tel" name="txtCelular" value="">
+                                                   <input type="tel" name="txt_celular" value="">
                                              </div>
-                                             <div class="linha5">
-                                                   <div class="txt_assunto">
-                                                        Assunto:
+                                             <div class="linha4">
+                                                   <div class="txt_celular">
+                                                         Assunto:
                                                    </div>
-                                                   <select class="sltassunto" name="">
-                                                         <option value="">Selecione um assuonto</option>
-                                                         <option value="1">Teste 1</option>
-                                                         <option value="2">Teste 2</option>
-                                                         <option value="3">Teste 3</option>
-                                                   </select>
-
+                                                   <input type="tel" name="txt_assunto" value="">
                                              </div>
                                              <div class="linha6">
                                                    <div class="txt_mensagem">
@@ -69,7 +84,7 @@
                                                    <textarea class="textarea"  style="resize: none;" name="textareaMensagem" ></textarea>
                                              </div>
                                              <div class="linha7">
-                                                   <input type="submit" name="Enviar" value="Enviar">
+                                                   <input type="submit" id="bnt_enviar" name="Enviar" value="Enviar">
                                              </div>
                                        </form>
                                  </div>
@@ -105,7 +120,7 @@
                                 </div>
                                 <div class="faixa_enviar_chat">
                                       <input type="text" name="txt_digitado_pelo_paciente" value="">
-                                      <div class="botao_enviar_chat">
+                                      <div class=   "botao_enviar_chat">
                                             Enviar
                                       </div>
                                 </div>

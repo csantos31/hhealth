@@ -4,7 +4,7 @@ class controller_exame{
 
       public function Novo(){
 
-            require_once ('model_cms/convenio_class.php');
+            require_once ('model_cms/gerenciamento_exames_class.php');
             require_once ('model_cms/bd_class.php');
             require_once ('modulo_img.php');
 
@@ -20,7 +20,7 @@ class controller_exame{
             $exames::Insert($exames);
       }
 
-      public function Editar(){
+      public function Select(){
 
             // Instancia a classe $convenios
             $exames = new Exame();
