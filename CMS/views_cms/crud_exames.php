@@ -1,53 +1,59 @@
 <?php
+      $status=null;
+    $action = "modo=inserir";
+    $nivel = null;
+    $descricao = null;
 
 
-$action = "modo=inserir";
-$nome = null;
-$descricao = null;
+    if (isset($_GET['controller']))
+        $caminho ="views_cms/";
+    else
+        $caminho = "";
+
+    include($caminho.'../verifica.php');
 
 
-if (isset($_GET['controller']))
-    $caminho ="views_cms/";
-else
-    $caminho = "";
+    /*NIVEL EDIT*/
+    if(isset($tipo_quarto)){
+        $action = "modo=editar&id=". $tipo_quarto->id_tipo_quarto;
+        $nivel = $tipo_quarto->nivel;
+        $descricao = $tipo_quarto->descricao;
 
-
-include($caminho.'../verifica.php');
-
-
+    }
 
 ?>
+
+
 <html>
     <head>
 
-        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_exames.css">
-        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
-        <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_exames.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
-
-        <link rel="stylesheet" type="text/css" href="css/style_modal.css">
-
-        <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
-
-        <script>
-
-        $(document).ready(function(){
-
-            $(".novo").click(function(){
-                $(".container_modal").toggle(2000);
-            });
-
-            $(".editar").click(function(){
-                $(".container_modal").fadeIn(2000);
-
-            });
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal_cadastro_convenios.css">
+        <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal.css">
 
 
-        });
+        <script type="text/javascript" src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+        <script>/*Modal*/
+           $(document).ready(function(){
 
-        //Cadastrar
-            function Cadastrar(){
+                $(".novo").click(function(){
+                    $(".container_modal").toggle(2000);
+                });
 
+                $(".editar").click(function(){
+                    $(".container_modal").fadeIn(2000);
+
+                });
+
+
+           });
+
+           //Cadastrar
+           function Cadastrar(){
+                 console.log('entrou_aqui');
                 $.ajax({
                     type:"POST",
                     url:"modals/modal_exames.php",
@@ -55,56 +61,55 @@ include($caminho.'../verifica.php');
                         $(".modal").html(dados);
                     }
                 });
-            }
+           }
 
-        //Editar
-            function Editar(IdIten){
+           //Editar
+           function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"modals/modal_exames.php",
-                    data:{modo:'buscarId',id:IdIten},
+                    url:"/modals/modal_exames.php",
+                    data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
-                });
-            }
 
-        //Desativar
-            function Desativar(IdIten){
+                });
+           }
+
+           //Excluir
+           function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
-                $.ajax({
-                    type:"GET",
-                    data: {id:IdIten},
-                    url: "../router.php?controller=ambiente&modo=desativar&id="+IdIten,
-                    success: function(dados){
-                        $('.icon_opcoes').html(dados);
-                    }
-                });
-            }
 
-        //Desativar
-            function Deletar(IdIten){
-                //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                if(confirm('Tem certeza?')){
+
                 $.ajax({
                     type:"GET",
-                    data: {id:IdIten},
-                    url: "../router.php?controller=ambiente&modo=deletar&id="+IdIten,
+                    data: {id:idIten},
+                    url: "../router.php?controller=especialidade&modo=excluir&id="+idIten,
                     success: function(dados){
-                        $('.icon_opcoes').html(dados);
+                        console.log(dados);
+                        $('.modal').html(dados);
                     }
                 });
-            }
+
+                }
+           }
+
+
+
+
+
+
         </script>
 
     </head>
 
     <body>
-        <div class="container_modal"><!--container da modal-->
-            <div class="modal"><!--modal-->
-            </div>
-        </div>
+          <div class="container_modal"><!--container da modal-->
+             <div class="modal"><!--modal-->
+             </div>
+          </div>
         <div class="main">  <!--Div main que segura todas as div-->
 
 
@@ -112,82 +117,88 @@ include($caminho.'../verifica.php');
                 <?php include('menu_cms.php')?>
 
                 <div class="content_home_cms"><!--conteudo da home do cms-->
-                  <!-- Include once do menu lateral -->
-                  <?php include_once('menu_lateral_cms.php'); ?>
+
+                    <!-- Include once menu lateral -->
+                    <?php include_once('menu_lateral_cms.php'); ?>
 
                     <div class="conteudo_home_cms"><!--conteudo menu-->
-                        <div class="content_conteudo_pagina_home">
-                            <div class="titulo_conteudo"><!--titulo-->
-                                <div class="string_titulo">
-                                    <a>Exames</a>
-                                </div>
+                          <div class="content_titulo_usuario">
+                             <div class="titulo_cadastro1_usuario">
+                                 <a> Convênios</a>
+                             </div>
 
-                                <div class="img_cadastrar">
+                             <div class="content_add_usuario">
+                                 <div class="img_usuario">
+                                     <a class="novo" href="#" onclick="Cadastrar()">
+                                           <img src="<?=$caminho?>imagens/add.png">
+                                     </a>
+                                 </div>
 
-                                    <a class="novo" href="#" onclick="Cadastrar()">
-                                        <img src="<?=$caminho?>imagens/add.png">
-                                    </a>
-
-                                </div>
-
-                            </div>
-
-
-
-                            <div class="conteudo_pagina_home"><!--conteudos da pagina-->
-
-                                <div class="imagem_conteudo"><!--imagem-->
-                                    <img src="../<?php echo($list[$cont]->imagem)?>">
-                                </div>
-
-                                <div class="content_opcoes"><!--content das opções-->
-
-                                    <div class="opcoes"><!--Desativar-->
-                                        <div class="string_opcoes">
-                                          <a><?php //echo($ativar)?></a>
-                                        </div>
-
-                                            <div class="icon_opcoes">
-                                                <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_ambiente);?>)">
-                                                    <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>" alt="desativar_ativar">
-                                                </a>
-                                            </div>
-
+                             </div>
+                         </div>
+                         <div class="tabela_convenios">
+                               <div class="titulo_da_tabela">
+                                    <div class="titulo-nome">
+                                          Nome do Exame
+                                    </div>
+                                    <div class="titulo-descricao">
+                                          Descrição
                                     </div>
 
-                                    <div class="opcoes"><!--Editar-->
-                                        <div class="string_opcoes">
-                                            <a>Editar</a>
-                                        </div>
-
-                                        <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_ambiente);?>)">
-
-                                                <img src="<?=$caminho?>imagens/edit.png" alt="editar">
-                                            </a>
-                                        </div>
+                                    <div class="titulo-procedimento">
+                                          Procedimento
                                     </div>
-
-                                    <div class="opcoes"><!--Excluir-->
-                                        <div class="string_opcoes">
-                                            <a>Excluir</a>
-                                        </div>
-
-                                        <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_ambiente);?>)">
-                                                <img  src="<?=$caminho?>imagens/shutdown.png" alt="excluir">
-                                            </a>
-                                        </div>
+                                    <div class="titulo-opcao">
+                                          Opções
                                     </div>
-                                </div>
+                               </div>
+                               <?php
 
-                            </div>
-                        </div>
+                                     // // Incluindo a controller e a model para serem utilizadas
+                                     // include_once($caminho . '../controller_cms/exame_controller.php');
+                                     // include_once($caminho .'../model_cms/exame_class.php');
+                                     //
+                                     // $convenios_controller = new controller_convenios();
+                                     //
+                                     // $list = $convenios_controller::Listar();
+                                     //
+                                     // $cont = 0;
+                                     //
+                                     // while ($cont < count($list)) {
+                                     //       # code...
+                                     //       $ativo=$list[$cont]->status_imagem;
+                                     //       if($status==1){
+                                     //       }
+                                ?>
+                               <div class="conteudo_tabela">
+                                     <div class="nome_convenio">
+                                         <?php //echo($list[$cont]->titulo); ?>
+                                     </div>
+                                     <div class="descricao_inf">
 
+                                     </div>
+                                     <div class="procedimento_inf">
 
+                                     </div>
+                                     <div class="opcoes_convenio">
+                                           <div class="alinha_direita">
+                                                 <img src="../../sistema_interno/imagens/edit.png" alt="">
+                                           </div>
+                                           <div class="alinha_esquerda">
+                                                 <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+                                           </div>
+                                     </div>
+                               </div>
+                               <?php
 
+                                  // $cont +=1;
+                                     //}
+                                ?>
 
+                         </div>
                     </div>
+
+
                 </div>
 
                 <?php include('footer_cms.php')?>
