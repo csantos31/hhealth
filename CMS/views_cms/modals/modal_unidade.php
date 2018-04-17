@@ -6,6 +6,13 @@ $id="0";
 $nome=null;
 $descricao=null;
 $frase=null;
+$logradouro =  null;
+$cidade =  null;
+$bairro = null;
+$cep = null;
+$rg = null;
+$cpf = null;
+$numero = null;
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
@@ -125,6 +132,15 @@ if(isset($_GET['modo'])){
                     </div>
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
+                        <div class="campo"><!--campos--> <!--nome-->
+                            <div class="string_campo">
+                                <a>Unidade:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input type="text" value="" name="txt_unidade" placeholder="Unidade">
+                            </div>
+                        </div>
                         <div class="campo">
                             <div class="content_file">
                               <input type="file" name="fle_img_home1" >
@@ -137,41 +153,79 @@ if(isset($_GET['modo'])){
                             </div>
                         </div>
                         
-                        <div class="campo">
-                            <div class="content_file">
-                              <input  type="file" name="fle_img_home2" >
+                        <div class="campo"><!--campos--> <!--nome-->
+                            <div class="string_campo">
+                                <a>Logradouro:</a>
                             </div>
-                            
-                            <div class="content_preview">
-                              <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide2)?>" alt="">
-                              </div>
-                            </div>
-                        </div>
-                        
-                        <div class="campo">
-                            <div class="content_file">
-                              <input   type="file" name="fle_img_home3">
-                            </div>
-                            
-                            <div class="content_preview">
-                              <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide3)?>" alt="">
-                              </div>
+
+                            <div class="input_campo">
+                                <input type="text" value="" name="txt_logradouro" placeholder="Logradouro">
                             </div>
                         </div>
                         
                         <div class="campo"><!--campos--> <!--nome-->
                             <div class="string_campo">
-                                <a>Frase:</a>
+                                <a>Bairro:</a>
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="<?php echo($frase)?>" name="txt_frase" >
+                                <input style="width:200px;"type="text" value="" name="txt_bairro" placeholder="Bairro">
                             </div>
-                        </div>                        
-                    
+                            <div class="string_campo">
+                                <a>Número:</a>
+                            </div>
 
+                            <div class="input_campo">
+                                <input style="width:200px;"type="text" value="" name="txt_numero" placeholder="Número">
+                            </div>
+                        </div>
+                        
+                        <div class="campo"><!--campos--> <!--nome-->
+                            <div class="string_campo">
+                                <a>CEP:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input style="width:100px;"type="text" value="" name="txt_cep" placeholder="CEP">
+                            </div>
+                            
+                            <div class="string_campo">
+                                <a>Cidade:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input style="width:200px;"type="text" value="" name="txt_cidade" placeholder="Cidade">
+                            </div>
+                        </div>
+                        
+                        <div class="campo"><!--campos--> <!--Nível-->
+                            <div class="string_campo">
+                                <a>Estado:</a>
+                            </div>
+
+
+                            <select class="input_combo" name="combo"><!--Combo box-->
+                                <option value="">
+                                    Selecionar Nível
+                                </option>
+
+                                <?php
+                                  include_once('../controllers/endereco_controller.php');
+                                  include_once('../models/endereco_class.php');
+                                  $controller_endereco  = new controller_endereco();
+                                  $list = $controller_endereco::ListarEstados();
+                                  $cont = 0;
+                                  while ($cont < count($list)) {
+                                  ?>
+                                      <option value="<?= $list[$cont]['id_estado'] ?>"><?= $list[$cont]['sigla'] ?></option>
+                                  <?php
+                                    $cont +=1;
+                                  }
+                                ?>
+                            </select>
+
+                        </div>
+                        
                         <div class="campo_botao">
                             <div class="botao">
                                 <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
