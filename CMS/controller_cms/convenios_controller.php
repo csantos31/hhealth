@@ -57,6 +57,33 @@
                   return $convenios::Select();
             }
 
+            public function Editar(){
+
+                  // Instancia a classe $convenios
+                  $convenios = new Convenio();
+
+                  // Chama o metodo para selecionar os registros
+                  return $convenios::Select();
+            }
+
+            public function Desativar(){
+
+                  // Instancia a classe $convenios
+                  $convenios = new Convenio();
+
+                  // Chama o metodo para selecionar os registros
+                  return $convenios::Select();
+            }
+
+            public function Deletar(){
+
+                  // Instancia a classe $convenios
+                  $convenios = new Convenio();
+
+                  // Chama o metodo para selecionar os registros
+                  return $convenios::Select();
+            }
+
       }
 
  ?>
