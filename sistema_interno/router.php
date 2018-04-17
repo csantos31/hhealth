@@ -46,14 +46,14 @@
 
             // Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
             switch ($modo) {
-				          case 'inserir':
+                case 'inserir':
                       require_once('controllers/endereco_controller.php');
                       require_once('models/endereco_class.php');
 
-            					// Instanciando a classe da controller
-            					$controller_endereco =  new controllerEndereco();
-            					//Chama o metodo Novo da controller
-            					$id_endereco = $controller_endereco::Novo();
+                        // Instanciando a classe da controller
+                        $controller_endereco =  new controllerEndereco();
+                        //Chama o metodo Novo da controller
+                        $id_endereco = $controller_endereco::Novo();
                       $_POST['id_endereco'] = $id_endereco;
                       require_once('controllers/paciente_controller.php');
                       require_once('models/paciente_class.php');

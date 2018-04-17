@@ -3,7 +3,7 @@
         <title>Sistema Interno HHealth</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_especialidades.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_paciente.css">
 
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
@@ -47,6 +47,30 @@
 
                 });
             }
+            
+            function EditarPerfil(linha,IdIten){
+                
+                //console.log(linha.getElementsByClassName('div_change_profille'));
+                var linha_a = linha.getElementsByClassName('div_change_profille');
+                    
+                $('.div_change_profile').attr('id','meu_id');
+                $('#meu_id').attr('display','block');
+            
+                
+                 
+                
+                
+                
+                /*$.ajax({
+                    type:"GET",
+                    url:"../modals/modal_cad_paciente.php",
+                    data: {modo:'buscarId',codigo:IdIten},
+                    success: function(dados){
+                        $('.modal').html(dados);
+                    }
+
+                });*/
+            }
 
             //Excluir
             function Excluir(idIten){
@@ -89,14 +113,10 @@
                 <div id="container_cad_paciente">
                    <div class="img_nivel">
                         <a class="novo" onclick="Cadastrar()" style="cursor:pointer;">
-
                             <img src="../imagens/add.png">
                         </a>
                     </div>
                     <p>Pacientes</p>
-                    <div class="col_1">
-                        <img src="../imagens/doc_icon2.jpg" alt="pacientes pendentes" title="pacientes pendentes">
-                    </div>
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">NOME</div>
@@ -127,6 +147,20 @@
                                             </a>
                                             <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
+                                            </a>
+                                            <a href="#" class="alterar_perfil" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
+                                                <img src="../imagens/alter_prof.png" alt="alterar perfil" title="alterar perfil">
+                                                <div class="div_change_profille" id="id_teste">
+                                                    <div class="modal_superior">
+                                                        <labe>Alterar Imagem do perfil</labe>
+                                                    </div>
+                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_perfil">
+                                                        <input type="file" name="file_foto" id="file_foto">
+                                                    </form>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="alterar_carteirinha" onclick="EditarCarteirinha(<?php echo($list[$cont]['id_paciente']);?>)">
+                                                <img src="../imagens/alter_card.png" alt="alterar carteirinha" title="alterar carteirinha">
                                             </a>
                                         </div>
                                     </div>
