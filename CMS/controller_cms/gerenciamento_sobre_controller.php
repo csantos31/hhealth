@@ -45,7 +45,7 @@
 		}
         
         public function Buscar(){
-            $idSobree = $_GET['id'];
+            $idSobre = $_GET['id'];
             
             $sobre = new Sobre ();
             

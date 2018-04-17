@@ -288,44 +288,45 @@
 
                         break;
                 }
-            }
+            break;
+            
 
             case 'sobre':
-            switch($modo){
-                case 'inserir':
-					// Instanciando a classe da controller
-					$controller_gerenciamento_sobre =  new controllerSobre();
-					//Chama o metodo Novo da controller
+                switch($modo){
+                    case 'inserir':
+                        // Instanciando a classe da controller
+                        $controller_gerenciamento_sobre =  new controllerSobre();
+                        //Chama o metodo Novo da controller
 
-					$controller_gerenciamento_sobre::Novo();
+                        $controller_gerenciamento_sobre::Novo();
 
-					break;
+                        break;
 
-                case 'editar':
+                    case 'editar':
 
-                    $controller_gerenciamento_sobre = new controllerSobre();
-
-                    $controller_gerenciamento_sobre::Editar();
-
-                    break;
-
-                case 'desativar':
-                    $controller_gerenciamento_sobre = new controllerSobre();
-
-                    $controller_gerenciamento_sobre::Desativar();
-
-                    break;
-
-                case 'deletar':
-
-                    //if(confirm('Deseja realmente excluir?')){
                         $controller_gerenciamento_sobre = new controllerSobre();
 
-                        $controller_gerenciamento_sobre::Deletar();
-                    //}
+                        $controller_gerenciamento_sobre::Editar();
 
-                    break;
-            }
+                        break;
+
+                    case 'desativar':
+                        $controller_gerenciamento_sobre = new controllerSobre();
+
+                        $controller_gerenciamento_sobre::Desativar();
+
+                        break;
+
+                    case 'deletar':
+
+                        //if(confirm('Deseja realmente excluir?')){
+                            $controller_gerenciamento_sobre = new controllerSobre();
+
+                            $controller_gerenciamento_sobre::Deletar();
+                        //}
+
+                        break;
+                }
             /*
             case 'saude':
             switch($modo){
