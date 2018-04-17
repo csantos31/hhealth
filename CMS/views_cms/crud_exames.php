@@ -50,7 +50,7 @@ include($caminho.'../verifica.php');
 
                 $.ajax({
                     type:"POST",
-                    url:"modals/modal_ambiente.php",
+                    url:"modals/modal_exames.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -61,7 +61,7 @@ include($caminho.'../verifica.php');
             function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"modals/modal_ambiente.php",
+                    url:"modals/modal_exames.php",
                     data:{modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -119,7 +119,7 @@ include($caminho.'../verifica.php');
                         <div class="content_conteudo_pagina_home">
                             <div class="titulo_conteudo"><!--titulo-->
                                 <div class="string_titulo">
-                                    <a>Ambientes</a>
+                                    <a>Exames</a>
                                 </div>
 
                                 <div class="img_cadastrar">
@@ -131,28 +131,9 @@ include($caminho.'../verifica.php');
                                 </div>
 
                             </div>
-                            <?php
-
-                                // Incluindo a controller e a model para serem utilizadas
-                                include_once($caminho . '../controller_cms/gerenciamento_ambiente_controller.php');
-                                include_once($caminho .'../model_cms/gerenciamento_ambiente_class.php');
-
-                                // Instancio a controller
-                                $controller_gerenciamento_ambiente =  new controller_ambiente();
-
-                                //Chama o metodo para Listar todos os registros
-                                $list = $controller_gerenciamento_ambiente::Listar();
-
-                                $cont = 0;
-                                while ($cont < count($list)) {
-                                    $ativo=$list[$cont]->ativo;
-                                    if($ativo==1){
-                                        //$list[$cont]->slide1=null;
 
 
 
-
-                                ?>
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
 
                                 <div class="imagem_conteudo"><!--imagem-->
@@ -161,22 +142,9 @@ include($caminho.'../verifica.php');
 
                                 <div class="content_opcoes"><!--content das opções-->
 
-
-                                    <?php
-                                        $ativar=null;
-                                        $imagem=null;
-                                        if($list[$cont]->status==1){
-                                            $ativar="Desativar";
-                                            $imagem='turn_on.png';
-                                        }else if($list[$cont]->status==0){
-                                            $ativar="Ativar";
-                                            $imagem='shutdown.png';
-                                        }
-
-                                    ?>
                                     <div class="opcoes"><!--Desativar-->
                                         <div class="string_opcoes">
-                                            <a><?php echo($ativar)?></a>
+                                          <a><?php //echo($ativar)?></a>
                                         </div>
 
                                             <div class="icon_opcoes">
@@ -186,10 +154,6 @@ include($caminho.'../verifica.php');
                                             </div>
 
                                     </div>
-
-                                    <?php
-
-                                    ?>
 
                                     <div class="opcoes"><!--Editar-->
                                         <div class="string_opcoes">
@@ -218,14 +182,6 @@ include($caminho.'../verifica.php');
                                 </div>
 
                             </div>
-
-                            <?php
-                                        //return null;
-                                       }
-                               $cont +=1;
-                                }
-                            ?>
-
                         </div>
 
 

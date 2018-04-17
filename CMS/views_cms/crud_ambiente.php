@@ -24,17 +24,17 @@ include($caminho.'../verifica.php');
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
-        
+
         <link rel="stylesheet" type="text/css" href="css/style_modal.css">
-        
+
         <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
 
         <script>
-        
+
         $(document).ready(function(){
-                
-            $(".novo").click(function(){    
-                $(".container_modal").toggle(2000); 
+
+            $(".novo").click(function(){
+                $(".container_modal").toggle(2000);
             });
 
             $(".editar").click(function(){
@@ -44,10 +44,10 @@ include($caminho.'../verifica.php');
 
 
         });
-            
+
         //Cadastrar
             function Cadastrar(){
-                
+
                 $.ajax({
                     type:"POST",
                     url:"modals/modal_ambiente.php",
@@ -56,7 +56,7 @@ include($caminho.'../verifica.php');
                     }
                 });
             }
-            
+
         //Editar
             function Editar(IdIten){
                 $.ajax({
@@ -68,7 +68,7 @@ include($caminho.'../verifica.php');
                     }
                 });
             }
-        
+
         //Desativar
             function Desativar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
@@ -82,7 +82,7 @@ include($caminho.'../verifica.php');
                     }
                 });
             }
-        
+
         //Desativar
             function Deletar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
@@ -121,18 +121,18 @@ include($caminho.'../verifica.php');
                                 <div class="string_titulo">
                                     <a>Ambientes</a>
                                 </div>
-                                
+
                                 <div class="img_cadastrar">
-                                    
+
                                     <a class="novo" href="#" onclick="Cadastrar()">
                                         <img src="<?=$caminho?>imagens/add.png">
                                     </a>
-                                
+
                                 </div>
-                                
+
                             </div>
                             <?php
-                                
+
                                 // Incluindo a controller e a model para serem utilizadas
                                 include_once($caminho . '../controller_cms/gerenciamento_ambiente_controller.php');
                                 include_once($caminho .'../model_cms/gerenciamento_ambiente_class.php');
@@ -148,20 +148,20 @@ include($caminho.'../verifica.php');
                                     $ativo=$list[$cont]->ativo;
                                     if($ativo==1){
                                         //$list[$cont]->slide1=null;
-                                        
-                                    
-                                
-                                
+
+
+
+
                                 ?>
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
-                                
+
                                 <div class="imagem_conteudo"><!--imagem-->
                                     <img src="../<?php echo($list[$cont]->imagem)?>">
                                 </div>
-                                
+
                                 <div class="content_opcoes"><!--content das opções-->
-                                    
-                                    
+
+
                                     <?php
                                         $ativar=null;
                                         $imagem=null;
@@ -172,43 +172,43 @@ include($caminho.'../verifica.php');
                                             $ativar="Ativar";
                                             $imagem='shutdown.png';
                                         }
-                                    
+
                                     ?>
                                     <div class="opcoes"><!--Desativar-->
                                         <div class="string_opcoes">
                                             <a><?php echo($ativar)?></a>
                                         </div>
-                                        
+
                                             <div class="icon_opcoes">
                                                 <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_ambiente);?>)">
                                                     <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>" alt="desativar_ativar">
                                                 </a>
                                             </div>
-                                        
+
                                     </div>
-                                    
+
                                     <?php
-                                    
+
                                     ?>
-                                    
+
                                     <div class="opcoes"><!--Editar-->
                                         <div class="string_opcoes">
                                             <a>Editar</a>
                                         </div>
-                                        
+
                                         <div class="icon_opcoes">
                                             <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_ambiente);?>)">
-                                                
+
                                                 <img src="<?=$caminho?>imagens/edit.png" alt="editar">
                                             </a>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="opcoes"><!--Excluir-->
                                         <div class="string_opcoes">
                                             <a>Excluir</a>
                                         </div>
-                                        
+
                                         <div class="icon_opcoes">
                                             <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_ambiente);?>)">
                                                 <img  src="<?=$caminho?>imagens/shutdown.png" alt="excluir">
@@ -216,20 +216,20 @@ include($caminho.'../verifica.php');
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
-                            
+
                             <?php
                                         //return null;
                                        }
                                $cont +=1;
                                 }
                             ?>
-                            
+
                         </div>
-                        
-                        
-                        
+
+
+
 
                     </div>
                 </div>
