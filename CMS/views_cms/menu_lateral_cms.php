@@ -73,4 +73,14 @@
             </div>
         </div>
     </a>
+    <a href="<?= $caminho ?>crud_exames.php">
+        <div class="linha">
+            <div class="img_menu_lateral">
+                <img src="<?=$caminho?>imagens/icon_home.png">
+            </div>
+            <div class="titulo_menu_lateral">
+                <a>Exames</a>
+            </div>
+        </div>
+    </a>
 </div>
