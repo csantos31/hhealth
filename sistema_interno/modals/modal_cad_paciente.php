@@ -1,24 +1,47 @@
 <?php
 //$action = "modo=inserir";
 $id="0";
-$especialidade=null;
-$texto=null;
-$arquivo = null;
-$variavel_style = "display:none;";
+$paciente=null;
+
+$nome =  null;
+$dt_nasc =  null;
+$sobrenome =  null;
+$foto1 =  null;
+$foto2 =  null;
+$logradouro =  null;
+$cidade =  null;
+$bairro = null;
+$cep = null;
+$rg = null;
+$cpf = null;
+$numero = null;
+
 if(isset($_GET['modo'])){
-    $variavel_style = "display:block";
     $modo = $_GET['modo'];
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
-        require_once("../controllers/especialidade_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/especialidade_class.php");/*da um require na nivel_class*/
+
+        require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/paciente_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/endereco_controller.php");
+        require_once("../models/paciente_class.php");
         // Instancio a controller
-        $controller_especialidade  = new controllerEspecialidade();
+        $controller_paciente  = new controllerPaciente();
         //Chama o metodo para Listar todos os registros
-        $list = $controller_especialidade::Buscar($id);
-        $imagem = $list->imagem;
-        $especialidade = $list->especialidade;
-        $texto = $list->texto;
+        $list = $controller_paciente::Buscar($id);
+
+        $nome = $list['nome'];
+        $dt_nasc = $list['dt_nasc'];
+        $sobrenome = $list['sobrenome'];
+        $rg = $list['rg'];
+        $cpf = $list['cpf'];
+        $foto1 = $list['foto'];
+        $foto2 = $list['carterinha_convenio'];
+        $logradouro = $list['logradouro'];
+        $cidade = $list['cidade'];
+        $bairro = $list['bairro'];
+        $cep = $list['cep'];
+        $numero = $list['numero'];
     }
 }
 ?>
@@ -28,18 +51,6 @@ if(isset($_GET['modo'])){
         <title>Modal</title>
         <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
-        <style>
-            #imagem_atual{
-                width: 150px;
-                height: 150px;
-                margin-left: auto;
-                margin-right: auto;
-            }
-            #imagem_atual img{
-                width: 150px;
-                height: 150px;
-            }
-        </style>
         <script>
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
@@ -62,6 +73,7 @@ if(isset($_GET['modo'])){
                       modo='editar';
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
+
                  $.ajax({
                     type: "POST",
                     url: "../router.php?controller=paciente&modo="+modo+"&id="+id,
@@ -72,8 +84,8 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                         //$('.modal').html(dados);
-                        alert(dados);
+                         $('.modal').html(dados);
+                        //alert(dados);
                     }
                 });
              });
@@ -96,28 +108,28 @@ if(isset($_GET['modo'])){
                     <div class="content_campos"><!--content dos campos de cadastro-->
                         <div class="campo_p" style="width:200px;"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="NOME" name="txt_nome" id="txt_nome">
+                                <input value="<?= $nome ?>" required type="text" class="input_med2" placeholder="NOME" name="txt_nome" id="txt_nome">
                             </div>
                         </div>
                         <div class="campo" style="width:200px;float:left;"><!--campos--> <!--nome-->
                             <div class="input_campo">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_big" style="width:400px;" placeholder="SOBRENOME" name="txt_sobrenome" id="txt_sobrenome">
+                                <input value="<?= $sobrenome ?>" required type="text" class="input_big" style="width:400px;" placeholder="SOBRENOME" name="txt_sobrenome" id="txt_sobrenome">
                             </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <label>Data de nascimento</label>
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="date" class="input_med2" placeholder="DATA DE NASCIMENTO" name="txt_dt_nasc" id="txt_dt_nasc">
+                                <input value="<?= $dt_nasc ?>" required type="date" class="input_med2" placeholder="DATA DE NASCIMENTO" name="txt_dt_nasc" id="txt_dt_nasc">
                             </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med" placeholder="RG" name="txt_rg" id="txt_rg">
+                                <input value="<?= $rg ?>" required type="text" class="input_med" placeholder="RG" name="txt_rg" id="txt_rg">
                             </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="CPF" name="txt_cpf" id="txt_cpf">
+                                <input value="<?= $cpf ?>" required type="text" class="input_med2" placeholder="CPF" name="txt_cpf" id="txt_cpf">
                             </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
@@ -137,9 +149,6 @@ if(isset($_GET['modo'])){
                                 <b>Selecione uma imagem para este paciente :</b>
                                 <input type="file" name="fle_foto1" id="file_paciente">
                             </div>
-                            <div id="imagem_atual" style="<?= $variavel_style ?>">
-                                <img src="../<?= $imagem ?>" title="imagem atual" alt="imagem atual">
-                            </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
@@ -149,17 +158,17 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo_p" style="width:200px;"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="CEP" name="txt_cep" id="txt_cep">
+                                <input value="<?= $cep ?>" required type="text" class="input_med2" placeholder="CEP" name="txt_cep" id="txt_cep">
                             </div>
                         </div>
                         <div class="campo" style="width:200px;float:left;"><!--campos--> <!--nome-->
                             <div class="input_campo">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_big" style="width:400px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
+                                <input value="<?= $logradouro ?>" required type="text" class="input_big" style="width:400px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
                             </div>
                         </div>
                         <div class="campo_p">
                           <div class="input_campo_p">
-                              <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
+                              <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
                           </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
@@ -184,10 +193,10 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="CIDADE" name="txt_cidade" id="txt_cidade">
+                                <input value="<?= $cidade ?>" required type="text" class="input_med2" placeholder="CIDADE" name="txt_cidade" id="txt_cidade">
                             </div>
                             <div class="input_campo_p">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_med2" placeholder="BAIRRO" name="txt_bairro" id="txt_bairro">
+                                <input value="<?= $bairro ?>" required type="text" class="input_med2" placeholder="BAIRRO" name="txt_bairro" id="txt_bairro">
                             </div>
                         </div>
                         <div class="campo_botao">

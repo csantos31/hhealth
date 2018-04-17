@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class Paciente{
         public $id_paciente;
@@ -12,18 +12,18 @@ class Paciente{
         public $carteirinha_convenio;
         public $foto;
         public $status;
-    
+
         //cria um construtor
 		public function __construct(){
             include_once('bd_class.php');
 		}
-        
+
         /*insere o registro no DB*/
 		public static function Insert($paciente){
 			$sql = "INSERT INTO tbl_paciente (id_endereco, id_convenio, nome, sobrenome, dt_nasc, rg, cpf, carterinha_convenio, foto, status) VALUES ('".$paciente->id_endereco."', '".$paciente->id_convenio."', '".$paciente->nome."', '".$paciente->sobrenome."', '".$paciente->dt_nasc."', '".$paciente->rg."', '".$paciente->cpf."', '".$paciente->carteirinha_convenio."', '".$paciente->foto."', '1');";
-            
+
             //echo $sql;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -45,7 +45,7 @@ class Paciente{
 			$conex->Desconectar();
 
 		}
-        
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
@@ -65,16 +65,16 @@ class Paciente{
 			$cont = 0;
 
 			//Estrutura de repetição para pegar dados
-            
+
             $lista_pacientes = array();
-            
+
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-				#Cria um array de objetos na classe contatos   
-                
+				#Cria um array de objetos na classe contatos
+
                 //var_dump($rs);exit();
-                
+
 				$lista_paciente[] = $rs;
-                
+
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
 				/*$lista_pacientes[$cont]->id_paciente = $rs['id_paciente'];
@@ -109,11 +109,11 @@ class Paciente{
 			}
 
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($paciente){
 			$sql = "SELECT p.*, e.* FROM tbl_paciente AS p INNER JOIN tbl_endereco AS e ON p.id_endereco = e.id_endereco WHERE id_paciente = ". $paciente->id_paciente;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -126,12 +126,13 @@ class Paciente{
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
 				$paciente = array();
 
+        $paciente = $rs;
+
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$paciente->id_paciente = $rs['id_paciente'];
+				/*$paciente->id_paciente = $rs['id_paciente'];
                 $paciente->id_endereco = $rs['id_endereco'];
                 $paciente->id_convenio = $rs['id_convenio'];
                 $paciente->nome = $rs['nome'];
@@ -142,14 +143,14 @@ class Paciente{
                 $paciente->carteirinha_convenio = $rs['carteirinha_convenio'];
                 $paciente->foto = $rs['foto'];
                 $paciente->status = $rs['status'];
-				$paciente->id_endereco = $rs['id_endereco'];
+				        $paciente->id_endereco = $rs['id_endereco'];
                 $paciente->cep = $rs['cep'];
                 $paciente->logradouro = $rs['logradouro'];
                 $paciente->numero = $rs['numero'];
                 $paciente->id_estado = $rs['id_estado'];
                 $paciente->cidade = $rs['cidade'];
-                $paciente->bairro = $rs['bairro'];
-				
+                $paciente->bairro = $rs['bairro']; */
+
                 return $paciente;
 
 			}else {
@@ -160,11 +161,13 @@ class Paciente{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-    
-        public function Update($paciente){
-            
-			$sql = "UPDATE tbl_paciente SET id_endereco='".$paciente->id_endereco."', id_convenio='".$paciente->id_convenio."', nome='".$paciente->nome."', sobrenome='".$paciente->sobrenome."', dt_nasc='".$paciente->dt_nasc."', rg='".$paciente->rg."', cpf='".$paciente->cpf."', carterinha_convenio='".$paciente->carteirinha_convenio."', foto='".$paciente->foto."', status='1' WHERE id_paciente='".$paciente->id_paciente."';";
-		
+
+    public function Update($paciente){
+
+			$sql = "UPDATE tbl_paciente SET nome='".$paciente->nome."', sobrenome='".$paciente->sobrenome."', dt_nasc='".$paciente->dt_nasc."', rg='".$paciente->rg."', cpf='".$paciente->cpf."' WHERE id_paciente='".$paciente->id_paciente."';";
+
+      //echo $sql;
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -184,12 +187,12 @@ class Paciente{
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*Delete o registro no BD*/
 		public function Delete($endereco){
 
 			$sql = "UPDATE tbl_paciente SET status='0' WHERE id_paciente ='" . $endereco->id . "';";
-		
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -210,8 +213,8 @@ class Paciente{
 			$conex->Desconectar();
 
 		}
-        
-        
+
+
     }
 
 

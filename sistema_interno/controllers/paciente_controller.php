@@ -86,7 +86,7 @@
 
 
 
-           $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
+          /* $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
 
 
             if($_FILES['fle_foto']['size']!='0'){
@@ -97,16 +97,14 @@
             if($_FILES['fle_foto2']['size']!='0'){
                 $fle_foto1 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
                 $paciente->carteirinha_convenio = $fle_foto2;
-            }
+            }*/
 
-			//Carregando os dados digitados pelo usuário nos atributos da classe
-			$paciente->id_convenio = $_POST['slt_convenio'];
-            $paciente->id_endereco = $id_endereco;
+
             $paciente->nome = $_POST['txt_nome'];
             $paciente->sobrenome = $_POST['txt_sobrenome'];
             $paciente->dt_nasc = $_POST['txt_dt_nasc'];
             $paciente->rg = $_POST['txt_rg'];
-            $paciente->cpf = $_POST['cpf'];
+            $paciente->cpf = $_POST['txt_cpf'];
 
             $paciente::update($paciente);
 		}

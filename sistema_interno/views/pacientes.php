@@ -122,10 +122,10 @@
                                         <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
                                         <div class="item_tabela"><img src="../<?= $list[$cont]['foto']?>" alt="imaagem do paciente" title="imagem do paciente"></div>
                                         <div class="item_tabela icones_tabela">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_paciente);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>
