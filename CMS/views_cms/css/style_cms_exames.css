@@ -1,0 +1,134 @@
+/*CSS*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.main{
+    width:100%;
+    min-height: 100%;
+    height:auto;
+    position:absolute;
+    margin:0px;
+    padding:0px;
+}
+
+.content_cms{
+    width:100%;
+    min-height: 1200px;
+    height:auto;
+    margin:auto;
+    border-radius:10px;
+}
+
+/*-------------------CONTEUDO CMS---------------------------*/
+.content_home_cms{/*conteudo do cms*/
+    width:1900px;
+    width:1900px;
+    min-height:900px;
+    height:auto;
+    margin:auto;
+    position:relative;
+}
+
+
+
+/*--------------------CONTEUDO HOME------------------------*/
+
+
+.content_conteudo_pagina_home{/*content dos conteudos*/
+    width:580px;
+    height:500px;
+    overflow: scroll;
+    margin-left:50px;
+    margin-top:20px;
+    float:left;
+}
+
+.titulo_conteudo{/*titulo*/
+    width:550px;
+    height:25px;
+    padding-top:5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color:#000000;
+
+}
+
+.string_titulo{/*titulo*/
+    width:500px;
+    height:25px;
+    padding-top:5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    color:#000000;
+    float:left;
+}
+
+.img_cadastrar{/*img*/
+    width:30px;
+    height:30px;
+    float:left;
+}
+
+.img_cadastrar img{
+    width:30px;
+    height:30px;
+}
+
+
+.conteudo_pagina_home{/*conteudo*/
+    width:550px;
+    height:200px;
+    margin-top:30px;
+}
+
+.imagem_conteudo{/*imagem*/
+    width:250px;
+    height:200px;
+    float:left;
+}
+
+.imagem_conteudo img{/*imagem*/
+    width:250px;
+    height:200px;
+}
+
+.content_opcoes{/*content opções*/
+    width:300px;
+    height:200px;
+    margin-top:10px;
+    float:left;
+}
+
+.opcoes{ /*opções*/
+    width:300px;
+    height:35px;
+    padding-top:5px;
+    margin-top:15px;
+    margin-left:5px;
+    border-bottom:solid 2px black;
+}
+
+.string_opcoes{/*string*/
+    width:250px;
+    height:40px;
+    padding-top:10px;
+    float:left;
+    font-family: sans-serif;
+    text-align: center;
+    color:#000000;
+}
+
+.icon_opcoes{/*imagem*/
+    width:50px;
+    height:50px;
+    float:left;
+}
+
+.icon_opcoes img{/*imagem*/
+    width:30px;
+    height:30px;
+}
