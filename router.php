@@ -27,7 +27,6 @@
                     break;
             }
             
-             
             
         case 'paciente':    
             require_once('controllers/paciente_controller.php');//inclusão dos arquivos
@@ -46,8 +45,24 @@
 
                     break;
              
-     }
+            }
+      
+       case 'fale_conosco':
+            require_once('controllers/fale_conosco_controller.php');//inclusão dos arquivos
+            require_once('models/fale_conosco_class.php');
             
+            switch($modo){
+                    
+                case 'novo':
+
+                    //Instanciando a classe da controller
+                    $controller_contato = new controllerContatos();
+                    //Chama o método novo da controller
+                    $controller_contato::Novo();
+                    break;
+                    
+                    
+            }
     }
 
 ?>
