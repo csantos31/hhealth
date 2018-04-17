@@ -198,6 +198,45 @@
                 }
             break;
 
+						/*Case para crud da tela de exame*/
+		        case 'exame':
+		            require_once('controller_cms/gerenciamento_exame_controller.php');
+		            switch($modo){
+		                case 'inserir':
+							// Instanciando a classe da controller
+							$controller_gerenciamento_ambiente =  new controller_exame();
+							//Chama o metodo Novo da controller
+
+							$controller_gerenciamento_ambiente::Novo();
+
+							break;
+
+		                case 'editar':
+
+		                    $controller_gerenciamento_ambiente = new controller_exame();
+
+		                    $controller_gerenciamento_ambiente::Editar();
+
+		                    break;
+
+		                case 'desativar':
+		                    $controller_gerenciamento_ambiente = new controller_exame();
+
+		                    $controller_gerenciamento_ambiente::Desativar();
+
+		                    break;
+
+		                case 'deletar':
+
+		                    //if(confirm('Deseja realmente excluir?')){
+		                        $controller_gerenciamento_ambiente = new controller_exame();
+
+		                        $controller_gerenciamento_ambiente::Deletar();
+
+		                    break;
+		                }
+		            break;
+
             case 'saude_n':
                 require_once('controller_cms/gerenciamento_dica_saude_controller.php');
                 switch($modo){
@@ -289,7 +328,7 @@
                         break;
                 }
             break;
-            
+
 
             case 'sobre':
                 switch($modo){

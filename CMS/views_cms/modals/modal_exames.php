@@ -61,20 +61,12 @@ if(isset($_GET['modo'])){
     }
 }
 
-
-
-
-
-
-
-
-
 ?>
 
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="css/style_modal_nivel.css">
+        <link rel="stylesheet" type="text/css" href="css/style_modal_exames.css">
 
         <script>
             $(document).ready(function(){/*fechar a modal*/
@@ -102,7 +94,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=ambiente&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=exame&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -151,7 +143,7 @@ if(isset($_GET['modo'])){
                                 <a>Descrição:</a>
                             </div>
 
-                            <textarea name="txt_texto" id="txt_desc">
+                            <textarea name="txt_texto_descricao" id="txt_desc">
                                 <?php echo($texto)?>
 
                             </textarea>
@@ -161,7 +153,7 @@ if(isset($_GET['modo'])){
                                 <a>Procedimento :</a>
                             </div>
 
-                            <textarea name="txt_texto" id="txt_desc">
+                            <textarea name="txt_texto_procedimento" id="txt_desc">
                                 <?php echo($texto)?>
 
                             </textarea>
