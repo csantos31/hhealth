@@ -47,20 +47,12 @@
 
                 });
             }
-            
-            function EditarPerfil(linha,IdIten){
-                
-                //console.log(linha.getElementsByClassName('div_change_profille'));
-                var linha_a = linha.getElementsByClassName('div_change_profille');
-                    
-                $('.div_change_profile').attr('id','meu_id');
-                $('#meu_id').attr('display','block');
-            
-                
-                 
-                
-                
-                
+
+            function EditarPerfil(linha,IdItem){
+                $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');
+
+              
+
                 /*$.ajax({
                     type:"GET",
                     url:"../modals/modal_cad_paciente.php",
@@ -148,7 +140,7 @@
                                             <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
-                                            <a href="#" class="alterar_perfil" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="alterar_perfil" id="EditarPerfil<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/alter_prof.png" alt="alterar perfil" title="alterar perfil">
                                                 <div class="div_change_profille" id="id_teste">
                                                     <div class="modal_superior">
