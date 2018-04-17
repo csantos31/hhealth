@@ -1,5 +1,5 @@
 <?php
-
+      $status=null;
     $action = "modo=inserir";
     $nivel = null;
     $descricao = null;
@@ -76,25 +76,33 @@
                 });
            }
 
-           //Excluir
-           function Excluir(idIten){
-                //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+           //Desativar
+               function Desativar(IdIten){
+                   //anula a ação do submit tradicional "botao" ou F5
+                   event.preventDefault();
+                   $.ajax({
+                       type:"GET",
+                       data: {id:IdIten},
+                       url: "../router.php?controller=convenio&modo=desativar&id="+IdIten,
+                       success: function(dados){
+                           $('.icon_opcoes').html(dados);
+                       }
+                   });
+               }
 
-                if(confirm('Tem certeza?')){
-
-                $.ajax({
-                    type:"GET",
-                    data: {id:idIten},
-                    url: "../router.php?controller=especialidade&modo=excluir&id="+idIten,
-                    success: function(dados){
-                        console.log(dados);
-                        $('.modal').html(dados);
-                    }
-                });
-
-                }
-           }
+           //Desativar
+               function Deletar(IdIten){
+                   //anula a ação do submit tradicional "botao" ou F5
+                   event.preventDefault();
+                   $.ajax({
+                       type:"GET",
+                       data: {id:IdIten},
+                       url: "../router.php?controller=convenio&modo=deletar&id="+IdIten,
+                       success: function(dados){
+                           $('.icon_opcoes').html(dados);
+                       }
+                   });
+               }
 
 
 
@@ -138,32 +146,64 @@
                          </div>
                          <div class="tabela_convenios">
                                <div class="titulo_da_tabela">
-                                    <div class="titulo">
+                                    <div class="nome-titulo">
                                           Nome do Convênio
                                     </div>
-                                    <div class="titulo">
+                                    <div class="img-titulo">
                                           Imagem
                                     </div>
-                                    <div class="titulo">
+                                    <div class="opcoes-titulo">
                                           Opções
                                     </div>
                                </div>
+                               <?php
+
+                                     // Incluindo a controller e a model para serem utilizadas
+                                     include_once($caminho . '../controller_cms/convenios_controller.php');
+                                     include_once($caminho .'../model_cms/convenio_class.php');
+
+                                     $convenios_controller = new controller_convenios();
+
+                                     $list = $convenios_controller::Listar();
+
+                                     $cont = 0;
+
+                                     while ($cont < count($list)) {
+                                           # code...
+                                           $ativo=$list[$cont]->status_imagem;
+                                           if($status==1 ){
+                                           }
+                                ?>
                                <div class="conteudo_tabela">
                                      <div class="nome_convenio">
-                                           Nome do Convênio
+                                           <?php echo($list[$cont]->titulo); ?>
                                      </div>
                                      <div class="img_convenio">
-                                           <img src="../imagens/img login.jpg" alt="">
+                                           <img src="../<?php echo($list[$cont]->imagem); ?>" alt="">
                                      </div>
                                      <div class="opcoes_convenio">
                                            <div class="alinha_direita">
-                                                 <img src="../../sistema_interno/imagens/edit.png" alt="">
+                                                 <a class="novo" href="#" onclick="Editar()">
+                                                       <img src="../../sistema_interno/imagens/edit.png" alt="">
+                                                 </a>
+                                           </div>
+                                           <div class="alinha_meio">
+                                                 <a class="novo" href="#" onclick="Desativar()">
+                                                       <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+                                                 </a>
                                            </div>
                                            <div class="alinha_esquerda">
-                                                 <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+                                                 <a class="novo" href="#" onclick="Deletar()">
+                                                       <img src="../../sistema_interno/imagens/icons8-lixo-52.png" alt="">
+                                                 </a>
                                            </div>
                                      </div>
                                </div>
+                               <?php
+
+                                     $cont +=1;
+                                     }
+                                ?>
 
                          </div>
                     </div>

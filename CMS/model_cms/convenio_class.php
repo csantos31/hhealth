@@ -8,6 +8,7 @@
             public $texto;
             public $imagem;
             public $status_imagem;
+            public $ativo;
 
             // Cria um construtor
             function __construct()
@@ -20,9 +21,9 @@
 
                   //$sql1="UPDATE tbl_convenio SET status=0";
 
-                  $sql2="INSERT tbl_convenio(titulo, texto, imagem, status_imagem)
-                  VALUES('".$convenio_dados->titulo."', '".$convenio_dados->texto."', '".$convenio_dados->imagem."', 1);";
-                  echo ($sql2);
+                  $sql2="INSERT tbl_convenio(titulo, texto, imagem, status_imagem, ativo)
+                  VALUES('".$convenio_dados->titulo."', '".$convenio_dados->texto."', '".$convenio_dados->imagem."', 1, 1);";
+                  // echo ($sql2);
 
 
                   //Instancia o banco e cria uma variavel
@@ -33,7 +34,7 @@
 
                   //Excutar o script no banco de dados
                   if($PDO_conex->query($sql2)){
-                      //echo "<script>location.reload();</script>";
+                      echo "<script>location.reload();</script>";
 
       			}else {
       				//Mensagem de erro
@@ -48,7 +49,7 @@
             public function Select(){
 
                   //Query para selecionar a tabela contatos
-                  $sql1="SELECT * FROM tbl_convenio ORDER BY id_convenio DESC;";
+                  $sql1="SELECT * FROM tbl_convenio WHERE ativo=1 ORDER BY id_convenio DESC;";
 
                   //Instancio o banco e cria uma variavel
                   $conex = new Mysql_db();
@@ -74,18 +75,21 @@
                         $list_convenios[$cont]->texto = $rs['texto'];
                         $list_convenios[$cont]->imagem = $rs['imagem'];
                         $list_convenios[$cont]->status_imagem = $rs['status_imagem'];
+                        $list_convenios[$cont]->status_imagem = $rs['ativo'];
+
 
                         // Soma mais um no contador
-				$cont+=1;
+				                $cont+=1;
 
                         //Fechar a conexão com o banco de dados
                         $conex->Desconectar();
 
                         //Apenas retorna o $list_contatos se existir dados no banco de daos
-      			if (isset($list_convenios)) {
-      				# code...
-      				return $list_convenios;
-      			}
+
+                  }
+                  if (isset($list_convenios)) {
+                        # code...
+                        return $list_convenios;
                   }
             }
       }
