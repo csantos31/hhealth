@@ -63,14 +63,28 @@ if(isset($_GET['modo'])){
     <body>
 
          <script>
+             
+              var id = $("#form").data("id");
+              var modo = "";
+              if(id == '0'){
+                  modo='inserir';
+                document.getElementById('photo_profile').style.display = 'block';
+                    document.getElementById('foto_convenio').style.display = 'block';
+                    //document.getElementById('meu_num').style.marginLeft = '150px';
+              } else{
+                  modo='editar';
+                    document.getElementById('photo_profile').style.display = 'none';
+                    document.getElementById('foto_convenio').style.display = 'none';
+                    document.getElementById('meu_num').style.marginLeft = '160px';
+              }
+             
+             
+             console.log(modo);
+             
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-                  var id = $(this).data("id");
-                  var modo = "";
-                  if(id == '0')
-                      modo='inserir';
-                  else
-                      modo='editar';
+                  
+                 
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
 
@@ -144,13 +158,13 @@ if(isset($_GET['modo'])){
                                 </select>
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        <div id="photo_profile" class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
                                 <b>Selecione uma imagem para este paciente :</b>
                                 <input type="file" name="fle_foto1" id="file_paciente">
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        <div id="foto_convenio" class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
                                 <b>Insira a imagem comprovante do convênio:</b>
                                 <input type="file" name="fle_foto2" id="file_convenio">
@@ -166,7 +180,7 @@ if(isset($_GET['modo'])){
                                 <input value="<?= $logradouro ?>" required type="text" class="input_big" style="width:400px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
                             </div>
                         </div>
-                        <div class="campo_p">
+                        <div id='meu_num' class="campo_p">
                           <div class="input_campo_p">
                               <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
                           </div>

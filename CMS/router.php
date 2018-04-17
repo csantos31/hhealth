@@ -152,6 +152,27 @@
 
 					break;
 
+				case 'editar':
+					# code...
+					$controller_gerenciamento_ambiente = new controller_convenios();
+
+	                        $controller_gerenciamento_ambiente::Editar();
+					break;
+
+				case 'desativar':
+					# code...
+					$controller_gerenciamento_ambiente = new controller_convenios();
+
+	                        $controller_gerenciamento_ambiente::Desativar();
+					break;
+
+				case 'deletar':
+					# code...
+					$controller_gerenciamento_ambiente = new controller_convenios();
+
+	                        $controller_gerenciamento_ambiente::Deletar();
+					break;
+
 				default:
 					# code...
 					break;
