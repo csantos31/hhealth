@@ -85,3 +85,91 @@ p{
     width: 25px;
     height: 25px;
 }
+
+.div_change_profille{
+    font-family: 'BenchNine', Arial, sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    position: absolute;
+    width: 350px;
+    height: 100px;
+    box-shadow: 1px 2px 8px #333;
+    /* background-image: url(../imagens/bg_login.jpg); */
+    background-color: #fff;
+    border-radius: 20px;
+    background-size: 350px 300px;
+    background-repeat: no-repeat;
+    
+    display: none;
+}
+
+.modal_superior{
+    width: 350px;
+    height: 35px;
+    border-radius: 20px 20px 0px 0px;
+    background-color: #DA0000;
+    color: #FFF;
+    padding-top: 10px;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -73,13 +73,21 @@
             </div>
         </div>
     </a>
+<<<<<<< HEAD
     <a href="<?= $caminho ?>crud_unidade.php">
+=======
+    <a href="<?= $caminho ?>crud_exames.php">
+>>>>>>> d780fdd995937c6d8b02c592a616891d881fc528
         <div class="linha">
             <div class="img_menu_lateral">
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
+<<<<<<< HEAD
                 <a>Unidades</a>
+=======
+                <a>Exames</a>
+>>>>>>> d780fdd995937c6d8b02c592a616891d881fc528
             </div>
         </div>
     </a>
