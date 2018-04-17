@@ -49,7 +49,7 @@
             public function Select(){
 
                   //Query para selecionar a tabela contatos
-                  $sql1="SELECT * FROM tbl_convenio WHERE ativo=1 ORDER BY id_convenio DESC;";
+                  $sql1="SELECT * FROM tbl_convenio WHERE ativo=1 ORDER BY titulo;";
 
                   //Instancio o banco e cria uma variavel
                   $conex = new Mysql_db();
@@ -91,6 +91,33 @@
                         # code...
                         return $list_convenios;
                   }
+            }
+
+            public function Deletar($convenio){
+
+                  $sql="UPDATE tbl_convenio set ativo=0 WHERE id_ambiente=".$convenio->id_convenio;
+
+                  //Instancio o banco e crio uma variavel
+      		$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+                  //Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>confirm('Deseja realmente excluir?');</script>";
+                        echo "<script>location.reload();</script>";
+
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+                        echo $sql;
+			}
+
+                  //Fecha a conexão com o banco de dados
+      		$conex->Desconectar();
             }
       }
 

@@ -11,7 +11,7 @@
                   require_once ('model_cms/bd_class.php');
                   require_once ('modulo_img.php');
 
-                  // Instancia a class especialidade
+                  // Instancia a class convenios
                   $convenios = new Convenio();
 
                   //Carregando os dados digitados pelo usuário nos atributos da classe
@@ -58,6 +58,10 @@
             }
 
             public function Editar(){
+
+                  require_once ('model_cms/convenio_class.php');
+                  require_once ('model_cms/bd_class.php');
+                  require_once ('modulo_img.php');
 
                   // Instancia a classe $convenios
                   $convenios = new Convenio();

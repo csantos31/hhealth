@@ -67,7 +67,7 @@
            function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"/modals/modal_cad_especialidade.php",
+                    url:"/modals/modal_cadastro_convenio.php",
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
