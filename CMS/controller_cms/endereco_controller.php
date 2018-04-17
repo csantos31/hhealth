@@ -1,6 +1,6 @@
 <?php
 
-    class controllerEndereco{
+    class controller_endereco{
        public function Novo(){
 
             //Instancia da classe Contato
