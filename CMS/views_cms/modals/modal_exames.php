@@ -2,7 +2,7 @@
 
 //$action = "modo=inserir";
 
-$id="";
+$id=0;
 $titulo=null;
 $texto_descricao=null;
 $texto_procedimento=null;
