@@ -6,12 +6,10 @@
 ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
 
 */
-    class Home{
-        public $id_home;
-        public $slide1;
-        public $slide2;
-        public $slide3;
-        public $frase;
+    class Unidade{
+        public $id_unidade;
+        public $imagem;
+        public $ativo;
         public $status;
         
         //cria um construtor
@@ -20,12 +18,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         }
         
         /*insere o registro no DB*/
-        public static function Insert($home_dados){
+        public static function Insert($unidade_dados){
             
-            $sql1="UPDATE tbl_home SET status = 0";
+            //$sql1="UPDATE tbl_home SET status = 0";
             
-            $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status,ativo)
-            VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1','1');";
+            $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,status,ativo)
+            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','1','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -34,8 +32,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             $PDO_conex = $conex->Conectar();
             
             //Excutar o script no banco de dados
-            if($PDO_conex->query($sql1) &&$PDO_conex->query($sql2)){
+            if($PDO_conex->query($sql)){
                 echo "<script>location.reload();</script>";
+                //echo $sql;
                 
 			}else {
 				//Mensagem de erro

@@ -122,6 +122,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				$ambiente = new Ambiente();
 
 				$ambiente->id_ambiente = $rs['id_ambiente'];
+<<<<<<< HEAD
                         $ambiente->titulo = $rs['titulo'];
                         $ambiente->texto = $rs['texto'];
                         $ambiente->imagem = $rs['imagem'];
@@ -132,6 +133,18 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                         $ambiente->imagem6 = $rs['imagem6'];
                         $ambiente->status = $rs['status'];
                         $ambiente->ativo = $rs['ativo'];
+=======
+                $ambiente->titulo = $rs['titulo'];
+                $ambiente->texto = $rs['texto'];
+				$ambiente->imagem = $rs['imagem'];
+				$ambiente->imagem2 = $rs['imagem2'];
+                $ambiente->imagem3 = $rs['imagem3'];
+                $ambiente->imagem4 = $rs['imagem4'];
+                $ambiente->imagem5 = $rs['imagem5'];
+                $ambiente->imagem6 = $rs['imagem6'];
+                $ambiente->status = $rs['status'];
+                $ambiente->ativo = $rs['ativo'];
+>>>>>>> 7e1ccd226a6a3eabce6d1847bf7155c387a096e3
 
 				return $ambiente;
 
@@ -145,26 +158,31 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
 
         public function Update($ambiente){
+<<<<<<< HEAD
 			$sql = "UPDATE tbl_ambiente set titulo = '".$ambiente->titulo."', texto = '".$ambiente->titulo. "',imagem = '".$ambiente->imagem. "',imagem2 = '".$ambiente->imagem2. "',imagem3 = '".$ambiente->imagem3. "',imagem4 = '".$ambiente->imagem4. "',imagem5 = '".$ambiente->imagem5. "',imagem6 = '".$ambiente->imagem6. "' WHERE id_ambiente =".$ambiente->id_ambiente;
 
+=======
+    			$sql = "UPDATE tbl_ambiente set titulo = '".$ambiente->titulo."', texto = '".$ambiente->titulo. "',imagem = '".$ambiente->imagem. "',imagem2 = '".$ambiente->imagem2. "',imagem3 = '".$ambiente->imagem3. "',imagem4 = '".$ambiente->imagem4. "',imagem5 = '".$ambiente->imagem5. "',imagem6 = '".$ambiente->imagem6. "' WHERE id_ambiente =".$ambiente->id_ambiente;
+>>>>>>> 7e1ccd226a6a3eabce6d1847bf7155c387a096e3
 
-		      echo $sql;
 
-			//Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+    		      echo $sql;
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
+    			//Instancio o banco e crio uma variavel
+    			$conex = new Mysql_db();
 
-			//Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-			}
+    			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+    			na variavel que $PDO_conex*/
+    			$PDO_conex = $conex->Conectar();
+
+    			//Executa o script no banco de dados
+    			if($PDO_conex->query($sql)){
+    				//Se der true redireciona a tela
+    				echo "<script>location.reload();</script>";
+    			}else {
+    				//Mensagem de erro
+    				echo "Error atualizar no Banco de Dados";
+    			}
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
