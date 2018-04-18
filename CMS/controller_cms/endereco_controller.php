@@ -2,7 +2,7 @@
 
     class controller_endereco{
        public function Novo(){
-
+           require_once ('model_cms/endereco_class.php');
             //Instancia da classe Contato
 			$endereco = new Endereco();
            /*
@@ -90,8 +90,6 @@
             $endereco->bairro = $_POST['txt_bairro'];
 
             $endereco::update($endereco);
-
-
 		}
 
         public function Excluir(){

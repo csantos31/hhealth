@@ -1,5 +1,4 @@
 <?php
-
 //$action = "modo=inserir";
 
 $id="0";
@@ -98,7 +97,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=home&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=unidade&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -127,7 +126,7 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Cadastro Nível</a>
+                            <a>Cadastro Unidade</a>
                         </div>
                     </div>
                     
@@ -198,20 +197,20 @@ if(isset($_GET['modo'])){
                             </div>
                         </div>
                         
-                        <div class="campo"><!--campos--> <!--Nível-->
+                        <div class="campo" ><!--campos--> <!--Nível-->
                             <div class="string_campo">
                                 <a>Estado:</a>
                             </div>
 
 
-                            <select class="input_combo" name="combo"><!--Combo box-->
+                            <select class="input_combo" name="slt_estado"><!--Combo box-->
                                 <option value="">
                                     Selecionar Nível
                                 </option>
 
                                 <?php
-                                  include_once('../controllers/endereco_controller.php');
-                                  include_once('../models/endereco_class.php');
+                                  include_once('../../controller_cms/endereco_controller.php');
+                                  include_once('../../model_cms/endereco_class.php');
                                   $controller_endereco  = new controller_endereco();
                                   $list = $controller_endereco::ListarEstados();
                                   $cont = 0;

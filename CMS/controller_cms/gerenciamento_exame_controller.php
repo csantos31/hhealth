@@ -21,6 +21,9 @@ class controller_exame{
       }
 
       public function Select(){
+            require_once ('../model_cms/gerenciamento_exames_class.php');
+            require_once ('../model_cms/bd_class.php');
+            require_once ('../modulo_img.php');
 
             // Instancia a classe $convenios
             $exames = new Exame();
@@ -29,22 +32,54 @@ class controller_exame{
             return $exames::Select();
       }
 
+      public function Buscar(){
+
+          $idExame = $_GET['id'];
+
+          $exame = new Exame();
+
+          $exame->id_exame=$idExame;
+
+          $exam = $exame::SelectById($exame);
+
+          return $exam;
+      }
+
+
       public function Editar(){
 
-            // Instancia a classe $convenios
-            $exames = new Exame();
+        $id_exame = $_GET['id'];
 
-            // Chama o metodo para selecionar os registros
-            return $exames::Editar();
+        require_once ('model_cms/gerenciamento_exames_class.php');
+        require_once ('model_cms/bd_class.php');
+        require_once ('modulo_img.php');
+        // Instancia a classe $convenios
+        $exames = new Exame();
+
+        $exames->id_exame=$id_exame;
+        $exames->titulo = $_POST['txt_titulo'];
+        $exames->texto_descricao = $_POST['txt_texto_descricao'];
+        $exames->texto_procedimento = $_POST['txt_texto_procedimento'];
+
+        // Chama o metodo para selecionar os registros
+        $exames::Update($exames);
+
       }
 
       public function Desativar(){
 
+            $id_exame = $_GET['id'];
+
+            require_once ('model_cms/gerenciamento_exames_class.php');
+            require_once ('model_cms/bd_class.php');
+            require_once ('modulo_img.php');
+
             // Instancia a classe $convenios
             $exames = new Exame();
+            $exames->id_exame=$id_exame;
 
             // Chama o metodo para selecionar os registros
-            return $exames::Desativar();
+            $exames::DesativarPorId($exames);
       }
 
       public function Deletar(){

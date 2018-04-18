@@ -391,14 +391,18 @@
             
             case 'unidade':
             require_once('controller_cms/unidade_controller.php');
+            require_once('controller_cms/endereco_controller.php');
 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
 			switch ($modo) {
 				case 'inserir':
+                    $controller_endereco = new controller_endereco();
+                    //$controller_endereco::Novo();
+                    $idEndereco=$controller_endereco::Novo();
 					// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
 
-					$controller_nivel::Novo();
+					$controller_unidade::Novo($idEndereco);
 
 					break;
 
