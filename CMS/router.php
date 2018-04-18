@@ -430,6 +430,47 @@
 			}
 
 			break;
+            
+            case 'fale_conosco':
+            require_once('controller_cms/contatos_controller.php');
+			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+			switch ($modo) {
+
+				case 'buscar_id':
+					// Instanciando a classe da controller
+					//Chama o metodo Novo da controller
+                    $controller_contatos =  new controllerContatos();
+					//Chama o metodo Novo da controller
+					$controller_contatos::Buscar();
+					
+
+					break;
+
+
+				case 'editar':
+				    // Instanciando a classe da controller
+					$controller_contatos =  new controllerContatos();
+					//Chama o metodo Novo da controller
+					$controller_contatos::Editar();
+					break;
+
+				case 'deletar':
+					// Instanciando a classe da controller
+					$controller_contatos =  new controllerContatos();
+					//Chama o metodo Novo da controller
+					$controller_contatos::Deletar();
+					break;
+			
+            
+                case 'desativar':
+                    $controller_contatos = new controllerContatos();
+
+                    $controller_contatos::Desativar();
+
+                    break;
+                }
+			break;
+            
             /*
             case 'saude':
             switch($modo){

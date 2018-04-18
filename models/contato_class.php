@@ -23,7 +23,7 @@
                                             '".$contato_dados->telefone."',
                                             '".$contato_dados->celular."',
                                             '".$contato_dados->assunto."',
-                                            '".$contato_dados->mensagem."');";
+                                            '".$contato_dados->mensagem."','1');";
 
             //Instancia a classe do BD
             $conex = new Mysql_db();
