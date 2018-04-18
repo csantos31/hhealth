@@ -26,6 +26,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             $sql2 = "INSERT INTO tbl_exame(titulo,texto,procedimento,status,ativo)
             VALUES('".$exames_dados->titulo."','".$exames_dados->texto_descricao."','".$exames_dados->texto_procedimento."','1','1');";
 
+
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
 
@@ -143,6 +144,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
       }else {
         //Mensagem de erro
         echo "Error atualizar no Banco de Dados";
+        echo "asddas";
       }
 
       //Fecha a conexão com o banco de dados
