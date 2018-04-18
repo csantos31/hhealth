@@ -10,6 +10,7 @@
 
         <script>/*Modal*/
             $(document).ready(function(){
+                
 
                 $(".novo").click(function(){
                     $(".container_modal").toggle(2000);
@@ -48,20 +49,78 @@
                 });
             }
 
+            var cont = 0;
+            var cont2 = 0;
+            var mod = '';
+            
             function EditarPerfil(linha,IdItem){
-                $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');
-
-              
-
-                /*$.ajax({
-                    type:"GET",
-                    url:"../modals/modal_cad_paciente.php",
-                    data: {modo:'buscarId',codigo:IdIten},
-                    success: function(dados){
-                        $('.modal').html(dados);
-                    }
-
-                });*/
+                cont = cont + 1;
+                
+                mod = cont % 2;
+                
+                console.log(mod);
+                
+                if(mod == 1){
+                    $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');    
+                }else{
+                    //$('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','none');    
+                }
+                
+                $("#frm_foto"+IdItem).submit(function(event){
+                    event.preventDefault();
+                    //console.log("submit");
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "../router.php?controller=paciente&modo=alterar_foto&id="+IdItem,
+                        //alert (url);
+                        data: new FormData($("#frm_foto"+IdItem)[0]),
+                        cache:false,
+                        contentType:false,
+                        processData:false,
+                        async:true,
+                        success: function(dados){
+                             $('.modal').html(dados);
+                            //alert(dados);
+                        }
+                    });
+                    
+                });
+            }
+            
+            function EditarCarteirinha(linha,IdItem){
+                cont2 = cont2 + 1;
+                
+                mod = cont2 % 2;
+                
+                if(mod == 1){
+                    $('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','block');    
+                }else{
+                    //$('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','none');    
+                }
+                
+                $("#frm_card"+IdItem).submit(function(event){
+                    event.preventDefault();
+                    //console.log("submit");
+                    
+                    $.ajax({
+                        type: "POST",
+                        url: "../router.php?controller=paciente&modo=alterar_carteirinha&id="+IdItem,
+                        //alert (url);
+                        data: new FormData($("#frm_card"+IdItem)[0]),
+                        cache:false,
+                        contentType:false,
+                        processData:false,
+                        async:true,
+                        success: function(dados){
+                             $('.modal').html(dados);
+                            //alert(dados);
+                        }
+                    });
+                    
+                });
+                
+                
             }
 
             //Excluir
@@ -69,26 +128,20 @@
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
 
-                if(confirm('Tem certeza?')){
+                if(confirm('Tem certeza que deseja excluir este usuário?')){
 
-                $.ajax({
-                    type:"GET",
-                    data: {id:idIten},
-                    url: "../router.php?controller=especialidade&modo=excluir&id="+idIten,
-                    success: function(dados){
-                        console.log(dados);
-                        $('.modal').html(dados);
-                    }
-                });
+                    $.ajax({
+                        type:"GET",
+                        data: {id:idIten},
+                        url: "../router.php?controller=paciente&modo=excluir&id="+idIten,
+                        success: function(dados){
+                            //alert(dados);
+                            $('.modal').html(dados);
+                        }
+                    });
 
                 }
             }
-
-
-
-
-
-
         </script>
 
     </head>
@@ -137,22 +190,32 @@
                                             <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
-                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
-                                            </a>
                                             <a href="#" class="alterar_perfil" id="EditarPerfil<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/alter_prof.png" alt="alterar perfil" title="alterar perfil">
-                                                <div class="div_change_profille" id="id_teste">
+                                                <div class="div_change_profille">
                                                     <div class="modal_superior">
                                                         <labe>Alterar Imagem do perfil</labe>
                                                     </div>
-                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_perfil">
-                                                        <input type="file" name="file_foto" id="file_foto">
+                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_foto<?= $list[$cont]['id_paciente'] ?>">
+                                                        <input type="file" name="foto" id="foto">
+                                                        <input class="btn" type="submit" value="Enviar" name="btn_salva">
                                                     </form>
                                                 </div>
                                             </a>
-                                            <a href="#" class="alterar_carteirinha" onclick="EditarCarteirinha(<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="alterar_carteirinha" id="EditarCarteirinha<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarCarteirinha(this,<?php echo($list[$cont]['id_paciente']);?>)">
                                                 <img src="../imagens/alter_card.png" alt="alterar carteirinha" title="alterar carteirinha">
+                                                <div class="div_change_carteirinha">
+                                                    <div class="modal_superior">
+                                                        <labe>Alterar Carteirinha</labe>
+                                                    </div>
+                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_card<?= $list[$cont]['id_paciente'] ?>">
+                                                        <input type="file" name="carteirinha_convenio" id="carteirinha_convenio">
+                                                        <input class="btn" type="submit" value="Enviar" name="btn_salva">
+                                                    </form>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
+                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>
                                     </div>

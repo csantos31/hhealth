@@ -108,6 +108,48 @@
 
             $paciente::update($paciente);
 		}
+        
+        public function EditarCarteirinha(){
+
+            require_once('modulo_img.php');
+
+			$idPaciente = $_GET['id'];
+
+
+			$paciente = new Paciente();
+
+
+			$paciente->id_paciente = $idPaciente;
+
+
+            $fle_foto = salvar_imagem($_FILES['carteirinha_convenio'],'arquivos');
+
+
+            $paciente->carteirinha_convenio = $fle_foto;
+
+            $paciente::updateCarteirinhaConvenio($paciente);
+		}
+        
+        public function EditarFoto(){
+
+            require_once('modulo_img.php');
+
+			$idPaciente = $_GET['id'];
+
+
+			$paciente = new Paciente();
+
+
+			$paciente->id_paciente = $idPaciente;
+
+
+            $fle_foto = salvar_imagem($_FILES['foto'],'arquivos');
+
+
+            $paciente->foto = $fle_foto;
+
+            $paciente::updateFoto($paciente);
+		}
 
         public function Excluir(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW

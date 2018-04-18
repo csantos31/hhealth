@@ -76,13 +76,30 @@
                     $controller_paciente::Editar();
 
                     break;
+                    
+                case 'alterar_foto':
+                    require_once('controllers/paciente_controller.php');
+                    require_once('models/paciente_class.php');
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente::EditarFoto();
+                    break; 
+                    
+                case 'alterar_carteirinha':
+                    require_once('controllers/paciente_controller.php');
+                    require_once('models/paciente_class.php');
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente::EditarCarteirinha();
+                    break;    
 
 				case 'excluir':
-            					// Instanciando a classe da controller
-            					$controller_tipo_quarto =  new controllerTipoQuarto();
-            					//Chama o metodo Novo da controller
-            					$controller_tipo_quarto::Excluir();
-            					break;
+                    require_once('controllers/paciente_controller.php');
+                    require_once('models/paciente_class.php');
+                    // Instanciando a classe da controller
+                    $controller_paciente =  new controllerPaciente();
+                    //Chama o metodo Novo da controller
+                    $controller_paciente::Excluir();
+                    echo "here";
+                    break;
 		}
 
 			break;
