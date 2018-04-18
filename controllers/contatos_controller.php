@@ -4,7 +4,7 @@
 
         //Insere novo registro
         public function Novo(){
-
+            require_once('models/contato_class.php');
             //Instancia da classe Contato
             $contato = new Contato();
 
@@ -16,9 +16,8 @@
             $contato->assunto = $_POST['txt_assunto'];
             $contato->mensagem = $_POST['txt_mensagem'];
 
-
             //Chama o método insert da classe contato
-            Contato::Insert($contato);
+            $contato::Insert($contato);
         }
     }
 
