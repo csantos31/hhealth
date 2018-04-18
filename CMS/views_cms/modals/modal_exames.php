@@ -2,15 +2,12 @@
 
 //$action = "modo=inserir";
 
-$id="0";
+$id="";
 $titulo=null;
-$texto=null;
-$imagem=null;
-$imagem2=null;
-$imagem3=null;
-$imagem4=null;
-$imagem5=null;
-$imagem6=null;
+$texto_descricao=null;
+$texto_procedimento=null;
+$status=null;
+$ativo=null;
 
 
 if (isset($_GET['controller']))
@@ -19,37 +16,24 @@ else
     $caminho = "";
 
 include($caminho.'../../verifica.php');
+
 if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
 
     if($modo=='buscarId'){
         $id=$_GET['id'];
 
-        require_once("../../controller_cms/gerenciamento_ambiente_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/gerenciamento_ambiente_class.php");/*da um require na nivel_class*/
-
-        // Instancio a controller
-        //$controller_nivel  = new controllerNivel();
-
-        //Chama o metodo para Listar todos os registros
-        //$list = $controller_nivel::Listar();
-        /*
-        if(isset($niv)){
-            //$action = "modo=editar&id=". $niv->id_nivel;
-            $nome = $niv->nome;
-            $descricao = $niv->descricao;
-
-
-        }else{
-            echo($nome);
-        }
-        */
+        require_once("../../controller_cms/gerenciamento_exame_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/gerenciamento_exames_class.php");/*da um require na nivel_class*/
 
         $controller_exame = new controller_exame();
         $list = $controller_exame::Buscar();
 
         $titulo=$list->titulo;
-        $texto=$list->texto;
+        $texto_descricao=$list->texto;
+        $texto_procedimento=$list->procedimento;
+        $status=$list->status;
+        $ativo=$list->ativo;
         //$frase=$list->frase;
 
     }
@@ -138,7 +122,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <textarea name="txt_texto_descricao" id="txt_desc">
-                                <?php echo($texto)?>
+                                <?php echo($texto_descricao)?>
 
                             </textarea>
                         </div>
@@ -148,7 +132,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <textarea name="txt_texto_procedimento" id="txt_desc">
-                                <?php echo($texto)?>
+                                <?php echo($texto_procedimento)?>
 
                             </textarea>
                         </div>

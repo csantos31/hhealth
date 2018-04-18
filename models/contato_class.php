@@ -2,7 +2,7 @@
 
     class Contato{
         //Atributos da classe
-        public $id_faleconosco;
+        public $id_fale_conosco;
         public $nome;
         public $email;
         public $telefone;
@@ -16,7 +16,7 @@
 
         //Insere o registro no BD
         public static function Insert($contato_dados){
-            $sql = "INSERT INTO tbl_faleconosco (nome, email, telefone, celular,
+            $sql = "INSERT INTO tbl_fale_conosco (nome, email, telefone, celular,
                                             assunto, mensagem)
                                             values('".$contato_dados->nome."',
                                             '".$contato_dados->email."',
@@ -33,9 +33,9 @@
 
             //Executa o script no BD
             if($PDO_conex->query($sql)){
-                "<script>location.reload();</script>"
+                echo "<script>location.reload();</script>";
             }else{
-              echo("Erro ao Inserir no BD");
+                echo("Erro ao Inserir no BD");
             }
 
 
