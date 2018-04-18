@@ -63,6 +63,7 @@
             $idSobre = $_GET['id'];
             
             $sobre = new Sobre();
+            $sobre->id_sobre=$idSobre;
             $sobre ->sobre = $_POST['txt_sobre'];
             $sobre ->missao = $_POST['txt_missao'];
             $sobre ->visao = $_POST['txt_visao'];
