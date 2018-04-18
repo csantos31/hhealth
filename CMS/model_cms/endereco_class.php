@@ -34,12 +34,12 @@ class Endereco{
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
                 
-                $endereco = new Endereco;
+                $endereco = new Endereco();
                 
                 $id_endereco = $endereco::SelectLast();
                 
                 return $id_endereco;
-                
+                //echo $sql;
 				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
@@ -47,6 +47,7 @@ class Endereco{
 				echo "Error inserir no Banco de Dados";
 			}
 
+            
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar(); 
             
@@ -154,9 +155,10 @@ class Endereco{
 				// Soma mais um no contador
 				$cont+=1;
 			}
-
-			$conex::Desconectar();
+        
             return $lista_estados;
+			$conex::Desconectar();
+            
 		}
 
         /*Busca um registro especifico no BD*/

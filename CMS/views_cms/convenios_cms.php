@@ -67,8 +67,8 @@
            function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"/modals/modal_cadastro_convenio.php",
-                    data: {modo:'buscarId',codigo:IdIten},
+                    url:"modals/modal_cadastro_convenio.php",
+                    data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
@@ -77,32 +77,32 @@
            }
 
            //Desativar
-               function Desativar(IdIten){
-                   //anula a ação do submit tradicional "botao" ou F5
-                   event.preventDefault();
-                   $.ajax({
-                       type:"GET",
-                       data: {id:IdIten},
-                       url: "../router.php?controller=convenio&modo=desativar&id="+IdIten,
-                       success: function(dados){
-                           $('.icon_opcoes').html(dados);
-                       }
-                   });
-               }
+              function Desativar(IdIten){
+                  //anula a ação do submit tradicional "botao" ou F5
+                  event.preventDefault();
+                  $.ajax({
+                      type:"GET",
+                      data: {id:IdIten},
+                      url: "../router.php?controller=convenio&modo=desativar&id="+IdIten,
+                      success: function(dados){
+                          $('.alinha_meio').html(dados);
+                      }
+                  });
+              }
 
-           //Desativar
-               function Deletar(IdIten){
-                   //anula a ação do submit tradicional "botao" ou F5
-                   event.preventDefault();
-                   $.ajax({
-                       type:"GET",
-                       data: {id:IdIten},
-                       url: "../router.php?controller=convenio&modo=deletar&id="+IdIten,
-                       success: function(dados){
-                           $('.icon_opcoes').html(dados);
-                       }
-                   });
-               }
+          //Desativar
+              function Deletar(IdIten){
+                  //anula a ação do submit tradicional "botao" ou F5
+                  event.preventDefault();
+                  $.ajax({
+                      type:"GET",
+                      data: {id:IdIten},
+                      url: "../router.php?controller=convenio&modo=deletar&id="+IdIten,
+                      success: function(dados){
+                          $('.alinha_esquerda').html(dados);
+                      }
+                  });
+              }
 
 
 
@@ -159,7 +159,7 @@
                                <?php
 
                                      // Incluindo a controller e a model para serem utilizadas
-                                     include_once($caminho . '../controller_cms/convenios_controller.php');
+                                     include_once($caminho .'../controller_cms/convenios_controller.php');
                                      include_once($caminho .'../model_cms/convenio_class.php');
 
                                      $convenios_controller = new controller_convenios();
@@ -183,17 +183,17 @@
                                      </div>
                                      <div class="opcoes_convenio">
                                            <div class="alinha_direita">
-                                                 <a class="novo" href="#" onclick="Editar()">
+                                                 <a class="editar" href="#" onclick="Editar(<?php echo($list[$cont]->id_convenio); ?>)">
                                                        <img src="../../sistema_interno/imagens/edit.png" alt="">
                                                  </a>
                                            </div>
                                            <div class="alinha_meio">
-                                                 <a class="novo" href="#" onclick="Desativar()">
+                                                 <a class="#" href="#" onclick="Desativar(<?php echo($list[$cont]->id_convenio); ?>)">
                                                        <img src="../../sistema_interno/imagens/shutdown.png" alt="">
                                                  </a>
                                            </div>
                                            <div class="alinha_esquerda">
-                                                 <a class="novo" href="#" onclick="Deletar()">
+                                                 <a class="#" href="#" onclick="Deletar(<?php echo($list[$cont]->id_convenio); ?>)">
                                                        <img src="../../sistema_interno/imagens/icons8-lixo-52.png" alt="">
                                                  </a>
                                            </div>

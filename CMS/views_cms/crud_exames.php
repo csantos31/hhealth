@@ -1,5 +1,5 @@
 <?php
-      $status=null;
+    $status=null;
     $action = "modo=inserir";
     $nivel = null;
     $descricao = null;
@@ -67,13 +67,27 @@
            function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"/modals/modal_exames.php",
-                    data: {modo:'buscarId',codigo:IdIten},
+                    url:"modals/modal_exames.php",
+                    data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
 
                 });
+           }
+
+           //Desativar
+           function Desativar(IdIten){
+               //anula a ação do submit tradicional "botao" ou F5
+               event.preventDefault();
+               $.ajax({
+                   type:"GET",
+                   data: {id:IdIten},
+                   url: "../router.php?controller=exame&modo=desativar&id="+IdIten,
+                   success: function(dados){
+                       $('.alinha_esquerda').html(dados);
+                   }
+               });
            }
 
            //Excluir
@@ -96,11 +110,6 @@
                 }
            }
 
-
-
-
-
-
         </script>
 
     </head>
@@ -114,7 +123,7 @@
 
 
             <div class="content_cms">
-                <?php include('menu_cms.php')?>
+                <?php include_once('menu_cms.php');?>
 
                 <div class="content_home_cms"><!--conteudo da home do cms-->
 
@@ -154,45 +163,50 @@
                                </div>
                                <?php
 
-                                     // // Incluindo a controller e a model para serem utilizadas
-                                     // include_once($caminho . '../controller_cms/exame_controller.php');
-                                     // include_once($caminho .'../model_cms/exame_class.php');
-                                     //
-                                     // $convenios_controller = new controller_convenios();
-                                     //
-                                     // $list = $convenios_controller::Listar();
-                                     //
-                                     // $cont = 0;
-                                     //
-                                     // while ($cont < count($list)) {
-                                     //       # code...
-                                     //       $ativo=$list[$cont]->status_imagem;
-                                     //       if($status==1){
-                                     //       }
+                                      // Incluindo a controller e a model para serem utilizadas
+                                      require_once($caminho . '../controller_cms/gerenciamento_exame_controller.php');
+                                      require_once($caminho . '../model_cms/gerenciamento_exames_class.php');
+
+                                      $exames_controller = new controller_exame();
+
+                                      $list = $exames_controller::Select();
+
+                                      $cont = 0;
+
+                                      while ($cont < count($list)) {
+                                            # code...
+                                            $ativo=$list[$cont]->status;
+                                            if($status==1){
+                                            }
                                 ?>
                                <div class="conteudo_tabela">
                                      <div class="nome_convenio">
-                                         <?php //echo($list[$cont]->titulo); ?>
+                                       <?= ($list[$cont]->titulo) ?>
                                      </div>
                                      <div class="descricao_inf">
-
+                                       <?= ($list[$cont]->texto_descricao) ?>
                                      </div>
                                      <div class="procedimento_inf">
-
+                                       <?= ($list[$cont]->texto_procedimento)?>
                                      </div>
                                      <div class="opcoes_convenio">
-                                           <div class="alinha_direita">
-                                                 <img src="../../sistema_interno/imagens/edit.png" alt="">
+                                          <div class="alinha_direita">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_exame);?>)">
+                                              <?php //echo($list[$cont]->id_exame);?>
+                                             <img src="../../sistema_interno/imagens/edit.png" alt="">
+                                            </a>
                                            </div>
                                            <div class="alinha_esquerda">
+                                               <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_exame);?>)">
                                                  <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+                                               </a>
                                            </div>
                                      </div>
                                </div>
                                <?php
 
-                                  // $cont +=1;
-                                     //}
+                                   $cont +=1;
+                                     }
                                 ?>
 
                          </div>
@@ -201,7 +215,7 @@
 
                 </div>
 
-                <?php include('footer_cms.php')?>
+                <?php include_once('footer_cms.php');?>
             </div>
         </div>
 

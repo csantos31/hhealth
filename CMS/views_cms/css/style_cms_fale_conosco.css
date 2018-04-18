@@ -152,7 +152,7 @@
 }
 
 .titulo_niveis{
-    width:12.6%;
+    width:15.1%;
     margin-left: 2.7px;
     height:35px;
     padding-top:10px;
@@ -175,7 +175,7 @@
 }
 
 .titulo_acoes{
-    width:7.2%;
+    width:5%;
     height:35px;
     padding-top:10px;
     margin-left: 5px;
@@ -202,7 +202,7 @@
 }
 
 .campo_niveis{
-    width:12.6%;
+    width:15.1%;
     min-height: 35px;
     height: auto;
     margin-left: 2.7px;
@@ -230,7 +230,7 @@
 }
 
 .campo_acoes{
-    width:7.2%;
+    width:5%;
     height:35px;
     line-height: 30px;
     border:solid 1px #5F0601;
