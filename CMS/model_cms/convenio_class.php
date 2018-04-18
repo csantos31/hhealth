@@ -186,7 +186,7 @@
 
             public function DesativarPorId($convenio){
 
-                  $select_status_imagem="SELECT status_imagem FROM tbl_convenio;";
+                  $sql = "UPDATE tbl_convenio set status_imagem=0 WHERE id_convenio=".$convenio->id_convenio;
 
 
                   //Instancio o banco e crio uma variavel
@@ -195,21 +195,6 @@
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
 			$PDO_conex = $conex->Conectar();
-
-                  $resultadoSQL2 = $PDO_conex->query($select_status_imagem);
-
-                  while($resultado2 = mysql_fetch_array($resultadoSQL2)){
-                                echo($resultado['status_imagem']);
-                  }
-
-                  echo($status);
-
-                  //include_once("../sistema_interno/controllers/util.php");
-
-                  $verifica_status_imagem =
-
-                  //$sql1 = "UPDATE tbl_convenio set status_imagem=0";
-                  $sql = "UPDATE tbl_convenio set status_imagem=0 WHERE id_convenio=".$convenio->id_convenio;
 
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
@@ -224,6 +209,31 @@
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
             }
+
+            public function AtivarPorId($convenio){
+                  $sql = "UPDATE tbl_convenio set status_imagem=1 WHERE id_convenio=".$convenio->id_convenio;
+
+                  //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+            }
+
       }
 
  ?>
