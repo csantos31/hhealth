@@ -6,6 +6,7 @@ $id="0";
 $especialidade=null;
 $texto=null;
 $arquivo = null;
+$imagem=null;
 
 $variavel_style = "display:none;";
 
@@ -17,20 +18,23 @@ if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
 
     if($modo=='buscarId'){
-        $id=$_GET['codigo'];
+        $id=$_GET['id'];
 
-        require_once("../controller_cms/convenios_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/convenio_class.php");/*da um require na nivel_class*/
+        require_once("../../controller_cms/convenios_controller.php");/*da um require na convnio_controller*/
+        require_once("../../model_cms/convenio_class.php");/*da um require na convenio_class*/
 
         // Instancio a controller
-        $controller_especialidade  = new controller_convenios();
+        $controller_convenio  = new controller_convenios();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_especialidade::Buscar($id);
+        $list = $controller_convenio::Buscar($id);
 
-        $imagem = $list->imagem;
-        $especialidade = $list->especialidade;
+        $id = $list->id_convenio;
+        $titulo = $list->titulo;
         $texto = $list->texto;
+        $imagem = $list->imagem;
+        $status_imagem = $list->status_imagem;
+        $ativo = $list->ativo;
 
     }
 }

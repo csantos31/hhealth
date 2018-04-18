@@ -57,6 +57,18 @@
                   return $convenios::Select();
             }
 
+            public function Buscar(){
+                  $idConvenio = $_GET['id'];
+
+                  $convenio = new Convenio();
+
+                  $convenio->id_convenio=$idConvenio;
+
+                  $metodo = $convenio::SelectById($convenio);
+
+                  return $metodo;
+            }
+
             public function Editar(){
 
                   require_once ('model_cms/convenio_class.php');
@@ -67,25 +79,44 @@
                   $convenios = new Convenio();
 
                   // Chama o metodo para selecionar os registros
-                  return $convenios::Select();
+                  return $convenios::SelectBy();
             }
 
             public function Desativar(){
 
-                  // Instancia a classe $convenios
-                  $convenios = new Convenio();
+                  require_once ('model_cms/convenio_class.php');
+                  require_once ('modulo_img.php');
 
-                  // Chama o metodo para selecionar os registros
-                  return $convenios::Select();
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idConvenio = $_GET['id'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$convenios = new Convenio();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$convenios->id_convenio = $idConvenio;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$convenios::DesativarPorId($convenios);
             }
 
             public function Deletar(){
 
-                  // Instancia a classe $convenios
-                  $convenios = new Convenio();
+                  //GUARDA O ID DO CONTATO PASSADO NA VIEW
+                  $idConvenio = $_GET['id'];
 
-                  // Chama o metodo para selecionar os registros
-                  return $convenios::Select();
+
+                  require_once ('model_cms/convenio_class.php');
+                  require_once ('modulo_img.php');
+
+
+                  // Instancia a classe $convenios
+                  $convenio = new Convenio();
+
+                  $convenio->id_convenio=$idConvenio;
+
+                  // Chama o metodo para deletar os registros
+                  $convenio::Deletar($convenio);
             }
 
       }
