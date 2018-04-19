@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_ambiente` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_ambiente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,6 +44,7 @@ CREATE TABLE `tbl_ambiente` (
 
 LOCK TABLES `tbl_ambiente` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente` DISABLE KEYS */;
+INSERT INTO `tbl_ambiente` VALUES (1,'asdas','                                                                \r\nasdasd                            ','imagem_ambiente/cirurgia.jpg','imagem_ambiente/cirurgia.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/bg_login.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/cirurgia3.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,8 +276,8 @@ CREATE TABLE `tbl_convenio` (
   `subtitulo` text,
   `texto` text,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `status_imagem` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_convenio`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -330,7 +331,7 @@ CREATE TABLE `tbl_dica_saude` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_dica_saude`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -339,7 +340,36 @@ CREATE TABLE `tbl_dica_saude` (
 
 LOCK TABLES `tbl_dica_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_dica_saude` DISABLE KEYS */;
+INSERT INTO `tbl_dica_saude` VALUES (1,'asd','                                                                \r\n                            asd','imagem_dica_saude/dicas.png',0,1),(2,'asd','       asdasd                                                         \r\n                            ','imagem_dica_saude/5dicas.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_dica_saude` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_dicas_saude`
+--
+
+DROP TABLE IF EXISTS `tbl_dicas_saude`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_dicas_saude` (
+  `id_dicas_saude` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` text,
+  `subtitulo` text,
+  `texto` text,
+  `imagem` text,
+  `status_imagem` char(1) DEFAULT NULL,
+  `link_video` text,
+  PRIMARY KEY (`id_dicas_saude`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_dicas_saude`
+--
+
+LOCK TABLES `tbl_dicas_saude` WRITE;
+/*!40000 ALTER TABLE `tbl_dicas_saude` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_dicas_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -489,10 +519,11 @@ CREATE TABLE `tbl_exame` (
   `subtitulo` text,
   `texto` text,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `procedimento` text,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_exame`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -501,6 +532,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
+INSERT INTO `tbl_exame` VALUES (1,'Teste',NULL,'teste2                                \r\n                            \r\n                            ',NULL,1,'teste teste2                     \r\n                            ',0),(2,'Cardiologista',NULL,'Cuida do coração',NULL,1,'Jejum                ',1);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -515,12 +547,13 @@ CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `telefone` varchar(45) DEFAULT NULL,
-  `celular` varchar(45) DEFAULT NULL,
+  `telefone` text,
+  `celular` text,
   `assunto` varchar(45) DEFAULT NULL,
-  `mensagem` varchar(45) DEFAULT NULL,
+  `mensagem` text,
+  `ativo` char(1) DEFAULT NULL,
   PRIMARY KEY (`id_fale_conosco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -529,6 +562,7 @@ CREATE TABLE `tbl_fale_conosco` (
 
 LOCK TABLES `tbl_fale_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_fale_conosco` DISABLE KEYS */;
+INSERT INTO `tbl_fale_conosco` VALUES (1,'fdasfdas','dfsa@dfs','21341234','23414321','fdasf','asdfadfasd','1'),(2,'fdasfdas','dfsa@dfs','21341234','23414321','fdasf','dsafd asdasfasd dsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasd','0');
 /*!40000 ALTER TABLE `tbl_fale_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -638,7 +672,7 @@ CREATE TABLE `tbl_home` (
   `status` tinyint(1) DEFAULT NULL,
   `ativo` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`id_home`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -647,7 +681,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
-INSERT INTO `tbl_home` VALUES (1,'imagem_home/acupuntura.jpg','imagem_home/bg_login_a.jpg','imagem_home/cirurgia5.jpg','frase',0,1),(2,'imagem_home/acupuntura.jpg','imagem_home/cirurgia3.jpg','imagem_home/bg_login_a.jpg','dfgdfgdf',0,1),(3,'imagem_home/convenio_amil.jpg','imagem_home/5dicas.jpg','imagem_home/cardiologia.jpg','dfgdfgdf',0,1),(4,'imagem_home/bg_login.jpg','imagem_home/cirurgia6.jpg','imagem_home/download.jpg','dfgdfgdf',0,1),(5,'imagem_home/5dicas.jpg','imagem_home/endoscopia.jpg','imagem_home/cirurgia6.jpg','frase',1,1);
+INSERT INTO `tbl_home` VALUES (1,'imagem_home/acupuntura.jpg','imagem_home/bg_login_a.jpg','imagem_home/cirurgia5.jpg','frase',1,1),(2,'imagem_home/acupuntura.jpg','imagem_home/cirurgia3.jpg','imagem_home/bg_login_a.jpg','dfgdfgdf',0,1),(3,'imagem_home/convenio_amil.jpg','imagem_home/5dicas.jpg','imagem_home/cardiologia.jpg','dfgdfgdf',0,1),(4,'imagem_home/bg_login.jpg','imagem_home/cirurgia6.jpg','imagem_home/download.jpg','dfgdfgdf',0,1),(5,'','','','frase',0,1),(6,'','','','',0,1);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1149,7 +1183,7 @@ CREATE TABLE `tbl_slide_saude` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_slide_saude`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1158,6 +1192,7 @@ CREATE TABLE `tbl_slide_saude` (
 
 LOCK TABLES `tbl_slide_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_slide_saude` DISABLE KEYS */;
+INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/cirurgia.jpg',0,1);
 /*!40000 ALTER TABLE `tbl_slide_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1298,13 +1333,10 @@ DROP TABLE IF EXISTS `tbl_unidade`;
 CREATE TABLE `tbl_unidade` (
   `id_unidade` int(11) NOT NULL AUTO_INCREMENT,
   `id_endereco` int(11) DEFAULT NULL,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
   `nome_unidade` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_end_unid_idx` (`id_endereco`),
   CONSTRAINT `fk_end_unid` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1317,7 +1349,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,3,NULL,NULL,NULL,NULL,NULL,NULL,'Sede Hhealth'),(2,6,NULL,NULL,NULL,NULL,NULL,NULL,'Unidade Feladélfia'),(3,5,NULL,NULL,NULL,NULL,NULL,NULL,'Unidade Alvorada');
+INSERT INTO `tbl_unidade` VALUES (1,3,NULL,'Sede Hhealth',NULL,NULL),(2,6,NULL,'Unidade Feladélfia',NULL,NULL),(3,5,NULL,'Unidade Alvorada',NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1417,4 +1449,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-17  8:03:48
+-- Dump completed on 2018-04-19 11:08:27
