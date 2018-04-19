@@ -15,15 +15,15 @@
         }
 
         //Insere o registro no BD
-        public static function Insert($contato_dados){
+        public static function Insert($trabalhe_conosco){
             $sql = "INSERT INTO tbl_fale_conosco (nome, email, telefone, celular,
                                             assunto, mensagem, ativo)
-                                            VALUES ('".$contato_dados->nome."',
-                                            '".$contato_dados->email."',
-                                            '".$contato_dados->telefone."',
-                                            '".$contato_dados->celular."',
-                                            '".$contato_dados->assunto."',
-                                            '".$contato_dados->mensagem."','1');";
+                                            VALUES ('".$trabalhe_conosco->nome."',
+                                            '".$trabalhe_conosco->email."',
+                                            '".$trabalhe_conosco->telefone."',
+                                            '".$trabalhe_conosco->celular."',
+                                            '".$trabalhe_conosco->assunto."',
+                                            '".$trabalhe_conosco->mensagem."','1');";
 
             //Instancia a classe do BD
             $conex = new Mysql_db();

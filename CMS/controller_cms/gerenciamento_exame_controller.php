@@ -100,7 +100,7 @@ class controller_exame{
 
       public function Deletar(){
         $id_exame = $_GET['id'];
-          echo $id_exame;
+        
         require_once ('model_cms/gerenciamento_exames_class.php');
         require_once ('model_cms/bd_class.php');
         require_once ('modulo_img.php');
