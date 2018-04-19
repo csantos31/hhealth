@@ -102,8 +102,48 @@
                     break;
 		}
 
-			break;
+    break;
 
+            
+   case 'nivel_funcionario':
+			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+        switch ($modo) {
+            case 'inserir':
+                // Instanciando a classe da controller
+
+                    require_once('controllers/nivel_funcionario_controller.php');
+                    require_once('models/nivel_funcionario_class.php');
+
+                    $controller_nivel =  new controllerNivelFuncionario();
+                    //Chama o metodo Novo da controller
+
+                    $controller_nivel::Novo();
+
+                    break;
+
+            case 'editar':
+            // Instanciando a classe da controller
+                require_once('controllers/nivel_funcionario_controller.php');
+                require_once('models/nivel_funcionario_class.php');
+                $controller_nivel =  new controllerNivelFuncionario();
+                //Chama o metodo Novo da controller
+                $controller_nivel::Editar();
+                break;
+
+            case 'excluir':
+                require_once('controllers/nivel_funcionario_controller.php');
+                require_once('models/nivel_funcionario_class.php');
+
+                // Instanciando a classe da controller
+                $controller_nivel =  new controllerNivelFuncionario();
+                //Chama o metodo Novo da controller
+                $controller_nivel::Excluir();
+
+                break;
+        }
+
+        break;
+            
 
 		default:
 			# code...
