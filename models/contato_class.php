@@ -17,8 +17,8 @@
         //Insere o registro no BD
         public static function Insert($contato_dados){
             $sql = "INSERT INTO tbl_fale_conosco (nome, email, telefone, celular,
-                                            assunto, mensagem)
-                                            values('".$contato_dados->nome."',
+                                            assunto, mensagem, ativo)
+                                            VALUES ('".$contato_dados->nome."',
                                             '".$contato_dados->email."',
                                             '".$contato_dados->telefone."',
                                             '".$contato_dados->celular."',
@@ -42,8 +42,8 @@
             //Fecha a conexão com o BD
             $conex->Desconectar();
         }
-        
-        
+
+
     }
 
 ?>
