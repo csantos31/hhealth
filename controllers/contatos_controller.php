@@ -19,6 +19,21 @@
             //Chama o método insert da classe contato
             $contato::Insert($contato);
         }
+
+        //Insere novo registro
+        public function Deletar(){
+          $id_contato = $_GET['id'];
+
+          // Instancia a classe $convenios
+          $exames = new Exame();
+
+          require_once('models/contato_class.php');
+          //Instancia da classe Contato
+          $contato = new Contato();
+          $contato->id_contato = $id_contato;
+          //Chama o método insert da classe contato
+          $contato::Excluir($contato);
+        }
     }
 
 ?>

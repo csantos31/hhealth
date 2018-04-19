@@ -3,7 +3,7 @@
 
 /*LEMBRETE PARA WESLEY
 
-ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
+ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 */
     class Contato{
@@ -15,17 +15,17 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $assunto;
         public $mensagem;
         public $ativo;
-        
+
         //cria um construtor
         public function __construct(){
             include_once('bd_class.php');
         }
-        
-        
+
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_fale_conosco ORDER BY id_fale_conosco DESC; WHERE ativo = 1";
+			$sql="SELECT * FROM tbl_fale_conosco WHERE ativo = 1 ORDER BY id_fale_conosco DESC ";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -68,11 +68,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			}
 
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($contato){
 			$sql = "SELECT * FROM tbl_fale_conosco WHERE id_fale_conosco =". $contato->id_fale_conosco;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -85,8 +85,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
+
 				$contato = new Contato();
 
 				$contato->id_fale_conosco = $rs['id_fale_conosco'];
@@ -96,7 +96,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $contato->celular = $rs['celular'];
                 $contato->assunto = $rs['assunto'];
                 $contato->mensagem = $rs['mensagem'];
-				
+
 				return $contatos;
 
 			}else {
@@ -107,37 +107,37 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*DELETAR*/
-        public function Deletar($contato){
+        public function Excluir($contato){
             $sql="UPDATE tbl_fale_conosco set ativo=0 WHERE id_fale_conosco=".$contato->id_fale_conosco;
-        
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
 			$PDO_conex = $conex->Conectar();
-        
+
             //Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>confirm('Deseja realmente excluir?');</script>";
                 echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
                 echo $sql;
 			}
-            
+
             //Fecha a conexão com o banco de dados
 			$conex->Desconectar();
         }
-        
-        
-		
-        
+
+
+
+
     }
 
 
