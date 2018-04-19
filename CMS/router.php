@@ -227,14 +227,14 @@
 		        case 'exame':
 		            require_once('controller_cms/gerenciamento_exame_controller.php');
 		            switch($modo){
-		                case 'inserir':
-							// Instanciando a classe da controller
-							$controller_gerenciamento_ambiente =  new controller_exame();
-							//Chama o metodo Novo da controller
+		            	case 'inserir':
+										// Instanciando a classe da controller
+										$controller_gerenciamento_ambiente =  new controller_exame();
+										//Chama o metodo Novo da controller
 
-							$controller_gerenciamento_ambiente::Novo();
+										$controller_gerenciamento_ambiente::Novo();
 
-							break;
+									break;
 
 		                case 'editar':
 
@@ -424,8 +424,8 @@
                     $controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
 					$controller_endereco::Buscar();
-                    
-                    
+
+
                     $controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
 					$controller_unidade::Buscar();
@@ -472,44 +472,29 @@
 
 			break;
 
-            case 'fale_conosco':
-            require_once('controller_cms/contatos_controller.php');
-			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
-			switch ($modo) {
 
-				case 'buscar_id':
-					// Instanciando a classe da controller
-					//Chama o metodo Novo da controller
-                    $controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Buscar();
+	  	case 'fale_conosco':
+    		require_once('controller_cms/contatos_controller.php');
+				// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+				switch ($modo) {
 
+					case 'buscar_id':
+						// Instanciando a classe da controller
+						//Chama o metodo Novo da controller
+		        $controller_contatos =  new controllerContatos();
+						//Chama o metodo Novo da controller
+						$controller_contatos::Buscar();
 
-					break;
+						break;
 
+					case 'deletar':
+						// Instanciando a classe da controller
+						$controller_contatos =  new controllerContatos();
+						//Chama o metodo Novo da controller
+						$controller_contatos::Deletar();
 
-				case 'editar':
-				    // Instanciando a classe da controller
-					$controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Editar();
-					break;
-
-				case 'deletar':
-					// Instanciando a classe da controller
-					$controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Deletar();
-					break;
-
-
-                case 'desativar':
-                    $controller_contatos = new controllerContatos();
-
-                    $controller_contatos::Desativar();
-
-                    break;
-                }
+						break;
+					}
 			break;
 
             /*

@@ -13,10 +13,15 @@
                 <div id="container_home">
                     <div class="coluna">
                         <img src="imagens/doc_icon1.jpg" alt="medicos" title="medicos">
-                        <a href="views/cadastrar_funcionario.php">
-                            <p>Cadastrar funcionários</p>
+                        <a href="views/cargos.php">
+                            <p>Cargos</p>
                         </a>
-                        <p>Ver funcionários</p>
+                        <a href="views/funcionarios.php">
+                            <p>Funcionários</p>
+                        </a>
+                        <a href="views/especialidades.php">
+                            <p>Especialidades</p>
+                        </a>
                     </div>
                     <div class="coluna">
                         <img src="imagens/doc_icon2.jpg" alt="medicos" title="medicos">
@@ -35,12 +40,8 @@
                         <a href="views/cadastro_usuario_permissao.php">
                             <p>Cadastrar níveis de usuário</p>
                         </a>
-                        <p>Ver níveis de usuário</p>
-                        <a href="views/cadastrar_especialidades.php">
-                            <p>Cadastrar especialidades</p>
-                        </a>
-                        <a href="views/especialidades.php">
-                            <p>Ver especialidades</p>
+                        <a href="views/niveis_de_funcionario.php">
+                           <p>Níveis de usuário</p>
                         </a>
                     </div>
                 </div>

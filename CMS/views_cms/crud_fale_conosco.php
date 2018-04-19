@@ -36,29 +36,29 @@ if(isset($niv)){
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_fale_conosco.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
         <link rel="stylesheet" type="text/css" href="css/style_modal.css">
-        
+
         <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
-        
-        
+
+
         <script>/*Modal*/
             $(document).ready(function(){
-                
-                $(".novo").click(function(){    
-                    $(".container_modal").toggle(2000); 
+
+                $(".novo").click(function(){
+                    $(".container_modal").toggle(2000);
                 });
-                
+
                 $(".editar").click(function(){
                     $(".container_modal").fadeIn(2000);
 
                 });
-                
-                
+
+
             });
-            
-           
-            
+
+
+
             //Deletar
-            function Deletar(idIten){
+            function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
                 $.ajax({
@@ -70,12 +70,12 @@ if(isset($niv)){
                     }
                 });
             }
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         </script>
 
     </head>
@@ -86,16 +86,16 @@ if(isset($niv)){
             </div>
         </div>
         <div class="main">  <!--Div main que segura todas as div-->
-            
+
 
             <div class="content_cms">
-                <?php include('menu_cms.php')?>
+                <?php include_once('menu_cms.php');?>
 
                 <div class="content_home_cms"><!--conteudo da home do cms-->
 
                     <!-- Include once do menu lateral -->
                     <?php include_once('menu_lateral_cms.php'); ?>
-                    
+
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                         <div class="content_titulo_nivel">
                             <div class="titulo_nivel">
@@ -104,7 +104,7 @@ if(isset($niv)){
 
                         </div>
 
-                    
+
 
                         <div class="tabela_nivel_usuario"><!--tabela nivel-->
                             <div class="content_titulo_tabela_niveis">
@@ -152,7 +152,7 @@ if(isset($niv)){
                                     $ativo=$list[$cont]->ativo;
                                     if($ativo==1){
                                         //$list[$cont]->slide1=null;
-                                        
+
                                     }
                                ?>
 
@@ -175,9 +175,9 @@ if(isset($niv)){
                                     <div class="campo_niveis">
                                         <a><?= ($list[$cont]->mensagem);  ?></a>
                                     </div>
-                                                                        
-                                    <div class="campo_acoes">   
-                                        
+
+                                    <div class="campo_acoes">
+
                                         <div class="shut">
                                             <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_fale_conosco);?>)">
                                                 <img src="<?=$caminho?>imagens/shutdown.png">
@@ -195,7 +195,7 @@ if(isset($niv)){
                     </div>
                 </div>
 
-                <?php include('footer_cms.php')?>
+                <?php include('footer_cms.php');?>
             </div>
         </div>
 

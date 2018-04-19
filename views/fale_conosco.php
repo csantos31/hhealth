@@ -6,18 +6,18 @@
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_fale_conosco.css">
             <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-          
-            <title>Hospital HHealth</title> 
+
+            <title>Hospital HHealth</title>
             <meta name="viewport" content="initial-scale=1, maximun-scale=1">
       </head>
       <body>
           <script>
-              
+
               $(document).ready(function() {
-                 
+
                  $('#form').submit(function(event){
-                      
-                     
+
+
                       event.preventDefault();
                       //Recupera o id gravado no Form pelo atribute-id
                       /*var id = $(this).data("id");
@@ -27,27 +27,27 @@
                       else
                           modo='editar';*/
 
-                    $.ajax({
-                    type: "POST",
-                    url: "../router.php?controller=fale_conosco&modo=inserir",
-                    //alert (url);
-                    data: new FormData($("#form")[0]),
-                    cache:false,
-                    contentType:false,
-                    processData:false,
-                    async:true,
-                    success: function(dados){
-                         $('.suporte_content').html(dados);
-                         //alert(dados);
+                      $.ajax({
+                      type: "POST",
+                      url: "../router.php?controller=fale_conosco&modo=inserir",
+                      //alert (url);
+                      data: new FormData($("#form")[0]),
+                      cache:false,
+                      contentType:false,
+                      processData:false,
+                      async:true,
+                      success: function(dados){
+                           $('.suporte_content').html(dados);
+                           //alert(dados);
 
                     }
                 });
 
 
                 });
-                  
+
             });
-              
+
          </script>
             <div class="main"><!--Div Main que segura todas as divs-->
                   <!-- Esse require adiciona o menu na página -->
