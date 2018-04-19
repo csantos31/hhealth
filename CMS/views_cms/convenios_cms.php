@@ -89,6 +89,19 @@
                       }
                   });
               }
+              //Ativar
+                 function Ativar(IdIten){
+                     //anula a ação do submit tradicional "botao" ou F5
+                     event.preventDefault();
+                     $.ajax({
+                         type:"GET",
+                         data: {id:IdIten},
+                         url: "../router.php?controller=convenio&modo=ativar&id="+IdIten,
+                         success: function(dados){
+                             $('.alinha_meio').html(dados);
+                         }
+                     });
+                 }
 
           //Desativar
               function Deletar(IdIten){
@@ -171,7 +184,21 @@
                                      while ($cont < count($list)) {
                                            # code...
                                            $ativo=$list[$cont]->status_imagem;
-                                           if($status==1 ){
+
+                                           // if ($list[$cont]->status_imagem==1) {
+                                           //       $modo_link="a";
+                                           //       // echo($list[$cont]->status_imagem);
+                                           //       echo $modo_link;
+                                           // }
+                                           echo($list[$cont]->status_imagem);
+
+                                           $classe= new Convenio();
+
+                                           $codigo=$classe->status_imagem;
+                                           if ($codigo==0) {
+                                                 $modo_link="b";
+                                                 // echo($list[$cont]->status_imagem);
+                                                 echo $modo_link;
                                            }
                                 ?>
                                <div class="conteudo_tabela">
@@ -188,8 +215,20 @@
                                                  </a>
                                            </div>
                                            <div class="alinha_meio">
-                                                 <a class="#" href="#" onclick="Desativar(<?php echo($list[$cont]->id_convenio); ?>)">
-                                                       <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+
+                                                 <?php
+
+                                                      // if ($list[$cont]->status_imagem=0) {
+                                                      //       # code...
+                                                      //
+                                                      //       $modo_link="Ativar";
+                                                      //       // echo($list[$cont]->status_imagem);
+                                                      //       echo "Ativar";
+                                                      // }
+                                                ?>
+
+                                                 <a class="#" href="#" onclick="<?php echo $modo_link ?>(<?php echo($list[$cont]->id_convenio); ?>)">
+                                                       <img src="../../sistema_interno/imagens/shutdown.png"  alt="">
                                                  </a>
                                            </div>
                                            <div class="alinha_esquerda">

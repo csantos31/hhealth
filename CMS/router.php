@@ -166,11 +166,15 @@
 	                        $controller_gerenciamento_ambiente::Desativar();
 					break;
 
+				case 'ativar':
+					# code...
+					break;
+
 				case 'deletar':
 					# code...
 					$controller_gerenciamento_ambiente = new controller_convenios();
 
-	                        $controller_gerenciamento_ambiente::Deletar();
+	                        $controller_gerenciamento_ambiente::Ativar();
 					break;
 
 				default:
@@ -388,7 +392,7 @@
                         break;
                 }
             break;
-            
+
             case 'unidade':
             require_once('controller_cms/unidade_controller.php');
             require_once('controller_cms/endereco_controller.php');
@@ -413,7 +417,7 @@
                     $controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
 					$controller_nivel::Buscar();
-					
+
 
 					break;
 
@@ -434,7 +438,7 @@
 			}
 
 			break;
-            
+
             case 'fale_conosco':
             require_once('controller_cms/contatos_controller.php');
 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
@@ -446,7 +450,7 @@
                     $controller_contatos =  new controllerContatos();
 					//Chama o metodo Novo da controller
 					$controller_contatos::Buscar();
-					
+
 
 					break;
 
@@ -464,8 +468,8 @@
 					//Chama o metodo Novo da controller
 					$controller_contatos::Deletar();
 					break;
-			
-            
+
+
                 case 'desativar':
                     $controller_contatos = new controllerContatos();
 
@@ -474,7 +478,7 @@
                     break;
                 }
 			break;
-            
+
             /*
             case 'saude':
             switch($modo){
