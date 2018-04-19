@@ -168,6 +168,9 @@
 
 				case 'ativar':
 					# code...
+					$controller_gerenciamento_ambiente = new controller_convenios();
+
+	                        $controller_gerenciamento_ambiente::Ativar();
 					break;
 
 				case 'deletar':
@@ -424,8 +427,8 @@
                     $controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
 					$controller_endereco::Buscar();
-                    
-                    
+
+
                     $controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
 					$controller_unidade::Buscar();

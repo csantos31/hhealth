@@ -7,6 +7,7 @@ $especialidade=null;
 $texto=null;
 $arquivo = null;
 $imagem=null;
+$file=null;
 
 $variavel_style = "display:none;";
 
@@ -117,7 +118,7 @@ if(isset($_GET['modo'])){
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                                <input value="<?= $especialidade ?>" required type="text" class="input_big" placeholder="CONVÊNIO" name="txt_convenio" id="txt_convenio">
+                                <input value="<?= $titulo ?>" required type="text" class="input_big" placeholder="CONVÊNIO" name="txt_convenio" id="txt_convenio">
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
@@ -131,10 +132,11 @@ if(isset($_GET['modo'])){
                             <div class="input_campo">
                                 <b>Selecione uma imagem para o convenio :</b>
 
-                                <input type="file" name="file_convenio" id="file_convenio">
+                                <input type="file"  name="file_convenio" id="file_convenio" >
                             </div>
                             <div id="imagem_atual" style="<?= $variavel_style ?>">
                                 <img src="../<?= $imagem ?>" title="imagem atual" alt="imagem atual">
+
                             </div>
                         </div>
                         <div class="campo_botao">

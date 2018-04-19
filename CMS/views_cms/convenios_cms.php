@@ -183,22 +183,21 @@
 
                                      while ($cont < count($list)) {
                                            # code...
-                                           $ativo=$list[$cont]->status_imagem;
 
-                                           // if ($list[$cont]->status_imagem==1) {
-                                           //       $modo_link="a";
-                                           //       // echo($list[$cont]->status_imagem);
-                                           //       echo $modo_link;
-                                           // }
-                                           echo($list[$cont]->status_imagem);
+                                           $codigo =$list[$cont]->status_imagem;
 
-                                           $classe= new Convenio();
-
-                                           $codigo=$classe->status_imagem;
                                            if ($codigo==0) {
-                                                 $modo_link="b";
+                                                 $modo_link="Ativar";
+                                                 $icone_status="../../sistema_interno/imagens/icons8-desligar-50.png";
                                                  // echo($list[$cont]->status_imagem);
-                                                 echo $modo_link;
+                                           }elseif ($codigo==1) {
+                                                 // code...
+                                                 $modo_link="Desativar";
+                                                 $icone_status="../../sistema_interno/imagens/icons8-desligar-50(1).png";
+                                           }else {
+                                                 echo "Não foi possivel concluir está ação";
+
+
                                            }
                                 ?>
                                <div class="conteudo_tabela">
@@ -215,20 +214,8 @@
                                                  </a>
                                            </div>
                                            <div class="alinha_meio">
-
-                                                 <?php
-
-                                                      // if ($list[$cont]->status_imagem=0) {
-                                                      //       # code...
-                                                      //
-                                                      //       $modo_link="Ativar";
-                                                      //       // echo($list[$cont]->status_imagem);
-                                                      //       echo "Ativar";
-                                                      // }
-                                                ?>
-
-                                                 <a class="#" href="#" onclick="<?php echo $modo_link ?>(<?php echo($list[$cont]->id_convenio); ?>)">
-                                                       <img src="../../sistema_interno/imagens/shutdown.png"  alt="">
+                                                 <a class="#" href="#" onclick="<?php echo($modo_link); ?>(<?php echo($list[$cont]->id_convenio); ?>)">
+                                                       <img src="<?php echo($icone_status); ?>"  alt="">
                                                  </a>
                                            </div>
                                            <div class="alinha_esquerda">

@@ -75,7 +75,7 @@
                         $list_convenios[$cont]->texto = $rs['texto'];
                         $list_convenios[$cont]->imagem = $rs['imagem'];
                         $list_convenios[$cont]->status_imagem = $rs['status_imagem'];
-                        $list_convenios[$cont]->status_imagem = $rs['ativo'];
+                        $list_convenios[$cont]->ativo = $rs['ativo'];
 
 
                         // Soma mais um no contador
@@ -95,47 +95,47 @@
 
             public function SelectById($convenio){
 
-                  $sql1="SELECT tbl_convenio WHERE id_convenio=".$convenio->id_convenio;
+                  $sql = "SELECT * FROM tbl_convenio WHERE id_convenio =". $convenio->id_convenio;
 
                   //Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+                  $conex = new Mysql_db();
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
+                  /*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+                  na variavel que $PDO_conex*/
                   $PDO_conex = $conex->Conectar();
 
-			$select = $PDO_conex->query($sql1);
+                  $select = $PDO_conex->query($sql);
 
                   //Executa o script no banco de dados
-                  if ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-                        //Se der true redireciona a tela
-                        # code...
+                  if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+                    //Se der true redireciona a tela
+                    $convenio = new Convenio();
 
-                        //Instancia a classe convenio
-                        $convenio = new Convenio();
+                    $convenio->id_conenio = $rs['id_exame'];
+                    $convenio->titulo = $rs['titulo'];
+                    $convenio->texto = $rs['texto'];
+                    $convenio->imagem = $rs['imagem'];
+                    $convenio->status_imagem = $rs['status_imagem'];
+                    $convenio->ativo = $rs['ativo'];
 
-                        // Pega os dados do selectbyid e coloca na classe
-                        $convenio->id_convenio = $rs['id_convenio'];
-                        $convenio->titulo = $rs['titulo'];
-                        $convenio->texto = $rs['texto'];
-                        $convenio->imagem = $rs['imagem'];
-                        $convenio->status_imagem = $rs['status_imagem'];
-                        $convenio->ativo = $rs['ativo'];
+                    return $convenio;
 
-                        return $convenio;
-                  }else{
-                        //Mensagem de erro
-				echo "Error ao selecionar no Banco de Dados";
+                  }else {
+                    //Mensagem de erro
+                    echo "Error ao selecionar no Banco de Dados";
                   }
 
                   //Fecha a conexão com o banco de dados
-			$conex->Desconectar();
+                  $conex->Desconectar();
             }
 
 
             public function Update($convenio){
 
-                  $sql1 = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."', imagem='".$convenio->imagem."', status_imagem='".$convenio->status_imagem."', ativo='".$convenio->ativo."'";
+                  $sql1 = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
+                  imagem='".$convenio->imagem."', status_imagem='".$convenio->status_imagem."', ativo='".$convenio->ativo."' WHERE id_convenio=".$convenio->id_convenio;
+
+                  echo($sql1);
 
                   //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
