@@ -174,7 +174,7 @@
 					# code...
 					$controller_gerenciamento_ambiente = new controller_convenios();
 
-	                        $controller_gerenciamento_ambiente::Ativar();
+	                        $controller_gerenciamento_ambiente::Deletar();
 					break;
 
 				default:
@@ -414,9 +414,14 @@
 					// Instanciando a classe da controller
 					//Chama o metodo Novo da controller
 
-                    $controller_nivel =  new controllerNivel();
+                    $controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Buscar();
+					$controller_endereco::Buscar();
+                    
+                    
+                    $controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Buscar();
 
 
 					break;

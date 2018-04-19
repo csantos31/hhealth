@@ -66,7 +66,7 @@
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
 			$endereco = $endereco::SelectById($endereco);
 
-           return $endereco;
+            return $endereco;
 			//require_once('../modals/modal_cad_especialidade.php');
 		}
 
