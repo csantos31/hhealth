@@ -1,6 +1,7 @@
 <?php
 //$action = "modo=inserir";
 $id="0";
+$id_end;
 $paciente=null;
 
 $nome =  null;
@@ -20,6 +21,7 @@ if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
+        
 
         require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
         require_once("../models/paciente_class.php");/*da um require na nivel_class*/
@@ -29,6 +31,7 @@ if(isset($_GET['modo'])){
         $controller_paciente  = new controllerPaciente();
         //Chama o metodo para Listar todos os registros
         $list = $controller_paciente::Buscar($id);
+        $id_end=$list['id_endereco'];
 
         $nome = $list['nome'];
         $dt_nasc = $list['dt_nasc'];
@@ -76,6 +79,7 @@ if(isset($_GET['modo'])){
                     document.getElementById('photo_profile').style.display = 'none';
                     document.getElementById('foto_convenio').style.display = 'none';
                     document.getElementById('meu_num').style.marginLeft = '160px';
+                  var idEnd = $('#form').data("id_end");
               }
              
              
@@ -90,7 +94,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=paciente&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=paciente&modo="+modo+"&id="+id+"&id_end="+idEnd,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -110,7 +114,7 @@ if(isset($_GET['modo'])){
             </div>
 
             <div class="content_modal">
-                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id_end="<?= $id_end ?>" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
                             <img src="../../imagens/logo_only_heart.png">

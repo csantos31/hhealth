@@ -144,6 +144,44 @@
 
         break;
             
+   case 'cargo':
+			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+        switch ($modo) {
+            case 'inserir':
+                // Instanciando a classe da controller
+
+                    require_once('controllers/cargo_controller.php');
+                    require_once('models/cargo_class.php');
+
+                    $controller_cargo =  new controllerCargo();
+                    //Chama o metodo Novo da controller
+
+                    $controller_cargo::Novo();
+
+                    break;
+
+            case 'editar':
+            // Instanciando a classe da controller
+                require_once('controllers/cargo_controller.php');
+                    require_once('models/cargo_class.php');
+                $controller_cargo =  new controllerCargo();
+                //Chama o metodo Novo da controller
+                $controller_cargo::Editar();
+                break;
+
+            case 'excluir':
+                require_once('controllers/cargo_controller.php');
+                    require_once('models/cargo_class.php');
+
+                // Instanciando a classe da controller
+                $controller_cargo =  new controllerCargo();
+                //Chama o metodo Novo da controller
+                $controller_cargo::Excluir();
+
+                break;
+        }
+
+        break;
 
 		default:
 			# code...
