@@ -55,7 +55,7 @@
 
       public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEndereco = $_GET['codigo'];
+			$idEndereco = $_GET['id_ende'];
 
 			//INSTANCIA A CLASSE CONTATO
 			$endereco = new Endereco();
@@ -72,9 +72,9 @@
 
         /*Atualiza um registro existente*/
 		public function Editar(){
-
+            require_once ('model_cms/endereco_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEndereco = $_GET['id'];
+			$idEndereco = $_GET['id_ende'];
 
 			//INSTANCIA A CLASSE CONTATO
 			$endereco = new Endereco();
@@ -89,7 +89,7 @@
             $endereco->cidade = $_POST['txt_cidade'];
             $endereco->bairro = $_POST['txt_bairro'];
 
-            $endereco::update($endereco);
+            $endereco::Update($endereco);
 		}
 
         public function Excluir(){

@@ -70,6 +70,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
 				$lista_unidade[$cont]->id_unidade = $rs['id_unidade'];
+                $lista_unidade[$cont]->id_endereco = $rs['id_endereco'];
 				$lista_unidade[$cont]->imagem = $rs['imagem'];
 				$lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
                 $lista_unidade[$cont]->status = $rs['status'];
@@ -110,6 +111,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				$unidade = new Unidade();
 
 				$unidade->id_unidade = $rs['id_unidade'];
+                $unidade->id_endereco = $rs['id_endereco'];
 				$unidade->imagem = $rs['imagem'];
 				$unidade->nome_unidade = $rs['nome_unidade'];
                 $unidade->status = $rs['status'];
@@ -128,7 +130,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
         
         public function Update($dados_unidade){
-			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."', nome_unidade = '".$dados_unidade->nome_unidade."' WHERE id_home =".$dados_unidade->id_unidade;
+			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."', nome_unidade = '".$dados_unidade->nome_unidade."' WHERE id_unidade =".$dados_unidade->id_unidade;
 		
 
 		      echo $sql;
@@ -152,11 +154,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
-        /*Desativar o registro no BD*/
-        public function DesativarPorId($dados_unidade){
-            $sql1 = "UPDATE tbl_unidade set status=0";
-            $sql2 = "UPDATE tbl_unidade set status=1 WHERE id_unidade=".$dados_unidade->id_unidade;
+        /*Ativar o registro no BD*/
+        public function AtivarPorId($dados_unidade){
+            //$sql1 = "UPDATE tbl_unidade set status=0";
+            $sql = "UPDATE tbl_unidade set status=1 WHERE id_unidade=".$dados_unidade->id_unidade;
             
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -166,7 +167,34 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			$PDO_conex = $conex->Conectar();
 
 			//Executa o script no banco de dados
-			if($PDO_conex->query($sql1)&&$PDO_conex->query($sql2)){
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+                
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+            
+        }
+        
+        /*Desativar o registro no BD*/
+        public function DesativarPorId($dados_unidade){
+            //$sql1 = "UPDATE tbl_unidade set status=0";
+            $sql = "UPDATE tbl_unidade set status=0 WHERE id_unidade=".$dados_unidade->id_unidade;
+            
+            //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
                 
@@ -182,8 +210,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         
         /*DELETAR*/
-        public function Deletar($home){
-            $sql="UPDATE tbl_unidade set ativo=0 WHERE id_unidade=".$home->id_home;
+        public function Deletar($dados_unidade){
+            $sql="UPDATE tbl_unidade set ativo=0 WHERE id_unidade=".$dados_unidade->id_unidade;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
