@@ -123,7 +123,7 @@
 }
 
 .procedimento_inf{
-    width:30%;
+    width:29%;
     height: 200px;
     float: left;
     font-family: sans-serif;
@@ -146,13 +146,13 @@
 }
 
 .opcoes_convenio{
-      width: 14%;
+      width: 17%;
       height: 200px;
       float: left;
 }
 
 .alinha_direita{
-      width: 50%;
+      width: 33%;
       height: 200px;
       float: left;
 }
@@ -163,7 +163,7 @@
 }
 
 .alinha_esquerda{
-      width: 49%;
+      width: 33%;
       height: 200px;
       float: left;
 }

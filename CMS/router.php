@@ -251,6 +251,13 @@
 
 		                    break;
 
+										case 'ativar':
+		                    $controller_gerenciamento_ambiente = new controller_exame();
+
+		                    $controller_gerenciamento_ambiente::Ativar();
+
+		                    break;
+
 		                case 'deletar':
 
 		                    //if(confirm('Deseja realmente excluir?')){

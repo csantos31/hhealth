@@ -76,19 +76,41 @@ class controller_exame{
 
             // Instancia a classe $convenios
             $exames = new Exame();
-            $exames->id_exame=$id_exame;
+            $exames->id_exame = $id_exame;
 
             // Chama o metodo para selecionar os registros
             $exames::DesativarPorId($exames);
       }
 
-      public function Deletar(){
+      public function Ativar(){
+
+            $id_exame = $_GET['id'];
+
+            require_once ('model_cms/gerenciamento_exames_class.php');
+            require_once ('model_cms/bd_class.php');
+            require_once ('modulo_img.php');
 
             // Instancia a classe $convenios
             $exames = new Exame();
+            $exames->id_exame = $id_exame;
 
             // Chama o metodo para selecionar os registros
-            return $examess::Deletar();
+            $exames::AtivarPorId($exames);
+      }
+
+      public function Deletar(){
+        $id_exame = $_GET['id'];
+          echo $id_exame;
+        require_once ('model_cms/gerenciamento_exames_class.php');
+        require_once ('model_cms/bd_class.php');
+        require_once ('modulo_img.php');
+
+        // Instancia a classe $convenios
+        $exames = new Exame();
+        $exames->id_exame = $id_exame;
+
+        // Chama o metodo para selecionar os registros
+        $exames::Deletar($exames);
       }
 }
 

@@ -49,7 +49,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
   		public function Select(){
   			//Query para selecionar a tabela contatos
-  			$sql="SELECT * FROM tbl_exame WHERE status =1 ORDER BY id_exame DESC;";
+  			$sql="SELECT * FROM tbl_exame WHERE ativo=1 ORDER BY id_exame DESC;";
 
   			//Instancio o banco e crio uma variavel
   			$conex = new Mysql_db();
@@ -151,8 +151,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
       $conex->Desconectar();
     }
 
-    public function DesativarPorId($exames){
-        $sql1 = "UPDATE tbl_exame set status=0";
+    public function AtivarPorId($exames){
+      //  $sql1 = "UPDATE tbl_exame set status=0";
         $sql2 = "UPDATE tbl_exame set status=1 WHERE id_exame=".$exames->id_exame;
 
         //Instancio o banco e crio uma variavel
@@ -163,7 +163,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         $PDO_conex = $conex->Conectar();
 
         //Executa o script no banco de dados
-        if($PDO_conex->query($sql1)&&$PDO_conex->query($sql2)){
+        if($PDO_conex->query($sql2)){
           //Se der true redireciona a tela
           echo "<script>location.reload();</script>";
 
@@ -175,6 +175,58 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         //Fecha a conexão com o banco de dados
         $conex->Desconectar();
 
+    }
+
+    public function DesativarPorId($exames){
+      //  $sql1 = "UPDATE tbl_exame set status=0";
+        $sql2 = "UPDATE tbl_exame set status=0 WHERE id_exame=".$exames->id_exame;
+
+        //Instancio o banco e crio uma variavel
+        $conex = new Mysql_db();
+
+        /*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+        na variavel que $PDO_conex*/
+        $PDO_conex = $conex->Conectar();
+
+        //Executa o script no banco de dados
+        if($PDO_conex->query($sql2)){
+          //Se der true redireciona a tela
+          echo "<script>location.reload();</script>";
+
+        }else {
+          //Mensagem de erro
+          echo "Error atualizar no Banco de Dados";
+        }
+
+        //Fecha a conexão com o banco de dados
+        $conex->Desconectar();
+
+    }
+
+    public function Deletar($exames){
+        $sql="UPDATE tbl_exame set ativo=0 WHERE id_exame=".$exames->id_exame;
+        echo $sql;
+        //Instancio o banco e crio uma variavel
+        $conex = new Mysql_db();
+
+        /*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+        na variavel que $PDO_conex*/
+        $PDO_conex = $conex->Conectar();
+
+              //Executa o script no banco de dados
+        if($PDO_conex->query($sql)){
+          //Se der true redireciona a tela
+          echo "<script>confirm('Deseja realmente excluir?');</script>";
+                  echo "<script>location.reload();</script>";
+
+        }else {
+          //Mensagem de erro
+          echo "Error atualizar no Banco de Dados";
+                  echo $sql;
+        }
+
+              //Fecha a conexão com o banco de dados
+        $conex->Desconectar();
     }
 }
  ?>
