@@ -5,7 +5,31 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_trabalhe_conosco.css">
+            <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
             <title>Hospital HHealth</title>
+            <script>
+
+                $(document).ready(function() {
+                   $('#form').submit(function(event){
+                        event.preventDefault();
+                        $.ajax({
+                        type: "POST",
+                        url: "../router.php?controller=trabalhe_conosco&modo=inserir",
+                        //alert (url);
+                        data: new FormData($("#form")[0]),
+                        cache:false,
+                        contentType:false,
+                        processData:false,
+                        async:true,
+                        success: function(dados){
+                             $('.suporte_content').html(dados);
+                             //alert(dados);
+                        }
+                      });
+                  });
+              });
+
+           </script>
       </head>
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->
@@ -21,7 +45,7 @@
                            </div>
                            <div class="faixa1">
                                  <div class="formtrabalheconosco">
-                                       <form class="form_trabalheconosco" action="index.html" method="post">
+                                       <form class="form_trabalheconosco" id="form" action="index.html" method="post">
                                              <div class="linha1">
                                                    <div class="txt_nome">
                                                          Nome Completo:
@@ -54,10 +78,10 @@
                                              </div>
                                              <div class="linha_sexo">
                                                    <div class="txtsexo">
-                                                         Data de Nascimento:
+                                                            Sexo:
                                                    </div>
                                                    <input type="radio" name="rdosexo" value="F" >Feminino
-					                     <input type="radio" name="rdosexo" value="M" >Masculino
+					                                          <input type="radio" name="rdosexo" value="M" >Masculino
                                              </div>
                                              <div class="linhapais">
                                                    <div class="txt_pais">
@@ -72,13 +96,12 @@
                                              </div>
                                              <div class="linhaestadoCivil">
                                                    <div class="txt_estadoCivil">
-                                                        País de Origem:
+                                                        Estado civil
                                                    </div>
                                                    <select class="sltestadoCivil" name="sltestadoCivil">
-                                                         <option value="">Selecione um país</option>
-                                                         <option value="1">Teste 1</option>
-                                                         <option value="2">Teste 2</option>
-                                                         <option value="3">Teste 3</option>
+                                                         <option value="">Selecione</option>
+                                                         <option value="1">Casado</option>
+                                                         <option value="2">Solteiro</option>
                                                    </select>
                                              </div>
                                              <div class="linhacep">
@@ -115,7 +138,7 @@
                                                    <div class="txt_estado">
                                                         Estado:
                                                    </div>
-                                                   <select class="sltestado" name="">
+                                                   <select class="sltestado" name="sltEstado">
                                                          <option value="">Selecione um Estado</option>
                                                          <option value="1">Teste 1</option>
                                                          <option value="2">Teste 2</option>
@@ -138,7 +161,7 @@
                                                    <div class="txt_statusDeficiencia">
                                                         Possui alguma deficiência?
                                                    </div>
-                                                   <select class="sltstatusDeficiencia" name="">
+                                                   <select class="sltstatusDeficiencia" name="sltstatusDeficiencia">
                                                          <option value="">Selecione</option>
                                                          <option value="1">Sim</option>
                                                          <option value="2">Não</option>

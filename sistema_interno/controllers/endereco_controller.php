@@ -74,7 +74,7 @@
 		public function Editar(){
 
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idEndereco = $_GET['id'];
+			$idEndereco = $_GET['id_end'];
 
 			//INSTANCIA A CLASSE CONTATO
 			$endereco = new Endereco();

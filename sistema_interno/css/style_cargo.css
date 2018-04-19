@@ -1,0 +1,83 @@
+p{
+    margin-left: 18%;
+    text-align: justify;
+    margin-top: 10px;
+    font-family: verdana, arial, 'sans-serif';
+    font-weight: 900;
+    color: #333;
+}
+
+#container_cad_especialidade{
+    width: 100%;
+    min-height: 300px;
+    overflow: auto;
+    padding: 16px;
+    border: solid 1px #333;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px 5px #999;
+}
+
+.col_1{
+    width: 20%;
+    height: 250px;
+    margin-top: 15px;
+    float: left;
+}
+
+.col_1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.col_2{
+    width: 100%;
+    min-height: 400px;
+    overflow: hidden;
+    margin-top: 50px;
+   
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px #333;
+}
+
+/*TABELA PACIENTES PENDENTES*/
+.titulo_tabela{
+    width: 100%;
+    height: 35px;
+    border: solid 1px #333;
+}
+
+.lb_titulo{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    font-weight: bold;
+}
+
+.linha_tabela{
+    width: 100%;
+    min-height: 60px;
+   height: auto;
+}
+
+.item_tabela{
+    width: 33.33%;
+    min-height: 60px;
+    height: auto;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    border-bottom:solid 1px #999;
+    padding-bottom: 5px;
+}
+
+.item_tabela img{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+}
+

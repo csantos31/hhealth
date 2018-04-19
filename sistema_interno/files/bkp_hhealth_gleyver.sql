@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -523,7 +523,7 @@ CREATE TABLE `tbl_exame` (
   `procedimento` text,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_exame`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -532,6 +532,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
+INSERT INTO `tbl_exame` VALUES (1,'Teste',NULL,'teste2                                \r\n                            \r\n                            ',NULL,1,'teste teste2                     \r\n                            ',0),(2,'Cardiologista',NULL,'Cuida do coração',NULL,1,'Jejum                ',1);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -546,12 +547,13 @@ CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `telefone` varchar(45) DEFAULT NULL,
-  `celular` varchar(45) DEFAULT NULL,
+  `telefone` text,
+  `celular` text,
   `assunto` varchar(45) DEFAULT NULL,
-  `mensagem` varchar(45) DEFAULT NULL,
+  `mensagem` text,
+  `ativo` char(1) DEFAULT NULL,
   PRIMARY KEY (`id_fale_conosco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -560,6 +562,7 @@ CREATE TABLE `tbl_fale_conosco` (
 
 LOCK TABLES `tbl_fale_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_fale_conosco` DISABLE KEYS */;
+INSERT INTO `tbl_fale_conosco` VALUES (1,'fdasfdas','dfsa@dfs','21341234','23414321','fdasf','asdfadfasd','1'),(2,'fdasfdas','dfsa@dfs','21341234','23414321','fdasf','dsafd asdasfasd dsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasddsafd asdasfasd','0');
 /*!40000 ALTER TABLE `tbl_fale_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1189,7 +1192,7 @@ CREATE TABLE `tbl_slide_saude` (
 
 LOCK TABLES `tbl_slide_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_slide_saude` DISABLE KEYS */;
-INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/cirurgia.jpg',1,1);
+INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/cirurgia.jpg',0,1);
 /*!40000 ALTER TABLE `tbl_slide_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1446,4 +1449,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-17 11:16:00
+-- Dump completed on 2018-04-19 11:08:27

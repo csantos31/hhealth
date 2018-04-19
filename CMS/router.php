@@ -230,14 +230,14 @@
 		        case 'exame':
 		            require_once('controller_cms/gerenciamento_exame_controller.php');
 		            switch($modo){
-		                case 'inserir':
-							// Instanciando a classe da controller
-							$controller_gerenciamento_ambiente =  new controller_exame();
-							//Chama o metodo Novo da controller
+		            	case 'inserir':
+										// Instanciando a classe da controller
+										$controller_gerenciamento_ambiente =  new controller_exame();
+										//Chama o metodo Novo da controller
 
-							$controller_gerenciamento_ambiente::Novo();
+										$controller_gerenciamento_ambiente::Novo();
 
-							break;
+									break;
 
 		                case 'editar':
 
@@ -332,9 +332,9 @@
 
                     case 'editar':
 
-										$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                            $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-										$controller_gerenciamento_slide_saude::Editar();
+                            $controller_gerenciamento_slide_saude::Editar();
 
                         break;
 
@@ -346,18 +346,18 @@
                         break;
 
                     case 'desativar':
-												$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                        $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-												$controller_gerenciamento_slide_saude::Desativar();
+                        $controller_gerenciamento_slide_saude::Desativar();
 
                         break;
 
                     case 'deletar':
 
                         //if(confirm('Deseja realmente excluir?')){
-												$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                        $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-												$controller_gerenciamento_slide_saude::Deletar();
+                        $controller_gerenciamento_slide_saude::Deletar();
                         //}
 
                         break;
@@ -439,59 +439,65 @@
 
 				case 'editar':
 				// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Editar();
+					$controller_endereco::Editar();
+                    
+                // Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Editar();
+					break;
+                    
+                case 'ativar':
+					
+                    
+                // Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Ativar();
+					break;
+                    
+                case 'desativar':
+					// Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Desativar();
 					break;
 
-				case 'excluir':
+				case 'deletar':
 					// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Excluir();
+					$controller_unidade::Deletar();
 					break;
 			}
 
 			break;
 
-            case 'fale_conosco':
-            require_once('controller_cms/contatos_controller.php');
-			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
-			switch ($modo) {
 
-				case 'buscar_id':
-					// Instanciando a classe da controller
-					//Chama o metodo Novo da controller
-                    $controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Buscar();
+	  	case 'fale_conosco':
+    		require_once('controller_cms/contatos_controller.php');
+				// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+				switch ($modo) {
 
+					case 'buscar_id':
+						// Instanciando a classe da controller
+						//Chama o metodo Novo da controller
+		        $controller_contatos =  new controllerContatos();
+						//Chama o metodo Novo da controller
+						$controller_contatos::Buscar();
 
-					break;
+						break;
 
+					case 'deletar':
+						// Instanciando a classe da controller
+						$controller_contatos =  new controllerContatos();
+						//Chama o metodo Novo da controller
+						$controller_contatos::Deletar();
 
-				case 'editar':
-				    // Instanciando a classe da controller
-					$controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Editar();
-					break;
-
-				case 'deletar':
-					// Instanciando a classe da controller
-					$controller_contatos =  new controllerContatos();
-					//Chama o metodo Novo da controller
-					$controller_contatos::Deletar();
-					break;
-
-
-                case 'desativar':
-                    $controller_contatos = new controllerContatos();
-
-                    $controller_contatos::Desativar();
-
-                    break;
-                }
+						break;
+					}
 			break;
 
             /*
