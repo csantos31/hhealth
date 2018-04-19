@@ -25,30 +25,15 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['id'];
         
-        require_once("../../controller_cms/gerenciamento_home_controller.php");/*da um require na nivel_controller*/
-        require_once("../../model_cms/gerenciamento_home_class.php");/*da um require na nivel_class*/
         
-        // Instancio a controller
-        //$controller_nivel  = new controllerNivel();
-
-        //Chama o metodo para Listar todos os registros
-        //$list = $controller_nivel::Listar();
-        /*
-        if(isset($niv)){
-            //$action = "modo=editar&id=". $niv->id_nivel;
-            $nome = $niv->nome;
-            $descricao = $niv->descricao;
-            
-
-        }else{
-            echo($nome);
-        }
-        */
+        /*Declara unidade*/
+        require_once("../../controller_cms/unidade_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/unidade_class.php");/*da um require na nivel_class*/
         
-        $controller_home = new controller_home();
+        $controller_home = new controller_unidade();
         $list = $controller_home::Buscar();
         
-        $slide1=$list->slide1;
+        $imagem=$list->slide1;
         $slide2=$list->slide2;
         $slide3=$list->slide3;
         $frase=$list->frase;

@@ -38,24 +38,24 @@
         
         public function Listar(){
 			//Instancia da classe contatos
-			$home = new Home();
+			$unidade = new Unidade();
 
 			//Chama o método para selecionar os registros
-			return $home::Select();
+			return $unidade::Select();
 		}
         
         public function Buscar(){
-            $idHome = $_GET['id'];
+            $idUnidade = $_GET['id'];
             
-            $home = new Home();
+            $unidade = new Unidade();
             
-            $home->id_home=$idHome;
+            $unidade->id_unidade=$idUnidade;
            
-            $hom = $home::SelectById($home);
+            $uni = $unidade::SelectById($unidade);
             
             
             
-            return $hom;
+            return $uni;
         }
         
         public function Editar(){
