@@ -122,7 +122,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				$ambiente = new Ambiente();
 
 				$ambiente->id_ambiente = $rs['id_ambiente'];
-<<<<<<< HEAD
+
                         $ambiente->titulo = $rs['titulo'];
                         $ambiente->texto = $rs['texto'];
                         $ambiente->imagem = $rs['imagem'];
@@ -132,8 +132,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                         $ambiente->imagem5 = $rs['imagem5'];
                         $ambiente->imagem6 = $rs['imagem6'];
                         $ambiente->status = $rs['status'];
-                        $ambiente->ativo = $rs['ativo'];
-=======
+
                 $ambiente->titulo = $rs['titulo'];
                 $ambiente->texto = $rs['texto'];
 				$ambiente->imagem = $rs['imagem'];
@@ -144,7 +143,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $ambiente->imagem6 = $rs['imagem6'];
                 $ambiente->status = $rs['status'];
                 $ambiente->ativo = $rs['ativo'];
->>>>>>> 7e1ccd226a6a3eabce6d1847bf7155c387a096e3
+
 
 				return $ambiente;
 
@@ -158,12 +157,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
 
         public function Update($ambiente){
-<<<<<<< HEAD
+
 			$sql = "UPDATE tbl_ambiente set titulo = '".$ambiente->titulo."', texto = '".$ambiente->titulo. "',imagem = '".$ambiente->imagem. "',imagem2 = '".$ambiente->imagem2. "',imagem3 = '".$ambiente->imagem3. "',imagem4 = '".$ambiente->imagem4. "',imagem5 = '".$ambiente->imagem5. "',imagem6 = '".$ambiente->imagem6. "' WHERE id_ambiente =".$ambiente->id_ambiente;
 
-=======
+
     			$sql = "UPDATE tbl_ambiente set titulo = '".$ambiente->titulo."', texto = '".$ambiente->titulo. "',imagem = '".$ambiente->imagem. "',imagem2 = '".$ambiente->imagem2. "',imagem3 = '".$ambiente->imagem3. "',imagem4 = '".$ambiente->imagem4. "',imagem5 = '".$ambiente->imagem5. "',imagem6 = '".$ambiente->imagem6. "' WHERE id_ambiente =".$ambiente->id_ambiente;
->>>>>>> 7e1ccd226a6a3eabce6d1847bf7155c387a096e3
+
 
 
     		      echo $sql;

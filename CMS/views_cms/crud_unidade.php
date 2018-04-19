@@ -61,7 +61,7 @@ include($caminho.'../verifica.php');
             function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"modals/modal_home.php",
+                    url:"modals/modal_unidade.php",
                     data:{modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -134,14 +134,14 @@ include($caminho.'../verifica.php');
                             <?php
 
                                 // Incluindo a controller e a model para serem utilizadas
-                                include_once($caminho . '../controller_cms/gerenciamento_home_controller.php');
-                                include_once($caminho .'../model_cms/gerenciamento_home_class.php');
+                                include_once($caminho . '../controller_cms/unidade_controller.php');
+                                include_once($caminho .'../model_cms/unidade_class.php');
 
                                 // Instancio a controller
-                                $controller_gerenciamento_home =  new controller_home();
+                                $controller_unidade =  new controller_unidade();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_gerenciamento_home::Listar();
+                                $list = $controller_unidade::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
@@ -156,7 +156,7 @@ include($caminho.'../verifica.php');
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
 
                                 <div class="imagem_conteudo"><!--imagem-->
-                                    <img src="../<?php echo($list[$cont]->slide1)?>">
+                                    <img src="../<?php echo($list[$cont]->imagem)?>">
                                 </div>
 
                                 <div class="content_opcoes"><!--content das opções-->
@@ -179,11 +179,11 @@ include($caminho.'../verifica.php');
                                             <a><?php echo($ativar)?></a>
                                         </div>
 
-                                            <div class="icon_opcoes">
-                                                <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_home);?>)">
-                                                    <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
-                                                </a>
-                                            </div>
+                                        <div class="icon_opcoes">
+                                            <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_unidade);?>)">
+                                                <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
+                                            </a>
+                                        </div>
 
                                     </div>
 
@@ -197,7 +197,7 @@ include($caminho.'../verifica.php');
                                         </div>
 
                                         <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_home);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_unidade);?>)">
 
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
@@ -210,7 +210,7 @@ include($caminho.'../verifica.php');
                                         </div>
 
                                         <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_home);?>)">
+                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list[$cont]->id_unidade);?>)">
                                                 <img  src="<?=$caminho?>imagens/shutdown.png">
                                             </a>
                                         </div>

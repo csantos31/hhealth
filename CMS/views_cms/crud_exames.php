@@ -75,6 +75,18 @@
 
                 });
            }
+           function Ativar(IdIten){
+               //anula a ação do submit tradicional "botao" ou F5
+               event.preventDefault();
+               $.ajax({
+                   type:"GET",
+                   data: {id:IdIten},
+                   url: "../router.php?controller=exame&modo=ativar&id="+IdIten,
+                   success: function(dados){
+                       $('.conteudo_tabela').html(dados);
+                   }
+               });
+           }
 
            //Desativar
            function Desativar(IdIten){
@@ -85,7 +97,7 @@
                    data: {id:IdIten},
                    url: "../router.php?controller=exame&modo=desativar&id="+IdIten,
                    success: function(dados){
-                       $('.alinha_esquerda').html(dados);
+                       $('.conteudo_tabela').html(dados);
                    }
                });
            }
@@ -100,7 +112,7 @@
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
-                    url: "../router.php?controller=especialidade&modo=excluir&id="+idIten,
+                    url: "../router.php?controller=exame&&modo=deletar&id="+idIten,
                     success: function(dados){
                         console.log(dados);
                         $('.modal').html(dados);
@@ -175,9 +187,18 @@
 
                                       while ($cont < count($list)) {
                                             # code...
-                                            $ativo=$list[$cont]->status;
-                                            if($status==1){
-                                            }
+
+                                            $ativo=$list[$cont]->ativo;
+                                            $status=$list[$cont]->status;
+                                            if($ativo==1){
+                                                //$list[$cont]->slide1=null;
+                                                if($status==1){
+                                                    $Desativar="Desativar";
+                                                }else{
+                                                    $Desativar="Ativar";
+                                                }
+
+
                                 ?>
                                <div class="conteudo_tabela">
                                      <div class="nome_convenio">
@@ -197,8 +218,13 @@
                                             </a>
                                            </div>
                                            <div class="alinha_esquerda">
-                                               <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_exame);?>)">
+                                               <a href="#" class="desativar" onclick="<?= $Desativar ?>(<?php echo($list[$cont]->id_exame);?>)">
                                                  <img src="../../sistema_interno/imagens/shutdown.png" alt="">
+                                               </a>
+                                           </div>
+                                           <div class="alinha_esquerda">
+                                               <a href="#" class="desativar" onclick="Excluir(<?php echo($list[$cont]->id_exame);?>)">
+                                                 <img src="../../sistema_interno/imagens/icons8-lixo-52.png" alt="">
                                                </a>
                                            </div>
                                      </div>
@@ -206,7 +232,8 @@
                                <?php
 
                                    $cont +=1;
-                                     }
+                                 }
+                                 }
                                 ?>
 
                          </div>

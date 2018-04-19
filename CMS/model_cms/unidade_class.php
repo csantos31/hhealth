@@ -48,7 +48,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_home ORDER BY id_home DESC;";
+			$sql="SELECT * FROM tbl_unidade ORDER BY id_unidade DESC;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -66,16 +66,14 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-				$lista_home[] = new Home();
+				$lista_unidade[] = new Unidade();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_home[$cont]->id_home = $rs['id_home'];
-				$lista_home[$cont]->slide1 = $rs['slide1'];
-				$lista_home[$cont]->slide2 = $rs['slide2'];
-                $lista_home[$cont]->slide3 = $rs['slide3'];
-                $lista_home[$cont]->frase = $rs['frase'];
-                $lista_home[$cont]->status = $rs['status'];
-                $lista_home[$cont]->ativo = $rs['ativo'];
+				$lista_unidade[$cont]->id_unidade = $rs['id_unidade'];
+				$lista_unidade[$cont]->imagem = $rs['imagem'];
+				$lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
+                $lista_unidade[$cont]->status = $rs['status'];
+                $lista_unidade[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -83,17 +81,17 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 			$conex::Desconectar();
 
-			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_home)) {
+			//Apenas retorna o $list_contatos se existir dados no banco de dados
+			if (isset($lista_unidade)) {
 				# code...
-				return $lista_home;
+				return $lista_unidade;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
-		public function SelectById($home){
-			$sql = "SELECT * FROM tbl_home WHERE id_home =". $home->id_home;
+		public function SelectById($dados_unidade){
+			$sql = "SELECT * FROM tbl_unidade WHERE id_unidade =". $dados_unidade->id_unidade;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -109,17 +107,16 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				//Se der true redireciona a tela
               
                 
-				$home = new Home();
+				$unidade = new Unidade();
 
-				$home->id_nivel = $rs['id_home'];
-				$home->slide1 = $rs['slide1'];
-				$home->slide2 = $rs['slide2'];
-                $home->slide3 = $rs['slide3'];
-                $home->frase = $rs['frase'];
-                $home->status = $rs['status'];
-                $home->ativo = $rs['ativo'];
+				$unidade->id_unidade = $rs['id_unidade'];
+				$unidade->imagem = $rs['imagem'];
+				$unidade->nome_unidade = $rs['nome_unidade'];
+                $unidade->status = $rs['status'];
+                $unidade->ativo = $rs['ativo'];
+
 				
-				return $home;
+				return $unidade;
 
 			}else {
 				//Mensagem de erro
@@ -130,8 +127,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			$conex->Desconectar();
 		}
         
-        public function Update($home){
-			$sql = "UPDATE tbl_home set slide1 = '".$home->slide1."', slide2 = '".$home->slide2. "',slide3 = '".$home->slide3. "',frase = '".$home->frase. "' WHERE id_home =".$home->id_home;
+        public function Update($dados_unidade){
+			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."', nome_unidade = '".$dados_unidade->nome_unidade."' WHERE id_home =".$dados_unidade->id_unidade;
 		
 
 		      echo $sql;
@@ -157,9 +154,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
         
         /*Desativar o registro no BD*/
-        public function DesativarPorId($home){
-            $sql1 = "UPDATE tbl_home set status=0";
-            $sql2 = "UPDATE tbl_home set status=1 WHERE id_home=".$home->id_home;
+        public function DesativarPorId($dados_unidade){
+            $sql1 = "UPDATE tbl_unidade set status=0";
+            $sql2 = "UPDATE tbl_unidade set status=1 WHERE id_unidade=".$dados_unidade->id_unidade;
             
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -186,7 +183,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         /*DELETAR*/
         public function Deletar($home){
-            $sql="UPDATE tbl_home set ativo=0 WHERE id_home=".$home->id_home;
+            $sql="UPDATE tbl_unidade set ativo=0 WHERE id_unidade=".$home->id_home;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
