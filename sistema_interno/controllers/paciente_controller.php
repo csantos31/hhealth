@@ -1,7 +1,7 @@
 <?php
 
     class controllerPaciente{
-       public function Novo(){
+       public function Novo($id_endereco){
 			require_once('modulo_img.php');
 
             //Instancia da classe Contato
@@ -27,7 +27,7 @@
 
 			//Carregando os dados digitados pelo usuário nos atributos da classe
 			$paciente->id_convenio = $_POST['slt_convenio'];
-            $paciente->id_endereco = $_POST['id_endereco'];
+            $paciente->id_endereco = $id_endereco;
             $paciente->nome = $_POST['txt_nome'];
             $paciente->sobrenome = $_POST['txt_sobrenome'];
             $paciente->dt_nasc = $_POST['txt_dt_nasc'];
