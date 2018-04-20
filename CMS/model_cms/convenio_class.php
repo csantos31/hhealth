@@ -111,7 +111,7 @@
                     //Se der true redireciona a tela
                     $convenio = new Convenio();
 
-                    $convenio->id_conenio = $rs['id_exame'];
+                    $convenio->id_conenio = $rs['id_convenio'];
                     $convenio->titulo = $rs['titulo'];
                     $convenio->texto = $rs['texto'];
                     $convenio->imagem = $rs['imagem'];
@@ -132,10 +132,12 @@
 
             public function Update($convenio){
 
-                  $sql1 = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
+                  $sql = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
                   imagem='".$convenio->imagem."', status_imagem='".$convenio->status_imagem."', ativo='".$convenio->ativo."' WHERE id_convenio=".$convenio->id_convenio;
 
-                  echo($sql1);
+                  echo($sql);
+
+                  echo($convenio->titulo);
 
                   //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

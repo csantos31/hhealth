@@ -124,7 +124,7 @@ if(isset($_GET['modo'])){
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CONVÊNIO" name="txt_texto" id="txt_texto" style="resize:none;"><?= $texto ?></textarea>
+                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CONVÊNIO" name="txt_texto" id="txt_texto" style="resize:none;"><?= $id ?></textarea>
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
