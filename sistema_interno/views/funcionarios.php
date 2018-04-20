@@ -3,11 +3,8 @@
         <title>Sistema Interno HHealth</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_paciente.css">
-
+        <link rel="stylesheet" type="text/css" href="../css/style_funcionarios.css">
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-
-
         <script>/*Modal*/
             $(document).ready(function(){
                 
@@ -161,7 +158,7 @@
                             <img src="../imagens/add.png">
                         </a>
                     </div>
-                    <p>Pacientes</p>
+                    <p>Funcionários</p>
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">NOME</div>
@@ -171,13 +168,13 @@
 
                         <?php
 
-                            include_once('../controllers/paciente_controller.php');
-                            include_once('../models/paciente_class.php');
+                            include_once('../controllers/funcionario_controller.php');
+                            include_once('../models/funcionario_class.php');
 
-                                $controller_paciente  = new controllerPaciente();
+                                $controller_funcionario  = new controllerFuncionario();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_paciente::Listar();
+                                $list = $controller_funcionario::Listar();
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
@@ -185,36 +182,12 @@
                         ?>
                                     <div class="linha_tabela">
                                         <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
-                                        <div class="item_tabela"><img src="../<?= $list[$cont]['foto']?>" alt="imaagem do paciente" title="imagem do paciente"></div>
+                                        <div class="item_tabela"><?= $list[$cont]['cpf'] ?> </div>
                                         <div class="item_tabela icones_tabela">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_funcionario']);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="alterar_perfil" id="EditarPerfil<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
-                                                <img src="../imagens/alter_prof.png" alt="alterar perfil" title="alterar perfil">
-                                                <div class="div_change_profille">
-                                                    <div class="modal_superior">
-                                                        <labe>Alterar Imagem do perfil</labe>
-                                                    </div>
-                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_foto<?= $list[$cont]['id_paciente'] ?>">
-                                                        <input type="file" name="foto" id="foto">
-                                                        <input class="btn" type="submit" value="Enviar" name="btn_salva">
-                                                    </form>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="alterar_carteirinha" id="EditarCarteirinha<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarCarteirinha(this,<?php echo($list[$cont]['id_paciente']);?>)">
-                                                <img src="../imagens/alter_card.png" alt="alterar carteirinha" title="alterar carteirinha">
-                                                <div class="div_change_carteirinha">
-                                                    <div class="modal_superior">
-                                                        <labe>Alterar Carteirinha</labe>
-                                                    </div>
-                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_card<?= $list[$cont]['id_paciente'] ?>">
-                                                        <input type="file" name="carteirinha_convenio" id="carteirinha_convenio">
-                                                        <input class="btn" type="submit" value="Enviar" name="btn_salva">
-                                                    </form>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_funcionario']);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>
