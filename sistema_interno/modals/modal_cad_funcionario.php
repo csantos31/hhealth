@@ -1,19 +1,17 @@
 <?php
 //$action = "modo=inserir";
 $id="0";
-$paciente=null;
-
+$funcionario=null;
 $nome =  null;
 $dt_nasc =  null;
 $sobrenome =  null;
-$foto1 =  null;
-$foto2 =  null;
+$rg = null;
+$cpf = null;
+$id_cargo = null;
 $logradouro =  null;
 $cidade =  null;
 $bairro = null;
 $cep = null;
-$rg = null;
-$cpf = null;
 $numero = null;
 
 if(isset($_GET['modo'])){
@@ -21,22 +19,20 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
 
-        require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/paciente_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/funcionario_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/funcionario_class.php");/*da um require na nivel_class*/
         require_once("../controllers/endereco_controller.php");
-        require_once("../models/paciente_class.php");
+        require_once("../models/endereco_class.php");
         // Instancio a controller
-        $controller_paciente  = new controllerPaciente();
+        $controller_funcionario  = new controllerFuncionario();
         //Chama o metodo para Listar todos os registros
-        $list = $controller_paciente::Buscar($id);
+        $list = $controller_funcionario::Buscar($id);
 
         $nome = $list['nome'];
         $dt_nasc = $list['dt_nasc'];
         $sobrenome = $list['sobrenome'];
         $rg = $list['rg'];
         $cpf = $list['cpf'];
-        $foto1 = $list['foto'];
-        $foto2 = $list['carterinha_convenio'];
         $logradouro = $list['logradouro'];
         $cidade = $list['cidade'];
         $bairro = $list['bairro'];
@@ -59,23 +55,14 @@ if(isset($_GET['modo'])){
             });
         </script>
     </head>
-
     <body>
-
          <script>
-             
               var id = $("#form").data("id");
               var modo = "";
               if(id == '0'){
                   modo='inserir';
-                document.getElementById('photo_profile').style.display = 'block';
-                    document.getElementById('foto_convenio').style.display = 'block';
-                    //document.getElementById('meu_num').style.marginLeft = '150px';
               } else{
                   modo='editar';
-                    document.getElementById('photo_profile').style.display = 'none';
-                    document.getElementById('foto_convenio').style.display = 'none';
-                    document.getElementById('meu_num').style.marginLeft = '160px';
               }
              
              
@@ -90,7 +77,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=paciente&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=funcionario&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -116,7 +103,7 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Paciente</a>
+                            <a>Funcionários</a>
                         </div>
                     </div>
                     <div class="content_campos"><!--content dos campos de cadastro-->
@@ -148,26 +135,22 @@ if(isset($_GET['modo'])){
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                               <label>Convênio :</label>
-                                <select id="slt_cargo" class="input_med2" name="slt_convenio">
-                                    <option value="1">Convênio I</option>
-                                    <option value="2">Convênio II</option>
-                                    <option value="3">Convênio III</option>
-                                    <option value="4">Convênio IV</option>
-                                    <option value="5">Convênio V</option>
+                               <label>Cargo :</label>
+                                <select id="slt_cargo" class="input_med" name="slt_estado">
+                                  <?php
+                                  include_once('../controllers/cargo_controller.php');
+                                  include_once('../models/cargo_class.php');
+                                  $controller_cargo  = new controllerCargo();
+                                  $list = $controller_cargo::Listar();
+                                  $cont = 0;
+                                  while ($cont < count($list)) {
+                                  ?>
+                                      <option value="<?= $list[$cont]['id_cargo'] ?>"><?= $list[$cont]['cargo'] ?></option>
+                                  <?php
+                                    $cont +=1;
+                                  }
+                                    ?>
                                 </select>
-                            </div>
-                        </div>
-                        <div id="photo_profile" class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
-                                <b>Selecione uma imagem para este paciente :</b>
-                                <input type="file" name="fle_foto1" id="file_paciente">
-                            </div>
-                        </div>
-                        <div id="foto_convenio" class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
-                                <b>Insira a imagem comprovante do convênio:</b>
-                                <input type="file" name="fle_foto2" id="file_convenio">
                             </div>
                         </div>
                         <div class="campo_p" style="width:200px;"><!--campos--> <!--nome-->

@@ -159,7 +159,7 @@ if(isset($_GET['modo'])){
                         
                         <div class="campo">
                             <div class="content_file">
-                              <input  type="file" name="fle_img_home1" >
+                              <input  type="file" name="fle_img_home1" >">
                             </div>
                             
                             <div class="content_preview">

@@ -1,0 +1,7 @@
+tabelas para deletar
+
+DIGITE DO MESMO JEITO Q ESTA AKI PRA NÃO DELETAR A TABELA ERRADA SEU ANIMAL
+
+
+tbl_dicas_saude
+

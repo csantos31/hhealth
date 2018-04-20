@@ -121,9 +121,11 @@ a{
 /* suporte_itens  */
 .suporte_itens{
   width: 380px;
-  height: 44px;
+  min-height:300px;
+  height: auto;
   float: left;
   margin-left: 15px;
+  margin-bottom:10px;
 }
 
 .imagens{
