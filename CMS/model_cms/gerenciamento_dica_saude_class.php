@@ -81,14 +81,14 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				$cont+=1;
 			}
 
-			$conex::Desconectar();
+			
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
 			if (isset($lista_dica_saude)) {
 				# code...
 				return $lista_dica_saude;
 			}
-
+            $conex::Desconectar();
 		}
         
         /*Busca um registro especifico no BD*/
@@ -214,7 +214,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         /*DELETAR*/
         public function Deletar($dados_saude){
-            $sql="UPDATE tbl_dica_saude set ativo=0 WHERE id_dica_saude=".$dados_saude->id_dica_saude;
+            $sql="UPDATE tbl_dica_saude set ativo=0, status=0 WHERE id_dica_saude=".$dados_saude->id_dica_saude;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

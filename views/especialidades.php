@@ -15,12 +15,24 @@
 
             </div>
             <div class="content">
+                <?php
+                include_once("../sistema_interno/models/especialidade_class.php");
+                include_once("../sistema_interno/controllers/especialidade_controller.php");
+                
+                $controller_especialidade = new controllerEspecialidade();
+                $list = $controller_especialidade::Listar();
+                
+                $cont=0;
+                while($cont < count($list)){
+                    
+                
+                ?>
                   <div class="suporte_especialidades">
                        <div class="nome_especialidade">
-                              Cardiologia
+                              <?php echo($list[$cont]->especialidade);?>
                        </div>
                        <div class="suporte_imagem_especialidades">
-                              <img src="../imagens/cardiologia.jpg" alt="www.nursing.com.br/cardiologia/">
+                              <img src="../sistema_interno/<?php echo($list[$cont]->imagem)?>" alt="www.nursing.com.br/cardiologia/">
 
                        </div>
                        <a href="especialidade.php">
@@ -29,132 +41,10 @@
                          </div>
                        </a>
                   </div>
-                  <div class="suporte_especialidades">
-                       <div class="nome_especialidade">
-                              Dematologia
-                       </div>
-                       <div class="suporte_imagem_especialidades">
-                              <img src="../imagens/dermatologia.jpg" alt="www.vivasaude.digisa.com.br/clinica-geral/mutirao-de-dermatologia-oferece-atendimento-gratuito/6395/">
-
-                       </div>
-                       <a href="especialidade.php">
-                         <div class="mais_detalhes">
-                                + Detalhes
-                         </div>
-                       </a>
-                  </div>
-                  <div class="suporte_especialidades">
-                       <div class="nome_especialidade">
-                              Acupuntura
-                       </div>
-                       <div class="suporte_imagem_especialidades">
-                              <img src="../imagens/acupuntura.jpg" alt=""www.infoescola.com/medicina-alternativa/acupuntura/>
-
-                       </div>
-                       <a href="especialidade.php">
-                         <div class="mais_detalhes">
-                                + Detalhes
-                         </div>
-                       </a>
-                  </div>
-                  <div class="suporte_especialidades">
-                       <div class="nome_especialidade">
-                              Ortopedia
-                       </div>
-                       <div class="suporte_imagem_especialidades">
-                              <img src="../imagens/ortopedia.jpg" alt="www.brdiagnosticoeestetica.com.br/especialidade-medicas/ortopedia/">
-
-                       </div>
-                       <a href="especialidade.php">
-                         <div class="mais_detalhes">
-                                + Detalhes
-                         </div>
-                       </a>
-                  </div>
-                  <div class="suporte_especialidades">
-                       <div class="nome_especialidade">
-                              Endoscopia
-                       </div>
-                       <div class="suporte_imagem_especialidades">
-                              <img src="../imagens/endoscopia.jpg" alt="bolezni.zdorov.online/gastrojenterologija/pankreatit/analizy-pri-pankreatite/">
-
-                       </div>
-                       <a href="especialidade.php">
-                         <div class="mais_detalhes">
-                                + Detalhes
-                         </div>
-                       </a>
-                  </div>
-                  <div class="suporte_especialidades">
-                      <div class="nome_especialidade">
-                             Endocrinologia
-                      </div>
-                      <div class="suporte_imagem_especialidades">
-                             <img src="../imagens/endocrinologia.jpg" alt="clinicavittagoiania.com.br/especialidades/endocrinologia-2/">
-
-                      </div>
-                      <a href="especialidade.php">
-                        <div class="mais_detalhes">
-                               + Detalhes
-                        </div>
-                      </a>
-                 </div>
-                 <div class="suporte_especialidades">
-                      <div class="nome_especialidade">
-                             Fonoaudiologia
-                      </div>
-                      <div class="suporte_imagem_especialidades">
-                             <img src="../imagens/fonoaudiologia.jpg" alt="www.faculdadeunica.com.br/cursos/fonoaudiologia/">
-
-                      </div>
-                      <a href="especialidade.php">
-                        <div class="mais_detalhes">
-                               + Detalhes
-                        </div>
-                      </a>
-                 </div>
-                 <div class="suporte_especialidades">
-                      <div class="nome_especialidade">
-                             Ginecologia
-                      </div>
-                      <div class="suporte_imagem_especialidades">
-                             <img src="../imagens/ginecologia.jpg" alt="www.clinicadamama.com.br/importancia-ginecologista-na-vida-da-mulher/">
-
-                      </div>
-                      <a href="especialidade.php">
-                        <div class="mais_detalhes">
-                               + Detalhes
-                        </div>
-                      </a>
-                 </div>
-                 <div class="suporte_especialidades">
-                      <div class="nome_especialidade">
-                             Neurologia
-                      </div>
-                      <div class="suporte_imagem_especialidades">
-                             <img src="../imagens/neurologia.jpg" alt="saludyesteticacronos.com/neurologia/index.html">
-
-                      </div>
-                      <a href="especialidade.php">
-                        <div class="mais_detalhes">
-                               + Detalhes
-                        </div>
-                      </a>
-                 </div>
-                 <div class="suporte_especialidades">
-                      <div class="nome_especialidade">
-                             Oftalmologia
-                      </div>
-                      <div class="suporte_imagem_especialidades">
-                             <img src="../imagens/oftalmologia.jpg" alt="www.diariohuarpe.com/salud/como-detener-el-glaucoma-ladron-silencioso-de-la-vista/">
-
-                      </div>
-                      <a href="especialidade.php">
-                        <div class="mais_detalhes">
-                               + Detalhes
-                        </div>
-                      </a>
-                 </div>
+                <?php
+                    $cont++;
+                }
+                ?>  
             </div>
             <!-- Esse require adiciona o rodapé na página -->
             <?php require_once('footer.php'); ?>

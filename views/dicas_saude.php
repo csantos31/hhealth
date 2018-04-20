@@ -29,9 +29,27 @@
                      <p id="previous"><img src="../imagens/icons/seta-voltar.png"></p>
                      <div id="galeria">
                          <ul id="list">
-                             <li><img alt="celular" title="celular" class="image" src="../imagens/slide_2.jpg"></li>
-                             <li><img  alt="elevador" title="elevador" class="image" src="../imagens/img_login.jpg"></li>
-                             <li><img alt="suicidio" title="suicidio" class="image" src="../imagens/portada_doctuo.jpg"></li>
+                             <?php
+                             include_once("../CMS/controller_cms/gerenciamento_slide_saude_controller.php");
+                             include_once("../CMS/model_cms/gerenciamento_slide_saude_class.php");
+                             
+                             $controller_slide_saude = new controller_slide_saude();
+                             $list = $controller_slide_saude::Listar();
+                             
+                             
+                             $cont=0;
+                             while($cont<count($list)){
+                                 
+                                if($list[$cont]->status==1){
+                             ?>
+                             <li><img alt="celular" title="celular" class="image" src="../CMS/<?php echo($list[$cont]->slide)?>"></li>
+                             
+                             <?php
+                                }
+                                $cont++;
+                             }
+                             ?>
+                             
                          </ul>
                      </div>
                      <p id="next"><img src="../imagens/icons/seta-avancar.png"></p>
@@ -40,114 +58,40 @@
            </div>
 
            <div class="suporte_imagens_dicas">
+            <?php
+               include_once("../CMS/controller_cms/gerenciamento_dica_saude_controller.php");
+               include_once("../CMS/model_cms/gerenciamento_dica_saude_class.php");
+               
+               $controller_dica_saude = new controller_dica_saude();
+               $list = $controller_dica_saude::Listar();
+               $cont=0;
+               while($cont < count($list)){
+                   
+                   
+                   if($list[$cont]->status==1){
+                       
+                   
+               
+                ?>
              <div class="suporte_itens">
                <div class="imagens">
-                 <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
+                 <img src="../CMS/<?php echo($list[$cont]->imagem)?>" alt="" class="item_imagem">
                </div>
                <a href="dica_saude.php">
                  <div class="titulo_dicas">
                    <div class="suporte_titulo_dicas">
-                      Titulos dicas
+                      <?php echo($list[$cont]->titulo)?>
                    </div>
                  </div>
                </a>
              </div>
-             <div class="suporte_itens">
-               <div class="imagens">
-                 <img src="../imagens/dicas.png" alt="" class="item_imagem">
-               </div>
-               <a href="dica_saude.php">
-                 <div class="titulo_dicas">
-                   <div class="suporte_titulo_dicas">
-                     Titulos dicas
-                   </div>
-                 </div>
-               </a>
-             </div>
-             <div class="suporte_itens">
-               <div class="imagens">
-                 <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
-               </div>
-               <a href="dica_saude.php">
-                 <div class="titulo_dicas">
-                   <div class="suporte_titulo_dicas">
-                     Titulos dicas
-                   </div>
-                 </div>
-               </a>
-             </div>
-           </div>
-
-            <div class="suporte_imagens_dicas">
-              <div class="suporte_itens">
-                <div class="imagens">
-                  <img src="../imagens/dicas.png" alt="" class="item_imagem">
-                </div>
-                <a href="dica_saude.php">
-                  <div class="titulo_dicas">
-                    <div class="suporte_titulo_dicas">
-                      Titulos dicas
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="suporte_itens">
-                <div class="imagens">
-                  <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
-                </div>
-                <a href="dica_saude.php">
-                  <div class="titulo_dicas">
-                    <div class="suporte_titulo_dicas">
-                      Titulos dicas
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="suporte_itens">
-                <div class="imagens">
-                  <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
-                </div>
-                <a href="dica_saude.php">
-                  <div class="titulo_dicas">
-                    <div class="suporte_titulo_dicas">
-                      Titulos dicas
-                    </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-             <div class="suporte_imagens_dicas">
-               <div class="suporte_itens">
-                 <div class="imagens">
-                   <img src="../imagens/saude-bucal.png" alt="" class="item_imagem">
-                 </div>
-                 <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    Titulos dicas
-                  </div>
-                 </div>
-               </div>
-               <div class="suporte_itens">
-                 <div class="imagens">
-                   <img src="../imagens/5dicas.jpg" alt="" class="item_imagem">
-                 </div>
-                 <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    Titulos dicas
-                  </div>
-                 </div>
-               </div>
-               <div class="suporte_itens">
-                 <div class="imagens">
-                   <img src="../imagens/dicas.png" alt="" class="item_imagem">
-                 </div>
-                 <div class="titulo_dicas">
-                  <div class="suporte_titulo_dicas">
-                    <strong> Titulos dicas </strong>
-                  </div>
-                 </div>
-               </div>
+            <?php
+               }
+               $cont=$cont+1;
+               
+               }
+               
+               ?>
             </div>
           </div>
           <!-- Esse require adiciona o menu na página -->

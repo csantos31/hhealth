@@ -296,7 +296,7 @@ include($caminho.'../verifica.php');
                                         </div>
                                         
                                         <div class="icon_opcoes">
-                                            <a href="#" class="excluir" onclick="<?php echo($Desativar)?>(<?php echo($list_slide_saude[$cont1]->id_slide_saude);?>)">
+                                            <a href="#" class="excluir" onclick="Deletar(<?php echo($list_slide_saude[$cont1]->id_slide_saude);?>)">
                                                 <img  src="<?=$caminho?>imagens/shutdown.png">
                                             </a>
                                         </div>
