@@ -207,7 +207,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         /*DELETAR*/
         public function Deletar($dados_saude){
-            $sql="UPDATE tbl_slide_saude set ativo=0 WHERE id_slide_saude=".$dados_saude->id_slide_saude;
+            $sql="UPDATE tbl_slide_saude set ativo=0,status=0 WHERE id_slide_saude=".$dados_saude->id_slide_saude;
         
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

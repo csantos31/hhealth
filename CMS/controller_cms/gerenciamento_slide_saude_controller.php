@@ -20,7 +20,7 @@
                 $diretorio_completo1=salvar_imagem($_FILES['fle_img_home1'],'imagem_slide_saude');
                 if($diretorio_completo1 == "Erro"){
                     echo "<script>
-                     alert($diretorio_completo1);
+                     alert('Erro ao inserir a imagem');
                      window.history.go(-1);
                      </script>";
                    $mov_upload1=false;
