@@ -39,7 +39,6 @@ include($caminho.'../verifica.php');
 
             $(".editar").click(function(){
                 $(".container_modal").fadeIn(2000);
-
             });
 
 
@@ -58,13 +57,28 @@ include($caminho.'../verifica.php');
             }
 
         //Editar
-            function Editar(IdIten){
+            function Editar(IdEnde,IdUni){
                 $.ajax({
                     type:"GET",
                     url:"modals/modal_unidade.php",
-                    data:{modo:'buscarId',id:IdIten},
+                    data:{modo:'buscarId',id_uni:IdUni,id_ende:IdEnde},
                     success: function(dados){
                         $('.modal').html(dados);
+                        //alert(dados);
+                    }
+                
+                });
+            }
+        //Ativar
+            function Ativar(IdIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                event.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    data: {id:IdIten},
+                    url: "../router.php?controller=unidade&modo=ativar&id_uni="+IdIten,
+                    success: function(dados){
+                        $('.icon_opcoes').html(dados);
                     }
                 });
             }
@@ -76,7 +90,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=unidade&modo=desativar&id="+IdIten,
+                    url: "../router.php?controller=unidade&modo=desativar&id_uni="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -90,7 +104,7 @@ include($caminho.'../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
-                    url: "../router.php?controller=unidade&modo=deletar&id="+IdIten,
+                    url: "../router.php?controller=unidade&modo=deletar&id_uni="+IdIten,
                     success: function(dados){
                         $('.icon_opcoes').html(dados);
                     }
@@ -172,6 +186,8 @@ include($caminho.'../verifica.php');
                                             $ativar="Ativar";
                                             $imagem='shutdown.png';
                                         }
+                                        
+                                        
 
                                     ?>
                                     <div class="opcoes"><!--Desativar-->
@@ -180,7 +196,7 @@ include($caminho.'../verifica.php');
                                         </div>
 
                                         <div class="icon_opcoes">
-                                            <a href="#" class="desativar" onclick="Desativar(<?php echo($list[$cont]->id_unidade);?>)">
+                                            <a href="#" class="desativar" onclick="<?php echo($ativar)?>(<?php echo($list[$cont]->id_unidade);?>)">
                                                 <img  src="<?=$caminho?>imagens/<?php echo($imagem)?>">
                                             </a>
                                         </div>
@@ -197,8 +213,7 @@ include($caminho.'../verifica.php');
                                         </div>
 
                                         <div class="icon_opcoes">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_unidade);?>)">
-
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_endereco);?>,<?php echo($list[$cont]->id_unidade);?>)">
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
                                         </div>

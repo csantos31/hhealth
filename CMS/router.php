@@ -168,6 +168,9 @@
 
 				case 'ativar':
 					# code...
+					$controller_gerenciamento_ambiente = new controller_convenios();
+
+	                        $controller_gerenciamento_ambiente::Ativar();
 					break;
 
 				case 'deletar':
@@ -329,9 +332,9 @@
 
                     case 'editar':
 
-										$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                            $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-										$controller_gerenciamento_slide_saude::Editar();
+                            $controller_gerenciamento_slide_saude::Editar();
 
                         break;
 
@@ -343,18 +346,18 @@
                         break;
 
                     case 'desativar':
-												$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                        $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-												$controller_gerenciamento_slide_saude::Desativar();
+                        $controller_gerenciamento_slide_saude::Desativar();
 
                         break;
 
                     case 'deletar':
 
                         //if(confirm('Deseja realmente excluir?')){
-												$controller_gerenciamento_slide_saude = new controller_slide_saude();
+                        $controller_gerenciamento_slide_saude = new controller_slide_saude();
 
-												$controller_gerenciamento_slide_saude::Deletar();
+                        $controller_gerenciamento_slide_saude::Deletar();
                         //}
 
                         break;
@@ -436,16 +439,37 @@
 
 				case 'editar':
 				// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Editar();
+					$controller_endereco::Editar();
+                    
+                // Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Editar();
+					break;
+                    
+                case 'ativar':
+					
+                    
+                // Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Ativar();
+					break;
+                    
+                case 'desativar':
+					// Instanciando a classe da controller
+					$controller_unidade =  new controller_unidade();
+					//Chama o metodo Novo da controller
+					$controller_unidade::Desativar();
 					break;
 
-				case 'excluir':
+				case 'deletar':
 					// Instanciando a classe da controller
-					$controller_nivel =  new controllerNivel();
+					$controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
-					$controller_nivel::Excluir();
+					$controller_unidade::Deletar();
 					break;
 			}
 

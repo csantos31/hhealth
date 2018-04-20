@@ -75,11 +75,15 @@
                   require_once ('model_cms/bd_class.php');
                   require_once ('modulo_img.php');
 
-                  // Instancia a classe $convenios
-                  $convenios = new Convenio();
+                  $idConvenio = $_GET['id'];
+
+                  $convenio = new Convenio();
+
+                  $convenio->id_convenio=$idConvenio;
+
 
                   // Chama o metodo para selecionar os registros
-                  return $convenios::SelectBy();
+                  return $convenio::Update($convenio);
             }
 
             public function Desativar(){
@@ -98,6 +102,24 @@
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
 			$convenios::DesativarPorId($convenios);
+            }
+
+            public function Ativar(){
+
+                  require_once ('model_cms/convenio_class.php');
+                  require_once ('modulo_img.php');
+
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idConvenio = $_GET['id'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$convenios = new Convenio();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$convenios->id_convenio = $idConvenio;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$convenios::AtivarPorId($convenios);
             }
 
             public function Deletar(){

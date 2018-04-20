@@ -23,20 +23,37 @@ if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     
     if($modo=='buscarId'){
-        $id=$_GET['id'];
+        $id_uni=$_GET['id_uni'];
+        $id_ende=$_GET['id_ende'];
         
         
         /*Declara unidade*/
         require_once("../../controller_cms/unidade_controller.php");/*da um require na nivel_controller*/
         require_once("../../model_cms/unidade_class.php");/*da um require na nivel_class*/
         
-        $controller_home = new controller_unidade();
-        $list = $controller_home::Buscar();
+        $controller_unidade = new controller_unidade();
+        $list = $controller_unidade::Buscar();
         
-        $imagem=$list->slide1;
-        $slide2=$list->slide2;
-        $slide3=$list->slide3;
-        $frase=$list->frase;
+        $imagem=$list->imagem;
+        $nome_unidade=$list->nome_unidade;
+        
+        
+        
+        /*Declara endereço*/
+        
+        require_once("../../controller_cms/endereco_controller.php");/*da um require na nivel_controller*/
+        require_once("../../model_cms/endereco_class.php");/*da um require na nivel_class*/
+        
+        $controller_endereco = new controller_endereco();
+        $list_endereco = $controller_endereco::Buscar();
+        
+        $cep=$list_endereco->cep;
+        $logradouro=$list_endereco->logradouro;
+        $numero=$list_endereco->numero;
+        $id_estado=$list_endereco->id_estado;
+        $cidade=$list_endereco->cidade;
+        $bairro=$list_endereco->bairro;
+    
        
     }
 }
@@ -70,9 +87,10 @@ if(isset($_GET['modo'])){
          <script>
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-                  var id = $(this).data("id");
+                  var id_ende = $(this).data("id-ende");
+                  var id_uni = $(this).data("id-uni");
                   var modo = "";
-                  if(id == '0')
+                  if(id_ende == '0')
                       modo='inserir';
                   else
                       modo='editar';
@@ -82,7 +100,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=unidade&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=unidade&modo="+modo+"&id_uni="+id_uni+"&id_ende="+id_ende,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -90,8 +108,8 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                         $('.modal').html(dados);
-                         //alert(dados);
+                         //$('.modal').html(dados);
+                         alert(dados,id_ende);
 
                     }
                 });
@@ -104,7 +122,7 @@ if(isset($_GET['modo'])){
             </div>
             
             <div class="content_modal">
-                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id-ende="<?php echo($id_ende)?>" data-id-uni="<?php echo($id_uni)?>" enctype="multipart/form-data">
                     
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
@@ -122,7 +140,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_unidade" placeholder="Unidade">
+                                <input type="text" value="<?php echo ($nome_unidade)?>" name="txt_unidade" placeholder="Unidade">
                             </div>
                         </div>
                         <div class="campo">
@@ -132,7 +150,7 @@ if(isset($_GET['modo'])){
                             
                             <div class="content_preview">
                               <div class="preview_img">
-                                <img id="img" src="../<?php echo($slide1)?>" alt="">
+                                <img id="img" src="../<?php echo($imagem)?>" alt="">
                               </div>
                             </div>
                         </div>
@@ -143,7 +161,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input type="text" value="" name="txt_logradouro" placeholder="Logradouro">
+                                <input type="text" value="<?php echo($logradouro)?>" name="txt_logradouro" placeholder="Logradouro">
                             </div>
                         </div>
                         
@@ -153,14 +171,14 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input style="width:200px;"type="text" value="" name="txt_bairro" placeholder="Bairro">
+                                <input style="width:200px;"type="text" value="<?php echo($bairro)?>" name="txt_bairro" placeholder="Bairro">
                             </div>
                             <div class="string_campo">
                                 <a>Número:</a>
                             </div>
 
                             <div class="input_campo">
-                                <input style="width:200px;"type="text" value="" name="txt_numero" placeholder="Número">
+                                <input style="width:200px;"type="text" value="<?php echo($numero)?>" name="txt_numero" placeholder="Número">
                             </div>
                         </div>
                         
@@ -170,7 +188,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input style="width:100px;"type="text" value="" name="txt_cep" placeholder="CEP">
+                                <input style="width:100px;"type="text" value="<?php echo($cep)?>" name="txt_cep" placeholder="CEP">
                             </div>
                             
                             <div class="string_campo">
@@ -178,7 +196,7 @@ if(isset($_GET['modo'])){
                             </div>
 
                             <div class="input_campo">
-                                <input style="width:200px;"type="text" value="" name="txt_cidade" placeholder="Cidade">
+                                <input style="width:200px;"type="text" value="<?php echo($cidade)?>" name="txt_cidade" placeholder="Cidade">
                             </div>
                         </div>
                         
@@ -189,7 +207,7 @@ if(isset($_GET['modo'])){
 
 
                             <select class="input_combo" name="slt_estado"><!--Combo box-->
-                                <option value="">
+                                <option value="null">
                                     Selecionar Nível
                                 </option>
 
