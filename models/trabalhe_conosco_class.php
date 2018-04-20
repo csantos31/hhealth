@@ -16,14 +16,42 @@ class TrabalheConosco{
 
     //Insere o registro no BD
     public static function Insert($contato_dados){
-        $sql = "INSERT INTO tbl_fale_conosco (nome, email, telefone, celular,
-                                        assunto, mensagem, ativo)
-                                        VALUES ('".$contato_dados->nome."',
-                                        '".$contato_dados->email."',
-                                        '".$contato_dados->telefone."',
-                                        '".$contato_dados->celular."',
-                                        '".$contato_dados->assunto."',
-                                        '".$contato_dados->mensagem."','1');";
+
+        $sql =  "INSERT INTO tbl_estado (cep, logradouro, numero, id_estado,
+                                        cidade, bairo)
+                                        VALUES ('".$trabalhe_conosco->nome."',
+                                        '".$trabalhe_conosco->email."',
+                                        '".$trabalhe_conosco->telefone."',
+                                        '".$trabalhe_conosco->celular."',
+                                        );"
+
+
+        $sql = "INSERT INTO tbl_endereco (cep, logradouro, numero, id_estado,
+                                        cidade, bairo)
+                                        VALUES ('".$trabalhe_conosco->nome."',
+                                        '".$trabalhe_conosco->email."',
+                                        '".$trabalhe_conosco->telefone."',
+                                        '".$trabalhe_conosco->celular."',
+                                        );";
+
+        $sql = "INSERT INTO tbl_trabalhe_conosco (nome, email, telefone, celular,
+                                        dt_nasc, sexo, id_pais, estado_civil, trabalha_atualmente,id_deficiencia, resumo_qualificacoes,
+                                        ativo)
+                                        VALUES ('".$trabalhe_conosco->nome."',
+                                        '".$trabalhe_conosco->email."',
+                                        '".$trabalhe_conosco->telefone."',
+                                        '".$trabalhe_conosco->celular."',
+                                        '".$trabalhe_conosco->dt_nasc."',
+                                        '".$trabalhe_conosco->rdosexo."',
+                                        '".$trabalhe_conosco->pais."',
+                                        '".$trabalhe_conosco->estado_civil."',
+                                        '".$trabalhe_conosco->registro_profissional."',
+                                        '".$trabalhe_conosco->resumo_qualificacoes."',
+                                        '".$trabalhe_conosco->status_trabalho."',
+                                        '".$trabalhe_conosco->status_deficiencia."',
+                                        '1');";
+
+
 
         //Instancia a classe do BD
         $conex = new Mysql_db();

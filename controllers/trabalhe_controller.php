@@ -24,7 +24,6 @@ class controllerTrabalheConosco{
         $trabalhe_conosco->resumo_qualificacoes = $_POST['textarearesumoQualificacoes'];
         $trabalhe_conosco->status_trabalho = $_POST['sltstatusTrabalho'];
         $trabalhe_conosco->status_deficiencia = $_POST['sltstatusDeficiencia'];
-        $trabalhe_conosco->estado_civil = $_POST['sltEstado'];
 
         //Chama o método insert da classe contato
         $trabalhe_conosco::Insert($trabalhe_conosco);
