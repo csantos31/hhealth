@@ -7,7 +7,7 @@
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <script>/*Modal*/
             $(document).ready(function(){
-                
+
 
                 $(".novo").click(function(){
                     $(".container_modal").toggle(2000);
@@ -26,7 +26,7 @@
 
                 $.ajax({
                     type:"POST",
-                    url:"../modals/modal_cad_paciente.php",
+                    url:"../modals/modal_cad_funcionario.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -37,7 +37,7 @@
             function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"../modals/modal_cad_paciente.php",
+                    url:"../modals/modal_cad_funcionario.php",
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -45,95 +45,21 @@
 
                 });
             }
-
-            var cont = 0;
-            var cont2 = 0;
-            var mod = '';
-            
-            function EditarPerfil(linha,IdItem){
-                cont = cont + 1;
-                
-                mod = cont % 2;
-                
-                console.log(mod);
-                
-                if(mod == 1){
-                    $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');    
-                }else{
-                    //$('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','none');    
-                }
-                
-                $("#frm_foto"+IdItem).submit(function(event){
-                    event.preventDefault();
-                    //console.log("submit");
-                    
-                    $.ajax({
-                        type: "POST",
-                        url: "../router.php?controller=paciente&modo=alterar_foto&id="+IdItem,
-                        //alert (url);
-                        data: new FormData($("#frm_foto"+IdItem)[0]),
-                        cache:false,
-                        contentType:false,
-                        processData:false,
-                        async:true,
-                        success: function(dados){
-                             $('.modal').html(dados);
-                            //alert(dados);
-                        }
-                    });
-                    
-                });
-            }
-            
-            function EditarCarteirinha(linha,IdItem){
-                cont2 = cont2 + 1;
-                
-                mod = cont2 % 2;
-                
-                if(mod == 1){
-                    $('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','block');    
-                }else{
-                    //$('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','none');    
-                }
-                
-                $("#frm_card"+IdItem).submit(function(event){
-                    event.preventDefault();
-                    //console.log("submit");
-                    
-                    $.ajax({
-                        type: "POST",
-                        url: "../router.php?controller=paciente&modo=alterar_carteirinha&id="+IdItem,
-                        //alert (url);
-                        data: new FormData($("#frm_card"+IdItem)[0]),
-                        cache:false,
-                        contentType:false,
-                        processData:false,
-                        async:true,
-                        success: function(dados){
-                             $('.modal').html(dados);
-                            //alert(dados);
-                        }
-                    });
-                    
-                });
-                
-                
-            }
-
             //Excluir
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
 
-                if(confirm('Tem certeza que deseja excluir este usuário?')){
+                if(confirm('Tem certeza que deseja excluir este funcionário?')){
 
                     $.ajax({
                         type:"GET",
                         data: {id:idIten},
-                        url: "../router.php?controller=paciente&modo=excluir&id="+idIten,
+                        url: "../router.php?controller=funcionario&modo=excluir&id="+idIten,
                         success: function(dados){
                             //alert(dados);
                             $('.modal').html(dados);
+
                         }
                     });
 
@@ -177,25 +103,28 @@
                                 $list = $controller_funcionario::Listar();
 
                                 $cont = 0;
-                                while ($cont < count($list)) {
 
-                        ?>
-                                    <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
-                                        <div class="item_tabela"><?= $list[$cont]['cpf'] ?> </div>
-                                        <div class="item_tabela icones_tabela">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_funcionario']);?>)">
-                                                <img src="../imagens/edit.png" alt="editar" title="editar">
-                                            </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_funcionario']);?>)">
-                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
-                                            </a>
-                                        </div>
-                                    </div>
-                        <?php
+                                if(!empty($list)){
+                                  while ($cont < count($list)) {
 
-                                $cont +=1;
+                          ?>
+                                      <div class="linha_tabela">
+                                          <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
+                                          <div class="item_tabela"><?= $list[$cont]['cpf'] ?> </div>
+                                          <div class="item_tabela icones_tabela">
+                                              <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_funcionario']);?>)">
+                                                  <img src="../imagens/edit.png" alt="editar" title="editar">
+                                              </a>
+                                              <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_funcionario']);?>)">
+                                                  <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
+                                              </a>
+                                          </div>
+                                      </div>
+                          <?php
+
+                                  $cont +=1;
                                 }
+                              }
 
                         ?>
                     </div>

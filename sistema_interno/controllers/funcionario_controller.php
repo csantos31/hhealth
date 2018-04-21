@@ -1,7 +1,7 @@
 <?php
 
     class controllerFuncionario{
-       
+
         public function Novo($id_endereco){
 			require_once('modulo_img.php');
 
@@ -22,14 +22,14 @@
             */
 
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-			$funcionario->id_cargo = $_POST['slt_cargo'];
+			     $funcionario->id_cargo = $_POST['slt_cargo'];
             $funcionario->id_endereco = $id_endereco;
             $funcionario->nome = $_POST['txt_nome'];
             $funcionario->sobrenome = $_POST['txt_sobrenome'];
             $funcionario->dt_nasc = $_POST['txt_dt_nasc'];
             $funcionario->rg = $_POST['txt_rg'];
             $funcionario->cpf = $_POST['txt_cpf'];
-            
+
 			//Chama o metodo Insert da classe Contato
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
@@ -59,7 +59,7 @@
 			$funcionario_new = $funcionario::SelectById($funcionario);
 
             return $funcionario_new;
-			
+
 		}
 
         /*Atualiza um registro existente*/
@@ -82,8 +82,8 @@
 
             $funcionario::update($funcionario);
 		}
-        
-       
+
+
 
         public function Excluir(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW

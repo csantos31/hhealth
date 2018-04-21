@@ -76,20 +76,20 @@
                     $controller_paciente::Editar();
 
                     break;
-                    
+
                 case 'alterar_foto':
                     require_once('controllers/paciente_controller.php');
                     require_once('models/paciente_class.php');
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::EditarFoto();
-                    break; 
-                    
+                    break;
+
                 case 'alterar_carteirinha':
                     require_once('controllers/paciente_controller.php');
                     require_once('models/paciente_class.php');
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::EditarCarteirinha();
-                    break;    
+                    break;
 
 				case 'excluir':
                     require_once('controllers/paciente_controller.php');
@@ -104,7 +104,7 @@
 
     break;
 
-            
+
    case 'nivel_funcionario':
 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
         switch ($modo) {
@@ -143,7 +143,7 @@
         }
 
         break;
-            
+
    case 'cargo':
 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
         switch ($modo) {
@@ -182,6 +182,53 @@
         }
 
         break;
+    case 'funcionario':
+ 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+         switch ($modo) {
+             case 'inserir':
+                   require_once('controllers/endereco_controller.php');
+                   require_once('models/endereco_class.php');
+
+                     // Instanciando a classe da controller
+                   $controller_endereco =  new controllerEndereco();
+                   //Chama o metodo Novo da controller
+                   $id_endereco = $controller_endereco::Novo();
+                   //$_POST['id_endereco'] = $id_endereco;
+                   require_once('controllers/funcionario_controller.php');
+                   require_once('models/funcionario_class.php');
+                   $controller_funcionario = new controllerFuncionario();
+                   $controller_funcionario::Novo($id_endereco);
+
+                   break;
+
+             case 'editar':
+                   require_once('controllers/endereco_controller.php');
+                   require_once('models/endereco_class.php');
+                   // Instanciando a classe da controller
+                   $controller_endereco =  new controllerEndereco();
+                   //Chama o metodo Novo da controller
+                   $controller_endereco::Editar();
+
+                   require_once('controllers/funcionario_controller.php');
+                   require_once('models/funcionario_class.php');
+                   $controller_funcionario = new controllerFuncionario();
+                   $controller_funcionario::Editar();
+
+                   break;
+
+             case 'excluir':
+                 require_once('controllers/funcionario_controller.php');
+                     require_once('models/funcionario_class.php');
+
+                 // Instanciando a classe da controller
+                 $controller_funcionario =  new controllerFuncionario();
+                 //Chama o metodo Novo da controller
+                 $controller_funcionario::Excluir();
+
+                 break;
+             }
+
+             break;
 
 		default:
 			# code...

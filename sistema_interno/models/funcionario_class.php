@@ -18,7 +18,7 @@ class Funcionario{
 
         /*insere o registro no DB*/
 		public static function Insert($funcionario){
-			$sql = "INSERT INTO tbl_funcionario (id_cargo, id_endereco, nome, sobrenome, dt_nasc, rg, cpf, status) VALUES ('".$funcionario->id_endereco."', '".$funcionario->id_convenio."', '".$funcionario->nome."', '".$funcionario->sobrenome."', '".$funcionario->dt_nasc."', '".$funcionario->rg."', '".$funcionario->cpf."','1');";
+			$sql = "INSERT INTO tbl_funcionario (id_cargo, id_endereco, nome, sobrenome, dt_nasc, rg, cpf, ativo) VALUES ('".$funcionario->id_cargo."', '".$funcionario->id_endereco."', '".$funcionario->nome."', '".$funcionario->sobrenome."', '".$funcionario->dt_nasc."', '".$funcionario->rg."', '".$funcionario->cpf."','1');";
 
             //echo $sql;
 
@@ -90,7 +90,7 @@ class Funcionario{
         /*Busca um registro especifico no BD*/
 		public function SelectById($funcionario){
 			$sql = "SELECT f.*, e.* FROM tbl_funcionario AS f INNER JOIN tbl_endereco AS e ON f.id_endereco = e.id_endereco WHERE id_funcionario = ". $funcionario->id_funcionario;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -120,8 +120,8 @@ class Funcionario{
 		}
 
     public function Update($funcionario){
-            
-			$sql = "UPDATE tbl_funcionario SET nome='".$funcionario->nome."', sobrenome='".$funcionario->sobrenome."', dt_nasc='".$funcionario->dt_nasc."', rg='".$funcionario->rg."', cpf='".$funcionario->cpf."' WHERE id_funcionario='".$funcionario->id_funcionario."', id_cargo = ". $funcionario->id_cargo .";";
+
+			$sql = "UPDATE tbl_funcionario SET nome='".$funcionario->nome."', sobrenome='".$funcionario->sobrenome."', dt_nasc='".$funcionario->dt_nasc."', rg='".$funcionario->rg."', cpf='".$funcionario->cpf."' WHERE id_funcionario=".$funcionario->id_funcionario.";";
 
       //echo $sql;
 
@@ -139,6 +139,7 @@ class Funcionario{
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
+        echo $sql;
 			}
 
 			//Fecha a conexão com o banco de dados
@@ -146,12 +147,9 @@ class Funcionario{
 		}
 
         /*Delete o registro no BD*/
-		public function Delete($paciente){
+		public function Delete($funcionario){
 
 			$sql = "UPDATE tbl_funcionario SET ativo ='0' WHERE id_funcionario ='" . $funcionario->id_funcionario . "';";
-
-            echo $sql;
-            
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 

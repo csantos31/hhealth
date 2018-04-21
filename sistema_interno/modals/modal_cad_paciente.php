@@ -21,7 +21,7 @@ if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
-        
+
 
         require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
         require_once("../models/paciente_class.php");/*da um require na nivel_class*/
@@ -66,7 +66,7 @@ if(isset($_GET['modo'])){
     <body>
 
          <script>
-             
+
               var id = $("#form").data("id");
               var modo = "";
               if(id == '0'){
@@ -81,14 +81,14 @@ if(isset($_GET['modo'])){
                     document.getElementById('meu_num').style.marginLeft = '160px';
                   var idEnd = $('#form').data("id_end");
               }
-             
-             
+
+
              console.log(modo);
-             
+
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-                  
-                 
+
+
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
 

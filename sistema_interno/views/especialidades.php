@@ -95,9 +95,6 @@
                         </a>
                     </div>
                     <p>Especialidades</p>
-                    <div class="col_1">
-                        <img src="../imagens/doc_icon2.jpg" alt="pacientes pendentes" title="pacientes pendentes">
-                    </div>
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">NOME</div>

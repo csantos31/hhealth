@@ -14,6 +14,8 @@ $bairro = null;
 $cep = null;
 $numero = null;
 
+$id_end = null;
+
 if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     if($modo=='buscarId'){
@@ -28,6 +30,7 @@ if(isset($_GET['modo'])){
         //Chama o metodo para Listar todos os registros
         $list = $controller_funcionario::Buscar($id);
 
+        $id_end = $list['id_endereco'];
         $nome = $list['nome'];
         $dt_nasc = $list['dt_nasc'];
         $sobrenome = $list['sobrenome'];
@@ -45,7 +48,7 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_cad_funcionario.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
         <script>
             $(document).ready(function(){/*fechar a modal*/
@@ -58,26 +61,23 @@ if(isset($_GET['modo'])){
     <body>
          <script>
               var id = $("#form").data("id");
+              var idEnd = $("#form").data("id_end");
               var modo = "";
               if(id == '0'){
                   modo='inserir';
               } else{
                   modo='editar';
               }
-             
-             
-             console.log(modo);
-             
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-                  
-                 
+
+
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=funcionario&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=funcionario&modo="+modo+"&id="+id+"&id_end="+idEnd,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -85,8 +85,8 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                         $('.modal').html(dados);
-                        //alert(dados);
+                        $('.modal').html(dados);
+                      //  alert(dados);
                     }
                 });
              });
@@ -97,7 +97,7 @@ if(isset($_GET['modo'])){
             </div>
 
             <div class="content_modal">
-                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id_end="<?= $id_end ?>" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
                             <img src="../../imagens/logo_only_heart.png">
@@ -136,7 +136,7 @@ if(isset($_GET['modo'])){
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
                                <label>Cargo :</label>
-                                <select id="slt_cargo" class="input_med" name="slt_estado">
+                                <select id="slt_cargo" class="input_med" name="slt_cargo">
                                   <?php
                                   include_once('../controllers/cargo_controller.php');
                                   include_once('../models/cargo_class.php');
@@ -145,7 +145,7 @@ if(isset($_GET['modo'])){
                                   $cont = 0;
                                   while ($cont < count($list)) {
                                   ?>
-                                      <option value="<?= $list[$cont]['id_cargo'] ?>"><?= $list[$cont]['cargo'] ?></option>
+                                      <option value="<?= $list[$cont]->id_cargo ?>"><?= $list[$cont]->cargo ?></option>
                                   <?php
                                     $cont +=1;
                                   }
@@ -163,12 +163,7 @@ if(isset($_GET['modo'])){
                                 <input value="<?= $logradouro ?>" required type="text" class="input_big" style="width:400px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
                             </div>
                         </div>
-                        <div id='meu_num' class="campo_p">
-                          <div class="input_campo_p">
-                              <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
-                          </div>
-                        </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        <div class="campo_p" style="margin-left:200px;"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
                                <label>Estado :</label>
                                 <select id="slt_cargo" class="input_med" name="slt_estado">
@@ -194,6 +189,11 @@ if(isset($_GET['modo'])){
                             </div>
                             <div class="input_campo_p">
                                 <input value="<?= $bairro ?>" required type="text" class="input_med2" placeholder="BAIRRO" name="txt_bairro" id="txt_bairro">
+                            </div>
+                            <div id='meu_num' class="campo_p">
+                              <div class="input_campo_p">
+                                  <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
+                              </div>
                             </div>
                         </div>
                         <div class="campo_botao">
