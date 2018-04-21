@@ -171,6 +171,51 @@ class Funcionario{
 
 		}
 
+      public function Login_usuario($usuario){
+            $_SESSION["login"]=0;
+            $count=0;
+            $sql = "SELECT usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
+             AND senha = '".$usuario->senha. "';";
+
+            //Instancia da classe do BD
+            $conn = new Mysql_db();
+
+            //chama o metodo para conectar no BD e guarda o retorno da conexao na variavel $PDO_conn
+            $PDO_conn = $conn->Conectar();
+            // Executa a query e salva em uma variavel
+            $queryExecutada  = $PDO_conn->query($sql);
+            //Conta quantidade de linha
+            $count = $queryExecutada->rowCount();
+            if($count == 1){
+                //IF para puxar um dado do banco de dados
+                if ($puxaDadosDB = $queryExecutada->fetch(PDO::FETCH_ASSOC)) {
+                  # code...
+                  $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
+
+                  $_SESSION["login"]=$count;
+
+                }
+
+            }
+            if($_SESSION["login"]==1 && $id_nivel_funcionario == 1){
+
+                header('location:views/dashboard.php');
+            }else if($_SESSION["login"]==0){
+                header('location:index.php');
+            }
+
+            // echo($count."To Aki");
+            //Executa o Script no BD
+
+
+
+            //Fecha a conexao com o Banco de Dados
+            $conn -> Desconectar();
+
+                //var_dump($sql);
+            }
+
+
 
     }
 

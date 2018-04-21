@@ -1,3 +1,8 @@
+<?php 
+
+require('../verifica.php');
+
+?>
 <html>
     <head>
         <title>Sistema Interno HHealth</title>
@@ -20,26 +25,26 @@
                             <div id="coluna_inputs">
                                 <input type="text" class="input_big" placeholder="ESPECIALIDADE">
                                 <textarea class="input_bigger" placeholder="DESCRIÇÃO DA ESPECIALIDADE"></textarea>
-                                
+
                                 <p>Permissão:</p><br>
-                                
+
                                 <label class="lb_opcao">Gerenciar conteúdo do site</label>
                                 <input id="test_check" name="test_check" type="checkbox"><label for="test_check"></label>
                                 <br>
-                                
+
                                 <label class="lb_opcao">Adicionar pacientes</label>
                                 <input id="test_check3" name="test_check3" type="checkbox"><label for="test_check3"></label>
                                 <br>
-                                
-                                
+
+
                                 <label class="lb_opcao">Adicionar funcionários</label>
                                 <input id="test_check2" name="test_check2" type="checkbox"><label for="test_check2"></label>
                                 <br>
-                                
+
                                 <label class="lb_opcao">Usuário root</label>
                                 <input id="test_check4" name="test_check4" type="checkbox"><label for="test_check4"></label>
                                 <br>
-                                
+
                                 <br><br>
                                 <input id="bt_salvar" type="submit" value="SALVAR" name="btn_salvar">
                             </div>

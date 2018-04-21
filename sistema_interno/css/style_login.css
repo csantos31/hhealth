@@ -1,0 +1,87 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+body{
+
+    background-image: url(../imagens/img_login.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+
+}
+
+.content{
+      width:100%;
+      height: 100%;
+      opacity: 0.5;
+      background-color: black;
+      position: fixed;
+      z-index: 1;
+
+}
+
+.login{
+      width: 300px;
+      height: 300px;
+      /*margin-left: 42.1875%;
+      margin-top: 20.3125%;*/
+      background-color: #660000;
+      box-shadow: 1px 1px 220px black;
+      margin-left: 40vw;
+      margin-top: 30vh;
+      border-radius: 7px;
+      padding: 20px;
+      z-index: 2;
+      position: absolute;
+}
+
+.txtlogin{
+      width: 100%;
+      height: 25px;
+      font-family: sans-serif;
+      color: white;
+      margin-top: 10px;
+      opacity:1;
+}
+
+.txt_login{
+      width: 100%;
+      height: 25px;
+
+}
+
+.txt_login input{
+      width: 100%;
+}
+
+.txtsenha{
+      width: 100%;
+      height: 25px;
+      font-family: sans-serif;
+      color: white;
+      margin-top: 40px;
+}
+
+.txt_senha input{
+      width: 100%;
+}
+
+.botao_entar{
+      width: 100%;
+      height: 25px;
+      font-family: sans-serif;
+      margin-top: 35px;
+}
+
+.botao_entar input{
+      width: 100px;
+      height: 25px;
+      border-radius: 3px;
+      background-color: white;
+      float: left;
+      margin: auto;
+      margin-left: 85px;
+}

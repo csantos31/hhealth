@@ -1,8 +1,22 @@
 <?php
      $controller = $_GET['controller'];
-    $modo = $_GET['modo'];
+     if(isset($modo)){
+        $modo = $_GET['modo'];
+     }
     // verifica qual o tipo da controller iremos trabalhar
 	switch ($controller) {
+
+    case 'logar':
+          require_once('controllers/funcionario_controller.php');//inclusão dos arquivos
+          require_once('models/funcionario_class.php');
+
+          //Instancia a classe Usuario
+          $controller_funcionario = new controllerFuncionario();
+
+          $controller_funcionario->Login();
+
+      break;
+
 		case 'especialidade':
 			// Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
 			switch ($modo) {

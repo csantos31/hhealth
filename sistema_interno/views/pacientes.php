@@ -1,3 +1,8 @@
+<?php
+
+require('../verifica.php');
+
+?>
 <html>
     <head>
         <title>Sistema Interno HHealth</title>
@@ -10,7 +15,7 @@
 
         <script>/*Modal*/
             $(document).ready(function(){
-                
+
 
                 $(".novo").click(function(){
                     $(".container_modal").toggle(2000);
@@ -52,24 +57,24 @@
             var cont = 0;
             var cont2 = 0;
             var mod = '';
-            
+
             function EditarPerfil(linha,IdItem){
                 cont = cont + 1;
-                
+
                 mod = cont % 2;
-                
+
                 console.log(mod);
-                
+
                 if(mod == 1){
-                    $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');    
+                    $('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','block');
                 }else{
-                    //$('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','none');    
+                    //$('#EditarPerfil'+IdItem).find('.div_change_profille').css('display','none');
                 }
-                
+
                 $("#frm_foto"+IdItem).submit(function(event){
                     event.preventDefault();
                     //console.log("submit");
-                    
+
                     $.ajax({
                         type: "POST",
                         url: "../router.php?controller=paciente&modo=alterar_foto&id="+IdItem,
@@ -84,25 +89,25 @@
                             //alert(dados);
                         }
                     });
-                    
+
                 });
             }
-            
+
             function EditarCarteirinha(linha,IdItem){
                 cont2 = cont2 + 1;
-                
+
                 mod = cont2 % 2;
-                
+
                 if(mod == 1){
-                    $('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','block');    
+                    $('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','block');
                 }else{
-                    //$('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','none');    
+                    //$('#EditarCarteirinha'+IdItem).find('.div_change_carteirinha').css('display','none');
                 }
-                
+
                 $("#frm_card"+IdItem).submit(function(event){
                     event.preventDefault();
                     //console.log("submit");
-                    
+
                     $.ajax({
                         type: "POST",
                         url: "../router.php?controller=paciente&modo=alterar_carteirinha&id="+IdItem,
@@ -117,10 +122,10 @@
                             //alert(dados);
                         }
                     });
-                    
+
                 });
-                
-                
+
+
             }
 
             //Excluir

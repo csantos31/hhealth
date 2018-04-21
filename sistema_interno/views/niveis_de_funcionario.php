@@ -1,3 +1,8 @@
+<?php
+
+require('../verifica.php');
+
+?>
 <html>
     <head>
         <title>Sistema Interno HHealth</title>

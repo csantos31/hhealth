@@ -86,19 +86,32 @@
 
 
         public function Excluir(){
-			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idFuncionario = $_GET['id'];
+      			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+      			$idFuncionario = $_GET['id'];
 
-			//INSTANCIA A CLASSE CONTATO
-			$funcionario = new Funcionario();
+      			//INSTANCIA A CLASSE CONTATO
+      			$funcionario = new Funcionario();
 
-			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$funcionario->id_funcionario = $idFuncionario;
+      			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+      			$funcionario->id_funcionario = $idFuncionario;
 
-			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$funcionario::Delete($funcionario);
+      			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+      			$funcionario::Delete($funcionario);
 
-		}
+      		}
+
+      public function Login(){
+
+            //Instancia a classe Usuario()
+            $funcionario = new Funcionario();
+
+            //Carrega os dados digitados pelo usuário nos atributos da class
+            $funcionario->cpf = $_POST['txt_login'];
+            $funcionario->senha = $_POST['txt_senha'];
+
+            //chama o metodo Login da classe Usuario
+            Funcionario::Login_usuario($funcionario);
+        }
 
 
     }
