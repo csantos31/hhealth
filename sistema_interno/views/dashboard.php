@@ -8,8 +8,12 @@ require('../verifica.php');
         <title>Sistema Interno HHealth</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_dashboard.css">
     </head>
     <body>
+          <div class="transparente">
+
+          </div>
         <div id="principal">
             <header>
                 SISTEMA INTERNO HHEALTH
