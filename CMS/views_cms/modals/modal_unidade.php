@@ -109,7 +109,7 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
-                         //alert(dados,id_ende);
+                         //alert(dados);
 
                     }
                 });
