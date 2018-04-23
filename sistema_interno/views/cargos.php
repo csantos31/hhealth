@@ -9,6 +9,7 @@ require('../verifica.php');
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
         <link rel="stylesheet" type="text/css" href="../css/style_cargo.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
 
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
@@ -90,15 +91,88 @@ require('../verifica.php');
             <header>
                 SISTEMA INTERNO HHEALTH
             </header>
+            <div class="alinha_conteudo">
+
+            </div>
+            <!DOCTYPE html>
+            <div class="menu_lateral_cms"><!--menu lateral-->
+
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+
+                        <div class="titulo_menu_lateral">
+                            <a>Cargos</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+                        <div class="titulo_menu_lateral">
+                            <a>Nível de usuário</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+                        <div class="titulo_menu_lateral">
+                            <a>Home</a>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+                        <div class="titulo_menu_lateral">
+                            <a>Ambiente</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+                        <div class="titulo_menu_lateral">
+                            <a>Sobre</a>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="linha">
+                        <div class="img_menu_lateral">
+                            <img src="#">
+                        </div>
+                        <div class="titulo_menu_lateral">
+                            <a>Convênios</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
             <div class="main">
                 <div id="container_cad_paciente">
-                   <div class="img_nivel">
-                        <a class="novo" href="#" onclick="Cadastrar()">
+                      <div class="cabecalho">
+                           <div class="txt_cabecalho">
+                                 <p>Cargos</p>
+                           </div>
+                            <div class="img_nivel">
+                                 <a class="novo" href="#" onclick="Cadastrar()">
 
-                            <img src="../imagens/add.png">
-                        </a>
-                    </div>
-                    <p>Cargos</p>
+                                     <img src="../imagens/add.png">
+                                 </a>
+                             </div>
+                      </div>
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">CARGO</div>

@@ -1,10 +1,22 @@
+.main{
+
+      float: right;
+}
+
+.#principal{
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+    z-index: 10;
+}
+
 p{
-    margin-left: 18%;
-    text-align: justify;
-    margin-top: 10px;
+
+    text-align: center;
     font-family: verdana, arial, 'sans-serif';
     font-weight: 900;
     color: #333;
+    font-size: 22px;
 }
 
 #container_cad_especialidade{
@@ -17,11 +29,32 @@ p{
     box-shadow: 5px 5px 5px 5px #999;
 }
 
+.cabecalho{
+      width: 100%;
+      height: 60px;
+      margin-top: 20px;
+}
+
+.txt_cabecalho{
+      width: 88%;
+      height: 60px;
+      float: left;
+      line-height: 60px;
+}
+
+.img_nivel{
+    width: 62px;
+    height: 60px;
+    float: right;
+    margin-right: 15px;
+}
+
 .col_1{
     width: 20%;
     height: 250px;
     margin-top: 15px;
     float: left;
+
 }
 
 .col_1 img{
@@ -34,7 +67,6 @@ p{
     min-height: 400px;
     overflow: hidden;
     margin-top: 50px;
-   
     margin-left: auto;
     margin-right: auto;
     border: solid 1px #333;
@@ -45,6 +77,7 @@ p{
     width: 100%;
     height: 35px;
     border: solid 1px #333;
+
 }
 
 .lb_titulo{
@@ -80,4 +113,3 @@ p{
     height: 30px;
     width: 30px;
 }
-
