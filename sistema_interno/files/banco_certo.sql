@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.6.10, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `hhealth`;
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
@@ -24,14 +26,18 @@ DROP TABLE IF EXISTS `tbl_ambiente`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_ambiente` (
   `id_ambiente` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
+  `titulo` tinytext,
   `texto` text,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `imagem2` text,
+  `imagem3` text,
+  `imagem4` text,
+  `imagem5` text,
+  `imagem6` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_ambiente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,6 +46,7 @@ CREATE TABLE `tbl_ambiente` (
 
 LOCK TABLES `tbl_ambiente` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente` DISABLE KEYS */;
+INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',1,1);
 /*!40000 ALTER TABLE `tbl_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -235,34 +242,6 @@ LOCK TABLES `tbl_consulta` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_contato`
---
-
-DROP TABLE IF EXISTS `tbl_contato`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_contato` (
-  `id_contato` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
-  `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
-  PRIMARY KEY (`id_contato`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_contato`
---
-
-LOCK TABLES `tbl_contato` WRITE;
-/*!40000 ALTER TABLE `tbl_contato` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_contato` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tbl_convenio`
 --
 
@@ -271,14 +250,13 @@ DROP TABLE IF EXISTS `tbl_convenio`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_convenio` (
   `id_convenio` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
+  `titulo` tinytext,
+  `texto` tinytext,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `status_imagem` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_convenio`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -287,7 +265,6 @@ CREATE TABLE `tbl_convenio` (
 
 LOCK TABLES `tbl_convenio` WRITE;
 /*!40000 ALTER TABLE `tbl_convenio` DISABLE KEYS */;
-INSERT INTO `tbl_convenio` VALUES (1,'amil','convenio amil','convenio',NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_convenio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,31 +293,31 @@ LOCK TABLES `tbl_deficiencia` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_dicas_saude`
+-- Table structure for table `tbl_dica_saude`
 --
 
-DROP TABLE IF EXISTS `tbl_dicas_saude`;
+DROP TABLE IF EXISTS `tbl_dica_saude`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_dicas_saude` (
-  `id_dicas_saude` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
+CREATE TABLE `tbl_dica_saude` (
+  `id_dica_saude` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` tinytext,
+  `descricao` text,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
-  PRIMARY KEY (`id_dicas_saude`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id_dica_saude`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `tbl_dicas_saude`
+-- Dumping data for table `tbl_dica_saude`
 --
 
-LOCK TABLES `tbl_dicas_saude` WRITE;
-/*!40000 ALTER TABLE `tbl_dicas_saude` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_dicas_saude` ENABLE KEYS */;
+LOCK TABLES `tbl_dica_saude` WRITE;
+/*!40000 ALTER TABLE `tbl_dica_saude` DISABLE KEYS */;
+INSERT INTO `tbl_dica_saude` VALUES (1,'34124','adfsa','imagem_dica_saude/dermatologia.jpg',1,1);
+/*!40000 ALTER TABLE `tbl_dica_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -487,14 +464,13 @@ DROP TABLE IF EXISTS `tbl_exame`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_exame` (
   `id_exame` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
+  `titulo` tinytext,
   `texto` text,
-  `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `procedimento` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_exame`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -503,6 +479,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
+INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -515,14 +492,14 @@ DROP TABLE IF EXISTS `tbl_fale_conosco`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(45) NOT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `telefone` varchar(45) DEFAULT NULL,
-  `celular` varchar(45) DEFAULT NULL,
-  `assunto` varchar(45) DEFAULT NULL,
-  `mensagem` varchar(45) DEFAULT NULL,
+  `email` text,
+  `telefone` text,
+  `celular` text,
+  `assunto` text,
+  `mensagem` text,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_fale_conosco`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -569,7 +546,7 @@ DROP TABLE IF EXISTS `tbl_funcionario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_funcionario` (
-  `id_funcionario` int(11) NOT NULL,
+  `id_funcionario` int(11) NOT NULL AUTO_INCREMENT,
   `id_cargo` int(11) NOT NULL,
   `id_endereco` int(11) DEFAULT NULL,
   `nome` varchar(45) DEFAULT NULL,
@@ -577,12 +554,13 @@ CREATE TABLE `tbl_funcionario` (
   `dt_nasc` date DEFAULT NULL,
   `rg` text,
   `cpf` text,
+  `ativo` tinyint(4) DEFAULT '1',
   PRIMARY KEY (`id_funcionario`),
   KEY `fk_tbl_funcionario_tbl_cargo1_idx` (`id_cargo`),
   KEY `fk12312_idx` (`id_endereco`),
   CONSTRAINT `fk12312` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_funcionario_tbl_cargo1` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargo` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -591,6 +569,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
+INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -738,10 +717,8 @@ CREATE TABLE `tbl_medico_especialidade` (
   `id_funcionario` int(11) NOT NULL,
   `id_especialidade` int(11) NOT NULL,
   PRIMARY KEY (`id_medico_especialidade`),
-  KEY `fk_1_idx` (`id_funcionario`),
   KEY `fk2_idx` (`id_especialidade`),
-  CONSTRAINT `fk2` FOREIGN KEY (`id_especialidade`) REFERENCES `tbl_especialidade` (`id_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_1` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk2` FOREIGN KEY (`id_especialidade`) REFERENCES `tbl_especialidade` (`id_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -894,33 +871,6 @@ LOCK TABLES `tbl_pais` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `tbl_plantao`
---
-
-DROP TABLE IF EXISTS `tbl_plantao`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_plantao` (
-  `id_plantao` int(11) NOT NULL AUTO_INCREMENT,
-  `id_funcionario` int(11) NOT NULL,
-  `hora` varchar(45) DEFAULT NULL,
-  `dt_nasc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_plantao`),
-  KEY `fk_8001_idx` (`id_funcionario`),
-  CONSTRAINT `fk_8001` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_plantao`
---
-
-LOCK TABLES `tbl_plantao` WRITE;
-/*!40000 ALTER TABLE `tbl_plantao` DISABLE KEYS */;
-/*!40000 ALTER TABLE `tbl_plantao` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `tbl_preco_tratamento`
 --
 
@@ -1037,12 +987,8 @@ CREATE TABLE `tbl_resultado_exame` (
   `arquivo` text NOT NULL,
   `comentario` text,
   PRIMARY KEY (`id_resultado_exame`),
-  KEY `fk_resultado_exame_idx` (`id_exame`),
   KEY `fk_r35648_idx` (`id_paciente`),
-  KEY `fk_654_idx` (`id_funcionario`),
-  CONSTRAINT `fk_654` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_r35648` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_resultado_exame` FOREIGN KEY (`id_exame`) REFERENCES `tbl_exame` (`id_exame`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_r35648` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1133,6 +1079,71 @@ LOCK TABLES `tbl_situacao_paciente` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_slide_saude`
+--
+
+DROP TABLE IF EXISTS `tbl_slide_saude`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_slide_saude` (
+  `id_slide_saude` int(11) NOT NULL AUTO_INCREMENT,
+  `imagem` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id_slide_saude`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_slide_saude`
+--
+
+LOCK TABLES `tbl_slide_saude` WRITE;
+/*!40000 ALTER TABLE `tbl_slide_saude` DISABLE KEYS */;
+INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/endocrinologia.jpg',1,1);
+/*!40000 ALTER TABLE `tbl_slide_saude` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_sobre`
+--
+
+DROP TABLE IF EXISTS `tbl_sobre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_sobre` (
+  `id_sobre` int(11) NOT NULL AUTO_INCREMENT,
+  `sobre` text,
+  `missao` text,
+  `visao` text,
+  `valores` text,
+  `imagem1` text,
+  `imagem2` text,
+  `imagem3` text,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
+  `id_convenio` int(11) NOT NULL DEFAULT '0',
+  `titulo` text CHARACTER SET latin1,
+  `subtitulo` text CHARACTER SET latin1,
+  `texto` text CHARACTER SET latin1,
+  `imagem` text CHARACTER SET latin1,
+  `status_imagem` char(1) CHARACTER SET latin1 DEFAULT NULL,
+  `link_video` text CHARACTER SET latin1,
+  PRIMARY KEY (`id_sobre`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_sobre`
+--
+
+LOCK TABLES `tbl_sobre` WRITE;
+/*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
+INSERT INTO `tbl_sobre` VALUES (1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,1,'amil','convenio amil','convenio',NULL,NULL,NULL),(2,'adsfdas','fdsafas','fasdf','fasdfasdfasd','imagem_sobre/endocrinologia.jpg','imagem_sobre/endoscopia.jpg','imagem_sobre/cirurgia.jpg',0,1,0,NULL,NULL,NULL,NULL,NULL,NULL);
+/*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_tipo_quarto`
 --
 
@@ -1200,6 +1211,7 @@ CREATE TABLE `tbl_trabalhe_conosco` (
   `trabalha_atualmente` varchar(45) NOT NULL,
   `id_deficiencia` int(11) NOT NULL,
   `resumo_qualificacoes` text NOT NULL,
+  `id_endereco` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_trabalhe_conosco`),
   KEY `fk21389_idx` (`id_pais`),
   KEY `fk213325_idx` (`id_deficiencia`),
@@ -1239,11 +1251,9 @@ CREATE TABLE `tbl_tratamento` (
   KEY `dk21_idx` (`id_paciente`),
   KEY `fk_21_idx` (`id_preco_tratamento`),
   KEY `fk22_idx` (`id_quarto`),
-  KEY `fk_22_idx` (`id_funcionario`),
   CONSTRAINT `dk21` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk22` FOREIGN KEY (`id_quarto`) REFERENCES `tbl_quarto` (`id_quarto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_21` FOREIGN KEY (`id_preco_tratamento`) REFERENCES `tbl_preco_tratamento` (`id_preco_tratamento`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_22` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_21` FOREIGN KEY (`id_preco_tratamento`) REFERENCES `tbl_preco_tratamento` (`id_preco_tratamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1265,13 +1275,14 @@ DROP TABLE IF EXISTS `tbl_unidade`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_unidade` (
   `id_unidade` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
+  `id_endereco` int(11) DEFAULT NULL,
   `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
-  PRIMARY KEY (`id_unidade`)
+  `nome_unidade` tinytext,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id_unidade`),
+  KEY `fk_enderreco_idx` (`id_endereco`),
+  CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1282,31 +1293,6 @@ CREATE TABLE `tbl_unidade` (
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_usuario`
---
-
-DROP TABLE IF EXISTS `tbl_usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `cpf` varchar(45) DEFAULT NULL,
-  `senha` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_usuario`
---
-
-LOCK TABLES `tbl_usuario` WRITE;
-/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'adm','123');
-/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1323,10 +1309,8 @@ CREATE TABLE `tbl_usuario_funcionario` (
   `usuario` text NOT NULL,
   `senha` text NOT NULL,
   PRIMARY KEY (`id_usuario_funcionario`),
-  KEY `fk_funcionario_idx` (`id_funcionario`),
   KEY `fknivel_acesso_idx` (`id_nivel_acesso`),
-  CONSTRAINT `fknivel_acesso` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fknivel_acesso` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1378,4 +1362,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-19 11:16:02
+-- Dump completed on 2018-04-23 10:05:28
