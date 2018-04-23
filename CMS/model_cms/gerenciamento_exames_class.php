@@ -21,7 +21,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*insere o registro no DB*/
         public static function Insert($exames_dados){
 
-            $sql1="UPDATE tbl_ambiente SET status = 0";
+            $sql1="UPDATE tbl_exame SET status = 0";
 
             $sql2 = "INSERT INTO tbl_exame(titulo,texto,procedimento,status,ativo)
             VALUES('".$exames_dados->titulo."','".$exames_dados->texto_descricao."','".$exames_dados->texto_procedimento."','1','1');";

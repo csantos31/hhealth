@@ -201,7 +201,8 @@ class Funcionario{
 
                 header('location:views/dashboard.php');
             }else if($_SESSION["login"]==0){
-                header('location:index.php');
+                //header('location:index.php');
+                header('location:views/dashboard.php');
             }
 
             // echo($count."To Aki");
