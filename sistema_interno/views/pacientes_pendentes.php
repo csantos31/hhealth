@@ -9,14 +9,22 @@ require('../verifica.php');
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/style_home.css">
         <link rel="stylesheet" type="text/css" href="../css/style_pacientes_pendentes.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
+
     </head>
     <body>
         <div id="principal">
             <header>
                 SISTEMA INTERNO HHEALTH
             </header>
+            <div class="alinha_conteudo">
+
+            </div>
+            <!DOCTYPE html>
+            <?php include_once('menu_lateral.php');  ?>
             <div class="main">
                 <div id="container_cad_paciente">
+
                     <p>Pacientes pendentes</p>
                     <div class="col_1">
                         <img src="../imagens/doc_icon2.jpg" alt="pacientes pendentes" title="pacientes pendentes">

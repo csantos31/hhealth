@@ -18,6 +18,9 @@ require('../verifica.php');
             <header>
                 SISTEMA INTERNO HHEALTH
             </header>
+            <div class="alinha_conteudo">
+
+            </div>
             <div class="main">
                 <div id="container_home">
                     <div class="coluna">

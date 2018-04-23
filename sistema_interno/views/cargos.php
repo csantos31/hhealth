@@ -95,71 +95,7 @@ require('../verifica.php');
 
             </div>
             <!DOCTYPE html>
-            <div class="menu_lateral_cms"><!--menu lateral-->
-
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-
-                        <div class="titulo_menu_lateral">
-                            <a>Cargos</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-                        <div class="titulo_menu_lateral">
-                            <a>Nível de usuário</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-                        <div class="titulo_menu_lateral">
-                            <a>Home</a>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-                        <div class="titulo_menu_lateral">
-                            <a>Ambiente</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-                        <div class="titulo_menu_lateral">
-                            <a>Sobre</a>
-                        </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="linha">
-                        <div class="img_menu_lateral">
-                            <img src="#">
-                        </div>
-                        <div class="titulo_menu_lateral">
-                            <a>Convênios</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
+            <?php include_once('menu_lateral.php');  ?>
             <div class="main">
                 <div id="container_cad_paciente">
                       <div class="cabecalho">
