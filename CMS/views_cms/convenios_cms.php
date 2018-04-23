@@ -71,6 +71,7 @@
                     data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
+                        //alert(IdIten);
                     }
 
                 });

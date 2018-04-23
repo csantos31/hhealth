@@ -30,7 +30,7 @@ if(isset($_GET['modo'])){
         //Chama o metodo para Listar todos os registros
         $list = $controller_convenio::Buscar($id);
 
-        $id = $list->id_convenio;
+        //$id = $list->id_convenio;
         $titulo = $list->titulo;
         $texto = $list->texto;
         $imagem = $list->imagem;
@@ -118,13 +118,13 @@ if(isset($_GET['modo'])){
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                                <input value="<?= $titulo ?>" required type="text" class="input_big" placeholder="CONVÊNIO" name="txt_convenio" id="txt_convenio">
+                                <input value="" required type="text" class="input_big" placeholder="CONVÊNIO" name="txt_titulo">
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->
 
                             <div class="input_campo">
-                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CONVÊNIO" name="txt_texto" id="txt_texto" style="resize:none;"><?= $id ?></textarea>
+                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CONVÊNIO" name="txt_texto" style="resize:none;"><?= $texto ?></textarea>
                             </div>
                         </div>
                         <div class="campo"><!--campos--> <!--nome-->

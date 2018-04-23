@@ -133,7 +133,7 @@
             public function Update($convenio){
 
                   $sql = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
-                  imagem='".$convenio->imagem."', status_imagem='".$convenio->status_imagem."', ativo='".$convenio->ativo."' WHERE id_convenio=".$convenio->id_convenio;
+                  imagem='".$convenio->imagem."' WHERE id_convenio=".$convenio->id_convenio;
 
                   echo($sql);
 
