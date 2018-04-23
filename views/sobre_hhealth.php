@@ -22,19 +22,19 @@
                            <div class="faixa_titulo_da_pagina">
                                  Sobre o HHealth
                            </div>
+                          <?php
+                          include_once("../CMS/model_cms/gerenciamento_sobre_class.php");
+                          include_once("../CMS/controller_cms/gerenciamento_sobre_controller.php");
+                          
+                          
+                          $controller_sobre = new controllerSobre();
+                          $list = $controller_sobre::Listar();
+                          $cont=0;
+                          while($cont<count($list)){
+                          
+                          ?>
                            <div class="faixa1">
-                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
-                                 Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit,
-                                 et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in
-                                 tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit.
-                                 Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra.
-                                 Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                 Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus,
-                                 tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis
-                                 pretium sit amet quis magna. Aenean velit odio, elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut
-                                 vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet.
-                                 Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan,
-                                 blandit sed diam.
+                                 <?php echo($list[$cont]->sobre);?>
                            </div>
                           <div class="div_suporte_conteudo">
 
@@ -42,18 +42,13 @@
                            <div class="faixa2">
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
-                                             <img src="../imagens/missao.jpg" alt="">
+                                             <img src=".../CMS/<?php echo($list[$cont]->imagem1);?>" alt="">
                                              Missão
                                        </div>
                                  </div>
                                  <div class="suporte_txt_faixa2">
                                        <div class="txt_faixa2">
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis
-                                             vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie
-                                             elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio,
-                                             elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec
-                                             vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci
-                                             ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+                                             <?php echo($list[$cont]->missao);?>
                                        </div>
                                  </div>
                            </div>
@@ -63,17 +58,12 @@
                            <div class="faixa3">
                                  <div class="suporte_txt_faixa3">
                                        <div class="txt_faixa3">
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis
-                                             vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie
-                                             elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio,
-                                             elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec
-                                             vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci
-                                             ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+                                             <?php echo($list[$cont]->visao);?>
                                        </div>
                                  </div>
                                  <div class="suporte_img_faixa3">
                                        <div class="circulo_img_faixa3">
-                                             <img src="../imagens/visao.jpg" alt="">
+                                             <img src="../CMS/<?php echo($list[$cont]->imagem2);?>" alt="">
                                              Missão
                                        </div>
                                  </div>
@@ -84,21 +74,20 @@
                            <div class="faixa4">
                                  <div class="suporte_img_faixa4">
                                        <div class="circulo_img_faixa4">
-                                             <img src="../imagens/valores.jpg" alt="">
+                                             <img src="../CMS/<?php echo($list[$cont]->imagem3);?>" alt="">
                                              Missão
                                        </div>
                                  </div>
                                  <div class="suporte_txt_faixa4">
                                        <div class="txt_faixa4">
-                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis
-                                             vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie
-                                             elit, et lacinia ipsum quam nec dui. Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio,
-                                             elementum in tempus ut, vehicula eu diam. Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec
-                                             vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci
-                                             ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+                                             <?php echo($list[$cont]->valores);?>
                                        </div>
                                  </div>
                            </div>
+                            <?php
+                              $cont++;
+                          }
+                          ?>
                       </div>
 
                       <footer><!--**FOOTER**-->

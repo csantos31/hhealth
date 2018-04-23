@@ -26,16 +26,29 @@
                                  <div class="ajusta_lupa">
                                        <img class="lupa" src="../imagens/magnifier.png" alt="">
                                  </div>
-                           </div>
+                          </div>
+                          
+                          <?php
+                            include_once("../CMS/model_cms/unidade_class.php");
+                            include_once("../CMS/controller_cms/unidade_controller.php");
+                          
+                            $controller_unidade=new controller_unidade();
+                            $list=$controller_unidade::Listar();
+                          
+                            $cont=0;
+                            while($cont<count($list)){
+                          
+                          ?>
+                          
                            <div class="suporte_unidade">
                                  <a href="unidade_hhealth.php">
                                    <div class="faixa_nome_da_unidade">
-                                         Jandira
+                                         <?php echo($list[$cont]->nome_unidade)?>
                                    </div>
                                  </a>
                                  <div class="faixa_imagem_e_mapa">
                                        <div class="imagem">
-                                             <img src="../imagens/hospital-jandira.jpg" alt="">
+                                             <img src="../CMS/<?php echo($list[$cont]->imagem)?>" alt="">
                                        </div>
                                        <div class="mapa_da_unidade">
                                              <img src="../imagens/mapa.png" alt="">
@@ -43,57 +56,10 @@
                                  </div>
 
                            </div>
-                           <div class="suporte_unidade">
-                                 <a href="unidade_hhealth.php">
-                                   <div class="faixa_nome_da_unidade">
-                                         Barueri
-                                   </div>
-                                 </a>
-
-                                 <div class="faixa_imagem_e_mapa">
-                                       <div class="imagem">
-                                             <img src="../imagens/hospital_barueri.jpg" alt="">
-                                       </div>
-                                       <div class="mapa_da_unidade">
-                                             <img src="../imagens/mapa.png" alt="">
-                                       </div>
-                                 </div>
-
-                           </div>
-                           <div class="suporte_unidade">
-                                 <a href="unidade_hhealth.php">
-                                   <div class="faixa_nome_da_unidade">
-                                         Itapevi
-                                   </div>
-                                 </a>
-
-                                 <div class="faixa_imagem_e_mapa">
-                                       <div class="imagem">
-                                             <img src="../imagens/hospital_itapevi.jpg" alt="">
-                                       </div>
-                                       <div class="mapa_da_unidade">
-                                             <img src="../imagens/mapa.png" alt="">
-                                       </div>
-                                 </div>
-
-                           </div>
-                           <div class="suporte_unidade">
-                                 <a href="unidade_hhealth.php">
-                                   <div class="faixa_nome_da_unidade">
-                                         Sao Paulo
-                                   </div>
-                                 </a>
-
-                                 <div class="faixa_imagem_e_mapa">
-                                       <div class="imagem">
-                                             <img src="../imagens/hospital_sp.jpg" alt="">
-                                       </div>
-                                       <div class="mapa_da_unidade">
-                                             <img src="../imagens/mapa.png" alt="">
-                                       </div>
-                                 </div>
-
-                           </div>
+                           <?php
+                                $cont++;
+                            }
+                          ?>
                       </div>
 
                 </div>

@@ -269,6 +269,15 @@
 		                        $controller_gerenciamento_ambiente::Deletar();
 
 		                    break;
+
+										case 'buscar':
+
+										//if(confirm('Deseja realmente excluir?')){
+												$controller_gerenciamento_ambiente = new controller_exame();
+
+												$controller_gerenciamento_ambiente::Buscar();
+											break;
+
 		                }
 		            break;
 
@@ -442,22 +451,22 @@
 					$controller_endereco =  new controller_endereco();
 					//Chama o metodo Novo da controller
 					$controller_endereco::Editar();
-                    
+
                 // Instanciando a classe da controller
 					$controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
 					$controller_unidade::Editar();
 					break;
-                    
+
                 case 'ativar':
-					
-                    
+
+
                 // Instanciando a classe da controller
 					$controller_unidade =  new controller_unidade();
 					//Chama o metodo Novo da controller
 					$controller_unidade::Ativar();
 					break;
-                    
+
                 case 'desativar':
 					// Instanciando a classe da controller
 					$controller_unidade =  new controller_unidade();

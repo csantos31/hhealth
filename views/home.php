@@ -120,8 +120,10 @@
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter">
-                                  <h1>Onde você estiver, HHealth cuidará de você!.</h1>
-                              </div>
+                                  <h1>Onde você estiver,</h1>
+                                  <h2>HHealth</h2>
+                                  <h2>cuidará de você!.</h3>
+                                </div>
                           </div>
                         </div>
 

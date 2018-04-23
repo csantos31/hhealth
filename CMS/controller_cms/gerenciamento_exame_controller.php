@@ -32,6 +32,14 @@ class controller_exame{
             return $exames::Select();
       }
 
+      public function Listar(){
+        //Instancia da classe contatos
+        $dica_saude = new Exame();
+
+        //Chama o método para selecionar os registros
+        return $dica_saude::Select();
+      }
+
       public function Buscar(){
 
           $idExame = $_GET['id'];
@@ -100,7 +108,7 @@ class controller_exame{
 
       public function Deletar(){
         $id_exame = $_GET['id'];
-        
+
         require_once ('model_cms/gerenciamento_exames_class.php');
         require_once ('model_cms/bd_class.php');
         require_once ('modulo_img.php');
