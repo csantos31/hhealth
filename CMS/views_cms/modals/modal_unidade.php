@@ -2,7 +2,7 @@
 //$action = "modo=inserir";
 
 $id="0";
-$nome=null;
+$nome_unidade=null;
 $descricao=null;
 $frase=null;
 $logradouro =  null;
@@ -108,8 +108,8 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                         //$('.modal').html(dados);
-                         alert(dados,id_ende);
+                         $('.modal').html(dados);
+                         //alert(dados);
 
                     }
                 });
