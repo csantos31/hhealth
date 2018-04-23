@@ -1,7 +1,7 @@
 <?php
 //$action = "modo=inserir";
 
-$id="0";
+$id_ende="0";
 $nome_unidade=null;
 $descricao=null;
 $frase=null;
@@ -12,6 +12,7 @@ $cep = null;
 $rg = null;
 $cpf = null;
 $numero = null;
+$id_uni = 0;
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
@@ -86,18 +87,28 @@ if(isset($_GET['modo'])){
         
          <script>
              $("#form").submit(function(event){
+                   
+                 
                   //Recupera o id gravado no Form pelo atribute-id
                   var id_ende = $(this).data("id-ende");
                   var id_uni = $(this).data("id-uni");
                   var modo = "";
+                  
                   if(id_ende == '0')
                       modo='inserir';
                   else
                       modo='editar';
+                 
+                 
 
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
-
+                 
+                 alert(id_uni);
+                 alert(id_ende);
+                 alert(modo);
+                 
+                
                  $.ajax({
                     type: "POST",
                     url: "../router.php?controller=unidade&modo="+modo+"&id_uni="+id_uni+"&id_ende="+id_ende,
@@ -109,7 +120,7 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
-                         //alert(dados);
+                         
 
                     }
                 });

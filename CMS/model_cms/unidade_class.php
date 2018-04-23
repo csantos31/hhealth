@@ -33,7 +33,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql)){
-                //echo "<script>location.reload();</script>";
+                echo "<script>location.reload();</script>";
                 echo $sql;
                 
 			}else {
