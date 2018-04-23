@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.6.10, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
@@ -1102,6 +1102,38 @@ LOCK TABLES `tbl_situacao_paciente` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_sobre`
+--
+
+DROP TABLE IF EXISTS `tbl_sobre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_sobre` (
+  `id_sobre` int(11) NOT NULL AUTO_INCREMENT,
+  `sobre` text,
+  `missao` text,
+  `visao` text,
+  `valores` text,
+  `imagem1` text,
+  `imagem2` text,
+  `imagem3` text,
+  `status` char(1) DEFAULT NULL,
+  `ativo` char(1) DEFAULT NULL,
+  PRIMARY KEY (`id_sobre`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_sobre`
+--
+
+LOCK TABLES `tbl_sobre` WRITE;
+/*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
+INSERT INTO `tbl_sobre` VALUES (1,'2222222222222222222222','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa','Erro','Erro','Erro','1','1');
+/*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_tipo_quarto`
 --
 
@@ -1343,4 +1375,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-20 11:24:05
+-- Dump completed on 2018-04-23  8:20:27
