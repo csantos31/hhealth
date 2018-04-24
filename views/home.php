@@ -38,11 +38,25 @@
                  var myvar = $('h1').html().length
                  console.log(myvar);
                  if($('h1').html().length > 3 && $('h1').html().length < 22){
-                    
-                     window.setInterval(function() {
-                        $("h1").append("<br>HHealth cuidará de <br> você");
-                    }, 5000);
-                 }else{
+                     
+                     
+                     
+                     /*window.setInterval(function() {
+                        $("h1").append("<br>HHealth <br>cuidará de você");
+                    }, 5000);*/
+                     
+                     setTimeout(function(){
+                        //Faz o submit no form sem a ação do botao 
+                        $("#div_type").append("<h1>HHealth <h1>");
+                    },5000);
+                     setTimeout(function(){
+                        //Faz o submit no form sem a ação do botao 
+                         $("#div_type").append("<h3>Cuidará de você!</h3>")
+
+                    },9000);
+                     
+                     
+                 }else if($('h1').html().length == 19){
                      window.clearInterval();
                  }
                  
@@ -146,11 +160,13 @@
                               <div class="typewriter" id="div_type">
                                   <h1>Onde você estiver, </h1>
                                 </div>
+                                
                           </div>
                         </div>
-
+                       
                         <div class="faixa_2_content_home"><!--faixa2-->
-                            <div class="titulo_faixa_2_home">
+                            <div id="hg">
+                                <div class="titulo_faixa_2_home" style="color:#FF0000;">
                                 <a> Ambientes do Hospital</a>
                             </div>
 
@@ -180,9 +196,11 @@
                                 </div>
                             </div>
 
-                            <div class="content_btn_faixa_2_home">
+                            <div class="content_btn_faixa_2_home" style="color:#FF0000;"> 
                                 <p>Ver todos os ambiente do hospital</p>
                             </div>
+                            </div>
+                            
                         </div>
 
                         <div class="faixa_3_content_home"><!--Slider-->
