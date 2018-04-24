@@ -274,7 +274,7 @@
 
 										//if(confirm('Deseja realmente excluir?')){
 												$controller_gerenciamento_ambiente = new controller_exame();
-
+											
 												$controller_gerenciamento_ambiente::Buscar();
 											break;
 

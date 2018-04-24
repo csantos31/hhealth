@@ -145,7 +145,7 @@
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                           <div class="content_titulo_usuario">
                              <div class="titulo_cadastro1_usuario">
-                                 <a> Convênios</a>
+                                 <a> Exames</a>
                              </div>
 
                              <div class="content_add_usuario">

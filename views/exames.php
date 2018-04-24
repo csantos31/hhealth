@@ -1,8 +1,32 @@
 <?php
-  if (isset()) {
-    # code...
-  }
+  $list=null;
+  $texto_descricao = null;
+  $texto_procedimento = null;
+  $tituloDescricao = null;
+  $tituloProcedimento = null;
+  $busc = null;
 
+  if (isset($_GET['modo'])) {
+
+    $modo = $_GET['modo'];
+    if ($modo=='buscar') {
+      # code...
+
+      $id = $_GET['id'];
+      $tituloDescricao = "Descrição";
+      $tituloProcedimento = "Procedimento";
+      # code...
+      require_once('../CMS/controller_cms/gerenciamento_exame_controller.php');
+      require_once('../CMS/model_cms/gerenciamento_exames_class.php');/*da um require na nivel_class*/
+
+       $controller_exame = new controller_exame();
+       $busc = $controller_exame::Buscar();
+
+       $texto_descricao = $busc->texto;
+       $texto_procedimento = $busc->procedimento;
+
+  }
+}
 
  ?>
 
@@ -17,21 +41,32 @@
             <link rel="stylesheet" type="text/css" href="../css/style_exames.css">
 
 
-            <script type="text/javascript" src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+            <script type="text/javascript" src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
 
             <script>
 
 
                 function Mostrar(IdItem){
-                    $.ajax({
-                       type:"GET",
-                        url:"../router.php?modo=buscar&id="+IdItem,
-                        success: function(dados){
-                            $('.content_descricao_procedimento').html(dados);
+                  //alert(IdItem);
+                  event.preventDefault();
+                  $.ajax({
+
+                      type:"GET",
+                      url: "exames.php?modo=buscar&id="+IdItem,
+                       // console.log(url),
+                       success: function(dados){
+                            //console.log(dados);
+                            $('.main').html(dados);
+
+                        },
+                        error: function(error, errorThrown){
+                          alert(error+"  "+ errorThrown);
                         }
                     });
+
                 }
+
 
 
 
@@ -87,8 +122,8 @@
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
-                              <a href="#" onclick="Mostrar(<?php echo($list[$cont]->id_exame)?>);">
-                                <img src="../imagens/info.png" onclick="">
+                              <a href="#" onclick="">
+                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_exame)?>);">
                               </a>
                             </div>
 
@@ -103,22 +138,22 @@
                     <div class="content_descricao_procedimento">
                         <div class="content_descricao">
                             <div class="titulo_descricao">
-                                <a>Descrição</a>
+                                <a><?php echo $tituloDescricao; ?></a>
                             </div>
 
                             <div class="conteudo_descricao">
-                                <?php echo($list[$cont]->titulo)?>
+                                <?php echo $texto_descricao;?>
 
                             </div>
                         </div>
 
                         <div class="content_procedimento">
                             <div class="titulo_procedimento">
-                                <a>Procedimento</a>
+                                <a><?php echo $tituloProcedimento; ?></a>
                             </div>
 
                             <div class="conteudo_procedimento">
-                                <a><?php echo($list[$cont]->titulo)?> </a>
+                                <a><?php echo $texto_procedimento;?> </a>
                             </div>
                         </div>
 

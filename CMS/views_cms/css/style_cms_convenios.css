@@ -1,3 +1,8 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
 /*titulo usuario*/
 .content_titulo_usuario{
     width:1350px;
