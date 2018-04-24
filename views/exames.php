@@ -4,6 +4,7 @@
   $texto_procedimento = null;
   $tituloDescricao = null;
   $tituloProcedimento = null;
+  $busc = null;
 
   if (isset($_GET['modo'])) {
 
@@ -15,14 +16,14 @@
       $tituloDescricao = "Descrição";
       $tituloProcedimento = "Procedimento";
       # code...
-      include_once('../CMS/controller_cms/gerenciamento_exame_controller.php');
-      include_once('../CMS/model_cms/gerenciamento_exames_class.php');/*da um require na nivel_class*/
+      require_once('../CMS/controller_cms/gerenciamento_exame_controller.php');
+      require_once('../CMS/model_cms/gerenciamento_exames_class.php');/*da um require na nivel_class*/
 
        $controller_exame = new controller_exame();
-       $busc= $controller_exame::Buscar();
+       $busc = $controller_exame::Buscar();
 
-       $texto_descricao = $busc->texto_descricao;
-       $texto_procedimento = $busc->texto_procedimento;
+       $texto_descricao = $busc->texto;
+       $texto_procedimento = $busc->procedimento;
 
   }
 }
@@ -47,18 +48,16 @@
 
 
                 function Mostrar(IdItem){
-                  // alert(IdItem);
+                  //alert(IdItem);
                   event.preventDefault();
                   $.ajax({
 
                       type:"GET",
-                  
-
-                      url: "../router.php?controller=exame&modo=buscar&id="+IdItem,
+                      url: "exames.php?modo=buscar&id="+IdItem,
                        // console.log(url),
                        success: function(dados){
-                            console.log(dados);
-                            $('.content_descricao_procedimento').html(dados);
+                            //console.log(dados);
+                            $('.main').html(dados);
 
                         },
                         error: function(error, errorThrown){
@@ -143,7 +142,7 @@
                             </div>
 
                             <div class="conteudo_descricao">
-                                <?php echo($texto_descricao);?>
+                                <?php echo $texto_descricao;?>
 
                             </div>
                         </div>
@@ -154,7 +153,7 @@
                             </div>
 
                             <div class="conteudo_procedimento">
-                                <a><?php echo($texto_procedimento);?> </a>
+                                <a><?php echo $texto_procedimento;?> </a>
                             </div>
                         </div>
 

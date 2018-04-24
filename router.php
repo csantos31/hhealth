@@ -100,6 +100,9 @@
 
          case 'exame':
              require_once('CMS/controller_cms/gerenciamento_exame_controller.php');
+             require_once('CMS/model_cms/bd_class.php');
+             require_once('CMS/model_cms/gerenciamento_exames_class.php');
+             require_once('CMS/modulo_img.php');
              switch($modo){
                case 'inserir':
                  // Instanciando a classe da controller

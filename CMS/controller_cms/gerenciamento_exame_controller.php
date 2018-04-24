@@ -41,10 +41,11 @@ class controller_exame{
       }
 
       public function Buscar(){
-          require_once ('../model_cms/bd_class.php');
-          require_once ('../model_cms/gerenciamento_exames_class.php');
-
-          require_once ('../modulo_img.php');
+      //  echo  $_SERVER['DOCUMENT_ROOT'];
+          include_once('../CMS/model_cms/bd_class.php');
+          //require_once('../model_cms/bd_class.php');
+          include_once('../CMS/model_cms/gerenciamento_exames_class.php');
+          // include_once('modulo_img.php');
 
           $idExame = $_GET['id'];
 
@@ -55,6 +56,7 @@ class controller_exame{
           $exam = $exame::SelectById($exame);
 
           return $exam;
+
       }
 
 

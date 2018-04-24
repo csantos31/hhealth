@@ -33,7 +33,7 @@ class Mysql_db{
                     Mensagem do erro: ".$Error -> getMessage());
         }
 
-        
+
 
     }
 
