@@ -372,38 +372,6 @@ body{
     font-size: 60px;
 }
 
-.typewriter h2 {
-  color: #DA0000;
-  font-family: monospace;
-  overflow: hidden;
-  font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
- animation: 
-    typing2 3.5s steps(30, end),
-    blink-caret2 .5s step-end infinite;
-    font-size: 60px;
-    text-align: center;
-}
-
-.typewriter h3 {
-  color: #DA0000;
-  font-family: monospace;
-  overflow: hidden;
-  font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
- animation: 
-    typing2 3.5s steps(30, end),
-    blink-caret2 .2s step-end infinite;
-    font-size: 60px;
-    text-align: center;
-}
-
 
  /*The typing effect */
 @keyframes typing {
@@ -415,29 +383,6 @@ body{
 @keyframes blink-caret {
   from, to { border-color: transparent }
 }
-
-/*2*/
-@keyframes typing2 {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/*The typewriter cursor effect*/
-@keyframes blink-caret2 {
-  from, to { border-color: transparent }
-}
-
-@keyframes typing3 {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/*The typewriter cursor effect*/
-@keyframes blink-caret3 {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
-}
-
 
 
 /*Botão chamar modal área do paciente*/
