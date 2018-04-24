@@ -41,6 +41,10 @@ class controller_exame{
       }
 
       public function Buscar(){
+          require_once ('../model_cms/bd_class.php');
+          require_once ('../model_cms/gerenciamento_exames_class.php');
+
+          require_once ('../modulo_img.php');
 
           $idExame = $_GET['id'];
 
