@@ -13,15 +13,43 @@
 <html lang="pt-br" dir="ltr">
     <head>
         <meta charset="UTF-8">
+        <title>Hospital HHealth</title>
         <link rel="stylesheet" type="text/css" href="css/style_padrao.css">
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
-
         <link rel="stylesheet" href="css/w3c_css.css">
-
-        <title>Hospital HHealth</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jcarousellite.js"></script>
+        <script type="text/javascript" src="js/carrossel.js"></script>
+        <script>
+            /*
+             window.setInterval(function() {
+                $("h1").append("<br>HHealth cuidará de <br> você");
+            }, 5000);
+        */
+             $(document).ready(function(){
+                
+                 /*
+                     if($('#my_text').html().length < 500)
+                    {
+                        $('#read_more').hide();
+                    }
+                 */
+                 var myvar = $('h1').html().length
+                 console.log(myvar);
+                 if($('h1').html().length > 3 && $('h1').html().length < 22){
+                    
+                     window.setInterval(function() {
+                        $("h1").append("<br>HHealth cuidará de <br> você");
+                    }, 5000);
+                 }else{
+                     window.clearInterval();
+                 }
+                 
+             })
+            
+        </script>
     </head>
-
     <body>
           <div class="main"><!--Div Main que segura todas as divs-->
                <div class="modal_login">
@@ -111,18 +139,12 @@
 
 
                             </div>
-                              <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-                              <script type="text/javascript" src="js/jcarousellite.js"></script>
-                              <script type="text/javascript" src="js/carrossel.js"></script>
-
                         </div>
                         
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
-                              <div class="typewriter">
-                                  <h1>Onde você estiver,</h1>
-                                  <h2>HHealth</h2>
-                                  <h2>cuidará de você!.</h3>
+                              <div class="typewriter" id="div_type">
+                                  <h1>Onde você estiver, </h1>
                                 </div>
                           </div>
                         </div>
