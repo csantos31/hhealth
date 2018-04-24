@@ -97,7 +97,61 @@
 
              }
          break;
-        
+
+         case 'exame':
+             require_once('CMS/controller_cms/gerenciamento_exame_controller.php');
+             switch($modo){
+               case 'inserir':
+                 // Instanciando a classe da controller
+                 $controller_gerenciamento_ambiente =  new controller_exame();
+                 //Chama o metodo Novo da controller
+
+                 $controller_gerenciamento_ambiente::Novo();
+
+                 break;
+
+                 case 'editar':
+
+                     $controller_gerenciamento_ambiente = new controller_exame();
+
+                     $controller_gerenciamento_ambiente::Editar();
+
+                     break;
+
+                 case 'desativar':
+                     $controller_gerenciamento_ambiente = new controller_exame();
+
+                     $controller_gerenciamento_ambiente::Desativar();
+
+                     break;
+
+                 case 'ativar':
+                     $controller_gerenciamento_ambiente = new controller_exame();
+
+                     $controller_gerenciamento_ambiente::Ativar();
+
+                     break;
+
+                 case 'deletar':
+
+                     //if(confirm('Deseja realmente excluir?')){
+                         $controller_gerenciamento_ambiente = new controller_exame();
+
+                         $controller_gerenciamento_ambiente::Deletar();
+
+                     break;
+
+                 case 'buscar':
+
+                 //if(confirm('Deseja realmente excluir?')){
+                     $controller_gerenciamento_ambiente = new controller_exame();
+
+                     $controller_gerenciamento_ambiente::Buscar();
+                   break;
+
+                 }
+             break;
+
     }
 
 ?>
