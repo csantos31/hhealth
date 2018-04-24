@@ -7,7 +7,7 @@ require('../verifica.php');
     <head>
         <title>Sistema Interno HHealth</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="../css/style_home.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nivel_funcionario.css">
         <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
 
