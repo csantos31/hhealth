@@ -97,7 +97,24 @@
 
              }
          break;
+            
+        case 'ambiente':
+            require_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
+            require_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
+            switch($modo){
+                case 'mostrar':
+                    // Instanciando a classe da controller
+                    $controller_gerenciamento_ambiente =  new controller_ambiente();
+                    //Chama o metodo Novo da controller
+
+                    $controller_gerenciamento_ambiente::Buscar();
+
+                    break;
+
+                
+        break;
         
+    }
     }
 
 ?>

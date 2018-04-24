@@ -65,6 +65,7 @@ include($caminho.'../verifica.php');
                     data:{modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
+                        
                     }
                 });
             }

@@ -123,15 +123,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 				$ambiente->id_ambiente = $rs['id_ambiente'];
 
-                        $ambiente->titulo = $rs['titulo'];
-                        $ambiente->texto = $rs['texto'];
-                        $ambiente->imagem = $rs['imagem'];
-                        $ambiente->imagem2 = $rs['imagem2'];
-                        $ambiente->imagem3 = $rs['imagem3'];
-                        $ambiente->imagem4 = $rs['imagem4'];
-                        $ambiente->imagem5 = $rs['imagem5'];
-                        $ambiente->imagem6 = $rs['imagem6'];
-                        $ambiente->status = $rs['status'];
+                    
 
                 $ambiente->titulo = $rs['titulo'];
                 $ambiente->texto = $rs['texto'];
@@ -146,6 +138,55 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 
 				return $ambiente;
+
+			}else {
+				//Mensagem de erro
+				echo "Error ao selecionar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+		}
+        
+        /*Busca um registro especifico no BD*/
+		public function SelectLast(){
+			$sql = "SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC LIMIT 1";
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			$select = $PDO_conex->query($sql);
+
+			//Executa o script no banco de dados
+			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+				//Se der true redireciona a tela
+
+
+				$ambiente = new Ambiente();
+
+				$ambiente->id_ambiente = $rs['id_ambiente'];
+
+                    
+
+                $ambiente->titulo = $rs['titulo'];
+                $ambiente->texto = $rs['texto'];
+				$ambiente->imagem = $rs['imagem'];
+				$ambiente->imagem2 = $rs['imagem2'];
+                $ambiente->imagem3 = $rs['imagem3'];
+                $ambiente->imagem4 = $rs['imagem4'];
+                $ambiente->imagem5 = $rs['imagem5'];
+                $ambiente->imagem6 = $rs['imagem6'];
+                $ambiente->status = $rs['status'];
+                $ambiente->ativo = $rs['ativo'];
+
+               
+                
+                return $ambiente;
+                //return $endereco;
 
 			}else {
 				//Mensagem de erro

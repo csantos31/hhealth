@@ -156,13 +156,18 @@
 		}
 
         public function Buscar(){
-            $idAmbiente = $_GET['id'];
+            
 
             $ambiente = new Ambiente();
 
-            $ambiente->id_ambiente=$idAmbiente;
-
-            $amb = $ambiente::SelectById($ambiente);
+            if(isset($_GET['id'])){
+                $idAmbiente = $_GET['id'];
+                $ambiente->id_ambiente=$idAmbiente;
+                $amb = $ambiente::SelectById($ambiente);
+            }else{
+                $amb = $ambiente::SelectLast();
+            }
+            
 
             return $amb;
         }
