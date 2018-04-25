@@ -22,7 +22,7 @@
         <div class="conteudo_receitas"><!--conteudo receitas-->
             <div class="content_titulo_receita">
                 <div class="titulo_nome"><!--titulo nome-->
-                    <a>Nome</a>
+                    <a>Tipo</a>
                 </div>
 
                 <div class="titulo_data"><!--titulo data-->
