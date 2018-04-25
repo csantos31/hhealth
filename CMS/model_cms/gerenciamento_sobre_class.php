@@ -21,6 +21,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         //cria um construtor
         public function __construct(){
             include_once('bd_class.php');
+            include_once('auditoria_class.php');
         }
 
         /*insere o registro no DB*/
@@ -39,6 +40,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql1) &&$PDO_conex->query($sql2)){
+                
+                $auditoria = new Auditoria();
+                
+                $auditoria::Insert($auditoria);
+                
                 echo "<script>location.reload();</script>";
 
 			}else {
@@ -77,13 +83,13 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				$lista_sobre[$cont]->id_sobre = $rs['id_sobre'];
 				$lista_sobre[$cont]->sobre = $rs['sobre'];
 				$lista_sobre[$cont]->missao = $rs['missao'];
-        $lista_sobre[$cont]->visao = $rs['visao'];
-        $lista_sobre[$cont]->valores = $rs['valores'];
-        $lista_sobre[$cont]->imagem1 = $rs['imagem1'];
-        $lista_sobre[$cont]->imagem2 = $rs['imagem2'];
-        $lista_sobre[$cont]->imagem3 = $rs['imagem3'];
-        $lista_sobre[$cont]->status = $rs['status'];
-        $lista_sobre[$cont]->ativo = $rs['ativo'];
+                $lista_sobre[$cont]->visao = $rs['visao'];
+                $lista_sobre[$cont]->valores = $rs['valores'];
+                $lista_sobre[$cont]->imagem1 = $rs['imagem1'];
+                $lista_sobre[$cont]->imagem2 = $rs['imagem2'];
+                $lista_sobre[$cont]->imagem3 = $rs['imagem3'];
+                $lista_sobre[$cont]->status = $rs['status'];
+                $lista_sobre[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;

@@ -166,6 +166,8 @@
                   // Chama o metodo para deletar os registros
                   $convenio::Deletar($convenio);
             }
+          
+          
 
       }
 

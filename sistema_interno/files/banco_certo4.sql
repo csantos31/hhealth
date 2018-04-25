@@ -1,4 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.10, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `hhealth`;
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
@@ -35,7 +37,7 @@ CREATE TABLE `tbl_ambiente` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_ambiente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +46,7 @@ CREATE TABLE `tbl_ambiente` (
 
 LOCK TABLES `tbl_ambiente` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente` DISABLE KEYS */;
-INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',1,1);
+INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',0,0),(2,'dasdas','                  asdas                                              \r\n                            ','imagem_ambiente/cirurgia5.jpg','imagem_ambiente/endoscopia.jpg','imagem_ambiente/edit_icon.png','imagem_ambiente/download.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/acupuntura.jpg',0,1),(3,'asf','    sadfasd                                                            \r\n                            ','imagem_ambiente/dicas.png','imagem_ambiente/bg_login.jpg','imagem_ambiente/cirurgia4.jpg','imagem_ambiente/endocrinologia.jpg','imagem_ambiente/cirurgia6.jpg','imagem_ambiente/cirurgia2.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,10 +335,13 @@ CREATE TABLE `tbl_endereco` (
   `id_estado` int(11) NOT NULL,
   `cidade` varchar(45) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
+  `id_pais` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_endereco`),
   KEY `fkestado_idx` (`id_estado`),
+  KEY `fk_idpaispaispais_idx` (`id_pais`),
+  CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -345,7 +350,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia');
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'03652148','Rua teste de teste','8',1,'Gotham City','Vila escondida',NULL),(41,'123456789','Av. Louro José','9',13,'Central City','Vale do Cilicio',NULL),(42,'45896512','Ruadas flexas','50',1,'Starling City','Glades',NULL),(43,'85219654','Rua Estranha','6',23,'National City','Teste',NULL),(44,'85279634','Rua Caverna','02',14,'Smallville','Teste 2',NULL),(45,'5649873','Rua da maria','3',1,'Jandira','Vila DOce',NULL),(46,'63547891','Rua dos teste','7',17,'Itapevi','Vila Doce',NULL),(47,'85497512','Rua Osasco','787',20,'Barueri','Nova Holanda',NULL),(48,'65895474','Av. Calouros Teste','5',15,'Carapicuiba','La Casa de Papel',NULL),(49,'12345678','Chefe','787',1,'La Casa de Papel','Teste',NULL),(50,'12345678','Rua Osasco','6',23,'La Casa de Papel','Banco',NULL),(51,'85497512','Espetora','6',1,'La Casa de Papel','Banco',NULL),(52,'65895474','Río','8',1,'La Casa de Papel','Banco',NULL),(53,'12345678','Moscú','95',9,'La Casa de Papel','Banco',NULL),(54,'5649873','Denver','85',15,'La Casa de Papel','Banco',NULL),(55,'85279634','Belin','213',34,'La Casa de Papel','Banco',NULL),(56,'85219654','Mariví','21',14,'La Casa de Papel','Banco',NULL),(57,'85279634','Nairobi','02',14,'La Casa de Papel','Banco',NULL),(58,'85279634','Tokio','5',19,'La Casa de Papel','Banco',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -468,7 +473,7 @@ CREATE TABLE `tbl_exame` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_exame`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -477,7 +482,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
-INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Cardiogista','Jejum por 2 horas                 ','tricagoaaa',0,1),(3,'fdadsf','dasfdsaf  ','dasfdsafads  ',1,1);
+INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -558,7 +563,7 @@ CREATE TABLE `tbl_funcionario` (
   KEY `fk12312_idx` (`id_endereco`),
   CONSTRAINT `fk12312` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_funcionario_tbl_cargo1` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargo` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -567,7 +572,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1);
+INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1),(11,1,40,'Bruce','Wayne','2018-04-16','874965412','85474596523',1),(12,1,41,'Barry ','Allen','2000-04-14','852741963','74185296312',1),(13,1,42,'Oliver','Queen','1999-04-16','879564231','47158269389',1),(14,1,43,'Kara','Danvers','1998-05-13','852417213','87465923541',1),(15,1,44,'Clark','Kent','1989-09-24','856854254','41236578964',1),(16,1,45,'Martin ','Riggs','1970-04-17','894723654','587941245454',1),(17,1,46,'Roger','Murtaugh','1976-04-16','8895546322','85285698547',1),(18,1,47,'Luke','Cage','2018-04-24','125489689','54626974568',1),(19,1,48,'Professor','Teste','2018-04-16','874563214','85647894215',1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -832,7 +837,7 @@ CREATE TABLE `tbl_paciente` (
   PRIMARY KEY (`id_paciente`),
   KEY `fk3_idx` (`id_endereco`),
   CONSTRAINT `fk3` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -841,7 +846,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','5545544',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
+INSERT INTO `tbl_paciente` VALUES (1,38,1,'João','Silva','0200-01-31','874635189','85214798763',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1),(8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','5545544',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1),(9,49,3,'Mónica','Gaztambide','2018-04-09','1234567897','12345678911',NULL,'arquivos/cirurgia2.jpg','arquivos/hospital-jandira.jpg','1',1),(10,50,1,'Arturo','Román','2018-04-12','123456789','12345678911',NULL,'arquivos/endocrinologia.jpg','arquivos/edit_icon.png','1',1),(11,51,5,'Raquel ','Murilo','2018-04-09','8895546322','12345678911',NULL,'arquivos/5dicas.jpg','arquivos/cirurgia2.jpg','1',1),(12,52,4,'Miguel','Herrán','2018-04-16','1234567897','14257854639',NULL,'arquivos/5dicas.jpg','Erro','1',1),(13,53,5,'Paco','Tous','2018-06-12','8895546322','74185296312',NULL,'arquivos/5dicas.jpg','Erro','1',1),(14,54,1,'Jaime Menéndez','Lorente','2018-04-17','8895546322','12345678911',NULL,'arquivos/cirurgia3.jpg','arquivos/5dicas.jpg','1',1),(15,55,3,'Pedro','Alonso','2018-04-16','5545465','14257854639',NULL,'arquivos/saude-bucal.png','arquivos/info.png','1',1),(16,56,2,'Kiti','Mánver','2018-04-25','1234567897','85474596523',NULL,'arquivos/cirurgia1.jpg','Erro','1',1),(17,57,1,'Alba ','Morte','2018-04-01','8895546322','74185296312',NULL,'arquivos/5dicas.jpg','Erro','1',1),(18,58,4,'Ursula','Corberó','2018-04-17','1234567897','74185296312',NULL,'arquivos/edit_icon.png','arquivos/cirurgia3.jpg','1',1);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -931,12 +936,16 @@ DROP TABLE IF EXISTS `tbl_receita_medica`;
 CREATE TABLE `tbl_receita_medica` (
   `id_receita_medica` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario` int(11) DEFAULT NULL,
-  `receita_arquivo` text,
+  `id_paciente` int(11) DEFAULT NULL,
   `id_remedio` int(11) DEFAULT NULL,
+  `tipo` text,
+  `data` date DEFAULT NULL,
   PRIMARY KEY (`id_receita_medica`),
   KEY `fk_541_idx` (`id_remedio`),
-  CONSTRAINT `fk_541` FOREIGN KEY (`id_remedio`) REFERENCES `tbl_remedio` (`id_remedio`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `fk_idpacientepaciente_idx` (`id_paciente`),
+  CONSTRAINT `fk_541` FOREIGN KEY (`id_remedio`) REFERENCES `tbl_remedio` (`id_remedio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_idpacientepaciente` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -945,6 +954,7 @@ CREATE TABLE `tbl_receita_medica` (
 
 LOCK TABLES `tbl_receita_medica` WRITE;
 /*!40000 ALTER TABLE `tbl_receita_medica` DISABLE KEYS */;
+INSERT INTO `tbl_receita_medica` VALUES (1,11,8,1,'Atendimento','2018-03-20'),(2,12,8,2,'Consulta','2018-02-03'),(3,13,8,3,'Tratamento','2018-01-30'),(4,14,8,4,'Atendimento','2017-12-09'),(5,15,17,5,'Atendimento','2017-11-04'),(6,16,17,6,'Tratamento','2017-10-18'),(7,17,17,7,'Consulta','2018-09-08'),(8,18,12,8,'Tratamento','2018-09-08'),(9,19,11,9,'Atendimento','2018-09-08'),(10,1,9,10,'Consulta','2018-09-08');
 /*!40000 ALTER TABLE `tbl_receita_medica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -958,7 +968,7 @@ DROP TABLE IF EXISTS `tbl_remedio`;
 CREATE TABLE `tbl_remedio` (
   `id_remedio` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`id_remedio`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -967,6 +977,7 @@ CREATE TABLE `tbl_remedio` (
 
 LOCK TABLES `tbl_remedio` WRITE;
 /*!40000 ALTER TABLE `tbl_remedio` DISABLE KEYS */;
+INSERT INTO `tbl_remedio` VALUES (1),(2),(3),(4),(5),(6),(7),(8),(9),(10);
 /*!40000 ALTER TABLE `tbl_remedio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1210,11 +1221,14 @@ CREATE TABLE `tbl_trabalhe_conosco` (
   `id_deficiencia` int(11) NOT NULL,
   `resumo_qualificacoes` text NOT NULL,
   `id_endereco` int(11) DEFAULT NULL,
+  `id_pais` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_trabalhe_conosco`),
   KEY `fk21389_idx` (`id_pais`),
   KEY `fk213325_idx` (`id_deficiencia`),
+  KEY `fk_paispais_idx` (`id_pais`),
   CONSTRAINT `fk213325` FOREIGN KEY (`id_deficiencia`) REFERENCES `tbl_deficiencia` (`id_deficiente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_paispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1278,10 +1292,12 @@ CREATE TABLE `tbl_unidade` (
   `nome_unidade` tinytext,
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
+  `latitute` decimal(10,8) DEFAULT NULL,
+  `logintude` decimal(10,8) DEFAULT NULL,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1290,6 +1306,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1339,7 +1356,7 @@ CREATE TABLE `tbl_usuario_paciente` (
   KEY `fk_id_nivel_idx` (`id_nivel_acesso`),
   CONSTRAINT `fk_dasd` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_id_nivel` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1348,9 +1365,12 @@ CREATE TABLE `tbl_usuario_paciente` (
 
 LOCK TABLES `tbl_usuario_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_paciente` VALUES (1,8,1,'root','bcd127');
 /*!40000 ALTER TABLE `tbl_usuario_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'hhealth'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1361,4 +1381,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-24 11:15:57
+-- Dump completed on 2018-04-25 11:11:33

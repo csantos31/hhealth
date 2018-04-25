@@ -87,7 +87,6 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
-                         //alert(dados);
 
                     }
                 });
@@ -156,7 +155,7 @@ if(isset($_GET['modo'])){
                         </div>
                     
                     </div>
-                    <div class="part">
+                    <div class="part2">
                     
                         <div class="content_campos"><!--content dos campos de cadastro-->
 
