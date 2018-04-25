@@ -25,13 +25,13 @@
                           <?php
                           include_once("../CMS/model_cms/gerenciamento_sobre_class.php");
                           include_once("../CMS/controller_cms/gerenciamento_sobre_controller.php");
-                          
-                          
+
+
                           $controller_sobre = new controllerSobre();
                           $list = $controller_sobre::Listar();
                           $cont=0;
-                          while($cont<count($list)){
-                          
+                          if($cont<count($list)){
+
                           ?>
                            <div class="faixa1">
                                  <?php echo($list[$cont]->sobre);?>
@@ -42,7 +42,7 @@
                            <div class="faixa2">
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
-                                             <img src=".../CMS/<?php echo($list[$cont]->imagem1);?>" alt="">
+                                             <img src="../CMS/<?php echo($list[$cont]->imagem1);?>" alt="">
                                              Missão
                                        </div>
                                  </div>
@@ -84,10 +84,11 @@
                                        </div>
                                  </div>
                            </div>
-                            <?php
-                              $cont++;
-                          }
-                          ?>
+                           <?php
+                             $cont++;
+                         }
+                         ?>
+
                       </div>
 
                       <footer><!--**FOOTER**-->
