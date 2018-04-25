@@ -28,9 +28,9 @@
 .content_modal{/*content da modal*/
     width:1000px;
     min-height:500px;
-    height:650;
+    height:auto;
     margin:auto;
-    background-color: yellowgreen;
+    background-color:#cccccc;
     border-radius:10px;
 }
 
@@ -63,23 +63,31 @@
 }
 
 .part{
-    width:650px;
+    width:500px;
     height: 600px; 
     float: left;
-/*    background-color: aquamarine*/
+    background-color: aqua;
+}
+
+.part2{
+    width:500px;
+    height: 600px; 
+    float: left;
+    background-color: aqua;
 }
 
 .content_campos{/*content dos campos*/
-    width:800px;
+    width:1000px;
+    background-color: aquamarine;
     height: 600px;
     float: left;
-    margin: auto;
-    background-color: aquamarine;
    
 }
 
 .campo{/*campos*/
-    width:650px;
+    width:auto;
+    height: auto;
+    background-color: blue;
     
     
 }
@@ -87,18 +95,19 @@
 .string_campo{/*String dos campos nome,usuario...*/
     width:100px;
     height:25px;
+    float: right;
     padding-top:5px;
-    float:left;
+    background-color: aqua;
     font-family: sans-serif;
     text-align: center;
     color:#000000;
-    
 }
 
 .input_campo [type=text]{
     width:400px;
     height:30px;
-    float:left;
+    float: right;
+    background-color: bisque;
     border-top:#ffffff;
     border-left:#ffffff;
     box-shadow:0 1px 4px 0 #5F0601;
