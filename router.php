@@ -97,8 +97,7 @@
 
              }
          break;
-<<<<<<< HEAD
-            
+
         case 'ambiente':
             require_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
             require_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
@@ -112,10 +111,10 @@
 
                     break;
 
-                
+
         break;
-        
-=======
+
+
 
          case 'exame':
              require_once('CMS/controller_cms/gerenciamento_exame_controller.php');
@@ -174,7 +173,6 @@
                  }
              break;
 
->>>>>>> 1bbe8fea789842cf561497241f4d127c9464ed95
     }
     }
 
