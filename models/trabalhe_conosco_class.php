@@ -17,23 +17,6 @@ class TrabalheConosco{
     //Insere o registro no BD
     public static function Insert($contato_dados){
 
-        $sql =  "INSERT INTO tbl_estado (cep, logradouro, numero, id_estado,
-                                        cidade, bairo)
-                                        VALUES ('".$trabalhe_conosco->nome."',
-                                        '".$trabalhe_conosco->email."',
-                                        '".$trabalhe_conosco->telefone."',
-                                        '".$trabalhe_conosco->celular."',
-                                        );"
-
-
-        $sql = "INSERT INTO tbl_endereco (cep, logradouro, numero, id_estado,
-                                        cidade, bairo)
-                                        VALUES ('".$trabalhe_conosco->nome."',
-                                        '".$trabalhe_conosco->email."',
-                                        '".$trabalhe_conosco->telefone."',
-                                        '".$trabalhe_conosco->celular."',
-                                        );";
-
         $sql = "INSERT INTO tbl_trabalhe_conosco (nome, email, telefone, celular,
                                         dt_nasc, sexo, id_pais, estado_civil, trabalha_atualmente,id_deficiencia, resumo_qualificacoes,
                                         ativo)

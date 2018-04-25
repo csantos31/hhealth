@@ -132,109 +132,110 @@
 
             public function Update($convenio){
 
-                  $sql = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
-                  imagem='".$convenio->imagem."' WHERE id_convenio=".$convenio->id_convenio;
+              $sql = "UPDATE tbl_convenio SET titulo='".$convenio->titulo."', texto='".$convenio->texto."',
+              imagem='".$convenio->imagem."' WHERE id_convenio=".$convenio->id_convenio;
 
-                  echo($sql);
+              echo($sql);
 
-                  echo($convenio->titulo);
+              echo($convenio->titulo);
 
                   //Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+        			$conex = new Mysql_db();
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
+        			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+        			na variavel que $PDO_conex*/
+        			$PDO_conex = $conex->Conectar();
 
-                  //Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-			}
+                          //Executa o script no banco de dados
+        			if($PDO_conex->query($sql)){
+        				//Se der true redireciona a tela
+        				echo "<script>location.reload();</script>";
+        			}else {
+        				//Mensagem de erro
+        				echo "Error atualizar no Banco de Dados";
+        			}
 
-			//Fecha a conexão com o banco de dados
-			$conex->Desconectar();
-            }
+        			//Fecha a conexão com o banco de dados
+        			$conex->Desconectar();
+                    }
 
             public function Deletar($convenio){
 
-                  $sql="UPDATE tbl_convenio set ativo=0 WHERE id_convenio=".$convenio->id_convenio;
+              $sql="UPDATE tbl_convenio set ativo=0 WHERE id_convenio=".$convenio->id_convenio;
 
-                  //Instancio o banco e crio uma variavel
-      		$conex = new Mysql_db();
+              //Instancio o banco e crio uma variavel
+  		        $conex = new Mysql_db();
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
+        			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+        			na variavel que $PDO_conex*/
+        			$PDO_conex = $conex->Conectar();
 
-                  //Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>confirm('Deseja realmente excluir?');</script>";
-                        echo "<script>location.reload();</script>";
+                          //Executa o script no banco de dados
+        			if($PDO_conex->query($sql)){
+        				//Se der true redireciona a tela
+        				echo "<script>confirm('Deseja realmente excluir?');</script>";
+                                echo "<script>location.reload();</script>";
 
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-                        echo $sql;
-			}
+        			}else {
+        				//Mensagem de erro
+        				echo "Error atualizar no Banco de Dados";
+                                echo $sql;
+        			}
 
-                  //Fecha a conexão com o banco de dados
-      		$conex->Desconectar();
+                          //Fecha a conexão com o banco de dados
+              		$conex->Desconectar();
             }
 
-            public function DesativarPorId($convenio){
+          public function DesativarPorId($convenio){
 
-                  $sql = "UPDATE tbl_convenio set status_imagem=0 WHERE id_convenio=".$convenio->id_convenio;
+            $sql = "UPDATE tbl_convenio set status_imagem=0 WHERE id_convenio=".$convenio->id_convenio;
 
-
-                  //Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
-
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
-
-			//Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
-
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-			}
-
-			//Fecha a conexão com o banco de dados
-			$conex->Desconectar();
-            }
-
-            public function AtivarPorId($convenio){
-                  $sql = "UPDATE tbl_convenio set status_imagem=1 WHERE id_convenio=".$convenio->id_convenio;
 
                   //Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+      			$conex = new Mysql_db();
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
+      			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+      			na variavel que $PDO_conex*/
+      			$PDO_conex = $conex->Conectar();
 
-			//Executa o script no banco de dados
-			if($PDO_conex->query($sql)){
-				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
+      			//Executa o script no banco de dados
+      			if($PDO_conex->query($sql)){
+      				//Se der true redireciona a tela
+      				echo "<script>location.reload();</script>";
 
-			}else {
-				//Mensagem de erro
-				echo "Error atualizar no Banco de Dados";
-			}
+      			}else {
+      				//Mensagem de erro
+      				echo "Error atualizar no Banco de Dados";
+      			}
 
-			//Fecha a conexão com o banco de dados
-			$conex->Desconectar();
-            }
+      			//Fecha a conexão com o banco de dados
+      			$conex->Desconectar();
+                  }
+
+          public function AtivarPorId($convenio){
+
+            $sql = "UPDATE tbl_convenio set status_imagem=1 WHERE id_convenio=".$convenio->id_convenio;
+
+                        //Instancio o banco e crio uma variavel
+      			$conex = new Mysql_db();
+
+      			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+      			na variavel que $PDO_conex*/
+      			$PDO_conex = $conex->Conectar();
+
+      			//Executa o script no banco de dados
+      			if($PDO_conex->query($sql)){
+      				//Se der true redireciona a tela
+      				echo "<script>location.reload();</script>";
+
+      			}else {
+      				//Mensagem de erro
+      				echo "Error atualizar no Banco de Dados";
+      			}
+
+      			//Fecha a conexão com o banco de dados
+      			$conex->Desconectar();
+                  }
 
       }
 

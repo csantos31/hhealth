@@ -1,3 +1,34 @@
+<?php
+  $list=null;
+  $titulo = null;
+  $texto = null;
+  $imagem = null;
+  $busc = null;
+
+  if (isset($_GET['modo'])) {
+
+    $modo = $_GET['modo'];
+    if ($modo=='buscar') {
+
+
+      $id = $_GET['id'];
+
+
+      require_once('../CMS/controller_cms/convenios_controller.php');
+      require_once('../CMS/model_cms/convenio_class.php');/*da um require na nivel_class*/
+
+       $controller_convenios = new controller_convenios();
+       $busc = $controller_convenios::Buscar();
+
+          $titulo = $busc->titulo;
+          $texto = $busc->texto;
+          $imagem = $busc->imagem;
+          echo "idiota";
+
+  }
+}
+
+ ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
       <head>
@@ -6,6 +37,36 @@
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_convenios.css">
+            <script type="text/javascript" src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
+
+
+            <script>
+
+
+                function Mostrar(IdItem){
+                  //alert(IdItem);
+                  event.preventDefault();
+                  $.ajax({
+
+                      type:"GET",
+                      url: "convenios.php?modo=buscar&id="+IdItem,
+                       // console.log(url),
+                       success: function(dados){
+                            //console.log(dados);
+                            $('.main').html(dados);
+
+                        },
+                        error: function(error, errorThrown){
+                          alert(error+"  "+ errorThrown);
+                        }
+                    });
+
+                }
+
+
+
+
+            </script>
       </head>
       <body>
             <div class="main">
@@ -40,97 +101,44 @@
                         <div class="titulo_exame">
                             Convênios Disponiveis
                         </div>
+                        <?php
+                          require_once('../CMS/controller_cms/convenios_controller.php');
+                          require_once('../CMS/model_cms/convenio_class.php');
 
+                          $controller_convenios = new controller_convenios();
+                          $list = $controller_convenios::Listar();
+
+                          $cont=0;
+                          while($cont<count($list)){
+                        ?>
                         <div class="content_faixa_exames"><!--content dos exames-->
                             <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
+                                <a><?php echo($list[$cont]->titulo)?></a>
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
+                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_convenio)?>);">
                             </div>
 
                         </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
-
-                        <div class="content_faixa_exames"><!--content dos exames-->
-                            <div class="content_nome_exames"><!--nome exames-->
-                                <a>Planos de Saúde em Guarulhos</a>
-                            </div>
-
-                            <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png">
-                            </div>
-
-                        </div>
+                        <?php
+                            $cont++;
+                        }
+                        ?>
 
                     </div>
 
                     <div class="content_descricao_procedimento">
                         <div class="content_descricao">
                             <div class="titulo_descricao">
-                                <a>Convenio</a>
+                                <a><?php echo $titulo; ?></a>
                             </div>
                             <div class="suporte_conteudo_descricao">
                                   <div class="suporte_img_descricao">
-                                        <img src="../imagens/convenio_amil.jpg" alt="">
+                                        <img src="../CMS/<?php echo $imagem ?>" alt="">
                                   </div>
                                   <div class="conteudo_descricao">
-                                      Revascularização miocárdica - pontes de safena: A cirurgia de pontes de safena é a cirurgia mais frequentemente realizada no IC-FUC. As artérias coronárias podem ficar obstruídas por placas de gordura que se formam em suas paredes. As pontes de safena passam por sobre estas obstruções, restabelecendo o fluxo de sangue nas áreas atingidas pela obstrução. A cirurgia envolve a sutura (costura) de uma veia (retirada da perna, ou de uma artéria retirada do tórax ou de outra parte do corpo) na aorta e distalmente a lesão obstrutiva da artéria, formando uma ponte que leva o sangue oxigenado ao músculo cardíaco.
+                                      <?php echo $texto ?>
 
                                   </div>
                             </div>

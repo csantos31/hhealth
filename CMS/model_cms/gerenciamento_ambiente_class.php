@@ -103,7 +103,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($ambiente){
-			$sql = "SELECT * FROM tbl_ambiente WHERE id_ambiente =". $ambiente->id_ambiente;
+			$sql = "SELECT * FROM tbl_ambiente WHERE ativo=1 AND id_ambiente =". $ambiente->id_ambiente;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -150,7 +150,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         
         /*Busca um registro especifico no BD*/
 		public function SelectLast(){
-			$sql = "SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC LIMIT 1";
+			$sql = "SELECT * FROM tbl_ambiente WHERE ativo=1 AND status=1 ORDER BY id_ambiente DESC LIMIT 1";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
