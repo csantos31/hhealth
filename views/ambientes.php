@@ -67,9 +67,9 @@
 
                         ?>
 
-                              <div class="menu">
-                                  <a href="#" onclick="Mostrar(<?php echo($list[$cont]->id_ambiente)?>)"><?php echo($list[$cont]->titulo)?><?php echo($list[$cont]->id_ambiente)?></a>
-                              </div>
+                              <ul class="menu">
+                                  <a href="#" onclick="Mostrar(<?php echo($list[$cont]->id_ambiente)?>)"><li class="item_menu"><?php echo($list[$cont]->titulo)?><?php echo($list[$cont]->id_ambiente)?></li></a>
+                              </ul>
                         <?php
                                 }
                             $cont++;
@@ -80,6 +80,16 @@
                         
                           
                         <?php
+                            $titulo=null;
+                            $texto=null;
+                            $imagem=null;
+                            $imagem2=null;
+                            $imagem3=null;
+                            $imagem4=null;
+                            $imagem5=null;
+                            $imagem6=null;
+                            $ativo=null;
+                          
                             if(isset($_GET['modo'])){
                                 $modo=$_GET['modo'];
                                 if($modo=='mostrar'){
@@ -132,26 +142,26 @@
                                  </div>
                                  <div class="imagem_grande_ambiente">
                                         <div class="cover">
-                                            <img src="../CMS/<?php echo($list_id->imagem)?>" alt="lalal">
+                                            <img src="../CMS/<?php echo($imagem)?>" alt="lalal">
                                         </div>
                                         <div class="thumbs">
                                            <div class="imagens_pequenas_ambiente">
-                                                <img src="../CMS/<?php echo($list_id->imagem)?>" alt="" class="active">
+                                                <img src="../CMS/<?php echo($imagem)?>" alt="" class="active">
                                            </div>
                                            <div class="imagens_pequenas_ambiente">
-                                                 <img src="../CMS/<?php echo($list_id->imagem2)?>" alt="" class="gallery">
+                                                 <img src="../CMS/<?php echo($imagem2)?>" alt="" class="gallery">
                                            </div>
                                            <div class="imagens_pequenas_ambiente">
-                                                 <img src="../CMS/<?php echo($list_id->imagem3)?>" alt="" class="gallery">
+                                                 <img src="../CMS/<?php echo($imagem3)?>" alt="" class="gallery">
                                            </div>
                                            <div class="imagens_pequenas_ambiente">
-                                                 <img src="../CMS/<?php echo($list_id->imagem4)?>" alt="" class="gallery">
+                                                 <img src="../CMS/<?php echo($imagem4)?>" alt="" class="gallery">
                                            </div>
                                            <div class="imagens_pequenas_ambiente">
-                                                 <img src="../CMS/<?php echo($list_id->imagem5)?>" alt="" class="gallery">
+                                                 <img src="../CMS/<?php echo($imagem5)?>" alt="" class="gallery">
                                            </div>
                                            <div class="imagens_pequenas_ambiente">
-                                                 <img src="../CMS/<?php echo($list_id->imagem6)?>" alt="" class="gallery">
+                                                 <img src="../CMS/<?php echo($imagem6)?>" alt="" class="gallery">
                                            </div>
                                         </div>
                                  </div>
