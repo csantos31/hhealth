@@ -1,4 +1,5 @@
 <?php
+$modo = $_GET['modo'];
      $controller = $_GET['controller'];
      if(isset($modo)){
         $modo = $_GET['modo'];
