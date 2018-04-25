@@ -26,11 +26,11 @@
 
 
 .content_modal{/*content da modal*/
-    width:650px;
+    width:1000px;
     min-height:500px;
-    height:auto;
+    height:650;
     margin:auto;
-/*    background-color:#ffffff;*/
+    background-color: yellowgreen;
     border-radius:10px;
 }
 
@@ -70,9 +70,11 @@
 }
 
 .content_campos{/*content dos campos*/
-    width:650px;
+    width:800px;
     height: 600px;
     float: left;
+    margin: auto;
+    background-color: aquamarine;
    
 }
 
