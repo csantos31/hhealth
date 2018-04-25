@@ -10,17 +10,14 @@ a{
 
 .footer{
       width: 100%;
-      height: 299px;
+      height: 180px;
       position: relative;
-      /*background-color: #fff;*/
-
-        background-color: #D60000;
-
       padding-top: 0px;
       margin: auto;
-      border-top: solid 1px #660000;
+      border-top: solid 1px rgba(0, 0, 0,0.1);
       margin-top: 20px;
      box-shadow: 5px 10px 5px 10px;
+    background-color: rgba(0, 0, 0,0.1);
 }
 
 .linha_branca{
@@ -32,10 +29,15 @@ a{
 }
 
 .menu_footer{
-      width: 100%;
-      height: 225px;
-      margin: auto;
+      width: 1200px;
+      height: 180px;
+      margin-left: auto;
+      margin-right: auto;
       padding-top: 15px;
+}
+    
+.menu_footer ul{
+    margin-left: 8%;
 }
 
 .menu_mapa{
@@ -45,7 +47,7 @@ a{
 }
 
 .item_mapa{
-      width: 16.66%;
+      width: 13.66%;
       height: 100%;
       float: left;
       list-style: none;
@@ -53,39 +55,11 @@ a{
       vertical-align: middle;
       margin: auto;
       line-height: 40px;
-      color: #FFF;
-      font-weight: bold;
-      font-size: 21px;
+      color: #000000;
+      font-size: 16px;
       font-family: sans-serif;
-      border-top: solid 1px #660000;
-      box-shadow: 0px 2px 2px 0px #660000;
+     
 
-}
-
-.submenu_mapa_hhealth{
-      width: 100%;
-      height: 160px;
-}
-
-.item_submenu_mapa_hhealth{
-      list-style: none;
-      text-align: center;
-      color: #FFF;
-      font-family: sans-serif;
-      font-size: 18px;
-}
-
-.submenu_mapa_contatos{
-      width: 100%;
-      height: 80px;
-}
-
-.item_submenu_mapa_contatos{
-      list-style: none;
-      text-align: center;
-      color: #FFF;
-      font-size: 18px;
-      font-family: sans-serif;
 }
 
 .faixa2_footer{
@@ -93,8 +67,8 @@ a{
       height: 50px;
       background-color: white;
       opacity: 0.99;
-      border-top: solid 1px #660000;
-     box-shadow: 5px 5px 5px 5px #660000;
+      
+     
 
 }
 
@@ -223,6 +197,7 @@ a{
       font-family: sans-serif;
       font-weight: bold;
       color: #660000;
+    margin-top: 70px;
 }
 
 }
@@ -278,40 +253,7 @@ a{
             color: #660000;
             font-size: 61px;
             font-family: sans-serif;
-      }
-
-      .submenu_mapa_hhealth{
-            width: 100%;
-            height: 460px;
-      }
-
-      .item_submenu_mapa_hhealth{
-            width: 100%;
-            height: 120px;
-            line-height: 120px;
-            font-weight: bold;
-            list-style: none;
-            text-align: center;
-            color: #660000;
-            font-family: sans-serif;
-            font-size: 41px;
-      }
-
-      .submenu_mapa_contatos{
-            width: 100%;
-            height: 240px;
-      }
-
-      .item_submenu_mapa_contatos{
-            height: 120px;
-            line-height: 120px;
-            list-style: none;
-            text-align: center;
-            color: #660000;
-            font-size: 18px;
-            font-family: sans-serif;
-            font-size: 41px;
-            font-weight: bold;
+            border: none;
       }
 
       .faixa2_footer{
