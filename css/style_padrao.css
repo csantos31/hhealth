@@ -282,12 +282,13 @@ body{
     font-family:sans-serif;
     font-size: 22px;
     font-weight: bold;
+    color: #FFFFFF;
 }
 /*-----imagens-----*/
 
 .content_img_faixa_2_home{
     width:1200px;
-    height:470px;
+    height:550px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255,255,255,0.3);
@@ -312,6 +313,7 @@ body{
 .content_btn_faixa_2_home{
     width:1200px;
     height:20px;
+    color: #000000;
 }
 
 .content_btn_faixa_2_home p{
@@ -327,9 +329,17 @@ body{
 /*faixa*/
 .faixa_3_content_home{
     width:1200px;
-    height:300px;
+    min-height: 400px;
+    height: auto;
+    padding-top: 50px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.carrossel_local{
+    width: 1200px;
+    min-height: 300px;
+    height: auto;
 }
 
 /*content unidades*/
@@ -337,29 +347,29 @@ body{
     width:550px;
     height:300px;
     margin-left:30px;
-    float:left;
+    margin-bottom:100px;
 }
 
 /*imagem unidades*/
 .img_faixa_3_home{
-    width:200px;
-    height:200px;
+    width:340px;
+    height:300px;
     margin-right: 10px;
     float:left;
-    margin-top: 50px;
 }
 
 .img_faixa_3_home img{
-    width:200px;
-    height:200px;
+    width:340px;
+    height:300px;
 }
 
 .descricao_faixa_3_home{
-    width:340px;
-    height:300px ;
+    width:200px;
+    height:200px;
     background-image: url(../imagens/mapa.png);
     background-size: 200px;
     float:left;
+    margin-top: 100px;
 }
 
 .footer{
@@ -372,8 +382,10 @@ body{
 
 /*div typewriter efeito*/
 .typewriter{
-    width: 100%;
+    width: 800px;
     height: auto;
+    padding: 16px;
+    background-color: rgba(255,255,255,0.3);
 }
 
 

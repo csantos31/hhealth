@@ -159,46 +159,43 @@
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter" id="div_type">
                                   <h1>Onde você estiver, </h1>
-                                </div>
-                                
+                              </div>  
                           </div>
                         </div>
-                       
                         <div class="faixa_2_content_home"><!--faixa2-->
                             <div id="hg">
-                                <div class="titulo_faixa_2_home" style="color:#FF0000;">
-                                <a> Ambientes do Hospital</a>
-                            </div>
-
-                            <div class="content_img_faixa_2_home">
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                <div class="titulo_faixa_2_home" >
+                                    <a style="font-size: 45px;font-weight: 400;"> Ambientes do Hospital</a>
                                 </div>
 
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                </div>
+                                <div class="content_img_faixa_2_home">
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
 
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
 
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
 
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
 
-                                <div class="img_faixa_2_home">
-                                    <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                </div>
-                            </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
 
-                            <div class="content_btn_faixa_2_home" style="color:#FF0000;"> 
-                                <p>Ver todos os ambiente do hospital</p>
-                            </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
+                                    <div class="content_btn_faixa_2_home"> 
+                                        <p>Ver todos os ambiente do hospital</p>
+                                    </div>
+                                </div>
                             </div>
                             
                         </div>
@@ -211,6 +208,10 @@
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
+                                    </div>
+                                    <div class="informa_unidade">
+                                        <h1>Unidade de jandira</h1>
+                                        <b>Telefone:</b>(11)4545-5445
                                     </div>
                                 </div>
 
