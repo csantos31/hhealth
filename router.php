@@ -105,16 +105,11 @@
                 case 'mostrar':
                     // Instanciando a classe da controller
                     $controller_gerenciamento_ambiente =  new controller_ambiente();
-                    //Chama o metodo Novo da controller
-
-                    $controller_gerenciamento_ambiente::Buscar();
+                    $controller_gerenciamento_ambiente::Buscar(); // Chama método buscar
 
                     break;
 
-
         break;
-
-
 
          case 'exame':
              require_once('CMS/controller_cms/gerenciamento_exame_controller.php');
@@ -125,53 +120,103 @@
                case 'inserir':
                  // Instanciando a classe da controller
                  $controller_gerenciamento_ambiente =  new controller_exame();
-                 //Chama o metodo Novo da controller
-
-                 $controller_gerenciamento_ambiente::Novo();
+                 $controller_gerenciamento_ambiente::Novo(); // Chama método Novo
 
                  break;
 
-                 case 'editar':
+               case 'editar':
+                   // Instanciando a classe da controller
+                   $controller_gerenciamento_ambiente = new controller_exame();
+                   $controller_gerenciamento_ambiente::Editar(); // Chama Editar
 
-                     $controller_gerenciamento_ambiente = new controller_exame();
-
-                     $controller_gerenciamento_ambiente::Editar();
-
-                     break;
-
-                 case 'desativar':
-                     $controller_gerenciamento_ambiente = new controller_exame();
-
-                     $controller_gerenciamento_ambiente::Desativar();
-
-                     break;
-
-                 case 'ativar':
-                     $controller_gerenciamento_ambiente = new controller_exame();
-
-                     $controller_gerenciamento_ambiente::Ativar();
-
-                     break;
-
-                 case 'deletar':
-
-                     //if(confirm('Deseja realmente excluir?')){
-                         $controller_gerenciamento_ambiente = new controller_exame();
-
-                         $controller_gerenciamento_ambiente::Deletar();
-
-                     break;
-
-                 case 'buscar':
-
-                 //if(confirm('Deseja realmente excluir?')){
-                     $controller_gerenciamento_ambiente = new controller_exame();
-
-                     $controller_gerenciamento_ambiente::Buscar();
                    break;
+
+               case 'desativar':
+                   // Instanciando a classe da controller
+                   $controller_gerenciamento_ambiente = new controller_exame();
+                   $controller_gerenciamento_ambiente::Desativar(); // Chama desativar
+
+                   break;
+
+               case 'ativar':
+                   // Instanciando a classe da controller
+                   $controller_gerenciamento_ambiente = new controller_exame();
+                   $controller_gerenciamento_ambiente::Ativar(); // Chama ativar
+
+                   break;
+
+               case 'deletar':
+                   // Instanciando a classe da controller
+                   $controller_gerenciamento_ambiente = new controller_exame();
+                   $controller_gerenciamento_ambiente::Deletar(); // Chama deletar
+
+                   break;
+
+               case 'buscar':
+                   // Instanciando a classe da controller
+                   $controller_gerenciamento_ambiente = new controller_exame();
+                   $controller_gerenciamento_ambiente::Buscar(); // Chama método buscar
+
+                 break;
 
                  }
              break;
+
+             case 'convenio':
+
+         			require_once 'CMS/controller_cms/convenios_controller.php';
+              require_once 'CMS/model_cms/bd_class.php';
+              require_once 'CMS/model_cms/gerenciamento_convenio_class.php';
+              require_once 'CMS/modulo_img.php';
+
+         			switch ($modo) {
+         				case 'inserir':
+         					// Instanciando a classe da controller
+         					$controller_gerenciamento_convenios = new controller_convenios();
+         					$controller_gerenciamento_convenios::Novo_convenio(); // Chama novo convênio
+
+         					break;
+
+         				case 'editar':
+         					// Instanciando a classe da controller
+         					$controller_gerenciamento_convenios = new controller_convenios();
+                  $controller_gerenciamento_convenios::Editar(); // Chama Editar
+
+         					break;
+
+         				case 'desativar':
+         					// Instanciando a classe da controller
+         					$controller_gerenciamento_convenios = new controller_convenios();
+                  $controller_gerenciamento_convenios::Desativar(); // Chama desativar
+
+         					break;
+
+         				case 'ativar':
+         					// Instanciando a classe da controller
+         					$controller_gerenciamento_convenios = new controller_convenios();
+                  $controller_gerenciamento_convenios::Ativar(); // Chama ativar
+
+         					break;
+
+         				case 'deletar':
+         					// Instanciando a classe da controller
+         					$controller_gerenciamento_convenios = new controller_convenios();
+                  $controller_gerenciamento_convenios::Deletar(); //Chama Deletar
+
+         					break;
+
+                case 'buscar':
+                  // Instanciando a classe da controller
+                  $controller_gerenciamento_convenios = new controller_convenios();
+                  $controller_gerenciamento_convenios::Buscar(); // Chama método buscar
+
+                  break;
+
+         				default:
+         					# code...
+         					break;
+         			}
+        	break;
 
     }
     }

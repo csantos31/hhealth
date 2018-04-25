@@ -60,7 +60,6 @@
             public function Buscar(){
                   $idConvenio = $_GET['id'];
 
-                  echo $idConvenio;
                   $convenio = new Convenio();
 
                   $convenio->id_convenio=$idConvenio;
