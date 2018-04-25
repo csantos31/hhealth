@@ -1,8 +1,10 @@
--- MySQL dump 10.13  Distrib 5.7.10, for Win64 (x86_64)
+CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `hhealth`;
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -35,7 +37,7 @@ CREATE TABLE `tbl_ambiente` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_ambiente`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +46,7 @@ CREATE TABLE `tbl_ambiente` (
 
 LOCK TABLES `tbl_ambiente` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente` DISABLE KEYS */;
-INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',1,1);
+INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',0,0),(2,'dasdas','                  asdas                                              \r\n                            ','imagem_ambiente/cirurgia5.jpg','imagem_ambiente/endoscopia.jpg','imagem_ambiente/edit_icon.png','imagem_ambiente/download.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/acupuntura.jpg',0,1),(3,'asf','    sadfasd                                                            \r\n                            ','imagem_ambiente/dicas.png','imagem_ambiente/bg_login.jpg','imagem_ambiente/cirurgia4.jpg','imagem_ambiente/endocrinologia.jpg','imagem_ambiente/cirurgia6.jpg','imagem_ambiente/cirurgia2.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -333,10 +335,13 @@ CREATE TABLE `tbl_endereco` (
   `id_estado` int(11) NOT NULL,
   `cidade` varchar(45) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
+  `id_pais` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_endereco`),
   KEY `fkestado_idx` (`id_estado`),
+  KEY `fk_idpaispaispais_idx` (`id_pais`),
+  CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -345,7 +350,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia');
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -468,7 +473,7 @@ CREATE TABLE `tbl_exame` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_exame`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -477,7 +482,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
-INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Cardiogista','Jejum por 2 horas                 ','tricagoaaa',0,1),(3,'fdadsf','dasfdsaf  ','dasfdsafads  ',1,1);
+INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -931,11 +936,15 @@ DROP TABLE IF EXISTS `tbl_receita_medica`;
 CREATE TABLE `tbl_receita_medica` (
   `id_receita_medica` int(11) NOT NULL AUTO_INCREMENT,
   `id_funcionario` int(11) DEFAULT NULL,
-  `receita_arquivo` text,
+  `id_paciente` int(11) DEFAULT NULL,
   `id_remedio` int(11) DEFAULT NULL,
+  `tipo` text,
+  `data` date DEFAULT NULL,
   PRIMARY KEY (`id_receita_medica`),
   KEY `fk_541_idx` (`id_remedio`),
-  CONSTRAINT `fk_541` FOREIGN KEY (`id_remedio`) REFERENCES `tbl_remedio` (`id_remedio`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  KEY `fk_idpacientepaciente_idx` (`id_paciente`),
+  CONSTRAINT `fk_541` FOREIGN KEY (`id_remedio`) REFERENCES `tbl_remedio` (`id_remedio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_idpacientepaciente` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -1210,9 +1219,12 @@ CREATE TABLE `tbl_trabalhe_conosco` (
   `id_deficiencia` int(11) NOT NULL,
   `resumo_qualificacoes` text NOT NULL,
   `id_endereco` int(11) DEFAULT NULL,
+  `id_pais` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_trabalhe_conosco`),
   KEY `fk21389_idx` (`id_pais`),
   KEY `fk213325_idx` (`id_deficiencia`),
+  KEY `fk_paispais_idx` (`id_pais`),
+  CONSTRAINT `fk_paispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk213325` FOREIGN KEY (`id_deficiencia`) REFERENCES `tbl_deficiencia` (`id_deficiente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1278,10 +1290,12 @@ CREATE TABLE `tbl_unidade` (
   `nome_unidade` tinytext,
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
+  `latitute` decimal(10,8) DEFAULT NULL,
+  `logintude` decimal(10,8) DEFAULT NULL,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1290,6 +1304,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1339,7 +1354,7 @@ CREATE TABLE `tbl_usuario_paciente` (
   KEY `fk_id_nivel_idx` (`id_nivel_acesso`),
   CONSTRAINT `fk_dasd` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_id_nivel` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1348,7 +1363,6 @@ CREATE TABLE `tbl_usuario_paciente` (
 
 LOCK TABLES `tbl_usuario_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_paciente` VALUES (1,8,1,'root','bcd127');
 /*!40000 ALTER TABLE `tbl_usuario_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1361,4 +1375,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-24 11:15:57
+-- Dump completed on 2018-04-25  9:46:20
