@@ -3,6 +3,7 @@ class controllerTrabalheConosco{
 
     //Insere novo registro
     public function Novo($id_endereco){
+        
         require_once('models/trabalhe_conosco_class.php');
         //Instancia da classe Contato
         $trabalhe_conosco = new TrabalheConosco();
@@ -18,10 +19,8 @@ class controllerTrabalheConosco{
         $trabalhe_conosco->rdosexo = $_POST['rdosexo'];
         $trabalhe_conosco->pais = $_POST['sltpais'];
         $trabalhe_conosco->estado_civil = $_POST['sltestadoCivil'];
-        $trabalhe_conosco->cep = $_POST['txtCep'];
         $trabalhe_conosco->endereco = $_POST['txt_logradouro'];
-        $trabalhe_conosco->bairro = $_POST['txt_bairro'];
-        $trabalhe_conosco->cidade = $_POST['txt_cidade'];
+        $trabalhe_conosco->estado = $_POST['slt_estado'];
         $trabalhe_conosco->registro_profissional = $_POST['sltstatusRegistroProfissional'];
         $trabalhe_conosco->resumo_qualificacoes = $_POST['textarearesumoQualificacoes'];
         $trabalhe_conosco->status_trabalho = $_POST['sltstatusTrabalho'];

@@ -3,7 +3,7 @@
     class controller_endereco{
        public function Novo(){
            
-           require_once ('/model_cms/endereco_class.php');
+           require_once ('/models/endereco_class.php');
             //Instancia da classe Contato
 			$endereco = new Endereco();
            /*
@@ -73,7 +73,7 @@
 
         /*Atualiza um registro existente*/
 		public function Editar(){
-            require_once ('model_cms/endereco_class.php');
+            require_once ('models/endereco_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idEndereco = $_GET['id_ende'];
 
@@ -110,5 +110,6 @@
 
 
     }
+
 
 ?>
