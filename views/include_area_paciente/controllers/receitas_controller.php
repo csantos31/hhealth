@@ -1,5 +1,5 @@
 <?php
-class controller_convenios{
+class controller_receitas{
 
 
 

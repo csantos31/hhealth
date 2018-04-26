@@ -1,5 +1,5 @@
 <?php
-    require('verifica_paciente.php');
+    //require('verifica_paciente.php');
 
     $status=null;
  $action = "modo=inserir";
@@ -12,7 +12,7 @@
  else
      $caminho = "";
 
- include($caminho.'../verifica.php');
+ //include('verifica_paciente.php');
 
 
 
@@ -139,47 +139,37 @@
 
                   // Incluindo a controller e a model para serem utilizadas
                   include_once($caminho .'../controllers/receitas_controller.php');
-                  include_once($caminho .'../model_cms/receita_class.php');
+                  include_once($caminho .'../models/receita_class.php');
 
-                  $convenios_controller = new controller_convenios();
+                  $receitas_controller = new controller_receitas();
 
-                  $list = $convenios_controller::Listar();
+                  $list = $receitas_controller::Listar();
 
                   $cont = 0;
 
                   while ($cont < count($list)) {
                         # code...
 
-                        $codigo =$list[$cont]->status_imagem;
-
-                        if ($codigo==0) {
-                             $modo_link="Ativar";
-                             $icone_status="../../sistema_interno/imagens/icons8-desligar-50.png";
-                             // echo($list[$cont]->status_imagem);
-                        }elseif ($codigo==1) {
-                             // code...
-                             $modo_link="Desativar";
-                             $icone_status="../../sistema_interno/imagens/icons8-desligar-50(1).png";
-                        }else {
-                             echo "Não foi possivel concluir está ação";
-
-
-                        }
+                        //$codigo =$list[$cont]->status_imagem;
             ?>
             <div class="content_conteudo_receitas"><!--receitas-->
                 <div class="content_nome"><!--nome-->
-
+                      <?php echo($list[$cont]->tipo); ?>
                 </div>
 
                 <div class="content_data"><!--data-->
-
+                      <?php echo($list[$cont]->data); ?>
                 </div>
 
                 <div class="acao_receita"><!--açção-->
                     <img src="../../../imagens/info.png">
                 </div>
             </div>
+            <?php
 
+                  $cont +=1;
+                  }
+            ?>
 
         </div>
     </div>

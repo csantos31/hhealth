@@ -20,7 +20,7 @@ class Receita
       public function Select(){
 
             //Query para selecionar a tabela contatos
-            $sql1="SELECT * FROM tbl_receita_medica ;";
+            $sql1="SELECT * FROM tbl_receita_medica;";
 
             //Instancio o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -38,7 +38,7 @@ class Receita
             while ($rs = $select->fetch(PDO::FETCH_ASSOC)){
 
                   // Cria um array de dados na classe $list_contatos
-                  $list_convenios[] = new Receita();
+                  $list_receitas[] = new Receita();
 
                   // Guarda os dados vindos do banco no indice de objetos criado
                   $list_receitas[$cont]->id_receita_medica = $rs['id_receita_medica'];
@@ -46,22 +46,26 @@ class Receita
                   $list_receitas[$cont]->id_paciente = $rs['id_paciente'];
                   $list_receitas[$cont]->id_remedio = $rs['id_remedio'];
                   $list_receitas[$cont]->tipo = $rs['tipo'];
-                  $list_receitas[$cont]->data = $rs['data'];
+
+                  $dat = new DateTime($rs['data']);
+
+                  $list_receitas[$cont]->data = $dat->format('d/m/Y');
 
 
                   // Soma mais um no contador
                                   $cont+=1;
 
-                  //Fechar a conexão com o banco de dados
-                  $conex->Desconectar();
+
 
                   //Apenas retorna o $list_contatos se existir dados no banco de daos
 
             }
-            if (isset($list_convenios)) {
+            if (isset($list_receitas)) {
                   # code...
-                  return $list_convenios;
+                  return $list_receitas;
             }
+            //Fechar a conexão com o banco de dados
+            $conex->Desconectar();
       }
 
 }
