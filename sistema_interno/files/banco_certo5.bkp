@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `hhealth`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
@@ -280,7 +278,7 @@ CREATE TABLE `tbl_deficiencia` (
   `nome` varchar(55) DEFAULT NULL,
   `descricao` text,
   PRIMARY KEY (`id_deficiente`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,6 +287,7 @@ CREATE TABLE `tbl_deficiencia` (
 
 LOCK TABLES `tbl_deficiencia` WRITE;
 /*!40000 ALTER TABLE `tbl_deficiencia` DISABLE KEYS */;
+INSERT INTO `tbl_deficiencia` VALUES (1,'Cego','Não enxerga');
 /*!40000 ALTER TABLE `tbl_deficiencia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -341,7 +340,7 @@ CREATE TABLE `tbl_endereco` (
   KEY `fk_idpaispaispais_idx` (`id_pais`),
   CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -350,7 +349,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL);
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -861,7 +860,7 @@ CREATE TABLE `tbl_pais` (
   `id_pais` int(11) NOT NULL AUTO_INCREMENT,
   `paises` varchar(45) NOT NULL,
   PRIMARY KEY (`id_pais`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -870,6 +869,7 @@ CREATE TABLE `tbl_pais` (
 
 LOCK TABLES `tbl_pais` WRITE;
 /*!40000 ALTER TABLE `tbl_pais` DISABLE KEYS */;
+INSERT INTO `tbl_pais` VALUES (1,'Brasil');
 /*!40000 ALTER TABLE `tbl_pais` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1220,14 +1220,16 @@ CREATE TABLE `tbl_trabalhe_conosco` (
   `resumo_qualificacoes` text NOT NULL,
   `id_endereco` int(11) DEFAULT NULL,
   `id_pais` int(11) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
+  `registro_profissional` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_trabalhe_conosco`),
   KEY `fk21389_idx` (`id_pais`),
   KEY `fk213325_idx` (`id_deficiencia`),
   KEY `fk_paispais_idx` (`id_pais`),
-  CONSTRAINT `fk_paispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk213325` FOREIGN KEY (`id_deficiencia`) REFERENCES `tbl_deficiencia` (`id_deficiente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_paispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1236,6 +1238,7 @@ CREATE TABLE `tbl_trabalhe_conosco` (
 
 LOCK TABLES `tbl_trabalhe_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_trabalhe_conosco` DISABLE KEYS */;
+INSERT INTO `tbl_trabalhe_conosco` VALUES (3,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'1',NULL,NULL,1,NULL),(5,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'5',NULL,NULL,1,1),(6,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','M',1,1,'1',1,'vai',NULL,NULL,1,1),(7,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','',1,1,'1',1,'asdasd',50,NULL,1,1);
 /*!40000 ALTER TABLE `tbl_trabalhe_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1295,7 +1298,7 @@ CREATE TABLE `tbl_unidade` (
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1304,7 +1307,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL);
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1375,4 +1378,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-25  9:46:20
+-- Dump completed on 2018-04-25 11:26:23

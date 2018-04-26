@@ -45,7 +45,7 @@
                            </div>
                            <div class="faixa1">
                                  <div class="formtrabalheconosco">
-                                       <form class="form_trabalheconosco" id="form" action="index.html" method="post">
+                                       <form class="form_trabalheconosco" id="form" action="" method="post">
                                              <div class="linha1">
                                                    <div class="txt_nome">
                                                          Nome Completo:
@@ -94,6 +94,7 @@
                                                          <option value="3">Teste 3</option>
                                                    </select>
                                              </div>
+                                            
                                              <div class="linhaestadoCivil">
                                                    <div class="txt_estadoCivil">
                                                         Estado civil
@@ -108,41 +109,52 @@
                                                    <div class="txt_cep">
                                                          CEP:
                                                    </div>
-                                                   <input type="text" name="txtCep" value="">
+                                                   <input type="text" name="txt_cep" value="">
                                              </div>
                                              <div class="linhaendereco">
                                                    <div class="txt_endereco">
-                                                         Endereço:
+                                                         Logradouro:
                                                    </div>
-                                                   <input type="text" name="txtEndereco" value="">
+                                                   <input type="text" name="txt_logradouro" value="">
+                                             </div>
+                                             <div class="linhaendereco">
+                                                   <div class="txt_endereco">
+                                                         Numero:
+                                                   </div>
+                                                   <input type="text" name="txt_numero" value="">
                                              </div>
                                              <div class="linhabairro">
                                                    <div class="txt_bairro">
                                                          Bairro:
                                                    </div>
-                                                   <input type="text" name="txtBairro" value="">
+                                                   <input type="text" name="txt_bairro" value="">
                                              </div>
                                              <div class="linhacidade">
                                                    <div class="txt_cidade">
                                                         Cidade:
                                                    </div>
-                                                   <select class="sltcidade" name="">
-                                                         <option value="">Selecione uma cidade</option>
-                                                         <option value="1">Teste 1</option>
-                                                         <option value="2">Teste 2</option>
-                                                         <option value="3">Teste 3</option>
-                                                   </select>
+                                                   <input type="text" name="txt_cidade" value="">
 
                                              </div>
                                              <div class="linhaestado">
                                                    <div class="txt_estado">
                                                         Estado:
                                                    </div>
-                                                   <select class="sltestado" name="sltEstado">
+                                                   <select class="slt_estado" name="slt_estado">
                                                          <option value="">Selecione um Estado</option>
-                                                         <option value="1">Teste 1</option>
-                                                         <option value="2">Teste 2</option>
-                                                         <option value="3">Teste 3</option>
+                                                         <?php
+                                                          include_once('../CMS/controller_cms/endereco_controller.php');
+                                                          include_once('../CMS/model_cms/endereco_class.php');
+                                                          $controller_endereco  = new controller_endereco();
+                                                          $list = $controller_endereco::ListarEstados();
+                                                          $cont = 0;
+                                                          while ($cont < count($list)) {
+                                                          ?>
+                                                              <option value="<?= $list[$cont]['id_estado'] ?>"><?= $list[$cont]['sigla'] ?></option>
+                                                          <?php
+                                                            $cont +=1;
+                                                          }
+                                                        ?>
                                                    </select>
 
                                              </div>
@@ -150,7 +162,7 @@
                                                    <div class="txt_statusTrabalho">
                                                         Está trabalhando atualmente?
                                                    </div>
-                                                   <select class="sltstatusTrabalho" name="">
+                                                   <select class="sltstatusTrabalho" name="sltstatusTrabalho">
                                                          <option value="">Selecione</option>
                                                          <option value="1">Sim</option>
                                                          <option value="2">Não</option>
@@ -172,7 +184,7 @@
                                                    <div class="txt_statusRegistroProfissional">
                                                         Possui Registro Profissional?
                                                    </div>
-                                                   <select class="sltstatusRegistroProfissional" name="">
+                                                   <select class="sltstatusRegistroProfissional" name="sltstatusRegistroProfissional">
                                                          <option value="">Selecione</option>
                                                          <option value="1">Teste 1</option>
                                                          <option value="1">Sim</option>

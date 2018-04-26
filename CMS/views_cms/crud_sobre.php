@@ -62,7 +62,8 @@ if(isset($niv)){
                     type:"POST",
                     url:"modals/modal_sobre.php",
                     success: function(dados){
-                        $(".modal").html(dados);
+                       $(".modal").html(dados);
+                       
                     }
                 });
             }

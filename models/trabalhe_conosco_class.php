@@ -15,10 +15,10 @@ class TrabalheConosco{
     }
 
     //Insere o registro no BD
-    public static function Insert($contato_dados){
+    public static function Insert($trabalhe_conosco){
 
         $sql = "INSERT INTO tbl_trabalhe_conosco (nome, email, telefone, celular,
-                                        dt_nasc, sexo, id_pais, estado_civil, trabalha_atualmente,id_deficiencia, resumo_qualificacoes,
+                                        dt_nasc, sexo, id_pais, estado_civil,registro_profissional, trabalha_atualmente,id_deficiencia, resumo_qualificacoes,id_endereco,
                                         ativo)
                                         VALUES ('".$trabalhe_conosco->nome."',
                                         '".$trabalhe_conosco->email."',
@@ -29,9 +29,10 @@ class TrabalheConosco{
                                         '".$trabalhe_conosco->pais."',
                                         '".$trabalhe_conosco->estado_civil."',
                                         '".$trabalhe_conosco->registro_profissional."',
-                                        '".$trabalhe_conosco->resumo_qualificacoes."',
                                         '".$trabalhe_conosco->status_trabalho."',
                                         '".$trabalhe_conosco->status_deficiencia."',
+                                        '".$trabalhe_conosco->resumo_qualificacoes."',
+                                        '".$trabalhe_conosco->id_endereco."',
                                         '1');";
 
 
@@ -46,6 +47,7 @@ class TrabalheConosco{
         if($PDO_conex->query($sql)){
             echo "<script>location.reload();</script>";
         }else{
+            echo $sql;
             echo("Erro ao Inserir no BD");
         }
 

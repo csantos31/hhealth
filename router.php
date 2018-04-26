@@ -74,15 +74,15 @@
         break;
 
         case 'trabalhe_conosco':
-            require_once('/CMS/controller_cms/endereco_controller.php');
-            require_once('/CMS/model_cms/endereco_class.php');
+             require_once('/controllers/endereco_controller.php');
+             require_once('/models/endereco_class.php');
              require_once('controllers/trabalhe_controller.php');//inclusão dos arquivos
              require_once('models/trabalhe_conosco_class.php');
 
              switch($modo){
 
                  case 'inserir':
-                     $controller_endereco = new controller_endereco()
+                    $controller_endereco = new controller_endereco();
                     $id_endereco=$controller_endereco::Novo();
                      
                    //Instanciando a classe da controller

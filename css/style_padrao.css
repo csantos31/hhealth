@@ -1,48 +1,47 @@
 
-/*Tamanho da barra de rolagem*/ 
+/*Tamanho da barra de rolagem*/
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
 
-  width: 13px; 
+  width: 13px;
 
-  height: 15px; 
+  height: 15px;
 
-} 
+}
 
-  
 
-/*Cor de fundo da barra de rolagem*/ 
+/*Cor de fundo da barra de rolagem*/
 
-::-webkit-scrollbar-track-piece { 
+::-webkit-scrollbar-track-piece {
 
-  background:    white; 
+  background:    white;
 
-} 
+}
 
-  
 
-/*propriedades da rolagem cor, borda e altura vertical*/ 
 
-::-webkit-scrollbar-thumb:vertical { 
+/*propriedades da rolagem cor, borda e altura vertical*/
 
-  height: 5px; 
+::-webkit-scrollbar-thumb:vertical {
 
-  background:    #CA0000; 
-border-radius:10px;  
+  height: 5px;
 
-} 
+  background:    #CA0000;
+border-radius:10px;
 
-  
+}
 
-/*propriedades da rolagem cor, borda e altura horizontal*/ 
 
-::-webkit-scrollbar-thumb:horizontal { 
 
-  width: 5px; 
+/*propriedades da rolagem cor, borda e altura horizontal*/
 
-  background-color: #CA0000; 
+::-webkit-scrollbar-thumb:horizontal {
 
-} 
+  width: 5px;
+
+  background-color: #CA0000;
+
+}
 
 body{
     padding:0;
@@ -67,7 +66,7 @@ body{
 	height:350px;
     padding-top: 25px;
     float:left;
-    display: flex; 
+    display: flex;
     padding-right: 20px;
     align-content: center;
 }
@@ -123,7 +122,7 @@ body{
   width: 100%;
   min-height:  550px;
     overflow: hidden;
-  padding-top: 30px; 
+  padding-top: 30px;
   font-size: 20px;
   text-align: justify;
   /*background-color: #F1F6F9;*/
@@ -158,6 +157,7 @@ body{
       height:auto;
       position: relative;
       background-color: white;
+      padding-bottom: 20px;
 }
 
 .content{
@@ -176,7 +176,7 @@ body{
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-  
+
 }
 
 .content_login_usuario_home{/*---login e senha---*/
@@ -282,12 +282,13 @@ body{
     font-family:sans-serif;
     font-size: 22px;
     font-weight: bold;
+    color: #FFFFFF;
 }
 /*-----imagens-----*/
 
 .content_img_faixa_2_home{
     width:1200px;
-    height:470px;
+    height:550px;
     margin-left: auto;
     margin-right: auto;
     background-color: rgba(255,255,255,0.3);
@@ -312,6 +313,7 @@ body{
 .content_btn_faixa_2_home{
     width:1200px;
     height:20px;
+    color: #000000;
 }
 
 .content_btn_faixa_2_home p{
@@ -327,39 +329,58 @@ body{
 /*faixa*/
 .faixa_3_content_home{
     width:1200px;
-    height:300px;
+    min-height: 400px;
+    height: auto;
+    padding-top: 50px;
     margin-left: auto;
     margin-right: auto;
 }
 
+.carrossel_local{
+    width: 1200px;
+    min-height: 300px;
+    height: auto;
+}
+
 /*content unidades*/
 .content_faixa_3_unidades_home{
-    width:550px;
+    width:1200px;
     height:300px;
     margin-left:30px;
-    float:left;
+    margin-bottom:100px;
 }
 
 /*imagem unidades*/
 .img_faixa_3_home{
-    width:200px;
-    height:200px;
+    width:340px;
+    height:300px;
     margin-right: 10px;
     float:left;
-    margin-top: 50px;
 }
 
 .img_faixa_3_home img{
-    width:200px;
-    height:200px;
+    width:340px;
+    height:300px;
 }
 
 .descricao_faixa_3_home{
-    width:340px;
-    height:300px ;
+    width:200px;
+    height:200px;
     background-image: url(../imagens/mapa.png);
     background-size: 200px;
     float:left;
+    margin-top: 100px;
+}
+
+.informa_unidade{
+  width: 500px;
+  min-height: 400px;
+  padding: 16px;
+  margin-left: 20px;
+  text-align: justify;
+  float: left;
+  overflow: hidden;
+  padding-bottom: 30px;
 }
 
 .footer{
@@ -372,8 +393,10 @@ body{
 
 /*div typewriter efeito*/
 .typewriter{
-    width: 100%;
+    width: 800px;
     height: auto;
+    padding: 16px;
+    background-color: rgba(255,255,255,0.3);
 }
 
 
@@ -382,11 +405,11 @@ body{
   font-family: monospace;
   overflow: hidden;
   font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
      typing 3.5s steps(30, end),
     blink-caret .2s step-end infinite;
     font-size: 60px;
@@ -399,11 +422,11 @@ body{
   font-family: monospace;
   overflow: hidden;
   font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
      typing 3.5s steps(30, end),
     blink-caret2 .2s step-end infinite;
     font-size: 60px;
@@ -437,7 +460,7 @@ body{
     margin-top: 15px;
     cursor: pointer;
     z-index: 999;
-    
+
 }
 
 
@@ -470,7 +493,7 @@ body{
     margin-top: 100px;
     z-index: 998;
     width: 350px;
-    height: 300px;
+    height: 350px;
    box-shadow: 1px 2px 8px #333;
    /*background-image: url(../imagens/bg_login.jpg);*/
     background-color: #fff;
@@ -478,6 +501,19 @@ body{
     background-size: 350px 300px;
     background-repeat: no-repeat;
     display: none;
+}
+
+#caixa_login_home label{
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+#caixa_login_home a{
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 20px;
+  color: green;
 }
 
 #superior_vermelha{
@@ -567,20 +603,3 @@ body{
     border: none;
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
