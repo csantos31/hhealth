@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `hhealth`;
 -- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
@@ -14,6 +16,34 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `tbl_agendamento_consultas`
+--
+
+DROP TABLE IF EXISTS `tbl_agendamento_consultas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_agendamento_consultas` (
+  `id_agendamento_consulta` int(11) NOT NULL AUTO_INCREMENT,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_especialidade` int(11) DEFAULT NULL,
+  `id_funcionario` int(11) DEFAULT NULL,
+  `id_unidade` int(11) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
+  PRIMARY KEY (`id_agendamento_consulta`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_agendamento_consultas`
+--
+
+LOCK TABLES `tbl_agendamento_consultas` WRITE;
+/*!40000 ALTER TABLE `tbl_agendamento_consultas` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_agendamento_consultas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
 -- Table structure for table `tbl_ambiente`
@@ -126,6 +156,32 @@ CREATE TABLE `tbl_atendimento_senha` (
 LOCK TABLES `tbl_atendimento_senha` WRITE;
 /*!40000 ALTER TABLE `tbl_atendimento_senha` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_atendimento_senha` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_auditoria`
+--
+
+DROP TABLE IF EXISTS `tbl_auditoria`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_auditoria` (
+  `id_auditoria` int(11) NOT NULL AUTO_INCREMENT,
+  `data` date DEFAULT NULL,
+  `hora` varchar(10) DEFAULT NULL,
+  `usuario` varchar(45) DEFAULT NULL,
+  `acao` text,
+  PRIMARY KEY (`id_auditoria`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_auditoria`
+--
+
+LOCK TABLES `tbl_auditoria` WRITE;
+/*!40000 ALTER TABLE `tbl_auditoria` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_auditoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -610,14 +666,14 @@ DROP TABLE IF EXISTS `tbl_home`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_home` (
   `id_home` int(11) NOT NULL AUTO_INCREMENT,
-  `titulo` text,
-  `subtitulo` text,
-  `texto` text,
-  `imagem` text,
-  `status_imagem` char(1) DEFAULT NULL,
-  `link_video` text,
+  `slide1` text,
+  `slide2` text,
+  `slide3` text,
+  `frase` varchar(45) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_home`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -626,6 +682,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
+INSERT INTO `tbl_home` VALUES (1,'imagem_home/cirurgia1.jpg','imagem_home/cirurgia.jpg','imagem_home/cirurgia3.jpg','TESTE TESTE TESTE',1,1);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -773,7 +830,7 @@ CREATE TABLE `tbl_nivel_acesso` (
   `nome` varchar(45) DEFAULT NULL,
   `descricao` text,
   PRIMARY KEY (`id_nivel`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -782,7 +839,7 @@ CREATE TABLE `tbl_nivel_acesso` (
 
 LOCK TABLES `tbl_nivel_acesso` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_acesso` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_acesso` VALUES (1,'Paciente','Pacientes de uma unidade');
+INSERT INTO `tbl_nivel_acesso` VALUES (1,'Paciente','Pacientes de uma unidade'),(2,'Medico','Funcionário Médico'),(3,'Paciente Criança','Paciente criança');
 /*!40000 ALTER TABLE `tbl_nivel_acesso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -845,7 +902,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','5545544',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
+INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','46026502874',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1295,6 +1352,8 @@ CREATE TABLE `tbl_unidade` (
   `ativo` tinyint(4) DEFAULT NULL,
   `latitute` decimal(10,8) DEFAULT NULL,
   `logintude` decimal(10,8) DEFAULT NULL,
+  `texto` text,
+  `telefone` text,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
@@ -1307,7 +1366,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL);
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1357,7 +1416,7 @@ CREATE TABLE `tbl_usuario_paciente` (
   KEY `fk_id_nivel_idx` (`id_nivel_acesso`),
   CONSTRAINT `fk_dasd` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_id_nivel` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1366,6 +1425,7 @@ CREATE TABLE `tbl_usuario_paciente` (
 
 LOCK TABLES `tbl_usuario_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_paciente` DISABLE KEYS */;
+INSERT INTO `tbl_usuario_paciente` VALUES (1,8,1,'46026502874','123');
 /*!40000 ALTER TABLE `tbl_usuario_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -1378,4 +1438,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-25 11:26:23
+-- Dump completed on 2018-04-26  8:57:39
