@@ -18,6 +18,7 @@
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
         <link rel="stylesheet" href="css/w3c_css.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/jcarousellite.js"></script>
         <script type="text/javascript" src="js/carrossel.js"></script>
@@ -60,11 +61,28 @@
                      window.clearInterval();
                  }
 
-             })
+             });
 
+        </script>
+        <script>
+            /*FUNCTIONS*/
+            function Cadastrar(){
+                  $.ajax({
+                      type:"POST",
+                      url:"views/modal_cad_paciente.php",
+                      success: function(dados){
+                          $(".modal").html(dados);
+                      }
+                  });
+              }
         </script>
     </head>
     <body>
+      <div class="container_modal"><!--container da modal-->
+          <div class="modal"><!--modal-->
+          </div>
+      </div>
+      <div id="principal">
           <div class="main"><!--Div Main que segura todas as divs-->
                <div class="modal_login">
                     <label id="lbl_paciente">Área do paciente:</label>
@@ -89,7 +107,7 @@
 
                       <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">
                   </form>
-                  <label> Ainda não tem perfil? </label> <a>Cadastre-se</a>
+                  <label> Ainda não tem perfil? </label> <a onclick="Cadastrar()" style="cursor:pointer;">Cadastre-se</a>
               </div>
                <?php require_once('nav.php'); ?>
 
@@ -267,5 +285,6 @@
              <!-- Esse require adiciona o rodapé na página -->
              <?php require_once('footer.php'); ?>
           </div>
+      </div>
     </body>
 </html>

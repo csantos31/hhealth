@@ -29,13 +29,13 @@ if(isset($niv)){
 ?>
 <html>
     <head>
-
+         <link rel="stylesheet" type="text/css" href="css/style_modal.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_home.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_menu.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_footer.css">
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_sobre.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
-        <link rel="stylesheet" type="text/css" href="css/style_modal.css">
+       
         
         <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
         

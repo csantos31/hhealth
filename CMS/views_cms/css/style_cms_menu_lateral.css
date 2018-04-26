@@ -17,7 +17,7 @@
 
 .linha{
     width:100%;
-    min-height: 80px;
+    min-height: 67px;
     overflow: hidden;
     background-color:#eaecef;
     margin-top:5px;
@@ -28,7 +28,7 @@
     width:10%;
     height:50px;
     margin-left:20px;
-    margin-top: 15px;
+    margin-top: 10px;
     float: left;
 }
 
@@ -42,7 +42,7 @@
     height: auto;
     min-height:30px;
     margin-left:0px;
-    margin-top:40px;
+    margin-top:25px;
     float: left;
     font-family: 'Rubik',sans-serif;
     /*font-weight: bold;*/
