@@ -493,7 +493,7 @@ body{
     margin-top: 100px;
     z-index: 998;
     width: 350px;
-    height: 300px;
+    height: 350px;
    box-shadow: 1px 2px 8px #333;
    /*background-image: url(../imagens/bg_login.jpg);*/
     background-color: #fff;
@@ -501,6 +501,19 @@ body{
     background-size: 350px 300px;
     background-repeat: no-repeat;
     display: none;
+}
+
+#caixa_login_home label{
+  margin-left: 50px;
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+#caixa_login_home a{
+  font-size: 12px;
+  text-decoration: none;
+  margin-top: 20px;
+  color: green;
 }
 
 #superior_vermelha{

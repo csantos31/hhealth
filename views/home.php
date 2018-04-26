@@ -89,6 +89,7 @@
 
                       <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">
                   </form>
+                  <label> Ainda não tem perfil? </label> <a>Cadastre-se</a>
               </div>
                <?php require_once('nav.php'); ?>
 
