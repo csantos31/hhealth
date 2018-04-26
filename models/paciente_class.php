@@ -43,7 +43,6 @@ session_start();
             }
 
 
-
             $_SESSION["login_paciente"]=$count;
             // echo($count."To Aki");
             //Executa o Script no BD

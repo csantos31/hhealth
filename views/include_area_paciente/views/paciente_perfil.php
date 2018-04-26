@@ -1,4 +1,4 @@
-<?php 
+<?php
     require('verifica_paciente.php');
 
 ?>
@@ -8,14 +8,14 @@
   <head>
     <meta charset="utf-8">
     <title>Meu perfil</title>
-    <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
-    <link rel="stylesheet" href="../../css/area_paciente/style_paciente_perfil.css">
+    <link rel="stylesheet" href="../css/style_nav.css">
+    <link rel="stylesheet" href="../css/style_paciente_perfil.css">
 
-    <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
 
   </head>
   <body>
-    <?php include_once('../include_area_paciente/nav_paciente.php'); ?>
+    <?php include_once('nav_paciente.php'); ?>
     <div id="content">
       <div id="suporte_titulo">
         <div id="titulo_pagina">
@@ -37,31 +37,31 @@
                 </div>
             </div>
             <div id="informacoes_usuario">
-                
+
                 <img id="img_edit" src="../../imagens/edit_icon.png" alt="editar" title="editar"><label>Editar Perfil</label><br>
-                
+
                 <strong>Documentos</strong><br><br>
-                
+
                 <b>CPF:</b> <label>000.000.000.00</label><br>
                 <b>RG:</b> <label>00.000.000.X</label><br><br>
-                
+
                 <strong>Convênio(s)</strong><br><br>
                 AMIL
-                
+
                 <img src="../../imagens/convenio_amil.jpg"><br><br>
-                
+
                 <strong>Endereço</strong><br><br>
                 Rodovia Engenheiro Renê Benedito da Silva - Parque Boa Esperança <br>
                 Itapevi - SP
             </div>
         </div>
-        
+
       <div class="faixa_branca">
 
       </div>
     </div>
     <div class="">
-      <?php include_once('../include_area_paciente/footer_paciente.php'); ?>
+      <?php include_once('footer_paciente.php'); ?>
     </div>
   </body>
 </html>

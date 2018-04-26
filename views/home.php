@@ -23,28 +23,11 @@
         <script type="text/javascript" src="js/jcarousellite.js"></script>
         <script type="text/javascript" src="js/carrossel.js"></script>
         <script>
-            /*
-             window.setInterval(function() {
-                $("h1").append("<br>HHealth cuidará de <br> você");
-            }, 5000);
-        */
-             $(document).ready(function(){
 
-                 /*
-                     if($('#my_text').html().length < 500)
-                    {
-                        $('#read_more').hide();
-                    }
-                 */
+             $(document).ready(function(){
                  var myvar = $('h1').html().length
                  console.log(myvar);
                  if($('h1').html().length > 3 && $('h1').html().length < 22){
-
-
-
-                     /*window.setInterval(function() {
-                        $("h1").append("<br>HHealth <br>cuidará de você");
-                    }, 5000);*/
 
                      setTimeout(function(){
                         //Faz o submit no form sem a ação do botao
@@ -114,26 +97,26 @@
              <div class="div_suporte_conteudo">
              </div>
 
-              
-             
+
+
              <!--***********************SLIDE***********************-->
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
                 <?php
-                 
+
                     include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
                     include_once('/CMS/model_cms/gerenciamento_home_class.php');
-                 
+
                     $controller_home = new controller_home();
                     $list = $controller_home::Listar();
                     $cont = 0;
                     while($cont<count($list)){
-                        
+
                 ?>
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;height:700px;" >
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;height:700px;">
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;height:700px;">
                  <?php
-                        
+
                         $cont++;
                     }
                  ?>
@@ -144,7 +127,7 @@
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                </div>
-                 
+
              </div>
 
              <script type="text/javascript" src="js/slide_home.js"></script>
