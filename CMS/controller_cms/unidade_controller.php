@@ -6,6 +6,10 @@
             require_once ('modulo_img.php');
             $unidade = new Unidade();
             $unidade->nome_unidade= $_POST['txt_unidade'];
+            $unidade->telefone= $_POST['txt_telefone'];
+            $unidade->texto= $_POST['txt_texto'];
+            $unidade->latitude= $_POST['txt_latitude'];
+            $unidade->longitude= $_POST['txt_longitude'];
             $unidade->id_endereco=$id_endereco;
             
             //variaveis de upload de imagem

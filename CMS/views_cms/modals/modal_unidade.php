@@ -12,6 +12,10 @@ $cep = null;
 $rg = null;
 $cpf = null;
 $numero = null;
+$tel = null;
+$lat = null;
+$long = null;
+$texto = null;
 $id_uni = 0;
 
 if (isset($_GET['controller']))
@@ -37,7 +41,10 @@ if(isset($_GET['modo'])){
         
         $imagem=$list->imagem;
         $nome_unidade=$list->nome_unidade;
-        
+        $tel = $list->telefone;
+        $lat = $list->latitude;
+        $long = $list->longitude;
+        $texto = $list->texto;
         
         
         /*Declara endereço*/
@@ -54,7 +61,7 @@ if(isset($_GET['modo'])){
         $id_estado=$list_endereco->id_estado;
         $cidade=$list_endereco->cidade;
         $bairro=$list_endereco->bairro;
-    
+        
        
     }
 }
@@ -213,6 +220,14 @@ if(isset($_GET['modo'])){
                         
                         <div class="campo" ><!--campos--> <!--Nível-->
                             <div class="string_campo">
+                                <a>Telefone:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input style="width:100px;"type="text" value="<?php echo($tel)?>" name="txt_telefone" placeholder="Telefone">
+                            </div>
+                            
+                            <div class="string_campo">
                                 <a>Estado:</a>
                             </div>
 
@@ -237,6 +252,35 @@ if(isset($_GET['modo'])){
                                 ?>
                             </select>
 
+                        </div>
+                        
+                        <div class="campo"><!--campos--> <!--nome-->
+                            <div class="string_campo">
+                                <a>Latitude:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input style="width:100px;"type="text" value="<?php echo($lat)?>" name="txt_latitude" placeholder="Latitude">
+                            </div>
+                            
+                            <div class="string_campo">
+                                <a>Longitude:</a>
+                            </div>
+
+                            <div class="input_campo">
+                                <input style="width:200px;"type="text" value="<?php echo($long)?>" name="txt_longitude" placeholder="Longitude">
+                            </div>
+                        </div>
+                        
+                        <div class="campo"><!--campos--> 
+                            <div class="string_campo" style="margin-left:5px;">
+                                <a>Descrição:</a>
+                            </div>
+
+                            <textarea name="txt_texto" id="txt_texto" style="width:300px;">
+                                <?php echo($texto)?>
+                                
+                            </textarea>
                         </div>
                         
                         <div class="campo_botao">

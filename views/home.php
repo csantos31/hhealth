@@ -18,32 +18,16 @@
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
         <link rel="stylesheet" href="css/w3c_css.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script type="text/javascript" src="js/jcarousellite.js"></script>
         <script type="text/javascript" src="js/carrossel.js"></script>
         <script>
-            /*
-             window.setInterval(function() {
-                $("h1").append("<br>HHealth cuidará de <br> você");
-            }, 5000);
-        */
-             $(document).ready(function(){
 
-                 /*
-                     if($('#my_text').html().length < 500)
-                    {
-                        $('#read_more').hide();
-                    }
-                 */
+             $(document).ready(function(){
                  var myvar = $('h1').html().length
                  console.log(myvar);
                  if($('h1').html().length > 3 && $('h1').html().length < 22){
-
-
-
-                     /*window.setInterval(function() {
-                        $("h1").append("<br>HHealth <br>cuidará de você");
-                    }, 5000);*/
 
                      setTimeout(function(){
                         //Faz o submit no form sem a ação do botao
@@ -60,11 +44,28 @@
                      window.clearInterval();
                  }
 
-             })
+             });
 
+        </script>
+        <script>
+            /*FUNCTIONS*/
+            function Cadastrar(){
+                  $.ajax({
+                      type:"POST",
+                      url:"views/modal_cad_paciente.php",
+                      success: function(dados){
+                          $(".modal").html(dados);
+                      }
+                  });
+              }
         </script>
     </head>
     <body>
+      <div class="container_modal"><!--container da modal-->
+          <div class="modal"><!--modal-->
+          </div>
+      </div>
+      <div id="principal">
           <div class="main"><!--Div Main que segura todas as divs-->
                <div class="modal_login">
                     <label id="lbl_paciente">Área do paciente:</label>
@@ -89,33 +90,33 @@
 
                       <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">
                   </form>
-                  <label> Ainda não tem perfil? </label> <a>Cadastre-se</a>
+                  <label> Ainda não tem perfil? </label> <a onclick="Cadastrar()" style="cursor:pointer;">Cadastre-se</a>
               </div>
                <?php require_once('nav.php'); ?>
 
              <div class="div_suporte_conteudo">
              </div>
 
-              
-             
+
+
              <!--***********************SLIDE***********************-->
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
                 <?php
-                 
+
                     include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
                     include_once('/CMS/model_cms/gerenciamento_home_class.php');
-                 
+
                     $controller_home = new controller_home();
                     $list = $controller_home::Listar();
                     $cont = 0;
                     while($cont<count($list)){
-                        
+
                 ?>
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;height:700px;" >
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;height:700px;">
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;height:700px;">
                  <?php
-                        
+
                         $cont++;
                     }
                  ?>
@@ -126,7 +127,7 @@
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                </div>
-                 
+
              </div>
 
              <script type="text/javascript" src="js/slide_home.js"></script>
@@ -140,27 +141,28 @@
                               </div>
                               <div class="carrossel">
                                   <ul>
+                                      <?php
+                                        include_once('/CMS/controller_cms/gerenciamento_dica_saude_controller.php');
+                                        include_once('/CMS/model_cms/gerenciamento_dica_saude_class.php');
+                                        
+                                        $controller_saude = new controller_dica_saude();
+                                        $list_saude = $controller_saude::Listar();
+                                      
+                                        $cont_saude=0;
+                                        while($cont_saude<count($list_saude)){
+                                            
+                                        
+                                      ?>
                                       <li>
-                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          <img src="CMS/<?php echo($list_saude[$cont_saude]->imagem)?>" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          
+                                          <?php echo($list_saude[$cont_saude]->imagem)?>
                                       </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
+                                      
+                                      <?php
+                                            $cont_saude++;
+                                        }
+                                      ?>
                                   </ul>
 
                               </div>
@@ -178,7 +180,21 @@
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter" id="div_type">
-                                  <h1>Onde você estiver, </h1>
+                                  <?php
+                                    include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
+                                    include_once('/CMS/model_cms/gerenciamento_home_class.php');
+
+                                    $controller_home = new controller_home();
+                                    $list = $controller_home::Listar();
+                                    $cont = 0;
+                                    while($cont<count($list)){
+
+                                ?>
+                                  <h1><?php echo($list[$cont]->frase)?> </h1>
+                                  <?php
+                                        $cont++;
+                                    }
+                                  ?>
                               </div>
                           </div>
                         </div>
@@ -189,29 +205,27 @@
                                 </div>
 
                                 <div class="content_img_faixa_2_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
+                                        include_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
+                                        
+                                        $controller_ambiente = new controller_ambiente();
+                                        $list = $controller_ambiente::Listar();
+                                      
+                                        $cont=0;
+                                        while($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital" title="quartos do hospital">
                                     </div>
 
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                     <div class="content_btn_faixa_2_home">
                                         <p>Ver todos os ambiente do hospital</p>
                                     </div>
@@ -223,42 +237,66 @@
                         <div class="faixa_3_content_home"><!--Slider-->
                             <div class="carrossel_local">
                                 <div class="content_faixa_3_unidades_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/unidade_controller.php');
+                                        include_once('/CMS/model_cms/unidade_class.php');
+                                        
+                                        $controller_unidade = new controller_unidade();
+                                        $list = $controller_unidade::Listar();
+                                      
+                                        $cont=0;
+                                        if($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_3_home">
-                                        <img src="imagens/4992868.jpg" alt="unidades">
+                                        <img src="CMS/<?php echo($list[0]->imagem)?>" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
                                     </div>
                                     <div class="informa_unidade">
-                                        <h1>Unidade de jandira</h1>
-                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <h1><?php echo($list[0]->nome_unidade)?></h1>
+                                        <b>Telefone:</b><p><?php echo($list[0]->telefone)?><p>
                                         <b>Um pouco mais sobre a unidade: </b>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
-                                          it anim id est laborum.</p>
+                                        <p><?php echo($list[0]->texto)?></p>
                                     </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                 </div>
 
                                 <div class="content_faixa_3_unidades_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/unidade_controller.php');
+                                        include_once('/CMS/model_cms/unidade_class.php');
+                                        
+                                        $controller_unidade = new controller_unidade();
+                                        $list = $controller_unidade::Listar();
+                                      
+                                        $cont=0;
+                                        if($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_3_home">
-                                        <img src="imagens/imagem_hospital.jpg" alt="unidades">
+                                        <img src="CMS/<?php echo($list[1]->imagem)?>" alt="unidades">
                                     </div>
                                     <div class="descricao_faixa_3_home">
                                     </div>
                                     <div class="informa_unidade">
-                                        <h1>Unidade de Osasco</h1>
-                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <h1><?php echo($list[1]->nome_unidade)?></h1>
+                                        <b>Telefone:</b><p><?php echo($list[1]->telefone)?><p>
                                         <b>Um pouco mais sobre a unidade: </b>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
-                                          it anim id est laborum.</p>
+                                        <p><?php echo($list[1]->texto)?></p>
                                     </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -267,5 +305,6 @@
              <!-- Esse require adiciona o rodapé na página -->
              <?php require_once('footer.php'); ?>
           </div>
+      </div>
     </body>
 </html>

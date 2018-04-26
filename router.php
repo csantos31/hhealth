@@ -36,8 +36,6 @@
 
                 case'login':
 
-
-
                     //Instancia a classe Usuario
                     $controller_paciente = new controllerPaciente();
 
@@ -84,7 +82,7 @@
                  case 'inserir':
                     $controller_endereco = new controller_endereco();
                     $id_endereco=$controller_endereco::Novo();
-                     
+
                    //Instanciando a classe da controller
                    $controller_contato = new controllerTrabalheConosco();
                    //Chama o método novo da controller
