@@ -1,48 +1,47 @@
 
-/*Tamanho da barra de rolagem*/ 
+/*Tamanho da barra de rolagem*/
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
 
-  width: 13px; 
+  width: 13px;
 
-  height: 15px; 
+  height: 15px;
 
-} 
+}
 
-  
 
-/*Cor de fundo da barra de rolagem*/ 
+/*Cor de fundo da barra de rolagem*/
 
-::-webkit-scrollbar-track-piece { 
+::-webkit-scrollbar-track-piece {
 
-  background:    white; 
+  background:    white;
 
-} 
+}
 
-  
 
-/*propriedades da rolagem cor, borda e altura vertical*/ 
 
-::-webkit-scrollbar-thumb:vertical { 
+/*propriedades da rolagem cor, borda e altura vertical*/
 
-  height: 5px; 
+::-webkit-scrollbar-thumb:vertical {
 
-  background:    #CA0000; 
-border-radius:10px;  
+  height: 5px;
 
-} 
+  background:    #CA0000;
+border-radius:10px;
 
-  
+}
 
-/*propriedades da rolagem cor, borda e altura horizontal*/ 
 
-::-webkit-scrollbar-thumb:horizontal { 
 
-  width: 5px; 
+/*propriedades da rolagem cor, borda e altura horizontal*/
 
-  background-color: #CA0000; 
+::-webkit-scrollbar-thumb:horizontal {
 
-} 
+  width: 5px;
+
+  background-color: #CA0000;
+
+}
 
 body{
     padding:0;
@@ -67,7 +66,7 @@ body{
 	height:350px;
     padding-top: 25px;
     float:left;
-    display: flex; 
+    display: flex;
     padding-right: 20px;
     align-content: center;
 }
@@ -123,7 +122,7 @@ body{
   width: 100%;
   min-height:  550px;
     overflow: hidden;
-  padding-top: 30px; 
+  padding-top: 30px;
   font-size: 20px;
   text-align: justify;
   /*background-color: #F1F6F9;*/
@@ -158,6 +157,7 @@ body{
       height:auto;
       position: relative;
       background-color: white;
+      padding-bottom: 20px;
 }
 
 .content{
@@ -176,7 +176,7 @@ body{
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-  
+
 }
 
 .content_login_usuario_home{/*---login e senha---*/
@@ -344,7 +344,7 @@ body{
 
 /*content unidades*/
 .content_faixa_3_unidades_home{
-    width:550px;
+    width:1200px;
     height:300px;
     margin-left:30px;
     margin-bottom:100px;
@@ -372,6 +372,17 @@ body{
     margin-top: 100px;
 }
 
+.informa_unidade{
+  width: 500px;
+  min-height: 400px;
+  padding: 16px;
+  margin-left: 20px;
+  text-align: justify;
+  float: left;
+  overflow: hidden;
+  padding-bottom: 30px;
+}
+
 .footer{
       width: 100%;
       height: 299px;
@@ -394,11 +405,11 @@ body{
   font-family: monospace;
   overflow: hidden;
   font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
      typing 3.5s steps(30, end),
     blink-caret .2s step-end infinite;
     font-size: 60px;
@@ -411,11 +422,11 @@ body{
   font-family: monospace;
   overflow: hidden;
   font-weight: bold;
-  border-right: .15em solid orange; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
      typing 3.5s steps(30, end),
     blink-caret2 .2s step-end infinite;
     font-size: 60px;
@@ -449,7 +460,7 @@ body{
     margin-top: 15px;
     cursor: pointer;
     z-index: 999;
-    
+
 }
 
 
@@ -579,20 +590,3 @@ body{
     border: none;
     border-radius: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

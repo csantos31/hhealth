@@ -28,7 +28,7 @@
             }, 5000);
         */
              $(document).ready(function(){
-                
+
                  /*
                      if($('#my_text').html().length < 500)
                     {
@@ -38,30 +38,30 @@
                  var myvar = $('h1').html().length
                  console.log(myvar);
                  if($('h1').html().length > 3 && $('h1').html().length < 22){
-                     
-                     
-                     
+
+
+
                      /*window.setInterval(function() {
                         $("h1").append("<br>HHealth <br>cuidará de você");
                     }, 5000);*/
-                     
+
                      setTimeout(function(){
-                        //Faz o submit no form sem a ação do botao 
+                        //Faz o submit no form sem a ação do botao
                         $("#div_type").append("<h1>HHealth <h1>");
                     },5000);
                      setTimeout(function(){
-                        //Faz o submit no form sem a ação do botao 
+                        //Faz o submit no form sem a ação do botao
                          $("#div_type").append("<h3>Cuidará de você!</h3>")
 
                     },9000);
-                     
-                     
+
+
                  }else if($('h1').html().length == 19){
                      window.clearInterval();
                  }
-                 
+
              })
-            
+
         </script>
     </head>
     <body>
@@ -74,24 +74,24 @@
                   <div id="superior_vermelha">
                         <img id="icon_cad" src="imagens/padlock_icon.png" alt="pass" title="pass">
                         <div class="label_login">Login</div>
-                          <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';"> 
-                            <div id="borda_minimizar"></div>  
+                          <a href="#" onclick="document.getElementById('caixa_login_home').style.display='none';">
+                            <div id="borda_minimizar"></div>
                           </a>
                   </div>
                   <form name="" method="post" action="router.php?controller=paciente&modo=login">
                         <!--COnTEnT MODAL-->
-                      
+
                       <div class="label_email">Endereço de e-mail:</div>
                       <input type="text" name="txt_usuario" id="txt_usuario">
 
                       <div class="label_senha">Senha:</div>
                       <input type="password" name="txt_senha" id="txt_senha">
 
-                      <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">    
+                      <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">
                   </form>
               </div>
                <?php require_once('nav.php'); ?>
-              
+
              <div class="div_suporte_conteudo">
              </div>
 
@@ -154,12 +154,12 @@
 
                             </div>
                         </div>
-                        
+
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter" id="div_type">
                                   <h1>Onde você estiver, </h1>
-                              </div>  
+                              </div>
                           </div>
                         </div>
                         <div class="faixa_2_content_home"><!--faixa2-->
@@ -192,12 +192,12 @@
                                     <div class="img_faixa_2_home">
                                         <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
                                     </div>
-                                    <div class="content_btn_faixa_2_home"> 
+                                    <div class="content_btn_faixa_2_home">
                                         <p>Ver todos os ambiente do hospital</p>
                                     </div>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <div class="faixa_3_content_home"><!--Slider-->
@@ -211,7 +211,14 @@
                                     </div>
                                     <div class="informa_unidade">
                                         <h1>Unidade de jandira</h1>
-                                        <b>Telefone:</b>(11)4545-5445
+                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <b>Um pouco mais sobre a unidade: </b>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
+                                          it anim id est laborum.</p>
                                     </div>
                                 </div>
 
@@ -219,8 +226,18 @@
                                     <div class="img_faixa_3_home">
                                         <img src="imagens/imagem_hospital.jpg" alt="unidades">
                                     </div>
-
                                     <div class="descricao_faixa_3_home">
+                                    </div>
+                                    <div class="informa_unidade">
+                                        <h1>Unidade de Osasco</h1>
+                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <b>Um pouco mais sobre a unidade: </b>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
+                                          it anim id est laborum.</p>
                                     </div>
                                 </div>
                             </div>
