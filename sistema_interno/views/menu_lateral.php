@@ -32,7 +32,7 @@
                  </div>
             </a>
 
-            <a href="pacientes.php">
+            <a href="pacientes_pendentes.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
                          <img src="../imagens/patient.png">
@@ -42,7 +42,7 @@
                      </div>
                  </div>
             </a>
-            <a href="pacientes_pendentes.php">
+            <a href="pacientes.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
                          <img src="../imagens/on.png">
