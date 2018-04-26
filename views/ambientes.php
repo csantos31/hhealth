@@ -17,7 +17,7 @@
                         type:"GET",
                         data: {id:IdIten},
                         url: "ambientes.php?modo=mostrar&id="+IdIten,
-                        
+
                         success: function(dados){
                             $('.main').html(dados);
                             //alert(dados);
@@ -30,11 +30,11 @@
 
 
             </script>
-          
+
             <title>Hospital HHealth</title>
       </head>
       <body>
-            
+
             <div class="main"><!--Div Main que segura todas as divs-->
                   <!-- Esse require adiciona o menu na página -->
                  <?php require_once('nav.php'); ?>
@@ -43,11 +43,13 @@
                 </div>
                 <div class="suporte_content">
                       <div class="content">
-                          
-                          
-                          
-                          
-                          
+
+                        <div class="">
+                          Ambiente
+                        </div>
+
+
+
                             <div class="content_menu_lateral_ambientes">
                         <?php
                             include_once('../CMS/controller_cms/gerenciamento_ambiente_controller.php');
@@ -61,8 +63,8 @@
                             $cont=0;
                             while($cont<count($list)){
                                 if($list[$cont]->ativo==1){
-                                    
-                                
+
+
 
 
                         ?>
@@ -77,8 +79,8 @@
                             }
                         ?>
                             </div>
-                        
-                          
+
+
                         <?php
                             $titulo=null;
                             $texto=null;
@@ -89,7 +91,7 @@
                             $imagem5=null;
                             $imagem6=null;
                             $ativo=null;
-                          
+
                             if(isset($_GET['modo'])){
                                 $modo=$_GET['modo'];
                                 if($modo=='mostrar'){
@@ -127,13 +129,13 @@
                                     $imagem5=$list_id->imagem5;
                                     $imagem6=$list_id->imagem6;
                                     $ativo=$list_id->ativo;
-                                    
+
                             }
                             ?>
-                          
+
                           <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                             <?php
-                          
+
                             //if($list_id->ativo==1){
                           ?>
                            <div class="suporte_ambiente">
@@ -168,8 +170,8 @@
                            </div>
                             <?php
                              // }
-                              ?>  
-                        
+                              ?>
+
                         </form>
                       </div>
                 </div>

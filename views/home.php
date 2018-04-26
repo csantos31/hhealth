@@ -96,11 +96,29 @@
              <div class="div_suporte_conteudo">
              </div>
 
+              
+             
              <!--***********************SLIDE***********************-->
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
-               <img class="mySlides" src="imagens/portada_doctuo.jpg" alt="" style="width:100%;height:700px;" >
-               <img class="mySlides" src="imagens/slide_2.jpg" alt="" style="width:100%;height:700px;">
-               <img class="mySlides" src="imagens/img_login.jpg" alt="" style="width:100%;height:700px;">
+                <?php
+                 
+                    include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
+                    include_once('/CMS/model_cms/gerenciamento_home_class.php');
+                 
+                    $controller_home = new controller_home();
+                    $list = $controller_home::Listar();
+                    $cont = 0;
+                    while($cont<count($list)){
+                        
+                ?>
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;height:700px;" >
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;height:700px;">
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;height:700px;">
+                 <?php
+                        
+                        $cont++;
+                    }
+                 ?>
                <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" >
                   <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
                   <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
@@ -108,6 +126,7 @@
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
                   <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
                </div>
+                 
              </div>
 
              <script type="text/javascript" src="js/slide_home.js"></script>
