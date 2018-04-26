@@ -40,7 +40,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
-                echo $sql;
+                echo $sql1;
+                echo $sql2;
 			}
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();

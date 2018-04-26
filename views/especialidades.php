@@ -18,14 +18,14 @@
                 <?php
                 include_once("../sistema_interno/models/especialidade_class.php");
                 include_once("../sistema_interno/controllers/especialidade_controller.php");
-                
+
                 $controller_especialidade = new controllerEspecialidade();
                 $list = $controller_especialidade::Listar();
-                
+
                 $cont=0;
                 while($cont < count($list)){
-                    
-                
+
+
                 ?>
                   <div class="suporte_especialidades">
                        <div class="nome_especialidade">
@@ -35,16 +35,12 @@
                               <img src="../sistema_interno/<?php echo($list[$cont]->imagem)?>" alt="www.nursing.com.br/cardiologia/">
 
                        </div>
-                       <a href="especialidade.php">
-                         <div class="mais_detalhes">
-                                + Detalhes
-                         </div>
-                       </a>
+
                   </div>
                 <?php
                     $cont++;
                 }
-                ?>  
+                ?>
             </div>
             <!-- Esse require adiciona o rodapé na página -->
             <?php require_once('footer.php'); ?>

@@ -21,7 +21,7 @@
 .close_modal img{
     width:30px;
     height:30px;
-    margin-top:10px;
+    margin-top:5px;
 }
 
 
@@ -30,7 +30,7 @@
     min-height:500px;
     height:auto;
     margin:auto;
-    background-color:#cccccc;
+    background-color:#ffffff;
     border-radius:10px;
 }
 
@@ -54,7 +54,7 @@
 .titulo{/*titulo*/
     width:100%;
     height:20px;
-    padding-top:10px;
+    padding-top:5px;
     margin:auto;
     font-family: sans-serif;
     font-weight: bold;
@@ -62,32 +62,15 @@
     color:#000000;
 }
 
-.part{
-    width:500px;
-    height: 600px; 
-    float: left;
-    background-color: aqua;
-}
-
-.part2{
-    width:500px;
-    height: 600px; 
-    float: left;
-    background-color: aqua;
-}
-
 .content_campos{/*content dos campos*/
     width:1000px;
-    background-color: aquamarine;
     height: 600px;
-    float: left;
    
 }
 
 .campo{/*campos*/
     width:auto;
     height: auto;
-    background-color: blue;
     
     
 }
@@ -95,10 +78,10 @@
 .string_campo{/*String dos campos nome,usuario...*/
     width:100px;
     height:25px;
-    float: right;
     padding-top:5px;
-    background-color: aqua;
+    background-color: #ffffff;
     font-family: sans-serif;
+    margin: auto;
     text-align: center;
     color:#000000;
 }
@@ -106,8 +89,7 @@
 .input_campo [type=text]{
     width:400px;
     height:30px;
-    float: right;
-    background-color: bisque;
+    margin-left: 300px;
     border-top:#ffffff;
     border-left:#ffffff;
     box-shadow:0 1px 4px 0 #5F0601;
@@ -134,9 +116,9 @@
 .botao [type=submit]{/*botão*/
     width:100px;
     height:30px;
-    margin-left:500px;
+    margin-left:440px;
     margin-bottom:30px;
-    margin-top:5px;
+    margin-top:3px;
     background-color:#22ab13;
     font-family: sans-serif;
     font-size: 14;
@@ -163,26 +145,27 @@
 
 /*imagem*/
 .content_file{
-    width:500px;
+    width:400px;
     height:30px;
     margin:auto;
+    margin-top: 5px;
     
 }
 .content_preview{
-    width:150px;
-    height:150px;
+    width:70px;
+    height:70px;
     margin:auto;
 }
 
 .preview_img{
-    width:100px;
-    height:100px;
+    width:70px;
+    height:70px;
     margin:auto;
 }
 
 .preview_img img{
-    width:100px;
-    height:100px;
+    width:70px;
+    height:70px;
     margin:auto;  
 }
 

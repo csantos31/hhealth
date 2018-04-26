@@ -23,7 +23,7 @@
           $titulo = $busc->titulo;
           $texto = $busc->texto;
           $imagem = $busc->imagem;
-          echo "idiota";
+          
 
   }
 }

@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <div class="menu_lateral_cms"><!--menu lateral-->
+    
 
     <a href="<?= $caminho ?>tipo_quarto.php">
-        <div class="linha">
+        <div class="linha" >
             <div class="img_menu_lateral">
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
 
             <div class="titulo_menu_lateral">
-                <a>Tipos de quarto</a>
+                <span>Tipos de quarto</span>
             </div>
         </div>
     </a>
+
     <a href="<?= $caminho ?>nivel_usuario.php">
         <div class="linha">
             <div class="img_menu_lateral">
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Nível de usuário</a>
+                <span>Nível de usuário</span>
             </div>
         </div>
     </a>
@@ -28,7 +30,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Home</a>
+                <span>Home</span>
             </div>
         </div>
     </a>
@@ -39,7 +41,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Ambiente</a>
+                <span>Ambiente</span>
             </div>
         </div>
     </a>
@@ -49,7 +51,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Sobre</a>
+                <span>Sobre</span>
             </div>
         </div>
     </a>
@@ -59,7 +61,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Convênios</a>
+                <span>Convênios</span>
             </div>
         </div>
     </a>
@@ -69,7 +71,7 @@
                 <img src="<?=$caminho?>imagens/icon_home.png">
             </div>
             <div class="titulo_menu_lateral">
-                <a>Dicas de Saúde</a>
+                <span>Dicas de Saúde</span>
             </div>
         </div>
     </a>
@@ -81,7 +83,7 @@
             </div>
             <div class="titulo_menu_lateral">
 
-                <a>Unidades</a>
+                <span>Unidades</span>
 
             </div>
         </div>
@@ -94,7 +96,7 @@
             </div>
             <div class="titulo_menu_lateral">
 
-                <a>Exames</a>
+                <span>Exames</span>
 
             </div>
         </div>
@@ -108,7 +110,7 @@
             </div>
             <div class="titulo_menu_lateral">
 
-                <a>Fale conosco</a>
+                <span>Fale conosco</span>
 
             </div>
         </div>

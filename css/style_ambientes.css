@@ -47,22 +47,56 @@
 /*MENU LATERAL*/
 .content_menu_lateral_ambientes{
     width:20%;
-    height:500px;
-    background-color:blue;
+    min-height:502px;
+    height: auto;
+    /* background-color:gray; */
     float:left;
-    
+
+
 }
 
 .menu{
-    width:100%;
-    height:30px;
+    width:99%;
+    height:28px;
     background-color:gray;
     list-style: none;
-    text-decoration:none;
+    /* border: 1px solid #000; */
+    margin: 2px;
+    /* border-radius: 30px; */
+    background-color:	#DCDCDC;
+    color: #FF0000;
+    opacity: 0.5;
+}
+
+ .menu:hover{
+
+  opacity: 1;
 }
 
 .item_menu li{
+
+
     list-style: none;
+
+}
+
+a{
+
+   text-decoration: none;
+   color: #FF0000;
+   font-weight:bold;
+
+}
+
+.link_menu:hover{
+
+   color: #FF0000;
+
+}
+
+.texto_li{
+
+  margin-left: 4px;
 }
 
 
@@ -123,5 +157,3 @@
 .active{
     border: solid 1px #000;
 }
-
-

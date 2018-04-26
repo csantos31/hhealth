@@ -1,4 +1,4 @@
-<?php 
+<?php
     require('verifica_paciente.php');
 
 ?>
@@ -8,12 +8,12 @@
   <head>
     <meta charset="utf-8">
     <title>Pré atendimento</title>
-    <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
-    <link rel="stylesheet" href="../../css/area_paciente/style_pre_atendimento.css">
-    <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
+    <link rel="stylesheet" href="../css/style_nav.css">
+    <link rel="stylesheet" href="../css/style_pre_atendimento.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
   </head>
   <body>
-    <?php include_once('../include_area_paciente/nav_paciente.php'); ?>
+    <?php include_once('nav_paciente.php'); ?>
     <div id="content">
       <div id="suporte_titulo">
         <div id="titulo_pagina">
@@ -80,7 +80,7 @@
 
       </div>
     </div>
-    <?php 
+    <?php
           include('footer_paciente.php');
     ?>
   </body>
