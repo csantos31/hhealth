@@ -1,6 +1,15 @@
 <?php
     require('verifica_paciente.php');
+    $status=null;
+ $action = "modo=inserir";
+ $nivel = null;
+ $descricao = null;
 
+
+ if (isset($_GET['controller']))
+     $caminho ="views/";
+ else
+     $caminho = "";
 ?>
 
 <!DOCTYPE html>
@@ -26,10 +35,10 @@
       <?php
 
             // Incluindo a controller e a model para serem utilizadas
-            include_once($caminho .'../controllers/hist.php');
-            include_once($caminho .'../models/receita_class.php');
+            include_once($caminho .'../controllers/historico_controller.php');
+            include_once($caminho .'../models/historico_paciente_class.php');
 
-            $receitas_controller = new controller_receitas();
+            $receitas_controller = new controller_historico_paciente();
 
             $list = $receitas_controller::Listar();
 
@@ -42,9 +51,14 @@
       ?>
       <div id="content__pagina">
         <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
+          <?php echo($list[$cont]->data); ?><?php echo(" - "); ?><?php echo($list[$cont]->descricao); ?>
         </div>
       </div>
+      <?php
+
+            $cont +=1;
+            }
+      ?>
       <div class="faixa_branca">
       </div>
     </div>

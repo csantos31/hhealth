@@ -1,5 +1,5 @@
 <?php
-class Historico_paciente
+class Historico
 {
 
       public $id_historico_paciente;
@@ -35,12 +35,10 @@ class Historico_paciente
             while ($rs = $select->fetch(PDO::FETCH_ASSOC)){
 
                   // Cria um array de dados na classe $list_contatos
-                  $list_receitas[] = new Receita();
+                  $list_receitas[] = new Historico();
 
                   // Guarda os dados vindos do banco no indice de objetos criado
                   $list_receitas[$cont]->id_historico_paciente = $rs['id_historico_paciente'];
-
-
 
                   $dat = new DateTime($rs['data']);
 
