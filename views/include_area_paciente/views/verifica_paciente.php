@@ -1,7 +1,7 @@
-<?php 
+<?php
 
     if(!isset($_SESSION['login_paciente'])){
-        header('location:../../index.php');
+        header('location:../../../index.php');
     }
 
 ?>
