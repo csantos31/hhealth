@@ -23,51 +23,26 @@
       <div class="faixa_branca">
 
       </div>
-      <div id="div_data">
-        <strong><b>26/03/2017</b></strong>
-      </div>
+      <?php
+
+            // Incluindo a controller e a model para serem utilizadas
+            include_once($caminho .'../controllers/hist.php');
+            include_once($caminho .'../models/receita_class.php');
+
+            $receitas_controller = new controller_receitas();
+
+            $list = $receitas_controller::Listar();
+
+            $cont = 0;
+
+            while ($cont < count($list)) {
+                  # code...
+
+                  //$codigo =$list[$cont]->status_imagem;
+      ?>
       <div id="content__pagina">
         <div class="linha_registro">
           28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
-        </div>
-        <div class="linha_registro">
-          28/03/2017 - exame realizado na unidade Jandira
-        </div>
-        <div class="linha_registro">
-          29/03/2017 - Consulta marcada para 30/03 na unidade Itapevi.
         </div>
       </div>
       <div class="faixa_branca">
