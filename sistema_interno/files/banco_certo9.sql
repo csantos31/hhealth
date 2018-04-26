@@ -32,8 +32,16 @@ CREATE TABLE `tbl_agendamento_consultas` (
   `id_unidade` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
-  PRIMARY KEY (`id_agendamento_consulta`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id_agendamento_consulta`),
+  KEY `fk_asdasdas_idx` (`id_paciente`),
+  KEY `fk_aaseqw_idx` (`id_especialidade`),
+  KEY `fk_funfucn_idx` (`id_funcionario`),
+  KEY `fk_qwerty_idx` (`id_unidade`),
+  CONSTRAINT `fk_asdasdas` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_aaseqw` FOREIGN KEY (`id_especialidade`) REFERENCES `tbl_especialidade` (`id_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_funfucn` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_qwerty` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidade` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +50,7 @@ CREATE TABLE `tbl_agendamento_consultas` (
 
 LOCK TABLES `tbl_agendamento_consultas` WRITE;
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` DISABLE KEYS */;
+INSERT INTO `tbl_agendamento_consultas` VALUES (1,8,1,1,2,'2000-12-12','12:12:12'),(2,8,2,1,1,'2000-12-12','12:12:12'),(3,8,1,1,1,'1018-12-12','01:01:01');
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1350,8 +1359,8 @@ CREATE TABLE `tbl_unidade` (
   `nome_unidade` tinytext,
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
-  `latitute` decimal(10,8) DEFAULT NULL,
-  `logintude` decimal(10,8) DEFAULT NULL,
+  `latitude` decimal(10,0) DEFAULT NULL,
+  `longitude` decimal(10,0) DEFAULT NULL,
   `texto` text,
   `telefone` text,
   PRIMARY KEY (`id_unidade`),
@@ -1438,4 +1447,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-26  8:57:39
+-- Dump completed on 2018-04-26 10:22:29
