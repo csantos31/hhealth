@@ -141,27 +141,28 @@
                               </div>
                               <div class="carrossel">
                                   <ul>
+                                      <?php
+                                        include_once('/CMS/controller_cms/gerenciamento_dica_saude_controller.php');
+                                        include_once('/CMS/model_cms/gerenciamento_dica_saude_class.php');
+                                        
+                                        $controller_saude = new controller_dica_saude();
+                                        $list_saude = $controller_saude::Listar();
+                                      
+                                        $cont_saude=0;
+                                        while($cont_saude<count($list_saude)){
+                                            
+                                        
+                                      ?>
                                       <li>
-                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          <img src="CMS/<?php echo($list_saude[$cont_saude]->imagem)?>" alt="Nome da Imagem" title="Nome da Imagem"/>
+                                          
+                                          <?php echo($list_saude[$cont_saude]->imagem)?>
                                       </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/saude-bucal.png" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
-                                      <li>
-                                          <img src="imagens/cardiologia.jpg" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                      </li>
+                                      
+                                      <?php
+                                            $cont_saude++;
+                                        }
+                                      ?>
                                   </ul>
 
                               </div>
@@ -179,7 +180,21 @@
                         <div id="suporte_menu_de_acesso_rapido"><!--MENU ACESSO RÁPIDO-->
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter" id="div_type">
-                                  <h1>Onde você estiver, </h1>
+                                  <?php
+                                    include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
+                                    include_once('/CMS/model_cms/gerenciamento_home_class.php');
+
+                                    $controller_home = new controller_home();
+                                    $list = $controller_home::Listar();
+                                    $cont = 0;
+                                    while($cont<count($list)){
+
+                                ?>
+                                  <h1><?php echo($list[$cont]->frase)?> </h1>
+                                  <?php
+                                        $cont++;
+                                    }
+                                  ?>
                               </div>
                           </div>
                         </div>
@@ -190,29 +205,27 @@
                                 </div>
 
                                 <div class="content_img_faixa_2_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
+                                        include_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
+                                        
+                                        $controller_ambiente = new controller_ambiente();
+                                        $list = $controller_ambiente::Listar();
+                                      
+                                        $cont=0;
+                                        while($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade.jpg" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital" title="quartos do hospital">
                                     </div>
 
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade1.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade2.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade3.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade4.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
-
-                                    <div class="img_faixa_2_home">
-                                        <img src="imagens/maternidade5.jpg" alt="quartos do hospital" title="quartos do hospital">
-                                    </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                     <div class="content_btn_faixa_2_home">
                                         <p>Ver todos os ambiente do hospital</p>
                                     </div>
@@ -224,42 +237,66 @@
                         <div class="faixa_3_content_home"><!--Slider-->
                             <div class="carrossel_local">
                                 <div class="content_faixa_3_unidades_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/unidade_controller.php');
+                                        include_once('/CMS/model_cms/unidade_class.php');
+                                        
+                                        $controller_unidade = new controller_unidade();
+                                        $list = $controller_unidade::Listar();
+                                      
+                                        $cont=0;
+                                        if($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_3_home">
-                                        <img src="imagens/4992868.jpg" alt="unidades">
+                                        <img src="CMS/<?php echo($list[0]->imagem)?>" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
                                     </div>
                                     <div class="informa_unidade">
-                                        <h1>Unidade de jandira</h1>
-                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <h1><?php echo($list[0]->nome_unidade)?></h1>
+                                        <b>Telefone:</b><p><?php echo($list[0]->telefone)?><p>
                                         <b>Um pouco mais sobre a unidade: </b>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
-                                          it anim id est laborum.</p>
+                                        <p><?php echo($list[0]->texto)?></p>
                                     </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                 </div>
 
                                 <div class="content_faixa_3_unidades_home">
+                                    <?php
+                                        include_once('/CMS/controller_cms/unidade_controller.php');
+                                        include_once('/CMS/model_cms/unidade_class.php');
+                                        
+                                        $controller_unidade = new controller_unidade();
+                                        $list = $controller_unidade::Listar();
+                                      
+                                        $cont=0;
+                                        if($cont<count($list)){
+                                            if($list[$cont]->ativo==1){
+                                        
+                                      ?>
                                     <div class="img_faixa_3_home">
-                                        <img src="imagens/imagem_hospital.jpg" alt="unidades">
+                                        <img src="CMS/<?php echo($list[1]->imagem)?>" alt="unidades">
                                     </div>
                                     <div class="descricao_faixa_3_home">
                                     </div>
                                     <div class="informa_unidade">
-                                        <h1>Unidade de Osasco</h1>
-                                        <b>Telefone:</b><p>(11)4545-5445<p>
+                                        <h1><?php echo($list[1]->nome_unidade)?></h1>
+                                        <b>Telefone:</b><p><?php echo($list[1]->telefone)?><p>
                                         <b>Um pouco mais sobre a unidade: </b>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                                          dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                                          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt moll
-                                          it anim id est laborum.</p>
+                                        <p><?php echo($list[1]->texto)?></p>
                                     </div>
+                                    <?php
+                                            }
+                                            $cont++;
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
