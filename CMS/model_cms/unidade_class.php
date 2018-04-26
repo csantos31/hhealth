@@ -22,8 +22,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             
             //$sql1="UPDATE tbl_home SET status = 0";
             
-            $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,status,ativo)
-            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','1','1');";
+            $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,latitude,longitude,texto,telefone,status,ativo)
+            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','".$unidade_dados->latitude."','".$unidade_dados->longitude."','".$unidade_dados->texto."','".$unidade_dados->telefone."','1','1');";
             
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -73,6 +73,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $lista_unidade[$cont]->id_endereco = $rs['id_endereco'];
 				$lista_unidade[$cont]->imagem = $rs['imagem'];
 				$lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
+                $lista_unidade[$cont]->telefone = $rs['telefone'];
+                $lista_unidade[$cont]->texto = $rs['texto'];
+                $lista_unidade[$cont]->latitude = $rs['latitude'];
+                $lista_unidade[$cont]->longitude = $rs['longitude'];
                 $lista_unidade[$cont]->status = $rs['status'];
                 $lista_unidade[$cont]->ativo = $rs['ativo'];
 
