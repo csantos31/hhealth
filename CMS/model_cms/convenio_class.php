@@ -11,11 +11,10 @@
             public $ativo;
 
             // Cria um construtor
-            function __construct()
-            {
-                  # code...
-                  include_once('bd_class.php');
-            }
+             public function __construct(){
+            include_once('bd_class.php');
+            include_once('auditoria_class.php');
+        }
 
             public static function Insert($convenio_dados){
 
@@ -34,7 +33,12 @@
 
                   //Excutar o script no banco de dados
                   if($PDO_conex->query($sql2)){
-                      echo "<script>location.reload();</script>";
+                      
+                        $auditoria = new Auditoria();
+                
+                        $auditoria::Insert($auditoria);
+                      
+                        echo "<script>location.reload();</script>";
 
       			}else {
       				//Mensagem de erro

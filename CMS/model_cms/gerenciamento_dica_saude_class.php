@@ -15,8 +15,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $ativo;
         
         //cria um construtor
-        public function __construct(){
+         public function __construct(){
             include_once('bd_class.php');
+            include_once('auditoria_class.php');
         }
         
         /*insere o registro no DB*/
@@ -35,6 +36,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql)){
+                
+                $auditoria = new Auditoria();
+                
+                $auditoria::Insert($auditoria);
+                
+                
                 echo "<script>location.reload();</script>";
                 echo $sql;
 			}else {

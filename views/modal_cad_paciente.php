@@ -52,8 +52,8 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
-        <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
+        <link rel="stylesheet" type="text/css" href="css/style_cad_paciente.css">
+        <link rel="stylesheet" type="text/css" href="css/style_modal_especialidade.css">
         <script>
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){

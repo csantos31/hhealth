@@ -1,5 +1,5 @@
 <?php
-    //require('verifica_paciente.php');
+    require('verifica_paciente.php');
 
     $status=null;
  $action = "modo=inserir";

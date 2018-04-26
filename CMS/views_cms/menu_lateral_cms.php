@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <div class="menu_lateral_cms"><!--menu lateral-->
-    
-
     <a href="<?= $caminho ?>tipo_quarto.php">
         <div class="linha" >
             <div class="img_menu_lateral">
@@ -13,7 +11,6 @@
             </div>
         </div>
     </a>
-
     <a href="<?= $caminho ?>nivel_usuario.php">
         <div class="linha">
             <div class="img_menu_lateral">
@@ -101,7 +98,7 @@
             </div>
         </div>
     </a>
-    
+
     <a href="<?= $caminho ?>crud_fale_conosco.php">
 
         <div class="linha">

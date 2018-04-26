@@ -3,7 +3,7 @@
 
 /*LEMBRETE PARA WESLEY
 
-ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
+ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 */
     class Unidade{
@@ -11,31 +11,31 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $imagem;
         public $ativo;
         public $status;
-        
+
         //cria um construtor
         public function __construct(){
             include_once('bd_class.php');
         }
-        
+
         /*insere o registro no DB*/
         public static function Insert($unidade_dados){
-            
+
             //$sql1="UPDATE tbl_home SET status = 0";
-            
-            $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,status,ativo)
-            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','1','1');";
-            
+
+            $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,latitude,longitude,texto,telefone,status,ativo)
+            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','".$unidade_dados->latitude."','".$unidade_dados->longitude."','".$unidade_dados->texto."','".$unidade_dados->telefone."','1','1');";
+
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
-            
+
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();
-            
+
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql)){
                 echo "<script>location.reload();</script>";
                 echo $sql;
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
@@ -44,7 +44,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();
         }
-        
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
@@ -73,6 +73,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $lista_unidade[$cont]->id_endereco = $rs['id_endereco'];
 				$lista_unidade[$cont]->imagem = $rs['imagem'];
 				$lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
+                $lista_unidade[$cont]->telefone = $rs['telefone'];
+                $lista_unidade[$cont]->texto = $rs['texto'];
+                $lista_unidade[$cont]->latitude = $rs['latitude'];
+              //  $lista_unidade[$cont]->longitude = $rs['longitude'];
                 $lista_unidade[$cont]->status = $rs['status'];
                 $lista_unidade[$cont]->ativo = $rs['ativo'];
 
@@ -89,11 +93,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			}
 
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($dados_unidade){
 			$sql = "SELECT * FROM tbl_unidade WHERE id_unidade =". $dados_unidade->id_unidade;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -106,8 +110,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
+
 				$unidade = new Unidade();
 
 				$unidade->id_unidade = $rs['id_unidade'];
@@ -117,7 +121,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $unidade->status = $rs['status'];
                 $unidade->ativo = $rs['ativo'];
 
-				
+
 				return $unidade;
 
 			}else {
@@ -128,10 +132,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         public function Update($dados_unidade){
 			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."', nome_unidade = '".$dados_unidade->nome_unidade."' WHERE id_unidade =".$dados_unidade->id_unidade;
-		
+
 
 		      echo $sql;
 
@@ -158,7 +162,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public function AtivarPorId($dados_unidade){
             //$sql1 = "UPDATE tbl_unidade set status=0";
             $sql = "UPDATE tbl_unidade set status=1 WHERE id_unidade=".$dados_unidade->id_unidade;
-            
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -170,7 +174,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
@@ -178,14 +182,14 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
-            
+
         }
-        
+
         /*Desativar o registro no BD*/
         public function DesativarPorId($dados_unidade){
             //$sql1 = "UPDATE tbl_unidade set status=0";
             $sql = "UPDATE tbl_unidade set status=0 WHERE id_unidade=".$dados_unidade->id_unidade;
-            
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -197,7 +201,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
@@ -205,39 +209,39 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
-            
+
         }
-        
-        
+
+
         /*DELETAR*/
         public function Deletar($dados_unidade){
             $sql="UPDATE tbl_unidade set ativo=0 WHERE id_unidade=".$dados_unidade->id_unidade;
-        
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
 			$PDO_conex = $conex->Conectar();
-        
+
             //Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				//echo "<script>confirm('Deseja realmente excluir?');</script>";
                 echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
 			}
-            
+
             //Fecha a conexão com o banco de dados
 			$conex->Desconectar();
         }
-        
-        
-		
-        
+
+
+
+
     }
 
 
