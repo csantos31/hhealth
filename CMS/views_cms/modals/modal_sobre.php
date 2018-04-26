@@ -110,8 +110,6 @@ if(isset($_GET['modo'])){
                         </div>
                     </div>
                     
-                    <div class="part"> 
-                    
                         <div class="content_campos"><!--content dos campos de cadastro-->
                             <div class="campo"><!--campos-->
                                 <div class="string_campo">
@@ -152,13 +150,7 @@ if(isset($_GET['modo'])){
                                     <input type="text" value="<?php echo($valores)?>" name="txt_valores" >
                                 </div>
                             </div> 
-                        </div>
                     
-                    </div>
-                    <div class="part2">
-                    
-                        <div class="content_campos"><!--content dos campos de cadastro-->
-
                             <div class="campo">
                                 <div class="content_file">
                                   <input  type="file" name="fle_img_sobre1">
@@ -201,7 +193,6 @@ if(isset($_GET['modo'])){
                                 </div>    
                             </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>
