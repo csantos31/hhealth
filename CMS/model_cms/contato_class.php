@@ -19,6 +19,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         //cria um construtor
         public function __construct(){
             include_once('bd_class.php');
+            include_once('auditoria_class.php');
         }
 
 

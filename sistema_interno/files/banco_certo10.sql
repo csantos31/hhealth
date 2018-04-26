@@ -65,7 +65,7 @@ CREATE TABLE `tbl_ambiente` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_ambiente`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `tbl_ambiente` (
 
 LOCK TABLES `tbl_ambiente` WRITE;
 /*!40000 ALTER TABLE `tbl_ambiente` DISABLE KEYS */;
-INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',0,0),(2,'dasdas','                  asdas                                              \r\n                            ','imagem_ambiente/cirurgia5.jpg','imagem_ambiente/endoscopia.jpg','imagem_ambiente/edit_icon.png','imagem_ambiente/download.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/acupuntura.jpg',0,1),(3,'asf','    sadfasd                                                            \r\n                            ','imagem_ambiente/dicas.png','imagem_ambiente/bg_login.jpg','imagem_ambiente/cirurgia4.jpg','imagem_ambiente/endocrinologia.jpg','imagem_ambiente/cirurgia6.jpg','imagem_ambiente/cirurgia2.jpg',1,1);
+INSERT INTO `tbl_ambiente` VALUES (1,'fffff','fffff','','','','','','',0,0),(2,'dasdas','                  asdas                                              \r\n                            ','imagem_ambiente/cirurgia5.jpg','imagem_ambiente/endoscopia.jpg','imagem_ambiente/edit_icon.png','imagem_ambiente/download.jpg','imagem_ambiente/cirurgia2.jpg','imagem_ambiente/acupuntura.jpg',0,1),(3,'asf','    sadfasd                                                            \r\n                            ','imagem_ambiente/dicas.png','imagem_ambiente/bg_login.jpg','imagem_ambiente/cirurgia4.jpg','imagem_ambiente/endocrinologia.jpg','imagem_ambiente/cirurgia6.jpg','imagem_ambiente/cirurgia2.jpg',0,1),(4,'ytyuit','                                                                \r\n               irtyit             ','imagem_ambiente/home.png','imagem_ambiente/home.png','imagem_ambiente/sobre.png','imagem_ambiente/sobre.png','imagem_ambiente/sobre.png','imagem_ambiente/sobre.png',1,0);
 /*!40000 ALTER TABLE `tbl_ambiente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,7 +172,7 @@ CREATE TABLE `tbl_auditoria` (
   `usuario` varchar(45) DEFAULT NULL,
   `acao` text,
   PRIMARY KEY (`id_auditoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -181,6 +181,7 @@ CREATE TABLE `tbl_auditoria` (
 
 LOCK TABLES `tbl_auditoria` WRITE;
 /*!40000 ALTER TABLE `tbl_auditoria` DISABLE KEYS */;
+INSERT INTO `tbl_auditoria` VALUES (1,'2018-04-26','10:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(2,'2018-04-26','10:25','1',' O usuario [josé], [inseriu] um usuário no banco '),(3,'2018-04-26','10:55','1',' O usuario [josé], [inseriu] um usuário no banco '),(4,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(5,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(6,'2018-04-26','10:57','1',' O usuario [josé], [inseriu] um usuário no banco ');
 /*!40000 ALTER TABLE `tbl_auditoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -296,6 +297,34 @@ LOCK TABLES `tbl_consulta` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_contato`
+--
+
+DROP TABLE IF EXISTS `tbl_contato`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_contato` (
+  `id_contato` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` text,
+  `subtitulo` text,
+  `texto` text,
+  `imagem` text,
+  `status_imagem` char(1) DEFAULT NULL,
+  `link_video` text,
+  PRIMARY KEY (`id_contato`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_contato`
+--
+
+LOCK TABLES `tbl_contato` WRITE;
+/*!40000 ALTER TABLE `tbl_contato` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_contato` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_convenio`
 --
 
@@ -310,7 +339,7 @@ CREATE TABLE `tbl_convenio` (
   `status_imagem` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_convenio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -319,6 +348,7 @@ CREATE TABLE `tbl_convenio` (
 
 LOCK TABLES `tbl_convenio` WRITE;
 /*!40000 ALTER TABLE `tbl_convenio` DISABLE KEYS */;
+INSERT INTO `tbl_convenio` VALUES (1,'sadf','asfaf','imagem_convenio/home.png',1,1);
 /*!40000 ALTER TABLE `tbl_convenio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -376,6 +406,34 @@ INSERT INTO `tbl_dica_saude` VALUES (1,'34124','adfsa','imagem_dica_saude/dermat
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_dicas_saude`
+--
+
+DROP TABLE IF EXISTS `tbl_dicas_saude`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_dicas_saude` (
+  `id_dicas_saude` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` text,
+  `subtitulo` text,
+  `texto` text,
+  `imagem` text,
+  `status_imagem` char(1) DEFAULT NULL,
+  `link_video` text,
+  PRIMARY KEY (`id_dicas_saude`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_dicas_saude`
+--
+
+LOCK TABLES `tbl_dicas_saude` WRITE;
+/*!40000 ALTER TABLE `tbl_dicas_saude` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_dicas_saude` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_endereco`
 --
 
@@ -396,7 +454,7 @@ CREATE TABLE `tbl_endereco` (
   KEY `fk_idpaispaispais_idx` (`id_pais`),
   CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -405,7 +463,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL);
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',24,'sdgsd','dg',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -673,7 +731,7 @@ CREATE TABLE `tbl_home` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_home`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -682,7 +740,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
-INSERT INTO `tbl_home` VALUES (1,'imagem_home/cirurgia1.jpg','imagem_home/cirurgia.jpg','imagem_home/cirurgia3.jpg','TESTE TESTE TESTE',1,1);
+INSERT INTO `tbl_home` VALUES (1,'imagem_home/cirurgia1.jpg','imagem_home/cirurgia.jpg','imagem_home/cirurgia3.jpg','TESTE TESTE TESTE',0,1),(2,'imagem_home/fale.png','imagem_home/fale.png','imagem_home/sobre.png','wafwf',1,0);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -830,7 +888,7 @@ CREATE TABLE `tbl_nivel_acesso` (
   `nome` varchar(45) DEFAULT NULL,
   `descricao` text,
   PRIMARY KEY (`id_nivel`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -839,7 +897,7 @@ CREATE TABLE `tbl_nivel_acesso` (
 
 LOCK TABLES `tbl_nivel_acesso` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_acesso` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_acesso` VALUES (1,'Paciente','Pacientes de uma unidade'),(2,'Medico','Funcionário Médico'),(3,'Paciente Criança','Paciente criança');
+INSERT INTO `tbl_nivel_acesso` VALUES (1,'Paciente','Pacientes de uma unidade'),(2,'Medico','Funcionário Médico'),(3,'Paciente Criança','Paciente criança'),(4,'sdts','                                                                \r\n         sdgsdg                   ');
 /*!40000 ALTER TABLE `tbl_nivel_acesso` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -928,6 +986,33 @@ LOCK TABLES `tbl_pais` WRITE;
 /*!40000 ALTER TABLE `tbl_pais` DISABLE KEYS */;
 INSERT INTO `tbl_pais` VALUES (1,'Brasil');
 /*!40000 ALTER TABLE `tbl_pais` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_plantao`
+--
+
+DROP TABLE IF EXISTS `tbl_plantao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_plantao` (
+  `id_plantao` int(11) NOT NULL AUTO_INCREMENT,
+  `id_funcionario` int(11) NOT NULL,
+  `hora` varchar(45) DEFAULT NULL,
+  `dt_nasc` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_plantao`),
+  KEY `fk_8001_idx` (`id_funcionario`),
+  CONSTRAINT `fk_8001` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_plantao`
+--
+
+LOCK TABLES `tbl_plantao` WRITE;
+/*!40000 ALTER TABLE `tbl_plantao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_plantao` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1048,12 +1133,22 @@ CREATE TABLE `tbl_resultado_exame` (
   `id_exame` int(11) NOT NULL,
   `id_funcionario` int(11) NOT NULL,
   `id_paciente` int(11) NOT NULL,
-  `arquivo` text NOT NULL,
-  `comentario` text,
+  `nome` text NOT NULL,
+  `id_especialidade` int(11) NOT NULL,
+  `id_unidade` int(11) NOT NULL,
+  `data` date NOT NULL,
   PRIMARY KEY (`id_resultado_exame`),
   KEY `fk_r35648_idx` (`id_paciente`),
+  KEY `fk_fsdhiafbdlasd_idx` (`id_funcionario`),
+  KEY `fk_fdajsdsad_idx` (`id_especialidade`),
+  KEY `fk_kfbhidflas_idx` (`id_exame`),
+  KEY `fk_iusafbpasdfas_idx` (`id_unidade`),
+  CONSTRAINT `fk_fsdhiafbdlasd` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_fdajsdsad` FOREIGN KEY (`id_especialidade`) REFERENCES `tbl_especialidade` (`id_especialidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_kfbhidflas` FOREIGN KEY (`id_exame`) REFERENCES `tbl_exame` (`id_exame`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_iusafbpasdfas` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidade` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_r35648` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1062,6 +1157,7 @@ CREATE TABLE `tbl_resultado_exame` (
 
 LOCK TABLES `tbl_resultado_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_resultado_exame` DISABLE KEYS */;
+INSERT INTO `tbl_resultado_exame` VALUES (1,1,1,8,'Sangue',1,1,'2012-10-10');
 /*!40000 ALTER TABLE `tbl_resultado_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1194,7 +1290,7 @@ CREATE TABLE `tbl_sobre` (
   `status_imagem` char(1) CHARACTER SET latin1 DEFAULT NULL,
   `link_video` text CHARACTER SET latin1,
   PRIMARY KEY (`id_sobre`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1203,7 +1299,7 @@ CREATE TABLE `tbl_sobre` (
 
 LOCK TABLES `tbl_sobre` WRITE;
 /*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
-INSERT INTO `tbl_sobre` VALUES (1,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,1,'amil','convenio amil','convenio',NULL,NULL,NULL),(2,'adsfdas','fdsafas','fasdf','fasdfasdfasd','imagem_sobre/endocrinologia.jpg','imagem_sobre/endoscopia.jpg','imagem_sobre/cirurgia.jpg',0,1,0,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `tbl_sobre` VALUES (3,'dtwd','wrywer','ewryery','eryery','imagem_sobre/sobre.png','imagem_sobre/sobre.png','imagem_sobre/sobre.png',0,1,0,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1219,7 +1315,7 @@ CREATE TABLE `tbl_tipo_quarto` (
   `nivel` varchar(50) NOT NULL,
   `descricao` text NOT NULL,
   PRIMARY KEY (`id_tipo_quarto`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1228,6 +1324,7 @@ CREATE TABLE `tbl_tipo_quarto` (
 
 LOCK TABLES `tbl_tipo_quarto` WRITE;
 /*!40000 ALTER TABLE `tbl_tipo_quarto` DISABLE KEYS */;
+INSERT INTO `tbl_tipo_quarto` VALUES (1,'rtyu','tutr');
 /*!40000 ALTER TABLE `tbl_tipo_quarto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1350,14 +1447,14 @@ CREATE TABLE `tbl_unidade` (
   `nome_unidade` tinytext,
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
-  `latitute` decimal(10,8) DEFAULT NULL,
-  `logintude` decimal(10,8) DEFAULT NULL,
+  `latitude` decimal(10,0) DEFAULT NULL,
+  `logintude` decimal(10,0) DEFAULT NULL,
   `texto` text,
   `telefone` text,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1366,8 +1463,33 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL,NULL,NULL);
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/fale.png','asfgasfg',1,1,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_usuario`
+--
+
+DROP TABLE IF EXISTS `tbl_usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `cpf` text,
+  `senha` text,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_usuario`
+--
+
+LOCK TABLES `tbl_usuario` WRITE;
+/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
+INSERT INTO `tbl_usuario` VALUES (1,'adm','123');
+/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1438,4 +1560,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-26  8:57:39
+-- Dump completed on 2018-04-26 11:09:16

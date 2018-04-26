@@ -11,9 +11,10 @@ class Endereco{
       public $bairro;
 
         //cria um construtor
-		public function __construct(){
+		 public function __construct(){
             include_once('bd_class.php');
-		}
+            include_once('auditoria_class.php');
+        }
 
         /*insere o registro no DB*/
 		public static function Insert($endereco_dados){
@@ -40,6 +41,12 @@ class Endereco{
                 
                 return $id_endereco;
                 //echo $sql;
+                
+                $auditoria = new Auditoria();
+                
+                $auditoria::Insert($auditoria);
+                
+                
 				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
