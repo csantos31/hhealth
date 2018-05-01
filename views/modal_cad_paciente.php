@@ -23,10 +23,10 @@ if(isset($_GET['modo'])){
         $id=$_GET['codigo'];
 
 
-        require_once("controllers/paciente_controller.php");/*da um require na nivel_controller*/
-        require_once("models/paciente_class.php");/*da um require na nivel_class*/
-        require_once("controllers/endereco_controller.php");
-        require_once("models/endereco_class.php");
+        require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/paciente_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/endereco_controller.php");
+        require_once("../models/endereco_class.php");
         // Instancio a controller
         $controller_paciente  = new controllerPaciente();
         //Chama o metodo para Listar todos os registros
@@ -52,8 +52,8 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="css/style_cad_paciente.css">
-        <link rel="stylesheet" type="text/css" href="css/style_modal_especialidade.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
         <script>
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
@@ -109,14 +109,14 @@ if(isset($_GET['modo'])){
     <body>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
-                <a href="#" class="fechar"><img src="imagens/close.png"</a>
+
             </div>
 
             <div class="content_modal">
                 <form action="" method="post" id="form" data-id_end="<?= $id_end ?>" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
-                            <img src="imagens/logo_only_heart.png">
+                            <img src="../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
                             <a>Paciente</a>

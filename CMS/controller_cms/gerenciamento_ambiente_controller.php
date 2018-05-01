@@ -148,15 +148,23 @@
         }
 
         public function Listar(){
-			//Instancia da classe contatos
-			$ambiente = new Ambiente();
+    			//Instancia da classe contatos
+    			$ambiente = new Ambiente();
 
-			//Chama o método para selecionar os registros
-			return $ambiente::Select();
-		}
+    			//Chama o método para selecionar os registros
+    			return $ambiente::Select();
+    		}
+
+        public function ListarPHome(){
+          //Instancia da classe contatos
+          $ambiente = new Ambiente();
+
+          //Chama o método para selecionar os registros
+          return $ambiente::SelectFHome();
+        }
 
         public function Buscar(){
-            
+
 
             $ambiente = new Ambiente();
 
@@ -167,7 +175,7 @@
             }else{
                 $amb = $ambiente::SelectLast();
             }
-            
+
 
             return $amb;
         }
@@ -323,7 +331,7 @@
 
         }
 
-        
+
     public function Desativar(){
         require_once ('model_cms/gerenciamento_ambiente_class.php');
         require_once ('modulo_img.php');

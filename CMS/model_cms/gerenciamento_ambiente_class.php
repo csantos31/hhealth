@@ -41,11 +41,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql1) &&$PDO_conex->query($sql2)){
-                
+
                 $auditoria = new Auditoria();
-                
+
                 $auditoria::Insert($auditoria);
-                
+
                 echo "<script>location.reload();</script>";
 
 			}else {
@@ -58,54 +58,104 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         }
 
         /*Lista todos os registro no BD*/
-		public function Select(){
-			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC;";
 
-			//Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+        public function SelectFHome(){
+          //Query para selecionar a tabela contatos
+          $sql="SELECT * FROM tbl_ambiente WHERE ativo = 1 ORDER BY id_ambiente DESC LIMIT 1;";
 
-			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
-			na variavel que $PDO_conex*/
-			$PDO_conex = $conex->Conectar();
+          //Instancio o banco e crio uma variavel
+          $conex = new Mysql_db();
 
-			//Executa o select no banco de dados e guarda o retorno na variavel select
-			$select = $PDO_conex->query($sql);
+          /*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+          na variavel que $PDO_conex*/
+          $PDO_conex = $conex->Conectar();
 
-			//Contador
-			$cont = 0;
+          //Executa o select no banco de dados e guarda o retorno na variavel select
+          $select = $PDO_conex->query($sql);
 
-			//Estrutura de repetição para pegar dados
-			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-				#Cria um array de objetos na classe contatos
-				$lista_ambiente[] = new Ambiente();
+          //Contador
+          $cont = 0;
 
-				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_ambiente[$cont]->id_ambiente = $rs['id_ambiente'];
-				$lista_ambiente[$cont]->titulo = $rs['titulo'];
-				$lista_ambiente[$cont]->texto = $rs['texto'];
-                $lista_ambiente[$cont]->imagem = $rs['imagem'];
-                $lista_ambiente[$cont]->imagem2 = $rs['imagem2'];
-                $lista_ambiente[$cont]->imagem3 = $rs['imagem3'];
-                $lista_ambiente[$cont]->imagem4 = $rs['imagem4'];
-                $lista_ambiente[$cont]->imagem5 = $rs['imagem5'];
-                $lista_ambiente[$cont]->imagem6 = $rs['imagem6'];
-                $lista_ambiente[$cont]->status = $rs['status'];
-                $lista_ambiente[$cont]->ativo = $rs['ativo'];
+          //Estrutura de repetição para pegar dados
+          while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+            #Cria um array de objetos na classe contatos
+            $lista_ambiente[] = new Ambiente();
 
-				// Soma mais um no contador
-				$cont+=1;
-			}
+            // Guarda os dados no banco de dados em cada indice do objeto criado
+            $lista_ambiente[$cont]->id_ambiente = $rs['id_ambiente'];
+            $lista_ambiente[$cont]->titulo = $rs['titulo'];
+            $lista_ambiente[$cont]->texto = $rs['texto'];
+            $lista_ambiente[$cont]->imagem = $rs['imagem'];
+            $lista_ambiente[$cont]->imagem2 = $rs['imagem2'];
+            $lista_ambiente[$cont]->imagem3 = $rs['imagem3'];
+            $lista_ambiente[$cont]->imagem4 = $rs['imagem4'];
+            $lista_ambiente[$cont]->imagem5 = $rs['imagem5'];
+            $lista_ambiente[$cont]->imagem6 = $rs['imagem6'];
+            $lista_ambiente[$cont]->status = $rs['status'];
+            $lista_ambiente[$cont]->ativo = $rs['ativo'];
 
-			$conex::Desconectar();
+            // Soma mais um no contador
+            $cont+=1;
+          }
 
-			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_ambiente)) {
-				# code...
-				return $lista_ambiente;
-			}
+          $conex::Desconectar();
 
-		}
+          //Apenas retorna o $list_contatos se existir dados no banco de daos
+          if (isset($lista_ambiente)) {
+            # code...
+            return $lista_ambiente;
+          }
+        }
+
+
+  		public function Select(){
+  			//Query para selecionar a tabela contatos
+  			$sql="SELECT * FROM tbl_ambiente ORDER BY id_ambiente DESC;";
+
+  			//Instancio o banco e crio uma variavel
+  			$conex = new Mysql_db();
+
+  			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+  			na variavel que $PDO_conex*/
+  			$PDO_conex = $conex->Conectar();
+
+  			//Executa o select no banco de dados e guarda o retorno na variavel select
+  			$select = $PDO_conex->query($sql);
+
+  			//Contador
+  			$cont = 0;
+
+  			//Estrutura de repetição para pegar dados
+  			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+  				#Cria um array de objetos na classe contatos
+  				$lista_ambiente[] = new Ambiente();
+
+  				// Guarda os dados no banco de dados em cada indice do objeto criado
+  				$lista_ambiente[$cont]->id_ambiente = $rs['id_ambiente'];
+  				$lista_ambiente[$cont]->titulo = $rs['titulo'];
+  				$lista_ambiente[$cont]->texto = $rs['texto'];
+                  $lista_ambiente[$cont]->imagem = $rs['imagem'];
+                  $lista_ambiente[$cont]->imagem2 = $rs['imagem2'];
+                  $lista_ambiente[$cont]->imagem3 = $rs['imagem3'];
+                  $lista_ambiente[$cont]->imagem4 = $rs['imagem4'];
+                  $lista_ambiente[$cont]->imagem5 = $rs['imagem5'];
+                  $lista_ambiente[$cont]->imagem6 = $rs['imagem6'];
+                  $lista_ambiente[$cont]->status = $rs['status'];
+                  $lista_ambiente[$cont]->ativo = $rs['ativo'];
+
+  				// Soma mais um no contador
+  				$cont+=1;
+  			}
+
+  			$conex::Desconectar();
+
+  			//Apenas retorna o $list_contatos se existir dados no banco de daos
+  			if (isset($lista_ambiente)) {
+  				# code...
+  				return $lista_ambiente;
+  			}
+
+  		}
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($ambiente){
@@ -129,7 +179,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 				$ambiente->id_ambiente = $rs['id_ambiente'];
 
-                    
+
 
                 $ambiente->titulo = $rs['titulo'];
                 $ambiente->texto = $rs['texto'];
@@ -153,7 +203,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectLast(){
 			$sql = "SELECT * FROM tbl_ambiente WHERE ativo=1 AND status=1 ORDER BY id_ambiente DESC LIMIT 1";
@@ -176,7 +226,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 				$ambiente->id_ambiente = $rs['id_ambiente'];
 
-                    
+
 
                 $ambiente->titulo = $rs['titulo'];
                 $ambiente->texto = $rs['texto'];
@@ -189,8 +239,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $ambiente->status = $rs['status'];
                 $ambiente->ativo = $rs['ativo'];
 
-               
-                
+
+
                 return $ambiente;
                 //return $endereco;
 

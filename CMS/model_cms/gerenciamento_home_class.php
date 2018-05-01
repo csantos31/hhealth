@@ -3,7 +3,7 @@
 
 /*LEMBRETE PARA WESLEY
 
-ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS 
+ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 */
     class Home{
@@ -13,36 +13,36 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $slide3;
         public $frase;
         public $status;
-        
+
         //cria um construtor
          public function __construct(){
             include_once('bd_class.php');
             include_once('auditoria_class.php');
         }
-        
+
         /*insere o registro no DB*/
         public static function Insert($home_dados){
-            
+
             $sql1="UPDATE tbl_home SET status = 0";
-            
+
             $sql2 = "INSERT INTO tbl_home(slide1,slide2,slide3,frase,status,ativo)
             VALUES('".$home_dados->slide1."','".$home_dados->slide2."','".$home_dados->slide3."','".$home_dados->frase."','1','1');";
-            
+
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
-            
+
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();
-            
+
             //Excutar o script no banco de dados
             if($PDO_conex->query($sql1) &&$PDO_conex->query($sql2)){
-                
+
                 $auditoria = new Auditoria();
-                
+
                 $auditoria::Insert($auditoria);
-                
+
                 echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
@@ -52,11 +52,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();
         }
-        
+
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_home ORDER BY id_home DESC;";
+			$sql="SELECT * FROM tbl_home  WHERE ativo = 1 ORDER BY id_home DESC limit 1;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -98,11 +98,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			}
 
 		}
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($home){
 			$sql = "SELECT * FROM tbl_home WHERE id_home =". $home->id_home;
-            
+
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -115,8 +115,8 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Executa o script no banco de dados
 			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
 				//Se der true redireciona a tela
-              
-                
+
+
 				$home = new Home();
 
 				$home->id_nivel = $rs['id_home'];
@@ -126,7 +126,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
                 $home->frase = $rs['frase'];
                 $home->status = $rs['status'];
                 $home->ativo = $rs['ativo'];
-				
+
 				return $home;
 
 			}else {
@@ -137,10 +137,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         public function Update($home){
 			$sql = "UPDATE tbl_home set slide1 = '".$home->slide1."', slide2 = '".$home->slide2. "',slide3 = '".$home->slide3. "',frase = '".$home->frase. "' WHERE id_home =".$home->id_home;
-		
+
 
 		      echo $sql;
 
@@ -163,12 +163,12 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
 		}
-        
+
         /*Desativar o registro no BD*/
         public function DesativarPorId($home){
             $sql1 = "UPDATE tbl_home set status=0";
             $sql2 = "UPDATE tbl_home set status=1 WHERE id_home=".$home->id_home;
-            
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
@@ -180,7 +180,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 			if($PDO_conex->query($sql1)&&$PDO_conex->query($sql2)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
@@ -188,39 +188,39 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
-            
+
         }
-        
-        
+
+
         /*DELETAR*/
         public function Deletar($home){
             $sql="UPDATE tbl_home set ativo=0 WHERE id_home=".$home->id_home;
-        
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
 
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
 			$PDO_conex = $conex->Conectar();
-        
+
             //Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				//echo "<script>confirm('Deseja realmente excluir?');</script>";
                 echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
 			}
-            
+
             //Fecha a conexão com o banco de dados
 			$conex->Desconectar();
         }
-        
-        
-		
-        
+
+
+
+
     }
 
 

@@ -1,5 +1,7 @@
 <?php
 
+  include('sistema_interno/controllers/util.php');
+
     session_start();
 
     if(isset($_GET['destroi_sessao'])){
@@ -27,7 +29,7 @@
              $(document).ready(function(){
                  var myvar = $('h1').html().length
                  console.log(myvar);
-                 if($('h1').html().length > 3 && $('h1').html().length < 22){
+                 if($('h1').html().length > 3 && $('h1').html().length < 100){
 
                      setTimeout(function(){
                         //Faz o submit no form sem a ação do botao
@@ -103,12 +105,13 @@
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
                 <?php
 
-                    include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
-                    include_once('/CMS/model_cms/gerenciamento_home_class.php');
+                    include_once('CMS/controller_cms/gerenciamento_home_controller.php');
+                    include_once('CMS/model_cms/gerenciamento_home_class.php');
 
                     $controller_home = new controller_home();
                     $list = $controller_home::Listar();
                     $cont = 0;
+
                     while($cont<count($list)){
 
                 ?>
@@ -142,23 +145,23 @@
                               <div class="carrossel">
                                   <ul>
                                       <?php
-                                        include_once('/CMS/controller_cms/gerenciamento_dica_saude_controller.php');
-                                        include_once('/CMS/model_cms/gerenciamento_dica_saude_class.php');
-                                        
+                                        include_once('CMS/controller_cms/gerenciamento_dica_saude_controller.php');
+                                        include_once('CMS/model_cms/gerenciamento_dica_saude_class.php');
+
                                         $controller_saude = new controller_dica_saude();
                                         $list_saude = $controller_saude::Listar();
-                                      
+
                                         $cont_saude=0;
                                         while($cont_saude<count($list_saude)){
-                                            
-                                        
+
+
                                       ?>
                                       <li>
                                           <img src="CMS/<?php echo($list_saude[$cont_saude]->imagem)?>" alt="Nome da Imagem" title="Nome da Imagem"/>
-                                          
+
                                           <?php echo($list_saude[$cont_saude]->imagem)?>
                                       </li>
-                                      
+
                                       <?php
                                             $cont_saude++;
                                         }
@@ -181,8 +184,8 @@
                             <div id="menu_de_acesso_rapido">
                               <div class="typewriter" id="div_type">
                                   <?php
-                                    include_once('/CMS/controller_cms/gerenciamento_home_controller.php');
-                                    include_once('/CMS/model_cms/gerenciamento_home_class.php');
+                                    include_once('CMS/controller_cms/gerenciamento_home_controller.php');
+                                    include_once('CMS/model_cms/gerenciamento_home_class.php');
 
                                     $controller_home = new controller_home();
                                     $list = $controller_home::Listar();
@@ -206,21 +209,35 @@
 
                                 <div class="content_img_faixa_2_home">
                                     <?php
-                                        include_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
-                                        include_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
-                                        
+                                        include_once('CMS/controller_cms/gerenciamento_ambiente_controller.php');
+                                        include_once('CMS/model_cms/gerenciamento_ambiente_class.php');
+
                                         $controller_ambiente = new controller_ambiente();
-                                        $list = $controller_ambiente::Listar();
-                                      
+                                        $list = $controller_ambiente::ListarPHome();
+
                                         $cont=0;
                                         while($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-                                        
+
                                       ?>
                                     <div class="img_faixa_2_home">
                                         <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital" title="quartos do hospital">
                                     </div>
-
+                                    <div class="img_faixa_2_home">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
+                                    <div class="img_faixa_2_home">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital" title="quartos do hospital">
+                                    </div>
                                     <?php
                                             }
                                             $cont++;
@@ -238,16 +255,16 @@
                             <div class="carrossel_local">
                                 <div class="content_faixa_3_unidades_home">
                                     <?php
-                                        include_once('/CMS/controller_cms/unidade_controller.php');
-                                        include_once('/CMS/model_cms/unidade_class.php');
-                                        
+                                        include_once('CMS/controller_cms/unidade_controller.php');
+                                        include_once('CMS/model_cms/unidade_class.php');
+
                                         $controller_unidade = new controller_unidade();
                                         $list = $controller_unidade::Listar();
-                                      
+
                                         $cont=0;
                                         if($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-                                        
+
                                       ?>
                                     <div class="img_faixa_3_home">
                                         <img src="CMS/<?php echo($list[0]->imagem)?>" alt="unidades">
@@ -270,16 +287,16 @@
 
                                 <div class="content_faixa_3_unidades_home">
                                     <?php
-                                        include_once('/CMS/controller_cms/unidade_controller.php');
-                                        include_once('/CMS/model_cms/unidade_class.php');
-                                        
+                                        include_once('CMS/controller_cms/unidade_controller.php');
+                                        include_once('CMS/model_cms/unidade_class.php');
+
                                         $controller_unidade = new controller_unidade();
                                         $list = $controller_unidade::Listar();
-                                      
+
                                         $cont=0;
                                         if($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-                                        
+
                                       ?>
                                     <div class="img_faixa_3_home">
                                         <img src="CMS/<?php echo($list[1]->imagem)?>" alt="unidades">
