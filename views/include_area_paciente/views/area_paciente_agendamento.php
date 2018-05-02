@@ -13,6 +13,11 @@
 
     <link rel="stylesheet" href="../css/style_footer.css">
 
+    <script type="text/javascript" src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+   <script type="text/javascript">
+
+   </script>
+
   </head>
   <body>
     <?php include_once('nav_paciente.php'); ?>
@@ -94,7 +99,7 @@
             </div>
           </div>
           <div id="suporte_btn_agendar">
-              <input type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar uma consulta?')" id="bnt_submit_agenda">
+              <input onclick="Agendar" type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar uma consulta?')" id="bnt_submit_agenda">
           </div>
         </form>
       </div>
