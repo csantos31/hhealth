@@ -36,28 +36,28 @@ if(isset($niv)){
         <link rel="stylesheet" type="text/css" href="<?=$caminho?>css/style_cms_nivel_usuario.css">
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_cms_menu_lateral.css">
         <link rel="stylesheet" type="text/css" href="css/style_modal.css">
-        
+
         <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
-        
-        
+
+
         <script>/*Modal*/
             $(document).ready(function(){
-                
-                $(".novo").click(function(){    
-                    $(".container_modal").toggle(2000); 
+
+                $(".novo").click(function(){
+                    $(".container_modal").toggle(2000);
                 });
-                
+
                 $(".editar").click(function(){
                     $(".container_modal").fadeIn(2000);
 
                 });
-                
-                
+
+
             });
-            
+
             //Cadastrar
             function Cadastrar(){
-                
+
                 $.ajax({
                     type:"POST",
                     url:"modals/modal_nivel.php",
@@ -66,20 +66,20 @@ if(isset($niv)){
                     }
                 });
             }
-            
+
             //Editar
             function Editar(IdIten){
                 $.ajax({
-                    type:"GET", 
+                    type:"GET",
                     url:"modals/modal_nivel.php",
                     data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
                     }
-                     
+
                 });
             }
-            
+
             //Excluir
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
@@ -93,12 +93,12 @@ if(isset($niv)){
                     }
                 });
             }
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
         </script>
 
     </head>
@@ -109,7 +109,7 @@ if(isset($niv)){
             </div>
         </div>
         <div class="main">  <!--Div main que segura todas as div-->
-            
+
 
             <div class="content_cms">
                 <?php include('menu_cms.php')?>
@@ -118,7 +118,7 @@ if(isset($niv)){
 
                     <!-- Include once do menu lateral -->
                     <?php include_once('menu_lateral_cms.php'); ?>
-                    
+
                     <div class="conteudo_home_cms"><!--conteudo menu-->
                         <div class="content_titulo_nivel">
                             <div class="titulo_nivel">
@@ -126,18 +126,18 @@ if(isset($niv)){
                             </div>
 
                             <div class="content_add_nivel">
-                                
+
                                 <div class="img_nivel">
                                     <a class="novo" href="<?php echo($niv->id_nivel)?>" onclick="Cadastrar()">
-                                        
+
                                         <img src="<?=$caminho?>imagens/add.png">
                                     </a>
                                 </div>
-                                
+
                             </div>
                         </div>
 
-                    
+
 
                         <div class="tabela_nivel_usuario"><!--tabela nivel-->
                             <div class="content_titulo_tabela_niveis">

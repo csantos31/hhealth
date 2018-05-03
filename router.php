@@ -13,12 +13,14 @@
             require_once('controllers/usuario_controller.php');//inclusão dos arquivos
             require_once('models/usuario_class.php');
 
+
+
             switch($modo){
 
                 //verifica as ações a serem executadas pela controller
 
                 case'login':
-
+                  
                     //Instancia a classe Usuario
                     $controller_usuario = new controllerUsuario();
 

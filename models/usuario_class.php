@@ -26,6 +26,7 @@ session_start();
 
         //faz o login com o usuário
         public function Login_usuario($usuario){
+
             $_SESSION["login"]=0;
             $count=0;
             $sql = "SELECT usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
@@ -57,6 +58,7 @@ session_start();
 
                   $_SESSION["login"]=$count;
 
+                  echo($id_nivel_funcionario);
 
                 }
 
@@ -71,6 +73,10 @@ session_start();
 
             }else if($_SESSION["login"]==0){
                 header('location:index.php');
+          }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 2){
+
+                header('location:cms/');
+
             }
 
 
