@@ -23,7 +23,7 @@
           $titulo = $busc->titulo;
           $texto = $busc->texto;
           $imagem = $busc->imagem;
-          
+
 
   }
 }
@@ -135,7 +135,7 @@
                             </div>
                             <div class="suporte_conteudo_descricao">
                                   <div class="suporte_img_descricao">
-                                        <img src="../CMS/<?php echo $imagem ?>" alt="">
+                                        <img src="../CMS/<?php echo $imagem ?>" alt="" class="imagem_convenio_especifico">
                                   </div>
                                   <div class="conteudo_descricao">
                                       <?php echo $texto ?>

@@ -8,6 +8,19 @@
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_unidades_hhealth.css">
         <title>Hospital HHealth</title>
+        <script>
+          function myMap() {
+          var mapProp= {
+              center:new google.maps.LatLng(51.508742,-0.120850),
+              zoom:5,
+          };
+          // $('.myClass');
+          var elementos = document.getElementsByClassName("googleMap");
+          var map=new google.maps.Map(elementos,mapProp);
+          }
+        </script>
+
+
       </head>
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->
@@ -27,19 +40,23 @@
                                        <img class="lupa" src="../imagens/magnifier.png" alt="">
                                  </div>
                           </div>
-                          
+
+
+
+
+
                           <?php
                             include_once("../CMS/model_cms/unidade_class.php");
                             include_once("../CMS/controller_cms/unidade_controller.php");
-                          
+
                             $controller_unidade=new controller_unidade();
                             $list=$controller_unidade::Listar();
-                          
+
                             $cont=0;
                             while($cont<count($list)){
-                          
+
                           ?>
-                          
+
                            <div class="suporte_unidade">
                                  <a href="unidade_hhealth.php">
                                    <div class="faixa_nome_da_unidade">
@@ -51,7 +68,7 @@
                                              <img src="../CMS/<?php echo($list[$cont]->imagem)?>" alt="">
                                        </div>
                                        <div class="mapa_da_unidade">
-                                             <img src="../imagens/mapa.png" alt="">
+                                             <div class="googleMap" style="width:500px;height:350px;"></div>
                                        </div>
                                  </div>
 
@@ -66,5 +83,6 @@
                 <!-- Esse require adiciona o rodapé na página -->
                 <?php require_once('footer.php'); ?>
             </div>
+              <script src="../js/googlemaps.js"></script>
       </body>
 </html>
