@@ -25,6 +25,23 @@
         <script type="text/javascript" src="js/jcarousellite.js"></script>
         <script type="text/javascript" src="js/carrossel.js"></script>
         <script>
+          function myMap() {
+          var mapProp= {
+              center:new google.maps.LatLng(51.508742,-0.120850),
+              zoom:5,
+          };
+          // $('.myClass');
+          var elementos = document.getElementsByClassName("googleMap");
+          var i;
+          for (i = 0; i < elementos.length; i++) {
+            var map=new google.maps.Map(elementos[i],mapProp);
+            // .style.backgroundColor = "red";
+          }
+
+
+          }
+        </script>
+        <script>
 
              $(document).ready(function(){
                  var myvar = $('h1').html().length
@@ -267,10 +284,11 @@
 
                                       ?>
                                     <div class="img_faixa_3_home">
-                                        <img src="CMS/<?php echo($list[0]->imagem)?>" alt="unidades">
+                                      <img src="CMS/<?php echo($list[0]->imagem)?>" alt="unidades">
                                     </div>
 
                                     <div class="descricao_faixa_3_home">
+                                      <div class="googleMap" style="width:200px;height:200px;"></div>
                                     </div>
                                     <div class="informa_unidade">
                                         <h1><?php echo($list[0]->nome_unidade)?></h1>
@@ -302,6 +320,7 @@
                                         <img src="CMS/<?php echo($list[1]->imagem)?>" alt="unidades">
                                     </div>
                                     <div class="descricao_faixa_3_home">
+                                      <div class="googleMap" style="width:200px;height:200px;"></div>
                                     </div>
                                     <div class="informa_unidade">
                                         <h1><?php echo($list[1]->nome_unidade)?></h1>
@@ -323,5 +342,6 @@
              <?php require_once('footer.php'); ?>
           </div>
       </div>
+      <script src="js/googlemaps.js"></script>
     </body>
 </html>

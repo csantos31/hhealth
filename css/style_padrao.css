@@ -366,10 +366,14 @@ body{
 .descricao_faixa_3_home{
     width:200px;
     height:200px;
-    background-image: url(../imagens/mapa.png);
-    background-size: 200px;
+    /* background-size: 200px; */
     float:left;
-    margin-top: 100px;
+    /* margin-top: 100px; */
+}
+
+.imagemm_faixa_3_home{
+  width:200px;
+  height:200px;
 }
 
 .informa_unidade{
@@ -602,4 +606,13 @@ body{
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+
+.googleMap{
+  width:500px;
+  height:350px;
+position: relative;
+overflow: hidden;
+background-color: #000;
 }
