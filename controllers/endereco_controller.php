@@ -2,8 +2,8 @@
 
     class controller_endereco{
        public function Novo(){
-           
-           require_once ('/models/endereco_class.php');
+
+           require_once ('models/endereco_class.php');
             //Instancia da classe Contato
 			$endereco = new Endereco();
            /*
@@ -29,7 +29,7 @@
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
 			$id_ende = $endereco::Insert($endereco);
-           
+
             return $id_ende;
 
 		}

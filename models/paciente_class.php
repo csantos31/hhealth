@@ -60,6 +60,33 @@ session_start();
             //var_dump($sql);
         }
 
+        public static function Insert($paciente){
+    			$sql = "INSERT INTO tbl_paciente (id_endereco, id_convenio, nome, sobrenome, dt_nasc, rg, cpf, carterinha_convenio, foto, status) VALUES ('".$paciente->id_endereco."', '".$paciente->id_convenio."', '".$paciente->nome."', '".$paciente->sobrenome."', '".$paciente->dt_nasc."', '".$paciente->rg."', '".$paciente->cpf."', '".$paciente->carteirinha_convenio."', '".$paciente->foto."', '0');";
+
+                //echo $sql;
+
+    			//Instancio o banco e crio uma variavel
+    			$conex = new Mysql_db();
+
+    			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+    			na variavel que $PDO_conex*/
+    			$PDO_conex = $conex->Conectar();
+
+    			//Executa o script no banco de dados
+    			if($PDO_conex->query($sql)){
+    				//Se der true redireciona a tela
+    				echo "<script>location.reload();</script>";
+    			}else {
+    				//Mensagem de erro
+                    echo $sql;
+    				echo "Error inserir no Banco de Dados";
+    			}
+
+    			//Fecha a conexão com o banco de dados
+    			$conex->Desconectar();
+
+    		}
+
     }
 
 

@@ -54,54 +54,57 @@ if(isset($_GET['modo'])){
         <title>Modal</title>
         <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
         <script>
-            $(document).ready(function(){/*fechar a modal*/
+            $(document).ready(function(){
+              /*fechar a modal*/
                $(".fechar").click(function(){
                   $(".container_modal").fadeOut();
                });
-            });
-        </script>
-        <script>
 
-             var id = $("#form").data("id");
-             var modo = "";
-             if(id == '0'){
-                 modo='inserir';
-               document.getElementById('photo_profile').style.display = 'block';
-                   document.getElementById('foto_convenio').style.display = 'block';
-                   //document.getElementById('meu_num').style.marginLeft = '150px';
-             } else{
-                 modo='editar';
-                   document.getElementById('photo_profile').style.display = 'none';
-                   document.getElementById('foto_convenio').style.display = 'none';
-                   document.getElementById('meu_num').style.marginLeft = '160px';
-                 var idEnd = $('#form').data("id_end");
-             }
+               //INSERT
+                  var id = $("#form").data("id");
+                  var modo = "";
+                  if(id == '0'){
+                      modo='inserir';
+                    document.getElementById('photo_profile').style.display = 'block';
+                        document.getElementById('foto_convenio').style.display = 'block';
+                        //document.getElementById('meu_num').style.marginLeft = '150px';
+                  } else{
+                      modo='editar';
+                        document.getElementById('photo_profile').style.display = 'none';
+                        document.getElementById('foto_convenio').style.display = 'none';
+                        document.getElementById('meu_num').style.marginLeft = '160px';
+                      var idEnd = $('#form').data("id_end");
+                  }
 
-
-            console.log(modo);
-
-            $("#form").submit(function(event){
-                 //Recupera o id gravado no Form pelo atribute-id
+                 $("#form").submit(function(event){
+                      //Recupera o id gravado no Form pelo atribute-id
 
 
-               //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                    //anula a ação do submit tradicional "botao" ou F5
+                     event.preventDefault();
 
-                $.ajax({
-                   type: "POST",
-                   url: "../router.php?controller=paciente&modo="+modo+"&id="+id+"&id_end="+idEnd,
-                   //alert (url);
-                   data: new FormData($("#form")[0]),
-                   cache:false,
-                   contentType:false,
-                   processData:false,
-                   async:true,
-                   success: function(dados){
-                        $('.modal').html(dados);
-                       //alert(dados);
-                   }
-               });
+                     $.ajax({
+                        type: "POST",
+                        url: "../router.php?controller=paciente&modo="+modo+"&id="+id+"&id_end="+idEnd,
+                        //alert (url);
+                        data: new FormData($("#form")[0]),
+                        cache:false,
+                        contentType:false,
+                        processData:false,
+                        async:true,
+                        success: function(dados){
+                             //$('.modal').html(dados);
+                            //alert(dados);
+                              window.location.replace("http://localhost/hhealth");
+                        }
+                    });
+                 });
+
+
+
+
             });
         </script>
     </head>
