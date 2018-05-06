@@ -66,24 +66,8 @@
              });
 
         </script>
-        <script>
-            /*FUNCTIONS*/
-            function Cadastrar(){
-                  $.ajax({
-                      type:"POST",
-                      url:"views/modal_cad_paciente.php",
-                      success: function(dados){
-                          $(".modal").html(dados);
-                      }
-                  });
-              }
-        </script>
     </head>
     <body>
-      <div class="container_modal"><!--container da modal-->
-          <div class="modal"><!--modal-->
-          </div>
-      </div>
       <div id="principal">
           <div class="main"><!--Div Main que segura todas as divs-->
                <div class="modal_login">
@@ -100,8 +84,7 @@
                   </div>
                   <form name="" method="post" action="router.php?controller=paciente&modo=login">
                         <!--COnTEnT MODAL-->
-
-                      <div class="label_email">Endereço de e-mail:</div>
+                      <div class="label_email">Usuário:</div>
                       <input type="text" name="txt_usuario" id="txt_usuario">
 
                       <div class="label_senha">Senha:</div>
@@ -109,15 +92,12 @@
 
                       <input type="submit" name="go_logar" id="btn_go_logar" value="Entrar">
                   </form>
-                  <label> Ainda não tem perfil? </label> <a onclick="Cadastrar()" style="cursor:pointer;">Cadastre-se</a>
+                  <label> Ainda não tem perfil? </label> <a href="views/modal_cad_paciente.php">Cadastre-se</a>
               </div>
                <?php require_once('nav.php'); ?>
 
              <div class="div_suporte_conteudo">
              </div>
-
-
-
              <!--***********************SLIDE***********************-->
              <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
                 <?php
@@ -189,11 +169,7 @@
 
                               <div class="passar_carrossel">
                                 <a href="#" class="next" title="Próximo"><img src="imagens/icons/seta-avancar.png" alt="Avançar"></a>
-
                               </div>
-
-
-
                             </div>
                         </div>
 

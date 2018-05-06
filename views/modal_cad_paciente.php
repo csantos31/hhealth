@@ -105,7 +105,6 @@ if(isset($_GET['modo'])){
             });
         </script>
     </head>
-
     <body>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">

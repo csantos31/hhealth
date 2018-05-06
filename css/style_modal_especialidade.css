@@ -1,5 +1,9 @@
 /*CSS*/
-
+body{
+  background-image: url(../imagens/img_login.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
 
 .main_modal{/*Main da modal*/
     width:650px;
