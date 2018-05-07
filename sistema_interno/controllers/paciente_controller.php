@@ -53,6 +53,15 @@
 
 			return $paciente::Select();
 		}
+        
+        public function Listar_pendentes(){
+			//Instancia da classe contatos
+			$paciente = new Paciente();
+
+			//Chama o método para selecionar os registros
+
+			return $paciente::Select_pendentes();
+		}
 
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW

@@ -35,91 +35,32 @@ require('../verifica.php');
                             <div class="lb_titulo">RG</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
+                        
+                        <?php 
+                            
+                            include_once('../controllers/paciente_controller.php');
+                            include_once('../models/paciente_class.php');
+
+                            $controller_paciente  = new controllerPaciente();
+
+                            //Chama o metodo para Listar todos os registros
+                            $list = $controller_paciente::Listar_pendentes();
+
+                            $cont = 0;
+                            while ($cont < count($list)) {
+
+                        ?>
+                        
                         <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
+                            <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
+                            <div class="item_tabela"><?= $list[$cont]['rg'] ?></div>
                             <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
                         </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
+                        
+                        <?php
+                                $cont +=1;
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
