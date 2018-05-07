@@ -139,6 +139,20 @@
 
             $paciente::updateCarteirinhaConvenio($paciente);
 		}
+        
+        public function ativarPaciente(){
+
+			$idPaciente = $_GET['id'];
+
+
+			$paciente = new Paciente();
+
+
+			$paciente->id_paciente = $idPaciente;
+
+
+            $paciente::ativePaciente($paciente);
+		}
 
         public function EditarFoto(){
 

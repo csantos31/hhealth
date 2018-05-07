@@ -126,5 +126,16 @@ p{
     text-align: center;
     font-family: verdana;
     padding-top: 7px;
+    padding-bottom: 8px;
     border-bottom:solid 1px #999;
+}
+
+.ativar_user{
+    width: 32px;
+    height: 32px;
+}
+
+.ativar_user img{
+    width: 32px;
+    height: 32px;
 }
