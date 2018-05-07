@@ -316,6 +316,17 @@ body{
     color: #000000;
 }
 
+.titulo_faixa_1_home{
+  width: 225px;
+  margin: auto;
+  height: 30px;
+  font-family: sans-serif;
+  font-size: 30px;
+  color: #999999;
+  font-weight: bold;
+  /* background-color: #000; */
+}
+
 .content_btn_faixa_2_home p{
       margin-right: 30px;
       text-align: right;

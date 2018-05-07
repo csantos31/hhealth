@@ -45,7 +45,31 @@
 			}
 
 			break;
-
+            
+        case 'paciente':
+            require_once('controller/paciente_controller.php');
+            
+            switch($modo){
+                    
+                    
+                case 'buscarid':
+                    
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente = Buscar();
+                    
+                    require_once('views/paciente_perfil.php');
+                    
+                    break;
+                    
+                case 'editar';
+                    
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente = Editar();
+                    
+                    break;
+                
+                    
+            }
 
 
 		default:

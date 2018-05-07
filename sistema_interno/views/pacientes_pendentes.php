@@ -1,7 +1,5 @@
 <?php
-
-require('../verifica.php');
-
+    require('../verifica.php');
 ?>
 <html>
     <head>
@@ -10,7 +8,29 @@ require('../verifica.php');
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_pacientes_pendentes.css">
         <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        
+        <script>
+            function ativar(idPaciente){
+                console.log(idPaciente);
+                if(confirm('Tem certeza que deseja ativar este paciente?')){
 
+                    $.ajax({
+                        type:"GET",
+                        data: {id:idPaciente},
+                        url: "../router.php?controller=paciente&modo=ativar_paciente&id="+idPaciente,
+                        success: function(dados){
+                            //alert(dados);
+                            $('.modal').html(dados);
+                        }
+                    });
+
+                }
+            }
+                
+            
+        </script>
+        
     </head>
     <body>
         <div id="principal">
@@ -35,91 +55,34 @@ require('../verifica.php');
                             <div class="lb_titulo">RG</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
+                        
+                        <?php 
+                            
+                            include_once('../controllers/paciente_controller.php');
+                            include_once('../models/paciente_class.php');
+
+                            $controller_paciente  = new controllerPaciente();
+
+                            //Chama o metodo para Listar todos os registros
+                            $list = $controller_paciente::Listar_pendentes();
+
+                            $cont = 0;
+                            while ($cont < count($list)) {
+
+                        ?>
+                        
                         <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
+                            <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
+                            <div class="item_tabela"><?= $list[$cont]['rg'] ?></div>
+                            <div class="item_tabela">
+                                <img src="../imagens/shutdown.png" alt="ativar" title="ativar" class="ativar_user" onclick="ativar(<?= $list[$cont]['id_paciente'] ?>)">
+                            </div>
                         </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">XXXXXXXXXXXXXXXXXXXXX</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
-                        <div class="linha_tabela">
-                            <div class="item_tabela">SSSSSSSSSSSSSSSSSSSSSSSS</div>
-                            <div class="item_tabela">00.000.000</div>
-                            <div class="item_tabela"><a href="#">Ativar</a>/<a href="#">Desativar</a></div>
-                        </div>
+                        
+                        <?php
+                                $cont +=1;
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

@@ -98,7 +98,7 @@
 			$idEndereco = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$endereci = new Endereco();
+			$endereco = new Endereco();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
 			$endereco->id_endereco = $idEndereco;
