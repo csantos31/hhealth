@@ -62,6 +62,13 @@
                      </div>
                  </div>
             </a>
+          <a href="login.php?logout=true" style="font-weight:bold;">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                        LOGOUT
+                     </div>
+                 </div>
+            </a>
       </div>
 
 </div>
