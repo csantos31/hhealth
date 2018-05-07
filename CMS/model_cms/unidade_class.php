@@ -11,6 +11,10 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         public $imagem;
         public $ativo;
         public $status;
+        public $latidude;
+        public $longitude;
+        public $telefone;
+        public $texto;
 
         //cria um construtor
         public function __construct(){
@@ -23,7 +27,9 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
             //$sql1="UPDATE tbl_home SET status = 0";
 
             $sql = "INSERT INTO tbl_unidade(id_endereco,imagem,nome_unidade,latitude,longitude,texto,telefone,status,ativo)
-            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."','".$unidade_dados->latitude."','".$unidade_dados->longitude."','".$unidade_dados->texto."','".$unidade_dados->telefone."','1','1');";
+            VALUES('".$unidade_dados->id_endereco."','".$unidade_dados->imagem."','".$unidade_dados->nome_unidade."',
+              '".$unidade_dados->latitude."','".$unidade_dados->longitude."','".$unidade_dados->texto."',
+              '".$unidade_dados->telefone."','1','1');";
 
             //Instancia o banco e cria uma variavel
             $conex = new Mysql_db();
@@ -68,17 +74,17 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 				#Cria um array de objetos na classe contatos
 				$lista_unidade[] = new Unidade();
 
-				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_unidade[$cont]->id_unidade = $rs['id_unidade'];
-                $lista_unidade[$cont]->id_endereco = $rs['id_endereco'];
-				$lista_unidade[$cont]->imagem = $rs['imagem'];
-				$lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
-                $lista_unidade[$cont]->telefone = $rs['telefone'];
-                $lista_unidade[$cont]->texto = $rs['texto'];
-                $lista_unidade[$cont]->latitude = $rs['latitude'];
-              //  $lista_unidade[$cont]->longitude = $rs['longitude'];
-                $lista_unidade[$cont]->status = $rs['status'];
-                $lista_unidade[$cont]->ativo = $rs['ativo'];
+        // Guarda os dados no banco de dados em cada indice do objeto criado
+        $lista_unidade[$cont]->id_unidade = $rs['id_unidade'];
+        $lista_unidade[$cont]->id_endereco = $rs['id_endereco'];
+        $lista_unidade[$cont]->imagem = $rs['imagem'];
+        $lista_unidade[$cont]->nome_unidade = $rs['nome_unidade'];
+        $lista_unidade[$cont]->telefone = $rs['telefone'];
+        $lista_unidade[$cont]->texto = $rs['texto'];
+        $lista_unidade[$cont]->latitude = $rs['latitude'];
+    //    $lista_unidade[$cont]->longitude = $rs['longitude'];
+        $lista_unidade[$cont]->status = $rs['status'];
+        $lista_unidade[$cont]->ativo = $rs['ativo'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -114,12 +120,16 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 
 				$unidade = new Unidade();
 
-				$unidade->id_unidade = $rs['id_unidade'];
-                $unidade->id_endereco = $rs['id_endereco'];
-				$unidade->imagem = $rs['imagem'];
-				$unidade->nome_unidade = $rs['nome_unidade'];
-                $unidade->status = $rs['status'];
-                $unidade->ativo = $rs['ativo'];
+        $unidade->id_unidade = $rs['id_unidade'];
+        $unidade->id_endereco = $rs['id_endereco'];
+        $unidade->imagem = $rs['imagem'];
+        $unidade->nome_unidade = $rs['nome_unidade'];
+        $unidade->longitude = $rs['longitude'];
+        $unidade->latitude = $rs['latitude'];
+        $unidade->telefone = $rs['telefone'];
+        $unidade->texto = $rs['texto'];
+        $unidade->status = $rs['status'];
+        $unidade->ativo = $rs['ativo'];
 
 
 				return $unidade;
@@ -134,7 +144,11 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
 		}
 
         public function Update($dados_unidade){
-			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."', nome_unidade = '".$dados_unidade->nome_unidade."' WHERE id_unidade =".$dados_unidade->id_unidade;
+			$sql = "UPDATE tbl_unidade set imagem = '".$dados_unidade->imagem."',
+       nome_unidade = '".$dados_unidade->nome_unidade."',latitude = '".$dados_unidade->latitude."'
+       ,longitude = '".$dados_unidade->longitude."',texto = '".$dados_unidade->texto."'
+       ,telefone = '".$dados_unidade->telefone."'
+      WHERE id_unidade =".$dados_unidade->id_unidade;
 
 
 		      echo $sql;
