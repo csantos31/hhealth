@@ -13,8 +13,27 @@
 
     <link rel="stylesheet" href="../css/style_footer.css">
 
+      
+    <script>
+        
+            $(document).ready(function(){
+                
+                $(".editar").click(function(){    
+                    $(".container_modal").toggle(2000); 
+                });
+                
+                
+                
+            })
+      
+    </script>
+      
   </head>
   <body>
+  <div class="container_modal"><!--container da modal-->
+        <div class="modal"><!--modal-->
+        </div>
+      </div>
     <?php include_once('nav_paciente.php'); ?>
     <div id="content">
       <div id="suporte_titulo">
@@ -27,7 +46,7 @@
         <div id="conteudo_meu_perfi">
             <div id="faixa_conteudO_perfil">
                 <div id="foto_perfil_usuario">
-                    <img src="../../imagens/icon_user.png" title="Foto de perfil" alt="Foto de perfil">
+                    <img class="editar" onclick="editar()" src="../../../imagens/icon_user.png" title="Foto de perfil" alt="Foto de perfil">
                 </div>
                 <div id="faixa_descricao_usuario">
                     <b>Nome:</b> <label>João Dos Santos</label><br>
@@ -38,17 +57,17 @@
             </div>
             <div id="informacoes_usuario">
 
-                <img id="img_edit" src="../../imagens/edit_icon.png" alt="editar" title="editar"><label>Editar Perfil</label><br>
+                <img id="img_edit" src="../../../imagens/edit_icon.png"><label>Editar Perfil</label><br>
 
                 <strong>Documentos</strong><br><br>
 
-                <b>CPF:</b> <label>000.000.000.00</label><br>
-                <b>RG:</b> <label>00.000.000.X</label><br><br>
+                <b>CPF:</b> <label>000.000.000 - 00</label><br>
+                <b>RG:</b> <label>00.000.000 - 0</label><br><br>
 
                 <strong>Convênio(s)</strong><br><br>
                 AMIL
 
-                <img src="../../imagens/convenio_amil.jpg"><br><br>
+                <img src="../../../imagens/convenio_amil.jpg"><br><br>
 
                 <strong>Endereço</strong><br><br>
                 Rodovia Engenheiro Renê Benedito da Silva - Parque Boa Esperança <br>
