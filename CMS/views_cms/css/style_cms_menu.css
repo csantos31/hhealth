@@ -4,6 +4,7 @@
     height:200px;
     margin:auto;
     background-color:rgb(95,6,1);
+    float: left;
 }
 
 .header_home_cms{/*cabeçalho do cms*/

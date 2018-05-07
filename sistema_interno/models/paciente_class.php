@@ -49,7 +49,7 @@ class Paciente{
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT p.*, e.* FROM tbl_paciente AS p INNER JOIN tbl_endereco AS e ON p.id_endereco = e.id_endereco WHERE ativo = 1;";
+			$sql="SELECT p.*, e.* FROM tbl_paciente AS p INNER JOIN tbl_endereco AS e ON p.id_endereco = e.id_endereco WHERE ativo = 1 AND status = 1;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -109,6 +109,47 @@ class Paciente{
 			}
 
 		}
+    
+        public function Select_pendentes(){
+            //Query para selecionar a tabela contatos
+			$sql="SELECT p.*, e.* FROM tbl_paciente AS p INNER JOIN tbl_endereco AS e ON p.id_endereco = e.id_endereco WHERE status = 0;";
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o select no banco de dados e guarda o retorno na variavel select
+			$select = $PDO_conex->query($sql);
+
+			//Contador
+			$cont = 0;
+
+			//Estrutura de repetição para pegar dados
+
+            $lista_pacientes = array();
+
+			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+				#Cria um array de objetos na classe contatos
+
+                //var_dump($rs);exit();
+
+				$lista_paciente[] = $rs;
+
+				// Soma mais um no contador
+				$cont+=1;
+			}
+
+			$conex::Desconectar();
+
+			//Apenas retorna o $list_contatos se existir dados no banco de daos
+			if (isset($lista_paciente)) {
+				# code...
+				return $lista_paciente;
+			}
+        }
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($paciente){
@@ -217,6 +258,31 @@ class Paciente{
             $sql = "UPDATE tbl_paciente SET foto='".$paciente->foto ."' WHERE id_paciente='".$paciente->id_paciente."';";
 
       //echo $sql;
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+                echo $sql;
+			}
+
+			$conex->Desconectar();
+        }
+    
+        public function ativePaciente($paciente){
+            $sql = "UPDATE tbl_paciente SET status = 1  WHERE id_paciente='".$paciente->id_paciente."';";
+
+            //echo $sql;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

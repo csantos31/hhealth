@@ -2,9 +2,16 @@
 
     session_start();
 
-    if(isset($_GET['destroi_sessao'])){
+    if(isset($_GET['logout'])){
         session_destroy();
-        header('location:index.php');
+        header('location:../index.php');
+    }else{
+        
+        if(isset($_SESSION['login'])){
+            if($_SESSION['login']==1){
+                header('location:../views/dashboard.php');
+            }       
+        }  
     }
 
 ?>
@@ -19,7 +26,7 @@
       <body>
           <div class="content">
           </div>
-          <form name="" method="post" action="router.php?controller=logar">
+          <form name="" method="post" action="router.php?controller=logar&modo=login">
             <div class="login">
                   <div class="txtlogin">
                         Login:

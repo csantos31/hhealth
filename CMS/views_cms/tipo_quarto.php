@@ -158,7 +158,7 @@
 
                 </div>
 
-                <?php include('footer_cms.php')?>
+                <?php include_once('footer_cms.php'); ?>
             </div>
         </div>
 
