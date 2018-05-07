@@ -7,6 +7,10 @@
         header('location:index.php');
     }
 
+    if($_SESSION['login']==1){
+        header('location:views/dashboard.php');
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +23,7 @@
       <body>
           <div class="content">
           </div>
-          <form name="" method="post" action="router.php?controller=logar">
+          <form name="" method="post" action="router.php?controller=logar&modo=login">
             <div class="login">
                   <div class="txtlogin">
                         Login:
