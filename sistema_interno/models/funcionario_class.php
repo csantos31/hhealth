@@ -47,7 +47,8 @@ class Funcionario{
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT f.*, e.* FROM tbl_funcionario AS f INNER JOIN tbl_endereco AS e ON f.id_endereco = e.id_endereco WHERE ativo = 1;";
+			//$sql="SELECT f.*, e.* FROM tbl_funcionario AS f INNER JOIN tbl_endereco AS e ON f.id_endereco = e.id_endereco WHERE ativo = 1;";
+            $sql="SELECT * FROM tbl_funcionario";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -64,15 +65,23 @@ class Funcionario{
 
 			//Estrutura de repetição para pegar dados
 
-            $lista_funcionario = array();
-
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
 
                 //var_dump($rs);exit();
+                
+				$listar_funcionario[] = new Funcionario();
+                
+                $listar_funcionario[$cont]->id_funcionario=$rs["id_funcionario"];
+                $listar_funcionario[$cont]->id_cargo=$rs["id_cargo"];
+                $listar_funcionario[$cont]->nome=$rs["nome"];
+                $listar_funcionario[$cont]->sobrenome=$rs["sobrenome"];
+                $listar_funcionario[$cont]->dt_nasc=$rs["dt_nasc"];
+                $listar_funcionario[$cont]->rg=$rs["rg"];
+                $listar_funcionario[$cont]->cpf=$rs["cpf"];
+                $listar_funcionario[$cont]->ativo=$rs["ativo"];
 
-				$lista_funcionario[] = $rs;
-
+                
 				// Soma mais um no contador
 				$cont+=1;
 			}
@@ -80,9 +89,9 @@ class Funcionario{
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_funcionario)) {
+			if (isset($listar_funcionario)) {
 				# code...
-				return $lista_funcionario;
+				return $listar_funcionario;
 			}
 
 		}
