@@ -54,7 +54,7 @@
               // Mostro o mapa na div certa e com as caracteristicas certas
               var map=new google.maps.Map(elementos[<?= $cont ?>],{
                 center:uluru<?= $cont ?>,
-                zoom:4,
+                zoom:7,
 
               });
                 //
