@@ -105,6 +105,13 @@
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::EditarCarteirinha();
                     break;
+                    
+                case 'ativar_paciente':
+                    require_once('controllers/paciente_controller.php');
+                    require_once('models/paciente_class.php');
+                    $controller_paciente = new controllerPaciente();
+                    $controller_paciente::ativarPaciente();
+                    break;
 
 				case 'excluir':
                     require_once('controllers/paciente_controller.php');

@@ -279,6 +279,31 @@ class Paciente{
 			$conex->Desconectar();
         }
     
+        public function ativePaciente($paciente){
+            $sql = "UPDATE tbl_paciente SET status = 1  WHERE id_paciente='".$paciente->id_paciente."';";
+
+            //echo $sql;
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+			}else {
+				//Mensagem de erro
+				echo "Error atualizar no Banco de Dados";
+                echo $sql;
+			}
+
+			$conex->Desconectar();
+        }
+    
 
         /*Delete o registro no BD*/
 		public function Delete($paciente){

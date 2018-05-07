@@ -1,11 +1,18 @@
 <?php
 
-    class controller_endereco{
+    class controller_agendamento{
        public function Novo(){
-
-           require_once ('models/endereco_class.php');
+            public $id_agendamento;
+            public $id_paciente;
+            public $id_especialidade;
+            public $id_funcionario;
+            public $id_unidade;
+            public $data;
+            public $hora;
+           
+           require_once ('/model/agendamento_class.php');
             //Instancia da classe Contato
-			$endereco = new Endereco();
+			$agendamento = new Agendamento();
            /*
                     atributos da classe
               public  cep
@@ -17,19 +24,19 @@
 
            */
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-            $endereco->cep = $_POST['txt_cep'];
-            $endereco->logradouro = $_POST['txt_logradouro'];
-            $endereco->numero = $_POST['txt_numero'];
-            $endereco->id_estado = $_POST['slt_estado'];
-            $endereco->cidade = $_POST['txt_cidade'];
-            $endereco->bairro = $_POST['txt_bairro'];
+            $agendamento->id_paciente = $_POST['txt_cep'];
+            $agendamento->id_especialidade = $_POST['txt_logradouro'];
+            $agendamento->id_funcionario = $_POST['txt_numero'];
+            $agendamento->id_unidade = $_POST['slt_estado'];
+            $agendamento->data = $_POST['txt_cidade'];
+            $agendamento->hora = $_POST['txt_hora'];
 
 
 			//Chama o metodo Insert da classe Contato
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
 			$id_ende = $endereco::Insert($endereco);
-
+           
             return $id_ende;
 
 		}
@@ -73,7 +80,7 @@
 
         /*Atualiza um registro existente*/
 		public function Editar(){
-            require_once ('models/endereco_class.php');
+            require_once ('model_cms/endereco_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idEndereco = $_GET['id_ende'];
 
@@ -98,7 +105,7 @@
 			$idEndereco = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$endereco = new Endereco();
+			$endereci = new Endereco();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
 			$endereco->id_endereco = $idEndereco;
@@ -110,6 +117,5 @@
 
 
     }
-
 
 ?>

@@ -22,7 +22,7 @@
             */
 
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-			     $funcionario->id_cargo = $_POST['slt_cargo'];
+            $funcionario->id_cargo = $_POST['slt_cargo'];
             $funcionario->id_endereco = $id_endereco;
             $funcionario->nome = $_POST['txt_nome'];
             $funcionario->sobrenome = $_POST['txt_sobrenome'];

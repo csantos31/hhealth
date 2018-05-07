@@ -135,6 +135,9 @@
                     <div class="content" position:relative;><!--**CONTENT**-->
                         <div class="faixa_1_content_home"><!--faixa1-->
                               <!--SLIDER FICA AKI-->
+                            <div class="titulo_faixa_1_home">
+                              Dicas de Saúde
+                            </div>
                             <div class="content_carrossel">
                               <div class="passar_carrossel">
                                 <a href="#" class="prev" title="Anterior"><img src="imagens/icons/seta-voltar.png" alt="Voltar"></a>

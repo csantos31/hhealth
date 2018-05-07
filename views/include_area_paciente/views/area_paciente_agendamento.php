@@ -47,6 +47,21 @@
             <div class="input_form">
               <select class="slct_form" name="">
                 <option value="">unidade</option>
+                <?php
+                    require_once("../../../CMS/controller_cms/unidade_controller.php"); 
+                    require_once("../../../CMS/model_cms/unidade_class.php");
+
+                    $controller_unidade = new controller_unidade();
+                    $list = $controller_unidade::Listar();
+
+                    $cont=0;
+                    while($cont<count($list)){  
+                ?>
+                <option value="<?php echo($list[$cont]->id_unidade)?>"><?php echo($list[$cont]->nome_unidade)?></option>
+                <?php
+                        $cont++;
+                    }
+                  ?>
               </select>
             </div>
           </div>
@@ -57,6 +72,23 @@
             <div class="input_form">
               <select class="slct_form" name="">
                 <option value="">especialidade</option>
+                <?php
+                    require_once("../../../sistema_interno/controllers/especialidade_controller.php");
+                    require_once("../../../sistema_interno/models/especialidade_class.php");
+                  
+                    $controller_especialidede = new controllerEspecialidade();
+                    $list = $controller_especialidede::Listar();
+                  
+                    $cont = 0;
+                    while($cont<count($list)){
+                        
+                    
+                ?>
+                <option value="<?php echo($list[$cont]->id_especialidade)?>"><?php echo($list[$cont]->especialidade)?></option>
+                  <?php
+                        $cont++;
+                    }
+                  ?>
               </select>
             </div>
           </div>
@@ -66,7 +98,24 @@
             </div>
             <div class="input_form">
               <select class="slct_form" name="">
+                  
                 <option value="">medico</option>
+                  <?php
+                
+                  require_once("../../../sistema_interno/controllers/funcionario_controller.php");
+                  require_once("../../../sistema_interno/models/funcionario_class.php");
+                  
+                  $controller_funcionario = new controllerFuncionario();
+                  $list = $controller_funcionario::Listar();
+                  
+                  $cont=0;
+                  while($cont<count($list)){
+                  ?>
+                <option value="<?php echo($list[$cont]->id_cargo)?>"><?php echo($list[$cont]->nome)?></option>
+                  <?php
+                  $cont++;
+                  }
+                  ?>
               </select>
             </div>
           </div>
