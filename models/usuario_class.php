@@ -4,6 +4,7 @@ session_start();
     class Usuario{
 
         //Atributos da Classe
+        public $id_funcionario;
         public $cpf;
         public $senha;
         public $id_nivel_funcionario;
@@ -29,7 +30,7 @@ session_start();
 
             $_SESSION["login"]=0;
             $count=0;
-            $sql = "SELECT usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
+            $sql = "SELECT id_funcionario,usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
              AND senha = '".$usuario->senha. "';";
 
             // echo $sql;
@@ -56,9 +57,11 @@ session_start();
                   # code...
                   $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
 
+
+
                   $_SESSION["login"]=$count;
 
-                  echo($id_nivel_funcionario);
+
 
                 }
 
@@ -72,9 +75,10 @@ session_start();
                 header('location:cms/');
 
             }else if($_SESSION["login"]==0){
+                  $_SESSION["id_funcionario"]=="";
                 header('location:index.php');
           }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 2){
-
+                $_SESSION["id_funcionario"]=$puxaDadosDB['id_funcionario'];
                 header('location:cms/');
 
             }
@@ -87,6 +91,7 @@ session_start();
 
 
             //Fecha a conexao com o Banco de Dados
+
             $conn -> Desconectar();
 
             //var_dump($sql);

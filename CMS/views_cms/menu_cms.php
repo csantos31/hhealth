@@ -1,9 +1,32 @@
-<?php 
+<?php
+
+
+
+
 
 if (isset($_GET['controller']))
     $caminho ="views_cms/";
 else
     $caminho = "";
+
+    if(isset($_SESSION["id_funcionario"])){
+          $id_funcionario=$_SESSION["id_funcionario"];
+          echo($id_funcionario);
+          //if($_SESSION['id_funcionario']>0){
+            //    header('location:../login.php');
+          //}
+
+   }else{
+         //session_start();
+         //$id_funcionario=$_SESSION["id_funcionario"];
+         //echo($id_funcionario);
+         //if($_SESSION['id_funcionario']>0){
+               header('location:../login.php');
+         //}
+
+   }
+
+
 ?>
 <div class="suporte_header">
     <div class="header_home_cms"><!--conteudo da home do cms-->

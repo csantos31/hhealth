@@ -5,14 +5,15 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
-    require_once('controller_cms/gerenciamento_sobre_controller.php');
-    require_once('controller_cms/gerenciamento_slide_saude_controller.php'); require_once('controller_cms/gerenciamento_ambiente_controller.php');
-    require_once('controller_cms/gerenciamento_home_controller.php');
+	require_once('controller_cms/gerenciamento_sobre_controller.php');
+	require_once('controller_cms/gerenciamento_slide_saude_controller.php');
+	require_once('controller_cms/gerenciamento_ambiente_controller.php');
+	require_once('controller_cms/gerenciamento_home_controller.php');
 	require_once('controller_cms/nivel_controller.php');
 	require_once('model_cms/nivel_class.php');
-    require_once('controller_cms/tipo_quarto_controller.php');
-    require_once('model_cms/tipo_quarto_class.php');
-     require_once('controller_cms/convenios_controller.php');
+	require_once('controller_cms/tipo_quarto_controller.php');
+	require_once('model_cms/tipo_quarto_class.php');
+	require_once('controller_cms/convenios_controller.php');
 
 	// verifica qual o tipo da controller iremos trabalhar
 	switch ($controller) {
@@ -33,7 +34,7 @@
 					// Instanciando a classe da controller
 					//Chama o metodo Novo da controller
 
-                    $controller_nivel =  new controllerNivel();
+                    		$controller_nivel =  new controllerNivel();
 					//Chama o metodo Novo da controller
 					$controller_nivel::Buscar();
 					require_once('views_cms/nivel_usuario.php');
@@ -274,7 +275,7 @@
 
 										//if(confirm('Deseja realmente excluir?')){
 												$controller_gerenciamento_ambiente = new controller_exame();
-											
+
 												$controller_gerenciamento_ambiente::Buscar();
 											break;
 
