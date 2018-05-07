@@ -1,18 +1,19 @@
 /*----------Menu Lateral----------*/
+*{
+      padding: 0px;
+}
+
 .menu_lateral_cms{/*menu lateral*/
-    width:20%;
-    height:1000px;
-    float:left;
+      width:20%;
+    height:750px;
+    float: left;
 }
 
 .conteudo_home_cms{/*conteudo home*/
     width:75%;
     min-height:500px;
-    overflow: hidden;
-    margin-left:50px;
-    margin-top: 5px;
     background-color: #eaecef;
-    float:left;
+    float: right;
 }
 
 .linha{
@@ -21,7 +22,6 @@
     overflow: hidden;
     background-color:#eaecef;
     margin-top:5px;
-    margin-left: 25px;
 }
 
 .img_menu_lateral{
