@@ -7,6 +7,11 @@
             $ambiente = new Ambiente();
             $ambiente ->titulo = $_POST['txt_titulo'];
             $ambiente ->texto = $_POST['txt_texto'];
+            $ambiente ->texto2 = $_POST['txt_texto2'];
+            $ambiente ->texto3 = $_POST['txt_texto3'];
+            $ambiente ->texto4 = $_POST['txt_texto4'];
+            $ambiente ->texto5 = $_POST['txt_texto5'];
+            $ambiente ->texto6 = $_POST['txt_texto6'];
             //$home ->status = $_POST['status'];
 
             //variaveis de upload de imagem
@@ -190,6 +195,11 @@
             $ambiente -> id_ambiente = $idAmbiente;
             $ambiente ->titulo = $_POST['txt_titulo'];
             $ambiente ->texto = $_POST['txt_texto'];
+            $ambiente ->texto2 = $_POST['txt_texto2'];
+            $ambiente ->texto3 = $_POST['txt_texto3'];
+            $ambiente ->texto4 = $_POST['txt_texto4'];
+            $ambiente ->texto5 = $_POST['txt_texto5'];
+            $ambiente ->texto6 = $_POST['txt_texto6'];
             //$home ->status = $_POST['status'];
 
             //variaveis de upload de imagem
@@ -369,41 +379,6 @@
 
         }
 
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>

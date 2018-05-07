@@ -308,6 +308,27 @@ body{
     border-radius: 3px;
 }
 
+[data-tooltip] {
+  position: relative;
+  font-weight: bold;
+}
+
+[data-tooltip]:after {
+  display: none;
+  position: absolute;
+  top: -5px;
+  padding: 5px;
+  border-radius: 3px;
+  left: calc(100% + 2px);
+  content: attr(data-tooltip);
+  white-space: nowrap;
+  background-color: #0095ff;
+  color: White;
+}
+
+[data-tooltip]:hover:after {
+  display: block;
+}
 
 /*-------botão------*/
 .content_btn_faixa_2_home{

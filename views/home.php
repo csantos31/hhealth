@@ -217,22 +217,22 @@
 
                                       ?>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto."')"?>" onmouseout="UnTip()" alt="quartos do hospital"/>
                                     </div>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto2."')"?>" onmouseout="UnTip()" alt="quartos do hospital">
                                     </div>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto3."')"?>" onmouseout="UnTip()" alt="quartos do hospital">
                                     </div>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto4."')"?>" onmouseout="UnTip()" alt="quartos do hospital">
                                     </div>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto5."')"?>" onmouseout="UnTip()" alt="quartos do hospital">
                                     </div>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital" title="quartos do hospital">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" onmouseover="<?php echo "Tip"."('".$list[$cont]->texto6."')"?>" onmouseout="UnTip()" alt="quartos do hospital">
                                     </div>
                                     <?php
                                             }
@@ -240,7 +240,7 @@
                                         }
                                     ?>
                                     <div class="content_btn_faixa_2_home">
-                                        <p>Ver todos os ambiente do hospital</p>
+                                      <a href="views/ambientes.php">  <p>Ver todos os ambiente do hospital</p></a>
                                     </div>
                                 </div>
                             </div>
@@ -321,6 +321,7 @@
              <?php require_once('footer.php'); ?>
           </div>
       </div>
+      <script type="text/javascript" src="js/wz_tooltip.js"></script>
       <script src="js/googlemaps.js"></script>
     </body>
 </html>
