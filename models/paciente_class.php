@@ -31,15 +31,22 @@ session_start();
 
             //Instancia da classe do BD
             $conn = new Mysql_db();
-
-
-
+            
             //chama o metodo para conectar no BD e guarda o retorno da conexao na variavel $PDO_conn
             $PDO_conn = $conn->Conectar();
 
+            $select = $PDO_conn->query($sql);
             if($PDO_conn -> query($sql)){
                 $del=$PDO_conn -> query($sql);
                 $count = $del->rowCount();
+            }
+            
+            if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+                
+                $id = $rs['id_paciente'];
+                
+                
+                $_SESSION['id_paciente'] = $id;
             }
 
 
