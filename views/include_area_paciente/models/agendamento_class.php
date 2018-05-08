@@ -15,6 +15,7 @@ class Agendamento
       {
             # code...
             include_once('bd_class.php');
+            
       }
 
       // Lista toos os registros do banco de dados
@@ -86,16 +87,14 @@ class Agendamento
         $select = $PDO_conex->query($sql);
         
         if($PDO_conex->query($sql)){
-            $auditoria = new Auditoria_paciente();
-            
-            $auditoria::Insert($dados_agendamento);
-            
+        
+        
             echo "<script>location.reload();</script>";
 
         }else {
             //Mensagem de erro
             echo "Error inserir no Banco de Dados";
-              echo $sql2;
+              echo $sql;
         }
           //Fechar a conexão com o banco de dados
           $conex->Desconectar();
