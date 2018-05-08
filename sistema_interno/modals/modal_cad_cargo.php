@@ -118,7 +118,7 @@ if(isset($_GET['modo'])){
                                   include_once('../controllers/nivel_funcionario_controller.php');
                                   include_once('../models/nivel_funcionario_class.php');
                                   $controller_nivel  = new controllerNivelFuncionario();
-                                  $list = $controller_nivel::listar();
+                                  $list = $controller_nivel::listarPermissoes();
                                   $cont = 0;
                                   while ($cont < count($list)) {
                                   ?>

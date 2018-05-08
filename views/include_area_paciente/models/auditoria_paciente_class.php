@@ -15,7 +15,7 @@
             $data = date('Y-m-d');
             $hora = date('H:i');
             $usuario=$dados_paciente->paciente;
-            $acao=" O paciente '".$usuario."', '".$dados_paciente->acao."' um  no banco ";
+            $acao="O paciente ".$usuario.", ".$dados_paciente->acao." uma consulta no banco ";
             
             $sql="INSERT INTO tbl_auditoria_paciente(data,hora,usuario,acao)
             VALUES('".$data."', '".$hora."', '".$usuario."','".$acao."' )";
@@ -35,7 +35,7 @@
                 echo $sql;
 			}
             //Fechar a conexão com o banco de dados
-            echo $sql;
+            
             $conex->Desconectar();
             
             

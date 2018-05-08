@@ -5,10 +5,16 @@
 	$controller = $_GET['controller'];
 	$modo = $_GET['modo'];
 
-    require_once('controller/historico_controller.php');
-    require_once('controller/receitas_controller.php');
-    require_once('controller/resultados_exames_controller.php');
+    require_once('controllers/historico_controller.php');
+    require_once('controllers/receitas_controller.php');
+    require_once('controllers/resultados_exames_controller.php');
+    require_once('controllers/agendamento_controller.php');
+    
+    session_start();
 
+    if(isset($_SESSION['id_paciente'])){
+      $id = $_SESSION['id_paciente'];  
+    }
 
 	// verifica qual o tipo da controller iremos trabalhar
 	switch ($controller) {
@@ -47,7 +53,7 @@
 			break;
             
         case 'paciente':
-            require_once('controller/paciente_controller.php');
+            require_once('controllers/paciente_controller.php');
             
             switch($modo){
                     
@@ -66,9 +72,22 @@
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente = Editar();
                     
-                    break;
+                    break;       
+            }
+            break;
+        
+        case 'agendamento':
+            require_once('controllers/agendamento_controller.php');
+            require_once('models/agendamento_class.php');
+            switch($modo){
+                
                 
                     
+                case 'inserir':
+                    
+                    $controller_agendamento = new controller_agendamento();
+                    $controller_agendamento::Novo($id);
+                    break;
             }
 
 

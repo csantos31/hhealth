@@ -58,27 +58,27 @@ class Especialidade{
 			//Contador
 			$cont = 0;
 
-      if(!empty($select)){
-			//Estrutura de repetição para pegar dados
-			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
-				#Cria um array de objetos na classe contatos
+          if(!empty($select)){
+                //Estrutura de repetição para pegar dados
+                while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+                    #Cria um array de objetos na classe contatos
 
-				$lista_especialidade[] = new Especialidade();
+                    $lista_especialidade[] = new Especialidade();
 
-				// Guarda os dados no banco de dados em cada indice do objeto criado
-				$lista_especialidade[$cont]->id_especialidade = $rs['id_especialidade'];
-				$lista_especialidade[$cont]->especialidade = $rs['especialidade'];
-				$lista_especialidade[$cont]->texto = $rs['texto'];
-                $lista_especialidade[$cont]->imagem = $rs['imagem'];
+                    // Guarda os dados no banco de dados em cada indice do objeto criado
+                    $lista_especialidade[$cont]->id_especialidade = $rs['id_especialidade'];
+                    $lista_especialidade[$cont]->especialidade = $rs['especialidade'];
+                    $lista_especialidade[$cont]->texto = $rs['texto'];
+                    $lista_especialidade[$cont]->imagem = $rs['imagem'];
 
-				// Soma mais um no contador
-				$cont+=1;
-			}
-    }else{
-      $lista_especialidade = array();
-    }
+                    // Soma mais um no contador
+                    $cont+=1;
+                    }
+            }else{
+              $lista_especialidade = array();
+            }
 
-			$conex::Desconectar();
+			$conex->Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
 			if (isset($lista_especialidade)) {

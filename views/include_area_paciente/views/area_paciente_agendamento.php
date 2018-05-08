@@ -10,13 +10,30 @@
     <title>Agendamento</title>
     <link rel="stylesheet" href="../css/style_nav.css">
     <link rel="stylesheet" href="../css/style_agendamento.css">
-
     <link rel="stylesheet" href="../css/style_footer.css">
-
     <script type="text/javascript" src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
-   <script type="text/javascript">
-
-   </script>
+      
+    <script>
+        $(document).ready(function() {
+           $('#form').submit(function(event){
+                event.preventDefault();
+                $.ajax({
+                type: "POST",
+                url: "../router.php?controller=agendamento&modo=inserir",
+                //alert (url);
+                data: new FormData($("#form")[0]),
+                cache:false,
+                contentType:false,
+                processData:false,
+                async:true,
+                success: function(dados){
+                     //$('#content_formulario').html(dados);
+                     alert(dados);
+                }
+              });
+          });
+        });
+    </script>
 
   </head>
   <body>
@@ -31,25 +48,17 @@
 
       </div>
       <div id="content_formulario">
-        <form id="" action="area_paciente_agendamento.html" method="post">
-          <div class="item_form">
-            <div class="titulo_item_form_maioria">
-              Nome
-            </div>
-            <div class="input_form">
-              <input type="text" name="txt_nome" value="" placeholder="Nome Completo" class="input_text">
-            </div>
-          </div>
+        <form id="form" action="" method="post">
           <div class="item_form">
             <div class="titulo_item_form_maioria">
               Unidade
             </div>
             <div class="input_form">
-              <select class="slct_form" name="">
+              <select class="slct_form" name="slt_unidade">
                 <option value="">unidade</option>
                 <?php
-                    require_once("../../../CMS/controller_cms/unidade_controller.php"); 
-                    require_once("../../../CMS/model_cms/unidade_class.php");
+                    require_once("../../../sistema_interno/controllers/unidade_controller.php"); 
+                    require_once("../../../sistema_interno/models/unidade_class.php");
 
                     $controller_unidade = new controller_unidade();
                     $list = $controller_unidade::Listar();
@@ -70,7 +79,7 @@
               Especialidade
             </div>
             <div class="input_form">
-              <select class="slct_form" name="">
+              <select class="slct_form" name="slt_especialidade">
                 <option value="">especialidade</option>
                 <?php
                     require_once("../../../sistema_interno/controllers/especialidade_controller.php");
@@ -97,7 +106,7 @@
               Medico
             </div>
             <div class="input_form">
-              <select class="slct_form" name="">
+              <select class="slct_form" name="slt_medico">
                   
                 <option value="">medico</option>
                   <?php
@@ -135,7 +144,7 @@
                 Data
               </div>
               <div class="input_form">
-                <input type="date" name="" value="" class="item_data_hora" placeholder="Data">
+                <input type="date" name="txt_data" value="" class="item_data_hora" placeholder="Data">
               </div>
             </div>
             <div id="suporte_hora">
@@ -143,12 +152,12 @@
                 Hora
               </div>
               <div class="input_form">
-                <input type="time" name="" value="" class="item_data_hora" placeholder="hora">
+                <input type="time" name="txt_hora" value="" class="item_data_hora" placeholder="hora">
               </div>
             </div>
           </div>
           <div id="suporte_btn_agendar">
-              <input onclick="Agendar" type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar uma consulta?')" id="bnt_submit_agenda">
+              <input type="submit" name="bnt_submit_agenda" value="Agendar" id="bnt_submit_agenda">
           </div>
         </form>
       </div>
