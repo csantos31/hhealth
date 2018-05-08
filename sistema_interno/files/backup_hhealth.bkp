@@ -1,10 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `hhealth`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.10, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.5.5-10.1.31-MariaDB
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -973,7 +971,6 @@ CREATE TABLE `tbl_paciente` (
   `dt_nasc` date NOT NULL,
   `rg` text,
   `cpf` text,
-  `quantidade_consulta` int(4) DEFAULT NULL,
   `carterinha_convenio` text,
   `foto` text,
   `status` varchar(45) DEFAULT NULL,
@@ -990,7 +987,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','46026502874',NULL,'arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
+INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','46026502874','arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1478,7 +1475,7 @@ CREATE TABLE `tbl_unidade` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   `latitude` decimal(10,0) DEFAULT NULL,
-  `logintude` decimal(10,0) DEFAULT NULL,
+  `logitude` decimal(10,0) DEFAULT NULL,
   `texto` text,
   `telefone` text,
   PRIMARY KEY (`id_unidade`),
@@ -1495,31 +1492,6 @@ LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
 INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/acupuntura.jpg','teste',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/bg_login.jpg','teste',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/fale.png','asfgasfg',1,1,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `tbl_usuario`
---
-
-DROP TABLE IF EXISTS `tbl_usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `tbl_usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `cpf` text,
-  `senha` text,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `tbl_usuario`
---
-
-LOCK TABLES `tbl_usuario` WRITE;
-/*!40000 ALTER TABLE `tbl_usuario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario` VALUES (1,'adm','123');
-/*!40000 ALTER TABLE `tbl_usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1578,8 +1550,32 @@ CREATE TABLE `tbl_usuario_paciente` (
 
 LOCK TABLES `tbl_usuario_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_paciente` VALUES (1,8,1,'46026502874','123');
+INSERT INTO `tbl_usuario_paciente` VALUES (1,8,1,'abc','123');
 /*!40000 ALTER TABLE `tbl_usuario_paciente` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `usuario_medico_administrador`
+--
+
+DROP TABLE IF EXISTS `usuario_medico_administrador`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuario_medico_administrador` (
+  `id_usuario_medico_administrador` int(11) NOT NULL AUTO_INCREMENT,
+  `permissao` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario_medico_administrador`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `usuario_medico_administrador`
+--
+
+LOCK TABLES `usuario_medico_administrador` WRITE;
+/*!40000 ALTER TABLE `usuario_medico_administrador` DISABLE KEYS */;
+INSERT INTO `usuario_medico_administrador` VALUES (1,'Administração de conteúdo'),(2,'Gerenciar sistema interno'),(3,'Usuário ROOT');
+/*!40000 ALTER TABLE `usuario_medico_administrador` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -1591,4 +1587,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-07 16:12:15
+-- Dump completed on 2018-05-08 10:46:44
