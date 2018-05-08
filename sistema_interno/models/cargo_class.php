@@ -39,6 +39,50 @@ class Cargo{
 			$conex->Desconectar();
 
 		}
+    
+        public function SelectPermitions(){
+            //Query para selecionar a tabela contatos
+			$sql="SELECT * FROM usuario_medico_administrador;";
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o select no banco de dados e guarda o retorno na variavel select
+			$select = $PDO_conex->query($sql);
+
+			//Contador
+			$cont = 0;
+
+              if(!empty($select)){
+                    
+                    $lista_adm = array();
+                  
+                    //Estrutura de repetição para pegar dados
+                    while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+                        
+                    // Guarda os dados no banco de dados em cada indice do objeto criado
+                    $lista_adm[$cont] = $rs['id_usuario_medico_administrador'];
+
+
+                    // Soma mais um no contador
+                    $cont+=1;
+                    }
+            }else{
+              $lista_adm = array();
+            }
+
+			$conex::Desconectar();
+
+			//Apenas retorna o $list_contatos se existir dados no banco de daos
+			if (isset($lista_cargo)) {
+				# code...
+				return $lista_cargo;
+			}
+        }
 
         /*Lista todos os registro no BD*/
 		public function Select(){

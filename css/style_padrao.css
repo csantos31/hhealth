@@ -644,7 +644,40 @@ body{
 .googleMap{
   width:500px;
   height:350px;
-position: relative;
-overflow: hidden;
-background-color: #000;
+  position: relative;
+  overflow: hidden;
+  background-color: #000;
+}
+
+
+.textoNomeAmbiente{
+  display: none;
+  opacity: 1;
+  font-weight: bold;
+  color: #FFF;
+
+}
+
+.img_faixa_2_home:hover>.textoNomeAmbiente{
+  display: block;
+  margin-top: -40px;
+  font-weight: bold;
+  z-index: 999;
+  background-color: #000;
+
+}
+
+
+.img_ambiente_faixa_2 img:hover{
+
+  opacity: 0.5;
+}
+
+.content_faixa_2_transparente{
+  width: 100%;
+  height: 20px;
+  background-color: #000000;
+  opacity: 0.2;
+  z-index: 999;
+
 }
