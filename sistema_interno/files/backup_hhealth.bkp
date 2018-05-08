@@ -941,7 +941,10 @@ CREATE TABLE `tbl_nivel_funcionario` (
   `nivel` varchar(45) DEFAULT NULL,
   `descricao` text,
   `ativo` tinyint(4) DEFAULT '1',
-  PRIMARY KEY (`id_nivel_funcionario`)
+  `id_permissao` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_nivel_funcionario`),
+  KEY `fk_usuario_permit_idx` (`id_permissao`),
+  CONSTRAINT `fk_usuario_permit` FOREIGN KEY (`id_permissao`) REFERENCES `usuario_medico_administrador` (`id_usuario_medico_administrador`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -951,7 +954,7 @@ CREATE TABLE `tbl_nivel_funcionario` (
 
 LOCK TABLES `tbl_nivel_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0),(2,'CDC','Cria e edita conteúdos para o site',1);
+INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0,NULL),(2,'CDC','Cria e edita conteúdos para o site',1,NULL);
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1587,4 +1590,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-08 10:46:44
+-- Dump completed on 2018-05-08 11:01:19
