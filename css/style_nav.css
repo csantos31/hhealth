@@ -258,8 +258,7 @@ label[for="btn_menu"]{
 
 
 
-@media screen and (min-width:320px) and (max-width:479px){
-
+@media screen and (max-device-width: 520px){
       /*----HEADER----*/
       .suporte_menu{
             width: 100%;
@@ -275,12 +274,11 @@ label[for="btn_menu"]{
       }
 
       .header {
-            width: 100%;
-            min-width: 100%;
+            width: 1300px;
             height: 110px;
             margin: auto;
-            background-color: red;
       }
+
 
       .logo_marca{
           width: 100px;
@@ -319,7 +317,6 @@ label[for="btn_menu"]{
             margin-top: 40px;
             margin-right: 15px;
             padding: 0px;
-            display: none;
       }
 
       .item_nav{
@@ -429,10 +426,8 @@ label[for="btn_menu"]{
         outline: none;
         position: relative;
         font-weight: 700;
-        z-index: 998;
-
+          z-index: 998;
       }
-
       .sbotao_snip:before,
       .botao_snip:after {
         border-color: transparent;
@@ -444,7 +439,6 @@ label[for="btn_menu"]{
         height: 24px;
         position: absolute;
         width: 24px;
-
       }
       .botao_snip:before {
         border-color: #DA0000;
@@ -454,14 +448,15 @@ label[for="btn_menu"]{
         top: -5px;
       }
       .botao_snip:after {
-        border-bottom-width: 2px;
+
         border-color: #DA0000;
-        border-left-width: 2px;
+      /*  border-left-width: 2px;*/
         bottom: -5px;
         left: -5px;
       }
       .botao_snip:hover,
       .botao_snip.hover {
+
         background-color: #DA0000;
       }
       .botao_snip:hover:before,
@@ -470,6 +465,7 @@ label[for="btn_menu"]{
       .botao_snip.hover:after {
         height: 100%;
         width: 100%;
+            border-bottom-width: 2px;
       }
 
 
@@ -495,22 +491,10 @@ label[for="btn_menu"]{
       }
 
       label[for="btn_menu"]{
-        color: white;
-        text-align: center;
-        font-size: 100px;
-        cursor: pointer;
-        width: 100px;
-        height: 100px;
-        display: none;
-        margin-top: 25px;
-        float: left;
-}
+              display: none;
+          }
 
-    #btn_menu{
-        display: none;
-    }
-
-    #btn_menu:checked ~ #menu-horizontal{
-        margin-left: -8%;
-
+      #btn_menu{
+              display: none;
+          }
 }
