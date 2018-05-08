@@ -116,6 +116,27 @@ if(isset($_GET['modo'])){
                                <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO NÍVEL" name="txt_descricao" id="txt_descricao" style="resize:none;"><?= $descricao ?></textarea>
                             </div>
                         </div>
+                        
+                        <div class="campo"><!--campos--> <!--nome-->
+                            <div class="input_campo">
+                               <label>Cargo :</label>
+                                <select id="slt_cargo" class="input_med" name="slt_cargo">
+                                  <?php
+                                  include_once('../controllers/cargo_controller.php');
+                                  include_once('../models/cargo_class.php');
+                                  $controller_cargo  = new controllerCargo();
+                                  $list = $controller_cargo::ListarPermissao();
+                                  $cont = 0;
+                                  while ($cont < count($list)) {
+                                  ?>
+                                      <option value="<?= $list[$cont]['id_usuario_medico_administrador'] ?>"><?= $list[$cont]['permissao'] ?></option>
+                                  <?php
+                                    $cont +=1;
+                                  }
+                                    ?>
+                                </select>
+                            </div>
+                        </div>
                         <div class="campo_botao">
                             <div class="botao">
                                 <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">

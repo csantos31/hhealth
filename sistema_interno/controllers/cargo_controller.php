@@ -27,6 +27,15 @@
 			return $lista_cargos::Select();
 		}
         
+        public function listarPermissoes(){
+			//Instancia da classe contatos
+			$lista_permissoes = new Cargo();
+
+			//Chama o método para selecionar os registros
+            
+			return $lista_permissoes::SelectPermitions();
+		}
+        
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idCargo = $_GET['codigo'];
