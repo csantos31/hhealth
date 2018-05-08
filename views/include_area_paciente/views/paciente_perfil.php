@@ -12,28 +12,9 @@
     <link rel="stylesheet" href="../css/style_paciente_perfil.css">
 
     <link rel="stylesheet" href="../css/style_footer.css">
-
-      
-    <script>
-        
-            $(document).ready(function(){
-                
-                $(".editar").click(function(){    
-                    $(".container_modal").toggle(2000); 
-                });
-                
-                
-                
-            })
-      
-    </script>
       
   </head>
   <body>
-  <div class="container_modal"><!--container da modal-->
-        <div class="modal"><!--modal-->
-        </div>
-      </div>
     <?php include_once('nav_paciente.php'); ?>
     <div id="content">
       <div id="suporte_titulo">
@@ -45,33 +26,78 @@
       </div>
         <div id="conteudo_meu_perfi">
             <div id="faixa_conteudO_perfil">
-                <div id="foto_perfil_usuario">
-                    <img class="editar" onclick="editar()" src="../../../imagens/icon_user.png" title="Foto de perfil" alt="Foto de perfil">
-                </div>
                 <div id="faixa_descricao_usuario">
-                    <b>Nome:</b> <label>João Dos Santos</label><br>
-                    <b>idade:</b> <label>18 anos</label><br>
-                    <b>Celular:</b> <label>(11) 95060 - 4833</label><br>
-                    <b>E-mail:</b> <label> joao.s@gmail.com </label><br>
+                    <div class="subtitulos">
+                        <b>Dados Pessoais</b><br>
+                    </div>
+                    <div class="segurainfo">
+                        <div class="campos" >Nome:</div> 
+                        <div class="dados" >João Dos Santos</div>
+                    </div>
+                    <div class="segurainfo">
+                        <div class="campos" >Idade:</div> 
+                        <div class="dados" >18 anos</div>
+                    </div>
+                    <div class="segurainfo">
+                        <div class="campos" >Celular:</div> 
+                        <div class="dados" >(11) 95060 - 4833</div>
+                    </div>
+                    <div class="segurainfo">
+                        <div class="campos" >E-mail:</div> 
+                        <div class="dados" > joao.s@gmail.com </div>
+                    </div>
                 </div>
             </div>
             <div id="informacoes_usuario">
+                
+                <div class="subtitulos">
+                        <b>Documentos</b><br><br>
+                    </div>
+                <div class="segurainfo">
+                    <div class="campos1" >Convênio:</div> 
+                    <div class="dados" > Amil </div>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos" >Cpf:</div>  
+                    <div class="dados" >000.000.000 - 00</div>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos" >Rg:</div>  
+                    <div class="dados" >00.000.000 - 0</div>
+                </div>
 
-                <img id="img_edit" src="../../../imagens/edit_icon.png"><label>Editar Perfil</label><br>
-
-                <strong>Documentos</strong><br><br>
-
-                <b>CPF:</b> <label>000.000.000 - 00</label><br>
-                <b>RG:</b> <label>00.000.000 - 0</label><br><br>
-
-                <strong>Convênio(s)</strong><br><br>
-                AMIL
-
-                <img src="../../../imagens/convenio_amil.jpg"><br><br>
-
-                <strong>Endereço</strong><br><br>
-                Rodovia Engenheiro Renê Benedito da Silva - Parque Boa Esperança <br>
-                Itapevi - SP
+                <div class="subtitulos">
+                    <b>Endereço</b><br><br>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos2" >Logradouro:</div>
+                    <div class="dados" >
+                        R. Engenheiro Renê Benedito da Silva , 101
+                    </div>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos" >Bairro:</div>
+                    <div class="dados" >
+                        Parque Boa Esperança
+                    </div>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos" >Cidade:</div>
+                    <div class="dados" >
+                        Itapevi
+                    </div>
+                </div>
+                <div class="segurainfo">
+                    <div class="campos" >Bairro:</div>
+                    <div class="dados" >
+                        São Paulo
+                    </div>
+                </div>
+                <a href="cadastro_paciente.php">
+                    <div class="edit">
+                        Editar Perfil
+                    </div>
+                </a>
             </div>
         </div>
 

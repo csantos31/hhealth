@@ -1,0 +1,23 @@
+/*--------------Modal--------------*/
+
+.modal{
+    width:700px;
+    min-height:500px;
+    height:auto;
+/*    background-color:#ffffff;*/
+    margin:auto;
+    margin-top:100px;
+    /*overflow: scroll;*/
+
+}
+
+.container_modal{
+    width:100%;
+    min-height:100%;
+    height:auto;
+    background: rgba(0, 0, 0, 0.7);
+    position:fixed;
+    display:none;
+    z-index: 99999;
+    overflow: scroll;
+}
