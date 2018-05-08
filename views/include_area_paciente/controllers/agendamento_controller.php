@@ -1,16 +1,17 @@
 <?php
 
     class controller_agendamento{
-       public function Novo(){
-            public $id_agendamento;
-            public $id_paciente;
-            public $id_especialidade;
-            public $id_funcionario;
-            public $id_unidade;
-            public $data;
-            public $hora;
-           
-           require_once ('/model/agendamento_class.php');
+        public $id_agendamento;
+        public $id_paciente;
+        public $id_especialidade;
+        public $id_funcionario;
+        public $id_unidade;
+        public $data;
+        public $hora;
+        
+       public function Novo($id){
+           require_once ('/models/agendamento_class.php');
+           include_once('/models/auditoria_paciente_class.php');
             //Instancia da classe Contato
 			$agendamento = new Agendamento();
            /*
@@ -24,20 +25,25 @@
 
            */
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-            $agendamento->id_paciente = $_POST['txt_cep'];
-            $agendamento->id_especialidade = $_POST['txt_logradouro'];
-            $agendamento->id_funcionario = $_POST['txt_numero'];
-            $agendamento->id_unidade = $_POST['slt_estado'];
-            $agendamento->data = $_POST['txt_cidade'];
+            $agendamento->id_paciente = $id;
+            $agendamento->paciente="teste";
+            $agendamento->id_especialidade = $_POST['slt_especialidade'];
+            $agendamento->id_funcionario = $_POST['slt_medico'];
+            $agendamento->id_unidade = $_POST['slt_unidade'];
+            $agendamento->data = $_POST['txt_data'];
             $agendamento->hora = $_POST['txt_hora'];
+            $agendamento->acao = "Agendou";
 
 
 			//Chama o metodo Insert da classe Contato
 			//Existe também a posibilidade de chamar o metodo da seguinte forma:
 			//$contato::Insert($contato);
-			$id_ende = $endereco::Insert($endereco);
+            $auditoria = new Auditoria_paciente();
+            
+            $auditoria::Insert($agendamento);
+			$agendamento::Insert($agendamento);
            
-            return $id_ende;
+            //return $id_ende;
 
 		}
 
