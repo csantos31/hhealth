@@ -150,6 +150,10 @@ a{
   height: 30px;
   width: 160px;
   float: left;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: verdana;
+  color: black;
   margin-left: 15px;
   background-color: #c0c0c0;
   list-style: none;
