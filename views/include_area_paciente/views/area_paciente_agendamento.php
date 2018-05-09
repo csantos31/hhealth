@@ -1,8 +1,23 @@
 <?php
     require('verifica_paciente.php');
 
-?>
+    $status=null;
+    $action = "modo=inserir";
+    $nivel = null;
+    $descricao = null;
 
+
+    if (isset($_GET['controller']))
+     $caminho ="views/";
+    else
+     $caminho = "";
+
+    //include('verifica_paciente.php');
+
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
   <head>
@@ -28,7 +43,8 @@
                 async:true,
                 success: function(dados){
                      //$('#content_formulario').html(dados);
-                     alert(dados);
+                     //alert(dados);
+                     console.log(dados);
                 }
               });
           });
@@ -128,16 +144,7 @@
               </select>
             </div>
           </div>
-          <div class="item_form">
-            <div id="titulo_item_form_exame">
-              Exames e Consulta
-            </div>
-            <div class="input_form">
-              <select class="slct_form" name="">
-                <option value="">exames e consulta</option>
-              </select>
-            </div>
-          </div>
+          
           <div class="item_form">
             <div id="suporte_data">
               <div id="titulo_data">
@@ -164,6 +171,70 @@
       <div class="faixa_branca">
 
       </div>
+        
+        <div class="titulo_agendamento">
+            <strong>Agendamentos marcados</strong>  
+        </div>
+        
+        
+        <div class="content_titulo_receita">
+            <div class="titulo_nome">
+                <a>Médico</a>
+            </div>
+
+            <div class="titulo_especialidade">
+                <a>Especialidade</a>
+            </div>
+
+            <div class="titulo_unidade">
+                <a>Unidade</a>
+            </div>
+
+            <div class="titulo_data_exame">
+                <a>Data Exame</a>
+            </div>
+            <div class="titulo_hora_exame">
+                <a>hora Exame</a>
+            </div>
+        </div>
+        <?php
+            // Incluindo a controller e a model para serem utilizadas
+            include_once($caminho .'../controllers/agendamento_controller.php');
+            include_once($caminho .'../models/agendamento_class.php');
+            
+            $controller_agendamento = new controller_agendamento();
+            $list = $controller_agendamento::Listar();
+        
+            $cont=0;
+            while($cont<count($list)){
+        ?>
+        <div class="content_conteudo_receitas"><!--receitas-->
+            <div class="content_nome"><!--nome-->
+                <?php echo($list[$cont]->funcionario)?>
+            </div>
+
+            <div class="content_especialidade"><!--especialidade-->
+                <?php echo($list[$cont]->especialidade)?>
+            </div>
+
+            <div class="content_unidade"><!--unidade-->
+                <?php echo($list[$cont]->unidade)?>
+            </div>
+
+            <div class="content_data"><!--data-->
+                <?php echo($list[$cont]->data)?>
+            </div>
+
+            <div class="content_hora"><!--hora-->
+                <?php echo($list[$cont]->hora)?>
+            </div>
+        </div>
+        <?php
+            $cont++;
+            }
+        
+                
+        ?>
     </div>
     <div class="">
       <?php include_once('footer_paciente.php'); ?>

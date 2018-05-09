@@ -49,13 +49,13 @@
 
 		public function Listar(){
 			//Instancia da classe contatos
-			$endereco = new Endereco();
+			$agendamento = new Agendamento();
 
 			//Chama o método para selecionar os registros
 
 
 
-			return $endereco::Select();
+			return $agendamento::Select();
 		}
 
     public function ListarEstados(){
