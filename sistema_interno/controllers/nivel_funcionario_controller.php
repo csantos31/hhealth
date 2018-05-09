@@ -31,6 +31,18 @@
 			return $nivel_funcionario::Select();
 		}
         
+        public function listarPermissoes(){
+            //Instancia da classe contatos
+			$nivel_funcionario = new NivelFuncionario();
+
+			//Chama o método para selecionar os registros
+            
+            
+            
+			return $nivel_funcionario::SelectPermitions();
+        }
+        
+        
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idNivel = $_GET['codigo'];
