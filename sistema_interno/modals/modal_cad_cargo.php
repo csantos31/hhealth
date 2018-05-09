@@ -1,5 +1,8 @@
 <?php
 
+include('../controllers/util.php');
+
+
 //$action = "modo=inserir";
 
 $id="0";
@@ -119,13 +122,23 @@ if(isset($_GET['modo'])){
                                   include_once('../models/nivel_funcionario_class.php');
                                   $controller_nivel  = new controllerNivelFuncionario();
                                   $list = $controller_nivel::listarPermissoes();
+                                            
                                   $cont = 0;
+                      parr($list);
                                   while ($cont < count($list)) {
+                                    
+                                      echo 'here';
+                                      parr($list);
+                                      
+                                      /*
                                   ?>
-                                      <option value="<?= $list[$cont]->id_nivel_funcionario ?>"><?= $list[$cont]->nivel ?></option>
+                                      <option value="<?= $list[$cont]['id_usuario_medico_administrador'] ?>"><?= $list[$cont]['permissao'] ?></option>
                                   <?php
-                                    $cont +=1;
+                                  */
+                                    $cont = $cont + 1;
+                                    
                                   }
+                                  
                                     ?>
                                 </select>
                             </div>

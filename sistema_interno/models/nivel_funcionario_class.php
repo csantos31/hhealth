@@ -84,8 +84,47 @@ class NivelFuncionario{
 				# code...
 				return $lista_nivel;
 			}
+	     }
+    
+        public function SelectPermitions(){
+            //Query para selecionar a tabela contatos
+			$sql="SELECT * FROM usuario_medico_administrador;";
 
-	   }
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o select no banco de dados e guarda o retorno na variavel select
+			$select = $PDO_conex->query($sql);
+
+			//Contador
+			$cont = 0;
+
+              if(!empty($select)){
+                    $niv = array();
+                    //Estrutura de repetição para pegar dados
+                    while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+                        #Cria um array de objetos na classe contatos
+                        $niv = $rs;
+                        // Soma mais um no contador
+                        $cont+=1;
+                    }
+            }else{
+              $niv = array();
+            }
+
+			$conex::Desconectar();
+
+			//Apenas retorna o $list_contatos se existir dados no banco de daos
+			if (isset($niv)) {
+				# code...
+				return $niv;
+			}
+        }
+    
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($nivel){
