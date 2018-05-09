@@ -14,11 +14,11 @@
             date_default_timezone_set('America/Sao_Paulo');
             $data = date('Y-m-d');
             $hora = date('H:i');
-            $usuario=$dados_paciente->paciente;
-            $acao="O paciente ".$usuario.", ".$dados_paciente->acao." uma consulta no banco ";
+            $usuario=$dados_paciente->id_paciente;
+            $acao="O paciente id:".$usuario.", ".$dados_paciente->acao." uma consulta no banco ";
             
             $sql="INSERT INTO tbl_auditoria_paciente(data,hora,usuario,acao)
-            VALUES('".$data."', '".$hora."', '".$usuario."','".$acao."' )";
+            VALUES('".$data."', '".$hora."', '".$dados_paciente->id_paciente."','".$acao."' )";
             
             $conex = new Mysql_db();
 
