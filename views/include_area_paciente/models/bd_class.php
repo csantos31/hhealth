@@ -1,7 +1,7 @@
 <?php
 
 
-class Mysql_db{
+class Mysql_db_include_paciente{
     private $server;
     private $user;
     private $password;

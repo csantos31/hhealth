@@ -7,20 +7,7 @@
 
             //Instancia da classe Contato
 			$funcionario = new funcionario();
-
-            /*
-                public $id_funcionario;
-                public $id_cargo;
-                public $id_endereco;
-                public $nome;
-                public $sobrenome;
-                public $dt_nasc;
-                public $rg;
-                public $cpf;
-                public $status
-
-            */
-
+            
 			//Carregando os dados digitados pelo usuário nos atributos da classe
             $funcionario->id_cargo = $_POST['slt_cargo'];
             $funcionario->id_endereco = $id_endereco;

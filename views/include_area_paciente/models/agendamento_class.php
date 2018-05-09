@@ -26,7 +26,7 @@ class Agendamento
             $sql1="SELECT a.id_agendamento_consulta,p.nome,e.especialidade,f.nome,u.nome_unidade,a.data,a.hora FROM tbl_agendamento_consultas as a,tbl_paciente as p,tbl_especialidade as e,tbl_funcionario as f,tbl_unidade as u WHERE p.id_paciente = a.id_paciente AND e.id_especialidade=a.id_especialidade AND f.id_funcionario=a.id_funcionario AND u.id_unidade=a.id_unidade";
 
             //Instancio o banco e cria uma variavel
-            $conex = new Mysql_db();
+            $conex = new Mysql_db_include_paciente();
 
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();
@@ -49,18 +49,15 @@ class Agendamento
                 $list[$cont]->especialidade = $rs['especialidade'];
                 $list[$cont]->funcionario = $rs['nome'];
                 $list[$cont]->unidade = $rs['nome_unidade'];
-                
+                $list[$cont]->hora = $rs['hora'];
 
                 $dat = new DateTime($rs['data']);
 
-                $list_receitas[$cont]->data = $dat->format('d/m/Y');
+                $list[$cont]->data = $dat->format('d/m/Y');
 
 
                 // Soma mais um no contador
-                              $cont+=1;
-
-
-
+                $cont++;
                 //Apenas retorna o $list_contatos se existir dados no banco de daos
 
             }
@@ -78,7 +75,7 @@ class Agendamento
         
         $dados_agendamento->acao = "Inseriu";
         //Instancio o banco e cria uma variavel
-        $conex = new Mysql_db();
+        $conex = new Mysql_db_include_paciente();
 
         /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
         $PDO_conex = $conex->Conectar();
