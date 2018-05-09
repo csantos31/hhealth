@@ -217,52 +217,48 @@
 
                                       ?>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>"  alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto; ?></div>
-                                        <div class="content_faixa_2_transparente">
+                                      </div>
 
-                                        </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto2; ?></div>
-                                        <div class="content_faixa_2_transparente">
+                                      </div>
 
-                                        </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto3; ?></div>
-                                        <div class="content_faixa_2_transparente">
-
-                                        </div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto4; ?></div>
-                                        <div class="content_faixa_2_transparente">
-
-                                        </div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
-
-                                        
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto5; ?></div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
-
-
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto6; ?></div>
+                                      </div>
                                     </div>
-
-
 
                                     <?php
                                             }
