@@ -20,6 +20,9 @@
       margin: auto;
 }
 
+.logo_marca_responsivo{
+    display: none;
+}
 
 .logo_marca{
     width: 100px;
@@ -253,245 +256,139 @@ label[for="btn_menu"]{
 
 
 @media screen and (max-device-width: 520px){
-      /*----HEADER----*/
-      .suporte_menu{
-            width: 100%;
-            height: 410px;
-            background-color: red;
-            z-index: 999;
-      }
-
-      .menu{
-            width: 100%;
-            height: 310px;
-            /*background-color: #fff;*/
-            background-color: green;
-      }
-
-      .header {
-            width: 100%;
-            height: 510px;
-            margin: auto;
-            background-color: aqua;
-      }
-
-      .logo {
-            width: 100px;
-            height: 90px;
-            /*background-image: url(../imagens/logo_only_heart.png);*/
-            background-size: 100px;
-            padding: 0px;
-            margin-top: 15px;
-            margin-left: 43%;
-            float: left;
-            background-color: yellow;
-
-      }
-
-      .logo_marca{
-          width: 45%;
-          height: 25px;
-          margin-top: 50px;
-          float: right;
-          text-decoration: none;
-          color: #DA0000;
-          font-weight: bold;
-          font-size: 22px;
-          font-family: verdana;
-          background-color: yellow;
-
-      }
-
-      .nav_menu{
-            width: 100%;
-            height: 110px;
-            background-color: orange;
-            margin-top: 50px;
-      }
-
-      .menu_nav{
-            width: 100%;
-            height: 35px;
-            margin-top: 40px;
-            margin-right: 15px;
-            padding: 0px;
-      }
-
-      .item_nav{
-            width: 11.66%;
-            height: 70%;
-            padding-top:5px;
-            list-style: none;
-            text-align: center;
-            vertical-align: middle;
-            margin: auto;
-            line-height: 40px;
-            color: black;
-            font-weight: bold;
-            font-size: 21px;
-            background-color: white;
-            font-family: 'sans-serif';
-            cursor: pointer;
-
-      }
-
-      .menu_nav li{
-          color: #DA0000;
-      }
-
-      .menu_nav li:hover{
-            background-color: #eaecef;
-      }
-
-      .menu_nav li:hover>.submenu_nav_hhealth {
-            /*display: block;*/
-      }
-
-      .menu_nav li:hover>.submenu_nav_contatos {
-            /*display: block;*/
-      }
-
-      .item_nav a{
-            text-decoration: none;
-            color: black;
-      }
-
-      .submenu_nav_hhealth{
-            margin-top: 13px;
-            background-color: white;
-            padding: 0px;
-            transition: 2s;
-            /*display: none;*/
-      }
-
-      .submenu_nav_hhealth li:hover{
-          color: #eaecef;
-          background-color: #DA0000;
-          opacity: 0.9;
-          transition: 0.1s;
-          font-family: 'BenchNine', Arial, sans-serif;
-          vertical-align:middle;
-
-      }
-
-      .item_submenu_nav_hhealth{
-            width: 100%;
-            height: 40px;
-            line-height: 40px;
-            list-style: none;
-            font-family: sans-serif;
-            font-size: 18px;
-      }
-
-      .submenu_nav_contatos{
-            margin-top: 15px;
-            background-color: white;
-            padding: 0px;
-            transition: 2s;
-            /*display: none;*/
-      }
-
-      .submenu_nav_contatos li:hover{
-          color: #eaecef;
-          background-color: #DA0000;
-          font-family: 'BenchNine', Arial, sans-serif;
-          padding-top: 3px;
-          color: #eaecef;
-          vertical-align:middle;
-      }
-
-      .item_submenu_nav_contatos{
-            width: 100%;
-            height: 40px;
-            list-style: none;
-            line-height: 20px;
-            font-family: sans-serif;
-            font-size: 18px;
-      }
-
-      /*teste efeito botão*/
-
-      .botao_snip {
-        border: none;
-        cursor: pointer;
-        display: block;
-        font-family: verdana,'BenchNine', Arial, sans-serif;
-        font-size: 1em;
-        font-size: 18px;
-        line-height: 1em;
-        margin: 11.3px 11.3px;
-        outline: none;
-        position: relative;
-        font-weight: 700;
-          z-index: 998;
-      }
-      /*.sbotao_snip:before,
-      .botao_snip:after {
-        border-color: transparent;
-        -webkit-transition: all 0.25s;
-        transition: all 0.25s;
-        border-style: solid;
-        border-width: 0;
-        content: "";
-        height: 24px;
-        position: absolute;
-        width: 24px;
-      }*/
-      /*.botao_snip:before {
-        border-color: #DA0000;
-        border-right-width: 2px;
-        border-top-width: 2px;
-        right: -5px;
-        top: -5px;
-      }*/
-      /*.botao_snip:after {
-
-        border-color: #DA0000;
-        bottom: -5px;
-        left: -5px;
-      }*/
-      /*.botao_snip:hover,
-      .botao_snip.hover {
-
-        background-color: #DA0000;
-      }*/
-      /*.botao_snip:hover:before,
-      .botao_snip.hover:before,
-      .botao_snip:hover:after,
-      .botao_snip.hover:after {
-        height: 100%;
+  .header {
         width: 100%;
-            border-bottom-width: 2px;
-      }*/
+        height: 800px;
+        margin: auto;
+  }
 
+  .separador_responsivo{
+    width: 100%;
+    height: 120px;
+    background-color: red;
+  }
 
-      /*menu secundário*/
+  .logo {
+        width: 90px;
+        height: 90px;
+        background-image: url(../imagens/logo_only_heart.png);
+        background-size: 100px;
+        padding: 0px;
+        margin-top: 15px;
+        float: left;
 
-      /*#menu_secundario{
-          width: 92.5%;
-          height: 50px;
-          border-radius:10px;
-          box-shadow:10px #000000;
-          display:none;
-          position:fixed;
-          z-index:9999;
-          background-color:white;
-          display: none;
-      }
+  }
 
-      #menu_secundario ul{
-         margin-top:0px;
-      }
+  .logo_marca{
+      display: none;
+  }
 
-      #menu_secundario ul li{
-         margin-top:9px;
-      }
+  .logo_marca_responsivo{
+      width: 100px;
+      height: 25px;
+      margin-top: 50px;
+      margin-left: 5px;
+      margin-right: 40px;
+      text-decoration: none;
+      float: left;
+      color: #DA0000;
+      font-weight: bold;
+      font-size: 22px;
+      font-family: verdana;
+  }
 
-      label[for="btn_menu"]{
-              display: none;
-          }
+  .nav_menu{
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        float: left;
+        background-color: blue;
+  }
 
-      #btn_menu{
-              display: none;
-          }*/
+  .menu_nav{
+        width: 100%;
+        height: auto;
+        min-height: 50px;
+        margin-right: 15px;
+        padding: 0px;
+        text-align: center;
+  }
+
+  label{
+    display: none;
+  }
+
+  li{
+    text-align: center;
+  }
+
+  a{
+    list-style: none;
+    color: black;
+    text-decoration: none;
+  }
+
+  .item_nav{
+        width: 100%;
+        min-height: 50px;
+        height: auto;
+        padding-top:5px;
+        list-style: none;
+        text-align: center;
+        vertical-align: middle;
+        margin: auto;
+        line-height: 50px;
+        color: black;
+        font-weight: bold;
+        font-size: 21px;
+        background-color: aquamarine;
+        font-family: 'sans-serif';
+        cursor: pointer;
+        border: solid 1px;
+  }
+
+  .submenu_nav_hhealth{
+        min-height: 50px;
+        height: auto;
+        padding: 0px;
+        transition: 2s;
+        border: solid 1px;
+
+  }
+
+  .item_submenu_nav_hhealth{
+        width: 100%;
+        height: 50px;
+        line-height: 40px;
+        list-style: none;
+        font-family: sans-serif;
+        font-size: 18px;
+        border: solid 1px;
+        background-color: green;
+  }
+
+  .submenu_nav_contatos{
+        min-height: 50px;
+        height: auto;
+        background-color: white;
+        padding: 0px;
+        transition: 2s;
+        border: solid 1px;
+  }
+
+  .item_submenu_nav_contatos{
+        width: 100%;
+        height: 50px;
+        list-style: none;
+        line-height: 20px;
+        font-family: sans-serif;
+        font-size: 18px;
+        border: solid 1px;
+        background-color: yellow;
+  }
+
+  #menu_secundario{
+    display: none;
+  }
+
 }

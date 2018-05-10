@@ -15,9 +15,15 @@
 
 <div class="header"><!--header-->
     <a href="index.php">
+      <div class="separador_responsivo">
         <div class="logo">
 
         </div>
+        <div class="logo_marca_responsivo">
+          HHEALTH
+      </div>
+      </div>
+
     </a>
     <nav class="nav_menu">
           <div class="faixa_texte">
