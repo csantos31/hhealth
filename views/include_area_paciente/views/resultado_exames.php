@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../css/style_resultado_exames.css">
     <link rel="stylesheet" href="../css/style_footer.css">
 
-    <script type="text/javascript" src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+    <script src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
     <script>/*Modal*/
       $(document).ready(function(){
 
@@ -178,7 +178,7 @@
                 </div>
 
                 <div class="acao_resultado"><!--açção-->
-                    <img src="../../../imagens/save.png">
+                    <img src="../../../imagens/save.png" alt="">
                 </div>
             </div>
             <?php

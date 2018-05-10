@@ -1,7 +1,7 @@
 <?php
 
     class Paciente{
-        
+
         public $id_paciente;
         public $id_endereco;
         public $id_convenio;
@@ -12,20 +12,20 @@
         public $cpf;
         public $carterinha_convenio;
         public $foto;
-        
-        
+
+
         public function __construct(){
-            
+
             include_once('bd_clss.php');
-            
+
         }
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($paciente){
 			$sql = "SELECT * FROM tbl_paciente WHERE id_paciente =". $paciente->id_paciente;
 
 			//Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+			$conex = new Mysql_db_include_paciente();
 
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
@@ -67,7 +67,7 @@
 			$sql = "UPDATE tbl_paciente SET nome = '" .$paciente->nome. "', sobrenome = '" .$paciente->sobrenome. "', dt_nasc = '" .$paciente->dt_nasc. "', rg = '" .$paciente->rg. "', cpf = '" .$paciente->cpf. "', carterinha = '" .$paciente->carterinha. "', foto = '" .$paciente->foto. "' WHERE id_paciente = '" .$paciente->id_paciente."';";
 
 			//Instancio o banco e crio uma variavel
-			$conex = new Mysql_db();
+			$conex = new Mysql_db_include_paciente();
 
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
