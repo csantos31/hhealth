@@ -348,12 +348,17 @@ label[for="btn_menu"]{
   }
 
   .submenu_nav_hhealth{
+        display: none;
+
+  }
+
+  .menu_nav li:hover>.submenu_nav_hhealth{
+        display: block;
         min-height: 50px;
         height: auto;
         padding: 0px;
         transition: 2s;
         border: solid 1px;
-
   }
 
   .item_submenu_nav_hhealth{
@@ -368,6 +373,11 @@ label[for="btn_menu"]{
   }
 
   .submenu_nav_contatos{
+        display: none;
+  }
+
+  .menu_nav li:hover>.submenu_nav_contatos{
+        display: block;
         min-height: 50px;
         height: auto;
         background-color: white;
