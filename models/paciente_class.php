@@ -93,6 +93,47 @@ session_start();
     			$conex->Desconectar();
 
     		}
+        /*Busca um registro especifico no BD*/
+		public function SelectById($paciente){
+			$sql = "SELECT * FROM tbl_paciente WHERE id_paciente =". $paciente->id_paciente;
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db_include_paciente();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			$select = $PDO_conex->query($sql);
+
+			//Executa o script no banco de dados
+			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+				//Se der true redireciona a tela
+
+
+				$paciente = new Paciente();
+
+				$paciente->id_paciente = $rs['id_paciente'];
+                $paciente->id_endereco = $rs['id_endereco'];
+                $paciente->id_convenio = $rs['id_convenio'];
+                $paciente->nome = $rs['nome'];
+                $paciente->sobrenome = $rs['sobrenome'];
+                $paciente->dt_nasc = $rs['dt_nasc'];
+                $paciente->rg = $rs['rg'];
+                $paciente->cpf = $rs['cpf'];
+                $paciente->carterinha_convenio = $rs['carterinha_convenio'];
+                $paciente->foto = $rs['foto'];
+                
+                return $paciente;
+
+			}else {
+				//Mensagem de erro
+				echo "Error ao selecionar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+		}
 
     }
 

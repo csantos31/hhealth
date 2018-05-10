@@ -1,6 +1,6 @@
 <?php
     require('verifica_paciente.php');
-
+    @session_start();
     $status=null;
     $action = "modo=inserir";
     $nivel = null;
@@ -15,8 +15,6 @@
     //include('verifica_paciente.php');
 
 
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br" dir="ltr">
@@ -24,7 +22,8 @@
     <meta charset="utf-8">
     <title>Agendamento</title>
     <link rel="stylesheet" href="../css/style_nav.css">
-    <link rel="stylesheet" href="../css/style_agendamento.css">
+    <!--mudar css de agendamento-->
+    <link rel="stylesheet" href="../css/style_agendamento_crianca.css">
     <link rel="stylesheet" href="../css/style_footer.css">
     <script type="text/javascript" src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
       

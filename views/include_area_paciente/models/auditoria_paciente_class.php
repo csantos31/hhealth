@@ -20,7 +20,7 @@
             $sql="INSERT INTO tbl_auditoria_paciente(data,hora,usuario,acao)
             VALUES('".$data."', '".$hora."', '".$dados_paciente->id_paciente."','".$acao."' )";
             
-            $conex = new Mysql_db();
+            $conex = new Mysql_db_include_paciente();
 
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();

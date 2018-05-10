@@ -38,28 +38,44 @@
 
                  */
 
-                $fle_foto1 = salvar_imagem($_FILES['fle_foto1'],'arquivos');
-                $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
+            $fle_foto1 = salvar_imagem($_FILES['fle_foto1'],'arquivos');
+            $fle_foto2 = salvar_imagem($_FILES['fle_foto2'],'arquivos');
 
 
      			        //Carregando os dados digitados pelo usuário nos atributos da classe
-     			      $paciente->id_convenio = $_POST['slt_convenio'];
-                 $paciente->id_endereco = $id_endereco;
-                 $paciente->nome = $_POST['txt_nome'];
-                 $paciente->sobrenome = $_POST['txt_sobrenome'];
-                 $paciente->dt_nasc = $_POST['txt_dt_nasc'];
-                 $paciente->rg = $_POST['txt_rg'];
-                 $paciente->cpf = $_POST['txt_cpf'];
-                 $paciente->foto = $fle_foto1;
-                 $paciente->carteirinha_convenio = $fle_foto2;
+            $paciente->id_convenio = $_POST['slt_convenio'];
+            $paciente->id_endereco = $id_endereco;
+            $paciente->nome = $_POST['txt_nome'];
+            $paciente->sobrenome = $_POST['txt_sobrenome'];
+            $paciente->dt_nasc = $_POST['txt_dt_nasc'];
+            $paciente->rg = $_POST['txt_rg'];
+            $paciente->cpf = $_POST['txt_cpf'];
+            $paciente->foto = $fle_foto1;
+            $paciente->carteirinha_convenio = $fle_foto2;
 
 
-     			//Chama o metodo Insert da classe Contato
-     			//Existe também a posibilidade de chamar o metodo da seguinte forma:
-     			//$contato::Insert($contato);
-     			$paciente::Insert($paciente);
+            //Chama o metodo Insert da classe Contato
+            //Existe também a posibilidade de chamar o metodo da seguinte forma:
+            //$contato::Insert($contato);
+            $paciente::Insert($paciente);
 
  		}
+        
+        public function Buscar(){
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idPaciente = $_GET['id'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$paciente = new Paciente();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$paciente->id_endereco = $idEndereco;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$paciente = $paciente::SelectById($paciente);
+
+            return $paciente;
+		}
 
 
 

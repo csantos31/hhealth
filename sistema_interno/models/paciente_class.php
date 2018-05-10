@@ -77,7 +77,7 @@ class Paciente{
 
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-				/*$lista_pacientes[$cont]->id_paciente = $rs['id_paciente'];
+				$lista_pacientes[$cont]->id_paciente = $rs['id_paciente'];
                 $lista_pacientes[$cont]->id_endereco = $rs['id_endereco'];
                 $lista_pacientes[$cont]->id_convenio = $rs['id_convenio'];
                 $lista_pacientes[$cont]->nome = $rs['nome'];
@@ -94,7 +94,7 @@ class Paciente{
                 $lista_pacientes[$cont]->numero = $rs['numero'];
                 $lista_pacientes[$cont]->id_estado = $rs['id_estado'];
                 $lista_pacientes[$cont]->cidade = $rs['cidade'];
-                $lista_pacientes[$cont]->bairro = $rs['bairro'];*/
+                $lista_pacientes[$cont]->bairro = $rs['bairro'];
 
 				// Soma mais um no contador
 				$cont+=1;
