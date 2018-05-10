@@ -15,7 +15,7 @@
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_unidades_hhealth.css">
         <title>Hospital HHealth</title>
-        <script type="text/javascript">
+        <script>
         // Guardo valores de um array do php em variaveis do JavaScript
          var latitude = <?php echo json_encode($latitude);?>; // obs o JavaScript so recebe array em Json
          var longitude = <?php echo json_encode($longitude);?>;
@@ -85,7 +85,7 @@
                       <div class="content">
                            <div class="faixa_busca">
                                  <div class="centraliza_input">
-                                       <input type="search" name="" value="" placeholder="Search...">
+                                       <input type="search" name="pesquisaUnid" value="" placeholder="Search...">
 
                                  </div>
                                  <div class="ajusta_lupa">
@@ -138,6 +138,6 @@
             </div>
             <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChOOhHq12LWYndEM_JPwsI7AM_WIX3R2M&callback=myMap"></script> -->
           <script async defer
-          src="../js/googlemaps.js" type="text/javascript"></script>
+          src="../js/googlemaps.js"></script>
       </body>
 </html>
