@@ -24,7 +24,7 @@
 
       </div>
       <div id="content_formulario">
-        <form id="" action="preatendim.html" method="post">
+        <form action="preatendim.html" method="post">
           <div class="item_form">
             <div class="titulo_item_form_maioria">
               Nome
@@ -38,7 +38,7 @@
               Unidade
             </div>
             <div class="input_form">
-              <select class="slct_form" name="">
+              <select class="slct_form" name="slc_unid">
                 <option value="">unidade</option>
               </select>
             </div>
@@ -56,7 +56,7 @@
               Medico
             </div>
             <div class="input_form">
-              <select class="slct_form" name="">
+              <select class="slct_form" name="slc_medico">
                 <option value="">medico</option>
               </select>
             </div>
@@ -67,7 +67,7 @@
                 Data
               </div>
               <div class="input_form">
-                <input type="date" name="" value="" class="item_data_hora" placeholder="Data">
+                <input type="date" name="date_pre_atendimento" value="" class="item_data_hora">
               </div>
             </div>
           </div>

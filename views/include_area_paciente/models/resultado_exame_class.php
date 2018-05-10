@@ -25,7 +25,7 @@ class Resultado_exame
             $sql1="SELECT * FROM tbl_resultado_exame as r,tbl_unidade as u,tbl_especialidade as e where e.id_especialidade=r.id_especialidade and u.id_unidade=r.id_unidade;";
 
             //Instancio o banco e cria uma variavel
-            $conex = new Mysql_db();
+            $conex = new Mysql_db_include_paciente();
 
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();
