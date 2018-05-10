@@ -1,7 +1,7 @@
 <?php
 
     class Paciente{
-        
+
         public $id_paciente;
         public $id_endereco;
         public $id_convenio;
@@ -12,14 +12,20 @@
         public $cpf;
         public $carterinha_convenio;
         public $foto;
-        
-        
+
+
         public function __construct(){
+<<<<<<< HEAD
             
             include_once('bd_class.php');
             
+=======
+
+            include_once('bd_clss.php');
+
+>>>>>>> edc79371f166063c593dc0bb005b091de7f97588
         }
-        
+
         /*Busca um registro especifico no BD*/
 		public function SelectById($paciente){
 			$sql = "SELECT * FROM tbl_paciente WHERE id_paciente =". $paciente->id_paciente;

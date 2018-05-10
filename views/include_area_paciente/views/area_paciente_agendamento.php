@@ -25,8 +25,8 @@
     <!--mudar css de agendamento-->
     <link rel="stylesheet" href="../css/style_agendamento_crianca.css">
     <link rel="stylesheet" href="../css/style_footer.css">
-    <script type="text/javascript" src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
-      
+    <script src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+
     <script>
         $(document).ready(function() {
            $('#form').submit(function(event){
@@ -63,7 +63,7 @@
 
       </div>
       <div id="content_formulario">
-        <form id="form" action="" method="post">
+        <form id="form" action="area_paciente_agendamento" method="post">
           <div class="item_form">
             <div class="titulo_item_form_maioria">
               Unidade
@@ -72,14 +72,14 @@
               <select class="slct_form" name="slt_unidade">
                 <option value="">unidade</option>
                 <?php
-                    require_once("../../../sistema_interno/controllers/unidade_controller.php"); 
+                    require_once("../../../sistema_interno/controllers/unidade_controller.php");
                     require_once("../../../sistema_interno/models/unidade_class.php");
 
                     $controller_unidade = new controller_unidade();
                     $list = $controller_unidade::Listar();
 
                     $cont=0;
-                    while($cont<count($list)){  
+                    while($cont<count($list)){
                 ?>
                 <option value="<?php echo($list[$cont]->id_unidade)?>"><?php echo($list[$cont]->nome_unidade)?></option>
                 <?php
@@ -99,14 +99,14 @@
                 <?php
                     require_once("../../../sistema_interno/controllers/especialidade_controller.php");
                     require_once("../../../sistema_interno/models/especialidade_class.php");
-                  
+
                     $controller_especialidede = new controllerEspecialidade();
                     $list = $controller_especialidede::Listar();
-                  
+
                     $cont = 0;
                     while($cont<count($list)){
-                        
-                    
+
+
                 ?>
                 <option value="<?php echo($list[$cont]->id_especialidade)?>"><?php echo($list[$cont]->especialidade)?></option>
                   <?php
@@ -122,16 +122,16 @@
             </div>
             <div class="input_form">
               <select class="slct_form" name="slt_medico">
-                  
+
                 <option value="">medico</option>
                   <?php
-                
+
                   require_once("../../../sistema_interno/controllers/funcionario_controller.php");
                   require_once("../../../sistema_interno/models/funcionario_class.php");
-                  
+
                   $controller_funcionario = new controllerFuncionario();
                   $list = $controller_funcionario::Listar();
-                  
+
                   $cont=0;
                   while($cont<count($list)){
                   ?>
@@ -143,14 +143,14 @@
               </select>
             </div>
           </div>
-          
+
           <div class="item_form">
             <div id="suporte_data">
               <div id="titulo_data">
                 Data
               </div>
               <div class="input_form">
-                <input type="date" name="txt_data" value="" class="item_data_hora" placeholder="Data">
+                <input type="date" name="txt_data" value="" class="item_data_hora">
               </div>
             </div>
             <div id="suporte_hora">
@@ -158,7 +158,7 @@
                 Hora
               </div>
               <div class="input_form">
-                <input type="time" name="txt_hora" value="" class="item_data_hora" placeholder="hora">
+                <input type="time" name="txt_hora" value="" class="item_data_hora">
               </div>
             </div>
           </div>
@@ -170,12 +170,12 @@
       <div class="faixa_branca">
 
       </div>
-        
+
         <div class="titulo_agendamento">
-            <strong>Agendamentos marcados</strong>  
+            <strong>Agendamentos marcados</strong>
         </div>
-        
-        
+
+
         <div class="content_titulo_receita">
             <div class="titulo_nome">
                 <a>Médico</a>
@@ -200,10 +200,10 @@
             // Incluindo a controller e a model para serem utilizadas
             include_once($caminho .'../controllers/agendamento_controller.php');
             include_once($caminho .'../models/agendamento_class.php');
-            
+
             $controller_agendamento = new controller_agendamento();
             $list = $controller_agendamento::Listar();
-        
+
             $cont=0;
             while($cont<count($list)){
         ?>
@@ -231,8 +231,8 @@
         <?php
             $cont++;
             }
-        
-                
+
+
         ?>
     </div>
     <div class="">

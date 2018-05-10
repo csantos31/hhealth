@@ -35,13 +35,13 @@
 <html lang="pt-br" dir="ltr">
       <head>
             <meta charset="utf-8">
-            <title></title>
+            <title>Hospital Hhealth</title>
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_exames.css">
 
 
-            <script type="text/javascript" src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
+            <script src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
 
             <script>
@@ -81,7 +81,7 @@
 
                 <div id="content_main"><!--Content-->
                     <div class="faixa_titulo">
-                          Agendamentos
+                          Exames
                     </div>
                     <!-- Faixa branca embaixo do menu -->
                    <div class="faixa_branca">
@@ -93,7 +93,7 @@
                     </div>
                     <div class="busca">
                           <div class="centraliza_input">
-                                <input type="search" name="" value="" placeholder="Search...">
+                                <input type="search" name="pesquisaExames" value="" placeholder="Search...">
 
                           </div>
                           <div class="ajusta_lupa">

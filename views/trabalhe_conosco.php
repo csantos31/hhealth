@@ -5,7 +5,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_trabalhe_conosco.css">
-            <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+            <script src="../js/jquery-3.2.1.min.js"></script>
             <title>Hospital HHealth</title>
             <script>
 
@@ -45,7 +45,7 @@
                            </div>
                            <div class="faixa1">
                                  <div class="formtrabalheconosco">
-                                       <form class="form_trabalheconosco" id="form" action="" method="post">
+                                       <form class="form_trabalheconosco" id="form" action="trabalhe_conosco.php" method="post">
                                              <div class="linha1">
                                                    <div class="txt_nome">
                                                          Nome Completo:
@@ -94,7 +94,7 @@
                                                          <option value="3">Teste 3</option>
                                                    </select>
                                              </div>
-                                            
+
                                              <div class="linhaestadoCivil">
                                                    <div class="txt_estadoCivil">
                                                         Estado civil
