@@ -14,7 +14,6 @@
 ?>
 
 <div class="header"><!--header-->
-    <a href="index.php">
       <div class="separador_responsivo">
         <div class="logo">
 
@@ -22,9 +21,12 @@
         <div class="logo_marca_responsivo">
           HHEALTH
       </div>
+      <input type="checkbox" id="btn_menu">
+      <label for="btn_menu">&#9776;</label>
       </div>
 
-    </a>
+
+
     <nav class="nav_menu">
           <div class="faixa_texte">
               <div class="logo_marca">
@@ -138,8 +140,7 @@
               </li>
           </ul>
     </nav>
-    <input type="checkbox" id="btn_menu">
-    <label for="btn_menu">&#9776;</label>
+
 </div>
 
 <script>
