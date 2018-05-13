@@ -7,12 +7,53 @@
     $descricao = null;
 
 
+
     if (isset($_GET['controller']))
      $caminho ="views/";
     else
      $caminho = "";
 
     //include('verifica_paciente.php');
+
+
+
+$dt_atual = date ("Y-m-d");
+    $ano_atual=null;
+    $mes_atual=null;
+    $dia_atual=null;
+    $dt_paciente=null;
+    $ano_paciente=null;
+    $mes_paciente=null;
+    $dia_paciente=null;
+
+    include_once("../controllers/paciente_controller.php");
+    include_once("../models/paciente_class.php");
+    
+    $controller_paciente = new controllerPaciente();
+    $list = $controller_paciente::Buscar($_SESSION['id_paciente']); 
+
+
+
+    
+        $dt_paciente=$list->dt_nasc;
+        list($ano_paciente,$mes_paciente,$dia_paciente)=explode("-", $dt_paciente);
+        list($ano_atual,$mes_atual,$dia_atual)=explode("-", $dt_atual);
+
+        //converte string para int
+        //var_dump( $ano_paciente );
+        //var_dump( $ano_atual );
+
+
+        if($ano_paciente<$ano_atual){
+            $idade = $ano_atual - $ano_paciente;
+            if($idade>11){
+            $cor ="blue";
+            }else{
+                $cor="red";
+            }
+        }
+
+
 
 
 ?>
@@ -22,8 +63,12 @@
     <meta charset="utf-8">
     <title>Agendamento</title>
     <link rel="stylesheet" href="../css/style_nav.css">
+      
+    <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
+    
     <!--mudar css de agendamento-->
-    <link rel="stylesheet" href="../css/style_agendamento_crianca.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_agendamento.css">
+    
     <link rel="stylesheet" href="../css/style_footer.css">
     <script src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
