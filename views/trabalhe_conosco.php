@@ -74,7 +74,7 @@
                                                    <div class="txtdtNasc">
                                                          Data de Nascimento:
                                                    </div>
-                                                   <input name="txtdatanasc" type="date" min="1990-01-01" max="2100-12-31" value="">
+                                                   <input class="inputdtnasc" name="txtdatanasc" type="date" min="1990-01-01" max="2100-12-31" value="">
                                              </div>
                                              <div class="linha_sexo">
                                                    <div class="txtsexo">

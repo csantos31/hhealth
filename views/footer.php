@@ -1,8 +1,9 @@
 <div class="footer"><!--footer faixa1-->
       <div class="menu_footer"><!--div menu footer-->
             <ul class="menu_mapa">
-                <a href="<?php echo $url_link_padrao2 ?>dicas_saude.php">
+                <a class="esconde_item" href="<?php echo $url_link_padrao2 ?>dicas_saude.php">
                       <li class="item_mapa">
+
                           <a href="#">
                             Home
                           </a><br>
@@ -48,6 +49,52 @@
                         Trabalhe Conosco
                       </a><br>
                 </li>
+
+
+
+
+                   <a href="<?= $hom ?>">
+                         <li class="item_menu_mobile">home</li>
+                   </a>
+                   <a href="<?= $path ?>especialidades.php">
+                         <li class="item_menu_mobile">Especialidades</li>
+                   </a>
+
+                   <a  href="<?= $path ?>ambientes.php" >
+                         <li class="item_menu_mobile">Ambientes</li>
+                   </a>
+                   <a href="<?= $path ?>sobre_hhealth.php">
+                         <li class="item_menu_mobile">Sobre</li>
+                   </a>
+
+
+               <a href="<?= $path ?>dicas_saude.php">
+                 <li class="item_menu_mobile">
+                      SAÚDE
+                 </li>
+               </a>
+               <a href="<?= $path ?>unidades_hhealth.php">
+                 <li class="item_menu_mobile">
+                     UNIDADES
+                 </li>
+               </a>
+               <a href="<?= $path ?>exames.php">
+                   <li class="item_menu_mobile">
+                     EXAMES
+                   </li>
+               </a>
+               <a href="<?= $path ?>convenios.php">
+                 <li class="item_menu_mobile">
+                     CONVÊNIOS
+                 </li>
+               </a>
+                   <a href="<?= $path ?>fale_conosco.php">
+                         <li class="item_menu_mobile">Fale Conosco</li>
+                   </a>
+                   <a href="<?= $path ?>trabalhe_conosco.php">
+                     <li class="item_menu_mobile">Trabalhe Conosco</li>
+                   </a>
+
             </ul>
             <div class="linha_branca">
 
@@ -58,5 +105,5 @@
             </div>
           </div>
       </div>
-      
+
 </div>

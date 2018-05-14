@@ -256,10 +256,22 @@ label[for="btn_menu"]{
 
 
 @media screen and (max-device-width: 520px){
+
+      .div_suporte_conteudo{
+            width: 100vw;
+            height: 150px;
+      }
+
+      #menu_secundario{
+            display: none;
+      }
+
   .header {
         width: 100%;
-        height: 800px;
+        height: 150px;
         margin: auto;
+        position: fixed;
+        background-color: white;
   }
 
   .separador_responsivo{
@@ -284,7 +296,8 @@ label[for="btn_menu"]{
 
   .logo_marca_responsivo{
       width: 100px;
-      height: 25px;
+      height: 35px;
+      line-height: 35px;
       margin-top: 50px;
       margin-left: 5px;
       margin-right: 40px;
@@ -292,7 +305,7 @@ label[for="btn_menu"]{
       float: left;
       color: #DA0000;
       font-weight: bold;
-      font-size: 22px;
+      font-size: 32px;
       font-family: verdana;
   }
 
@@ -302,6 +315,7 @@ label[for="btn_menu"]{
         height: auto;
         float: right;
         z-index: 999;
+        display: none;
   }
 
   .menu_nav{
@@ -312,34 +326,15 @@ label[for="btn_menu"]{
         padding: 0px;
         text-align: center;
         margin-top: 25px;
-        float: right;
-        display: block;
+        display: none;
+
   }
 
   .menu_nav li{
       color: #DA0000;
   }
 
-  label[for="btn_menu"]{
-        color: #999999;
-        text-align: center;
-        font-size: 120px;
-        cursor: pointer;
-        width: 100px;
-        height: 100px;
-        display: block;
-        margin-top: 0px;
-        margin-right: 15px;
-        float: right;
-}
 
-    #btn_menu{
-        display: none;
-    }
-
-    label:checked ~ .menu_nav{
-            margin-right: 8%;
-    }
 
   li{
     text-align: center;
@@ -351,75 +346,124 @@ label[for="btn_menu"]{
     text-decoration: none;
   }
 
-  .item_nav{
-        width: 100%;
-        min-height: 80px;
-        height: auto;
-        padding-top:5px;
-        list-style: none;
-        text-align: center;
-        vertical-align: middle;
-        margin: auto;
-        line-height: 80px;
-        color: #DA0000;;
-        font-weight: bold;
-        font-size: 28px;
-        font-family: 'sans-serif';
-        cursor: pointer;
-        border: solid 1px #999999;
-  }
-
   .submenu_nav_hhealth{
         display: none;
 
-  }
-
-  .menu_nav li:hover>.submenu_nav_hhealth{
-        display: block;
-        min-height: 50px;
-        height: auto;
-        padding: 0px;
-        transition: 2s;
-        border: solid 1px;
-  }
-
-  .item_submenu_nav_hhealth{
-        width: 100%;
-        height: 80px;
-        line-height: 80px;
-        list-style: none;
-        font-family: sans-serif;
-        font-size: 26px;
-        border: solid 1px;
   }
 
   .submenu_nav_contatos{
         display: none;
   }
 
-  .menu_nav li:hover>.submenu_nav_contatos{
-        display: block;
-        min-height: 50px;
-        height: auto;
-        background-color: white;
-        padding: 0px;
-        transition: 2s;
-        border: solid 1px;
-  }
-
-  .item_submenu_nav_contatos{
-        width: 100%;
-        height: 80px;
-        list-style: none;
-        line-height: 80px;
-        font-family: sans-serif;
-        font-size: 26px;
-        border: solid 1px;
-
-  }
-
   #menu_secundario{
     display: none;
   }
 
+}
+
+
+@media screen and (max-device-width: 520px){
+
+      #btn_menu{
+              display: none;
+          }
+
+      label[for="btn_menu"]{
+            color: #999999;
+            text-align: center;
+            font-size: 120px;
+            cursor: pointer;
+            width: 100px;
+            height: 100px;
+            display: block;
+            margin-top: 0px;
+            margin-right: 15px;
+            float: right;
+    }
+
+    #btn_menu:checked ~ .nav_mobile {
+        margin-left: 10vw;
+        height: 300px;
+       background-color: yellow;
+       position: fixed;
+       z-index: 999;
+       margin-left: 90vw;
+       margin-top: 150px;
+    }
+
+
+      .nav_mobile{
+            width: 90vw;
+            min-height: 610px;
+            height: auto;
+            position: fixed;
+            z-index: 999;
+            margin-left: 10vw;
+            margin-top: 150px;
+            background-color: white;
+      }
+
+      .menu_mobile{
+            width: 100%;
+            height: 100%;
+      }
+
+      .item_mobile{
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            border-bottom: solid  1px #eaecef;
+            font-family: sans-serif;
+            font-size: 32px;
+            line-height: 100px;
+            font-weight: bold;
+            color: #DA0000;
+            list-style: none;
+      }
+
+      .submenu_mobile_hhealth{
+            display: none;
+      }
+
+      .menu_mobile li:hover>.submenu_mobile_hhealth{
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            border-bottom: 1px;
+            font-family: sans-serif;
+            font-size: 32px;
+            line-height: 100px;
+            font-weight: bold;
+            color: #DA0000;
+            display: block;
+      }
+
+      .submenu_mobile_contatos{
+            display: none;
+      }
+
+      .menu_mobile li:hover>.submenu_mobile_contatos{
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            border-bottom: 1px;
+            font-family: sans-serif;
+            font-size: 32px;
+            line-height: 100px;
+            font-weight: bold;
+            color: #DA0000;
+            display: block;
+      }
+
+      .item_mobile_two{
+            width: 100%;
+            min-height: 100px;
+            height: auto;
+            border-bottom: 1px;
+            font-family: sans-serif;
+            font-size: 32px;
+            line-height: 100px;
+            font-weight: bold;
+            color: #DA0000;
+      }
 }

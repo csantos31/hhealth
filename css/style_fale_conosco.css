@@ -288,23 +288,18 @@
 
 }
 
-@media screen and (min-width:320px) and (max-width:479px) {
-  .main{
-      width:100%;
-      height:1000px;
-      margin:auto;
-      background-color: red;
-  }
+@media screen and (max-device-width: 520px) {
+      *{
+       padding: 0px;
+       margin: 0px;
+       box-sizing: border-box;
+     }
 
-  .imagem_faleconosco{
-        width: 100%;
-        height: 580px;
 
-  }
 
-  .imagem_faleconosco img{
-        width: 95%;
-        height: 580px;
-        margin-left: 2.5%;
-  }
+     .main{
+          width:100%;
+          height:auto;
+          margin:auto;
+     }
 }
