@@ -50,12 +50,19 @@ if(isset($_GET['modo'])){
         <title>Modal</title>
         <link rel="stylesheet" type="text/css" href="../css/style_cad_funcionario.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
-        <script>
+        <script type="text/javascript" src="../../js/jquery-1.2.6.pack.js"></script>
+        <script type="text/javascript" src="../../js/jquery.maskedinput-1.1.4.pack.js"/></script>   
+        <script type="text/javascript">
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
                   $(".container_modal").fadeOut();
                });
             });
+            
+            $(document).ready(function(){	
+                    $("#txt_cpf").mask(" 999 . 999 . 999 - 99");
+                });
+            
         </script>
     </head>
     <body>

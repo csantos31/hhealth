@@ -215,7 +215,7 @@
                                         $cont=0;
                                         while($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-
+                                              
                                       ?>
                                     <div class="img_faixa_2_home">
                                       <div class="suporte_imagem_ambiente">

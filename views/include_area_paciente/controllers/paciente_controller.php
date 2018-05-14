@@ -28,7 +28,7 @@
             require_once ('models/endereco_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idPaciente = $_GET['id'];
-
+            
 			//INSTANCIA A CLASSE CONTATO
 			$paciente = new Paciente();
 
