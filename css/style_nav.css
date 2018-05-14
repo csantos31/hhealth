@@ -242,6 +242,10 @@ label[for="btn_menu"]{
         display: none;
     }
 
+    .nav_mobile{
+          display: none;
+   }
+
 }
 
 
@@ -268,24 +272,25 @@ label[for="btn_menu"]{
 
   .header {
         width: 100%;
-        height: 150px;
+        height: 70px;
         margin: auto;
         position: fixed;
-        background-color: white;
+        background-color: aqua;;
   }
 
   .separador_responsivo{
     width: 100%;
-    height: 120px;
+    height: 70px;
+    background-color: yellow;
   }
 
   .logo {
-        width: 90px;
-        height: 90px;
+        width: 70px;
+        height: 70px;
         background-image: url(../imagens/logo_only_heart.png);
-        background-size: 100px;
+        background-size: 70px;
+
         padding: 0px;
-        margin-top: 15px;
         float: left;
 
   }
@@ -295,17 +300,16 @@ label[for="btn_menu"]{
   }
 
   .logo_marca_responsivo{
-      width: 100px;
-      height: 35px;
-      line-height: 35px;
-      margin-top: 50px;
+      width: 30px;
+      height: 70px;
+      line-height: 70px;
       margin-left: 5px;
       margin-right: 40px;
       text-decoration: none;
       float: left;
       color: #DA0000;
       font-weight: bold;
-      font-size: 32px;
+      font-size: 18px;
       font-family: verdana;
   }
 
@@ -365,57 +369,61 @@ label[for="btn_menu"]{
 @media screen and (max-device-width: 520px){
 
       #btn_menu{
-              display: none;
+              /* display: block; */
           }
 
       label[for="btn_menu"]{
             color: #999999;
             text-align: center;
-            font-size: 120px;
+            font-size: 55px;
             cursor: pointer;
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             display: block;
             margin-top: 0px;
-            margin-right: 15px;
             float: right;
+            background-color: aqua;
     }
 
-    #btn_menu:checked ~ .nav_mobile {
-        margin-left: 10vw;
-        height: 300px;
-       background-color: yellow;
-       position: fixed;
-       z-index: 999;
-       margin-left: 90vw;
-       margin-top: 150px;
+    .menu_mobile{
+          width: 100%;
+          height: 100%;
     }
 
 
       .nav_mobile{
             width: 90vw;
-            min-height: 610px;
+            min-height: 305px;
             height: auto;
             position: fixed;
-            z-index: 999;
+
             margin-left: 10vw;
-            margin-top: 150px;
-            background-color: white;
+            margin-top: 70px;
+            background-color: aliceblue;
+            margin-left: 100vw;
+            float: right;
       }
 
-      .menu_mobile{
-            width: 100%;
-            height: 100%;
-      }
+        #btn_menu:checked ~ .nav_mobile {
+              height: 70px;
+             background-color: yellow;
+             z-index: 999;
+             position: fixed;
+             z-index: 999;
+             margin-left: 10vw;
+             margin-top: 50px;
+          }
+
+
 
       .item_mobile{
             width: 100%;
-            min-height: 100px;
+            min-height: 50px;
             height: auto;
             border-bottom: solid  1px #eaecef;
             font-family: sans-serif;
-            font-size: 32px;
-            line-height: 100px;
+            font-size: 16px;
+            line-height: 50px;
             font-weight: bold;
             color: #DA0000;
             list-style: none;
@@ -427,7 +435,7 @@ label[for="btn_menu"]{
 
       .menu_mobile li:hover>.submenu_mobile_hhealth{
             width: 100%;
-            min-height: 100px;
+            min-height: 50px;
             height: auto;
             border-bottom: 1px;
             font-family: sans-serif;
@@ -444,7 +452,7 @@ label[for="btn_menu"]{
 
       .menu_mobile li:hover>.submenu_mobile_contatos{
             width: 100%;
-            min-height: 100px;
+            min-height: 50px;
             height: auto;
             border-bottom: 1px;
             font-family: sans-serif;
@@ -457,13 +465,15 @@ label[for="btn_menu"]{
 
       .item_mobile_two{
             width: 100%;
-            min-height: 100px;
+            min-height: 50px;
             height: auto;
             border-bottom: 1px;
             font-family: sans-serif;
-            font-size: 32px;
-            line-height: 100px;
+            font-size: 18px;
+            line-height: 50px;
             font-weight: bold;
             color: #DA0000;
       }
+
+
 }
