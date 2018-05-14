@@ -23,7 +23,7 @@ class Receita
             $sql1="SELECT * FROM tbl_receita_medica;";
 
             //Instancio o banco e cria uma variavel
-            $conex = new Mysql_db();
+            $conex = new Mysql_db_include_paciente();
 
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
             $PDO_conex = $conex->Conectar();

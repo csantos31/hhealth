@@ -20,10 +20,10 @@
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
         <link rel="stylesheet" href="css/w3c_css.css">
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jcarousellite.js"></script>
-        <script type="text/javascript" src="js/carrossel.js"></script>
+        <script src="js/jcarousellite.js"></script>
+        <script src="js/carrossel.js"></script>
         <script>
           function myMap() {
           var mapProp= {
@@ -82,7 +82,7 @@
                             <div id="borda_minimizar"></div>
                           </a>
                   </div>
-                  <form name="" method="post" action="router.php?controller=paciente&modo=login">
+                  <form name="frm_1" method="post" action="router.php?controller=paciente&modo=login">
                         <!--COnTEnT MODAL-->
                       <div class="label_email">Usuário:</div>
                       <input type="text" name="txt_usuario" id="txt_usuario">
@@ -99,7 +99,7 @@
              <div class="div_suporte_conteudo">
              </div>
              <!--***********************SLIDE***********************-->
-             <div class="w3-content w3-display-container" style="max-width:100%;heigh:700px;">
+             <div class="w3-content w3-display-container" style="max-width:100%;height:700px;">
                 <?php
 
                     include_once('CMS/controller_cms/gerenciamento_home_controller.php');
@@ -130,9 +130,9 @@
 
              </div>
 
-             <script type="text/javascript" src="js/slide_home.js"></script>
-             <div class="suporte_content" style="postion:relative;" >
-                    <div class="content" position:relative;><!--**CONTENT**-->
+             <script src="js/slide_home.js"></script>
+             <div class="suporte_content">
+                    <div class="content"><!--**CONTENT**-->
                         <div class="faixa_1_content_home"><!--faixa1-->
                               <!--SLIDER FICA AKI-->
                             <div class="titulo_faixa_1_home">
@@ -217,52 +217,48 @@
 
                                       ?>
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>"  alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto; ?></div>
-                                        <div class="content_faixa_2_transparente">
+                                      </div>
 
-                                        </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem2)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto2; ?></div>
-                                        <div class="content_faixa_2_transparente">
+                                      </div>
 
-                                        </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem3)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto3; ?></div>
-                                        <div class="content_faixa_2_transparente">
-
-                                        </div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem4)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto4; ?></div>
-                                        <div class="content_faixa_2_transparente">
-
-                                        </div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
-
-                                        
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem5)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto5; ?></div>
+                                      </div>
                                     </div>
 
                                     <div class="img_faixa_2_home">
-                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital" class="img_ambiente_faixa_2">
-
-
+                                      <div class="suporte_imagem_ambiente">
+                                        <img src="CMS/<?php echo($list[$cont]->imagem6)?>" alt="quartos do hospital">
                                         <div class="textoNomeAmbiente"><?php echo $list[$cont]->texto6; ?></div>
+                                      </div>
                                     </div>
-
-
 
                                     <?php
                                             }

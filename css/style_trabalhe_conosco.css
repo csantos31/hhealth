@@ -433,19 +433,16 @@
       *{
         padding: 0px;
         margin: 0px;
+        box-sizing: border-box;
       }
+
+
 
       .main{
           width:100%;
           height:auto;
           margin:auto;
       }
-
-      .div_suporte_conteudo{
-      width: 100%;
-      height: 50px;
-      background-color: aliceblue;
-}
 
       .suporte_content{
             width: 100%;
@@ -455,25 +452,27 @@
       }
 
       .content{
-          width:1200px;
-          height:1270px;
+          width:90vw;
+          min-height: 1270px;
+          height: auto;
           margin:auto;
           padding-top: 20px;
       }
 
       .faixa_titulo_da_pagina{
             width: 100%;
-            height: 30px;
+            height: 70px;
             font-family: sans-serif;
             text-align: center;
             line-height: 70px;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 34px;
       }
 
       .faixa1{
             width: 100%;
-            height: 580px;
+            height: 3600px;
+            margin-top: 15px;
       }
 
       .formtrabalheconosco{
@@ -484,255 +483,286 @@
       }
 
       .form_trabalheconosco{
-            width: 90%;
+            width: 100%;
             min-height:1070px;
             height: auto;
             margin: auto;
             margin-top: 50px;
             border-radius: 7px;
             border: solid 1px;
-            padding: 20px;
+            padding: 40px;
             font-family: sans-serif;
-            font-weight: bold;
       }
 
       .linha1{
             width: 100%;
-            height: 30px;
+            height: 130px;
       }
 
       .txt_nome{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linha1 input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linha2{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_email{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linha2 input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linha3{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_telefone{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linha3 input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linha4{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_celular{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linha4 input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linha_data{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txtdtNasc{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
-      .txtdataNasc{
-            height: 25px;
+      .inputdtnasc{
+            width: 25%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
       .linha_sexo{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
-            line-height: 30px;
+            height: 130px;
+            margin-top: 40px;
+            font-size: 26px;
       }
 
       .txtsexo{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linha_sexo input{
+            width: 20px;
             margin-left: 10px;
       }
 
       .linhapais{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_pais{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .sltpais{
-            height: 25px;
+            width: 34%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
       .linhaestadoCivil{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_estadoCivil{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .sltestadoCivil{
-            height: 25px;
+            width: 34%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
       .linhacep{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_cep{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linhacep input{
-            width: 25%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linhaendereco{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_endereco{
-            width: 25%;
-            height: 25px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linhaendereco input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linhabairro{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_bairro{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .linhabairro input{
-            width: 50%;
-            height: 25px;
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linhacidade{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_cidade{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
-      .sltpsltcidadeais{
-            height: 25px;
+      .linhacidade input{
+            width: 100%;
+            height: 70px;
             float: left;
+            font-size: 28px;
       }
 
       .linhaestado{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_estado{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
-      .sltestado{
-            height: 25px;
+      .slt_estado{
+            width: 40%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
 
@@ -740,92 +770,107 @@
 
       .linhastatusTrabalho{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_statusTrabalho{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .sltstatusTrabalho{
-            height: 25px;
+            width: 34%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
 
 
       .linhastatusDeficiencia{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_statusDeficiencia{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .sltstatusDeficiencia{
-            height: 25px;
+            width: 34%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
 
 
       .linhastatusRegistroProfissional{
             width: 100%;
-            height: 30px;
-            margin-top: 20px;
+            height: 130px;
+            margin-top: 40px;
       }
 
       .txt_statusRegistroProfissional{
-            width: 25%;
-            height: 30px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .sltstatusRegistroProfissional{
-            height: 25px;
+            width: 34%;
+            height: 55px;
             float: left;
+            font-size: 28px;
       }
 
       .linharesumoQualificacoes{
             width: 100%;
-            height: 230px;
-            margin-top: 20px;
+            height: 460px;
+            margin-top: 40px;
       }
 
       .txt_resumoQualificacoes{
-            width: 25%;
-            height: 300px;
-            line-height: 30px;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
             float: left;
+            font-size: 30px;
       }
 
       .textarea{
-            width: 50%;
-            height: 220px;
+            width: 100%;
+            height: 400px;
+            font-size: 26px;
       }
 
       .linha7{
             width: 100%;
-            height: 30px;
+            height: 50px;
             margin-top: 20px;
       }
 
       .linha7 input{
             /*border-radius: 4px;*/
             border-top-right-radius: 4px;
-            width: 50px;
-            height: 25px;
+            width: 25%;
+            height: 55px;
             float: right;
+            font-size: 26px;
+            color: white;
+            background-color: red;
+            font-weight: bold;
       }
 
 }

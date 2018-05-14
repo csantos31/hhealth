@@ -14,16 +14,28 @@
 ?>
 
 <div class="header"><!--header-->
-    <a href="index.php">
-        <div class="logo">
+      <div class="separador_responsivo">
+            <a href="<?= $hom ?>">
+                  <div class="logo">
 
-        </div>
-    </a>
+                  </div>
+            </a>
+        <div class="logo_marca_responsivo">
+          HHEALTH
+      </div>
+      <input type="checkbox" id="btn_menu">
+      <label for="btn_menu" >&#9776;</label>
+      </div>
+
+
+
     <nav class="nav_menu">
           <div class="faixa_texte">
-              <div class="logo_marca">
-                HHEALTH
-            </div>
+                <a href="<?= $hom ?>">
+                      <div class="logo_marca">
+                           HHEALTH
+                     </div>
+               </a>
           </div>
           <ul class="menu_nav">
               <li class="item_nav botao_snip">
@@ -132,9 +144,61 @@
               </li>
           </ul>
     </nav>
-    <input type="checkbox" id="btn_menu">
-    <label for="btn_menu">&#9776;</label>
+
 </div>
+<nav class="nav_mobile">
+      <ul class="menu_mobile">
+            <li class="item_mobile">
+                HOSPITAL
+                <ul class="submenu_mobile_hhealth">
+                      <a href="<?= $hom ?>">
+                           <li class="item_mobile_two ">home</li>
+                      </a>
+                      <a href="<?= $path ?>especialidades.php">
+                           <li class="item_mobile_two">Especialidades</li>
+                      </a>
+
+                      <a  href="<?= $path ?>ambientes.php" >
+                           <li class="item_mobile_two">Ambientes</li>
+                      </a>
+                      <a href="<?= $path ?>sobre_hhealth.php">
+                           <li class="item_mobile_two">Sobre</li>
+                      </a>
+                </ul>
+            </li>
+            <a href="<?= $path ?>dicas_saude.php">
+             <li class="item_mobile">
+                   SAÚDE
+             </li>
+            </a>
+            <a href="<?= $path ?>unidades_hhealth.php">
+             <li class="item_mobile">
+                  UNIDADES
+             </li>
+            </a>
+            <a href="<?= $path ?>exames.php">
+                <li class="item_mobile">
+                  EXAMES
+                </li>
+            </a>
+            <a href="<?= $path ?>convenios.php">
+             <li class="item_mobile">
+                  CONVÊNIOS
+             </li>
+            </a>
+            <li class="item_mobile">
+                CONTATOS
+             <ul class="submenu_mobile_contatos">
+                      <a href="<?= $path ?>fale_conosco.php">
+                           <li class="item_mobile_two">Fale Conosco</li>
+                      </a>
+                      <a href="<?= $path ?>trabalhe_conosco.php">
+                       <li class="item_mobile_two">Trabalhe Conosco</li>
+                      </a>
+                </ul>
+            </li>
+      </ul>
+</nav>
 
 <script>
     window.onscroll = function(){

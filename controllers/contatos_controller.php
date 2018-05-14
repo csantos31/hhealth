@@ -22,6 +22,7 @@
 
         //Insere novo registro
         public function Deletar(){
+            
           $id_contato = $_GET['id'];
 
           // Instancia a classe $convenios

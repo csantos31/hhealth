@@ -2,9 +2,9 @@
 <html lang="pt-br" dir="ltr">
       <head>
             <meta charset="UTF-8">
-            <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
-            <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
-            <link rel="stylesheet" type="text/css" href="../css/style_fale_conosco.css">
+            <link rel="stylesheet" href="../css/style_nav.css">
+            <link rel="stylesheet" href="../css/style_footer.css">
+            <link rel="stylesheet" href="../css/style_fale_conosco.css">
             <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
             <title>Hospital HHealth</title>

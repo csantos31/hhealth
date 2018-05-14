@@ -37,7 +37,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_convenios.css">
-            <script type="text/javascript" src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
+            <script src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
 
             <script>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="busca">
                           <div class="centraliza_input">
-                                <input type="search" name="" value="" placeholder="Search...">
+                                <input type="search" name="pesquisaConvenio" value="" placeholder="Search...">
 
                           </div>
                           <div class="ajusta_lupa">
@@ -117,7 +117,7 @@
                             </div>
 
                             <div class="acoes_exames"><!--ação 1-->
-                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_convenio)?>);">
+                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_convenio)?>);" alt="">
                             </div>
 
                         </div>

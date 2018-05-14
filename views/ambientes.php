@@ -6,8 +6,8 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_ambientes.css">
-            <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-            <script type="text/javascript" src="../js/arc4.js"></script>
+            <script src="../js/jquery-3.2.1.min.js"></script>
+            <script src="../js/arc4.js"></script>
           <script>
 
                 function Mostrar(IdIten){
@@ -133,7 +133,7 @@
                             }
                             ?>
 
-                          <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                          <form action="ambientes.php" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                             <?php
 
                             //if($list_id->ativo==1){
@@ -167,11 +167,14 @@
                                            </div>
                                         </div>
                                  </div>
+
                            </div>
                             <?php
                              // }
                               ?>
-
+                          <div class="">
+                            fadsfasd
+                          </div>
                         </form>
                       </div>
                 </div>
