@@ -61,9 +61,15 @@
 
  		}
         
-        public function Buscar(){
+        public function Buscar($id){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idPaciente = $_GET['id'];
+
+            if(isset($_GET['id'])){
+                $idPaciente = $_GET['id'];
+            }else{
+                $idPaciente = $id;
+            }
+			
 
 			//INSTANCIA A CLASSE CONTATO
 			$paciente = new Paciente();

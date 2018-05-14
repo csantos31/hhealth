@@ -4,18 +4,21 @@
     class controllerPaciente{
         
         
-         public function Buscar(){
+         public function Buscar($id){
+            //include_once ('../models/paciente_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
-			$idPaciente = $_GET['id'];
+			
+            //$idPaciente = $id;
+            
 
 			//INSTANCIA A CLASSE CONTATO
 			$paciente = new Paciente();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
-			$paciente->id_endereco = $idEndereco;
+			$paciente->id_paciente = $id;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$paciente = $paciente::SelectById($paciente);
+			$paciente = $paciente::SelectByIdUsuario($paciente);
 
             return $paciente;
 		}

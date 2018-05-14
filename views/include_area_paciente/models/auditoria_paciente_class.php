@@ -19,11 +19,7 @@
 
             $sql="INSERT INTO tbl_auditoria_paciente(data,hora,usuario,acao)
             VALUES('".$data."', '".$hora."', '".$dados_paciente->id_paciente."','".$acao."' )";
-<<<<<<< HEAD
-            
-=======
 
->>>>>>> edc79371f166063c593dc0bb005b091de7f97588
             $conex = new Mysql_db_include_paciente();
 
             /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/

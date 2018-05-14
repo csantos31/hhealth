@@ -15,13 +15,6 @@ session_start();
 
         }
 
-        /*
-
-        if(!isset(SESSION) &)
-
-
-        */
-
         //faz o login com o usuário
         public function Login_paciente($paciente){
 
@@ -46,12 +39,11 @@ session_start();
                 $id = $rs['id_paciente'];
                 
                 
+                //cria variavel de sessão com o id do usuario
                 $_SESSION['id_paciente'] = $id;
             }
-
-
+            
             $_SESSION["login_paciente"]=$count;
-            // echo($count."To Aki");
             //Executa o Script no BD
 
 
