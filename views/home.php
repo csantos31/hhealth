@@ -20,6 +20,7 @@
         <link rel="stylesheet" type="text/css" href="css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="css/style_footer.css">
         <link rel="stylesheet" href="css/w3c_css.css">
+        <meta name="viewport" content="initial-scale=1, maximun-scale=1">
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="js/jcarousellite.js"></script>
@@ -214,7 +215,7 @@
                                         $cont=0;
                                         while($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-
+                                              
                                       ?>
                                     <div class="img_faixa_2_home">
                                       <div class="suporte_imagem_ambiente">

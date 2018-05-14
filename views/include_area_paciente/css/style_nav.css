@@ -197,6 +197,7 @@ opacity: 1;
 }
 /* Itens do menu */
 .item_menu{
+<<<<<<< HEAD
     height: 40px;
     width: 160px;
     float: left;
@@ -210,6 +211,19 @@ opacity: 1;
     padding-left: 40px;
     
     
+=======
+  height: 30px;
+  width: 160px;
+  float: left;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: verdana;
+  color: black;
+  margin-left: 15px;
+  background-color: #c0c0c0;
+  list-style: none;
+  padding-left: 40px;
+>>>>>>> 420c4afc7e53f913152ade9049f337035e5ef00e
 }
 
 #item_menu_historico{
