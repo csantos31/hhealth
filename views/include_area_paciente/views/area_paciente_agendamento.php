@@ -280,8 +280,8 @@ $dt_atual = date ("Y-m-d");
 
         ?>
     </div>
-    <div class="">
-      <?php include_once('footer_paciente.php'); ?>
-    </div>
+    
+    <?php include_once('footer_paciente.php'); ?>
+    
   </body>
 </html>

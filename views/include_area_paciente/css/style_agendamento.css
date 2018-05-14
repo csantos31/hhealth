@@ -15,14 +15,13 @@
 
 /*--------------------------- Conteúdo da página -------------------------*/
 #content{
+    width: 1200px;
     min-height:900px;
     height: auto;
-    width: 1200px;
     background-color: #FFF;
     margin: auto;
     border: solid 1px #333;
-    margin-bottom: 5px;
-    margin-top: 3px;
+    margin-bottom: 15px;
 }
 
 /* Div que segura titulo da Página */

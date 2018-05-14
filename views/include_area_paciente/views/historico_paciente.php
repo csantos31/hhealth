@@ -17,6 +17,7 @@
   <head>
     <meta charset="utf-8">
     <title>Histórico do paciente</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
     <link rel="stylesheet" href="../css/style_nav.css">
     <link rel="stylesheet" href="../css/style_historico.css">
     <link rel="stylesheet" href="../css/style_footer.css">

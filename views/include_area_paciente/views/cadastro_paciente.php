@@ -8,6 +8,7 @@
   <head>
     <meta charset="utf-8">
     <title>Hospital Hhealth</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
     <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
     <link rel="stylesheet" href="../../css/area_paciente/style_cadastro_paciente.css">
     <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
@@ -154,5 +155,6 @@
         </div>
     </div>
     <?php include_once('footer_paciente.php'); ?>
+    </div>
   </body>
 </html>

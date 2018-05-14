@@ -8,6 +8,7 @@
   <head>
     <meta charset="utf-8">
     <title>Meu perfil</title>
+    <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
     <link rel="stylesheet" href="../css/style_nav.css">
     <link rel="stylesheet" href="../css/style_paciente_perfil.css">
 

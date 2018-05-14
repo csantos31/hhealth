@@ -16,45 +16,70 @@ a{
   text-decoration: none;
 }
 
+@font-face{
+    font-family:Font Fabric;
+    font-style: normal;
+    font-weight: normal;
+    src: url(../fonte/canter/Canter%20Bold.otf);
+}
+
 /* -------------------------------Cabeçalho da página ------------------------------*/
+.opcaity_header{
+    height: 200px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+background: #727070;
+    opacity: 0.4;
+    src: url(../fonte/canter/Canter%20Bold.otf);
+}
 #header_area_paciente{
-  height: 200px;
-  width: 100%;
-  background-color:rgb(176, 37, 39);
+    height: 200px;
+    width: 100%;
+    
+    z-index: 2;
+/*    position: absolute;*/
 }
 
 #faixa{
   height: 40px;
   width: 100%;
-  background-color: #F0F0F0;
+/*  background-color: #F0F0F0;*/
 }
 
 /* div a qual segura itens do cabeçalho*/
 #suporte_header{
   height:200px;
   width: 1200px;
-  background-color: #F0F0F0;
+/*  background-color: #F0F0F0;*/
   margin: auto;
 }
 
 
 /* Segura parte da imagem, "Bem vindo"*/
 #suporte_parte_paciente{
-  height: 150px;
-  width: 330px;
-  background-color: #FFF;
-  float: right;
-  margin-right: 10px;
+    height: 150px;
+    width: 330px;
+    /*    background-color: #FFF;*/
+
+    margin-left: 1000px;
+    z-index: 2;
+    position:absolute;
+    font-size: 30px;
+    font-weight: bold;
+    font-family:Font Fabric;
+    color:white;
+
 }
+
 
 /*segura texto bem vindo*/
 #suporte_texto_bem_vindo{
-  height: 30px;
-  width: 190px;
-  background-color: #FFF;
-  float: right;
-  margin-top: 30px;
-  margin-left: 5px;
+    height: 30px;
+    width: 190px;
+    float: right;
+    margin-top: 30px;
+    margin-left: 5px;
 }
 
 /* Segura a parte de logout */
@@ -69,7 +94,11 @@ a{
   height: 30px;
   width: 100%;
   margin-top: 40px;
+/*  font-weight: bold;*/
+    font-size: 20px;
   font-weight: bold;
+  font-family:Font Fabric;
+    color:white;
 }
 
 /* foto do paciente */
@@ -87,10 +116,12 @@ a{
 
 /*Imagem_logo*/
 #suporte_imagem{
-  height: 150px;
-  width: 150px;
-  background-color: #CCC;
-  margin-left: 50px;
+    height: 150px;
+    width: 150px;
+/*    background-color: #CCC;*/
+    margin-left: 50px;
+    z-index: 2;
+    position:absolute;
 
 }
 /* Figura do logo do cabeçalho */
@@ -109,28 +140,42 @@ a{
   height: 60px;
   width: 100%;
   /*background-color: #F35140;*/
+    
 }
 
 /* Limitação do menu da página */
 #content_nav{
-  height: 55px;
-  width: 1200px;
-  margin: auto;
-  background-color: #ccc;
+    height: 55px;
+    width: 100%;
+    margin: auto;
+/*    background-color: #ccc;*/
+    
 }
 
 /* Para poder da o margin top*/
 #faixa_invisivel{
-  height: 0.1px;
-  width: 100%;
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+   background: #727070;
 }
 
+.menu{
+   height: 50px;
+    width: 1200px;
+    margin:auto;
+    /*    background: #c2c2c2;*/
+}
 /* Segura o menu*/
 #suporte_menu{
-  height: 50px;
-  width: 100%;
-  background: #c2c2c2;
-  margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    /*    background: #c2c2c2;*/
+    z-index: 2;
+    position: absolute;
+  
 }
 
 
@@ -143,17 +188,28 @@ a{
   background-color: #c0c0c0;
   list-style: none;
   padding-left: 50px;
+opacity: 1;
+    
 }
-
+.area{
+    opacity:1;
+    color:black;
+}
 /* Itens do menu */
 .item_menu{
-  height: 30px;
-  width: 160px;
-  float: left;
-  margin-left: 15px;
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 40px;
+    height: 40px;
+    width: 160px;
+    float: left;
+    margin-left: 15px;
+    /*    background-color: #c0c0c0;*/
+    color:#d11b1b;
+    list-style: none;
+    opacity: 1;
+    font-size: 30px;
+    line-height:50px;
+    padding-left: 40px;
+    
+    
 }
 
 #item_menu_historico{
@@ -181,5 +237,5 @@ a{
   color: #000;
   font-size: 14px;
   font-weight: bold;
-  font-family: verdana;
+  font-family:Font Fabric;
 }

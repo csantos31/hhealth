@@ -7,6 +7,8 @@
  -->
 
     <!-- Cabeçalho da página -->
+    <div class="opcaity_header">
+    </div>
     <header id="header_area_paciente">
       <!-- Suporte com limite de tamanho do menu -->
       <div id="suporte_header">
@@ -42,7 +44,7 @@
         <!-- Imagem do logo -->
         <div id="suporte_imagem">
           <figure id="suporte_figure_logo">
-            <img src="../../../imagens/logo_hhealth.png" alt="logo hhealth" title="logo hhealth">
+            <img src="../../../imagens/logo_hhealth_sem_fundo.png" alt="logo hhealth" title="logo hhealth">
           </figure>
         </div>
 
@@ -56,8 +58,9 @@
         <div id="faixa_invisivel">
 
         </div>
+          <div class="menu">
         <ul id="suporte_menu">
-          <a href="area_paciente_agendamento.php">
+          <a href="area_paciente_agendamento.php" class="area">
             <li class="item_menu">
               Agendamento
             </li>
@@ -83,5 +86,6 @@
             </li>
           </a>
         </ul>
+          </div>
       </div>
     </nav>
