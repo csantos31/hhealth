@@ -105,7 +105,7 @@
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::EditarCarteirinha();
                     break;
-                    
+
                 case 'ativar_paciente':
                     require_once('controllers/paciente_controller.php');
                     require_once('models/paciente_class.php');
@@ -251,6 +251,40 @@
              }
 
              break;
+       case 'internacao':
+          // Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
+            switch ($modo) {
+                case 'inserir':
+
+                      require_once('controllers/internacao_controller.php');
+                      require_once('models/internacao_class.php');
+                      $controller_internacao = new controllerInternacao();
+                      $controller_internacao::Novo();
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/internacao_controller.php');
+                      require_once('models/internacao_class.php');
+                      $controller_internacao = new controllerInternacao();
+                      $controller_internacao::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/internacao_controller.php');
+                    require_once('models/internacao_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_internacao =  new controllerInternacao();
+                    //Chama o metodo Novo da controller
+                    $controller_internacao::Excluir();
+
+                    break;
+                }
+
+                break;
 
 		default:
 			# code...

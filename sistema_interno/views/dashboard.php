@@ -43,6 +43,9 @@ require('../verifica.php');
                         <a href="pacientes.php">
                             <p>Ver pacientes ativos</p>
                         </a>
+                        <a href="internacao.php">
+                            <p>Internacao</p>
+                        </a>
                     </div>
                     <div class="coluna">
                         <img src="../imagens/doc_icon3.jpg" alt="medicos" title="medicos">
