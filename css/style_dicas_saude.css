@@ -417,13 +417,13 @@ opacity: 0.9;
 }
 
 #previous{
-    margin-top: 100px;
+    margin-top: 250px;
     float: left;
     z-index: 999;
     width: 10px;
     cursor: pointer;
     background-color: aqua;
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 #galeria{
