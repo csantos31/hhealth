@@ -1027,6 +1027,34 @@ INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','55454
 UNLOCK TABLES;
 
 --
+-- Table structure for table `tbl_paciente_internacao`
+--
+
+DROP TABLE IF EXISTS `tbl_paciente_internacao`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_paciente_internacao` (
+  `id_paciente_internacao` int(11) NOT NULL AUTO_INCREMENT,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_funcionario` int(11) DEFAULT NULL,
+  `id_quarto` int(11) DEFAULT NULL,
+  `id_unidade` int(11) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `hora` time DEFAULT NULL,
+  PRIMARY KEY (`id_paciente_internacao`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_paciente_internacao`
+--
+
+LOCK TABLES `tbl_paciente_internacao` WRITE;
+/*!40000 ALTER TABLE `tbl_paciente_internacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_paciente_internacao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tbl_pais`
 --
 
@@ -1612,14 +1640,6 @@ LOCK TABLES `usuario_medico_administrador` WRITE;
 INSERT INTO `usuario_medico_administrador` VALUES (1,'Administração de conteúdo'),(2,'Gerenciar sistema interno'),(3,'Usuário ROOT');
 /*!40000 ALTER TABLE `usuario_medico_administrador` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'hhealth'
---
-
---
--- Dumping routines for database 'hhealth'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1630,4 +1650,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-15 10:58:43
+-- Dump completed on 2018-05-15 11:18:37
