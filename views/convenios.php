@@ -38,6 +38,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_convenios.css">
             <script src="../sistema_interno/js/jquery-3.2.1.min.js"></script>
+            <meta name="viewport" content="initial-scale=1, maximun-scale=1">
 
 
             <script>

@@ -305,57 +305,291 @@
       }
 
       .div_suporte_conteudo{
-            width: 100%;
-            height: 200px;
-            background-color: aliceblue;
-            display: none;
+      width: 100%;
+      height: 110px;
+      background-color: aliceblue;
       }
 
       .suporte_content{
             min-height:800px;
-            width: 90%;
+            width: 100%;
             height:auto;
             background-color: white;
-            display: none;
       }
 
       .content{
-          width:90%;
-          min-height: 1270px;
+          width:98%;
+          min-height: 1050px;
           height: auto;
           margin:auto;
           padding-top: 20px;
-          background-color: yellow;
       }
 
       .faixa_titulo_da_pagina{
             width: 100%;
-            height: 70px;
+            height: 50px;
             font-family: sans-serif;
             text-align: center;
-            line-height: 70px;
+            line-height: 50px;
             font-weight: bold;
-            font-size: 34px;
+            font-size: 18px;
             text-align: center;
-            background-color: aqua;
-            display: none;
       }
 
       .faixa1{
-            width: 85%;
-            height: 580px;
+            width: 100%;
+            height: 230px;
             margin-top: 0px;
       }
 
       .imagem_faleconosco{
-            width: 95%;
-            height: 580px;
+            width: 100%;
+            height: 230px;
 
       }
 
       .imagem_faleconosco img{
-            width: 95%;
-            height: 580px;
-            margin-left: 2.5%;
+            width: 100%;
+            height: 230px;
       }
+
+      .formFaleconosco{
+            width: 100%;
+            height: 750px;
+            float: left;
+      }
+
+      .form_faleconosco{
+            width: 90%;
+            height: 720px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 7px;
+            border: solid 1px;
+            padding: 20px;
+            font-family: sans-serif;
+      }
+
+      .linha1{
+            width: 100%;
+            height: 60px;
+      }
+
+      .txt_nome{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha1 input{
+            width: 100%;
+            height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha2{
+            width: 100%;
+            height: 60px;
+            margin-top: 20px;
+      }
+
+      .txt_email{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha2 input{
+            width: 100%;
+            height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha3{
+            width: 100%;
+            height: 60px;
+            margin-top: 20px;
+      }
+
+      .txt_telefone{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha3 input{
+            width: 40%;
+            height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha4{
+            width: 100%;
+            height: 60px;
+            margin-top: 20px;
+      }
+
+      .txt_celular{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .linha4 input{
+            width: 100%;
+            height: 25px;
+            float: left;
+      }
+
+      .linha5{
+            width: 100%;
+            height: 60px;
+            margin-top: 20px;
+      }
+
+      .txt_assunto{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .sltassunto{
+            height: 25px;
+            float: left;
+      }
+
+      .linha6{
+            width: 100%;
+            height: 230px;
+            margin-top: 20px;
+      }
+
+      .txt_mensagem{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            float: left;
+            font-size: 14px;
+      }
+
+      .textarea{
+            width: 100%;
+            height: 200px;
+      }
+
+      .linha7{
+            width: 100%;
+            height: 30px;
+            margin-top: 20px;
+      }
+
+      .linha7 input{
+            /*border-radius: 4px;*/
+            border-top-right-radius: 4px;
+            width: 25%;
+            height: 35px;
+            float: right;
+            font-size: 14px;
+            color: white;
+            background-color: red;
+            font-weight: bold;
+      }
+
+      .content_chat{
+            width: 300px;
+            height: 400px;
+            background-color: #E0E2DF;
+            border-radius: 10px;
+            float: right;
+            z-index: 999;
+            position: fixed;
+            margin-left: 82vw;
+            margin-top: -1000px;
+            box-shadow: 1px 21px 15px black;
+            display: none;
+      }
+
+      .faixa_titulo_chat{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            background-color: #7F0000;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+      }
+
+      .content_txt_chat{
+            width: 100%;
+            height: 320px;
+
+      }
+
+      .texto1{
+            width: 75%;
+            min-height: 20px;
+            height: auto;
+            background-color: white;
+            border-radius: 5px;
+            padding-left: 5px;
+            margin-top: 20px;
+            margin-left: 10px;
+
+      }
+
+      .texto2{
+            width: 75%;
+            min-height: 20px;
+            height: auto;
+            background-color: white;
+            border-radius: 5px;
+            padding-left: 5px;
+            margin-top: 20px;
+            margin-left: 60px;
+
+      }
+
+      .faixa_enviar_chat{
+            width: 100%;
+            height: 40px;
+            background-color: #7F0000;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding-top: 10px;
+      }
+
+      .faixa_enviar_chat input{
+            width: 75%;
+            height: 28px;
+            float: left;
+            margin-left: 10px;
+            margin-top: : 10px;
+            border-radius: 5px;
+      }
+
+      .botao_enviar_chat{
+            width: 50px;
+            height: 29px;
+            float: left;
+            margin-left: 5px;
+            line-height: 28px;
+            border-radius: 3px;
+            background-color: #E0E2DF;
+      }
+
 }

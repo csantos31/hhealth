@@ -1,3 +1,4 @@
+@media screen and (min-device-width: 1024px){
 *{
     padding:0;
     margin:0;
@@ -194,4 +195,233 @@
 .imagem_convenio_especifico{
   height: 250px;
   width: 250px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px) {
+
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+
+
+      .main{
+          width:100%;
+          height:auto;
+          margin:auto;
+      }
+
+      .div_suporte_conteudo{
+      width: 100%;
+      height: 70px;
+      background-color: aliceblue;
+      }
+
+      .suporte_content{
+            width: 100%;
+            min-height:1100px;
+            height:auto;
+
+      }
+
+      .content{
+          width:98%;
+          min-height:1100px;
+          height:auto;
+          margin:auto;
+
+      }
+
+
+      /*faixa*/
+      .faixa_titulo{
+            width: 100%;
+            height: 50px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 24px;
+      }
+
+      .titulo_busque_seu_exame{
+            width: 100%;
+            height: 30px;
+            font-family: sans-serif;
+            padding-left: 35px;
+            line-height: 30px;
+            margin-top: 30px;
+      }
+
+      .titulo_busque_seu_exame p{
+            font-weight: bold;
+            font-size: 14px;
+
+      }
+
+      .busca{
+            width: 100%;
+            height: 50px;
+            font-family: sans-serif;
+            line-height: 30px;
+            float: left;
+            padding: 2.8vw;
+      }
+
+      .centraliza_input{
+            width: 83.2vw;
+            height: 40px;
+            float: left;
+      }
+
+      .centraliza_input input{
+            width: 100%;
+            height: 40px;
+
+      }
+
+      .ajusta_lupa{
+            height: 40px;
+            width: 40px;
+            background-color: black;
+            float: right;
+
+      }
+
+      .ajusta_lupa img{
+            padding: 8px;
+
+      }
+
+      /*conteudo exames*/
+      .conteudo_exames{/*conteudo exames*/
+          width:95%;
+          min-height:550px;
+          height:auto;
+          margin:auto;
+          margin-top:100px;
+      }
+
+      .titulo_exame{/*titulo*/
+          width:100%;
+          height:30px;
+          margin:auto;
+          line-height: 30px;
+          text-align: center;
+          color: black;
+          font-weight: bold;
+          font-size: 14px;
+          font-family: sans-serif;
+          border:solid 1px #000000;
+          margin-bottom: 25px;
+      }
+
+      .content_faixa_exames{/*faixa nome exame-ações */
+          width:100%;
+          height:37px;
+          margin-top:8px;
+      }
+
+      .content_nome_exames{/*nome exames*/
+          width:88%;
+          height:35px;
+          line-height: 35px;
+          text-align: center;
+          color: black;
+          font-size: 14px;
+          font-family: sans-serif;
+          float:left;
+          border:solid 1px #000000;
+
+      }
+
+      .acoes_exames{
+          width:10%;
+          height:35px;
+          margin-left:5px;
+          float:right;
+
+      }
+      .acoes_exames img{
+          width:30px;
+          height:30px;
+      }
+
+      .content_descricao_procedimento{/*content descricao-procedimento*/
+          width:100%;
+          min-height:80px;
+          height:auto;
+          margin:auto;
+          margin-top: 20px;
+      }
+
+      /*descricao*/
+      .content_descricao{
+          width:100%;
+          min-height:160px;
+          height:auto;
+      }
+
+      .titulo_descricao{
+          width:100%;
+          height:40px;
+          margin:auto;
+          padding-top:10px;
+          color: black;
+          text-align: center;
+          font-size: 14px;
+          font-weight: bold;
+          font-family: sans-serif;
+      }
+
+      .suporte_conteudo_descricao{
+            width: 95%;
+            min-height: 100px;
+            height: auto;
+            margin: auto;
+      }
+
+      .suporte_img_descricao{
+            width: 30%;
+            height: 50px;
+            float: left;
+      }
+
+      .suporte_img_descricao img{
+        width: 100%;
+        height: 25vw;
+      }
+
+      .conteudo_descricao{
+          width:69%;
+          min-height:100px;
+          height:auto;
+          margin:auto;
+          float: right;
+          color: black;
+          font-size: 14px;
+          font-family: sans-serif;
+          padding-left: 5px;
+      /*    background-color:#eaecef;*/
+      /*    border-radius: 10px;*/
+      }
+
+
 }
