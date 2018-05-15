@@ -1,3 +1,4 @@
+@media screen and (min-device-width: 1024px){
 *{
   padding: 0px;
   margin: 0px auto;
@@ -130,4 +131,169 @@ a{
 .mapa_da_unidade img{
       width: 100%;
       height: 357px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px){
+
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+
+
+      .main{
+          width:100%;
+          height:auto;
+          margin:auto;
+      }
+
+      .div_suporte_conteudo{
+      width: 100%;
+      height: 100px;
+      background-color: aliceblue;
+      }
+
+      .suporte_content{
+            width: 100%;
+            min-height:1100px;
+            height:auto;
+
+      }
+
+      .content{
+          width:100%;
+          min-height:1100px;
+          height:auto;
+          margin:auto;
+
+      }
+
+
+      /*faixa*/
+      .faixa_titulo{
+            width: 100%;
+            height: 50px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bold;
+            font-size: 24px;
+      }
+
+      .titulo_busque_seu_exame{
+            width: 100%;
+            height: 30px;
+            font-family: sans-serif;
+            padding-left: 35px;
+            line-height: 30px;
+            margin-top: 30px;
+      }
+
+      .titulo_busque_seu_exame p{
+            font-weight: bold;
+            font-size: 14px;
+
+      }
+
+      .busca{
+            width: 100%;
+            height: 50px;
+            font-family: sans-serif;
+            line-height: 30px;
+            float: left;
+            padding: 2.8vw;
+      }
+
+      .faixa_busca{
+            width: 100%;
+            height: 40px;
+      }
+
+      .centraliza_input{
+            width: 87.8vw;
+            height: 40px;
+            float: left;
+      }
+
+      .centraliza_input input{
+            width: 100%;
+            height: 40px;
+
+      }
+
+      .ajusta_lupa{
+            height: 40px;
+            width: 10vw;
+            background-color: black;
+            float: right;
+            margin-right: 0.05vw;
+
+      }
+
+      .ajusta_lupa img{
+            padding: 8px;
+
+      }
+
+      .suporte_unidade{
+            width: 95%;
+            min-height: 600px;
+            height: auto;
+            margin-top: 20px;
+            margin: auto;
+      }
+
+      .faixa_nome_da_unidade{
+            width: 100%;
+            height: 40px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            font-size: 18px;
+            float: left;
+            margin: auto;
+      }
+
+      .faixa_imagem_e_mapa{
+            width: 100%;
+            height: 300px;
+      }
+
+      .imagem{
+            width: 100%;
+            height: 230px;
+            float: left;
+      }
+
+      .imagem img{
+            width: 100%;
+            height: 200px;
+      }
+
+      .mapa_da_unidade{
+            width: 100%;
+            height: 157px;
+            float: left;
+            margin-left: 12%;
+      }
+
+      .mapa_da_unidade img{
+            width: 100%;
+            height: 157px;
+      }
 }

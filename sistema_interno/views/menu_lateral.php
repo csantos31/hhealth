@@ -52,6 +52,16 @@
                      </div>
                  </div>
             </a>
+            <a href="internacao.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/sistema_interno_icon.png" class="sistema_interno">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Internação</a>
+                     </div>
+                 </div>
+            </a>
             <a href="niveis_de_funcionario.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
@@ -69,6 +79,7 @@
                      </div>
                  </div>
             </a>
+
       </div>
 
 </div>
