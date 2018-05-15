@@ -5,6 +5,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_sobre_hhealth.css">
+            <meta name="viewport" content="initial-scale=1, maximun-scale=1">
             <title>Hospital HHealth</title>
       </head>
       <body>
@@ -36,9 +37,6 @@
                            <div class="faixa1">
                                  <?php echo($list[$cont]->sobre);?>
                            </div>
-                          <div class="div_suporte_conteudo">
-
-                          </div>
                            <div class="faixa2">
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
@@ -52,9 +50,6 @@
                                        </div>
                                  </div>
                            </div>
-                           <div class="div_suporte_conteudo">
-
-                           </div>
                            <div class="faixa3">
                                  <div class="suporte_txt_faixa3">
                                        <div class="txt_faixa3">
@@ -67,9 +62,6 @@
                                              Missão
                                        </div>
                                  </div>
-                           </div>
-                           <div class="div_suporte_conteudo">
-
                            </div>
                            <div class="faixa4">
                                  <div class="suporte_img_faixa4">
