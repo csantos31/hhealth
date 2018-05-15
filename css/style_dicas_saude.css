@@ -1,3 +1,5 @@
+@media screen and (min-device-width: 1024px){
+
 /*
 
   Data: 26/03/2018
@@ -6,46 +8,46 @@
 
 */
 
-/*Tamanho da barra de rolagem*/ 
+/*Tamanho da barra de rolagem*/
 
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
 
-  width: 13px; 
-  height: 15px; 
+  width: 13px;
+  height: 15px;
 
-} 
+}
 
-  
 
-/*Cor de fundo da barra de rolagem*/ 
 
-::-webkit-scrollbar-track-piece { 
-  background: white; 
+/*Cor de fundo da barra de rolagem*/
 
-} 
+::-webkit-scrollbar-track-piece {
+  background: white;
 
-  
+}
 
-/*propriedades da rolagem cor, borda e altura vertical*/ 
 
-::-webkit-scrollbar-thumb:vertical { 
 
-  height: 5px; 
-  background: #CA0000; 
-  border-radius:10px;  
+/*propriedades da rolagem cor, borda e altura vertical*/
 
-} 
+::-webkit-scrollbar-thumb:vertical {
 
-  
+  height: 5px;
+  background: #CA0000;
+  border-radius:10px;
 
-/*propriedades da rolagem cor, borda e altura horizontal*/ 
+}
 
-::-webkit-scrollbar-thumb:horizontal { 
 
-  width: 5px; 
-  background-color: #CA0000; 
 
-} 
+/*propriedades da rolagem cor, borda e altura horizontal*/
+
+::-webkit-scrollbar-thumb:horizontal {
+
+  width: 5px;
+  background-color: #CA0000;
+
+}
 
 *{
   margin: 0px;
@@ -226,4 +228,241 @@ opacity: 0.9;
     width: 100%;
     list-style: none;
     z-index: -999;
+}
+
+}
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px){
+
+/*
+
+  Data: 26/03/2018
+  Desenvolvedor: Gleyver Coutinho Castro
+  Obs: Página de estilização unidade_hhealth
+
+*/
+
+/*Tamanho da barra de rolagem*/
+
+::-webkit-scrollbar {
+
+  width: 13px;
+  height: 15px;
+
+}
+
+
+
+/*Cor de fundo da barra de rolagem*/
+
+::-webkit-scrollbar-track-piece {
+  background: white;
+
+}
+
+
+
+/*propriedades da rolagem cor, borda e altura vertical*/
+
+::-webkit-scrollbar-thumb:vertical {
+
+  height: 5px;
+  background: #CA0000;
+  border-radius:10px;
+
+}
+
+
+
+/*propriedades da rolagem cor, borda e altura horizontal*/
+
+::-webkit-scrollbar-thumb:horizontal {
+
+  width: 5px;
+  background-color: #CA0000;
+
+}
+
+*{
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+#main{
+      width:100%;
+     height:auto;
+     margin:auto;
+}
+
+.div_suporte_conteudo{
+      width: 100%;
+      height: 50px;
+      background-color: aliceblue;
+}
+
+#content_main{
+  width: 100%;
+  min-height: 2800px;
+  height: auto;
+  background-color: red;
+  margin: auto;
+
+}
+
+/* Titulo */
+#titulo_pagina{
+  height: 35px;
+  width: 50px;
+  margin: auto;
+  padding-top: 35px;
+  font-size: 32px;
+
+}
+
+.faixa_branca{
+  height: 3px;
+  width: 95%;
+  background-color: #ccc;
+  margin: auto;
+}
+
+/*------------ SLIDER ------------------*/
+#segura_slider{
+  width: 100%;
+  height: 161px;
+  margin-top: 0px;
+  margin-left: 11px;
+  position: relative;
+}
+
+/* Segura imagens e dicas */
+.suporte_imagens_dicas{
+  width: 100%;
+  height: 390px;
+    margin: auto;
+  margin-top: 10px;
+}
+
+/* suporte_itens  */
+.suporte_itens{
+  width: 80%;
+  min-height:300px;
+  height: auto;
+  float: left;
+  margin-left: 15px;
+  margin-bottom:10px;
+}
+
+.imagens{
+  width: 100%;
+  height: 280px;
+}
+
+.item_imagem{
+  width: 100%;
+  height: 287px;
+    border-radius: 5px;
+}
+
+.titulo_dicas{
+  height: 50px;
+  width: 100%;
+  margin-top: 5px;
+  background-color: lightgrey;
+  color: #CA0000;
+    font-family: sans-serif;
+    line-height: 50px;
+    border-radius: 3px;
+}
+
+.titulo_dicas:hover{
+  background-color: #660000;
+  color: #FFF;
+opacity: 0.9;
+}
+
+.suporte_titulo_dicas{
+  height: 53px;
+  width: 170px;
+  margin: auto;
+  margin-top: 15px;
+  font-size: 23px;
+  padding-left: 30px;
+}
+
+
+/* ----------------------      SLIDER      -----------------*/
+#superior{
+    width: 100%;
+    height: 620px;
+    /* border: solid 1px #000; */
+    padding: 20px;
+    /* background-color: #333; */
+    cursor: pointer;
+    /* margin-top: 100px; */
+}
+
+#slide{
+    width: 100%;
+    height: 150px;
+    margin-top: 150px;
+    /* float: left; */
+}
+
+#previous{
+    /* margin-left: 20px; */
+    margin-top: 250px;
+    float: left;
+    z-index: 999;
+    cursor: pointer;
+    /* z-index: 999; */
+}
+
+#galeria{
+    width: 92%;
+    /* margin-top: 10px; */
+    height: 600px;
+    overflow: hidden;
+    float: left;
+    /* z-index: -1; */
+}
+
+/* #galeria img{
+    width: 1000px;
+    height: 600px;
+    z-index: -999;
+} */
+
+.image{
+  width: 100%;
+  height: 300px;
+}
+
+#next{
+  width: 30px;
+    /* margin-left: 100px; */
+    margin-top: 250px;
+    float: left;
+    cursor: pointer;
+    z-index: 999;
+}
+
+#galeria ul li{
+    width: 100%;
+    list-style: none;
+    z-index: -999;
+}
+
 }
