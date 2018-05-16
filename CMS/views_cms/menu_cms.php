@@ -11,7 +11,7 @@ else
 
     if(isset($_SESSION["id_funcionario"])){
           $id_funcionario=$_SESSION["id_funcionario"];
-          echo($id_funcionario);
+//          echo($id_funcionario);
           //if($_SESSION['id_funcionario']>0){
             //    header('location:../login.php');
           //}

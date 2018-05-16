@@ -8,6 +8,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_ambientes.css">
             <script src="../js/jquery-3.2.1.min.js"></script>
             <script src="../js/arc4.js"></script>
+            <meta name="viewport" content="initial-scale=1, maximun-scale=1">
           <script>
 
                 function Mostrar(IdIten){

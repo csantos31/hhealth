@@ -1,234 +1,232 @@
 @media screen and (min-device-width: 1024px){
 
-/*
+      /*
+        Data: 26/03/2018
+        Desenvolvedor: Gleyver Coutinho Castro
+        Obs: Página de estilização unidade_hhealth
+      */
 
-  Data: 26/03/2018
-  Desenvolvedor: Gleyver Coutinho Castro
-  Obs: Página de estilização unidade_hhealth
+      /*Tamanho da barra de rolagem*/
 
-*/
+      ::-webkit-scrollbar {
 
-/*Tamanho da barra de rolagem*/
+        width: 13px;
+        height: 15px;
 
-::-webkit-scrollbar {
-
-  width: 13px;
-  height: 15px;
-
-}
+      }
 
 
 
-/*Cor de fundo da barra de rolagem*/
+      /*Cor de fundo da barra de rolagem*/
 
-::-webkit-scrollbar-track-piece {
-  background: white;
+      ::-webkit-scrollbar-track-piece {
+        background: white;
 
-}
-
-
-
-/*propriedades da rolagem cor, borda e altura vertical*/
-
-::-webkit-scrollbar-thumb:vertical {
-
-  height: 5px;
-  background: #CA0000;
-  border-radius:10px;
-
-}
+      }
 
 
 
-/*propriedades da rolagem cor, borda e altura horizontal*/
+      /*propriedades da rolagem cor, borda e altura vertical*/
 
-::-webkit-scrollbar-thumb:horizontal {
+      ::-webkit-scrollbar-thumb:vertical {
 
-  width: 5px;
-  background-color: #CA0000;
+        height: 5px;
+        background: #CA0000;
+        border-radius:10px;
 
-}
-
-*{
-  margin: 0px;
-  padding: 0px;
-}
-
-body{
-}
-
-a{
-  text-decoration: none;
-}
-
-#main{
-  width: 100%;
-  height: 1800px;
-}
+      }
 
 
-#content_main{
-  width: 100%;
-  min-height: 1800px;
-  height: auto;
-  background-color:	#FFF;
-  margin: auto;
 
-}
+      /*propriedades da rolagem cor, borda e altura horizontal*/
 
+      ::-webkit-scrollbar-thumb:horizontal {
 
-/* Div que segura titulo da Página */
+        width: 5px;
+        background-color: #CA0000;
 
+      }
 
-.div_suporte_conteudo{
-      width: 100%;
-      height: 50px;
-      background-color: aliceblue;
-}
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
 
-/* Titulo */
-#titulo_pagina{
-  height: 35px;
-  width: 100px;
-  margin: auto;
-  padding-top: 35px;
-  font-size: 32px;
+      body{
+      }
 
-}
+      a{
+        text-decoration: none;
+      }
 
-.faixa_branca{
-  height: 3px;
-  width: 95%;
-  background-color: #ccc;
-  margin: auto;
-}
-
-/*------------ SLIDER ------------------*/
-#segura_slider{
-  width: 100%;
-  height: 661px;
-  margin-top: 20px;
-  margin-left: 11px;
-  position: relative;
-}
-
-/* Segura imagens e dicas */
-.suporte_imagens_dicas{
-  width: 1200px;
-  height: 390px;
-    margin: auto;
-  margin-top: 10px;
-}
-
-/* suporte_itens  */
-.suporte_itens{
-  width: 380px;
-  min-height:300px;
-  height: auto;
-  float: left;
-  margin-left: 15px;
-  margin-bottom:10px;
-}
-
-.imagens{
-  width: 100%;
-  height: 280px;
-}
-
-.item_imagem{
-  width: 100%;
-  height: 287px;
-    border-radius: 5px;
-}
-
-.titulo_dicas{
-  height: 50px;
-  width: 100%;
-  margin-top: 5px;
-  background-color: lightgrey;
-  color: #CA0000;
-    font-family: sans-serif;
-    line-height: 50px;
-    border-radius: 3px;
-}
-
-.titulo_dicas:hover{
-  background-color: #660000;
-  color: #FFF;
-opacity: 0.9;
-}
-
-.suporte_titulo_dicas{
-  height: 53px;
-  width: 170px;
-  margin: auto;
-  margin-top: 15px;
-  font-size: 23px;
-  padding-left: 30px;
-}
+      #main{
+        width: 100%;
+        height: 1800px;
+      }
 
 
-/* ----------------------      SLIDER      -----------------*/
-#superior{
-    width: 100%;
-    height: 620px;
-    /* border: solid 1px #000; */
-    padding: 20px;
-    /* background-color: #333; */
-    cursor: pointer;
-    /* margin-top: 100px; */
-}
+      #content_main{
+        width: 100%;
+        min-height: 1800px;
+        height: auto;
+        background-color:	#FFF;
+        margin: auto;
 
-#slide{
-    width: 100%;
-    height: 550px;
-    margin-top: 150px;
-    /* float: left; */
-}
+      }
 
-#previous{
-    /* margin-left: 20px; */
-    margin-top: 250px;
-    float: left;
-    z-index: 999;
-    cursor: pointer;
-    /* z-index: 999; */
-}
 
-#galeria{
-    width: 92%;
-    /* margin-top: 10px; */
-    height: 600px;
-    overflow: hidden;
-    float: left;
-    /* z-index: -1; */
-}
+      /* Div que segura titulo da Página */
 
-/* #galeria img{
-    width: 1000px;
-    height: 600px;
-    z-index: -999;
-} */
 
-.image{
-  width: 100%;
-  height: 600px;
-}
+      .div_suporte_conteudo{
+            width: 100%;
+            height: 50px;
+            background-color: aliceblue;
+      }
 
-#next{
-  width: 30px;
-    /* margin-left: 100px; */
-    margin-top: 250px;
-    float: left;
-    cursor: pointer;
-    z-index: 999;
-}
+      /* Titulo */
+      #titulo_pagina{
+        height: 35px;
+        width: 100px;
+        margin: auto;
+        padding-top: 35px;
+        font-size: 32px;
 
-#galeria ul li{
-    width: 100%;
-    list-style: none;
-    z-index: -999;
-}
+      }
+
+      .faixa_branca{
+        height: 3px;
+        width: 95%;
+        background-color: #ccc;
+        margin: auto;
+      }
+
+      /*------------ SLIDER ------------------*/
+      #segura_slider{
+        width: 100%;
+        height: 661px;
+        margin-top: 20px;
+        margin-left: 11px;
+        position: relative;
+      }
+
+      /* Segura imagens e dicas */
+      .suporte_imagens_dicas{
+        width: 1200px;
+        height: 390px;
+          margin: auto;
+        margin-top: 10px;
+      }
+
+      /* suporte_itens  */
+      .suporte_itens{
+        width: 380px;
+        min-height:300px;
+        height: auto;
+        float: left;
+        margin-left: 15px;
+        margin-bottom:10px;
+      }
+
+      .imagens{
+        width: 100%;
+        height: 280px;
+      }
+
+      .item_imagem{
+        width: 100%;
+        height: 287px;
+          border-radius: 5px;
+      }
+
+      .titulo_dicas{
+        height: 50px;
+        width: 100%;
+        margin-top: 5px;
+        background-color: lightgrey;
+        color: #CA0000;
+          font-family: sans-serif;
+          line-height: 50px;
+          border-radius: 3px;
+      }
+
+      .titulo_dicas:hover{
+        background-color: #660000;
+        color: #FFF;
+      opacity: 0.9;
+      }
+
+      .suporte_titulo_dicas{
+        height: 53px;
+        width: 170px;
+        margin: auto;
+        margin-top: 15px;
+        font-size: 23px;
+        padding-left: 30px;
+      }
+
+
+      /* ----------------------      SLIDER      -----------------*/
+      #superior{
+          width: 100%;
+          height: 620px;
+          /* border: solid 1px #000; */
+          padding: 20px;
+          /* background-color: #333; */
+          cursor: pointer;
+          /* margin-top: 100px; */
+      }
+
+      #slide{
+          width: 100%;
+          height: 550px;
+          margin-top: 150px;
+          /* float: left; */
+      }
+
+      #previous{
+          /* margin-left: 20px; */
+          margin-top: 250px;
+          float: left;
+          z-index: 999;
+          cursor: pointer;
+          /* z-index: 999; */
+      }
+
+      #galeria{
+          width: 92%;
+          /* margin-top: 10px; */
+          height: 600px;
+          overflow: hidden;
+          float: left;
+          /* z-index: -1; */
+      }
+
+      /* #galeria img{
+          width: 1000px;
+          height: 600px;
+          z-index: -999;
+      } */
+
+      .image{
+        width: 100%;
+        height: 600px;
+      }
+
+      #next{
+        width: 30px;
+          /* margin-left: 100px; */
+          margin-top: 250px;
+          float: left;
+          cursor: pointer;
+          z-index: 999;
+      }
+
+      #galeria ul li{
+          width: 100%;
+          list-style: none;
+          z-index: -999;
+      }
 
 }
 
@@ -241,11 +239,9 @@ opacity: 0.9;
 @media screen and (max-device-width: 520px){
 
 /*
-
   Data: 26/03/2018
   Desenvolvedor: Gleyver Coutinho Castro
   Obs: Página de estilização unidade_hhealth
-
 */
 
 /*Tamanho da barra de rolagem*/
@@ -314,9 +310,8 @@ a{
 
 #content_main{
   width: 100%;
-  min-height: 2800px;
+  min-height: 1800px;
   height: auto;
-  background-color: red;
   margin: auto;
 
 }
@@ -344,6 +339,7 @@ a{
   height: 161px;
   margin-top: 0px;
   position: relative;
+
 }
 
 /* Segura imagens e dicas */
@@ -356,11 +352,11 @@ a{
 
 /* suporte_itens  */
 .suporte_itens{
-  width: 80%;
+  width: 90%;
   min-height:300px;
   height: auto;
   float: left;
-  margin-left: 15px;
+  margin-left: 5%;
   margin-bottom:10px;
 }
 
@@ -397,18 +393,19 @@ opacity: 0.9;
   width: 170px;
   margin: auto;
   margin-top: 15px;
-  font-size: 23px;
+  font-size: 18px;
 }
 
 
 /* ----------------------      SLIDER      -----------------*/
 #superior{
     width: 100%;
-    height: 320px;
+    height: 350px;
     cursor: pointer;
-    background-color: aquamarine;
     margin: auto;
     float: left;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 #slide{
@@ -417,25 +414,25 @@ opacity: 0.9;
 }
 
 #previous{
-    margin-top: 250px;
+    margin-top: 249px;
+    margin-right: 20px;
     float: left;
     z-index: 999;
-    width: 10px;
+    width: 0px;
     cursor: pointer;
     background-color: aqua;
-    margin-left: 5px;
 }
 
 #galeria{
     width: 80%;
-    height: 305px;
+    height: 300px;
     margin-left: 25px;
     overflow: hidden;
     float: left;
     background-color: yellow;
 }
 .image{
-  width: 90%;
+  width: 100%;
   height: 300px;
 }
 

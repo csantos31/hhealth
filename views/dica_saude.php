@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../css/style_dica_saude.css">
     <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
     <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
+    <meta name="viewport" content="initial-scale=1, maximun-scale=1">
   </head>
   <body>
     <!-- Segura todo conteudo da página -->
@@ -17,7 +18,7 @@
       </div>
       <div id="content_main">
         <!-- Faixa branca embaixo do menu -->
-        
+
         <div id="suporte_imagem">
           <img src="../imagens/maxresdefault.jpg" alt="" id="img_dicas_saude">
         </div>

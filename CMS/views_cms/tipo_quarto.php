@@ -56,7 +56,7 @@
 
                             <div class="content_add_usuario">
                                 <div class="img_usuario">
-                                    <img src="<?=$caminho?>imagens/add.png">
+                                    <img class="img_usuario" src="<?=$caminho?>imagens/add.png">
                                 </div>
 
                             </div>
@@ -65,33 +65,23 @@
                         <div class="content_cadastro_usuario"><!--cadastro de niveis-->
                             <form name="frm_quarto" method="post" action="<?= $caminho ?>../router.php?controller=tipo_quarto&<?= $action ?>">
 
-                                <div class="img_cadastro_usuario"><!--imagem-->
-                                    <img src="<?=$caminho?>imagens/logo.png">
-                                </div>
-
-                                <div class="titulo_cadastro_usuario"><!--titulo-->
-                                    <a>Cadastro Nível</a>
-                                </div>
+                                
                                 <div class="content_faixa_usuario">
 
-                                    <div class="faixa_usuario"><!--input faixa nivel-->
                                         <div class="string_usuario">
                                             <a>Nivel:</a>
                                         </div>
 
                                         <div class="input_usuario">
-                                            <input type="text" name="txt_nivel_quarto" placeholder=" Digite o nivel" value="<?= $nivel ?>">
+                                            <input type="text" name="txt_nivel_quarto" value="<?= $nivel ?>">
                                         </div>
-                                    </div>
 
-                                    <div class="faixa_usuario"><!--input faixa nivel-->
                                         <div class="string_usuario">
                                             <a>Descricão:</a>
                                         </div>
 
                                         <div class="input_usuario">
-                                            <input type="text" name="txt_descricao" placeholder=" Digite descrição" value="<?= $descricao ?>">
-                                        </div>
+                                            <input type="text" name="txt_descricao"  value="<?= $descricao ?>">
                                     </div>
 
 
