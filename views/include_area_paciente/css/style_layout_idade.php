@@ -38,10 +38,11 @@
         $idade = $ano_atual - $ano_paciente;
         //echo($idade);
         if($idade>11){
-            $cor_menu ="#F0F0F0";
+            $imagem ="../imagens/robozinho.jpg";
             $background="../imagens/carrinho.jpg";
         }else{
-            $cor="red";
+            $imagem="../../../imagens/icon_user.png";
+            $background="../imagens/background_hospital.jpeg";
         }
     }
         
@@ -53,7 +54,6 @@ body{
     width:100%;
     height:100%;
     //-webkit-filter: grayscale(100%);
-    //background-color:<?php echo($cor)?>;
     background-image:url(<?php echo($background)?>);
     background-size:100% 100%;
     background-attachment: fixed;
@@ -70,4 +70,10 @@ body{
     height: 200px;
     width: 100%;
     //opacity:0.5;
+}
+
+#figure_paciente{
+    background-image:url(<?php echo($imagem)?>);
+background-size:100% 100%;
+    background-repeat: no-repeat;
 }

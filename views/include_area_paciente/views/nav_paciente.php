@@ -5,7 +5,7 @@
   Obs: Página HTML do menu e cabeçalho da area do paciente
 
  -->
-
+<link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
     <!-- Cabeçalho da página -->
     <div class="opcaity_header">
     </div>
@@ -37,17 +37,10 @@
               <!-- Imagem do paciente -->
                 <a href="paciente_perfil.php">
                     <figure id="figure_paciente">
-                        <img src="../../../imagens/icon_user.png" alt="Foto do usuário" title="foto do usuário">
+                        
                     </figure>
                 </a>
             </div>
-
-        <!-- Imagem do logo -->
-        <div id="suporte_imagem">
-          <figure id="suporte_figure_logo">
-            <img src="../../../imagens/logo_hhealth.png" alt="logo hhealth" title="logo hhealth">
-          </figure>
-        </div>
 
             <!-- Imagem do logo -->
             <div id="suporte_imagem">

@@ -2,6 +2,7 @@
 <html lang="pt-br" dir="ltr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximun-scale=1">
         <title>Hospital Hhealth</title>
         <link rel="stylesheet" type="text/css" href="../css/style_dicas_saude.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
