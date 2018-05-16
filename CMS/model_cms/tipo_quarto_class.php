@@ -17,7 +17,7 @@
 			'".$nivel_dados->descricao."'
 			);";
             
-            echo $sql;
+        
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
