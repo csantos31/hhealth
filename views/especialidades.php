@@ -5,6 +5,7 @@
         <link rel="stylesheet" type="text/css" href="../css/style_especialidades.css">
         <link rel="stylesheet" type="text/css" href="../css/style_nav.css">
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
+        <meta name="viewport" content="initial-scale=1, maximun-scale=1">
         <title>Hospital HHealth</title>
     </head>
     <body>

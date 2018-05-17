@@ -1,3 +1,4 @@
+@media screen and (min-device-width: 1024px){
 *{
   padding: 0px;
   margin: 0px auto;
@@ -66,4 +67,96 @@ a{
       line-height: 85px;
       font-weight: bold;
       font-size: 22px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px){
+
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      a{
+        text-decoration: none;
+        color: #000;
+      }
+
+
+
+      .main{
+          width:100%;
+          height:auto;
+          margin:auto;
+      }
+
+      .div_suporte_conteudo{
+      width: 100%;
+      height: 70px;
+      background-color: aliceblue;
+      }
+
+      .suporte_content{
+            width: 100%;
+            min-height:1100px;
+            height:auto;
+
+      }
+
+      .content{
+          width:98%;
+          min-height:1100px;
+          height:auto;
+          margin:auto;
+
+      }
+
+      .suporte_especialidades{
+            width: 100%;
+            height: 409px;
+            float: left;
+            margin-top: 42px;
+      }
+
+      .nome_especialidade{
+            width: 100%;
+            height: 64px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 64px;
+            font-weight: bold;
+            font-size: 22px;
+      }
+
+      .suporte_imagem_especialidades{
+            width: 100%;
+            height: 260px;
+      }
+
+      .suporte_imagem_especialidades img{
+            width: 100%;
+            height: 260px;
+      }
+
+      .mais_detalhes{
+            width: 100%;
+            height: 85px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 85px;
+            font-weight: bold;
+            font-size: 22px;
+      }
 }

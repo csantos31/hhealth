@@ -225,8 +225,9 @@ a{
 }
 
 .segura-slide{
+      width: 100%;
   height: 200px;
-  width: 100%;
+
 }
 
 .texto_ambiente{
@@ -293,12 +294,11 @@ a{
 
       .content{
           width: 98%;
-          min-height:2500px;
+          min-height:1700px;
           height:auto;
           margin:auto;
           position: relative;
           padding-top: 20px;
-          background-color: red;
       }
 
       .faixa_titulo_da_pagina{
@@ -313,10 +313,10 @@ a{
 
       /*MENU LATERAL*/
       .content_menu_lateral_ambientes{
-          width:20%;
-          min-height:502px;
+          width:100%;
+          min-height:30px;
           height: auto;
-          /* background-color:gray; */
+          background-color:#DCDCDC;
           float:left;
 
 
@@ -325,12 +325,11 @@ a{
       .menu{
           width:99%;
           height:28px;
-          background-color:gray;
           list-style: none;
           /* border: 1px solid #000; */
           margin: 2px;
+          margin-top: 10px;
           /* border-radius: 30px; */
-          background-color:	#DCDCDC;
           color: #FF0000;
           opacity: 0.5;
       }
@@ -369,9 +368,9 @@ a{
 
       .suporte_ambiente{
           width: 95%;
-          min-height: 850px;
+          min-height: 650px;
           height: auto;
-          margin-left: 2.5%
+          margin-left: 2.5%;
           float:left;
       }
 
@@ -388,24 +387,25 @@ a{
       }
 
       .imagem_grande_ambiente{
-            width: 80%;
-            height: 400px;
+            width: 100%;
+            height: 300px;
       }
 
       .imagem_grande_ambiente img{
             width: 100%;
-            height: 400px;
+            height: 300px;
       }
 
       .imagens_pequenas_ambiente{
-            width: 170px;
+            width: 70%;
             height: 128px;
-            float: left;
-            margin: 15px;
+
+            margin:20px auto;
+            /* margin-bottom: 20px; */
       }
 
       .imagens_pequenas_ambiente img{
-            width: 170px;
+            width: 100%;
             height: 128px;
       }
 
@@ -413,7 +413,7 @@ a{
       /*1*/
       .cover{
         white:100%;
-        height: 600px;
+        height: 300px;
         background-color: white;
         position: relative;
         /* display: inline-block; */
@@ -491,8 +491,9 @@ a{
       }
 
       .segura-slide{
-        height: 200px;
-        width: 100%;
+            width: 100%;
+            height: 950px;
+
       }
 
       .texto_ambiente{
