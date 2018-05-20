@@ -90,7 +90,7 @@ if(isset($_GET['modo'])){
          </script>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
-                <a href="#" class="fechar"><img src="../imagens/close.png"</a>
+                <a href="#" class="fechar"><img src="../imagens/close.png"/></a>
             </div>
             
             <div class="content_modal">
@@ -125,11 +125,11 @@ if(isset($_GET['modo'])){
                                   include_once('../controllers/cargo_controller.php');
                                   include_once('../models/cargo_class.php');
                                   $controller_cargo  = new controllerCargo();
-                                  $list = $controller_cargo::ListarPermissao();
+                                  $list = $controller_cargo::Listar();
                                   $cont = 0;
                                   while ($cont < count($list)) {
                                   ?>
-                                      <option value="<?= $list[$cont]['id_usuario_medico_administrador'] ?>"><?= $list[$cont]['permissao'] ?></option>
+                                      <option value="<?= $list[$cont]->id_cargo ?>"><?= $list[$cont]->cargo ?></option>
                                   <?php
                                     $cont +=1;
                                   }

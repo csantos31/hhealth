@@ -35,7 +35,8 @@
             if($PDO_conex->query($sql)){
                 echo "<script>location.reload();</script>";
             }else{
-                echo("Erro ao Inserir no BD");
+                echo $sql;
+                echo("Erro ao Inserir no BD salve");
             }
 
 
