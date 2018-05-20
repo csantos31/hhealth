@@ -106,7 +106,7 @@ require('../verifica.php');
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">NOME</div>
-                            <div class="lb_titulo">FOTO</div>
+                            <div class="lb_titulo">CPF</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
 
@@ -127,13 +127,13 @@ require('../verifica.php');
 
                           ?>
                                       <div class="linha_tabela">
-                                          <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
-                                          <div class="item_tabela"><?= $list[$cont]['cpf'] ?> </div>
+                                          <div class="item_tabela"><?= $list[$cont]->nome ?> <?= $list[$cont]->sobrenome ?></div>
+                                          <div class="item_tabela"><?= $list[$cont]->cpf ?> </div>
                                           <div class="item_tabela icones_tabela">
-                                              <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_funcionario']);?>)">
+                                              <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_cargo);?>)">
                                                   <img src="../imagens/edit.png" alt="editar" title="editar">
                                               </a>
-                                              <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_funcionario']);?>)">
+                                              <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_cargo);?>)">
                                                   <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                               </a>
                                           </div>

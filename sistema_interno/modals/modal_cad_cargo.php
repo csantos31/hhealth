@@ -93,7 +93,7 @@ if(isset($_GET['modo'])){
          </script>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
-                <a href="#" class="fechar"><img src="../imagens/close.png"</a>
+                <a href="#" class="fechar"><img src="../imagens/close.png"/></a>
             </div>
             
             <div class="content_modal">
@@ -130,11 +130,11 @@ if(isset($_GET['modo'])){
                                       echo 'here';
                                       parr($list);
                                       
-                                      /*
+                                      
                                   ?>
                                       <option value="<?= $list[$cont]['id_usuario_medico_administrador'] ?>"><?= $list[$cont]['permissao'] ?></option>
                                   <?php
-                                  */
+                                  
                                     $cont = $cont + 1;
                                     
                                   }

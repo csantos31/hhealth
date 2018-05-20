@@ -199,37 +199,37 @@ require('../verifica.php');
 
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
-                                        <div class="item_tabela"><img src="../<?= $list[$cont]['foto']?>" alt="imaagem do paciente" title="imagem do paciente"></div>
+                                        <div class="item_tabela"><?= $list[$cont]->nome ?> <?= $list[$cont]->sobrenome ?></div>
+                                        <div class="item_tabela"><img src="../<?= $list[$cont]->foto?>" alt="imaagem do paciente" title="imagem do paciente"></div>
                                         <div class="item_tabela icones_tabela">
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="alterar_perfil" id="EditarPerfil<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarPerfil(this,<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="alterar_perfil" id="EditarPerfil<?php echo($list[$cont]->id_paciente);?>" onclick="EditarPerfil(this,<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/alter_prof.png" alt="alterar perfil" title="alterar perfil">
                                                 <div class="div_change_profille">
                                                     <div class="modal_superior">
                                                         <labe>Alterar Imagem do perfil</labe>
                                                     </div>
-                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_foto<?= $list[$cont]['id_paciente'] ?>">
+                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_foto<?= $list[$cont]->id_paciente ?>">
                                                         <input type="file" name="foto" id="foto">
                                                         <input class="btn" type="submit" value="Enviar" name="btn_salva">
                                                     </form>
                                                 </div>
                                             </a>
-                                            <a href="#" class="alterar_carteirinha" id="EditarCarteirinha<?php echo($list[$cont]['id_paciente']);?>" onclick="EditarCarteirinha(this,<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="alterar_carteirinha" id="EditarCarteirinha<?php echo($list[$cont]->id_paciente);?>" onclick="EditarCarteirinha(this,<?php echo($list[$cont]->paciente);?>)">
                                                 <img src="../imagens/alter_card.png" alt="alterar carteirinha" title="alterar carteirinha">
                                                 <div class="div_change_carteirinha">
                                                     <div class="modal_superior">
                                                         <labe>Alterar Carteirinha</labe>
                                                     </div>
-                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_card<?= $list[$cont]['id_paciente'] ?>">
+                                                    <form enctype="multipart/form-data" action="" method="post" id="frm_card<?= $list[$cont]->id_paciente ?>">
                                                         <input type="file" name="carteirinha_convenio" id="carteirinha_convenio">
                                                         <input class="btn" type="submit" value="Enviar" name="btn_salva">
                                                     </form>
                                                 </div>
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]['id_paciente']);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>

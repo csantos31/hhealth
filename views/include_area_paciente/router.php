@@ -89,7 +89,19 @@
                     $controller_agendamento::Novo($id);
                     break;
             }
-
+            break;
+        
+        case 'pre_atendimento':
+            require_once('controllers/pre_atendimento_controller.php');
+            require_once('models/pre_atendimento_class.php');
+            
+            switch($modo){
+                
+                case 'inserir':
+                
+                break;
+            }
+            break;
 
 		default:
 			# code...

@@ -66,16 +66,17 @@ class Paciente{
 
 			//Estrutura de repetição para pegar dados
 
-            $lista_pacientes = array();
+            
 
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
 
                 //var_dump($rs);exit();
 
-				$lista_paciente[] = $rs;
+				//$lista_paciente[] = $rs;
 
-
+                $lista_pacientes[] = new Paciente();
+                
 				// Guarda os dados no banco de dados em cada indice do objeto criado
 				$lista_pacientes[$cont]->id_paciente = $rs['id_paciente'];
                 $lista_pacientes[$cont]->id_endereco = $rs['id_endereco'];
@@ -85,7 +86,7 @@ class Paciente{
                 $lista_pacientes[$cont]->dt_nasc = $rs['dt_nasc'];
                 $lista_pacientes[$cont]->rg = $rs['rg'];
                 $lista_pacientes[$cont]->cpf = $rs['cpf'];
-                $lista_pacientes[$cont]->carteirinha_convenio = $rs['carteirinha_convenio'];
+                $lista_pacientes[$cont]->carteirinha_convenio = $rs['carterinha_convenio'];
                 $lista_pacientes[$cont]->foto = $rs['foto'];
                 $lista_pacientes[$cont]->status = $rs['status'];
 				$lista_pacientes[$cont]->id_endereco = $rs['id_endereco'];
@@ -103,9 +104,9 @@ class Paciente{
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_paciente)) {
+			if (isset($lista_pacientes)) {
 				# code...
-				return $lista_paciente;
+				return $lista_pacientes;
 			}
 
 		}

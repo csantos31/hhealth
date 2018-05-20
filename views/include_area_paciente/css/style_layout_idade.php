@@ -37,7 +37,7 @@
     if($ano_paciente<$ano_atual){
         $idade = $ano_atual - $ano_paciente;
         //echo($idade);
-        if($idade>11){
+        if($idade<11){
             $imagem ="../imagens/robozinho.jpg";
             $background="../imagens/carrinho.jpg";
         }else{

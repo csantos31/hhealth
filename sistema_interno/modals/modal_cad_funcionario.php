@@ -51,7 +51,8 @@ if(isset($_GET['modo'])){
         <link rel="stylesheet" type="text/css" href="../css/style_cad_funcionario.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
         <script type="text/javascript" src="../../js/jquery-1.2.6.pack.js"></script>
-        <script type="text/javascript" src="../../js/jquery.maskedinput-1.1.4.pack.js"/></script>   
+        <script type="text/javascript" src="../../js/jquery.maskedinput-1.1.4.pack.js"></script>  
+    
         <script type="text/javascript">
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
@@ -60,24 +61,24 @@ if(isset($_GET['modo'])){
             });
             
             $(document).ready(function(){	
-                    $("#txt_cpf").mask(" 999 . 999 . 999 - 99");
+                    //$("#txt_cpf").mask(" 999 . 999 . 999 - 99");
                 });
             
         </script>
     </head>
     <body>
          <script>
-              var id = $("#form").data("id");
-              var idEnd = $("#form").data("id_end");
-              var modo = "";
-              if(id == '0'){
-                  modo='inserir';
-              } else{
-                  modo='editar';
-              }
+              
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-
+                var id = $("#form").data("id");
+                var idEnd = $("#form").data("id_end");
+                var modo = "";
+                if(id == '0'){
+                modo='inserir';
+                } else{
+                modo='editar';
+                }
 
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
@@ -100,7 +101,7 @@ if(isset($_GET['modo'])){
          </script>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
-                <a href="#" class="fechar"><img src="../imagens/close.png"</a>
+                <a href="#" class="fechar"><img src="../imagens/close.png"/></a>
             </div>
 
             <div class="content_modal">
