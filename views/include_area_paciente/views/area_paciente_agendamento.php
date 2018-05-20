@@ -86,9 +86,9 @@ $dt_atual = date ("Y-m-d");
                 processData:false,
                 async:true,
                 success: function(dados){
-                     //$('#content_formulario').html(dados);
+                     $('#content_formulario').html(dados);
                      //alert(dados);
-                     console.log(dados);
+                     //console.log(dados);
                 }
               });
           });

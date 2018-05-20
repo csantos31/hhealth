@@ -81,17 +81,17 @@ class Agendamento
         $PDO_conex = $conex->Conectar();
 
         //Executa o select no banco de dados e guarda o retorno na variavel select
-        $select = $PDO_conex->query($sql);
+        //$select = $PDO_conex->query($sql);
         
         if($PDO_conex->query($sql)){
         
-        
-            echo "<script>location.reload();</script>";
+            //echo $sql;
+            echo ("<script>location.reload();</script>");
 
         }else {
             //Mensagem de erro
             echo "Error inserir no Banco de Dados";
-              echo $sql;
+            echo $sql;
         }
           //Fechar a conexão com o banco de dados
           $conex->Desconectar();

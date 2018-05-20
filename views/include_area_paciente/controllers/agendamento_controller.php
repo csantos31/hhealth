@@ -10,8 +10,8 @@
         public $hora;
         
        public function Novo($id){
-           require_once ('/models/agendamento_class.php');
-           include_once('/models/auditoria_paciente_class.php');
+           require_once ('models/agendamento_class.php');
+           include_once('models/auditoria_paciente_class.php');
             //Instancia da classe Contato
 			$agendamento = new Agendamento();
            /*
