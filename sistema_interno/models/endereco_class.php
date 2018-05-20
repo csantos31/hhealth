@@ -34,7 +34,7 @@ class Endereco{
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
                 
-                $endereco = new Endereco;
+                $endereco = new Endereco();
                 
                 $id_endereco = $endereco::SelectLast();
                 

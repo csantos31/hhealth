@@ -93,8 +93,9 @@ if(isset($_GET['modo'])){
                     processData:false,
                     async:true,
                     success: function(dados){
-                        $('.modal').html(dados);
-                      //  alert(dados);
+                        //$('.modal').html(dados);
+                        alert(dados);
+                        console.log(dados);
                     }
                 });
              });

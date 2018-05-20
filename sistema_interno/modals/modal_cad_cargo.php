@@ -121,7 +121,7 @@ if(isset($_GET['modo'])){
                                   include_once('../controllers/nivel_funcionario_controller.php');
                                   include_once('../models/nivel_funcionario_class.php');
                                   $controller_nivel  = new controllerNivelFuncionario();
-                                  $list = $controller_nivel::listarPermissoes();
+                                  $list = $controller_nivel::Listar();
                                             
                                   $cont = 0;
                       parr($list);
@@ -132,7 +132,7 @@ if(isset($_GET['modo'])){
                                       
                                       
                                   ?>
-                                      <option value="<?= $list[$cont]['id_usuario_medico_administrador'] ?>"><?= $list[$cont]['permissao'] ?></option>
+                                      <option value="<?= $list[$cont]->id_nivel_funcionario ?>"><?= $list[$cont]->nivel ?></option>
                                   <?php
                                   
                                     $cont = $cont + 1;

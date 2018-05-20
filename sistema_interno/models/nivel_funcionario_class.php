@@ -104,17 +104,17 @@ class NivelFuncionario{
 			$cont = 0;
 
               if(!empty($select)){
-                    $niv = array();
+                    $niv[] = new NivelFuncionario();
                     //Estrutura de repetição para pegar dados
                     while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
                         #Cria um array de objetos na classe contatos
-                        $niv = $rs;
+                        $niv[$cont]->id_usuario_medico = $rs['id_usuario_medico_administrador'];
+                        $niv[$cont]->permissao = $rs['permissao'];
                         // Soma mais um no contador
                         $cont+=1;
                     }
-            }else{
-              $niv = array();
             }
+            
 
 			$conex::Desconectar();
 

@@ -21,7 +21,7 @@
                         url: "../router.php?controller=paciente&modo=ativar_paciente&id="+idPaciente,
                         success: function(dados){
                             //alert(dados);
-                            $('.modal').html(dados);
+                            $('.main').html(dados);
                         }
                     });
 
@@ -75,7 +75,9 @@
                             <div class="item_tabela"><?= $list[$cont]['nome'] ?> <?= $list[$cont]['sobrenome'] ?></div>
                             <div class="item_tabela"><?= $list[$cont]['rg'] ?></div>
                             <div class="item_tabela">
-                                <img src="../imagens/shutdown.png" alt="ativar" title="ativar" class="ativar_user" onclick="ativar(<?= $list[$cont]['id_paciente'] ?>)">
+                                <a href="#">
+                                    <img src="../imagens/shutdown.png" alt="ativar" title="ativar" class="ativar_user" href="#" onclick="ativar(<?= $list[$cont]['id_paciente'] ?>)">
+                                </a>
                             </div>
                         </div>
                         

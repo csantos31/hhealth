@@ -36,6 +36,7 @@ require('../verifica.php');
                     url:"../modals/modal_cad_funcionario.php",
                     success: function(dados){
                         $(".modal").html(dados);
+                        //console.log(dados);
                     }
                 });
             }
@@ -48,6 +49,7 @@ require('../verifica.php');
                     data: {modo:'buscarId',codigo:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
+                        //console.log(dados);
                     }
 
                 });
@@ -97,7 +99,7 @@ require('../verifica.php');
                                <p>Funcionários</p>
                          </div>
                          <div class="img_nivel">
-                             <a class="novo" onclick="Cadastrar()" style="cursor:pointer;">
+                             <a class="novo" onclick="Cadastrar()" href="#">
                                  <img src="../imagens/add.png">
                              </a>
                          </div>

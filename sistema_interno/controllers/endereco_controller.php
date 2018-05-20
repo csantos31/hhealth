@@ -89,8 +89,9 @@
             $endereco->cidade = $_POST['txt_cidade'];
             $endereco->bairro = $_POST['txt_bairro'];
 
-            $endereco::update($endereco);
+            $endereco::Update($endereco);
 
+            return $endereco;
 
 		}
 
@@ -99,13 +100,15 @@
 			$idEndereco = $_GET['id'];
 
 			//INSTANCIA A CLASSE CONTATO
-			$endereci = new Endereco();
+			$endereco = new Endereco();
 
 			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
 			$endereco->id_endereco = $idEndereco;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
 			$endereco::Delete($endereco);
+            
+            return $endereco;
 
 		}
 
