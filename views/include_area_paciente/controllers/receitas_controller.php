@@ -17,7 +17,7 @@ class controller_receitas{
 
             $receitas = new Receita();
 
-            $receitas->id_convenio=$idConvenio;
+            $receitas->id_receita=$idReceita;
 
             $metodo = $receitas::SelectById($receitas);
 
