@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="../css/style_footer.css">
     <script src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
-      
-      
+
+
       <script>
         $(document).ready(function() {
            $('#form').submit(function(event){
@@ -30,9 +30,9 @@
                 processData:false,
                 async:true,
                 success: function(dados){
-                     //$('#content_formulario').html(dados);
+                     $('#content_formulario').html(dados);
                      //alert(dados);
-                     console.log(dados);
+                     //console.log(dados);
                 }
               });
           });
@@ -51,7 +51,7 @@
 
       </div>
       <div id="content_formulario">
-        <form action="pre_atendimento.php" id="form" method="post">
+        <form action="pre_atendimento" id="form" method="post">
           <div class="item_form">
             <div class="titulo_item_form_maioria">
               Unidade
@@ -95,10 +95,10 @@
                 <?php
                   require_once("../../../sistema_interno/controllers/funcionario_controller.php");
                   require_once("../../../sistema_interno/models/funcionario_class.php");
-                  
+
                   $controller_funcionario = new controllerFuncionario();
                   $list = $controller_funcionario::Listar();
-                  
+
                   $cont=0;
                   while($cont<count($list)){
                   ?>
@@ -121,7 +121,7 @@
             </div>
           </div>
           <div id="suporte_btn_agendar">
-              <input type="submit" name="bnt_submit_agenda" value="Agendar" onclick="return confirm('Deseja realmente agendar um atendimento?')" id="bnt_submit_agenda">
+              <input type="submit" name="bnt_submit_agenda" value="Agendar" id="bnt_submit_agenda">
           </div>
         </form>
       </div>
