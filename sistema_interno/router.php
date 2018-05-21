@@ -439,7 +439,7 @@
                       require_once('controllers/receitas_controller.php');
                       require_once('models/receitas_class.php');
                       $controller_receitas = new controllerReceita();
-                      $controller_receitas::Editar();
+                      $controller_receitas::Editar($id);
 
                       break;
 

@@ -62,7 +62,7 @@
                      </div>
                  </div>
             </a>
-            <a href="receita.php">
+            <a href="receitas.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
                          <img src="../imagens/levels.png">
@@ -112,8 +112,8 @@
                      </div>
                  </div>
             </a>
-          
-          
+
+
           <a href="login.php?logout=true" style="font-weight:bold;">
                  <div class="linha">
                      <div class="img_menu_lateral">

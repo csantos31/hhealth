@@ -94,11 +94,11 @@
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($receita){
-			$sql = "SELECT * FROM tbl_receita_medica WHERE id_receita_medica =". $receita->idReceita;
+			$sql = "SELECT * FROM tbl_receita_medica WHERE id_receita_medica =". $receita->id_receita_medica;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
-
+      echo $sql;
 			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
 			na variavel que $PDO_conex*/
 			$PDO_conex = $conex->Conectar();
@@ -110,7 +110,7 @@
 				//Se der true redireciona a tela
 
 
-				$receita = new Internacao();
+				$receita = new Receita();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
         $receita->id_receita_medica = $rs['id_receita_medica'];
@@ -133,8 +133,8 @@
 		}
 
     public function Update($receita_dados){
-			$sql = "UPDATE tbl_receita_medica set id_paciente = '".$receita_dados->id_paciente."', id_remedio = '".$receita_dados->id_remedio. "',
-      data='".$receita_dados->data."',hora='".$receita_dados->tipo."' WHERE id_paciente_internacao =".$receita_dados->idReceita;
+			$sql = "UPDATE tbl_receita_medica set id_paciente = '".$receita_dados->id_paciente."', id_funcionario = '".$receita_dados->id_funcionario."', id_remedio = '".$receita_dados->id_remedio. "',
+      data='".$receita_dados->data."',tipo='".$receita_dados->tipo."' WHERE id_receita_medica =".$receita_dados->id_receita_medica;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -160,7 +160,7 @@
         /*Delete o registro no BD*/
 		public function Delete($receita_dados){
 
-			$sql = "DELETE FROM tbl_receita_medica WHERE id_receita_medica = ". $receita_dados->idReceita;
+			$sql = "DELETE FROM tbl_receita_medica WHERE id_receita_medica = ". $receita_dados->id_receita_medica;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
