@@ -23,7 +23,8 @@ if(isset($_GET['modo'])){
         //Chama o metodo para Listar todos os registros
         $list = $controller_receita::Buscar($id);
 
-        $numero = $list->numero;
+        $tipo = $list->tipo;
+        $data= $list->data;
         //$descricao = $list->descricao;
 
     }
@@ -171,7 +172,7 @@ if(isset($_GET['modo'])){
                         <div class="campo" style="margin-top:10px;width:50px;"><!--campos--> <!--nome-->
                             <a>TIPO:</a>
                             <div class="input_campo">
-                                <input value="text" required type="text" class="input_big" name="tipo" id="txt_numero">
+                                <input value="<?= $tipo ?>" required type="text" class="input_big" name="tipo" id="txt_numero">
                             </div>
                         </div>
 

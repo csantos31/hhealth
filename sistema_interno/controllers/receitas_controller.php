@@ -41,14 +41,14 @@
   			$receita->id_receita_medica = $idReceita;
 
   			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-  			$receita = $receita::SelectById($receita);
+  			$rs = $receita::SelectById($receita);
   			//require_once('views_cms/tipo_quarto.php');
 
-        return $receita;
+        return $rs;
   		}
 
           /*Atualiza um registro existente*/
-  		public function Editar(){
+  		public function Editar($id){
         require_once ('models/receitas_class.php');
   			//GUARDA O ID DO CONTATO PASSADO NA VIEW
   			$idReceita = $_GET['id'];
