@@ -52,6 +52,9 @@ require('../verifica.php');
                         <a href="niveis_de_funcionario.php">
                            <p>Níveis de usuário</p>
                         </a>
+                        <a href="receitas.php">
+                           <p>Receitas</p>
+                        </a>
                     </div>
                 </div>
             </div>
