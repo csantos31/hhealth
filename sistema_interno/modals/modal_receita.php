@@ -14,14 +14,14 @@ if(isset($_GET['modo'])){
     if($modo=='buscarId'){
         $id=$_GET['id'];
 
-        require_once("../controllers/quarto_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/quarto_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/receitas_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/receitas_class.php");/*da um require na nivel_class*/
 
         // Instancio a controller
-        $controller_quarto  = new controllerQuarto();
+        $controller_receita  = new controllerReceita();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_quarto::Buscar($id);
+        $list = $controller_receita::Buscar($id);
 
         $numero = $list->numero;
         //$descricao = $list->descricao;
@@ -74,7 +74,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=internacao&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=receita&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -135,10 +135,10 @@ if(isset($_GET['modo'])){
 
                         <div class="campo">
                             <div class="input_campo_p">
-                               <label>Unidade :</label>
-                                <select id="slt_unidade" class="input_med" name="slt_unidade">
+                               <label>REMÉDIO :</label>
+                                <select id="slt_unidade" class="input_med" name="slt_remedio">
                                   <?php
-                                  equire_once('../controllers/remedio_controller.php');
+                                  require_once('../controllers/remedio_controller.php');
                                   require_once('../models/remedio_class.php');
                                   $controller_unidade  = new controllerRemedio();
                                   $list = $controller_unidade::Listar();
@@ -149,7 +149,7 @@ if(isset($_GET['modo'])){
 
 
                                   ?>
-                                      <option value="<?= $list[$cont]->id_unidade ?>"><?= $list[$cont]->nome_unidade ?></option>
+                                      <option value="<?= $list[$cont]->id_remedio ?>"><?= $list[$cont]->remedio ?></option>
                                   <?php
 
                                     $cont = $cont + 1;

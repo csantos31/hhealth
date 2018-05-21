@@ -9,7 +9,7 @@
     if(isset($_SESSION['id_funcionario'])){
         $id=$_SESSION['id_funcionario'];
     }
-    
+
     // verifica qual o tipo da controller iremos trabalhar
 	switch ($controller) {
 
@@ -257,10 +257,10 @@
              }
 
              break;
-       
+
         case 'tipo_quarto':
             switch($modo){
-                    
+
                 case 'inserir':
 
                       require_once('controllers/tipo_quarto_controller.php');
@@ -289,11 +289,11 @@
                     $controller_internacao::Excluir();
 
                     break;
-                    
+
                 case 'desativar':
 					require_once('controllers/tipo_quarto_controller.php');
                     require_once('models/tipo_quarto_class.php');
-                    
+
                     $controller_gerenciamento_ambiente = new controllerTipoQuarto();
 
                     $controller_gerenciamento_ambiente::Desativar();
@@ -302,18 +302,18 @@
 				case 'ativar':
 					require_once('controllers/tipo_quarto_controller.php');
                     require_once('models/tipo_quarto_class.php');
-                    
+
                     $controller_gerenciamento_ambiente = new controllerTipoQuarto();
 
                     $controller_gerenciamento_ambiente::Ativar();
 					break;
 					break;
-                }  
+                }
             break;
-            
+
             case 'quarto':
             switch($modo){
-                    
+
                 case 'inserir':
 
                       require_once('controllers/quarto_controller.php');
@@ -342,15 +342,15 @@
                     $controller_quarto::Excluir();
 
                     break;
-                    
-            
-                }  
+
+
+                }
             break;
-            
+
             case 'internacao':
             switch($modo){
-                    
-                
+
+
                 case 'inserir':
 
                       require_once('controllers/internacao_controller.php');
@@ -379,15 +379,15 @@
                     $controller_internacao::Excluir();
 
                     break;
-                    
-            
-                }  
+
+
+                }
             break;
-            
+
             case 'remedio':
             switch($modo){
-                    
-                
+
+
                 case 'inserir':
 
                       require_once('controllers/remedio_controller.php');
@@ -416,9 +416,46 @@
                     $controller_remedio::Excluir();
 
                     break;
-                    
-            
-                }  
+
+
+                }
+            break;
+
+            case 'receita':
+            switch($modo){
+
+
+                case 'inserir':
+
+                      require_once('controllers/receitas_controller.php');
+                      require_once('models/receitas_class.php');
+                      $controller_receitas = new controllerReceita();
+                      $controller_receitas::Novo($id);
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/receitas_controller.php');
+                      require_once('models/receitas_class.php');
+                      $controller_receitas = new controllerReceita();
+                      $controller_receitas::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/receitas_controller.php');
+                    require_once('models/receitas_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_receitas =  new controllerReceita();
+                    //Chama o metodo Novo da controller
+                    $controller_receitas::Excluir();
+
+                    break;
+
+
+                }
             break;
 
 		default:

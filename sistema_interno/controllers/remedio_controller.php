@@ -1,4 +1,4 @@
-<?php 
+<?php
 
     class controllerRemedio{
        public function Novo(){
@@ -15,23 +15,19 @@
 			//$contato::Insert($contato);
 			$remedio::Insert($remedio);
 
-		} 
-        
+		}
+
 		public function Listar(){
 			//Instancia da classe contatos
 			$remedio = new Remedio();
-
-			//Chama o método para selecionar os registros
-            
-            
-            
 			return $remedio::Select();
+
 		}
-        
+
         public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idRemedio = $_GET['id'];
-            
+
 			//INSTANCIA A CLASSE CONTATO
 			$remedio = new Remedio();
 
@@ -43,7 +39,7 @@
 			//require_once('views_cms/tipo_quarto.php');
             return $rem;
 		}
-        
+
         /*Atualiza um registro existente*/
 		public function Editar(){
             require_once ('models/remedio_class.php');
@@ -58,13 +54,13 @@
 
 			$remedio->remedio = $_POST['txt_remedio'];
 			$remedio->descricao = $_POST['txt_descricao'];
-			
+
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
 			$remedio::Update($remedio);
-			
+
 		}
-        
+
         public function Excluir(){
             require_once ('models/remedio_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
@@ -80,8 +76,8 @@
 			$remedio::Delete($remedio);
 
 		}
-        
-        
+
+
     }
 
 

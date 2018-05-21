@@ -129,14 +129,14 @@ require('../verifica.php');
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->paciente ?></div>
+                                        <div class="item_tabela"><?= $list[$cont]->tipo ?></div>
                                         <div class="item_tabela"><?= $list[$cont]->data ?></div>
                                         <div class="item_tabela icones_tabela">
 
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente_internacao);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_receita_medica);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_paciente_internacao);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_receita_medica);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>
