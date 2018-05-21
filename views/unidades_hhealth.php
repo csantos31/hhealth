@@ -132,8 +132,8 @@
                 <!-- Esse require adiciona o rodapé na página -->
                 <?php require_once('footer.php'); ?>
             </div>
-            <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChOOhHq12LWYndEM_JPwsI7AM_WIX3R2M&callback=myMap"></script> -->
-          <script async defer
-          src="../js/googlemaps.js"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXjkNBAGDja43o4-Wp0LFaRlVmb7oA7-8&callback=myMap"></script>
+          <!-- <script async defer
+          src="../js/googlemaps.js"></script> -->
       </body>
 </html>
