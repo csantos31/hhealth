@@ -285,6 +285,94 @@
                 }
 
                 break;
+        case 'tipo_quarto':
+            switch($modo){
+                    
+                case 'inserir':
+
+                      require_once('controllers/tipo_quarto_controller.php');
+                      require_once('models/tipo_quarto_class.php');
+                      $controller_internacao = new controllerTipoQuarto();
+                      $controller_internacao::Novo();
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/tipo_quarto_controller.php');
+                      require_once('models/tipo_quarto_class.php');
+                      $controller_internacao = new controllerTipoQuarto();
+                      $controller_internacao::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/tipo_quarto_controller.php');
+                    require_once('models/tipo_quarto_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_internacao =  new controllerTipoQuarto();
+                    //Chama o metodo Novo da controller
+                    $controller_internacao::Excluir();
+
+                    break;
+                    
+                case 'desativar':
+					require_once('controllers/tipo_quarto_controller.php');
+                    require_once('models/tipo_quarto_class.php');
+                    
+                    $controller_gerenciamento_ambiente = new controllerTipoQuarto();
+
+                    $controller_gerenciamento_ambiente::Desativar();
+					break;
+
+				case 'ativar':
+					require_once('controllers/tipo_quarto_controller.php');
+                    require_once('models/tipo_quarto_class.php');
+                    
+                    $controller_gerenciamento_ambiente = new controllerTipoQuarto();
+
+                    $controller_gerenciamento_ambiente::Ativar();
+					break;
+					break;
+                }  
+            break;
+            
+            case 'quarto':
+            switch($modo){
+                    
+                case 'inserir':
+
+                      require_once('controllers/quarto_controller.php');
+                      require_once('models/quarto_class.php');
+                      $controller_quarto = new controllerQuarto();
+                      $controller_quarto::Novo();
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/quarto_controller.php');
+                      require_once('models/quarto_class.php');
+                      $controller_quarto = new controllerQuarto();
+                      $controller_quarto::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/quarto_controller.php');
+                    require_once('models/quarto_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_quarto =  new controllerQuarto();
+                    //Chama o metodo Novo da controller
+                    $controller_quarto::Excluir();
+
+                    break;
+                    
+            
+                }  
+            break;
 
 		default:
 			# code...

@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `hhealth`;
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.7.20-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -263,7 +263,7 @@ CREATE TABLE `tbl_cargo` (
   PRIMARY KEY (`id_cargo`),
   KEY `fk_nivel_cargo_idx` (`id_nivel_funcionario`),
   CONSTRAINT `fk_nivel_cargo` FOREIGN KEY (`id_nivel_funcionario`) REFERENCES `tbl_nivel_funcionario` (`id_nivel_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,7 +272,7 @@ CREATE TABLE `tbl_cargo` (
 
 LOCK TABLES `tbl_cargo` WRITE;
 /*!40000 ALTER TABLE `tbl_cargo` DISABLE KEYS */;
-INSERT INTO `tbl_cargo` VALUES (1,2,'Chefe Administrativo ','chefia os bgkh tudo',1),(2,2,'cargo','cargo sem descrição ',0);
+INSERT INTO `tbl_cargo` VALUES (1,2,'Chefe Administrativo ','chefia os bgkh tudo',1),(2,2,'cargo','cargo sem descrição ',0),(3,2,'chefe chefe','asdas',1);
 /*!40000 ALTER TABLE `tbl_cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -489,7 +489,7 @@ CREATE TABLE `tbl_endereco` (
   KEY `fk_idpaispaispais_idx` (`id_pais`),
   CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -498,7 +498,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',15,'sdgsd','dg',NULL);
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',15,'sdgsd','dg',NULL),(52,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(53,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(54,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -540,7 +540,7 @@ CREATE TABLE `tbl_especialidade` (
   `imagem` text,
   `status` char(1) DEFAULT NULL,
   PRIMARY KEY (`id_especialidade`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -549,7 +549,7 @@ CREATE TABLE `tbl_especialidade` (
 
 LOCK TABLES `tbl_especialidade` WRITE;
 /*!40000 ALTER TABLE `tbl_especialidade` DISABLE KEYS */;
-INSERT INTO `tbl_especialidade` VALUES (1,'Cardiologia haha','No Brasil, o estudo oficial da cardiologia como ciência e especialidade médica teve início com Carlos Chagas e seus colaboradores, no ano de 1909. Foram estes pesquisadores que desenvolveram as primeiras pesquisas no país a respeito das doenças do coração, além de introduzirem no Brasil o primeiro eletrocardiograma, que foi instalado no Laboratório de Manguinhos, no Rio de Janeiro.','arquivos/cirurgia2.jpg','0'),(2,'hfghfghhsfhfhfhdhghgh','hsdfhdfsghdasghdfgasdgdgh','arquivos/Cyntia SENAI 20180216_081615.jpg','0'),(3,'sdasdas','dsadasdasdas','arquivos/download.jpg','0'),(4,'Ai meu coraçaum','é dessa vez que vaaaaaai','arquivos/endocrinologia.jpg','0'),(5,'num credito que foi e fooooi viado','mas foi siiiiiiim','arquivos/mapa.png','0'),(6,'outraaaaaa','lalalalalalalalmakgdgafdu rf','arquivos/oftalmologia.jpg','1'),(7,'ai meu coraçaaaummmmmmmmm','la la la fooooi','arquivos/logo_hhealth.png','1'),(8,'ai meu coraçaummmmm','adfsffsdf','arquivos/acupuntura.jpg','0');
+INSERT INTO `tbl_especialidade` VALUES (1,'Cardiologia haha','No Brasil, o estudo oficial da cardiologia como ciência e especialidade médica teve início com Carlos Chagas e seus colaboradores, no ano de 1909. Foram estes pesquisadores que desenvolveram as primeiras pesquisas no país a respeito das doenças do coração, além de introduzirem no Brasil o primeiro eletrocardiograma, que foi instalado no Laboratório de Manguinhos, no Rio de Janeiro.','arquivos/cirurgia2.jpg','0'),(2,'hfghfghhsfhfhfhdhghgh','hsdfhdfsghdasghdfgasdgdgh','arquivos/Cyntia SENAI 20180216_081615.jpg','0'),(3,'sdasdas','dsadasdasdas','arquivos/download.jpg','0'),(4,'Ai meu coraçaum','é dessa vez que vaaaaaai','arquivos/endocrinologia.jpg','0'),(5,'num credito que foi e fooooi viado','mas foi siiiiiiim','arquivos/mapa.png','0'),(6,'outraaaaaa2222','lalalalalalalalmakgdgafdu rf','arquivos/oftalmologia.jpg','1'),(7,'ai meu coraçaaaummmmmmmmm','la la la fooooi','arquivos/logo_hhealth.png','1'),(8,'ai meu coraçaummmmm','adfsffsdf','arquivos/acupuntura.jpg','0'),(9,'teste','teste','arquivos/Hydrangeas.jpg','0');
 /*!40000 ALTER TABLE `tbl_especialidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -643,6 +643,7 @@ DROP TABLE IF EXISTS `tbl_fale_conosco`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_fale_conosco` (
   `id_fale_conosco` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(45) DEFAULT NULL,
   `email` text,
   `telefone` text,
   `celular` text,
@@ -650,7 +651,7 @@ CREATE TABLE `tbl_fale_conosco` (
   `mensagem` text,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_fale_conosco`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -659,6 +660,7 @@ CREATE TABLE `tbl_fale_conosco` (
 
 LOCK TABLES `tbl_fale_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_fale_conosco` DISABLE KEYS */;
+INSERT INTO `tbl_fale_conosco` VALUES (1,'Kevin Eduardo Farias','kevineduardofarias-76@demasi.com.br','1135346290','1135346290','hum','sdfsdf',1);
 /*!40000 ALTER TABLE `tbl_fale_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -977,7 +979,7 @@ CREATE TABLE `tbl_nivel_funcionario` (
   PRIMARY KEY (`id_nivel_funcionario`),
   KEY `fk_usuario_permit_idx` (`id_permissao`),
   CONSTRAINT `fk_usuario_permit` FOREIGN KEY (`id_permissao`) REFERENCES `usuario_medico_administrador` (`id_usuario_medico_administrador`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -986,7 +988,7 @@ CREATE TABLE `tbl_nivel_funcionario` (
 
 LOCK TABLES `tbl_nivel_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0,NULL),(2,'CDC','Cria e edita conteúdos para o site',1,NULL);
+INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0,NULL),(2,'CDC','Cria e edita conteúdos para o site',1,NULL),(3,'vv','ss',1,NULL),(4,'funcionaaaadvg2gd22','asdasdas200',1,NULL);
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1013,7 +1015,7 @@ CREATE TABLE `tbl_paciente` (
   PRIMARY KEY (`id_paciente`),
   KEY `fk3_idx` (`id_endereco`),
   CONSTRAINT `fk3` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1022,7 +1024,7 @@ CREATE TABLE `tbl_paciente` (
 
 LOCK TABLES `tbl_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','46026502874','arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1);
+INSERT INTO `tbl_paciente` VALUES (8,38,1,'MARIA','XIQUINHA','1999-01-31','5545465','46026502874','arquivos/Cyntia SENAI 20180216_081615.jpg','arquivos/bg_login1.jpg','1',1),(9,52,1,'Kevin','Farias','2018-05-10','111111','45454','arquivos/Jellyfish.jpg','arquivos/Desert.jpg','1',1),(10,53,1,'Kevin','Farias','2018-05-10','111111','45454','arquivos/Jellyfish.jpg','arquivos/Desert.jpg','1',1),(11,54,1,'Kevin','Farias','2018-05-03','111111','45454','arquivos/Lighthouse.jpg','arquivos/Koala.jpg','1',1);
 /*!40000 ALTER TABLE `tbl_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1137,7 +1139,7 @@ DROP TABLE IF EXISTS `tbl_quarto`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_quarto` (
-  `id_quarto` int(11) NOT NULL,
+  `id_quarto` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipo_quarto` int(11) NOT NULL,
   `id_unidade` int(11) NOT NULL,
   `numero` int(4) DEFAULT NULL,
@@ -1146,7 +1148,7 @@ CREATE TABLE `tbl_quarto` (
   KEY `fk_18_idx` (`id_unidade`),
   CONSTRAINT `fk18` FOREIGN KEY (`id_tipo_quarto`) REFERENCES `tbl_tipo_quarto` (`id_tipo_quarto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_18` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidade` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1155,6 +1157,7 @@ CREATE TABLE `tbl_quarto` (
 
 LOCK TABLES `tbl_quarto` WRITE;
 /*!40000 ALTER TABLE `tbl_quarto` DISABLE KEYS */;
+INSERT INTO `tbl_quarto` VALUES (1,3,1,27),(2,10,3,30);
 /*!40000 ALTER TABLE `tbl_quarto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1405,7 +1408,7 @@ CREATE TABLE `tbl_tipo_quarto` (
   `nivel` varchar(50) NOT NULL,
   `descricao` text NOT NULL,
   PRIMARY KEY (`id_tipo_quarto`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1414,7 +1417,7 @@ CREATE TABLE `tbl_tipo_quarto` (
 
 LOCK TABLES `tbl_tipo_quarto` WRITE;
 /*!40000 ALTER TABLE `tbl_tipo_quarto` DISABLE KEYS */;
-INSERT INTO `tbl_tipo_quarto` VALUES (1,'rtyu','tutr');
+INSERT INTO `tbl_tipo_quarto` VALUES (3,'teste','teste'),(9,'tipo_quarto2','tipo_quarto'),(10,'teste','teste');
 /*!40000 ALTER TABLE `tbl_tipo_quarto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1509,7 +1512,6 @@ CREATE TABLE `tbl_tratamento` (
   KEY `fk_21_idx` (`id_preco_tratamento`),
   KEY `fk22_idx` (`id_quarto`),
   CONSTRAINT `dk21` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk22` FOREIGN KEY (`id_quarto`) REFERENCES `tbl_quarto` (`id_quarto`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_21` FOREIGN KEY (`id_preco_tratamento`) REFERENCES `tbl_preco_tratamento` (`id_preco_tratamento`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -1650,4 +1652,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-15 11:18:37
+-- Dump completed on 2018-05-20 22:13:28

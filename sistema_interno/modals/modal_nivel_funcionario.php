@@ -117,26 +117,7 @@ if(isset($_GET['modo'])){
                             </div>
                         </div>
                         
-                        <div class="campo"><!--campos--> <!--nome-->
-                            <div class="input_campo">
-                               <label>Cargo :</label>
-                                <select id="slt_cargo" class="input_med" name="slt_cargo">
-                                  <?php
-                                  include_once('../controllers/cargo_controller.php');
-                                  include_once('../models/cargo_class.php');
-                                  $controller_cargo  = new controllerCargo();
-                                  $list = $controller_cargo::Listar();
-                                  $cont = 0;
-                                  while ($cont < count($list)) {
-                                  ?>
-                                      <option value="<?= $list[$cont]->id_cargo ?>"><?= $list[$cont]->cargo ?></option>
-                                  <?php
-                                    $cont +=1;
-                                  }
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
+                       
                         <div class="campo_botao">
                             <div class="botao">
                                 <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">

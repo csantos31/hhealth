@@ -62,6 +62,26 @@
                      </div>
                  </div>
             </a>
+          <a href="quarto.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/levels.png">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Quarto</a>
+                     </div>
+                 </div>
+            </a>
+          <a href="tipo_quarto.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/levels.png">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Tipo de quarto</a>
+                     </div>
+                 </div>
+            </a>
             <a href="niveis_de_funcionario.php">
                  <div class="linha">
                      <div class="img_menu_lateral">

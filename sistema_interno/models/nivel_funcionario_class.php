@@ -164,7 +164,7 @@ class NivelFuncionario{
 
         public function Update($nivel){
 
-			$sql = "UPDATE tbl_nivel_funcionario SET nivel = '".$nivel->nivel."', descricao = '".$nivel->descricao. "' WHERE id_nivel_funcionario = ".$nivel->id_nivel_funcionario;
+			$sql = "UPDATE tbl_nivel_funcionario SET nivel = '".$nivel->nivel."', descricao = '".$nivel->descricao. "',set WHERE id_nivel_funcionario = ".$nivel->id_nivel_funcionario;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();

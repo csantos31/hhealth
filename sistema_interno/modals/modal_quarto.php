@@ -1,12 +1,9 @@
 <?php
 
-include('../controllers/util.php');
-
-
 //$action = "modo=inserir";
 
 $id="0";
-$cargo=null;
+$numero=null;
 $descricao=null;
 
 
@@ -15,19 +12,19 @@ if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     
     if($modo=='buscarId'){
-        $id=$_GET['codigo'];
+        $id=$_GET['id'];
         
-        require_once("../controllers/cargo_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/cargo_class.php");/*da um require na nivel_class*/
+        require_once("../controllers/quarto_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/quarto_class.php");/*da um require na nivel_class*/
         
         // Instancio a controller
-        $controller_cargo  = new controllerCargo();
+        $controller_quarto  = new controllerQuarto();
 
         //Chama o metodo para Listar todos os registros
-        $list = $controller_cargo::Buscar($id);
+        $list = $controller_quarto::Buscar($id);
         
-        $cargo = $list->cargo;
-        $descricao = $list->descricao;
+        $numero = $list->numero;
+        //$descricao = $list->descricao;
     
     }
 }
@@ -86,6 +83,7 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
+                        //console.log(dados);
                     }
                 });
 
@@ -103,36 +101,32 @@ if(isset($_GET['modo'])){
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Cargo</a>
+                            <a>Quarto</a>
                         </div>
                     </div>
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
                         <div class="campo" style="margin-top:50px;"><!--campos--> <!--nome-->
                             <div class="input_campo">
-                                <input value="<?= $cargo ?>" required type="text" class="input_big" placeholder="CARGO" name="txt_cargo" id="txt_cargo">
+                                <input value="<?= $numero ?>" required type="text" class="input_big" placeholder="NUMERO" name="txt_numero" id="txt_numero">
                             </div>
                         </div>
+                        
                         <div class="campo">
                             <div class="input_campo_p">
-                               <label>Nível deste cargo :</label>
-                                <select id="slt_cargo" class="input_med" name="slt_nivel">
+                               <label>Tipo do quarto :</label>
+                                <select id="slt_tipo_quarto" class="input_med" name="slt_tipo_quarto">
                                   <?php
-                                  include_once('../controllers/nivel_funcionario_controller.php');
-                                  include_once('../models/nivel_funcionario_class.php');
-                                  $controller_nivel  = new controllerNivelFuncionario();
+                                  include_once('../controllers/tipo_quarto_controller.php');
+                                  include_once('../models/tipo_quarto_class.php');
+                                  $controller_nivel  = new controllerTipoQuarto();
                                   $list = $controller_nivel::Listar();
                                             
                                   $cont = 0;
                       
-                                  while ($cont < count($list)) {
-                                    
-                                      echo 'here';
-                                      parr($list);
-                                      
-                                      
+                                  while ($cont < count($list)) {  
                                   ?>
-                                      <option value="<?= $list[$cont]->id_nivel_funcionario ?>"><?= $list[$cont]->nivel ?></option>
+                                      <option value="<?= $list[$cont]->id_tipo_quarto ?>"><?= $list[$cont]->nivel ?></option>
                                   <?php
                                   
                                     $cont = $cont + 1;
@@ -143,11 +137,36 @@ if(isset($_GET['modo'])){
                                 </select>
                             </div>
                         </div>
-                        <div class="campo"><!--campos--> <!--nome-->
-                            <div class="input_campo">
-                               <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO CARGO" name="txt_descricao" id="txt_descricao" style="resize:none;"><?= $descricao ?></textarea>
+                        
+                        <div class="campo">
+                            <div class="input_campo_p">
+                               <label>Unidade :</label>
+                                <select id="slt_unidade" class="input_med" name="slt_unidade">
+                                  <?php
+                                  include_once('../controllers/unidade_controller.php');
+                                  include_once('../models/unidade_class.php');
+                                  $controller_unidade  = new controller_unidade();
+                                  $list = $controller_unidade::Listar();
+                                            
+                                  $cont = 0;
+                      
+                                  while ($cont < count($list)) {
+                                      
+                                      
+                                  ?>
+                                      <option value="<?= $list[$cont]->id_unidade ?>"><?= $list[$cont]->nome_unidade ?></option>
+                                  <?php
+                                  
+                                    $cont = $cont + 1;
+                                    
+                                  }
+                                  
+                                    ?>
+                                </select>
                             </div>
                         </div>
+                        
+                        
                         <div class="campo_botao">
                             <div class="botao">
                                 <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">

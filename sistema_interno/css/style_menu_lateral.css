@@ -6,15 +6,17 @@
 .menu_lateral_cms{
       width: 15%;
       height: 100%;
-      position: fixed;
+/*      position: fixed;*/
       float: left;
-      overflow: hidden;
       margin-left: 15px;
 }
 
 .segura_menu{
-      width: 100%;
-      height: 480px;
+    width: 100%;
+    min-height: 480px;
+    height: auto;
+/*    position: absolute;*/
+/*    background:red; */
 }
 
 .linha{
