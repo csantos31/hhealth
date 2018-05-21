@@ -25,26 +25,6 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="js/jcarousellite.js"></script>
         <script src="js/carrossel.js"></script>
-
-
-        <script>
-            var largura = screen.width
-              if (largura>520) {
-                    var altura=700
-              }else {
-                    var altura=300
-              }
-        </script>
-        <?php
-            //$larguraPHP= "<script>document.write(largura)</script>px";
-
-            $alturaPHP="<script>document.write(altura)</script>px";
-
-            ?>
-            <?php //echo $larguraPHP ?>
-
-
-
         <script>
           function myMap() {
           var mapProp= {
@@ -235,7 +215,7 @@
                                         $cont=0;
                                         while($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-
+                                              
                                       ?>
                                     <div class="img_faixa_2_home">
                                       <div class="suporte_imagem_ambiente">
