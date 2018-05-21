@@ -29,19 +29,18 @@
           <form name="" method="post" action="router.php?controller=logar&modo=login">
             <div class="login">
                   <div class="txtlogin">
-                        Login:
+                        Login
                   </div>
+                  <img src="../imagens/user.png">
                   <div class="txt_login">
-                        <input type="text" name="txt_login" value="">
+                      <input type="text" name="txt_login" id="cpf" value=""  >
                   </div>
-                  <div class="txtsenha">
-                        Senha:
-                  </div>
+                  <img src="../imagens/user.png">
                   <div class="txt_senha">
-                        <input type="password" name="txt_senha" value="">
+                      <input type="password" name="txt_senha" value="" >
                   </div>
                   <div class="botao_entar">
-                        <input type="submit" name="btn_entrar" value="Entrar">
+                        <input type="submit" name="btn_entrar" value="ENTRAR">
                   </div>
             </div>
         </form>

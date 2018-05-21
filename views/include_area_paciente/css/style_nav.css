@@ -23,6 +23,11 @@ a{
     src: url(../fonte/canter/Canter%20Bold.otf);
 }
 
+body{
+    width:100%;
+    height:auto;
+}
+
 /* -------------------------------Cabeçalho da página ------------------------------*/
 .opcaity_header{
     height: 200px;
@@ -31,7 +36,6 @@ a{
     z-index: 1;
 background: #727070;
     opacity: 0.4;
-    src: url(../fonte/canter/Canter%20Bold.otf);
 }
 #header_area_paciente{
     height: 200px;
@@ -171,7 +175,7 @@ background: #727070;
 /* Segura o menu*/
 #suporte_menu{
     height: 50px;
-    width: 100%;
+    width: 1200px;
     /*    background: #c2c2c2;*/
     z-index: 2;
     position: absolute;
