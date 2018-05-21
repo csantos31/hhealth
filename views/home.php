@@ -215,7 +215,7 @@
                                         $cont=0;
                                         while($cont<count($list)){
                                             if($list[$cont]->ativo==1){
-                                              
+
                                       ?>
                                     <div class="img_faixa_2_home">
                                       <div class="suporte_imagem_ambiente">
@@ -349,6 +349,7 @@
           </div>
       </div>
       <script type="text/javascript" src="js/wz_tooltip.js"></script>
-      <script src="js/googlemaps.js"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXjkNBAGDja43o4-Wp0LFaRlVmb7oA7-8&callback=myMap"></script>
+      <!-- <script src="js/googlemaps.js"></script> -->
     </body>
 </html>

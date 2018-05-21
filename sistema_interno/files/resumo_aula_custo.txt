@@ -1,0 +1,60 @@
+resumo aula custo
+
+
+
+escopo -> controle e monitoramento de mudanças 
+
+a mudança precisa ser analisada, avaliada, os impactos precisam ser medidos e o planejamento refeito
+
+colher assinatura do cliente
+
+mudança não pode ser temida, mas sim gerenciada
+
+documento chamado termo de abertura
+
+gerenciar tempo, encaiar tempo das atividades em relação ao encarregado
+
+
+*************deve-se considerar nos custos de mão de obra**************** (levar em conta para encontrar o valor hora do profissional - tcc)
+salario bruto
+encargos
+vale transporte
+vale alimentação
+assistencia médica
+treinamentos
+
+capacidade produtiva
+é o total anual de horas efetivo que a empresa dispõe pelas vendas de cada funcionário no ano
+
+
+encontrar valor hora sempre por ano e nunca por mês
+
+capacidade produtiva = quantidade de horas X dias úteis no ano
+valor do funcionário anual
+encontrar valor hora
+
+
+
+total/hora = custo-de-mão-de-obra + despesa
+
+
+calculo de depreciação
+
+valor de aquisição do bem  (valor pago pelo bem)
+
+valor residual    (tipo quando o valor pode ser vendido com o passar do tempo)
+
+valor de vida útil do bem
+
+(valor-do-bem - valor-residual) / tempo-de-vida-util (em meses)
+
+(ITENS PARA DEPRECIAÇÃO)
+carro computador noteboook e celular 
+
+
+
+
+
+
+
+
