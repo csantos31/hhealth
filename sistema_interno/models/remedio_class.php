@@ -1,13 +1,9 @@
 <?php 
 
-    class Internacao{
-        public $id_paciente_internacao;
-		public $id_paciente;
-		public $id_funcionario;
-        public $id_quarto;
-        public $id_unidade;
-        public $data;
-        public $hora;
+    class Remedio{
+        public $id_remedio;
+		public $remedio;
+		public $descricao;
         
         //cria um construtor
 		public function __construct(){
@@ -15,10 +11,10 @@
 		}
         
         /*insere o registro no DB*/
-		public static function Insert($internacao_dados){
-			$sql = "INSERT INTO tbl_paciente_internacao(id_paciente,id_funcionario,id_quarto,id_unidade,data,hora)
-			VALUES ('".$internacao_dados->id_paciente."',
-			'".$internacao_dados->id_funcionario."','".$internacao_dados->id_quarto."','".$internacao_dados->id_unidade."','".$internacao_dados->data."','".$internacao_dados->hora."'
+		public static function Insert($remedio_dados){
+			$sql = "INSERT INTO tbl_remedio(remedio,descricao)
+			VALUES ('".$remedio_dados->remedio."',
+			'".$remedio_dados->descricao."'
 			);";
             
         
@@ -35,8 +31,8 @@
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
 			}else {
-				//Mensagem de erro
                 echo $sql;
+				//Mensagem de erro
 				echo "Error inserir no Banco de Dados";
 			}
 
@@ -48,7 +44,7 @@
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_paciente_internacao;";
+			$sql="SELECT * FROM tbl_remedio ORDER BY id_remedio DESC;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -66,16 +62,12 @@
 			//Estrutura de repetição para pegar dados
 			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
-				$lista_internacao[] = new Internacao();
+				$lista_remedio[] = new Remedio();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-                $lista_internacao[$cont]->id_paciente_internacao = $rs['id_paciente_internacao'];
-                $lista_internacao[$cont]->id_paciente = $rs['id_paciente'];
-                $lista_internacao[$cont]->id_funcionario = $rs['id_funcionario'];
-				$lista_internacao[$cont]->id_quarto = $rs['id_quarto'];
-				$lista_internacao[$cont]->id_unidade = $rs['id_unidade'];
-				$lista_internacao[$cont]->data = $rs['data'];
-                $lista_internacao[$cont]->hora = $rs['hora'];
+				$lista_remedio[$cont]->id_remedio = $rs['id_remedio'];
+				$lista_remedio[$cont]->remedio = $rs['remedio'];
+				$lista_remedio[$cont]->descricao = $rs['descricao'];
 
 				// Soma mais um no contador
 				$cont+=1;
@@ -84,16 +76,16 @@
 			$conex::Desconectar();
 
 			//Apenas retorna o $list_contatos se existir dados no banco de daos
-			if (isset($lista_internacao)) {
+			if (isset($lista_remedio)) {
 				# code...
-				return $lista_internacao;
+				return $lista_remedio;
 			}
 
 		}
         
         /*Busca um registro especifico no BD*/
-		public function SelectById($internacao_dados){
-			$sql = "SELECT * FROM tbl_paciente_internacao WHERE id_paciente_internacao =". $quarto->id_quarto;
+		public function SelectById($remedio){
+			$sql = "SELECT * FROM tbl_remedio WHERE id_remedio =". $remedio->id_remedio;
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -109,21 +101,15 @@
 				//Se der true redireciona a tela
               
                 
-				$internacao = new Internacao();
+				$remedio = new Remedio();
 
-				// Guarda os dados no banco de dados em cada indice do objeto criado
-                $internacao->id_paciente_internacao = $rs['id_paciente_internacao'];
-                $internacao->id_paciente = $rs['id_paciente'];
-                $internacao->id_funcionario = $rs['id_funcionario'];
-				$internacao->id_quarto = $rs['id_quarto'];
-				$internacao->id_unidade = $rs['id_unidade'];
-				$internacao->data = $rs['data'];
-                $internacao->hora = $rs['hora'];
+				$remedio->id_remedio = $rs['id_remedio'];
+				$remedio->remedio = $rs['remedio'];
+				$remedio->descricao = $rs['descricao'];
 				
-				return $internacao;
+				return $remedio;
 
 			}else {
-                echo $sql;
 				//Mensagem de erro
 				echo "Error ao selecionar no Banco de Dados";
 			}
@@ -132,8 +118,8 @@
 			$conex->Desconectar();
 		}
         
-        public function Update($internacao_dados){
-			$sql = "UPDATE tbl_paciente_internacao set id_paciente = '".$internacao_dados->id_paciente."', id_quarto = '".$internacao_dados->id_quarto. "',id_unidade='".$internacao_dados->id_unidade."',data='".$internacao_dados->data."',hora='".$internacao_dados->hora."' WHERE id_paciente_internacao =".$internacao_dados->id_paciente_internacao;
+        public function Update($remedio){
+			$sql = "UPDATE tbl_remedio set remedio = '".$remedio->remedio."', descricao = '".$remedio->descricao. "' WHERE id_remedio =".$remedio->id_remedio;
 		
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -145,10 +131,10 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
+                //echo $sql;
 				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
-                echo $sql;
 				echo "Error atualizar no Banco de Dados";
 			}
 
@@ -157,9 +143,9 @@
 		}
         
         /*Delete o registro no BD*/
-		public function Delete($internacao_dados){
+		public function Delete($remedio){
 
-			$sql = "DELETE FROM tbl_paciente_internacao WHERE id_paciente_internacao = ". $internacao_dados->id_paciente_internacao;
+			$sql = "DELETE FROM tbl_remedio WHERE id_remedio = ". $remedio->id_remedio;
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
@@ -174,7 +160,6 @@
 				echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
-                echo $sql;
 				echo "Error ao deletar no Banco de Dados";
 			}
 
@@ -182,8 +167,6 @@
 			$conex->Desconectar();
 
 		}
-        
-       
         
         
     }

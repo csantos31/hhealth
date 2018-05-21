@@ -1,9 +1,15 @@
 <?php
+    @session_start();
     $modo = $_GET['modo'];
-     $controller = $_GET['controller'];
-     if(isset($modo)){
-        $modo = $_GET['modo'];
-     }
+    $controller = $_GET['controller'];
+    if(isset($modo)){
+    $modo = $_GET['modo'];
+    }
+
+    if(isset($_SESSION['id_funcionario'])){
+        $id=$_SESSION['id_funcionario'];
+    }
+    
     // verifica qual o tipo da controller iremos trabalhar
 	switch ($controller) {
 
@@ -251,40 +257,7 @@
              }
 
              break;
-       case 'internacao':
-          // Verifica as ações a serem executadas pela controller (novo, editar ou excluir)
-            switch ($modo) {
-                case 'inserir':
-
-                      require_once('controllers/internacao_controller.php');
-                      require_once('models/internacao_class.php');
-                      $controller_internacao = new controllerInternacao();
-                      $controller_internacao::Novo();
-
-                      break;
-
-                case 'editar':
-
-                      require_once('controllers/internacao_controller.php');
-                      require_once('models/internacao_class.php');
-                      $controller_internacao = new controllerInternacao();
-                      $controller_internacao::Editar();
-
-                      break;
-
-                case 'excluir':
-                    require_once('controllers/internacao_controller.php');
-                    require_once('models/internacao_class.php');
-
-                    // Instanciando a classe da controller
-                    $controller_internacao =  new controllerInternacao();
-                    //Chama o metodo Novo da controller
-                    $controller_internacao::Excluir();
-
-                    break;
-                }
-
-                break;
+       
         case 'tipo_quarto':
             switch($modo){
                     
@@ -367,6 +340,80 @@
                     $controller_quarto =  new controllerQuarto();
                     //Chama o metodo Novo da controller
                     $controller_quarto::Excluir();
+
+                    break;
+                    
+            
+                }  
+            break;
+            
+            case 'internacao':
+            switch($modo){
+                    
+                
+                case 'inserir':
+
+                      require_once('controllers/internacao_controller.php');
+                      require_once('models/internacao_class.php');
+                      $controller_internacao = new controllerInternacao();
+                      $controller_internacao::Novo($id);
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/internacao_controller.php');
+                      require_once('models/internacao_class.php');
+                      $controller_internacao = new controllerInternacao();
+                      $controller_internacao::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/internacao_controller.php');
+                    require_once('models/internacao_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_internacao =  new controllerInternacao();
+                    //Chama o metodo Novo da controller
+                    $controller_internacao::Excluir();
+
+                    break;
+                    
+            
+                }  
+            break;
+            
+            case 'remedio':
+            switch($modo){
+                    
+                
+                case 'inserir':
+
+                      require_once('controllers/remedio_controller.php');
+                      require_once('models/remedio_class.php');
+                      $controller_remedio = new controllerRemedio();
+                      $controller_remedio::Novo();
+
+                      break;
+
+                case 'editar':
+
+                      require_once('controllers/remedio_controller.php');
+                      require_once('models/remedio_class.php');
+                      $controller_remedio = new controllerRemedio();
+                      $controller_remedio::Editar();
+
+                      break;
+
+                case 'excluir':
+                    require_once('controllers/remedio_controller.php');
+                    require_once('models/remedio_class.php');
+
+                    // Instanciando a classe da controller
+                    $controller_remedio =  new controllerRemedio();
+                    //Chama o metodo Novo da controller
+                    $controller_remedio::Excluir();
 
                     break;
                     

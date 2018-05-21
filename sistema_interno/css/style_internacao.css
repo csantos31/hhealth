@@ -49,6 +49,7 @@ p{
 #container_cad_paciente{
     width: 100%;
     min-height: 300px;
+    height:auto;
     overflow: auto;
     padding: 16px;
     border: solid 1px #333;

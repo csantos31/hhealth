@@ -1044,7 +1044,7 @@ CREATE TABLE `tbl_paciente_internacao` (
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
   PRIMARY KEY (`id_paciente_internacao`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1053,6 +1053,7 @@ CREATE TABLE `tbl_paciente_internacao` (
 
 LOCK TABLES `tbl_paciente_internacao` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente_internacao` DISABLE KEYS */;
+INSERT INTO `tbl_paciente_internacao` VALUES (2,8,1,2,3,'2018-05-05','08:08:00');
 /*!40000 ALTER TABLE `tbl_paciente_internacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1105,6 +1106,39 @@ CREATE TABLE `tbl_plantao` (
 LOCK TABLES `tbl_plantao` WRITE;
 /*!40000 ALTER TABLE `tbl_plantao` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tbl_plantao` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tbl_pre_atendimento`
+--
+
+DROP TABLE IF EXISTS `tbl_pre_atendimento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tbl_pre_atendimento` (
+  `id_pre_atendimento` int(11) NOT NULL AUTO_INCREMENT,
+  `id_paciente` int(11) DEFAULT NULL,
+  `id_unidade` int(11) DEFAULT NULL,
+  `id_funcionario` int(11) DEFAULT NULL,
+  `data` date DEFAULT NULL,
+  `hora` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_pre_atendimento`),
+  KEY `fk_pre_atendimento_paciente_idx` (`id_paciente`),
+  KEY `fk_pre_atendimento_unidade_idx` (`id_unidade`),
+  KEY `fk_pre_atendimento_funcionario_idx` (`id_funcionario`),
+  CONSTRAINT `fk_pre_atendimento_funcionario` FOREIGN KEY (`id_funcionario`) REFERENCES `tbl_funcionario` (`id_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pre_atendimento_paciente` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_pre_atendimento_unidade` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidade` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tbl_pre_atendimento`
+--
+
+LOCK TABLES `tbl_pre_atendimento` WRITE;
+/*!40000 ALTER TABLE `tbl_pre_atendimento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `tbl_pre_atendimento` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -1201,8 +1235,10 @@ DROP TABLE IF EXISTS `tbl_remedio`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_remedio` (
   `id_remedio` int(11) NOT NULL AUTO_INCREMENT,
+  `remedio` varchar(45) DEFAULT NULL,
+  `descricao` text,
   PRIMARY KEY (`id_remedio`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1211,6 +1247,7 @@ CREATE TABLE `tbl_remedio` (
 
 LOCK TABLES `tbl_remedio` WRITE;
 /*!40000 ALTER TABLE `tbl_remedio` DISABLE KEYS */;
+INSERT INTO `tbl_remedio` VALUES (1,'remedio','teste teste');
 /*!40000 ALTER TABLE `tbl_remedio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1652,4 +1689,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-20 22:13:28
+-- Dump completed on 2018-05-21  2:01:41

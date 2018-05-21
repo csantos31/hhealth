@@ -185,8 +185,9 @@ class Funcionario{
           
           session_start();
             $_SESSION["login"]=0;
+          $_SESSION['id_funcionario']=0;
             $count=0;
-            $sql = "SELECT usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
+            $sql = "SELECT id_funcionario,usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
              AND senha = '".$usuario->senha. "'; LIMIT 1";
 
             //Instancia da classe do BD
@@ -195,20 +196,28 @@ class Funcionario{
 
             //chama o metodo para conectar no BD e guarda o retorno da conexao na variavel $PDO_conn
             $PDO_conn = $conn->Conectar();
+            $select = $PDO_conn -> query($sql);
 
-            if($PDO_conn -> query($sql)){
+            if($rs = $select->fetch(PDO::FETCH_ASSOC)){
                 $del=$PDO_conn -> query($sql);
-                $count = $del->rowCount();
+                //$count = $del->rowCount();
+                $id_funcionario = $rs['id_funcionario'];
+                $_SESSION['id_funcionario']=$id_funcionario;
+                $_SESSION["login"]=1;
+                //echo($sql);
+                echo($_SESSION['id_funcionario']);
             }
 
+            
 
-            $_SESSION["login"]=$count;
+            
             // echo($count."To Aki");
             //Executa o Script no BD
 
 
             if($_SESSION["login"]==1){
                 session_start();
+                
                 header('location:views/dashboard.php');
             }else if($_SESSION["login"]==0){
                 header('location:../index.php');

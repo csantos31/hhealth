@@ -52,6 +52,26 @@
                      </div>
                  </div>
             </a>
+            <a href="remedio.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/levels.png">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Remédios</a>
+                     </div>
+                 </div>
+            </a>
+            <a href="receita.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/levels.png">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Receitas</a>
+                     </div>
+                 </div>
+            </a>
             <a href="internacao.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
@@ -92,6 +112,8 @@
                      </div>
                  </div>
             </a>
+          
+          
           <a href="login.php?logout=true" style="font-weight:bold;">
                  <div class="linha">
                      <div class="img_menu_lateral">

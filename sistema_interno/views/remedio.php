@@ -34,7 +34,7 @@ require('../verifica.php');
 
                 $.ajax({
                     type:"POST",
-                    url:"../modals/modal_tipo_quarto.php",
+                    url:"../modals/modal_remedio.php",
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -45,7 +45,7 @@ require('../verifica.php');
             function Editar(IdIten){
                 $.ajax({
                     type:"GET",
-                    url:"../modals/modal_tipo_quarto.php",
+                    url:"../modals/modal_remedio.php",
                     data: {modo:'buscarId',id:IdIten},
                     success: function(dados){
                         $('.modal').html(dados);
@@ -64,7 +64,7 @@ require('../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
-                    url: "../router.php?controller=tipo_quarto&modo=excluir&id="+idIten,
+                    url: "../router.php?controller=remedio&modo=excluir&id="+idIten,
                     success: function(dados){
                         //console.log(dados);
                         $('.col_2').html(dados);
@@ -100,7 +100,7 @@ require('../verifica.php');
                 <div id="container_cad_paciente">
                       <div class="cabecalho">
                            <div class="txt_cabecalho">
-                                 <p>Tipo quarto</p>
+                                 <p>Remédios</p>
                            </div>
                            <div class="img_nivel">
                                 <a class="novo" href="#" onclick="Cadastrar()">
@@ -111,20 +111,20 @@ require('../verifica.php');
                       </div>
                     <div class="col_2">
                         <div class="titulo_tabela">
-                            <div class="lb_titulo">TIPO</div>
+                            <div class="lb_titulo">REMÉDIO</div>
                             <div class="lb_titulo">DESCRIÇÃO</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
 
                         <?php
 
-                            include_once('../controllers/tipo_quarto_controller.php');
-                            include_once('../models/tipo_quarto_class.php');
+                            include_once('../controllers/remedio_controller.php');
+                            include_once('../models/remedio_class.php');
 
-                                $controller_tipo_quarto  = new controllerTipoQuarto();
+                                $controller_remedio  = new controllerRemedio();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_tipo_quarto::Listar();
+                                $list = $controller_remedio::Listar();
 
                                 if(!empty($list)){
                                 $cont = 0;
@@ -132,14 +132,14 @@ require('../verifica.php');
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->nivel ?></div>
+                                        <div class="item_tabela"><?= $list[$cont]->remedio ?></div>
                                         <div class="item_tabela"><?= $list[$cont]->descricao ?></div>
                                         <div class="item_tabela icones_tabela">
 
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_tipo_quarto);?>)">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_remedio);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_tipo_quarto);?>)">
+                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_remedio);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                             </a>
                                         </div>

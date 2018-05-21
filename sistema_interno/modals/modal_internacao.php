@@ -1,39 +1,31 @@
 <?php
-//$action = "modo=inserir";
-$id="0";
-$id_end;
-$paciente=null;
 
-$paciente =  null;
-$funcionario =  null;
-$quarto = null;
-$hora = null;
-$data =  null;
-$unidade = null;
+//$action = "modo=inserir";
+
+$id="0";
+$numero=null;
+$descricao=null;
+
 
 if(isset($_GET['modo'])){
+    
     $modo = $_GET['modo'];
+    
     if($modo=='buscarId'){
-        $id=$_GET['codigo'];
-
-
-        require_once("../controllers/paciente_controller.php");/*da um require na nivel_controller*/
-        require_once("../models/paciente_class.php");/*da um require na nivel_class*/
-        require_once("../controllers/endereco_controller.php");
-        require_once("../models/paciente_class.php");
+        $id=$_GET['id'];
+        
+        require_once("../controllers/quarto_controller.php");/*da um require na nivel_controller*/
+        require_once("../models/quarto_class.php");/*da um require na nivel_class*/
+        
         // Instancio a controller
-        $controller_paciente  = new controllerPaciente();
+        $controller_quarto  = new controllerQuarto();
+
         //Chama o metodo para Listar todos os registros
-        $list = $controller_paciente::Buscar($id);
-        // $id_end=$list['id_endereco'];
-
-        $paciente = $list['paciente_internacao'];
-        $funcionario = $list['funcionario_internacao'];
-        $quarto = $list['quarto_internacao'];
-        $hora= $list['hora_internacao'];
-        $data = $list['data_internacao'];
-        $unidade = $list['unidade_internacao'];
-
+        $list = $controller_quarto::Buscar($id);
+        
+        $numero = $list->numero;
+        //$descricao = $list->descricao;
+    
     }
 }
 ?>
@@ -41,42 +33,41 @@ if(isset($_GET['modo'])){
 <html>
     <head>
         <title>Modal</title>
-        <link rel="stylesheet" type="text/css" href="../css/style_cad_paciente.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
+        <link rel="stylesheet" type="text/css" href="../css/style_cad_especialidades.css">
+        <style>
+            #imagem_atual{
+                width: 150px;
+                height: 150px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            #imagem_atual img{
+                width: 150px;
+                height: 150px;
+            }
+            
+        </style>
         <script>
             $(document).ready(function(){/*fechar a modal*/
                $(".fechar").click(function(){
-                  $(".container_modal").fadeOut();
-               });
+                  $(".container_modal").fadeOut(); 
+               }); 
             });
         </script>
     </head>
-
+    
     <body>
-
+        
          <script>
-
-              var id = $("#form").data("id");
-              var modo = "";
-              if(id == '0'){
-                  modo='inserir';
-                document.getElementById('photo_profile').style.display = 'block';
-                    document.getElementById('foto_convenio').style.display = 'block';
-                    //document.getElementById('meu_num').style.marginLeft = '150px';
-              } else{
-                  modo='editar';
-                    document.getElementById('photo_profile').style.display = 'none';
-                    document.getElementById('foto_convenio').style.display = 'none';
-                    document.getElementById('meu_num').style.marginLeft = '160px';
-                  var idEnd = $('#form').data("id_end");
-              }
-
-
-             console.log(modo);
-
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
-
+                  var id = $(this).data("id");
+                  var modo = "";
+                  if(id == '0')
+                      modo='inserir';
+                  else
+                      modo='editar';
 
                 //anula a ação do submit tradicional "botao" ou F5
                  event.preventDefault();
@@ -92,64 +83,129 @@ if(isset($_GET['modo'])){
                     async:true,
                     success: function(dados){
                          $('.modal').html(dados);
-                        //alert(dados);
+                        //console.log(dados);
                     }
                 });
+
              });
          </script>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
                 <a href="#" class="fechar"><img src="../imagens/close.png"/></a>
             </div>
-
+            
             <div class="content_modal">
-                <form action="" method="post" id="form" data-id_end="<?= $id_end ?>" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
                             <img src="../../imagens/logo_only_heart.png">
                         </div>
                         <div class="titulo">
-                            <a>Internação</a>
+                            <a>Internacao</a>
                         </div>
                     </div>
-
+                    
                     <div class="content_campos"><!--content dos campos de cadastro-->
-
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        
+                        <div class="campo">
                             <div class="input_campo_p">
-                              <input type="text" name="txt_paciente" value="" placeholder="paciente">
+                               <label>Paciente :</label>
+                                <select id="slt_paciente" class="input_med" name="slt_paciente">
+                                  <?php
+                                  include_once('../controllers/paciente_controller.php');
+                                  include_once('../models/paciente_class.php');
+                                  $controller_paciente  = new controllerPaciente();
+                                  $list = $controller_paciente::Listar();
+                                            
+                                  $cont = 0;
+                      
+                                  while ($cont < count($list)) {  
+                                  ?>
+                                      <option value="<?= $list[$cont]->id_paciente ?>"><?= $list[$cont]->nome ?></option>
+                                  <?php
+                                  
+                                    $cont = $cont + 1;
+                                    
+                                  }
+                                  
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        <div class="campo">
                             <div class="input_campo_p">
-                              <input type="text" name="txt_funcionario" value="" placeholder="funcionario">
+                               <label>Quarto :</label>
+                                <select id="slt_quarto" class="input_med" name="slt_quarto">
+                                  <?php
+                                  include_once('../controllers/quarto_controller.php');
+                                  include_once('../models/quarto_class.php');
+                                  $controller_quarto  = new controllerQuarto();
+                                  $list = $controller_quarto::Listar();
+                                            
+                                  $cont = 0;
+                      
+                                  while ($cont < count($list)) {
+                                      
+                                      
+                                  ?>
+                                      <option value="<?= $list[$cont]->id_quarto ?>"><?= $list[$cont]->numero ?></option>
+                                  <?php
+                                  
+                                    $cont = $cont + 1;
+                                    
+                                  }
+                                  
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
+                        <div class="campo">
                             <div class="input_campo_p">
-                              <input type="text" name="txt_quarto" value="" placeholder="quarto">
+                               <label>Unidade :</label>
+                                <select id="slt_unidade" class="input_med" name="slt_unidade">
+                                  <?php
+                                  include_once('../controllers/unidade_controller.php');
+                                  include_once('../models/unidade_class.php');
+                                  $controller_unidade  = new controller_unidade();
+                                  $list = $controller_unidade::Listar();
+                                            
+                                  $cont = 0;
+                      
+                                  while ($cont < count($list)) {
+                                      
+                                      
+                                  ?>
+                                      <option value="<?= $list[$cont]->id_unidade ?>"><?= $list[$cont]->nome_unidade ?></option>
+                                  <?php
+                                  
+                                    $cont = $cont + 1;
+                                    
+                                  }
+                                  
+                                    ?>
+                                </select>
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
-                              <input type="text" name="txt_unidade" value="" placeholder="unidade">
+                        
+                        <div class="campo" style="margin-top:10px;width:50px;"><!--campos--> <!--nome-->
+                            <a>DATA:</a>
+                            <div class="input_campo">
+                                <input value="<?= $data ?>" required type="date" class="input_big" name="data" id="txt_numero">
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
-                              <input type="text" name="txt_data" value="" placeholder="data">
+                        
+                        <div class="campo" style="margin-top:10px;width:50px;"><!--campos--> <!--nome-->
+                            <a>HORÁRIO:</a>
+                            <div class="input_campo">
+                                <input value="<?= $hora ?>" required type="time" class="input_big" name="hora" id="txt_numero">
                             </div>
                         </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
-                              <input type="text" name="txt_hora" value="" placeholder="hora">
-                            </div>
-                        </div>
-
+                        
+                        
                         <div class="campo_botao">
                             <div class="botao">
                                 <input id="bnt_cadastrar" type="submit" name="btn_cadastrar" value="Cadastrar">
-                            </div>
+                            </div>    
                         </div>
                     </div>
                 </form>

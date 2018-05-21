@@ -29,6 +29,7 @@ session_start();
         public function Login_usuario($usuario){
 
             $_SESSION["login"]=0;
+            $_SESSION["id_funcionario"]=0;
             $count=0;
             $sql = "SELECT id_funcionario,usuario,id_nivel_acesso, senha FROM tbl_usuario_funcionario WHERE usuario = '" .$usuario->cpf . "'
              AND senha = '".$usuario->senha. "';";
@@ -50,38 +51,52 @@ session_start();
             //Conta quantidade de linha
             $count = $queryExecutada->rowCount();
 
-            if($count == 1){
+//            if($count == 1){
+//
+//                //IF para puxar um dado do banco de dados
+//                if ($puxaDadosDB = $queryExecutada->fetch(PDO::FETCH_ASSOC)) {
+//                  # code...
+//                  $id_funcionario = $puxaDadosDB['id_funcionario'];
+//                  $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
+//
+//                  $_SESSION["id_funcionario"]=$id_funcionario;  
+//                  $_SESSION["id_nivel_acesso"]=$id_nivel_funcionario;
+//                  $_SESSION["login"]=$count;
+//
+//
+//
+//                }
+//
+//            }
+            
+            if($puxaDadosDB = $queryExecutada->fetch(PDO::FETCH_ASSOC)){
+                $id_funcionario = $puxaDadosDB['id_funcionario'];
+              $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
 
-                //IF para puxar um dado do banco de dados
-                if ($puxaDadosDB = $queryExecutada->fetch(PDO::FETCH_ASSOC)) {
-                  # code...
-                  $id_nivel_funcionario = $puxaDadosDB['id_nivel_acesso'];
-
-
-
-                  $_SESSION["login"]=$count;
-
-
-
-                }
-
+              $_SESSION["id_funcionario"]=$id_funcionario;  
+              $_SESSION["id_nivel_acesso"]=$id_nivel_funcionario;
+                
+                echo($sql);
+                
+            }else{
+                echo($sql);
             }
 
-            if($_SESSION["login"]==1 && $id_nivel_funcionario == 6){
-                header('location:cms/views_cms/area_medico/medico_home.php');
-
-            }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 5){
-
-                header('location:cms/');
-
-            }else if($_SESSION["login"]==0){
-                  $_SESSION["id_funcionario"]=="";
-                header('location:index.php');
-          }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 2){
-                $_SESSION["id_funcionario"]=$puxaDadosDB['id_funcionario'];
-                header('location:cms/');
-
-            }
+//            if($_SESSION["login"]==1 && $id_nivel_funcionario == 6){
+//                header('location:cms/views_cms/area_medico/medico_home.php');
+//
+//            }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 5){
+//
+//                header('location:cms/');
+//
+//            }else if($_SESSION["login"]==0){
+//                  $_SESSION["id_funcionario"]=="";
+//                header('location:index.php');
+//          }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 2){
+//                $_SESSION["id_funcionario"]=$puxaDadosDB['id_funcionario'];
+//                header('location:cms/');
+//
+//            }
 
 
 

@@ -9,7 +9,7 @@
         
         if(isset($_SESSION['login'])){
             if($_SESSION['login']==1){
-                header('location:../views/dashboard.php');
+                header('location:views/dashboard.php');
             }       
         }  
     }
