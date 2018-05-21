@@ -9,11 +9,11 @@
     require_once('controllers/receitas_controller.php');
     require_once('controllers/resultados_exames_controller.php');
     require_once('controllers/agendamento_controller.php');
-    
+
     session_start();
 
     if(isset($_SESSION['id_paciente'])){
-      $id = $_SESSION['id_paciente'];  
+      $id = $_SESSION['id_paciente'];
     }
 
 	// verifica qual o tipo da controller iremos trabalhar
@@ -51,54 +51,57 @@
 			}
 
 			break;
-            
+
         case 'paciente':
             require_once('controllers/paciente_controller.php');
-            
+
             switch($modo){
-                    
-                    
+
+
                 case 'buscarid':
-                    
+
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente = Buscar();
-                    
+
                     require_once('views/paciente_perfil.php');
-                    
+
                     break;
-                    
+
                 case 'editar';
-                    
+
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente = Editar();
-                    
-                    break;       
+
+                    break;
             }
             break;
-        
+
         case 'agendamento':
             require_once('controllers/agendamento_controller.php');
             require_once('models/agendamento_class.php');
             switch($modo){
-                
-                
-                    
+
+
+
                 case 'inserir':
-                    
+
                     $controller_agendamento = new controller_agendamento();
                     $controller_agendamento::Novo($id);
                     break;
             }
             break;
-        
+
         case 'pre_atendimento':
             require_once('controllers/pre_atendimento_controller.php');
             require_once('models/pre_atendimento_class.php');
-            
+						
             switch($modo){
-                
+
                 case 'inserir':
-                
+                	 $controller_pre_atendimento = new controller_pre_agendamento();
+									 $controller_pre_atendimento::Novo($id);
+
+
                 break;
             }
             break;
