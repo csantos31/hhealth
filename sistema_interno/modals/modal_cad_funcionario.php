@@ -13,14 +13,11 @@ $cidade =  null;
 $bairro = null;
 $cep = null;
 $numero = null;
-
 $id_end = null;
-
 if(isset($_GET['modo'])){
     $modo = $_GET['modo'];
     if($modo=='buscarId'){
         $id=$_GET['codigo'];
-
         require_once("../controllers/funcionario_controller.php");/*da um require na nivel_controller*/
         require_once("../models/funcionario_class.php");/*da um require na nivel_class*/
         require_once("../controllers/endereco_controller.php");
@@ -29,7 +26,6 @@ if(isset($_GET['modo'])){
         $controller_funcionario  = new controllerFuncionario();
         //Chama o metodo para Listar todos os registros
         $list = $controller_funcionario::Buscar($id);
-
         $id_end = $list['id_endereco'];
         $nome = $list['nome'];
         $dt_nasc = $list['dt_nasc'];
@@ -50,56 +46,48 @@ if(isset($_GET['modo'])){
         <title>Modal</title>
         <link rel="stylesheet" type="text/css" href="../css/style_cad_funcionario.css">
         <link rel="stylesheet" type="text/css" href="../css/style_modal_especialidade.css">
-        <script type="text/javascript" src="../../js/jquery-1.2.6.pack.js"></script>
-        <script type="text/javascript" src="../../js/jquery.maskedinput-1.1.4.pack.js"></script>  
-    
+
         <script type="text/javascript">
-            $(document).ready(function(){/*fechar a modal*/
-               $(".fechar").click(function(){
-                  $(".container_modal").fadeOut();
-               });
-            });
-            
-            $(document).ready(function(){	
-                    //$("#txt_cpf").mask(" 999 . 999 . 999 - 99");
+            $(document).ready(function(){
+                  $("#form").submit(function(event){
+                  //anula a ação do submit tradicional "botao" ou F5
+                   event.preventDefault();
+                     //Recupera o id gravado no Form pelo atribute-id
+                   var id = $("#form").data("id");
+                   var idEnd = $("#form").data("id_end");
+
+                   console.log(id);
+
+                   var modo = "";
+                   if(id == '0'){
+                   modo='inserir';
+                   } else{
+                   modo='editar';
+                   }
+
+                    $.ajax({
+                       type: "POST",
+                       url: "../router.php?controller=funcionario&modo="+modo+"&id="+id+"&id_end="+idEnd,
+                       //alert (url);
+                       data: new FormData($("#form")[0]),
+                       cache:false,
+                       contentType:false,
+                       processData:false,
+                       async:true,
+                       success: function(dados){
+                           $('.modal').html(dados);
+
+                           //console.log(dados);
+                       }
+                   });
                 });
-            
+                $(".fechar").click(function(){
+                   $(".container_modal").fadeOut();
+                });
+              });
         </script>
     </head>
     <body>
-         <script>
-              
-             $("#form").submit(function(event){
-                  //Recupera o id gravado no Form pelo atribute-id
-                var id = $("#form").data("id");
-                var idEnd = $("#form").data("id_end");
-                var modo = "";
-                if(id == '0'){
-                modo='inserir';
-                } else{
-                modo='editar';
-                }
-
-                //anula a ação do submit tradicional "botao" ou F5
-                 event.preventDefault();
-
-                 $.ajax({
-                    type: "POST",
-                    url: "../router.php?controller=funcionario&modo="+modo+"&id="+id+"&id_end="+idEnd,
-                    //alert (url);
-                    data: new FormData($("#form")[0]),
-                    cache:false,
-                    contentType:false,
-                    processData:false,
-                    async:true,
-                    success: function(dados){
-                        //$('.modal').html(dados);
-                        alert(dados);
-                        console.log(dados);
-                    }
-                });
-             });
-         </script>
         <div class="main_modal"><!--main que segura tudo-->
             <div class="close_modal">
                 <a href="#" class="fechar"><img src="../imagens/close.png"/></a>
