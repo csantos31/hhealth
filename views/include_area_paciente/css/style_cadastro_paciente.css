@@ -157,12 +157,12 @@
 .input_nome_email{
   width: 380px;
   height: 28px;
-  border-radius: 30px;
+  
 }
 
 .input_contato_doc, .input_cidade_end{
   height: 28px;
-  border-radius: 30px;
+  
   width: 170px;
 }
 

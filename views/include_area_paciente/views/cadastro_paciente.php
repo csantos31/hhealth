@@ -1,6 +1,22 @@
 <?php 
     require('verifica_paciente.php');
 
+    @session_start();
+
+
+    require_once('../controllers/paciente_controller.php');
+    require_once('../models/paciente_class.php');
+
+    $controller_paciente = new controllerPaciente();
+    $listar = $controller_paciente::Buscar($_SESSION['id_paciente']);
+
+    $nome = $listar->nome;
+    $sobrenome = $listar->sobrenome;
+    $dt_nasc = $listar->dt_nasc;
+    $rg = $listar->rg;
+    $cpf = $listar->cpf;
+    $carterinha_convenio = $listar-> carterinha_convenio;
+
 ?>
 
 <!DOCTYPE html>
@@ -9,13 +25,38 @@
     <meta charset="utf-8">
     <title>Hospital Hhealth</title>
     <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
-    <link rel="stylesheet" href="../../css/area_paciente/style_nav.css">
-    <link rel="stylesheet" href="../../css/area_paciente/style_cadastro_paciente.css">
-    <link rel="stylesheet" href="../../css/area_paciente/style_footer.css">
+    <link rel="stylesheet" href="../css/style_nav.css">
+    <link rel="stylesheet" href="../css/style_cadastro_paciente.css">
+    <link rel="stylesheet" href="../css/style_footer.css">
+    <script src="../../../js/jquery-3.2.1.min.js"></script>
   </head>
+    <script>
+
+                $(document).ready(function() {
+                   $('#form').submit(function(event){
+                        event.preventDefault();
+                        $.ajax({
+                        type: "POST",
+                        url: "../router.php?controller=paciente&modo=editar",
+                        //alert (url);
+                        data: new FormData($("#form")[0]),
+                        cache:false,
+                        contentType:false,
+                        processData:false,
+                        async:true,
+                        success: function(dados){
+                             //$('#formulario_meio').html(dados);
+                             //alert(dados);
+                            console.log(dados);
+                        }
+                      });
+                  });
+              });
+
+           </script>
   <body>
     <div id="main">
-      <?php include_once('../include_area_paciente/nav_paciente.php'); ?>
+      <?php include_once('nav_paciente.php'); ?>
       <div id="content">
         <div id="suporte_titulo">
           <div id="titulo_pagina">
@@ -26,46 +67,28 @@
 
         </div>
         <div id="formulario_meio">
-          <form id="formulario_cadastro" action="index.html" method="post">
-            <div id="suporte_imagem_arquivo">
-              <figure id="img_figure">
-                <img src="../../imagens/usuario-masculino.jpg" alt="" id="img_usuario">
-              </figure>
-              <div id="arquivo_foto">
-                  <input type="file" name="foto_paciente" value="">
-              </div>
-            </div>
+          <form id="form" action="" method="post">
+            
             <div class="desc_nome_email">
-              Nome
+                Nome
             </div>
             <div class="div_padrao">
-              <input type="text" name="txt_nome" value="" class="input_nome_email">
+              <input type="text" name="txt_nome" value="<?php echo($nome)?>" class="input_nome_email">
             </div>
-            <div class="div_contato">
-              <div class="contato_telefone">
-                <div class="desc_telefone">
-                  Telefone
-                </div>
-                <div class="">
-                  <input type="text" name="txt_telefone" value="" class="input_contato_doc">
-                </div>
-              </div>
-              <div class="contato_celular">
-                <div class="">
-                  Celular
-                </div>
-                <div class="">
-                  <input type="text" name="txt_celular" value="" class="input_contato_doc">
-                </div>
-              </div>
+            
+            <div class="desc_nome_email">
+                Sobrenome
+            </div>
+            <div class="div_padrao">
+              <input type="text" name="txt_sobrenome" value="<?php echo($sobrenome)?>" class="input_nome_email">
             </div>
 
             <div class="suporte_email">
               <div class="desc_nome_email">
-                email
+                data nascimento
               </div>
               <div class="div_padrao">
-                <input type="text" name="txt_email" value="" class="input_nome_email">
+                <input type="date" name="txt_dt_nasc" value="<?php echo($dt_nasc)?>" class="input_nome_email">
               </div>
             </div>
 
@@ -75,36 +98,18 @@
                   CPF
                 </div>
                 <div class="">
-                  <input type="text" name="txt_cpf" value="" class="input_contato_doc">
+                  <input type="text" name="txt_cpf" value="<?php echo($cpf)?>" class="input_contato_doc">
                 </div>
-                <div class="">
-                  <input type="file" name="file_cpf" value="" class="doc_pessoais">
-                </div>
+                
               </div>
               <div class="contato_celular">
                 <div class="">
                   RG
                 </div>
                 <div class="">
-                  <input type="text" name="txt_rg" value="" class="input_contato_doc">
+                  <input type="text" name="txt_rg" value="<?php echo($rg)?>" class="input_contato_doc">
                 </div>
-                <div class="">
-                  <input type="file" name="file_rg" value="" class="doc_pessoais">
-                </div>
-              </div>
-            </div>
-
-            <div id="suporte_convenio">
-              <div class="desc_nome_email">
-                Convenio
-              </div>
-              <div id="suporte_combo">
-                <select class="" name="" id="convenio">
-                  <option value="[object Object]">Convenio...</option>
-                </select>
-              </div>
-              <div id="arquivo_convenio">
-                <input type="file" name="file_arquivo_convenio" value="">
+                
               </div>
             </div>
 
@@ -122,9 +127,25 @@
                   UF
                 </div>
                 <div class="">
+                
                   <select class="" name="" id="opn_estado">
-                    <option value="[object Object]">Estado...</option>
+                      <option value="[object Object]">Estado...</option>
+                <?php
+                    require_once('../../../models/endereco_class.php');
+                    require_once('../../../controllers/endereco_controller.php');
+                     
+                    $controller_endereco = new controller_endereco();
+                    $list = controller_endereco::ListarEstados();
+                     
+                    $cont = 0;
+                    
+                    
+                    ?>
+                    <option value="<?php echo($list[$cont]->sigla)?>"><?php echo($list[$cont]->sigla)?></option>
                   </select>
+                <?php
+                    
+                    ?>
                 </div>
               </div>
             </div>
@@ -148,7 +169,7 @@
               </div>
             </div>
             <div id="suporte_btn">
-              <input type="submit" name="btn_salvar" value="salvar" id="btn_salvar" onclick="return confirm('Deseja realmente enviar essas informações')">
+              <input type="submit" name="btn_salvar" value="salvar" id="btn_salvar" >
             </div>
 
           </form>

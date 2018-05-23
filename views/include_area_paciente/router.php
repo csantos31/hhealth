@@ -54,6 +54,7 @@
 
         case 'paciente':
             require_once('controllers/paciente_controller.php');
+            require_once('models/paciente_class.php');
 
             switch($modo){
 
@@ -63,14 +64,14 @@
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente = Buscar();
 
-                    require_once('views/paciente_perfil.php');
+                    //require_once('views/paciente_perfil.php');
 
                     break;
 
                 case 'editar';
 
                     $controller_paciente = new controllerPaciente();
-                    $controller_paciente = Editar();
+                    $controller_paciente::Editar($id);
 
                     break;
             }

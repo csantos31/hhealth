@@ -107,7 +107,7 @@
 
         public function Update($paciente){
 
-			$sql = "UPDATE tbl_paciente SET nome = '" .$paciente->nome. "', sobrenome = '" .$paciente->sobrenome. "', dt_nasc = '" .$paciente->dt_nasc. "', rg = '" .$paciente->rg. "', cpf = '" .$paciente->cpf. "', carterinha = '" .$paciente->carterinha. "', foto = '" .$paciente->foto. "' WHERE id_paciente = '" .$paciente->id_paciente."';";
+			$sql = "UPDATE tbl_paciente SET nome = '" .$paciente->nome. "', sobrenome = '" .$paciente->sobrenome. "', dt_nasc = '" .$paciente->dt_nasc. "', rg = '" .$paciente->rg. "', cpf = '" .$paciente->cpf. "' WHERE id_paciente = '" .$paciente->id_paciente."';";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db_include_paciente();

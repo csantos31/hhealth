@@ -145,18 +145,22 @@ class Endereco{
 			//Contador
 			$cont = 0;
 
-            $lista_estados = array();
+            $lista_estados[] = new Endereco();
 
-			while ($rs = $select->fetchALL(PDO::FETCH_ASSOC)) {
+			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
 
-				$lista_estados= $rs;
+                $lista_estados[$cont]->id_estado= $rs['id_estado'];
+				$lista_estados[$cont]->sigla= $rs['sigla'];
 
 				// Soma mais um no contador
 				$cont+=1;
 			}
         
-            return $lista_estados;
+            if(isset($lista_estados)){
+                return $lista_estados;
+            }
+            
 			$conex::Desconectar();
             
 		}
