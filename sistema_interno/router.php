@@ -457,7 +457,27 @@
 
                 }
             break;
-
+            
+        case 'agendamento':
+            switch($modo){
+                    case 'ativar':
+                        require_once('controllers/agendamento_paciente_funcionario_controller.php');
+                        require_once ('../views/include_area_paciente/models/agendamento_class.php');
+                        
+                        $controller_agendamento = new ViewAgendamentoPacienteFuncionarioController();
+                        $controller_agendamento::Ativar();
+                    
+                    break;
+                    
+                    case 'desativar':
+                        require_once('controllers/agendamento_paciente_funcionario_controller.php');
+                        require_once ('../views/include_area_paciente/models/agendamento_class.php');
+                        
+                        $controller_agendamento = new ViewAgendamentoPacienteFuncionarioController();
+                        $controller_agendamento::Desativar();
+                    break;
+            }
+            break;
 		default:
 			# code...
 			break;

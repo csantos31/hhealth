@@ -31,6 +31,17 @@
                      </div>
                  </div>
             </a>
+          
+          <a href="agendamento.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/sistema_interno_icon.png" class="sistema_interno">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Ativar Agendamentos</a>
+                     </div>
+                 </div>
+            </a>
 
             <a href="pacientes_pendentes.php">
                  <div class="linha">
