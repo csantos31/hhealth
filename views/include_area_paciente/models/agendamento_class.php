@@ -97,6 +97,62 @@ class Agendamento
           $conex->Desconectar();
         
     }
+    
+    /*Desativar o registro no BD*/
+        public function DesativarPorId($dados_agendamento){
+            //$sql1 = "UPDATE tbl_home set status=0";
+            $sql = "UPDATE tbl_agendamento_consultas set ativo=0 WHERE id_agendamento_consulta=".$dados_saude->id_dica_saude;
+            
+            //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db_include_paciente();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+                
+			}else {
+				//Mensagem de erro
+				//echo "Error atualizar no Banco de Dados";
+                echo $sql;
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+            
+        }
+        
+        /*Desativar o registro no BD*/
+        public function AtivarPorId($dados_agendamento){
+            //$sql1 = "UPDATE tbl_home set status=0";
+            $sql = "UPDATE tbl_agendamento_consultas set ativo=1 WHERE id_agendamento_consulta=".$dados_agendamento->id_agendamento_consulta;
+            
+            //Instancio o banco e crio uma variavel
+			$conex = new Mysql_db_include_paciente();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			//Executa o script no banco de dados
+			if($PDO_conex->query($sql)){
+				//Se der true redireciona a tela
+				echo "<script>location.reload();</script>";
+                
+			}else {
+				//Mensagem de erro
+//				/echo "Error atualizar no Banco de Dados";
+                echo $sql;
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+            
+        }
 
 }
  ?>
