@@ -1,5 +1,4 @@
 <?php
-
   include('sistema_interno/controllers/util.php');
 
     session_start();
@@ -25,6 +24,7 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
         <script src="js/jcarousellite.js"></script>
         <script src="js/carrossel.js"></script>
+
         <script>
           function myMap() {
           var mapProp= {
@@ -100,7 +100,7 @@
              <div class="div_suporte_conteudo">
              </div>
              <!--***********************SLIDE***********************-->
-             <div class="w3-content w3-display-container" style="max-width:100%;height:700px;">
+             <div class="w3-content w3-display-container" style="max-width:100%;">
                 <?php
 
                     include_once('CMS/controller_cms/gerenciamento_home_controller.php');
@@ -113,9 +113,9 @@
                     while($cont<count($list)){
 
                 ?>
-               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;height:700px;" >
-               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;height:700px;">
-               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;height:700px;">
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;" >
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;">
+               <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;">
                  <?php
 
                         $cont++;

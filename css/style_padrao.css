@@ -1,684 +1,1407 @@
 
-/*Tamanho da barra de rolagem*/
+@media screen and (min-device-width: 1024px){
+      /*Tamanho da barra de rolagem*/
 
-::-webkit-scrollbar {
+      ::-webkit-scrollbar {
 
-  width: 13px;
+        width: 13px;
 
-  height: 15px;
+        height: 15px;
+
+      }
+
+
+      /*Cor de fundo da barra de rolagem*/
+
+      ::-webkit-scrollbar-track-piece {
+
+        background:    white;
+
+      }
+
+
+
+      /*propriedades da rolagem cor, borda e altura vertical*/
+
+      ::-webkit-scrollbar-thumb:vertical {
+
+        height: 5px;
+
+        background:    #CA0000;
+      border-radius:10px;
+
+      }
+
+
+
+      /*propriedades da rolagem cor, borda e altura horizontal*/
+
+      ::-webkit-scrollbar-thumb:horizontal {
+
+        width: 5px;
+
+        background-color: #CA0000;
+
+      }
+
+      body{
+          padding:0;
+          margin:0;
+      }
+
+      .main{
+          width:100%;
+          height:auto;
+          position:relative;
+          margin:auto;
+          display: block;
+      }
+
+      .div_suporte_conteudo{
+            width: 100%;
+      }
+
+      /*---slider---*/
+      .content_carrossel {
+      	width: 1800px;
+      	height:350px;
+          padding-top: 25px;
+          float:left;
+          display: flex;
+          padding-right: 20px;
+          align-content: center;
+      }
+
+      .carrossel {
+      	float: left;
+      	width: 100%;
+      	overflow: hidden;
+      	height: 300px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .carrossel ul li {
+      	width: 400px;
+      	height: 360px;
+      	float: left;
+      	margin-left: 15px;
+      }
+
+      .carrossel ul li img{
+          width:100%;
+          height:100%;
+      }
+
+      #menu-carrossel {
+      	float: left;
+      	clear: both;
+      	width: 100%;
+      	text-align: center;
+          margin-bottom:50px;
+
+      }
+
+      .passar_carrossel{
+          width: 20px;
+          height: 300px;
+          float: left;
+          padding-top: 120px;
+
+
+
+      }
+
+      .passar_carrossel a img{
+          width:20px;
+          height:30px;
+          margin-left:10px;
+      }
+
+      /*----MENU ACESSO RÁPIDO----*/
+      #suporte_menu_de_acesso_rapido{
+        width: 100%;
+        min-height:  550px;
+          overflow: hidden;
+        padding-top: 30px;
+        font-size: 20px;
+        text-align: justify;
+        /*background-color: #F1F6F9;*/
+          background-image: url(../imagens/bg_child.jpg);
+          background-size: cover;
+          background-attachment: fixed;
+        position: relative;
+      }
+
+      #menu_de_acesso_rapido{
+        width: 1200px;
+        height: 200px;
+        margin: auto;
+      }
+      .item_menu_de_acesso_rapido{
+          width:12.5%;
+          height:150px;
+          background-color: white;
+          background-image: url(../imagens/imagem_padrao.png);
+          background-repeat: no-repeat;
+          background-size: 95%;
+          border-radius:50%;
+          margin-left:75px;
+          margin-top:20px;
+          float:left;
+      }
+
+      /*----CONTENT----*/
+      .suporte_content{
+            width: 100%;
+            min-height:1200px;
+            height:auto;
+            position: relative;
+            background-color: white;
+            padding-bottom: 20px;
+      }
+
+      .content{
+          width:100%;
+          min-height:1200px;
+          height:auto;
+          margin:auto;
+          position: relative;
+          padding-top: 20px;
+      }
+
+      /*------faixa 1-------*/
+      .faixa_1_content_home{
+          width:1800px;
+          height:400px;
+          margin-top: 0px;
+          margin-left: auto;
+          margin-right: auto;
+
+      }
+
+      .content_login_usuario_home{/*---login e senha---*/
+          width:25%;
+          height:400px;
+          background-color: #7F0000;
+          border-radius: 2%;
+          float:left;
+      }
+
+      .faixa_login_home{
+          width:100%;
+          height:45px;
+          margin-top:10px;
+          text-align: center;
+          font-family: sans-serif;
+          color: white;
+      }
+
+      .faixa_login_home a{
+          margin-right:64%;
+          font-size: 18px;
+      }
+
+      .faixa_login_home p{
+          margin-left:44%;
+          font-size: 12px;
+      }
+
+
+      .faixa_login_home [type=text],[type=password]{/*caixas de texto -login -senha*/
+          width:67%;
+          margin-left:0px;
+      }
+
+
+      .faixa_login_home [type=submit]{/*botão entrar*/
+          width:170px;
+          height:30px;
+          margin-left:0px;
+          border-radius:5px;
+      }
+
+      .faixa_login_home span{
+          font-family:sans-serif;
+      }
+
+
+      .slider_faixa1{/*---slider---*/
+          width:1000px;
+          height:390px;
+          float:left;
+          margin-left: 9%;
+          border: solid 1px #000;
+      }
+
+      .faixa1_img_slide_home{
+          width:470px;
+          height:300px;
+          background-image: url(../imagens/saude-bucal.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+         margin-left:15px;
+          margin-top:40px;
+          float:left;
+      }
+
+      /*--------faixa 2------*/
+
+      /*faixa*/
+      .faixa_2_content_home{
+          width:100%;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          height:700px;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: #fff;
+          background-image: url(../imagens/odontologia.jpg);
+          background-attachment: fixed;
+          background-size: cover;
+      }
+      /*-----titulo----*/
+
+      .titulo_faixa_2_home{
+          width:1200px;
+          height:100px;
+          line-height: 100px;
+
+      }
+
+      #hg{
+          width: 100%;
+          height: 700px;
+          background-color:rgba(0, 0, 0,0.5);
+
+      }
+
+
+      .titulo_faixa_2_home a{
+          font-family:sans-serif;
+          font-size: 22px;
+          font-weight: bold;
+          color: #FFFFFF;
+      }
+      /*-----imagens-----*/
+
+
+
+      [data-tooltip] {
+        position: relative;
+        font-weight: bold;
+      }
+
+      [data-tooltip]:after {
+        display: none;
+        position: absolute;
+        top: -5px;
+        padding: 5px;
+        border-radius: 3px;
+        left: calc(100% + 2px);
+        content: attr(data-tooltip);
+        white-space: nowrap;
+        background-color: #0095ff;
+        color: White;
+      }
+
+      [data-tooltip]:hover:after {
+        display: block;
+      }
+
+      /*-------botão------*/
+      .content_btn_faixa_2_home{
+          width:1200px;
+          height:20px;
+          color: #000000;
+      }
+
+      .titulo_faixa_1_home{
+        width: 225px;
+        margin: auto;
+        height: 30px;
+        font-family: sans-serif;
+        font-size: 30px;
+        color: #999999;
+        font-weight: bold;
+        /* background-color: #000; */
+      }
+
+      .content_btn_faixa_2_home p{
+            margin-right: 30px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: sans-serif;
+      }
+
+      /*--------faixa 3--------*/
+
+      /*faixa*/
+      .faixa_3_content_home{
+          width:1200px;
+          min-height: 400px;
+          height: auto;
+          padding-top: 50px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .carrossel_local{
+          width: 1200px;
+          min-height: 300px;
+          height: auto;
+      }
+
+      /*content unidades*/
+      .content_faixa_3_unidades_home{
+          width:1200px;
+          height:300px;
+          margin-left:30px;
+          margin-bottom:100px;
+      }
+
+      /*imagem unidades*/
+      .img_faixa_3_home{
+          width:340px;
+          height:300px;
+          margin-right: 10px;
+          float:left;
+      }
+
+      .img_faixa_3_home img{
+          width:340px;
+          height:300px;
+      }
+
+      .descricao_faixa_3_home{
+          width:200px;
+          height:200px;
+          /* background-size: 200px; */
+          float:left;
+          /* margin-top: 100px; */
+      }
+
+      .imagemm_faixa_3_home{
+        width:200px;
+        height:200px;
+      }
+
+      .informa_unidade{
+        width: 500px;
+        min-height: 400px;
+        padding: 16px;
+        margin-left: 20px;
+        text-align: justify;
+        float: left;
+        overflow: hidden;
+        padding-bottom: 30px;
+      }
+
+      .footer{
+            width: 100%;
+            height: 299px;
+            position: relative;
+            background-color: white;
+            padding-top: 35px;
+      }
+
+      /*div typewriter efeito*/
+      .typewriter{
+          width: 800px;
+          height: auto;
+          padding: 16px;
+          background-color: rgba(255,255,255,0.3);
+      }
+
+
+      .typewriter h1 {
+        color: #DA0000;
+        font-family: monospace;
+        overflow: hidden;
+        font-weight: bold;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation:
+           typing 3.5s steps(30, end),
+          blink-caret .2s step-end infinite;
+          font-size: 60px;
+          text-align: justify;
+      }
+
+
+      .typewriter h3 {
+        color: #DA0000;
+        font-family: monospace;
+        overflow: hidden;
+        font-weight: bold;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation:
+           typing 3.5s steps(30, end),
+          blink-caret2 .2s step-end infinite;
+          font-size: 60px;
+          text-align: justify;
+      }
+
+       /*The typing effect */
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      /*The typewriter cursor effect*/
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+      }
+
+
+      /*Botão chamar modal área do paciente*/
+      #btn_login{
+          width: 100px;
+          height: 30px;
+          color: #FFF;
+          background-color: #9C1003;
+          border: solid 1px;
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 700;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 91%;
+          margin-top: 15px;
+          cursor: pointer;
+          z-index: 999;
+
+      }
+
+
+
+      #lbl_paciente{
+          color: #9C1003;
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 80%;
+          margin-top: 15px;
+          z-index: 998;
+      }
+
+      #btn_chama_modal:hover{
+          color: #FFF;
+          background: #9C1003;
+          border: solid 3px #fff;
+          font-family: 'BenchNine', Arial, sans-serif;
+      }
+
+      /*caixa_login_home*/
+      #caixa_login_home{
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 74%;
+          margin-top: 100px;
+          z-index: 998;
+          width: 350px;
+          height: 350px;
+         box-shadow: 1px 2px 8px #333;
+         /*background-image: url(../imagens/bg_login.jpg);*/
+          background-color: #fff;
+          border-radius: 20px;
+          background-size: 350px 300px;
+          background-repeat: no-repeat;
+          display: none;
+      }
+
+      #caixa_login_home label{
+        margin-left: 50px;
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      #caixa_login_home a{
+        font-size: 12px;
+        text-decoration: none;
+        margin-top: 20px;
+        color: green;
+      }
+
+      #superior_vermelha{
+          width: 350px;
+          height: 59px;
+          border-radius: 20px 20px 0px 0px;
+          background-color: #DA0000;
+      }
+
+      #borda_minimizar{
+          width: 15px;
+          margin-top: 20px;
+          height: 4px;
+          float: right;
+          margin-right: 15px;
+          border: solid 3px #fff;
+      }
+
+
+      .label_login{
+          width: 100px;
+          height: 30px;
+          margin-left:17px;
+          margin-top: 13px;
+          font-family: verdana;
+          font-weight: 500px;
+          float: left;
+          color: red;
+          padding-left: 20px;
+          border-radius: 15px;
+          background-color: #fff;
+      }
+
+      #icon_cad{
+          margin-left: 10px;
+          margin-top: 15px;
+          float: left;
+      }
+
+      .label_email{
+          width: 200px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 35px;
+          font-family: verdana;
+          font-size: 14px;
+          color: #000;
+          padding-left: 20px;
+          background-color: #fff;
+      }
+
+      #txt_usuario{
+          background-color: #EEEEEE;
+          margin-top: 9px;
+          margin-left: 28px;
+          width: 300px;
+          border: none;
+      }
+
+      .label_senha{
+          width: 200px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 20px;
+          font-family: verdana;
+          font-size: 14px;
+          color: #000;
+          padding-left: 20px;
+          background-color: #fff;
+      }
+
+      #txt_senha{
+          background-color: #EEEEEE;
+          margin-top: 9px;
+          margin-left: 28px;
+          width: 300px;
+          border: none;
+      }
+
+      #btn_go_logar{
+          margin-left: 131px;
+          margin-top: 14px;
+          height: 33px;
+          width: 90px;
+          background-color: #37CC73;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+      }
+
+
+      .googleMap{
+        width:500px;
+        height:350px;
+        position: relative;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .content_img_faixa_2_home{
+          width:1200px;
+          height:550px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: rgba(255,255,255,0.3);
+      }
+
+      .img_faixa_2_home{
+          width:350px;
+          height:200px;
+          margin-left:40px;
+          margin-top:30px;
+          float:left;
+      }
+
+      .suporte_imagem_ambiente{
+        width:350px;
+        height:200px;
+      }
+
+      .suporte_imagem_ambiente img{
+          width:350px;
+          height:200px;
+          border-radius: 3px;
+      }
+
+      .suporte_imagem_ambiente img:hover{
+        opacity: 0.5;
+        -moz-transform: scale(1.05);
+      	-webkit-transform: scale(1.05);
+      	transform: scale(1.05);
+      }
+
+      .textoNomeAmbiente{
+        /* width: 350px; */
+        display: none;
+        white-space: nowrap;
+        width: 23em;
+        overflow: hidden;
+        opacity: 1;
+        font-weight: bold;
+        position: absolute;
+        background-color: #202020;
+        text-overflow: ellipsis;
+        color: #FFF;
+
+      }
+
+      .suporte_imagem_ambiente img:hover~.textoNomeAmbiente{
+        margin-top: -40px;
+        display: block;
+      }
+
+      .w3-display-container{
+            height: 700px;
+      }
+
+      .mySlides{
+            height: 700px;
+      }
 
 }
 
 
-/*Cor de fundo da barra de rolagem*/
-
-::-webkit-scrollbar-track-piece {
-
-  background:    white;
-
-}
 
 
 
-/*propriedades da rolagem cor, borda e altura vertical*/
-
-::-webkit-scrollbar-thumb:vertical {
-
-  height: 5px;
-
-  background:    #CA0000;
-border-radius:10px;
-
-}
 
 
 
-/*propriedades da rolagem cor, borda e altura horizontal*/
 
-::-webkit-scrollbar-thumb:horizontal {
 
-  width: 5px;
 
-  background-color: #CA0000;
 
-}
+@media screen and (max-device-width: 520px) {
 
-body{
-    padding:0;
-    margin:0;
-}
+      .w3-display-container{
+            height: 300px;
+      }
 
-.main{
-    width:100%;
-    height:auto;
-    position:relative;
-    margin:auto;
-    display: block;
-}
+      .mySlides{
+            height: 300px;
+      }
 
-.div_suporte_conteudo{
+      /*Tamanho da barra de rolagem*/
+
+      ::-webkit-scrollbar {
+
+        width: 13px;
+
+        height: 15px;
+
+      }
+
+
+      /*Cor de fundo da barra de rolagem*/
+
+      ::-webkit-scrollbar-track-piece {
+
+        background:    white;
+
+      }
+
+
+
+      /*propriedades da rolagem cor, borda e altura vertical*/
+
+      ::-webkit-scrollbar-thumb:vertical {
+
+        height: 5px;
+
+        background:    #CA0000;
+      border-radius:10px;
+
+      }
+
+
+
+      /*propriedades da rolagem cor, borda e altura horizontal*/
+
+      ::-webkit-scrollbar-thumb:horizontal {
+
+        width: 5px;
+
+        background-color: #CA0000;
+
+      }
+
+      *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+      }
+
+      .main{
+          width:100%;
+          height:auto;
+          margin:auto;
+      }
+
+      .div_suporte_conteudo{
       width: 100%;
-}
-
-/*---slider---*/
-.content_carrossel {
-	width: 1800px;
-	height:350px;
-    padding-top: 25px;
-    float:left;
-    display: flex;
-    padding-right: 20px;
-    align-content: center;
-}
-
-.carrossel {
-	float: left;
-	width: 100%;
-	overflow: hidden;
-	height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.carrossel ul li {
-	width: 400px;
-	height: 360px;
-	float: left;
-	margin-left: 15px;
-}
-
-.carrossel ul li img{
-    width:100%;
-    height:100%;
-}
-
-#menu-carrossel {
-	float: left;
-	clear: both;
-	width: 100%;
-	text-align: center;
-    margin-bottom:50px;
-
-}
-
-.passar_carrossel{
-    width: 20px;
-    height: 300px;
-    float: left;
-    padding-top: 120px;
-
-
-
-}
-
-.passar_carrossel a img{
-    width:20px;
-    height:30px;
-    margin-left:10px;
-}
-
-/*----MENU ACESSO RÁPIDO----*/
-#suporte_menu_de_acesso_rapido{
-  width: 100%;
-  min-height:  550px;
-    overflow: hidden;
-  padding-top: 30px;
-  font-size: 20px;
-  text-align: justify;
-  /*background-color: #F1F6F9;*/
-    background-image: url(../imagens/bg_child.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-  position: relative;
-}
-
-#menu_de_acesso_rapido{
-  width: 1200px;
-  height: 200px;
-  margin: auto;
-}
-.item_menu_de_acesso_rapido{
-    width:12.5%;
-    height:150px;
-    background-color: white;
-    background-image: url(../imagens/imagem_padrao.png);
-    background-repeat: no-repeat;
-    background-size: 95%;
-    border-radius:50%;
-    margin-left:75px;
-    margin-top:20px;
-    float:left;
-}
-
-/*----CONTENT----*/
-.suporte_content{
-      width: 100%;
-      min-height:1200px;
-      height:auto;
-      position: relative;
-      background-color: white;
-      padding-bottom: 20px;
-}
-
-.content{
-    width:100%;
-    min-height:1200px;
-    height:auto;
-    margin:auto;
-    position: relative;
-    padding-top: 20px;
-}
-
-/*------faixa 1-------*/
-.faixa_1_content_home{
-    width:1800px;
-    height:400px;
-    margin-top: 0px;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.content_login_usuario_home{/*---login e senha---*/
-    width:25%;
-    height:400px;
-    background-color: #7F0000;
-    border-radius: 2%;
-    float:left;
-}
-
-.faixa_login_home{
-    width:100%;
-    height:45px;
-    margin-top:10px;
-    text-align: center;
-    font-family: sans-serif;
-    color: white;
-}
-
-.faixa_login_home a{
-    margin-right:64%;
-    font-size: 18px;
-}
-
-.faixa_login_home p{
-    margin-left:44%;
-    font-size: 12px;
-}
-
-
-.faixa_login_home [type=text],[type=password]{/*caixas de texto -login -senha*/
-    width:67%;
-    margin-left:0px;
-}
-
-
-.faixa_login_home [type=submit]{/*botão entrar*/
-    width:170px;
-    height:30px;
-    margin-left:0px;
-    border-radius:5px;
-}
-
-.faixa_login_home span{
-    font-family:sans-serif;
-}
-
-
-.slider_faixa1{/*---slider---*/
-    width:1000px;
-    height:390px;
-    float:left;
-    margin-left: 9%;
-    border: solid 1px #000;
-}
-
-.faixa1_img_slide_home{
-    width:470px;
-    height:300px;
-    background-image: url(../imagens/saude-bucal.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-   margin-left:15px;
-    margin-top:40px;
-    float:left;
-}
-
-/*--------faixa 2------*/
-
-/*faixa*/
-.faixa_2_content_home{
-    width:100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    height:700px;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: #fff;
-    background-image: url(../imagens/odontologia.jpg);
-    background-attachment: fixed;
-    background-size: cover;
-}
-/*-----titulo----*/
-
-.titulo_faixa_2_home{
-    width:1200px;
-    height:100px;
-    line-height: 100px;
-
-}
-
-#hg{
-    width: 100%;
-    height: 700px;
-    background-color:rgba(0, 0, 0,0.5);
-
-}
-
-
-.titulo_faixa_2_home a{
-    font-family:sans-serif;
-    font-size: 22px;
-    font-weight: bold;
-    color: #FFFFFF;
-}
-/*-----imagens-----*/
-
-
-
-[data-tooltip] {
-  position: relative;
-  font-weight: bold;
-}
-
-[data-tooltip]:after {
-  display: none;
-  position: absolute;
-  top: -5px;
-  padding: 5px;
-  border-radius: 3px;
-  left: calc(100% + 2px);
-  content: attr(data-tooltip);
-  white-space: nowrap;
-  background-color: #0095ff;
-  color: White;
-}
-
-[data-tooltip]:hover:after {
-  display: block;
-}
-
-/*-------botão------*/
-.content_btn_faixa_2_home{
-    width:1200px;
-    height:20px;
-    color: #000000;
-}
-
-.titulo_faixa_1_home{
-  width: 225px;
-  margin: auto;
-  height: 30px;
-  font-family: sans-serif;
-  font-size: 30px;
-  color: #999999;
-  font-weight: bold;
-  /* background-color: #000; */
-}
-
-.content_btn_faixa_2_home p{
-      margin-right: 30px;
-      text-align: right;
-      font-weight: bold;
-      font-size: 18px;
-      font-family: sans-serif;
-}
-
-/*--------faixa 3--------*/
-
-/*faixa*/
-.faixa_3_content_home{
-    width:1200px;
-    min-height: 400px;
-    height: auto;
-    padding-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.carrossel_local{
-    width: 1200px;
-    min-height: 300px;
-    height: auto;
-}
-
-/*content unidades*/
-.content_faixa_3_unidades_home{
-    width:1200px;
-    height:300px;
-    margin-left:30px;
-    margin-bottom:100px;
-}
-
-/*imagem unidades*/
-.img_faixa_3_home{
-    width:340px;
-    height:300px;
-    margin-right: 10px;
-    float:left;
-}
-
-.img_faixa_3_home img{
-    width:340px;
-    height:300px;
-}
-
-.descricao_faixa_3_home{
-    width:200px;
-    height:200px;
-    /* background-size: 200px; */
-    float:left;
-    /* margin-top: 100px; */
-}
-
-.imagemm_faixa_3_home{
-  width:200px;
-  height:200px;
-}
-
-.informa_unidade{
-  width: 500px;
-  min-height: 400px;
-  padding: 16px;
-  margin-left: 20px;
-  text-align: justify;
-  float: left;
-  overflow: hidden;
-  padding-bottom: 30px;
-}
-
-.footer{
-      width: 100%;
-      height: 299px;
-      position: relative;
-      background-color: white;
-      padding-top: 35px;
-}
-
-/*div typewriter efeito*/
-.typewriter{
-    width: 800px;
-    height: auto;
-    padding: 16px;
-    background-color: rgba(255,255,255,0.3);
-}
-
-
-.typewriter h1 {
-  color: #DA0000;
-  font-family: monospace;
-  overflow: hidden;
-  font-weight: bold;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation:
-     typing 3.5s steps(30, end),
-    blink-caret .2s step-end infinite;
-    font-size: 60px;
-    text-align: justify;
-}
-
-
-.typewriter h3 {
-  color: #DA0000;
-  font-family: monospace;
-  overflow: hidden;
-  font-weight: bold;
-  border-right: .15em solid orange;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation:
-     typing 3.5s steps(30, end),
-    blink-caret2 .2s step-end infinite;
-    font-size: 60px;
-    text-align: justify;
-}
-
- /*The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/*The typewriter cursor effect*/
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-}
-
-
-/*Botão chamar modal área do paciente*/
-#btn_login{
-    width: 100px;
-    height: 30px;
-    color: #FFF;
-    background-color: #9C1003;
-    border: solid 1px;
-    font-family: 'BenchNine', Arial, sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    position: absolute;
-    margin-left: 91%;
-    margin-top: 15px;
-    cursor: pointer;
-    z-index: 999;
-
-}
-
-
-
-#lbl_paciente{
-    color: #9C1003;
-    font-family: 'BenchNine', Arial, sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    position: absolute;
-    margin-left: 80%;
-    margin-top: 15px;
-    z-index: 998;
-}
-
-#btn_chama_modal:hover{
-    color: #FFF;
-    background: #9C1003;
-    border: solid 3px #fff;
-    font-family: 'BenchNine', Arial, sans-serif;
-}
-
-/*caixa_login_home*/
-#caixa_login_home{
-    font-family: 'BenchNine', Arial, sans-serif;
-    font-weight: 300;
-    font-size: 18px;
-    position: absolute;
-    margin-left: 74%;
-    margin-top: 100px;
-    z-index: 998;
-    width: 350px;
-    height: 350px;
-   box-shadow: 1px 2px 8px #333;
-   /*background-image: url(../imagens/bg_login.jpg);*/
-    background-color: #fff;
-    border-radius: 20px;
-    background-size: 350px 300px;
-    background-repeat: no-repeat;
-    display: none;
-}
-
-#caixa_login_home label{
-  margin-left: 50px;
-  margin-top: 20px;
-  font-size: 12px;
-}
-
-#caixa_login_home a{
-  font-size: 12px;
-  text-decoration: none;
-  margin-top: 20px;
-  color: green;
-}
-
-#superior_vermelha{
-    width: 350px;
-    height: 59px;
-    border-radius: 20px 20px 0px 0px;
-    background-color: #DA0000;
-}
-
-#borda_minimizar{
-    width: 15px;
-    margin-top: 20px;
-    height: 4px;
-    float: right;
-    margin-right: 15px;
-    border: solid 3px #fff;
-}
-
-
-.label_login{
-    width: 100px;
-    height: 30px;
-    margin-left:17px;
-    margin-top: 13px;
-    font-family: verdana;
-    font-weight: 500px;
-    float: left;
-    color: red;
-    padding-left: 20px;
-    border-radius: 15px;
-    background-color: #fff;
-}
-
-#icon_cad{
-    margin-left: 10px;
-    margin-top: 15px;
-    float: left;
-}
-
-.label_email{
-    width: 200px;
-    height: 30px;
-    margin-left: 20px;
-    margin-top: 35px;
-    font-family: verdana;
-    font-size: 14px;
-    color: #000;
-    padding-left: 20px;
-    background-color: #fff;
-}
-
-#txt_usuario{
-    background-color: #EEEEEE;
-    margin-top: 9px;
-    margin-left: 28px;
-    width: 300px;
-    border: none;
-}
-
-.label_senha{
-    width: 200px;
-    height: 30px;
-    margin-left: 20px;
-    margin-top: 20px;
-    font-family: verdana;
-    font-size: 14px;
-    color: #000;
-    padding-left: 20px;
-    background-color: #fff;
-}
-
-#txt_senha{
-    background-color: #EEEEEE;
-    margin-top: 9px;
-    margin-left: 28px;
-    width: 300px;
-    border: none;
-}
-
-#btn_go_logar{
-    margin-left: 131px;
-    margin-top: 14px;
-    height: 33px;
-    width: 90px;
-    background-color: #37CC73;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-
-
-.googleMap{
-  width:500px;
-  height:350px;
-  position: relative;
-  overflow: hidden;
-  background-color: #000;
-}
-
-.content_img_faixa_2_home{
-    width:1200px;
-    height:550px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgba(255,255,255,0.3);
-}
-
-.img_faixa_2_home{
-    width:350px;
-    height:200px;
-    margin-left:40px;
-    margin-top:30px;
-    float:left;
-}
-
-.suporte_imagem_ambiente{
-  width:350px;
-  height:200px;
-}
-
-.suporte_imagem_ambiente img{
-    width:350px;
-    height:200px;
-    border-radius: 3px;
-}
-
-.suporte_imagem_ambiente img:hover{
-  opacity: 0.5;
-  -moz-transform: scale(1.05);
-	-webkit-transform: scale(1.05);
-	transform: scale(1.05);
-}
-
-.textoNomeAmbiente{
-  /* width: 350px; */
-  display: none;
-  white-space: nowrap;
-  width: 23em;
-  overflow: hidden;
-  opacity: 1;
-  font-weight: bold;
-  position: absolute;
-  background-color: #202020;
-  text-overflow: ellipsis;
-  color: #FFF;
-
-}
-
-.suporte_imagem_ambiente img:hover~.textoNomeAmbiente{
-  margin-top: -40px;
-  display: block;
+      height: 70px;
+      background-color: aliceblue;
+      }
+
+
+      /*---slider---*/
+      .content_carrossel {
+      	width: 100%;
+      	height:350px;
+          padding-top: 25px;
+          float:left;
+          display: flex;
+          padding-right: 20px;
+          align-content: center;
+      }
+
+      .carrossel {
+      	float: left;
+      	width: 100%;
+      	overflow: hidden;
+      	height: 300px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .carrossel ul li {
+      	width: 400px;
+      	height: 360px;
+      	float: left;
+      	margin-left: 15px;
+      }
+
+      .carrossel ul li img{
+          width:100%;
+          height:100%;
+      }
+
+      #menu-carrossel {
+      	float: left;
+      	clear: both;
+      	width: 100%;
+      	text-align: center;
+          margin-bottom:50px;
+
+      }
+
+      .passar_carrossel{
+          width: 20px;
+          height: 300px;
+          float: left;
+          padding-top: 120px;
+
+
+
+      }
+
+      .passar_carrossel a img{
+          width:20px;
+          height:30px;
+          margin-left:10px;
+      }
+
+      /*----MENU ACESSO RÁPIDO----*/
+      #suporte_menu_de_acesso_rapido{
+        width: 100%;
+        min-height: 250px;
+          overflow: hidden;
+        padding-top: 30px;
+        font-size: 20px;
+        text-align: justify;
+        /*background-color: #F1F6F9;*/
+          background-image: url(../imagens/bg_child.jpg);
+          background-size:contain;
+          background-size: 100%;
+          background-attachment: fixed;
+        position: relative;
+      }
+
+      #menu_de_acesso_rapido{
+        width: 100%
+        height: 200px;
+        margin: auto;
+      }
+      .item_menu_de_acesso_rapido{
+          width:12.5%;
+          height:150px;
+          background-color: white;
+          background-image: url(../imagens/imagem_padrao.png);
+          background-repeat: no-repeat;
+          background-size: 95%;
+          border-radius:50%;
+          margin-left:75px;
+          margin-top:20px;
+          float:left;
+      }
+
+      /*----CONTENT----*/
+      .suporte_content{
+            width: 100%;
+            min-height:1200px;
+            height:auto;
+            position: relative;
+            background-color: white;
+            padding-bottom: 20px;
+      }
+
+      .content{
+          width:100%;
+          min-height:1200px;
+          height:auto;
+          margin:auto;
+          position: relative;
+          padding-top: 20px;
+      }
+
+      /*------faixa 1-------*/
+      .faixa_1_content_home{
+          width:100%;
+          height:400px;
+          margin-top: 0px;
+          margin-left: auto;
+          margin-right: auto;
+
+      }
+
+      .content_login_usuario_home{/*---login e senha---*/
+          width:25%;
+          height:400px;
+          background-color: #7F0000;
+          border-radius: 2%;
+          float:left;
+      }
+
+      .faixa_login_home{
+          width:100%;
+          height:45px;
+          margin-top:10px;
+          text-align: center;
+          font-family: sans-serif;
+          color: white;
+      }
+
+      .faixa_login_home a{
+          margin-right:64%;
+          font-size: 18px;
+      }
+
+      .faixa_login_home p{
+          margin-left:44%;
+          font-size: 12px;
+      }
+
+
+      .faixa_login_home [type=text],[type=password]{/*caixas de texto -login -senha*/
+          width:67%;
+          margin-left:0px;
+      }
+
+
+      .faixa_login_home [type=submit]{/*botão entrar*/
+          width:170px;
+          height:30px;
+          margin-left:0px;
+          border-radius:5px;
+      }
+
+      .faixa_login_home span{
+          font-family:sans-serif;
+      }
+
+
+      .slider_faixa1{/*---slider---*/
+          width:100%;
+          height:390px;
+          float:left;
+          margin-left: 9%;
+          border: solid 1px #000;
+      }
+
+      .faixa1_img_slide_home{
+          width:470px;
+          height:300px;
+          background-image: url(../imagens/saude-bucal.png);
+          background-repeat: no-repeat;
+          background-size: 100%;
+         margin-left:15px;
+          margin-top:40px;
+          float:left;
+      }
+
+      /*--------faixa 2------*/
+
+      /*faixa*/
+      .faixa_2_content_home{
+          width:100%;
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          height:1520px;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: #fff;
+          background-image: url(../imagens/odontologia.jpg);
+          background-attachment: fixed;
+          background-size: cover;
+      }
+      /*-----titulo----*/
+
+      .titulo_faixa_2_home{
+          width:100%;
+          height:100px;
+          line-height: 100px;
+
+      }
+
+      #hg{
+          width: 100%;
+          height: 1520px;
+          background-color:rgba(0, 0, 0,0.5);
+
+      }
+
+
+      .titulo_faixa_2_home a{
+          font-family:sans-serif;
+          font-size: 22px;
+          font-weight: bold;
+          color: #FFFFFF;
+      }
+      /*-----imagens-----*/
+
+
+
+      [data-tooltip] {
+        position: relative;
+        font-weight: bold;
+      }
+
+      [data-tooltip]:after {
+        display: none;
+        position: absolute;
+        top: -5px;
+        padding: 5px;
+        border-radius: 3px;
+        left: calc(100% + 2px);
+        content: attr(data-tooltip);
+        white-space: nowrap;
+        background-color: #0095ff;
+        color: White;
+      }
+
+      [data-tooltip]:hover:after {
+        display: block;
+      }
+
+      /*-------botão------*/
+      .content_btn_faixa_2_home{
+          width:100%;
+          height:20px;
+          color: #000000;
+      }
+
+      .titulo_faixa_1_home{
+        width: 225px;
+        margin: auto;
+        height: 30px;
+        font-family: sans-serif;
+        font-size: 30px;
+        color: #999999;
+        font-weight: bold;
+        /* background-color: #000; */
+      }
+
+      .content_btn_faixa_2_home p{
+            margin-right: 30px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: sans-serif;
+      }
+
+      /*--------faixa 3--------*/
+
+      /*faixa*/
+      .faixa_3_content_home{
+          width:100%;
+          min-height: 400px;
+          height: auto;
+          padding-top: 50px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+
+      .carrossel_local{
+          width: 100%;
+          min-height: 300px;
+          height: auto;
+      }
+
+      /*content unidades*/
+      .content_faixa_3_unidades_home{
+          width:100%;
+          height:300px;
+          margin-left:30px;
+          margin-bottom:100px;
+      }
+
+      /*imagem unidades*/
+      .img_faixa_3_home{
+          width:340px;
+          height:300px;
+          margin-right: 10px;
+          float:left;
+      }
+
+      .img_faixa_3_home img{
+          width:340px;
+          height:300px;
+      }
+
+      .descricao_faixa_3_home{
+          width:200px;
+          height:200px;
+          /* background-size: 200px; */
+          float:left;
+          /* margin-top: 100px; */
+      }
+
+      .imagemm_faixa_3_home{
+        width:200px;
+        height:200px;
+      }
+
+      .informa_unidade{
+        width: 500px;
+        min-height: 400px;
+        padding: 16px;
+        margin-left: 20px;
+        text-align: justify;
+        float: left;
+        overflow: hidden;
+        padding-bottom: 30px;
+      }
+
+      .footer{
+            width: 100%;
+            height: 299px;
+            position: relative;
+            background-color: white;
+            padding-top: 35px;
+      }
+
+      /*div typewriter efeito*/
+      .typewriter{
+          width: 90%;
+          height: auto;
+          padding: 16px;
+          background-color: rgba(255,255,255,0.3);
+      }
+
+
+      .typewriter h1 {
+        color: #DA0000;
+        font-family: monospace;
+        overflow: hidden;
+        font-weight: bold;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation:
+           typing 3.5s steps(30, end),
+          blink-caret .2s step-end infinite;
+          font-size: 60px;
+          text-align: justify;
+          font-size: 26px;
+      }
+
+
+      .typewriter h3 {
+        color: #DA0000;
+        font-family: monospace;
+        overflow: hidden;
+        font-weight: bold;
+        border-right: .15em solid orange;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation:
+           typing 3.5s steps(30, end),
+          blink-caret2 .2s step-end infinite;
+          font-size: 26px;
+          text-align: justify;
+      }
+
+       /*The typing effect */
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+
+      /*The typewriter cursor effect*/
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+      }
+
+
+      /*Botão chamar modal área do paciente*/
+      #btn_login{
+          width: 100px;
+          height: 30px;
+          color: #FFF;
+          background-color: #9C1003;
+          border: solid 1px;
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 700;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 91%;
+          margin-top: 15px;
+          cursor: pointer;
+          z-index: 999;
+          display: none;
+      }
+
+
+
+      #lbl_paciente{
+          color: #9C1003;
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 80%;
+          margin-top: 15px;
+          z-index: 998;
+          display: none;
+      }
+
+      #btn_chama_modal:hover{
+          color: #FFF;
+          background: #9C1003;
+          border: solid 3px #fff;
+          font-family: 'BenchNine', Arial, sans-serif;
+      }
+
+      /*caixa_login_home*/
+      #caixa_login_home{
+          font-family: 'BenchNine', Arial, sans-serif;
+          font-weight: 300;
+          font-size: 18px;
+          position: absolute;
+          margin-left: 74%;
+          margin-top: 100px;
+          z-index: 998;
+          width: 350px;
+          height: 350px;
+         box-shadow: 1px 2px 8px #333;
+         /*background-image: url(../imagens/bg_login.jpg);*/
+          background-color: #fff;
+          border-radius: 20px;
+          background-size: 350px 300px;
+          background-repeat: no-repeat;
+          display: none;
+      }
+
+      #caixa_login_home label{
+        margin-left: 50px;
+        margin-top: 20px;
+        font-size: 12px;
+      }
+
+      #caixa_login_home a{
+        font-size: 12px;
+        text-decoration: none;
+        margin-top: 20px;
+        color: green;
+      }
+
+      #superior_vermelha{
+          width: 350px;
+          height: 59px;
+          border-radius: 20px 20px 0px 0px;
+          background-color: #DA0000;
+      }
+
+      #borda_minimizar{
+          width: 15px;
+          margin-top: 20px;
+          height: 4px;
+          float: right;
+          margin-right: 15px;
+          border: solid 3px #fff;
+      }
+
+
+      .label_login{
+          width: 100px;
+          height: 30px;
+          margin-left:17px;
+          margin-top: 13px;
+          font-family: verdana;
+          font-weight: 500px;
+          float: left;
+          color: red;
+          padding-left: 20px;
+          border-radius: 15px;
+          background-color: #fff;
+      }
+
+      #icon_cad{
+          margin-left: 10px;
+          margin-top: 15px;
+          float: left;
+      }
+
+      .label_email{
+          width: 200px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 35px;
+          font-family: verdana;
+          font-size: 14px;
+          color: #000;
+          padding-left: 20px;
+          background-color: #fff;
+      }
+
+      #txt_usuario{
+          background-color: #EEEEEE;
+          margin-top: 9px;
+          margin-left: 28px;
+          width: 300px;
+          border: none;
+      }
+
+      .label_senha{
+          width: 200px;
+          height: 30px;
+          margin-left: 20px;
+          margin-top: 20px;
+          font-family: verdana;
+          font-size: 14px;
+          color: #000;
+          padding-left: 20px;
+          background-color: #fff;
+      }
+
+      #txt_senha{
+          background-color: #EEEEEE;
+          margin-top: 9px;
+          margin-left: 28px;
+          width: 300px;
+          border: none;
+      }
+
+      #btn_go_logar{
+          margin-left: 131px;
+          margin-top: 14px;
+          height: 33px;
+          width: 90px;
+          background-color: #37CC73;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+      }
+
+
+      .googleMap{
+        width:500px;
+        height:350px;
+        position: relative;
+        overflow: hidden;
+        background-color: #000;
+      }
+
+      .content_img_faixa_2_home{
+          width:100%;
+          height:550px;
+          margin-left: auto;
+          margin-right: auto;
+          background-color: rgba(255,255,255,0.3);
+      }
+
+      .img_faixa_2_home{
+          width:100%;
+          height:200px;
+          margin-left:0vw;
+          margin-top:30px;
+          float:left;
+      }
+
+      .suporte_imagem_ambiente{
+        width:100%;
+        height:200px;
+      }
+
+      .suporte_imagem_ambiente img{
+          width:96%;
+          height:200px;
+          border-radius: 3px;
+      }
+
+      .suporte_imagem_ambiente img:hover{
+        opacity: 0.5;
+        -moz-transform: scale(1.05);
+      	-webkit-transform: scale(1.05);
+      	transform: scale(1.05);
+      }
+
+      .textoNomeAmbiente{
+        /* width: 350px; */
+        display: none;
+        white-space: nowrap;
+        width: 23em;
+        overflow: hidden;
+        opacity: 1;
+        font-weight: bold;
+        position: absolute;
+        background-color: #202020;
+        text-overflow: ellipsis;
+        color: #FFF;
+
+      }
+
+      .suporte_imagem_ambiente img:hover~.textoNomeAmbiente{
+        margin-top: -40px;
+        display: block;
+      }
+
 }
