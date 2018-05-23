@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `hhealth`;
--- MySQL dump 10.13  Distrib 5.6.24, for Win32 (x86)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.20-log
+-- Server version	5.7.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,6 +16,24 @@ USE `hhealth`;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Temporary view structure for view `agendamento_paciente_funcionario`
+--
+
+DROP TABLE IF EXISTS `agendamento_paciente_funcionario`;
+/*!50001 DROP VIEW IF EXISTS `agendamento_paciente_funcionario`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `agendamento_paciente_funcionario` AS SELECT 
+ 1 AS `id_funcionario`,
+ 1 AS `nome_funcionario`,
+ 1 AS `id_paciente`,
+ 1 AS `nome_paciente`,
+ 1 AS `id_agendamento_consulta`,
+ 1 AS `data`,
+ 1 AS `ativo`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `tbl_agendamento_consultas`
@@ -32,6 +50,7 @@ CREATE TABLE `tbl_agendamento_consultas` (
   `id_unidade` int(11) DEFAULT NULL,
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
+  `ativo` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_agendamento_consulta`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -42,7 +61,7 @@ CREATE TABLE `tbl_agendamento_consultas` (
 
 LOCK TABLES `tbl_agendamento_consultas` WRITE;
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` DISABLE KEYS */;
-INSERT INTO `tbl_agendamento_consultas` VALUES (1,8,7,1,3,'2018-05-07','04:04:00'),(2,8,7,1,3,'2018-05-07','04:04:00'),(3,8,7,1,3,'2018-05-07','04:04:00'),(4,8,7,1,3,'2018-05-07','04:04:00'),(5,8,7,1,3,'2018-05-07','04:04:00'),(6,8,7,1,3,'2018-05-07','04:04:00'),(7,8,7,1,3,'2018-05-16','04:04:00'),(8,8,7,1,3,'2018-05-16','04:04:00'),(9,8,6,1,2,'2018-05-22','04:04:00'),(10,8,6,1,2,'2018-05-22','04:04:00');
+INSERT INTO `tbl_agendamento_consultas` VALUES (1,8,7,1,3,'2018-05-07','04:04:00',0),(2,8,7,2,3,'2018-05-07','04:04:00',1),(3,8,7,1,3,'2018-05-07','04:04:00',0),(4,8,7,2,3,'2018-05-07','04:04:00',0),(5,8,7,1,3,'2018-05-07','04:04:00',0),(6,8,7,1,3,'2018-05-07','04:04:00',0),(7,8,7,2,3,'2018-05-16','04:04:00',0),(8,8,7,1,3,'2018-05-16','04:04:00',0),(9,8,6,2,2,'2018-05-22','04:04:00',1),(10,8,6,1,2,'2018-05-22','04:04:00',0);
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -95,10 +114,11 @@ CREATE TABLE `tbl_ambulancia` (
   `id_ambulancia` int(11) NOT NULL AUTO_INCREMENT,
   `id_unidade` int(11) NOT NULL,
   `placa` varchar(45) DEFAULT NULL,
+  `descricao` text,
   PRIMARY KEY (`id_ambulancia`),
   KEY `fk42_idx` (`id_unidade`),
   CONSTRAINT `fk42` FOREIGN KEY (`id_unidade`) REFERENCES `tbl_unidade` (`id_unidade`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,6 +127,7 @@ CREATE TABLE `tbl_ambulancia` (
 
 LOCK TABLES `tbl_ambulancia` WRITE;
 /*!40000 ALTER TABLE `tbl_ambulancia` DISABLE KEYS */;
+INSERT INTO `tbl_ambulancia` VALUES (1,1,'BCD 4124','Editando os veículos'),(2,3,'HJF 8904','outro veículo pra ficar bonitinho na tela');
 /*!40000 ALTER TABLE `tbl_ambulancia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -713,7 +734,7 @@ CREATE TABLE `tbl_funcionario` (
   KEY `fk12312_idx` (`id_endereco`),
   CONSTRAINT `fk12312` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_tbl_funcionario_tbl_cargo1` FOREIGN KEY (`id_cargo`) REFERENCES `tbl_cargo` (`id_cargo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -722,7 +743,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1);
+INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1),(2,1,38,'wesley','marques','1999-01-31','5454','45454',1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1300,10 +1321,11 @@ DROP TABLE IF EXISTS `tbl_saida_hospital`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `tbl_saida_hospital` (
   `id_saida_hospital` int(11) NOT NULL AUTO_INCREMENT,
-  `saida` float DEFAULT NULL,
+  `valor` float DEFAULT NULL,
   `descricao` text,
+  `data` date DEFAULT NULL,
   PRIMARY KEY (`id_saida_hospital`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1312,6 +1334,7 @@ CREATE TABLE `tbl_saida_hospital` (
 
 LOCK TABLES `tbl_saida_hospital` WRITE;
 /*!40000 ALTER TABLE `tbl_saida_hospital` DISABLE KEYS */;
+INSERT INTO `tbl_saida_hospital` VALUES (2,54,'sei la qualquer coisa','2018-05-26');
 /*!40000 ALTER TABLE `tbl_saida_hospital` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1445,7 +1468,7 @@ CREATE TABLE `tbl_tipo_quarto` (
   `nivel` varchar(50) NOT NULL,
   `descricao` text NOT NULL,
   PRIMARY KEY (`id_tipo_quarto`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1454,7 +1477,7 @@ CREATE TABLE `tbl_tipo_quarto` (
 
 LOCK TABLES `tbl_tipo_quarto` WRITE;
 /*!40000 ALTER TABLE `tbl_tipo_quarto` DISABLE KEYS */;
-INSERT INTO `tbl_tipo_quarto` VALUES (3,'teste','teste'),(9,'tipo_quarto2','tipo_quarto'),(10,'teste','teste');
+INSERT INTO `tbl_tipo_quarto` VALUES (3,'teste','teste'),(9,'tipo_quarto2','tipo_quarto'),(10,'teste','teste'),(17,'Suite 14','Wesley viado');
 /*!40000 ALTER TABLE `tbl_tipo_quarto` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1592,7 +1615,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','teste',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/hospital-jandira.jpg','teste',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/4992868.jpg','asfgasfg',1,1,NULL,NULL,NULL,NULL);
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','Osasco',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/hospital-jandira.jpg','Jandira',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/4992868.jpg','Itapevi',1,1,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1612,7 +1635,7 @@ CREATE TABLE `tbl_usuario_funcionario` (
   PRIMARY KEY (`id_usuario_funcionario`),
   KEY `fknivel_acesso_idx` (`id_nivel_acesso`),
   CONSTRAINT `fknivel_acesso` FOREIGN KEY (`id_nivel_acesso`) REFERENCES `tbl_nivel_acesso` (`id_nivel`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1621,7 +1644,7 @@ CREATE TABLE `tbl_usuario_funcionario` (
 
 LOCK TABLES `tbl_usuario_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_usuario_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_usuario_funcionario` VALUES (1,1,2,' 493 . 355 . 258 - 47','123');
+INSERT INTO `tbl_usuario_funcionario` VALUES (1,1,2,'473.792.828.32','login123'),(2,2,2,'490.660.718-77','123');
 /*!40000 ALTER TABLE `tbl_usuario_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1679,6 +1702,24 @@ LOCK TABLES `usuario_medico_administrador` WRITE;
 INSERT INTO `usuario_medico_administrador` VALUES (1,'Administração de conteúdo'),(2,'Gerenciar sistema interno'),(3,'Usuário ROOT');
 /*!40000 ALTER TABLE `usuario_medico_administrador` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Final view structure for view `agendamento_paciente_funcionario`
+--
+
+/*!50001 DROP VIEW IF EXISTS `agendamento_paciente_funcionario`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50001 VIEW `agendamento_paciente_funcionario` AS select `f`.`id_funcionario` AS `id_funcionario`,`f`.`nome` AS `nome_funcionario`,`p`.`id_paciente` AS `id_paciente`,`p`.`nome` AS `nome_paciente`,`ac`.`id_agendamento_consulta` AS `id_agendamento_consulta`,`ac`.`data` AS `data`,`ac`.`ativo` AS `ativo` from ((`tbl_funcionario` `f` join `tbl_paciente` `p`) join `tbl_agendamento_consultas` `ac`) where ((`p`.`id_paciente` = `ac`.`id_paciente`) and (`f`.`id_funcionario` = `ac`.`id_funcionario`) and (`ac`.`ativo` = 0)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -1689,4 +1730,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-21  2:01:41
+-- Dump completed on 2018-05-23  9:42:19
