@@ -31,7 +31,7 @@
                      </div>
                  </div>
             </a>
-          
+
           <a href="agendamento.php">
                  <div class="linha">
                      <div class="img_menu_lateral">
@@ -120,6 +120,16 @@
                      </div>
                      <div class="titulo_menu_lateral">
                          <a>Níveis de Usuário</a>
+                     </div>
+                 </div>
+            </a>
+            <a href="pagamentos.php">
+                 <div class="linha">
+                     <div class="img_menu_lateral">
+                         <img src="../imagens/levels.png">
+                     </div>
+                     <div class="titulo_menu_lateral">
+                         <a>Pagamento</a>
                      </div>
                  </div>
             </a>
