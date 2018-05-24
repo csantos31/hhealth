@@ -83,18 +83,18 @@ session_start();
             }
 
             if($_SESSION["login"]==1 ){
-                header('location:cms/index.php');
+                header('location:CMS/index.php');
 
             }else if($_SESSION["login"]==1 && $id_nivel_funcionario == 5){
 
-                header('location:cms/');
+                header('location:CMS/');
 
             }else if($_SESSION["login"]==0){
                   $_SESSION["id_funcionario"]=="";
                 header('location:index.php');
           }else if($_SESSION["login"]==1){
                 $_SESSION["id_funcionario"]=$puxaDadosDB['id_funcionario'];
-                header('location:cms/');
+                header('location:CMS/');
 
             }
 

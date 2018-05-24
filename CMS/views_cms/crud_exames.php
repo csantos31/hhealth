@@ -1,4 +1,4 @@
-<?php
+//<?php
     $status=null;
     $action = "modo=inserir";
     $nivel = null;
@@ -77,7 +77,7 @@
            }
            function Ativar(IdIten){
                //anula a ação do submit tradicional "botao" ou F5
-               event.preventDefault();
+               //event.preventDefault();
                $.ajax({
                    type:"GET",
                    data: {id:IdIten},
@@ -91,7 +91,7 @@
            //Desativar
            function Desativar(IdIten){
                //anula a ação do submit tradicional "botao" ou F5
-               event.preventDefault();
+               //event.preventDefault();
                $.ajax({
                    type:"GET",
                    data: {id:IdIten},
@@ -105,7 +105,7 @@
            //Excluir
            function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
 
                 if(confirm('Tem certeza?')){
 

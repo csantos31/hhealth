@@ -90,8 +90,8 @@
         break;
 
         case 'trabalhe_conosco':
-             require_once('/controllers/endereco_controller.php');
-             require_once('/models/endereco_class.php');
+             require_once('controllers/endereco_controller.php');
+             require_once('models/endereco_class.php');
              require_once('controllers/trabalhe_controller.php');//inclusão dos arquivos
              require_once('models/trabalhe_conosco_class.php');
 
@@ -120,8 +120,8 @@
          break;
 
         case 'ambiente':
-            require_once('/CMS/controller_cms/gerenciamento_ambiente_controller.php');
-            require_once('/CMS/model_cms/gerenciamento_ambiente_class.php');
+            require_once('CMS/controller_cms/gerenciamento_ambiente_controller.php');
+            require_once('CMS/model_cms/gerenciamento_ambiente_class.php');
             switch($modo){
                 case 'mostrar':
                     // Instanciando a classe da controller

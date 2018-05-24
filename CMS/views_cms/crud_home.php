@@ -72,7 +72,7 @@ include($caminho.'../verifica.php');
         //Desativar
             function Desativar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
@@ -86,7 +86,7 @@ include($caminho.'../verifica.php');
         //Desativar
             function Deletar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
@@ -145,13 +145,7 @@ include($caminho.'../verifica.php');
 
                                 $cont = 0;
                                 while ($cont < count($list)) {
-                                    $ativo=$list[$cont]->ativo;
-                                    if($ativo==1){
-                                        //$list[$cont]->slide1=null;
-
-
-
-
+                                
                                 ?>
                             <div class="conteudo_pagina_home"><!--conteudos da pagina-->
 
@@ -220,8 +214,8 @@ include($caminho.'../verifica.php');
                             </div>
 
                             <?php
-                                        //return null;
-                                       }
+                                    
+                                       
                                $cont +=1;
                                 }
                             ?>

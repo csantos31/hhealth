@@ -157,7 +157,7 @@
 					# code...
 					$controller_gerenciamento_ambiente = new controller_convenios();
 
-	                        $controller_gerenciamento_ambiente::Editar();
+	                $controller_gerenciamento_ambiente::Editar();
 					break;
 
 				case 'desativar':

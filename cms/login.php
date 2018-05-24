@@ -16,7 +16,7 @@
             <link rel="stylesheet" type="text/css" href="views_cms/css/style_login_cms.css">
             <title>Login - CMS</title>
             <script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
-            <script type="text/javascript" src="../js/jquery.maskedinput-1.1.4.pack.js"/></script>
+            <script type="text/javascript" src="../js/jquery.maskedinput-1.1.4.pack.js"></script>
             <script type="text/javascript">
                 $(document).ready(function(){
                     $("#cpf").mask("999.999.999-99");

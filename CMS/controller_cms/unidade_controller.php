@@ -75,6 +75,11 @@
             
             $unidade->id_unidade = $idUnidade;
             $unidade ->nome_unidade = $_POST['txt_unidade'];
+            $unidade->telefone= $_POST['txt_telefone'];
+            $unidade->texto= $_POST['txt_texto'];
+            $unidade->latitude= $_POST['txt_latitude'];
+            $unidade->longitude= $_POST['txt_longitude'];
+            
             //$home ->status = $_POST['status'];
             
             //variaveis de upload de imagem

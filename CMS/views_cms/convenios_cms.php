@@ -35,7 +35,7 @@
         <link rel="stylesheet" type="text/css" href="<?= $caminho ?>css/style_modal.css">
 
 
-        <script type="text/javascript" src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../../js/jquery-3.2.1.min.js"></script>
         <script>/*Modal*/
            $(document).ready(function(){
 
@@ -80,7 +80,7 @@
            //Desativar
               function Desativar(IdIten){
                   //anula a ação do submit tradicional "botao" ou F5
-                  event.preventDefault();
+                  //event.preventDefault();
                   $.ajax({
                       type:"GET",
                       data: {id:IdIten},
@@ -93,7 +93,7 @@
               //Ativar
                  function Ativar(IdIten){
                      //anula a ação do submit tradicional "botao" ou F5
-                     event.preventDefault();
+                     //event.preventDefault();
                      $.ajax({
                          type:"GET",
                          data: {id:IdIten},
@@ -107,7 +107,7 @@
           //Desativar
               function Deletar(IdIten){
                   //anula a ação do submit tradicional "botao" ou F5
-                  event.preventDefault();
+                  //event.preventDefault();
                   $.ajax({
                       type:"GET",
                       data: {id:IdIten},

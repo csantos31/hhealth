@@ -134,7 +134,7 @@ class Endereco{
 
 		}
 
-    public function SelectAllStates(){
+        public function SelectAllStates(){
 			//Query para selecionar a tabela contatos
 			$sql="SELECT * FROM tbl_estado";
 
@@ -145,22 +145,18 @@ class Endereco{
 			//Contador
 			$cont = 0;
 
-            $lista_estados[] = new Endereco();
+            $lista_estados = array();
 
-			while ($rs = $select->fetch(PDO::FETCH_ASSOC)) {
+			while ($rs = $select->fetchALL(PDO::FETCH_ASSOC)) {
 				#Cria um array de objetos na classe contatos
 
-                $lista_estados[$cont]->id_estado= $rs['id_estado'];
-				$lista_estados[$cont]->sigla= $rs['sigla'];
+				$lista_estados= $rs;
 
 				// Soma mais um no contador
 				$cont+=1;
 			}
         
-            if(isset($lista_estados)){
-                return $lista_estados;
-            }
-            
+            return $lista_estados;
 			$conex::Desconectar();
             
 		}

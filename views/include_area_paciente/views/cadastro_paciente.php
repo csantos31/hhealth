@@ -17,6 +17,13 @@
     $cpf = $listar->cpf;
     $carterinha_convenio = $listar-> carterinha_convenio;
 
+    require_once('../../../models/endereco_class.php');
+    require_once('../../../controllers/endereco_controller.php');
+    $controller_endereco = new controller_endereco();
+    $listar = $controller_paciente::Buscar();
+
+    
+
 ?>
 
 <!DOCTYPE html>
@@ -139,13 +146,15 @@
                      
                     $cont = 0;
                     
-                    
+                    while($cont<count($list)){
                     ?>
-                    <option value="<?php echo($list[$cont]->sigla)?>"><?php echo($list[$cont]->sigla)?></option>
+                    <option value="<?php echo($list[$cont]['id_estado'])?>"><?php echo($list[$cont]['sigla'])?></option>
+                      <?php
+                        $cont++;
+                    }
+                    ?>
                   </select>
-                <?php
-                    
-                    ?>
+                
                 </div>
               </div>
             </div>

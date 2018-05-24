@@ -84,7 +84,7 @@ if(isset($niv)){
             //Excluir
             function Excluir(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},

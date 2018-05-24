@@ -72,7 +72,7 @@ include($caminho.'../verifica.php');
         //Ativar
             function Ativar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
@@ -86,7 +86,7 @@ include($caminho.'../verifica.php');
         //Desativar
             function Desativar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},
@@ -100,7 +100,7 @@ include($caminho.'../verifica.php');
         //Desativar
             function Deletar(IdIten){
                 //anula a ação do submit tradicional "botao" ou F5
-                event.preventDefault();
+                //event.preventDefault();
                 $.ajax({
                     type:"GET",
                     data: {id:IdIten},

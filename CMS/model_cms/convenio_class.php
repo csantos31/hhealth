@@ -53,7 +53,7 @@
             public function Select(){
 
                   //Query para selecionar a tabela contatos
-                  $sql1="SELECT * FROM tbl_convenio WHERE ativo=1 ORDER BY titulo;";
+                  $sql1="SELECT * FROM tbl_convenio WHERE ativo=1 ORDER BY id_convenio;";
 
                   //Instancio o banco e cria uma variavel
                   $conex = new Mysql_db();
