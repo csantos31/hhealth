@@ -261,10 +261,7 @@ label[for="btn_menu"]{
 
 @media screen and (max-device-width: 520px){
 
-      .div_suporte_conteudo{
-            width: 100vw;
-            height: 150px;
-      }
+      
 
       #menu_secundario{
             display: none;
