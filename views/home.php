@@ -201,7 +201,7 @@
                         <div class="faixa_2_content_home"><!--faixa2-->
                             <div id="hg">
                                 <div class="titulo_faixa_2_home" >
-                                    <a style="font-size: 45px;font-weight: 400;"> Ambientes do Hospital</a>
+                                    <a> Ambientes do Hospital</a>
                                 </div>
 
                                 <div class="content_img_faixa_2_home">
