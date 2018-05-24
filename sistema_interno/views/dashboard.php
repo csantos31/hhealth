@@ -55,6 +55,9 @@ require('../verifica.php');
                         <a href="receitas.php">
                            <p>Receitas</p>
                         </a>
+                        <a href="pagamentos.php">
+                           <p>Pagamentos</p>
+                        </a>
                     </div>
                 </div>
             </div>
