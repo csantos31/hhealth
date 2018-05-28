@@ -54,9 +54,26 @@
 			return $estados::SelectAllStates();
 		}
 
-      public function Buscar(){
+        public function Buscar(){
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idEndereco = $_GET['id_ende'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$endereco = new Endereco();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$endereco->id_endereco = $idEndereco;
+
+			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
+			$endereco = $endereco::SelectById($endereco);
+
+            return $endereco;
+			//require_once('../modals/modal_cad_especialidade.php');
+		}
+        
+        public function Buscar2($id){
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idEndereco = $id;
 
 			//INSTANCIA A CLASSE CONTATO
 			$endereco = new Endereco();
@@ -73,9 +90,31 @@
 
         /*Atualiza um registro existente*/
 		public function Editar(){
-            require_once ('models/endereco_class.php');
+            //require_once ('models/endereco_class.php');
 			//GUARDA O ID DO CONTATO PASSADO NA VIEW
 			$idEndereco = $_GET['id_ende'];
+
+			//INSTANCIA A CLASSE CONTATO
+			$endereco = new Endereco();
+
+			//DEFINE O ID DO CONTATO COM O VALOR DA VARIÁVEL
+			$endereco->id_endereco = $idEndereco;
+
+			$endereco->cep = $_POST['txt_cep'];
+            $endereco->logradouro = $_POST['txt_logradouro'];
+            $endereco->numero = $_POST['txt_numero'];
+            $endereco->id_estado = $_POST['slt_estado'];
+            $endereco->cidade = $_POST['txt_cidade'];
+            $endereco->bairro = $_POST['txt_bairro'];
+
+            $endereco::Update($endereco);
+		}
+        
+        /*Atualiza um registro existente*/
+		public function Editar2($id){
+            //require_once ('models/endereco_class.php');
+			//GUARDA O ID DO CONTATO PASSADO NA VIEW
+			$idEndereco = $id;
 
 			//INSTANCIA A CLASSE CONTATO
 			$endereco = new Endereco();

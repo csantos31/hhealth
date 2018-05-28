@@ -7,6 +7,13 @@
         public $hora;
         public $usuario;
         public $acao;
+        
+        // Cria um construtor
+        function __construct()
+        {
+            # code...
+            include_once('bd_class.php');
+        }
 
 
         public function Insert($dados_paciente){
@@ -39,6 +46,43 @@
             $conex->Desconectar();
 
 
+        }
+        
+        public function SelectById($dados_paciente){
+            $sql = "SELECT * FROM tbl_auditoria_paciente WHERE usuario = ".$dados_paciente->id_paciente;
+            
+            
+            $conex = new Mysql_db_include_paciente();
+
+            /*Chama o método para conectar no banco de dados e guarda o retorno da conexao na variavel*/
+            $PDO_conex = $conex->Conectar();
+            
+            $select = $PDO_conex->query($sql);
+            
+            $cont=0;
+			//Executa o script no banco de dados
+			while($rs = $select->fetch(PDO::FETCH_ASSOC)){
+				//Se der true redireciona a tela
+
+
+				$auditoria[] = new Auditoria_paciente();
+
+				$auditoria[$cont]->id_auditoria_paciente = $rs['id_auditoria_paciente'];
+                $auditoria[$cont]->data = $rs['data'];
+                $auditoria[$cont]->hora = $rs['hora'];
+                $auditoria[$cont]->acao = $rs['acao'];
+                
+                $cont++;
+
+			}
+            
+            if(isset($auditoria)){
+                return $auditoria;
+            }else{
+                echo "Erro ao inserir no banco de dados";
+            }
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
         }
 
 

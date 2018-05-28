@@ -32,11 +32,12 @@ require('../verifica.php');
             });
 
             //Cadastrar
-            function Cadastrar(){
+            function Cadastrar(IdIten){
 
                 $.ajax({
-                    type:"POST",
+                    type:"GET",
                     url:"../modals/modal_receita.php",
+                    data: {modo:'inserirReceita',id_paciente:IdIten},
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -109,19 +110,19 @@ require('../verifica.php');
                     <div class="col_2">
                         <div class="titulo_tabela">
                             <div class="lb_titulo">PACIENTE</div>
-                            <div class="lb_titulo">DATA</div>
+                            <div class="lb_titulo">RG</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
 
                         <?php
 
-                            include_once('../controllers/receitas_controller.php');
-                            include_once('../models/receitas_class.php');
+                            include_once('../controllers/paciente_controller.php');
+                            include_once('../models/paciente_class.php');
 
-                                $controller_receitas  = new controllerReceita();
+                                $controller_paciente  = new controllerPaciente();
 
                                 //Chama o metodo para Listar todos os registros
-                                $list = $controller_receitas::Listar();
+                                $list = $controller_paciente::Listar();
 
                                 if(!empty($list)){
                                 $cont = 0;
@@ -129,16 +130,14 @@ require('../verifica.php');
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->tipo ?></div>
-                                        <div class="item_tabela"><?= $list[$cont]->data ?></div>
+                                        <div class="item_tabela"><?= $list[$cont]->nome ?></div>
+                                        <div class="item_tabela"><?= $list[$cont]->rg ?></div>
                                         <div class="item_tabela icones_tabela">
+                                            
+                                            <a href="#" class="editar" onclick="Cadastrar(<?php echo($list[$cont]->id_paciente);?>)">
+                                                <img src="../imagens/add.png" alt="Cadastrar" title="cadastrar">
+                                            </a>
 
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_receita_medica);?>)">
-                                                <img src="../imagens/edit.png" alt="editar" title="editar">
-                                            </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_receita_medica);?>)">
-                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
-                                            </a>
                                         </div>
                                     </div>
                         <?php

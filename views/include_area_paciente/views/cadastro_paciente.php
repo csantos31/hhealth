@@ -10,6 +10,7 @@
     $controller_paciente = new controllerPaciente();
     $listar = $controller_paciente::Buscar($_SESSION['id_paciente']);
 
+    $id_endereco=$listar->id_endereco;
     $nome = $listar->nome;
     $sobrenome = $listar->sobrenome;
     $dt_nasc = $listar->dt_nasc;
@@ -20,9 +21,13 @@
     require_once('../../../models/endereco_class.php');
     require_once('../../../controllers/endereco_controller.php');
     $controller_endereco = new controller_endereco();
-    $listar = $controller_paciente::Buscar();
+    $listar2 = $controller_endereco::Buscar2($id_endereco);
 
-    
+    $cidade = $listar2->cidade;
+    $logradouro = $listar2->logradouro;
+    $numero = $listar2->numero;
+    $bairro = $listar2 ->bairro;
+    $cep = $listar2 ->cep;
 
 ?>
 
@@ -52,9 +57,9 @@
                         processData:false,
                         async:true,
                         success: function(dados){
-                             //$('#formulario_meio').html(dados);
+                             $('#formulario_meio').html(dados);
                              //alert(dados);
-                            console.log(dados);
+                            //console.log(dados);
                         }
                       });
                   });
@@ -126,7 +131,7 @@
                   Cidade
                 </div>
                 <div class="">
-                  <input type="text" name="txt_cidade" value="" class="input_cidade_end">
+                  <input type="text" name="txt_cidade" value="<?php echo($cidade)?>" class="input_cidade_end">
                 </div>
               </div>
               <div class="contato_celular">
@@ -135,7 +140,7 @@
                 </div>
                 <div class="">
                 
-                  <select class="" name="" id="opn_estado">
+                  <select class="" name="slt_estado" id="opn_estado">
                       <option value="[object Object]">Estado...</option>
                 <?php
                     require_once('../../../models/endereco_class.php');
@@ -160,22 +165,38 @@
             </div>
 
             <div class="div_contato">
-              <div class="contato_telefone">
-                <div class="desc_telefone">
-                  Logradouro
+                <div class="contato_telefone">
+                    <div class="desc_telefone">
+                        CEP
+                    </div>
+                    <div class="">
+                        <input type="text" name="txt_cep" value="<?php echo($cep)?>" class="input_cidade_end">
+                    </div>
                 </div>
-                <div class="">
-                  <input type="text" name="txt_logradouro" value="" class="input_cidade_end">
+                <div class="contato_celular">
+                    <div class="desc_telefone">
+                        Bairro
+                    </div>
+                    <div class="">
+                        <input type="text" name="txt_bairro" value="<?php echo($bairro)?>" class="input_cidade_end">
+                    </div>
                 </div>
-              </div>
-              <div class="contato_celular">
-                <div class="">
-                  N°
+                <div class="contato_telefone">
+                    <div class="desc_telefone">
+                      Logradouro
+                    </div>
+                    <div class="">
+                      <input type="text" name="txt_logradouro" value="<?php echo($logradouro)?>" class="input_cidade_end">
+                    </div>
                 </div>
-                <div class="">
-                  <input type="text" name="" value="" class="input_cidade_end">
+                <div class="contato_celular">
+                    <div class="">
+                      N°
+                    </div>
+                    <div class="">
+                      <input type="text" name="txt_numero" value="<?php echo($numero)?>" class="input_cidade_end">
+                    </div>
                 </div>
-              </div>
             </div>
             <div id="suporte_btn">
               <input type="submit" name="btn_salvar" value="salvar" id="btn_salvar" >

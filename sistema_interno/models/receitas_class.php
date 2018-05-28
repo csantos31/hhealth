@@ -71,12 +71,12 @@
 				$lista_receita[] = new Receita();
 
 				// Guarda os dados no banco de dados em cada indice do objeto criado
-        $lista_receita[$cont]->id_receita_medica = $rs['id_receita_medica'];
-        $lista_receita[$cont]->id_paciente = $rs['id_paciente'];
-        $lista_receita[$cont]->id_funcionario = $rs['id_funcionario'];
-        $lista_receita[$cont]->id_remedio = $rs['id_remedio'];
-        $lista_receita[$cont]->data = $rs['data'];
-        $lista_receita[$cont]->tipo = $rs['tipo'];
+                $lista_receita[$cont]->id_receita_medica = $rs['id_receita_medica'];
+                $lista_receita[$cont]->id_paciente = $rs['id_paciente'];
+                $lista_receita[$cont]->id_funcionario = $rs['id_funcionario'];
+                $lista_receita[$cont]->id_remedio = $rs['id_remedio'];
+                $lista_receita[$cont]->data = $rs['data'];
+                $lista_receita[$cont]->tipo = $rs['tipo'];
 
 				// Soma mais um no contador
 				$cont+=1;

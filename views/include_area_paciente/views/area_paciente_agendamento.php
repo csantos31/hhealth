@@ -44,14 +44,14 @@ $dt_atual = date ("Y-m-d");
         //var_dump( $ano_atual );
 
 
-        if($ano_paciente<$ano_atual){
-            $idade = $ano_atual - $ano_paciente;
-            if($idade>11){
-            $cor ="blue";
-            }else{
-                $cor="red";
-            }
-        }
+//        if($ano_paciente<$ano_atual){
+//            $idade = $ano_atual - $ano_paciente;
+//            if($idade>11){
+//            $cor ="blue";
+//            }else{
+//                $cor="red";
+//            }
+//        }
 
 
 

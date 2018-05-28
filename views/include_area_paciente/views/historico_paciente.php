@@ -1,5 +1,6 @@
 <?php
     require('verifica_paciente.php');
+    @session_start();
     $status=null;
  $action = "modo=inserir";
  $nivel = null;
@@ -36,12 +37,12 @@
       <?php
 
             // Incluindo a controller e a model para serem utilizadas
-            include_once($caminho .'../controllers/historico_controller.php');
-            include_once($caminho .'../models/historico_paciente_class.php');
+            include_once($caminho .'../controllers/auditoria_paciente_controller.php');
+            include_once($caminho .'../models/auditoria_paciente_class.php');
 
-            $receitas_controller = new controller_historico_paciente();
+            $auditoria_controller = new controller_auditoria_paciente();
 
-            $list = $receitas_controller::Listar();
+            $list = $auditoria_controller::Buscar($_SESSION['id_paciente']);
 
             $cont = 0;
 
@@ -52,7 +53,7 @@
       ?>
       <div id="content__pagina">
         <div class="linha_registro">
-          <?php echo($list[$cont]->data); ?><?php echo(" - "); ?><?php echo($list[$cont]->descricao); ?>
+          <?php echo($list[$cont]->data); ?><?php echo(" - "); ?><?php echo($list[$cont]->acao); ?>
         </div>
       </div>
       <?php

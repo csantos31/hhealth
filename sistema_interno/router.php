@@ -7,7 +7,7 @@
     }
 
     if(isset($_SESSION['id_funcionario'])){
-        $id=$_SESSION['id_funcionario'];
+        $id_funcionario=$_SESSION['id_funcionario'];
     }
 
     // verifica qual o tipo da controller iremos trabalhar
@@ -430,7 +430,7 @@
                       require_once('controllers/receitas_controller.php');
                       require_once('models/receitas_class.php');
                       $controller_receitas = new controllerReceita();
-                      $controller_receitas::Novo($id);
+                      $controller_receitas::Novo($id_funcionario);
 
                       break;
 

@@ -214,8 +214,8 @@ class Endereco{
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				//echo "<script>location.reload();</script>";
-                echo $sql;
+				echo "<script>location.reload();</script>";
+                //echo $sql;
 			}else {
 				//Mensagem de erro
                 echo $sql;

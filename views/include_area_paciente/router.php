@@ -56,22 +56,31 @@
             require_once('controllers/paciente_controller.php');
             require_once('models/paciente_class.php');
 
+            require_once('../../models/endereco_class.php');
+            require_once('../../controllers/endereco_controller.php');
+
             switch($modo){
 
 
                 case 'buscarid':
 
                     $controller_paciente = new controllerPaciente();
-                    $controller_paciente = Buscar();
+                    //$controller_paciente = Buscar();
 
                     //require_once('views/paciente_perfil.php');
 
                     break;
 
                 case 'editar';
+                    $controller_paciente = new controllerPaciente();
+                    $listar = $controller_paciente::Buscar($id);
+                    $id_endereco = $listar->id_endereco;
 
                     $controller_paciente = new controllerPaciente();
                     $controller_paciente::Editar($id);
+                    
+                    $controller_endereco = new controller_endereco();
+                    $controller_endereco::Editar2($id_endereco);
 
                     break;
             }

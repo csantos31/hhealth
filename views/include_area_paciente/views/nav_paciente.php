@@ -72,7 +72,7 @@
           </a>
           <a href="resultado_exames.php">
             <li class="item_menu">
-              Resultados Exames
+              Exames
             </li>
           </a>
           <a href="historico_paciente.php">

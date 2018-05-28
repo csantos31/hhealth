@@ -2,15 +2,15 @@
 
     class controllerReceita{
 
-       public function Novo($id){
+       public function Novo($id_funcionario){
 
           require_once ('models/receitas_class.php');
           //Instancia da classe Contato
           $receita = new Receita();
 
           //Carregando os dados digitados pelo usuário nos atributos da classe
-          $receita->id_paciente = $_POST['slt_paciente'];
-          $receita->id_funcionario = $id;
+          $receita->id_paciente = $_GET['id_paciente'];
+          $receita->id_funcionario = $id_funcionario;
           $receita->id_remedio=$_POST['slt_remedio'];
           $receita->data = $_POST['data'];
           $receita->tipo = $_POST['tipo'];
