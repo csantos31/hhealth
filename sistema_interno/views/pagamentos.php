@@ -1,5 +1,6 @@
 <?php
     require('../verifica.php');
+
 ?>
 <html>
     <head>
@@ -10,24 +11,12 @@
         <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
-        <script>
-            function ativar(idPaciente){
-                console.log(idPaciente);
-                if(confirm('Tem certeza que deseja ativar este paciente?')){
-
-                    $.ajax({
-                        type:"GET",
-                        data: {id:idPaciente},
-                        url: "../router.php?controller=paciente&modo=ativar_paciente&id="+idPaciente,
-                        success: function(dados){
-                            //alert(dados);
-                            $('.main').html(dados);
-                        }
-                    });
-
-                }
+        <script type="text/javascript">
+            function boleto() {
+              var URL = "../boletophp-master/boleto_itau.php";
+              var W = window.open(URL);    /**Note1**/
+              W.window.print();
             }
-
 
         </script>
 
@@ -47,28 +36,33 @@
 
                   <form class="" action="../router.php?" method="post">
 
-                    <p>Pagamentos</p>
-                    Paciente: <select class="" name="">
-                                <option value="">Select</option>
-                              </select>
-                    <br>
-                    Exames: <select class="" name="">
-                              <option value="">Exames</option>
-                            </select>
-                    <br>
-                    cartão: <input type="text" name="" value="">
-                    <br>
-                    senha cartão : <input type="text" name="" value="">
-                    <br>
-                    cpf: <input type="text" name="" value="">
-                    <br>
-                    email: <input type="email" name="" value="">
-                    <br>
-                    telefone: <input type="text" name="" value="">
 
 
+                     <p>Pagamentos</p>
 
-                    <input type="submit" name="" value="pagar">
+                     <div class="suporte_pagamento">
+                        Paciente: <input type="text" name="txt_paciente" value="">
+
+                        <!-- cartão: <input type="text" name="" value="">
+                        <br>
+                        senha cartão : <input type="text" name="" value="">
+                        <br> -->
+                        Cpf: <input type="text" name="txt_cpf" value="">
+
+                        Email: <input type="email" name="txt_email" value="">
+                        <br>
+                        Telefone: <input type="text" name="txt_telefone" value="">
+                        <br>
+                        Valor: <input type="text" name="txt_valor" value="">
+
+                        <a href="#">Pagar via cartão</a>
+                        <!-- <input type="button" value="inprimir" onclick=""/> -->
+                        <a href="#" onclick="boleto()">Boleto_itau</a>
+                    </div>
+<!--
+                    <input type="button" value="inprimir" onclick="window.print()"/>
+
+                    <input type="image" name="" value="pagar"> -->
                   </form>
                 </div>
             </div>
