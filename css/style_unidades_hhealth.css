@@ -169,53 +169,18 @@ a{
 
       .suporte_content{
             width: 100%;
-            min-height:1100px;
+            min-height:1200px;
             height:auto;
+            background-color: white;
 
       }
 
       .content{
-          width:100%;
-          min-height:1100px;
-          height:auto;
+          width:98vw;
+          min-height: 1770px;
+          height: auto;
           margin:auto;
-
-      }
-
-
-      /*faixa*/
-      .faixa_titulo{
-            width: 100%;
-            height: 50px;
-            font-family: sans-serif;
-            text-align: center;
-            line-height: 50px;
-            font-weight: bold;
-            font-size: 24px;
-      }
-
-      .titulo_busque_seu_exame{
-            width: 100%;
-            height: 30px;
-            font-family: sans-serif;
-            padding-left: 35px;
-            line-height: 30px;
-            margin-top: 30px;
-      }
-
-      .titulo_busque_seu_exame p{
-            font-weight: bold;
-            font-size: 14px;
-
-      }
-
-      .busca{
-            width: 100%;
-            height: 50px;
-            font-family: sans-serif;
-            line-height: 30px;
-            float: left;
-            padding: 2.8vw;
+          padding-top: 20px;
       }
 
       .faixa_busca{
@@ -251,7 +216,7 @@ a{
 
       .suporte_unidade{
             width: 95%;
-            min-height: 600px;
+            min-height: 730px;
             height: auto;
             margin-top: 20px;
             margin: auto;
@@ -289,11 +254,11 @@ a{
             width: 100%;
             height: 157px;
             float: left;
-            margin-left: 12%;
       }
 
       .mapa_da_unidade img{
             width: 100%;
             height: 157px;
       }
+
 }
