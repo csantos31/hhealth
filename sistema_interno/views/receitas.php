@@ -100,12 +100,6 @@ require('../verifica.php');
                            <div class="txt_cabecalho">
                                  <p>Receitas</p>
                            </div>
-                           <div class="img_nivel">
-                                <a class="novo" href="#" onclick="Cadastrar()">
-
-                                    <img src="../imagens/add.png">
-                                </a>
-                           </div>
                       </div>
                     <div class="col_2">
                         <div class="titulo_tabela">

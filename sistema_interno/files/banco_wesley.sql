@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `hhealth`;
--- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.7.10-log
+-- Server version	5.6.10-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -36,6 +36,24 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
+-- Temporary view structure for view `internacao_paciente`
+--
+
+DROP TABLE IF EXISTS `internacao_paciente`;
+/*!50001 DROP VIEW IF EXISTS `internacao_paciente`*/;
+SET @saved_cs_client     = @@character_set_client;
+SET character_set_client = utf8;
+/*!50001 CREATE VIEW `internacao_paciente` AS SELECT 
+ 1 AS `id_paciente_internacao`,
+ 1 AS `id_paciente`,
+ 1 AS `nome`,
+ 1 AS `id_quarto`,
+ 1 AS `numero`,
+ 1 AS `id_unidade`,
+ 1 AS `unidade`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `tbl_agendamento_consultas`
 --
 
@@ -52,7 +70,7 @@ CREATE TABLE `tbl_agendamento_consultas` (
   `hora` time DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT '0',
   PRIMARY KEY (`id_agendamento_consulta`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -61,7 +79,7 @@ CREATE TABLE `tbl_agendamento_consultas` (
 
 LOCK TABLES `tbl_agendamento_consultas` WRITE;
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` DISABLE KEYS */;
-INSERT INTO `tbl_agendamento_consultas` VALUES (1,8,7,1,3,'2018-05-07','04:04:00',0),(2,8,7,2,3,'2018-05-07','04:04:00',1),(3,8,7,1,3,'2018-05-07','04:04:00',0),(4,8,7,2,3,'2018-05-07','04:04:00',0),(5,8,7,1,3,'2018-05-07','04:04:00',0),(6,8,7,1,3,'2018-05-07','04:04:00',0),(7,8,7,2,3,'2018-05-16','04:04:00',0),(8,8,7,1,3,'2018-05-16','04:04:00',0),(9,8,6,2,2,'2018-05-22','04:04:00',1),(10,8,6,1,2,'2018-05-22','04:04:00',0);
+INSERT INTO `tbl_agendamento_consultas` VALUES (1,8,7,1,3,'2018-05-07','04:04:00',0),(2,8,7,2,3,'2018-05-07','04:04:00',1),(3,8,7,1,3,'2018-05-07','04:04:00',0),(4,8,7,2,3,'2018-05-07','04:04:00',0),(5,8,7,1,3,'2018-05-07','04:04:00',0),(6,8,7,1,3,'2018-05-07','04:04:00',0),(7,8,7,2,3,'2018-05-16','04:04:00',0),(8,8,7,1,3,'2018-05-16','04:04:00',0),(9,8,6,2,2,'2018-05-22','04:04:00',1),(10,8,6,1,2,'2018-05-22','04:04:00',0),(11,8,6,1,3,'2018-05-15','04:04:00',0),(12,8,7,1,2,'2018-05-07','04:04:00',0);
 /*!40000 ALTER TABLE `tbl_agendamento_consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -199,7 +217,7 @@ CREATE TABLE `tbl_auditoria` (
   `usuario` varchar(45) DEFAULT NULL,
   `acao` text,
   PRIMARY KEY (`id_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,7 +226,7 @@ CREATE TABLE `tbl_auditoria` (
 
 LOCK TABLES `tbl_auditoria` WRITE;
 /*!40000 ALTER TABLE `tbl_auditoria` DISABLE KEYS */;
-INSERT INTO `tbl_auditoria` VALUES (1,'2018-04-26','10:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(2,'2018-04-26','10:25','1',' O usuario [josé], [inseriu] um usuário no banco '),(3,'2018-04-26','10:55','1',' O usuario [josé], [inseriu] um usuário no banco '),(4,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(5,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(6,'2018-04-26','10:57','1',' O usuario [josé], [inseriu] um usuário no banco '),(7,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(8,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(9,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(10,'2018-05-01','16:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(11,'2018-05-15','08:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(12,'2018-05-15','08:45','1',' O usuario [josé], [inseriu] um usuário no banco '),(13,'2018-05-15','08:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(14,'2018-05-15','08:50','1',' O usuario [josé], [inseriu] um usuário no banco '),(15,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(16,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(17,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(18,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(19,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(20,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(21,'2018-05-15','10:54','1',' O usuario [josé], [inseriu] um usuário no banco ');
+INSERT INTO `tbl_auditoria` VALUES (1,'2018-04-26','10:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(2,'2018-04-26','10:25','1',' O usuario [josé], [inseriu] um usuário no banco '),(3,'2018-04-26','10:55','1',' O usuario [josé], [inseriu] um usuário no banco '),(4,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(5,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(6,'2018-04-26','10:57','1',' O usuario [josé], [inseriu] um usuário no banco '),(7,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(8,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(9,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(10,'2018-05-01','16:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(11,'2018-05-15','08:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(12,'2018-05-15','08:45','1',' O usuario [josé], [inseriu] um usuário no banco '),(13,'2018-05-15','08:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(14,'2018-05-15','08:50','1',' O usuario [josé], [inseriu] um usuário no banco '),(15,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(16,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(17,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(18,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(19,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(20,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(21,'2018-05-15','10:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(22,'2018-05-24','10:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(23,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(24,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(25,'2018-05-24','10:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(26,'2018-05-24','11:06','1',' O usuario [josé], [inseriu] um usuário no banco '),(27,'2018-05-24','11:08','1',' O usuario [josé], [inseriu] um usuário no banco ');
 /*!40000 ALTER TABLE `tbl_auditoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -228,7 +246,7 @@ CREATE TABLE `tbl_auditoria_paciente` (
   PRIMARY KEY (`id_auditoria_paciente`),
   KEY `fk_autidotia_paciente_idx` (`usuario`),
   CONSTRAINT `fk_autidotia_paciente` FOREIGN KEY (`usuario`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +255,7 @@ CREATE TABLE `tbl_auditoria_paciente` (
 
 LOCK TABLES `tbl_auditoria_paciente` WRITE;
 /*!40000 ALTER TABLE `tbl_auditoria_paciente` DISABLE KEYS */;
-INSERT INTO `tbl_auditoria_paciente` VALUES (1,'2018-05-10','08:23',8,'O paciente id:8, Agendou uma consulta no banco ');
+INSERT INTO `tbl_auditoria_paciente` VALUES (1,'2018-05-10','08:23',8,'O paciente id:8, Agendou uma consulta no banco '),(2,'2018-05-28','09:41',8,'O paciente id:8, Agendou uma consulta no banco '),(3,'2018-05-28','09:42',8,'O paciente id:8, Agendou uma consulta no banco ');
 /*!40000 ALTER TABLE `tbl_auditoria_paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -395,7 +413,7 @@ CREATE TABLE `tbl_convenio` (
   `status_imagem` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_convenio`)
-) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -404,7 +422,7 @@ CREATE TABLE `tbl_convenio` (
 
 LOCK TABLES `tbl_convenio` WRITE;
 /*!40000 ALTER TABLE `tbl_convenio` DISABLE KEYS */;
-INSERT INTO `tbl_convenio` VALUES (1,'sadf','asfaf','imagem_convenio/home.png',1,1),(2,'Intermedica','Este é um convenio de teste da intermedica que é muito conhecida no brasil e tem várias unidades espelhadas','imagem_convenio/home.png',1,1),(3,'Amil','A Amil é a maior operadora do mercado em numero de clientes e faturamento.','imagem_convenio/home.png',1,1),(4,'Saude Plus','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(5,'Vida Bela','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(6,'Esperança','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(7,'Unimed Jundiai','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(8,'Unimed Guarulhos','A Unimed Guarulhos é um plano que funciona no sistema de cooperativa médica e foi fundada em 1994','imagem_convenio/home.png',1,1),(9,'Unimed Fesp','A Federação das Unimeds do Estado de São Paulo (Fesp) foi criada em 1971','imagem_convenio/home.png',1,1),(10,'Unihosp Saúde','Foi fundada no ano de 1996','imagem_convenio/home.png',1,1),(11,'Trasmontano Saúde','A Trasmontano é um dos planos mais antigos do mercado sendo que sua fundação foi em 1932','imagem_convenio/home.png',1,1),(12,'Sul América Saúde','A Sul América é uma das mais antigas seguradoras do Brasil, foi fundada em 1895 com o nome de Sul América Companhia Nacional de Seguros','imagem_convenio/home.png',1,1),(13,'Sompo Saúde','A Sompo é a junção da antiga Marítima Seguros com a Yasuda Seguros','imagem_convenio/home.png',1,1),(14,'Seguros Unimed Saúde','A Seguros Unimed foi fundada em 1989 e trabalha também com outros segmentos de seguros além do saúde','imagem_convenio/home.png',1,1),(15,'São Miguel Saúde','A São Miguel Saúde foi fundada em 1962 e oferece atendimento medico para a região do alto tiete','imagem_convenio/home.png',1,1),(16,'São Cristovão Saúde','A Associação de Beneficência e Filantropia São Cristóvão é um dos planos mais antigos de São Paulo pois sua fundação data de 1911','imagem_convenio/home.png',1,1),(17,'Santa Helena Saúde','A Santa Helena Saúde faz parte do grupo Amil que é a maior operadora do mercado','imagem_convenio/home.png',1,1),(18,'Samed Saúde','A Samed tem boa aceitação e procura por residentes da região de Mogi das Cruzes','imagem_convenio/home.png',1,1),(19,'Porto Seguro Saúde','A Porto é uma das maiores seguradoras do mercado e atualmente trabalha somente com plano empresa.','imagem_convenio/home.png',1,1),(20,'Plena Saúde','A Plena oferece planos com rede própria e cobertura odontológica opcional','imagem_convenio/home.png',1,1),(21,'One Health','A One Health é considerada como o melhor plano de saúde do mercado pois tem rede de alto padrão, alto reembolso e cobertura no exterior','imagem_convenio/home.png',1,1),(22,'Omint Saúde','A Omint se destaca por oferecer planos de saúde com rede de alto nível com cobertura nacional e internacional','imagem_convenio/home.png',1,1),(23,'Notre Dame Intermédica','A Intermedica foi fundada em São Paulo em 1968 e comprada em 2014 pelo grupo americano Bain Capital','imagem_convenio/home.png',1,1),(24,'Next Saúde','A Next faz parte do grupo Amil que é a maior operadora do mercado','imagem_convenio/home.png',1,1),(25,'Med Tour Saúde','A Med Tour tem atuação voltada principalmente para o município de Guarulhos','imagem_convenio/home.png',1,1),(26,'Health Santaris','Também conhecida como Santa Rita Sistema de Saúde','imagem_convenio/home.png',1,1),(27,'Greenline Saúde','A Greenline foi fundada em 1992, possui diversos hospitais próprios e 21 clinicas medicas','imagem_convenio/home.png',1,1),(28,'Garantia de Saúde','A Gs Garantia de Saúde foi fundada em 1981 e começou atendendo a zona leste','imagem_convenio/home.png',1,1),(29,'Classes Laboriosas','A Associação Auxiliadora das Classes Laboriosas é um dos planos mais antigos do mercado','imagem_convenio/home.png',1,1),(30,'Central Nacional Unimed','A CNU - Central Nacional Unimed é a operadora nacional dos planos de saúde Unimed','imagem_convenio/home.png',1,1),(31,'Care Plus Saúde','A Care Plus tem ampla rede credenciada com hospitais de alto nível','imagem_convenio/home.png',1,1),(32,'Caixa Saúde','A Caixa, um dos maiores bancos do pais agora também atua no setor de saúde','imagem_convenio/home.png',1,1),(33,'Bradesco Saúde','A Bradesco é considerada por diversas pesquisas já realizadas como um dos melhores planos de saúde do mercado','imagem_convenio/home.png',1,1),(34,'Blue Med Saúde','A Blue Med possui rede credenciada em São Paulo e também no litoral','imagem_convenio/home.png',1,1),(35,'Biovida Saúde','A Biovida possui hospitais próprios e também hospitais particulares na rede credenciada','imagem_convenio/home.png',1,1),(36,'Biosaude','A Biosaude é uma das operadoras com melhor custo beneficio atualmente','imagem_convenio/home.png',1,1),(37,'Ana Costa Saúde','A Ana Costa Saúde é um plano voltado para o publico residente na região de Santos','imagem_convenio/home.png',1,1),(38,'Amr Saúde','A Amr - Assistência Medica Regional é a antiga Oeste Saúde','imagem_convenio/home.png',1,1),(39,'Ameplan Saúde','A Ameplan tem planos com condições especiais de preços e ampla rede de hospitais, clinicas, laboratórios e consultórios particulares','imagem_convenio/home.png',1,1),(40,'Ameno Saúde','A Ameno é um dos planos de saúde com menor custo atualmente.','imagem_convenio/home.png',1,1),(41,'Allianz Saúde','A Allianz é uma seguradora alemã de renome mundial','imagem_convenio/home.png',1,1);
+INSERT INTO `tbl_convenio` VALUES (1,'agora vai','asfaf','imagem_convenio/corda.jpg',1,1),(2,'Intermedica','Este é um convenio de teste da intermedica que é muito conhecida no brasil e tem várias unidades espelhadas','imagem_convenio/home.png',1,1),(3,'TESTE','A Amil é a maior operadora do mercado em numero de clientes e faturamento.','imagem_convenio/download.jpg',1,1),(4,'Saude Plus','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(5,'VILA BELA 2','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/403734003-yoyo-wallpapers.jpg',1,1),(6,'Esperança','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(7,'Unimed Jundiai','A Unimed Jundiaí foi fundada na década de 80 e possui rede de clinicas próprias em Louveira, Várzea Paulista, Itupeva, Cabreúva e Cajamar','imagem_convenio/home.png',1,1),(8,'Unimed Guarulhos','A Unimed Guarulhos é um plano que funciona no sistema de cooperativa médica e foi fundada em 1994','imagem_convenio/home.png',1,1),(9,'Unimed Fesp','A Federação das Unimeds do Estado de São Paulo (Fesp) foi criada em 1971','imagem_convenio/home.png',1,1),(10,'Unihosp Saúde','Foi fundada no ano de 1996','imagem_convenio/home.png',1,1),(11,'Trasmontano Saúde','A Trasmontano é um dos planos mais antigos do mercado sendo que sua fundação foi em 1932','imagem_convenio/home.png',1,1),(12,'Sul América Saúde','A Sul América é uma das mais antigas seguradoras do Brasil, foi fundada em 1895 com o nome de Sul América Companhia Nacional de Seguros','imagem_convenio/home.png',1,1),(13,'Sompo Saúde','A Sompo é a junção da antiga Marítima Seguros com a Yasuda Seguros','imagem_convenio/home.png',1,1),(14,'Seguros Unimed Saúde','A Seguros Unimed foi fundada em 1989 e trabalha também com outros segmentos de seguros além do saúde','imagem_convenio/home.png',1,1),(15,'São Miguel Saúde','A São Miguel Saúde foi fundada em 1962 e oferece atendimento medico para a região do alto tiete','imagem_convenio/home.png',1,1),(16,'São Cristovão Saúde','A Associação de Beneficência e Filantropia São Cristóvão é um dos planos mais antigos de São Paulo pois sua fundação data de 1911','imagem_convenio/home.png',1,1),(17,'Santa Helena Saúde','A Santa Helena Saúde faz parte do grupo Amil que é a maior operadora do mercado','imagem_convenio/home.png',1,1),(18,'Samed Saúde','A Samed tem boa aceitação e procura por residentes da região de Mogi das Cruzes','imagem_convenio/home.png',1,1),(19,'Porto Seguro Saúde','A Porto é uma das maiores seguradoras do mercado e atualmente trabalha somente com plano empresa.','imagem_convenio/home.png',1,1),(20,'Plena Saúde','A Plena oferece planos com rede própria e cobertura odontológica opcional','imagem_convenio/home.png',1,1),(21,'One Health','A One Health é considerada como o melhor plano de saúde do mercado pois tem rede de alto padrão, alto reembolso e cobertura no exterior','imagem_convenio/home.png',1,1),(22,'Omint Saúde','A Omint se destaca por oferecer planos de saúde com rede de alto nível com cobertura nacional e internacional','imagem_convenio/home.png',1,1),(23,'Notre Dame Intermédica','A Intermedica foi fundada em São Paulo em 1968 e comprada em 2014 pelo grupo americano Bain Capital','imagem_convenio/home.png',1,1),(24,'Next Saúde','A Next faz parte do grupo Amil que é a maior operadora do mercado','imagem_convenio/home.png',1,1),(25,'Med Tour Saúde','A Med Tour tem atuação voltada principalmente para o município de Guarulhos','imagem_convenio/home.png',1,1),(26,'Health Santaris','Também conhecida como Santa Rita Sistema de Saúde','imagem_convenio/home.png',1,1),(27,'Greenline Saúde','A Greenline foi fundada em 1992, possui diversos hospitais próprios e 21 clinicas medicas','imagem_convenio/home.png',1,1),(28,'Garantia de Saúde','A Gs Garantia de Saúde foi fundada em 1981 e começou atendendo a zona leste','imagem_convenio/home.png',1,1),(29,'Classes Laboriosas','A Associação Auxiliadora das Classes Laboriosas é um dos planos mais antigos do mercado','imagem_convenio/home.png',1,1),(30,'Central Nacional Unimed','A CNU - Central Nacional Unimed é a operadora nacional dos planos de saúde Unimed','imagem_convenio/home.png',1,1),(31,'Care Plus Saúde','A Care Plus tem ampla rede credenciada com hospitais de alto nível','imagem_convenio/home.png',1,1),(32,'Caixa Saúde','A Caixa, um dos maiores bancos do pais agora também atua no setor de saúde','imagem_convenio/home.png',1,1),(33,'Bradesco Saúde','A Bradesco é considerada por diversas pesquisas já realizadas como um dos melhores planos de saúde do mercado','imagem_convenio/home.png',1,0),(34,'ADA','A Blue Med possui rede credenciada em São Paulo e também no litoral','imagem_convenio/corda.jpg',1,0),(35,'DFSDFSD','A Biovida possui hospitais próprios e também hospitais particulares na rede credenciada','imagem_convenio/corda.jpg',1,1),(36,'vaaaii','A Biosaude é uma das operadoras com melhor custo beneficio atualmente','imagem_convenio/download.jpg',1,1),(37,'vaaaii','A Ana Costa Saúde é um plano voltado para o publico residente na região de Santos','imagem_convenio/403734003-yoyo-wallpapers.jpg',1,1),(38,'vaaaii','A Amr - Assistência Medica Regional é a antiga Oeste Saúde','imagem_convenio/corda.jpg',1,1),(39,'vaaaii','A Ameplan tem planos com condições especiais de preços e ampla rede de hospitais, clinicas, laboratórios e consultórios particulares','imagem_convenio/download.jpg',1,1),(40,'vaaaii','A Ameno é um dos planos de saúde com menor custo atualmente.','imagem_convenio/download.jpg',1,1),(41,'vaaaii','A Allianz é uma seguradora alemã de renome mundial','imagem_convenio/download.jpg',1,1),(42,'vaaaii','ASDASDAS','imagem_convenio/carrinho.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_convenio` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -510,7 +528,7 @@ CREATE TABLE `tbl_endereco` (
   KEY `fk_idpaispaispais_idx` (`id_pais`),
   CONSTRAINT `fk_idpaispaispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fkestado` FOREIGN KEY (`id_estado`) REFERENCES `tbl_estado` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=62 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -519,7 +537,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco x','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',15,'sdgsd','dg',NULL),(52,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(53,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(54,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL);
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco xxx','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',15,'sdgsd','dg',NULL),(52,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(53,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(54,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(55,'sdfas','fasdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(56,'sdfas','teste','asdfasd',13,'sadfsdf','sdfsdf',NULL),(57,'sdfas','fasdfasd','asdfasd',16,'sadfsdf','sdfsdf',NULL),(58,'sdfas','fasdfasd','asdfasd',22,'sadfsdf','sdfsdf',NULL),(59,'sdfas','fasdfasd, asdfasd','asdfasd',17,'sadfsdf','sdfsdf',NULL),(60,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(61,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -651,7 +669,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
-INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Exame de pé','                                \r\n                          Este é um exame de pé feito por pessoas','                                \r\n          Tem que ter um pé para fazer esse exame.                  ',0,1),(3,'Exame de Vista','                     É um exame feito para comprovar se o paciente tem algum problema de visão.           \r\n                            ','                                \r\n                            Caso o paciente use ente deverá ir sem no dia ou tirar no hospital.',0,1),(4,'Exame de braço','Um exame de braço é feito para fazer um teste no braço                           \r\n                            ','                                \r\n                            ',0,1),(5,'HEMOGRAMA','                                \r\n               O hemograma é o exame para avaliar as três principais linhagens de células do sangue (hemácias, leucócitos e plaquetas). É o mais complexo e o que merece maiores explicações. Concentre-se apenas naqueles que explicarei.             ','                                \r\n                            Estar em jejum, não beber água nas duas horas que antecede o exame. ',0,1),(6,'Hemácias (glóbulos vermelhos)','                                \r\n                            São levados em conta principalmente os valores do hematócrito e da hemoglobina. Valores um pouco fora da faixa de referência podem não ter significado clínico. Mulheres podem ter hematócrito/hemoglobina um pouco mais baixo devido a perdas de sangue na menstruação. Fumantes costumam tê-los um pouco elevado devido a pior oxigenação do sangue pelos seus pulmões. Repito: esses valores devem sempre ser interpretados','                                \r\n                            Não tomar remédio antes.',0,1),(7,'Plaquetas','                             São as células responsáveis pelo processo de coagulação do sangue. Elevações são chamadas de trombocitose e a diminuição de trombocitopenia. Pacientes com plaquetas muito baixas são mais propensos a sangramentos. Plaquetas muito elevadas podem favorecer a formação de trombos.   \r\n                            ','                                \r\n                            ',0,1),(8,'COLESTEROL','      O colesterol total é composto da soma das frações HDL+LDL+VLDL.\r\n\r\nHDL – colesterol bom. Protege os vasos da aterosclerose (Placas de gordura). Quanto mais elevado melhor.\r\n\r\nLDL e VLDL – Colesterol ruim, formador da aterosclerose que obstrui os vasos sanguíneos e leva a doenças como infarto. Quanto mais baixo melhor.\r\n\r\nTriglicerídeos – Estão relacionados ao VLDL. Normalmente equivale a 5x o seu valor. Um paciente com 150 mg/dl de triglicerídeos apresenta 30 mg/dl de VLDL.\r\n\r\nHá algum tempo se sabe que o colesterol total não é tão importante quanto os valores de suas frações. Pois vejamos 2 pacientes distintos:\r\n\r\n1- HDL = 70, LDL= 100, VLDL= 30. Colesterol total = 200 mg/dl\r\n2- HDL = 20, LDL = 160, VLDL = 20. Colesterol total = 200 mg/dl                          \r\n                            ','                                \r\n                            ',0,1),(9,'UREIA e CREATININA','                                \r\n          São as análise que avaliam a função dos rins.\r\n\r\nSeus valores são usados para cálculos do volume de sangue filtrado pelos rins a cada minuto. Os melhores laboratórios já fazem esse cálculo automaticamente para o médico e normalmente vem com o nome de “clearance de creatinina” ou “taxa de filtração glomerular”.\r\n\r\nValores aumentados de ureia e creatinina indicam diminuição da filtração pelo rim.\r\nValores menores que 60 ml/minuto de clearance de creatinina indicam insuficiência renal.\r\n\r\nEste é um dos exames que mais requerem interpretação do médico, pois o mesmo valor de creatinina pode ser normal para uma pessoa, e significar insuficiência renal para outra.                  ','                                \r\n                            ',0,1),(10,'GLICOSE','                                \r\n                     A dosagem de glicose é importante para o diagnóstico ou controle do tratamento do diabetes mellitus. Só tem valor se realizada com um jejum mínimo de 8 horas.\r\n\r\nValores menores que 100 mg/dl são normais\r\nValores entre 100 e 125 mg/dl são considerados pré-diabetes.\r\nValores acima de 126 mg/dl são compatíveis com diabetes (deve ser sempre repetido para confirmação do diagnóstico)       ','                                \r\n                            ',0,1),(11,'TGO (AST) TGP (ALP)','               São exames para se avaliar o fígado. Valores elevados indicam lesão das células hepáticas. Normalmente traduzem algum tipo de hepatite, seja viral, medicamentosa ou isquêmica.                 \r\n                            ','                                \r\n                            ',1,1);
+INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Exame de pé','                                \r\n                          Este é um exame de pé feito por pessoas','                                \r\n          Tem que ter um pé para fazer esse exame.                  ',0,0),(3,'Exame de Vista','                     É um exame feito para comprovar se o paciente tem algum problema de visão.           \r\n                            ','                                \r\n                            Caso o paciente use ente deverá ir sem no dia ou tirar no hospital.',0,0),(4,'Exame de braço','Um exame de braço é feito para fazer um teste no braço                           \r\n                            ','                                \r\n                            ',0,1),(5,'HEMOGRAMA','                                \r\n               O hemograma é o exame para avaliar as três principais linhagens de células do sangue (hemácias, leucócitos e plaquetas). É o mais complexo e o que merece maiores explicações. Concentre-se apenas naqueles que explicarei.             ','                                \r\n                            Estar em jejum, não beber água nas duas horas que antecede o exame. ',0,1),(6,'Hemácias (glóbulos vermelhos)','                                \r\n                            São levados em conta principalmente os valores do hematócrito e da hemoglobina. Valores um pouco fora da faixa de referência podem não ter significado clínico. Mulheres podem ter hematócrito/hemoglobina um pouco mais baixo devido a perdas de sangue na menstruação. Fumantes costumam tê-los um pouco elevado devido a pior oxigenação do sangue pelos seus pulmões. Repito: esses valores devem sempre ser interpretados','                                \r\n                            Não tomar remédio antes.',0,1),(7,'Plaquetas','                             São as células responsáveis pelo processo de coagulação do sangue. Elevações são chamadas de trombocitose e a diminuição de trombocitopenia. Pacientes com plaquetas muito baixas são mais propensos a sangramentos. Plaquetas muito elevadas podem favorecer a formação de trombos.   \r\n                            ','                                \r\n                            ',0,1),(8,'COLESTEROL','      O colesterol total é composto da soma das frações HDL+LDL+VLDL.\r\n\r\nHDL – colesterol bom. Protege os vasos da aterosclerose (Placas de gordura). Quanto mais elevado melhor.\r\n\r\nLDL e VLDL – Colesterol ruim, formador da aterosclerose que obstrui os vasos sanguíneos e leva a doenças como infarto. Quanto mais baixo melhor.\r\n\r\nTriglicerídeos – Estão relacionados ao VLDL. Normalmente equivale a 5x o seu valor. Um paciente com 150 mg/dl de triglicerídeos apresenta 30 mg/dl de VLDL.\r\n\r\nHá algum tempo se sabe que o colesterol total não é tão importante quanto os valores de suas frações. Pois vejamos 2 pacientes distintos:\r\n\r\n1- HDL = 70, LDL= 100, VLDL= 30. Colesterol total = 200 mg/dl\r\n2- HDL = 20, LDL = 160, VLDL = 20. Colesterol total = 200 mg/dl                          \r\n                            ','                                \r\n                            ',0,1),(9,'UREIA e CREATININA','                                \r\n          São as análise que avaliam a função dos rins.\r\n\r\nSeus valores são usados para cálculos do volume de sangue filtrado pelos rins a cada minuto. Os melhores laboratórios já fazem esse cálculo automaticamente para o médico e normalmente vem com o nome de “clearance de creatinina” ou “taxa de filtração glomerular”.\r\n\r\nValores aumentados de ureia e creatinina indicam diminuição da filtração pelo rim.\r\nValores menores que 60 ml/minuto de clearance de creatinina indicam insuficiência renal.\r\n\r\nEste é um dos exames que mais requerem interpretação do médico, pois o mesmo valor de creatinina pode ser normal para uma pessoa, e significar insuficiência renal para outra.                  ','                                \r\n                            ',0,1),(10,'GLICOSE','                                \r\n                     A dosagem de glicose é importante para o diagnóstico ou controle do tratamento do diabetes mellitus. Só tem valor se realizada com um jejum mínimo de 8 horas.\r\n\r\nValores menores que 100 mg/dl são normais\r\nValores entre 100 e 125 mg/dl são considerados pré-diabetes.\r\nValores acima de 126 mg/dl são compatíveis com diabetes (deve ser sempre repetido para confirmação do diagnóstico)       ','                                \r\n                            ',0,1),(11,'TGO (AST) TGP (ALP)','               São exames para se avaliar o fígado. Valores elevados indicam lesão das células hepáticas. Normalmente traduzem algum tipo de hepatite, seja viral, medicamentosa ou isquêmica.                 \r\n                            ','                                \r\n                            ',1,1);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -681,7 +699,7 @@ CREATE TABLE `tbl_fale_conosco` (
 
 LOCK TABLES `tbl_fale_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_fale_conosco` DISABLE KEYS */;
-INSERT INTO `tbl_fale_conosco` VALUES (1,'Kevin Eduardo Farias','kevineduardofarias-76@demasi.com.br','1135346290','1135346290','hum','sdfsdf',1);
+INSERT INTO `tbl_fale_conosco` VALUES (1,'Kevin Eduardo Farias','kevineduardofarias-76@demasi.com.br','1135346290','1135346290','hum','sdfsdf',0);
 /*!40000 ALTER TABLE `tbl_fale_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -743,7 +761,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau','lola','1999-01-31','5454','45454',1),(2,1,38,'wesley','marques','1999-01-31','5454','45454',1);
+INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau3,333','lola','1999-01-31','5454','45454',1),(2,1,38,'wesley','marques','1999-01-31','5454','45454',1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -814,7 +832,7 @@ CREATE TABLE `tbl_home` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_home`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -823,7 +841,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
-INSERT INTO `tbl_home` VALUES (1,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você estiver',1,1),(2,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você for, Hhealth, cuidará de você!',0,0);
+INSERT INTO `tbl_home` VALUES (1,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você estiver',0,1),(2,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você for, Hhealth, cuidará de você!',0,0),(3,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','cfb b',1,1),(4,'imagem_home/download.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','vacilao',0,1),(5,'imagem_home/corda.jpg','imagem_home/download.jpg','imagem_home/carrinho.jpg','asdasd',0,1),(6,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','wesleyy',0,1);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1065,7 +1083,7 @@ CREATE TABLE `tbl_paciente_internacao` (
   `data` date DEFAULT NULL,
   `hora` time DEFAULT NULL,
   PRIMARY KEY (`id_paciente_internacao`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1074,7 +1092,7 @@ CREATE TABLE `tbl_paciente_internacao` (
 
 LOCK TABLES `tbl_paciente_internacao` WRITE;
 /*!40000 ALTER TABLE `tbl_paciente_internacao` DISABLE KEYS */;
-INSERT INTO `tbl_paciente_internacao` VALUES (2,8,1,2,3,'2018-05-05','08:08:00');
+INSERT INTO `tbl_paciente_internacao` VALUES (2,8,1,2,3,'2018-05-05','08:08:00'),(3,8,2,2,4,'2018-05-18','08:08:00'),(4,9,2,2,4,'2018-05-17','09:09:00'),(5,11,2,1,2,'2018-05-31','09:09:00');
 /*!40000 ALTER TABLE `tbl_paciente_internacao` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1235,7 +1253,7 @@ CREATE TABLE `tbl_receita_medica` (
   KEY `fk_idpacientepaciente_idx` (`id_paciente`),
   CONSTRAINT `fk_541` FOREIGN KEY (`id_remedio`) REFERENCES `tbl_remedio` (`id_remedio`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_idpacientepaciente` FOREIGN KEY (`id_paciente`) REFERENCES `tbl_paciente` (`id_paciente`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1244,6 +1262,7 @@ CREATE TABLE `tbl_receita_medica` (
 
 LOCK TABLES `tbl_receita_medica` WRITE;
 /*!40000 ALTER TABLE `tbl_receita_medica` DISABLE KEYS */;
+INSERT INTO `tbl_receita_medica` VALUES (1,2,8,1,'MMEKE','2018-05-10'),(2,2,8,1,'ASDASDASD','2018-05-10');
 /*!40000 ALTER TABLE `tbl_receita_medica` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1404,7 +1423,7 @@ CREATE TABLE `tbl_slide_saude` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_slide_saude`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1413,7 +1432,7 @@ CREATE TABLE `tbl_slide_saude` (
 
 LOCK TABLES `tbl_slide_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_slide_saude` DISABLE KEYS */;
-INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/endocrinologia.jpg',1,1),(2,'imagem_slide_saude/download.png',1,1);
+INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/endocrinologia.jpg',1,1),(2,'imagem_slide_saude/403734003-yoyo-wallpapers.jpg',0,0),(3,'imagem_slide_saude/carrinho.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_slide_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1526,17 +1545,14 @@ CREATE TABLE `tbl_trabalhe_conosco` (
   `id_deficiencia` int(11) NOT NULL,
   `resumo_qualificacoes` text NOT NULL,
   `id_endereco` int(11) DEFAULT NULL,
-  `id_pais` int(11) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   `registro_profissional` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_trabalhe_conosco`),
   KEY `fk21389_idx` (`id_pais`),
   KEY `fk213325_idx` (`id_deficiencia`),
-  KEY `fk_paispais_idx` (`id_pais`),
   CONSTRAINT `fk213325` FOREIGN KEY (`id_deficiencia`) REFERENCES `tbl_deficiencia` (`id_deficiente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_paispais` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  CONSTRAINT `fk21389` FOREIGN KEY (`id_pais`) REFERENCES `tbl_pais` (`id_pais`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1545,7 +1561,7 @@ CREATE TABLE `tbl_trabalhe_conosco` (
 
 LOCK TABLES `tbl_trabalhe_conosco` WRITE;
 /*!40000 ALTER TABLE `tbl_trabalhe_conosco` DISABLE KEYS */;
-INSERT INTO `tbl_trabalhe_conosco` VALUES (3,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'1',NULL,NULL,1,NULL),(5,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'5',NULL,NULL,1,1),(6,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','M',1,1,'1',1,'vai',NULL,NULL,1,1),(7,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','',1,1,'1',1,'asdasd',50,NULL,1,1);
+INSERT INTO `tbl_trabalhe_conosco` VALUES (3,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'1',NULL,1,NULL),(5,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-03','M',1,1,'1',1,'5',NULL,1,1),(6,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','M',1,1,'1',1,'vai',NULL,1,1),(7,'wesley','wesley@welsye','jgjfj','kgkgbk','2018-04-09','',1,1,'1',1,'asdasd',50,1,1),(8,'sdfsdf','sdfsdf@asdas','sadfasdf','sdfsdf','2018-05-09','M',1,1,'1',1,'teste',57,1,1),(9,'vamo','vamo@vamo','1141414141','4141414141','2018-05-16','M',1,1,'1',1,'asdasd',58,1,1),(10,'vamo','vamo@vamo','1141414141','1141414141','2018-05-15','M',1,1,'1',1,'vamo',59,1,1),(13,'vamo','vamo@vamo','1141414141','1141414141','2018-05-15','M',1,1,'1',1,'sfdfsd',61,1,1);
 /*!40000 ALTER TABLE `tbl_trabalhe_conosco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1600,13 +1616,13 @@ CREATE TABLE `tbl_unidade` (
   `status` tinyint(4) DEFAULT NULL,
   `ativo` tinyint(4) DEFAULT NULL,
   `latitude` decimal(10,0) DEFAULT NULL,
-  `logitude` decimal(10,0) DEFAULT NULL,
+  `longitude` decimal(10,0) DEFAULT NULL,
   `texto` text,
   `telefone` text,
   PRIMARY KEY (`id_unidade`),
   KEY `fk_enderreco_idx` (`id_endereco`),
   CONSTRAINT `fk_enderreco` FOREIGN KEY (`id_endereco`) REFERENCES `tbl_endereco` (`id_endereco`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1615,7 +1631,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','Osasco',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/hospital-jandira.jpg','Jandira',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/4992868.jpg','Itapevi',1,1,NULL,NULL,NULL,NULL);
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','Osasco',1,1,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/hospital-jandira.jpg','Jandira',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/4992868.jpg','Itapevi',1,1,NULL,NULL,NULL,NULL),(4,56,'imagem_unidade/carrinho.jpg','wesley222',1,1,125522,41241,'                                                    asd            \r\n                            \r\n                            ','165235');
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1715,8 +1731,26 @@ UNLOCK TABLES;
 /*!50001 SET character_set_results     = utf8 */;
 /*!50001 SET collation_connection      = utf8_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
-/*!50013 DEFINER=`root`@`%` SQL SECURITY DEFINER */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
 /*!50001 VIEW `agendamento_paciente_funcionario` AS select `f`.`id_funcionario` AS `id_funcionario`,`f`.`nome` AS `nome_funcionario`,`p`.`id_paciente` AS `id_paciente`,`p`.`nome` AS `nome_paciente`,`ac`.`id_agendamento_consulta` AS `id_agendamento_consulta`,`ac`.`data` AS `data`,`ac`.`ativo` AS `ativo` from ((`tbl_funcionario` `f` join `tbl_paciente` `p`) join `tbl_agendamento_consultas` `ac`) where ((`p`.`id_paciente` = `ac`.`id_paciente`) and (`f`.`id_funcionario` = `ac`.`id_funcionario`) and (`ac`.`ativo` = 0)) */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `internacao_paciente`
+--
+
+/*!50001 DROP VIEW IF EXISTS `internacao_paciente`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8 */;
+/*!50001 SET character_set_results     = utf8 */;
+/*!50001 SET collation_connection      = utf8_general_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `internacao_paciente` AS select `i`.`id_paciente_internacao` AS `id_paciente_internacao`,`p`.`id_paciente` AS `id_paciente`,`p`.`nome` AS `nome`,`q`.`id_quarto` AS `id_quarto`,`q`.`numero` AS `numero`,`u`.`id_unidade` AS `id_unidade`,`u`.`nome_unidade` AS `unidade` from (((`tbl_paciente` `p` join `tbl_paciente_internacao` `i`) join `tbl_quarto` `q`) join `tbl_unidade` `u`) where ((`i`.`id_paciente` = `p`.`id_paciente`) and (`i`.`id_quarto` = `q`.`id_quarto`) and (`i`.`id_unidade` = `u`.`id_unidade`)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;
@@ -1730,4 +1764,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-23  9:42:19
+-- Dump completed on 2018-05-28 11:28:52

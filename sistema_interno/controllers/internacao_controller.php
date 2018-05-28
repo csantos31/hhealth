@@ -7,7 +7,7 @@
 			$internacao = new Internacao();
 
 			//Carregando os dados digitados pelo usuário nos atributos da classe
-			$internacao->id_paciente = $_POST['slt_paciente'];
+			$internacao->id_paciente = $_GET['id_paciente'];
 			$internacao->id_funcionario = $id;
             $internacao->id_quarto = $_POST['slt_quarto'];
             $internacao->id_unidade = $_POST['slt_unidade'];

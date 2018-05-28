@@ -116,6 +116,16 @@ p{
     font-weight: bold;
 }
 
+.lb_titulo2{
+    width: 25%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    font-weight: bold;
+}
+
 .linha_tabela{
     width: 100%;
     min-height: 60px;
@@ -124,6 +134,18 @@ p{
 
 .item_tabela{
     width: 33.33%;
+    min-height: 60px;
+    height: auto;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    border-bottom:solid 1px #999;
+    padding-bottom: 5px;
+}
+
+.item_tabela2{
+    width: 25%;
     min-height: 60px;
     height: auto;
     float: left;

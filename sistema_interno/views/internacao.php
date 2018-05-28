@@ -32,11 +32,12 @@ require('../verifica.php');
             });
 
             //Cadastrar
-            function Cadastrar(){
+            function Cadastrar(IdIten){
 
                 $.ajax({
-                    type:"POST",
+                    type:"GET",
                     url:"../modals/modal_internacao.php",
+                    data: {modo:'inserir',id_paciente:IdIten},
                     success: function(dados){
                         $(".modal").html(dados);
                     }
@@ -104,26 +105,70 @@ require('../verifica.php');
                            <div class="txt_cabecalho">
                                  <p>Internação </p>
                            </div>
-                           <div class="img_nivel">
-                                <a class="novo" href="#" onclick="Cadastrar()">
-
-                                    <img src="../imagens/add.png">
-                                </a>
-                           </div>
                       </div>
                     <div class="col_2">
                         <div class="titulo_tabela">
-                            <div class="lb_titulo">DATA</div>
-                            <div class="lb_titulo">HORA</div>
+                            <div class="lb_titulo">PACIENTE</div>
+                            <div class="lb_titulo">RG</div>
                             <div class="lb_titulo">OPÇÕES</div>
                         </div>
 
                         <?php
 
-                            include_once('../controllers/internacao_controller.php');
-                            include_once('../models/internacao_class.php');
+                            include_once('../controllers/paciente_controller.php');
+                            include_once('../models/paciente_class.php');
 
-                                $controller_internacao  = new controllerInternacao();
+                                $controller_paciente  = new controllerPaciente();
+
+                                //Chama o metodo para Listar todos os registros
+                                $list = $controller_paciente::Listar();
+
+                                if(!empty($list)){
+                                $cont = 0;
+
+                                while ($cont < count($list)) {
+                        ?>
+                                    <div class="linha_tabela">
+                                        <div class="item_tabela"><?= $list[$cont]->nome ?></div>
+                                        <div class="item_tabela"><?= $list[$cont]->rg ?></div>
+                                        <div class="item_tabela icones_tabela">
+
+                                            <a href="#" class="editar" onclick="Cadastrar(<?php echo($list[$cont]->id_paciente);?>)">
+                                                <img src="../imagens/add.png" alt="cadastrar" title="Cadastrar">
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                        <?php
+
+                                $cont +=1;
+                                }
+                              }
+
+                        ?>
+                    </div>
+                </div>
+                
+                <div id="container_cad_paciente">
+                      <div class="cabecalho">
+                           <div class="txt_cabecalho">
+                                 <p>Pacientes Internados </p>
+                           </div>
+                      </div>
+                    <div class="col_2">
+                        <div class="titulo_tabela">
+                            <div class="lb_titulo2">PACIENTE</div>
+                            <div class="lb_titulo2">QUARTO</div>
+                            <div class="lb_titulo2">UNIDADE</div>
+                            <div class="lb_titulo2">OPÇÕES</div>
+                        </div>
+
+                        <?php
+
+                            include_once('../controllers/internacao_paciente_controller.php');
+                            include_once('../models/internacao_paciente_class.php');
+
+                                $controller_internacao  = new ViewInternacaoPacienteController();
 
                                 //Chama o metodo para Listar todos os registros
                                 $list = $controller_internacao::Listar();
@@ -134,16 +179,19 @@ require('../verifica.php');
                                 while ($cont < count($list)) {
                         ?>
                                     <div class="linha_tabela">
-                                        <div class="item_tabela"><?= $list[$cont]->data ?></div>
-                                        <div class="item_tabela"><?= $list[$cont]->hora ?></div>
-                                        <div class="item_tabela icones_tabela">
+                                        <div class="item_tabela2"><?= $list[$cont]->nome_paciente ?></div>
+                                        <div class="item_tabela2"><?= $list[$cont]->numero ?></div>
+                                        <div class="item_tabela2"><?= $list[$cont]->unidade ?></div>
+                                        <div class="item_tabela2 icones_tabela">
 
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente_internacao);?>)">
-                                                <img src="../imagens/edit.png" alt="editar" title="editar">
+                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
+                                                <img src="../imagens/edit.png" alt="editar" title="Editar">
                                             </a>
-                                            <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_paciente_internacao);?>)">
-                                                <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
+                                            
+                                            <a href="#" class="editar" onclick="Excluir(<?php echo($list[$cont]->id_paciente);?>)">
+                                                <img src="../imagens/shutdown.png" alt="excluir" title="Excluir">
                                             </a>
+                                            
                                         </div>
                                     </div>
                         <?php

@@ -177,10 +177,6 @@
                 <div class="content_data"><!--data-->
                       <?php echo($list[$cont]->data); ?>
                 </div>
-
-                <div class="acao_resultado"><!--açção-->
-                    <img src="../../../imagens/save.png" alt="">
-                </div>
             </div>
             <?php
 

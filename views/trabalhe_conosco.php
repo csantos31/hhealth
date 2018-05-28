@@ -89,10 +89,28 @@
                                                         País de Origem:
                                                    </div>
                                                    <select class="sltpais" name="sltpais">
-                                                         <option value="">Selecione um país</option>
-                                                         <option value="1">Teste 1</option>
-                                                         <option value="2">Teste 2</option>
-                                                         <option value="3">Teste 3</option>
+                                                       
+                                                        <option value="0">Selecione um país</option>
+                                                       <?php 
+                                                        require_once("../controllers/endereco_controller.php");
+                                                        require_once("../models/endereco_class.php");
+                                                       
+                                                        $controller_endereco = new controller_endereco();
+                                                       
+                                                        $listar = $controller_endereco::ListarPais();
+                                                       
+                                                        $cont = 0;
+                                                        
+                                                        while($cont<count($listar)){
+                                                        ?>
+                                                         <option value="<?php echo($listar[$cont]["id_pais"])?>"><?php echo($listar[$cont]["paises"])?></option>
+                                                        
+                                                       <?php 
+                                                            $cont++;
+                                                        }
+                                                       
+                                                       ?>
+                                                       
                                                    </select>
                                              </div>
 
@@ -144,8 +162,7 @@
                                                    <select class="slt_estado" name="slt_estado">
                                                          <option value="">Selecione um Estado</option>
                                                          <?php
-                                                          include_once('../CMS/controller_cms/endereco_controller.php');
-                                                          include_once('../CMS/model_cms/endereco_class.php');
+                                                         
                                                           $controller_endereco  = new controller_endereco();
                                                           $list = $controller_endereco::ListarEstados();
                                                           $cont = 0;

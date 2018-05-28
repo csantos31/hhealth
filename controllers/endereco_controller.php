@@ -3,7 +3,7 @@
     class controller_endereco{
        public function Novo(){
 
-           require_once ('models/endereco_class.php');
+           //require_once ('models/endereco_class.php');
             //Instancia da classe Contato
 			$endereco = new Endereco();
            /*
@@ -44,6 +44,12 @@
 
 			return $endereco::Select();
 		}
+        
+        public function ListarPais(){
+            $pais = new Endereco();
+            
+            return $pais::SelectPais();
+        }
 
     public function ListarEstados(){
 			//Instancia da classe contatos

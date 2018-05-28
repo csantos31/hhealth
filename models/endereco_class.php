@@ -160,6 +160,39 @@ class Endereco{
 			$conex::Desconectar();
             
 		}
+    
+        public function SelectPais(){
+            $sql = "SELECT * FROM tbl_pais;";
+            
+            $conex = new Mysql_db();
+			$PDO_conex = $conex->Conectar();
+			$select = $PDO_conex->query($sql);
+
+			//Contador
+			$cont = 0;
+
+            $lista_pais = array();
+
+			while ($rs = $select->fetchALL(PDO::FETCH_ASSOC)) {
+				#Cria um array de objetos na classe contatos
+
+				$lista_pais = $rs;
+
+				// Soma mais um no contador
+				$cont+=1;
+			}
+        
+            
+            if(isset($lista_pais)){
+                return $lista_pais;
+            }else{
+                echo $sql;
+            }
+                
+            
+            
+			$conex::Desconectar();
+        }
 
         /*Busca um registro especifico no BD*/
 		public function SelectById($endereco){

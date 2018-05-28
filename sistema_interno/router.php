@@ -356,7 +356,7 @@
                       require_once('controllers/internacao_controller.php');
                       require_once('models/internacao_class.php');
                       $controller_internacao = new controllerInternacao();
-                      $controller_internacao::Novo($id);
+                      $controller_internacao::Novo($id_funcionario);
 
                       break;
 

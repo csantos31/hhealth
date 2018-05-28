@@ -27,6 +27,10 @@ if(isset($_GET['modo'])){
         //$descricao = $list->descricao;
     
     }
+    if($modo=='inserir'){
+        $id=0;
+        $id_paciente = $_GET['id_paciente'];
+    }
 }
 ?>
 
@@ -63,6 +67,7 @@ if(isset($_GET['modo'])){
              $("#form").submit(function(event){
                   //Recupera o id gravado no Form pelo atribute-id
                   var id = $(this).data("id");
+                  var id_paciente = $(this).data("id_paciente");
                   var modo = "";
                   if(id == '0')
                       modo='inserir';
@@ -74,7 +79,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=internacao&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=internacao&modo="+modo+"&id="+id+"&id_paciente="+id_paciente,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,
@@ -95,7 +100,7 @@ if(isset($_GET['modo'])){
             </div>
             
             <div class="content_modal">
-                <form action="" method="post" id="form" data-id="<?php echo($id)?>" enctype="multipart/form-data">
+                <form action="" method="post" id="form" data-id="<?php echo($id)?>" data-id_paciente="<?php echo($id_paciente)?>" enctype="multipart/form-data">
                     <div class="content_logo"><!--content do logo e do titulo-->
                         <div class="logo">
                             <img src="../../imagens/logo_only_heart.png">
@@ -107,31 +112,6 @@ if(isset($_GET['modo'])){
                     
                     <div class="content_campos"><!--content dos campos de cadastro-->
                         
-                        <div class="campo">
-                            <div class="input_campo_p">
-                               <label>Paciente :</label>
-                                <select id="slt_paciente" class="input_med" name="slt_paciente">
-                                  <?php
-                                  include_once('../controllers/paciente_controller.php');
-                                  include_once('../models/paciente_class.php');
-                                  $controller_paciente  = new controllerPaciente();
-                                  $list = $controller_paciente::Listar();
-                                            
-                                  $cont = 0;
-                      
-                                  while ($cont < count($list)) {  
-                                  ?>
-                                      <option value="<?= $list[$cont]->id_paciente ?>"><?= $list[$cont]->nome ?></option>
-                                  <?php
-                                  
-                                    $cont = $cont + 1;
-                                    
-                                  }
-                                  
-                                    ?>
-                                </select>
-                            </div>
-                        </div>
                         <div class="campo">
                             <div class="input_campo_p">
                                <label>Quarto :</label>
