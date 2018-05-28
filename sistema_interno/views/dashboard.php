@@ -46,6 +46,9 @@ require('../verifica.php');
                         <a href="internacao.php">
                             <p>Internacao</p>
                         </a>
+                        <a href="senha.php">
+                            <p> Atendimento / SENHA </p>
+                        </a>
                     </div>
                     <div class="coluna">
                         <img src="../imagens/doc_icon3.jpg" alt="medicos" title="medicos">
