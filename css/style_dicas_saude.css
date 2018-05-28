@@ -415,34 +415,36 @@ opacity: 0.9;
 
 #previous{
     margin-top: 249px;
-    margin-right: 20px;
+    margin-right: 10px;
     float: left;
     z-index: 999;
     width: 0px;
     cursor: pointer;
     background-color: aqua;
+    display: none;
 }
 
 #galeria{
-    width: 80%;
+    width: 95%;
     height: 300px;
-    margin-left: 25px;
     overflow: hidden;
     float: left;
-    background-color: yellow;
+    margin-left: 2.5%;
 }
 .image{
   width: 100%;
   height: 300px;
+
 }
 
 #next{
-  width: 10px;
+  width: 5px;
   height: 5px;
     margin-top: 250px;
     float: left;
     cursor: pointer;
     z-index: 999;
+    display: none;
 }
 
 }
