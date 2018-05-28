@@ -62,7 +62,7 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
+				//echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";
@@ -86,7 +86,7 @@
 			//Executa o script no banco de dados
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
-				echo "<script>location.reload();</script>";
+				//echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
 				echo "Error atualizar no Banco de Dados";

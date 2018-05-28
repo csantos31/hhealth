@@ -478,6 +478,14 @@
                     break;
             }
             break;
+        case 'senha':
+            require_once('controllers/senha_controller.php');
+            require_once ('models/senha_class.php');
+            
+            $controller_senha = new controllerSenha();
+            $controller_senha::chamarSenha();
+            
+            break;
 		default:
 			# code...
 			break;

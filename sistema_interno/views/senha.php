@@ -19,7 +19,7 @@ require('../verifica.php');
         <script>
             
             //Excluir
-            function Excluir(idIten){
+            function Senha(){
                 //anula a ação do submit tradicional "botao" ou F5
                 event.preventDefault();
 
@@ -27,12 +27,12 @@ require('../verifica.php');
 
                     $.ajax({
                         type:"GET",
-                        data: {id:idIten},
-                        url: "../router.php?controller=internacao&modo=excluir&id="+idIten,
+                        url: "../router.php?controller=senha&modo=null",
                         success: function(dados){
                             //console.log(dados);
-                            $('.col_2').html(dados);
+                            //$('.col_2').html(dados);
                             //alert(dados);
+                            console.log(dados);
                         }
                     });
 
@@ -67,7 +67,7 @@ require('../verifica.php');
                            </div>
                       </div>
                     <div class="col_2">
-                        <a class="novo" href="#">
+                        <a onclick="Senha()" class="novo" href="#">
                             <img src="../imagens/add.png" alt="Chamar senha" title="Chamar senha">
                             
                             <p>Chamar nova senha</p>

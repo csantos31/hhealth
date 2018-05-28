@@ -12,6 +12,8 @@
             }
             $senha::DefineAtual($pass);
         
+            var_dump($pass);
+            
             return $pass;
         }
     }
