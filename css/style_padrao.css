@@ -707,6 +707,7 @@
 
 @media screen and (max-device-width: 520px) {
 
+
       .w3-display-container{
             height: 300px;
       }
@@ -1062,7 +1063,7 @@
       /*faixa*/
       .faixa_3_content_home{
           width:100%;
-          min-height: 1800px;
+          min-height: 1400px;
           height: auto;
           padding-top: 50px;
           margin-left: auto;
@@ -1094,14 +1095,13 @@
       .img_faixa_3_home img{
           width:100%;
           height:300px;
+
       }
 
       .descricao_faixa_3_home{
           width:100%;
           height:200px;
-          /* background-size: 200px; */
           float:left;
-          /* margin-top: 100px; */
       }
 
       .imagemm_faixa_3_home{
@@ -1110,10 +1110,9 @@
       }
 
       .informa_unidade{
-        width: 500px;
-        min-height: 400px;
+        width: 100%;
+        min-height: 200px;
         padding: 16px;
-        margin-left: 20px;
         text-align: justify;
         float: left;
         overflow: hidden;
