@@ -1,0 +1,175 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: verdana, arial 'sans-erif';
+}
+
+.main{
+      width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.#principal{
+    width: 100%;
+    min-height: 400px;
+    height: 100%;
+    z-index: 10;
+      background-color: aqua;
+}
+
+header{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    padding-top: 30px;
+    background-color: #FC363B;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    position: fixed;
+    float: left;
+    z-index: 999;
+}
+
+.alinha_conteudo{
+      width: 100%;
+      height: 100px;
+}
+
+p{
+
+    text-align: center;
+    font-family: verdana, arial, 'sans-serif';
+    font-weight: 900;
+    color: #333;
+    font-size: 22px;
+}
+
+#container_cad_especialidade{
+    width: 100%;
+    min-height: 300px;
+    overflow: auto;
+    padding: 16px;
+    border: solid 1px #333;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 5px 5px #999;
+}
+
+.cabecalho{
+      width: 100%;
+      height: 60px;
+      margin-top: 20px;
+}
+
+.txt_cabecalho{
+      width: 88%;
+      height: 60px;
+      float: left;
+      line-height: 60px;
+}
+
+.img_nivel{
+    width: 62px;
+    height: 60px;
+    float: right;
+    margin-right: 15px;
+}
+
+.col_1{
+    width: 20%;
+    height: 250px;
+    margin-top: 15px;
+    float: left;
+}
+
+.col_1 img{
+    width: 100%;
+    height: 100%;
+}
+
+.col_2{
+    width: 800px;
+    min-height: 400px;
+    overflow: hidden;
+    margin-top: 50px;
+    padding: 17px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.novo{
+    width: 300px;
+    height: 300px;
+    margin-left: auto;
+    padding: 30px;
+    margin-top: 10px;
+    margin-right: auto;
+}
+
+.col_2 p{
+    margin-left: -300px;
+    margin-top: -20px;
+    text-decoration: none;
+}
+
+.col_2 a{
+    text-decoration: none;
+}
+
+.senha_atual{
+    padding: 10px;
+    width: 700px;
+    height: 400px;
+    border: solid 1px #333;
+    border-radius: 15px 15px 15px 0px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 45px;
+    box-shadow: 5px 5px 5px 0px #333;
+    text-align: center;
+    font-family: verdana;
+    font-size: 200px;
+}
+
+/*TABELA PACIENTES PENDENTES*/
+.titulo_tabela{
+    width: 100%;
+    height: 35px;
+    border: solid 1px #333;
+}
+
+.lb_titulo{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    font-weight: bold;
+}
+
+.linha_tabela{
+    width: 100%;,,,
+    min-height: 60px;
+   height: auto;
+}
+
+.item_tabela{
+    width: 33.33%;
+    min-height: 60px;
+    height: auto;
+    float: left;
+    text-align: center;
+    font-family: verdana;
+    padding-top: 7px;
+    border-bottom:solid 1px #999;
+    padding-bottom: 5px;
+}
+
+.item_tabela img{
+    margin-top: 10px;
+    height: 30px;
+    width: 30px;
+}

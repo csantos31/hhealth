@@ -232,11 +232,12 @@
                   $controller_gerenciamento_convenios::Buscar(); // Chama método buscar
 
                   break;
-
-         				default:
-         					# code...
-         					break;
-         			}
+                       
+            default:
+                # code...
+                break;
+            }
+                    
         	break;
 
     }
