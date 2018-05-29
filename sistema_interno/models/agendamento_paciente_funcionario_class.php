@@ -62,7 +62,9 @@
         
         /*Busca um registro especifico no BD*/
 		public function SelectById($dados_view){
-			$sql = "SELECT * FROM agendamento_paciente_funcionario WHERE id_funcionario =". $dados_view->id_funcionario;
+//			$sql = "SELECT * FROM agendamento_paciente_funcionario WHERE id_funcionario =". $dados_view->id_funcionario."AND ativo = 1;";
+            $sql="SELECT a.id_funcionario, f.nome as nome_funcionario, a.id_paciente, p.nome as nome_paciente, a.id_agendamento_consulta, a.data, a.ativo FROM 
+tbl_agendamento_consultas as a INNER JOIN tbl_funcionario as f ON a.id_funcionario = f.id_funcionario INNER JOIN tbl_paciente as p ON a.id_paciente = p.id_paciente; ";
             
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
