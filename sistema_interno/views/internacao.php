@@ -160,7 +160,7 @@ require('../verifica.php');
                             <div class="lb_titulo2">PACIENTE</div>
                             <div class="lb_titulo2">QUARTO</div>
                             <div class="lb_titulo2">UNIDADE</div>
-                            <div class="lb_titulo2">OPÇÕES</div>
+<!--                            <div class="lb_titulo2">OPÇÕES</div>-->
                         </div>
 
                         <?php
@@ -184,13 +184,15 @@ require('../verifica.php');
                                         <div class="item_tabela2"><?= $list[$cont]->unidade ?></div>
                                         <div class="item_tabela2 icones_tabela">
 
-                                            <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_paciente);?>)">
+<!--
+                                            <a href="#" class="editar" onclick="Editar(<?php //echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/edit.png" alt="editar" title="Editar">
                                             </a>
                                             
-                                            <a href="#" class="editar" onclick="Excluir(<?php echo($list[$cont]->id_paciente);?>)">
+                                            <a href="#" class="editar" onclick="Excluir(<?php //echo($list[$cont]->id_paciente);?>)">
                                                 <img src="../imagens/shutdown.png" alt="excluir" title="Excluir">
                                             </a>
+-->
                                             
                                         </div>
                                     </div>
