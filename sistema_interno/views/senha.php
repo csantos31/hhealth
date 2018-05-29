@@ -12,12 +12,12 @@ require('../verifica.php');
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_senha.css">
         <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
-        
+
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
 
 
         <script>
-            
+
             //Excluir
             function Senha(){
                 //anula a ação do submit tradicional "botao" ou F5
@@ -29,10 +29,14 @@ require('../verifica.php');
                         type:"GET",
                         url: "../router.php?controller=senha&modo=null",
                         success: function(dados){
-                            //console.log(dados);
-                            //$('.col_2').html(dados);
-                            //alert(dados);
                             console.log(dados);
+                            if (dados != 'null') {
+                              $('#vm_l').html("");
+                              $('#vm_l').append(dados);
+                            }else{
+                              $('#vm_l').html("");
+                              $('#vm_l').append("...");
+                            }
                         }
                     });
 
@@ -69,14 +73,11 @@ require('../verifica.php');
                     <div class="col_2">
                         <a onclick="Senha()" class="novo" href="#">
                             <img src="../imagens/add.png" alt="Chamar senha" title="Chamar senha">
-                            
+
                             <p>Chamar nova senha</p>
                         </a>
-                        
-                        <div class="senha_atual">
-                            ______
-                            5454
-                            ______
+                        <div class="senha_atual" id="vm_l">
+                          ...
                         </div>
                     </div>
                 </div>
