@@ -215,12 +215,12 @@ $dt_atual = date ("Y-m-d");
       <div class="faixa_branca">
 
       </div>
-
+    
         <div class="titulo_agendamento">
             <strong>Agendamentos marcados</strong>
         </div>
 
-
+      <div class="content_agendamento">
         <div class="content_titulo_receita">
             <div class="titulo_nome">
                 <a>Médico</a>
@@ -253,6 +253,7 @@ $dt_atual = date ("Y-m-d");
             while($cont<count($list)){
         ?>
         <div class="content_conteudo_receitas"><!--receitas-->
+        
             <div class="content_nome"><!--nome-->
                 <?php echo($list[$cont]->funcionario)?>
             </div>
@@ -272,6 +273,7 @@ $dt_atual = date ("Y-m-d");
             <div class="content_hora"><!--hora-->
                 <?php echo($list[$cont]->hora)?>
             </div>
+        
         </div>
         <?php
             $cont++;
@@ -279,6 +281,7 @@ $dt_atual = date ("Y-m-d");
 
 
         ?>
+    </div>   
     </div>
     
     <?php include_once('footer_paciente.php'); ?>

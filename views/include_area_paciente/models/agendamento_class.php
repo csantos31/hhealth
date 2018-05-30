@@ -23,7 +23,7 @@ class Agendamento
 
             //Query para selecionar a tabela contatos
             
-            $sql1="SELECT a.id_agendamento_consulta,p.nome,e.especialidade,f.nome,u.nome_unidade,a.data,a.hora FROM tbl_agendamento_consultas as a,tbl_paciente as p,tbl_especialidade as e,tbl_funcionario as f,tbl_unidade as u WHERE p.id_paciente = a.id_paciente AND e.id_especialidade=a.id_especialidade AND f.id_funcionario=a.id_funcionario AND u.id_unidade=a.id_unidade";
+            $sql1="SELECT a.id_agendamento_consulta,p.nome as nome_paciente,e.especialidade,f.nome as nome_funcionario,u.nome_unidade,a.data,a.hora FROM tbl_agendamento_consultas as a,tbl_paciente as p,tbl_especialidade as e,tbl_funcionario as f,tbl_unidade as u WHERE p.id_paciente = a.id_paciente AND e.id_especialidade=a.id_especialidade AND f.id_funcionario=a.id_funcionario AND u.id_unidade=a.id_unidade";
 
             //Instancio o banco e cria uma variavel
             $conex = new Mysql_db_include_paciente();
@@ -45,9 +45,9 @@ class Agendamento
 
                 // Guarda os dados vindos do banco no indice de objetos criado
                 $list[$cont]->id_agendamento_consulta = $rs['id_agendamento_consulta'];
-                $list[$cont]->paciente = $rs['nome'];
+                $list[$cont]->paciente = $rs['nome_paciente'];
                 $list[$cont]->especialidade = $rs['especialidade'];
-                $list[$cont]->funcionario = $rs['nome'];
+                $list[$cont]->funcionario = $rs['nome_funcionario'];
                 $list[$cont]->unidade = $rs['nome_unidade'];
                 $list[$cont]->hora = $rs['hora'];
 
