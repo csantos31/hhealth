@@ -124,7 +124,7 @@
 
                             <div class="acoes_exames"><!--ação 1-->
                               <a href="#" onclick="">
-                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_exame)?>);">
+                                <img src="../imagens/info.png" onclick="Mostrar(<?php echo($list[$cont]->id_exame)?>);" alt="">
                               </a>
                             </div>
 
