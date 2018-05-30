@@ -31,8 +31,7 @@
     height:auto;
     margin:auto;
     position: relative;
-    padding-top: 20px
-    background-color: red;
+    padding-top: 20px;
 }
 
 .faixa_titulo_da_pagina{
@@ -58,7 +57,7 @@
 
 .faixa2{
       width: 100%;
-      height: 300px;
+      height: 320px;
 }
 
 .suporte_img_faixa2{
@@ -89,28 +88,37 @@ img{
 }
 
 .suporte_txt_faixa2{
-      width: 860px;
-      height: 260px;
+      width: 760px;
+      height: 210px;
       float: left;
       padding: 20px;
+      padding-top: 0px;
+      margin-left: 30px;
+      margin-top: 50px;
+}
+
+.txt_faixa2_titulo{
+      width: 100%;
+      height: 60px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 60px;
+      font-family: sans-serif;
+      text-align: center;
 }
 
 .txt_faixa2{
-      width: 100%;
+      width: 80%;
       height: 170px;
-      margin-top: 60px;
       font-family: sans-serif;
       text-align: justify;
 }
 
 
 
-
-
-
 .faixa3{
       width: 100%;
-      height: 300px;
+      height: 320px;
 }
 
 .suporte_img_faixa3{
@@ -141,6 +149,16 @@ img{
       padding: 20px;
 }
 
+.txt_faixa3_titulo{
+      width: 100%;
+      height: 60px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 60px;
+      font-family: sans-serif;
+      text-align: center;
+}
+
 .txt_faixa3{
       width: 100%;
       height: 170px;
@@ -157,7 +175,7 @@ img{
 
 .faixa4{
       width: 100%;
-      height: 300px;
+      height: 320px;
 }
 
 .suporte_img_faixa4{
@@ -186,6 +204,16 @@ img{
       height: 260px;
       float: left;
       padding: 20px;
+}
+
+.txt_faixa4_titulo{
+      width: 100%;
+      height: 60px;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 60px;
+      font-family: sans-serif;
+      text-align: center;
 }
 
 .txt_faixa4{
@@ -217,17 +245,16 @@ img{
 
 
 @media screen and (max-device-width: 520px) {
+
       *{
         padding: 0px;
-        margin: 0px;
-        box-sizing: border-box;
+        margin: 0px auto;
       }
-
-
 
       .main{
           width:100%;
           height:auto;
+          position:relative;
           margin:auto;
       }
 
@@ -251,177 +278,9 @@ img{
           height:auto;
           margin:auto;
           position: relative;
-          padding-top: 20px
-          background-color: red;
-      }
-
-      .faixa_titulo_da_pagina{
-            width: 100%;
-            height: 100px;
-            font-family: sans-serif;
-            text-align: center;
-            line-height: 100px;
-            font-weight: bold;
-            font-size: 24px;
-            color: #DA0000;
-      }
-
-      .faixa1{
-            width: 96.17%;
-            min-height: 200px;
-            height: auto;
-            font-family: sans-serif;
-            text-align: justify;
-            padding-left: 23px;
-            padding-right: 23px;
-            font-size: 16px;
-      }
-
-      .faixa2{
-            width: 100%;
-            height: 540px;
-      }
-
-      .suporte_img_faixa2{
-            width: 100%;
-            height: 330px;
-            float: left;
-      }
-
-      .circulo_img_faixa2{
-            width: 62%;
-            height: 280px;
-            margin-left: 13%;
-            margin-top: 20px;
-            border-radius: 50%;
-            float: left;
-            text-align: center;
-            line-height: 280px;
-            font-family: sans-serif;
-            font-weight: bold;
-            color: black;
-            font-size: 30px;
-      }
-
-      img{
-          width: 300px;
-          height: 290px;
-          border-radius: 50%;
-      }
-
-      .suporte_txt_faixa2{
-            width: 100%;
-            height: 240px;
-            float: left;
-            padding: 20px;
-      }
-
-      .txt_faixa2{
-            width: 100%;
-            height: 170px;
-            margin-top: 10px;
-            font-family: sans-serif;
-            text-align: justify;
+          padding-top: 20px;
       }
 
 
 
-
-
-
-      .faixa3{
-            width: 100%;
-            height: 900px;
-      }
-
-      .suporte_img_faixa3{
-            width: 30%;
-            height: 320px;
-            float: left;
-      }
-
-      .circulo_img_faixa3{
-            width: 28%;
-            height: 250px;
-            margin-left: 10px;
-            margin-top: 10px;
-            border-radius: 50%;
-            float: left;
-            text-align: center;
-            line-height: 280px;
-            font-family: sans-serif;
-            font-weight: bold;
-            color: black;
-            font-size: 30px;
-      }
-
-      .suporte_txt_faixa3{
-            width: 80%;
-            height: 320px;
-            float: left;
-            padding: 20px;
-      }
-
-      .txt_faixa3{
-            width: 100%;
-            height: 170px;
-            margin-top: 60px;
-            font-family: sans-serif;
-            text-align: justify;
-      }
-
-
-
-
-
-
-
-      .faixa4{
-            width: 100%;
-            height: 700px;
-      }
-
-      .suporte_img_faixa4{
-            width: 30%;
-            height: 300px;
-            float: left;
-      }
-
-      .circulo_img_faixa4{
-            width: 20%;
-            height: 280px;
-            margin-left: 45%;
-            margin-top: 60px;
-            border-radius: 50%;
-            float: left;
-            text-align: center;
-            line-height: 280px;
-            font-family: sans-serif;
-            font-weight: bold;
-            color: black;
-            font-size: 30px;
-      }
-
-      .suporte_txt_faixa4{
-            width: 100%;
-            height: 260px;
-            float: left;
-            padding: 20px;
-      }
-
-      .txt_faixa4{
-            width: 100%;
-            height: 170px;
-            margin-top: 60px;
-            font-family: sans-serif;
-            text-align: justify;
-      }
-
-
-      .footer{
-            width: 100%;
-            height: 264px;
-            margin: auto;
-            float: left;
-      }
 }

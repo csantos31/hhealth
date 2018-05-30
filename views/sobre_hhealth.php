@@ -41,17 +41,24 @@
                                  <div class="suporte_img_faixa2">
                                        <div class="circulo_img_faixa2">
                                              <img src="../CMS/<?php echo($list[$cont]->imagem1);?>" alt="">
-                                             Missão
+
                                        </div>
                                  </div>
                                  <div class="suporte_txt_faixa2">
+                                       <div class="txt_faixa2_titulo">
+                                             Missão
+                                       </div>
                                        <div class="txt_faixa2">
                                              <?php echo($list[$cont]->missao);?>
                                        </div>
                                  </div>
                            </div>
                            <div class="faixa3">
+
                                  <div class="suporte_txt_faixa3">
+                                       <div class="txt_faixa3_titulo">
+                                             Visão
+                                       </div>
                                        <div class="txt_faixa3">
                                              <?php echo($list[$cont]->visao);?>
                                        </div>
@@ -59,7 +66,6 @@
                                  <div class="suporte_img_faixa3">
                                        <div class="circulo_img_faixa3">
                                              <img src="../CMS/<?php echo($list[$cont]->imagem2);?>" alt="">
-                                             Missão
                                        </div>
                                  </div>
                            </div>
@@ -67,10 +73,12 @@
                                  <div class="suporte_img_faixa4">
                                        <div class="circulo_img_faixa4">
                                              <img src="../CMS/<?php echo($list[$cont]->imagem3);?>" alt="">
-                                             Missão
                                        </div>
                                  </div>
                                  <div class="suporte_txt_faixa4">
+                                       <div class="txt_faixa4_titulo">
+                                             Valores
+                                       </div>
                                        <div class="txt_faixa4">
                                              <?php echo($list[$cont]->valores);?>
                                        </div>
