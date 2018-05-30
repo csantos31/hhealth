@@ -1,4 +1,8 @@
 @media screen and (min-device-width: 1200px){
+
+  a{
+    color: #FFF;
+  }
 /*----HEADER----*/
 .suporte_menu{
       width: 100%;
@@ -100,7 +104,7 @@
 
 .item_nav a{
       text-decoration: none;
-      color: black;
+      color: #DA0000;
 }
 
 .submenu_nav_hhealth{
@@ -112,8 +116,8 @@
 }
 
 .submenu_nav_hhealth li:hover{
-    color: #eaecef;
-    background-color: #DA0000;
+    color: #fff;
+    background-color: #fff;
     opacity: 0.9;
     transition: 0.1s;
     font-family: 'BenchNine', Arial, sans-serif;
@@ -261,7 +265,7 @@ label[for="btn_menu"]{
 
 @media screen and (max-device-width: 520px){
 
-      
+
 
       #menu_secundario{
             display: none;

@@ -5,7 +5,7 @@
             <link rel="stylesheet" href="../css/style_nav.css">
             <link rel="stylesheet" href="../css/style_footer.css">
             <link rel="stylesheet" href="../css/style_fale_conosco.css">
-            <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+            <script src="../js/jquery-3.2.1.min.js"></script>
 
             <title>Hospital HHealth</title>
             <meta name="viewport" content="initial-scale=1, maximun-scale=1">
@@ -65,7 +65,7 @@
                                        <img src="../imagens/faleconosco.png" alt="">
                                  </div>
                                  <div class="formFaleconosco">
-                                       <form class="form_faleconosco" action="" id="form" method="post">
+                                       <form class="form_faleconosco" action="fale_conosco.php" id="form" method="post">
                                              <div class="linha1">
                                                    <div class="txt_nome">
                                                          Nome:

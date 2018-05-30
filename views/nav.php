@@ -10,7 +10,6 @@
       $hom = '../index.php';
   }
 
-
 ?>
 
 <div class="header"><!--header-->
@@ -41,50 +40,59 @@
               <li class="item_nav botao_snip">
                   HOSPITAL
                   <ul class="submenu_nav_hhealth">
-                        <a href="<?= $hom ?>">
-                              <li class="item_submenu_nav_hhealth ">home</li>
-                        </a>
-                        <a href="<?= $path ?>especialidades.php">
-                              <li class="item_submenu_nav_hhealth">Especialidades</li>
-                        </a>
 
-                        <a  href="<?= $path ?>ambientes.php" >
-                              <li class="item_submenu_nav_hhealth">Ambientes</li>
+                      <li class="item_submenu_nav_hhealth ">
+                        <a href="<?= $hom ?>">home</a>
+                      </li>
+
+                      <li class="item_submenu_nav_hhealth">
+                        <a href="<?= $path ?>especialidades.php">Especialidades
                         </a>
-                        <a href="<?= $path ?>sobre_hhealth.php">
-                              <li class="item_submenu_nav_hhealth">Sobre</li>
-                        </a>
+                      </li>
+
+                      <li class="item_submenu_nav_hhealth">
+                        <a  href="<?= $path ?>ambientes.php" >Ambientes</a>
+                      </li>
+
+                      <li class="item_submenu_nav_hhealth">
+                        <a href="<?= $path ?>sobre_hhealth.php">Sobre</a>
+                      </li>
+
                   </ul>
               </li>
-              <a href="<?= $path ?>dicas_saude.php">
-                <li class="item_nav botao_snip">
-                     SAÚDE
-                </li>
-              </a>
-              <a href="<?= $path ?>unidades_hhealth.php">
-                <li class="item_nav botao_snip">
-                    UNIDADES
-                </li>
-              </a>
-              <a href="<?= $path ?>exames.php">
-                  <li class="item_nav botao_snip">
-                    EXAMES
-                  </li>
-              </a>
-              <a href="<?= $path ?>convenios.php">
-                <li class="item_nav botao_snip">
-                    CONVÊNIOS
-                </li>
-              </a>
+
+              <li class="item_nav botao_snip">
+                  <a href="<?= $path ?>dicas_saude.php">SAÚDE</a>
+              </li>
+
+
+              <li class="item_nav botao_snip">
+                <a href="<?= $path ?>unidades_hhealth.php"> UNIDADES</a>
+              </li>
+
+
+              <li class="item_nav botao_snip">
+                <a href="<?= $path ?>exames.php"> EXAMES </a>
+              </li>
+
+
+              <li class="item_nav botao_snip">
+                  <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
+              </li>
+
               <li class="item_nav botao_snip">
                   CONTATOS
                 <ul class="submenu_nav_contatos">
-                        <a href="<?= $path ?>fale_conosco.php">
-                              <li class="item_submenu_nav_contatos">Fale Conosco</li>
-                        </a>
-                        <a href="<?= $path ?>trabalhe_conosco.php">
-                          <li class="item_submenu_nav_contatos">Trabalhe Conosco</li>
-                        </a>
+
+                        <li class="item_submenu_nav_contatos">
+                          <a href="<?= $path ?>fale_conosco.php">Fale Conosco</a>
+                        </li>
+                        <li class="item_submenu_nav_contatos">
+                          <a href="<?= $path ?>trabalhe_conosco.php">
+                            Trabalhe Conosco
+                          </a>
+                        </li>
+
                   </ul>
               </li>
           </ul>
@@ -96,50 +104,60 @@
               <li class="item_nav botao_snip">
                   HOSPITAL
                   <ul class="submenu_nav_hhealth">
-                        <a href="<?= $hom ?>">
-                              <li class="item_submenu_nav_hhealth ">home</li>
-                        </a>
-                        <a href="<?= $path ?>especialidades.php">
-                              <li class="item_submenu_nav_hhealth">Especialidades</li>
-                        </a>
 
-                        <a  href="<?= $path ?>ambientes.php" >
-                              <li class="item_submenu_nav_hhealth">Ambientes</li>
-                        </a>
-                        <a href="<?= $path ?>sobre_hhealth.php">
-                              <li class="item_submenu_nav_hhealth">Sobre</li>
-                        </a>
+                        <li class="item_submenu_nav_hhealth ">
+                          <a href="<?= $hom ?>">home</a>
+                        </li>
+
+
+                        <li class="item_submenu_nav_hhealth">
+                          <a href="<?= $path ?>especialidades.php">Especialidades</a>
+                        </li>
+
+                        <li class="item_submenu_nav_hhealth">
+                          <a  href="<?= $path ?>ambientes.php" >Ambientes</a>
+                        </li>
+
+
+                        <li class="item_submenu_nav_hhealth">
+                          <a href="<?= $path ?>sobre_hhealth.php">Sobre</a>
+                        </li>
+
                   </ul>
               </li>
-              <a href="<?= $path ?>dicas_saude.php">
+
                 <li class="item_nav botao_snip">
-                     SAÚDE
+                    <a href="<?= $path ?>dicas_saude.php"> SAÚDE</a>
                 </li>
-              </a>
-              <a href="<?= $path ?>unidades_hhealth.php">
+
+
                 <li class="item_nav botao_snip">
-                    UNIDADES
+                    <a href="<?= $path ?>unidades_hhealth.php">UNIDADES</a>
                 </li>
-              </a>
-              <a href="<?= $path ?>exames.php">
-                  <li class="item_nav botao_snip">
-                    EXAMES
-                  </li>
-              </a>
-              <a href="<?= $path ?>convenios.php">
+
+
                 <li class="item_nav botao_snip">
-                    CONVÊNIOS
+                  <a href="<?= $path ?>exames.php">EXAMES</a>
                 </li>
-              </a>
+
+
+                <li class="item_nav botao_snip">
+                    <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
+                </li>
+
               <li class="item_nav botao_snip">
                   CONTATOS
                 <ul class="submenu_nav_contatos">
-                        <a href="<?= $path ?>fale_conosco.php">
-                              <li class="item_submenu_nav_contatos">Fale Conosco</li>
-                        </a>
-                        <a href="<?= $path ?>trabalhe_conosco.php">
-                          <li class="item_submenu_nav_contatos">Trabalhe Conosco</li>
-                        </a>
+
+                        <li class="item_submenu_nav_contatos">
+                          <a href="<?= $path ?>fale_conosco.php">Fale Conosco</a>
+                        </li>
+
+
+                        <li class="item_submenu_nav_contatos">
+                            <a href="<?= $path ?>trabalhe_conosco.php">Trabalhe Conosco</a>
+                        </li>
+
                   </ul>
               </li>
           </ul>
@@ -151,52 +169,59 @@
             <li class="item_mobile">
                 HOSPITAL
                 <ul class="submenu_mobile_hhealth">
-                      <a href="<?= $hom ?>">
-                           <li class="item_mobile_two ">home</li>
-                      </a>
-                      <a href="<?= $path ?>especialidades.php">
-                           <li class="item_mobile_two">Especialidades</li>
-                      </a>
 
-                      <a  href="<?= $path ?>ambientes.php" >
-                           <li class="item_mobile_two">Ambientes</li>
-                      </a>
-                      <a href="<?= $path ?>sobre_hhealth.php">
-                           <li class="item_mobile_two">Sobre</li>
-                      </a>
+                   <li class="item_mobile_two ">
+                     <a href="<?= $hom ?>">home</a>
+                   </li>
+
+                   <li class="item_mobile_two">
+                     <a href="<?= $path ?>especialidades.php"> Especialidades</a>
+                   </li>
+
+                   <li class="item_mobile_two">
+                     <a  href="<?= $path ?>ambientes.php" >Ambientes</a>
+                   </li>
+
+                   <li class="item_mobile_two">
+                     <a href="<?= $path ?>sobre_hhealth.php">Sobre</a>
+                   </li>
+
                 </ul>
             </li>
-            <a href="<?= $path ?>dicas_saude.php">
+
              <li class="item_mobile">
-                   SAÚDE
+                   <a href="<?= $path ?>dicas_saude.php">SAÚDE</a>
              </li>
-            </a>
-            <a href="<?= $path ?>unidades_hhealth.php">
+
+
              <li class="item_mobile">
-                  UNIDADES
+                  <a href="<?= $path ?>unidades_hhealth.php">UNIDADES</a>
              </li>
-            </a>
-            <a href="<?= $path ?>exames.php">
+
+
                 <li class="item_mobile">
-                  EXAMES
+                  <a href="<?= $path ?>exames.php">EXAMES</a>
                 </li>
-            </a>
-            <a href="<?= $path ?>convenios.php">
+
+
              <li class="item_mobile">
-                  CONVÊNIOS
+                  <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
              </li>
-            </a>
+
             <li class="item_mobile">
                 CONTATOS
              <ul class="submenu_mobile_contatos">
-                      <a href="<?= $path ?>fale_conosco.php">
-                           <li class="item_mobile_two">Fale Conosco</li>
-                      </a>
-                      <a href="<?= $path ?>trabalhe_conosco.php">
-                       <li class="item_mobile_two">Trabalhe Conosco</li>
-                      </a>
-                </ul>
-            </li>
+
+                 <li class="item_mobile_two">
+                   <a href="<?= $path ?>fale_conosco.php">Fale Conosco</a>
+                 </li>
+
+                 <li class="item_mobile_two">
+                   <a href="<?= $path ?>trabalhe_conosco.php">Trabalhe Conosco</a>
+                 </li>
+
+              </ul>
+          </li>
       </ul>
 </nav>
 

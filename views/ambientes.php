@@ -71,7 +71,13 @@
                         ?>
 
                               <ul class="menu">
-                                  <a href="#" onclick="Mostrar(<?php echo($list[$cont]->id_ambiente)?>)"><li class="item_menu"><?php echo($list[$cont]->titulo)?><?php echo($list[$cont]->id_ambiente)?></li></a>
+
+                                    <li class="item_menu">
+                                       <a href="#" onclick="Mostrar(<?php echo($list[$cont]->id_ambiente)?>)">
+                                         <?php echo($list[$cont]->titulo)?><?php echo($list[$cont]->id_ambiente)?>
+                                       </a>
+                                    </li>
+
                               </ul>
                         <?php
                                 }
