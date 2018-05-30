@@ -85,11 +85,13 @@
               Receitas
             </li>
           </a>
+<!--
           <a href="pre_atendimento.php">
             <li class="item_menu">
               Pré - Atendimento
             </li>
           </a>
+-->
         </ul>
           </div>
       </div>

@@ -16,12 +16,7 @@ a{
   text-decoration: none;
 }
 
-@font-face{
-    font-family:Font Fabric;
-    font-style: normal;
-    font-weight: normal;
-    src: url(../fonte/canter/Canter%20Bold.otf);
-}
+
 
 body{
     width:100%;
@@ -168,7 +163,7 @@ background: #727070;
 
 .menu{
    height: 50px;
-    width: 1200px;
+    width: 900px;
     margin:auto;
     /*    background: #c2c2c2;*/
 }
