@@ -25,6 +25,17 @@
         <script src="js/jcarousellite.js"></script>
         <script src="js/carrossel.js"></script>
 
+        
+
+        <style type="text/css">
+
+            @media screen and (max-device-width: 520px){
+                  .nav_mobile{
+                        display: none;
+                  }
+            }
+        </style>
+
         <script>
           function myMap() {
           var mapProp= {
@@ -67,6 +78,7 @@
              });
 
         </script>
+
     </head>
     <body>
       <div id="principal">

@@ -22,8 +22,13 @@
         <div class="logo_marca_responsivo">
           HHEALTH
       </div>
-      <input type="checkbox" id="btn_menu">
-      <label for="btn_menu" >&#9776;</label>
+      <div class="segura_input">
+            <input type="checkbox" id="btn_menu" >
+            <label for="btn_menu">&#9776;</label>
+      </div>
+
+
+
       </div>
 
 
@@ -164,6 +169,12 @@
     </nav>
 
 </div>
+
+
+
+
+
+
 <nav class="nav_mobile">
       <ul class="menu_mobile">
             <li class="item_mobile">
@@ -224,6 +235,7 @@
           </li>
       </ul>
 </nav>
+
 
 <script>
     window.onscroll = function(){
