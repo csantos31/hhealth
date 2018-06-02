@@ -7,10 +7,10 @@
     }
 
     if($_SESSION['id_funcionario']>0){
-         header('location:views_cms/tipo_quarto.php');
+         header('location:views_cms/convenios_cms.php');
    }else {
          // code...
-         header('location:login.php'); 
+         header('location:login.php');
    }
 
 ?>
