@@ -1,4 +1,10 @@
 <?php
+
+
+
+
+
+
 // +----------------------------------------------------------------------+
 // | BoletoPhp - Vers�o Beta                                              |
 // +----------------------------------------------------------------------+
@@ -88,4 +94,5 @@ $dadosboleto["cedente"] = "Coloque a Razão Social da sua empresa aqui";
 // N�O ALTERAR!
 include("include/funcoes_itau.php");
 include("include/layout_itau.php");
+
 ?>

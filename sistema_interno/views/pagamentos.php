@@ -1,6 +1,8 @@
 <?php
-    require('../verifica.php');
-
+    // $API_KEY = 'ak_test_Ip7vCnLev9yayFv0V9bZfBUNlKEW63';
+    // require('../verifica.php');
+    // require __DIR__.'../pagarme-php/Pagarme.php';
+    // PagarMe::setApiKey($API_KEY);
 ?>
 <html>
     <head>
@@ -10,7 +12,8 @@
         <link rel="stylesheet" type="text/css" href="../css/style_pagamentos.css">
         <link rel="stylesheet" type="text/css" href="../css/style_menu_lateral.css">
         <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-
+        <script type="text/javascript" src="../js/jquery-1.2.6.pack.js"></script>
+        <script type="text/javascript" src="../js/jquery.maskedinput-1.1.4.pack.js"></script>
         <script type="text/javascript">
             function boleto() {
               var URL = "../boletophp-master/boleto_itau.php";
@@ -18,6 +21,32 @@
               W.window.print();
             }
 
+            function Mudarestado(el) {
+              var display = document.getElementById(el).style.display;
+              if(display == "none")
+                  document.getElementById(el).style.display = 'block';
+
+              else
+                document.getElementById(el).style.display = 'none';
+                document.getElementById('suporte_dados_cartao').style.display = 'block';
+              }
+
+              function Mudarestadoboleto(el) {
+                var display = document.getElementById(el).style.display;
+                if(display == "none")
+                    document.getElementById(el).style.display = 'block';
+
+                else
+                  document.getElementById(el).style.display = 'none';
+                  document.getElementById('suporte_dados_cartao').style.display = 'none';
+                  document.getElementById('suporte_dados_boleto').style.display = 'block';
+                }
+
+        </script>
+        <!-- <script type="text/javascript">
+            $(document).ready(function(){
+                $("#numero_celular").mask("+999.999.999-99");
+            }); -->
         </script>
 
     </head>
@@ -34,35 +63,70 @@
             <div class="main">
                 <div id="container_cad_paciente">
 
-                  <form class="" action="../router.php?" method="post">
-
-
-
+                  <form class="" action="../router.php?controller=pagamento&modo=cartao" method="post">
                      <p>Pagamentos</p>
+                     <div id="alinha_conteudo_opcao">
+                       <a href="#" class="escolha_opcao" onclick="Mudarestadoboleto('alinha_conteudo_opcao')">
+                         <div class="alinha_letra">
+                           BOLETO
+                         </div>
+                       </a>
 
-                     <div class="suporte_pagamento">
-                        Paciente: <input type="text" name="txt_paciente" value="">
+                       <a href="#" class="escolha_opcao" onclick="Mudarestado('alinha_conteudo_opcao')">
+                         <div class="alinha_letra">
+                           CARTÃO
+                         </div>
+                       </a>
+                     </div>
 
-                        <!-- cartão: <input type="text" name="" value="">
-                        <br>
-                        senha cartão : <input type="text" name="" value="">
-                        <br> -->
-                        Cpf: <input type="text" name="txt_cpf" value="">
+                     <div id="suporte_dados_boleto">
+                       <div class="campos_pagamento_cartao">
+                         <div class="">
+                           Nome: <input type="text" name="txt_nome" value="" >
+                           <br>
+                           CPF: <input type="number" name="txt_cpf" value="">
+                           <br>
+                           Email: <input type="email" name="txt_email" value="">
+                           <br>
+                           Valor: <input type="number" name="txt_valor" value="">
+                           <br>
+                         </div>
+                         <input type="submit" name="txt_submit_boleto" value="Imprimir" onclick="boleto()">
+                       </div>
+                       <a href="pagamentos.php">
+                         <div class="voltar_menu_pagamentos">
+                           Voltar
+                         </div>
+                       </a>
+                     </div>
 
-                        Email: <input type="email" name="txt_email" value="">
-                        <br>
-                        Telefone: <input type="text" name="txt_telefone" value="">
-                        <br>
-                        Valor: <input type="text" name="txt_valor" value="">
 
-                        <a href="#">Pagar via cartão</a>
-                        <!-- <input type="button" value="inprimir" onclick=""/> -->
-                        <a href="#" onclick="boleto()">Boleto_itau</a>
+                     <div id="suporte_dados_cartao">
+                       <div class="campos_pagamento_cartao">
+                         <div class="">
+                           Nome: <input type="text" name="txt_nome" value="" >
+                           <br>
+                           CPF: <input type="number" name="txt_cpf" value="">
+                           <br>
+                           Email: <input type="email" name="txt_email" value="">
+                           <br>
+                           Número do celular: <input type="text" name="txt_celular" value="" maxlength="22" id="numero_celular">
+                           <br>
+                           Cartao: <input type="number" name="txt_cartao" value="" maxlength="16">
+                           <br>
+                           Senha do Cartao: <input type="number" name="txt_senha_cartao" value="" maxlength="6">
+                           <br>
+                           Valor: <input type="number" name="txt_valor" value="">
+                           <br>
+                         </div>
+                         <input type="submit" name="txt_submit_cartao" value="Pagar">
+                       </div>
+                       <a href="pagamentos.php">
+                         <div class="voltar_menu_pagamentos">
+                           Voltar
+                         </div>
+                       </a>
                     </div>
-<!--
-                    <input type="button" value="inprimir" onclick="window.print()"/>
-
-                    <input type="image" name="" value="pagar"> -->
                   </form>
                 </div>
             </div>
