@@ -4,6 +4,11 @@
     font-family: verdana, arial 'sans-erif';
 }
 
+a{
+  text-decoration: none;
+  color: #000;
+}
+
 .main{
       float: right;
       width: 80%;
@@ -58,5 +63,53 @@ p{
 .suporte_pagamento{
   width: 500px;
   height: 500px;
-  background-color: #000;
+  /* background-color: #000; */
+}
+
+#alinha_conteudo_opcao{
+  height: 200px;
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.escolha_opcao{
+  height: 100px;
+  width: 140px;
+  background-color: #ccc;
+  float: left;
+  margin-left: 40px;
+}
+
+.escolha_opcao:hover{
+  background-color: #c2c2c2;
+}
+
+.alinha_letra{
+  line-height: 100px;
+  padding-left: 40px;
+}
+
+#suporte_dados_cartao, #suporte_dados_boleto{
+  min-height: 300px;
+  height: auto;
+  width: 100%;
+  background-color: #c2c2c2;
+  display: none;
+  margin-top: 40px;
+}
+
+.voltar_menu_pagamentos{
+  height: 22px;
+  width: 70px;
+  color: red;
+  background-color: #000000;
+}
+
+.campos_pagamento_cartao{
+  min-height: 300px;
+  height: auto;
+  width: 500px;
+  margin: auto;
+  background-color: #FFFFFF;
 }

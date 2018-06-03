@@ -25,7 +25,7 @@
         <script src="js/jcarousellite.js"></script>
         <script src="js/carrossel.js"></script>
 
-        
+
 
         <style type="text/css">
 
@@ -123,13 +123,15 @@
                     $cont = 0;
 
                     while($cont<count($list)){
+                        if($list[$cont]->status==1){
+
 
                 ?>
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide1)?>" alt="" style="width:100%;" >
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide2)?>" alt="" style="width:100%;">
                <img class="mySlides" src="CMS/<?php echo($list[$cont]->slide3)?>" alt="" style="width:100%;">
                  <?php
-
+                        }
                         $cont++;
                     }
                  ?>

@@ -1,4 +1,4 @@
-//<?php
+<?php
     $status=null;
     $action = "modo=inserir";
     $nivel = null;

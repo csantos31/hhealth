@@ -6,6 +6,7 @@
             <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
             <link rel="stylesheet" type="text/css" href="../css/style_sobre_hhealth.css">
             <meta name="viewport" content="initial-scale=1, maximun-scale=1">
+            <script src="../js/jquery-3.2.1.min.js"></script>
             <title>Hospital HHealth</title>
       </head>
       <body>
@@ -31,8 +32,8 @@
                           $controller_sobre = new controllerSobre();
                           $list = $controller_sobre::Listar();
                           $cont=0;
-                          if($cont<count($list)){
-
+                          while($cont<count($list)){
+                              if($list[$cont]->status==1){
                           ?>
                            <div class="faixa1">
                                  <?php echo($list[$cont]->sobre);?>
@@ -85,6 +86,7 @@
                                  </div>
                            </div>
                            <?php
+                              }
                              $cont++;
                          }
                          ?>

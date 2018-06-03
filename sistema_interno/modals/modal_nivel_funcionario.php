@@ -1,11 +1,39 @@
 <?php
 
 //$action = "modo=inserir";
+// cargos
+    //            especialidade
+    //            funcionario
+    //            agendamento
+    //            paciente_pendente
+    //            paciente_ativo
+    //            remedio
+    //            receita
+    //            internacao
+    //            quarto
+    //            tipo_quarto
+    //            nivel_usuario
+    //            pagamento
 
 $id="0";
 $nivel=null;
 $descricao=null;
+$cargo=" ";
+$especialidade=" ";
+$funcionario=" ";
+$agendamento=" ";
+$paciente_pendente=" ";
+$paciente=" ";
+$remedio=" ";
+$receita=" ";
+$internacao=" ";
+$quarto=" ";
+$tipo_quarto=" ";
+$nivel_funcionario=" ";
+$pagamento=" ";
+$senha= " ";
 
+@session_start();
 
 if(isset($_GET['modo'])){
     
@@ -25,6 +53,51 @@ if(isset($_GET['modo'])){
         
         $nivel = $list->nivel;
         $descricao = $list->descricao;
+        
+        
+
+        if($list->cargo==1){
+            $cargo = "checked";
+        }
+        if($list->funcionario==1){
+            $funcionario = "checked";
+        }
+        if($list->especialidade==1){
+            $especialidade = "checked";
+        }
+        if($list->agendamento==1){
+            $agendamento = "checked";
+        }
+        if($list->paciente_pendente==1){
+            $paciente_pendente = "checked";
+        }
+        if($list->paciente_ativo==1){
+            $paciente = "checked";
+        }
+        if($list->remedio==1){
+            $remedio = "checked";
+        }
+        if($list->receita==1){
+            $receita = "checked";
+        }
+        if($list->internacao==1){
+            $internacao = "checked";
+        }
+        if($list->quarto==1){
+            $quarto = "checked";
+        }
+        if($list->tipo_quarto==1){
+            $tipo_quarto = "checked";
+        }
+        if($list->nivel_usuario==1){
+            $nivel_funcionario = "checked";
+        }
+        if($list->pagamento==1){
+            $pagamento = "checked";
+        }
+        if($list->senha==1){
+            $senha = "checked";
+        }
     
     }
 }
@@ -116,6 +189,50 @@ if(isset($_GET['modo'])){
                                <textarea required class="input_bigger" placeholder="DESCRIÇÃO DO NÍVEL" name="txt_descricao" id="txt_descricao" style="resize:none;"><?= $descricao ?></textarea>
                             </div>
                         </div>
+                        <table>
+                            <tr>
+                                <td><input type="checkbox" name="ckCargo" value="1" <?php echo($cargo)?>> Cargo</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckEspecialidade" value="1" <?php echo($especialidade)?>> Especialidade</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckFuncionario" value="1" <?php echo($funcionario)?>> Funcionario</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckAgendamento" value="1" <?php echo($agendamento)?>> Agendamento</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckPacientePendente" value="1" <?php echo($paciente_pendente)?>> Pacientes Pendentes</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckPacienteAtivo" value="1" <?php echo($paciente)?>> Pacientes Ativos</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckRemedio" value="1" <?php echo($remedio)?>> Remédio</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckReceita" value="1" <?php echo($receita)?>> Receita</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckInternacao" value="1" <?php echo($internacao)?>> Internacao</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckQuarto" value="1" <?php echo($quarto)?>> Quarto</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckTipoQuarto" value="1" <?php echo($tipo_quarto)?>> Tipo Quarto</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckNivelUsuario" value="1" <?php echo($nivel_funcionario)?>> Nível Usuário</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckPagamento" value="1" <?php echo($pagamento)?>> Pagamento</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="ckSenha" value="1" <?php echo($senha)?>> Senha</td>
+                            </tr>
+                        </table>
                         
                        
                         <div class="campo_botao">

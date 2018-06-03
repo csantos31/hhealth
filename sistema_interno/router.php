@@ -457,34 +457,46 @@
 
                 }
             break;
-            
+
         case 'agendamento':
             switch($modo){
                     case 'ativar':
                         require_once('controllers/agendamento_paciente_funcionario_controller.php');
                         require_once ('../views/include_area_paciente/models/agendamento_class.php');
-                        
+
                         $controller_agendamento = new ViewAgendamentoPacienteFuncionarioController();
                         $controller_agendamento::Ativar();
-                    
+
                     break;
-                    
+
                     case 'desativar':
                         require_once('controllers/agendamento_paciente_funcionario_controller.php');
                         require_once ('../views/include_area_paciente/models/agendamento_class.php');
-                        
+
                         $controller_agendamento = new ViewAgendamentoPacienteFuncionarioController();
                         $controller_agendamento::Desativar();
                     break;
             }
             break;
+            case 'pagamento':
+                switch($modo){
+
+                        case 'cartao':
+                        require_once('controllers/formas_pagamentos.php');
+                        // require_once('boletophp-master/boleto_itau.php');
+
+                        $controller_agendamento = new Pagamentos();
+                        $controller_agendamento::Cartao_Boleto();
+                          break;
+                }
+                break;
         case 'senha':
             require_once('controllers/senha_controller.php');
             require_once ('models/senha_class.php');
-            
+
             $controller_senha = new controllerSenha();
             $controller_senha::chamarSenha();
-            
+
             break;
 		default:
 			# code...

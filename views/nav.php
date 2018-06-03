@@ -12,6 +12,8 @@
 
 ?>
 
+
+
 <div class="header"><!--header-->
       <div class="separador_responsivo">
             <a href="<?= $hom ?>">
@@ -21,10 +23,6 @@
             </a>
         <div class="logo_marca_responsivo">
           HHEALTH
-      </div>
-      <div class="segura_input">
-            <input type="checkbox" id="btn_menu" >
-            <label for="btn_menu">&#9776;</label>
       </div>
 
 
@@ -173,69 +171,30 @@
 
 
 
+<!--
+<div class="menu_mobile">
+    HOSPITAL -->
+  <header>
+  	<!-- <span>Author : <a href="http://glennsmith.me" target="_blank">Glenn Smith</a></span> -->
+    <button class="hamburger">&#9776;</button>
+    <button class="cross">&#735;</button>
+  </header>
 
-
-<nav class="nav_mobile">
-      <ul class="menu_mobile">
-            <li class="item_mobile">
-                HOSPITAL
-                <ul class="submenu_mobile_hhealth">
-
-                   <li class="item_mobile_two ">
-                     <a href="<?= $hom ?>">home</a>
-                   </li>
-
-                   <li class="item_mobile_two">
-                     <a href="<?= $path ?>especialidades.php"> Especialidades</a>
-                   </li>
-
-                   <li class="item_mobile_two">
-                     <a  href="<?= $path ?>ambientes.php" >Ambientes</a>
-                   </li>
-
-                   <li class="item_mobile_two">
-                     <a href="<?= $path ?>sobre_hhealth.php">Sobre</a>
-                   </li>
-
-                </ul>
-            </li>
-
-             <li class="item_mobile">
-                   <a href="<?= $path ?>dicas_saude.php">SAÚDE</a>
-             </li>
-
-
-             <li class="item_mobile">
-                  <a href="<?= $path ?>unidades_hhealth.php">UNIDADES</a>
-             </li>
-
-
-                <li class="item_mobile">
-                  <a href="<?= $path ?>exames.php">EXAMES</a>
-                </li>
-
-
-             <li class="item_mobile">
-                  <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
-             </li>
-
-            <li class="item_mobile">
-                CONTATOS
-             <ul class="submenu_mobile_contatos">
-
-                 <li class="item_mobile_two">
-                   <a href="<?= $path ?>fale_conosco.php">Fale Conosco</a>
-                 </li>
-
-                 <li class="item_mobile_two">
-                   <a href="<?= $path ?>trabalhe_conosco.php">Trabalhe Conosco</a>
-                 </li>
-
-              </ul>
-          </li>
-      </ul>
-</nav>
-
+  <div class="menu">
+    <ul>
+      <a href="<?= $hom ?>"><li>Home</li></a>
+      <a href="<?= $path ?>especialidades.php"><li>Especialidades</li></a>
+      <a href="<?= $path ?>ambientes.php"><li>Ambientes</li></a>
+      <a href="<?= $path ?>sobre_hhealth.php"><li>Sobre</li></a>
+      <a href="<?= $path ?>dicas_saude.php"><li>SAÚDE</li></a>
+      <a href="<?= $path ?>unidades_hhealth.php"><li>Unidades</li></a>
+      <a href="<?= $path ?>exames.php"><li>Exames</li></a>
+      <a href="<?= $path ?>convenios.php"><li>Convênios</li></a>
+      <a href="<?= $path ?>fale_conosco.php"><li>Fale Conosco</li></a>
+      <a href="<?= $path ?>trabalhe_conosco.php"><li>Trabalhe Conosco</li></a>
+    </ul>
+  </div>
+<!-- </div> -->
 
 <script>
     window.onscroll = function(){
@@ -252,4 +211,26 @@
         }
     }
 
+</script>
+
+<script>
+  $( document ).ready(function() {
+
+  $( ".cross" ).hide();
+  $( ".menu" ).hide();
+  $( ".hamburger" ).click(function() {
+  $( ".menu" ).slideToggle( "slow", function() {
+  $( ".hamburger" ).hide();
+  $( ".cross" ).show();
+  });
+  });
+
+  $( ".cross" ).click(function() {
+  $( ".menu" ).slideToggle( "slow", function() {
+  $( ".cross" ).hide();
+  $( ".hamburger" ).show();
+  });
+  });
+
+  });
 </script>

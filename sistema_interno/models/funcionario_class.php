@@ -122,6 +122,7 @@ class Funcionario{
 			}else {
 				//Mensagem de erro
 				echo "Error ao selecionar no Banco de Dados";
+                echo $sql;
 			}
 
 			//Fecha a conexão com o banco de dados

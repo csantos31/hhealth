@@ -132,10 +132,10 @@ require('../verifica.php');
                                           <div class="item_tabela"><?= $list[$cont]->nome ?> <?= $list[$cont]->sobrenome ?></div>
                                           <div class="item_tabela"><?= $list[$cont]->cpf ?> </div>
                                           <div class="item_tabela icones_tabela">
-                                              <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_cargo);?>)">
+                                              <a href="#" class="editar" onclick="Editar(<?php echo($list[$cont]->id_funcionario);?>)">
                                                   <img src="../imagens/edit.png" alt="editar" title="editar">
                                               </a>
-                                              <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_cargo);?>)">
+                                              <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_funcionario);?>)">
                                                   <img src="../imagens/shutdown.png" alt="excluir" title="excluir">
                                               </a>
                                           </div>
