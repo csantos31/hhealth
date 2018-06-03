@@ -23,7 +23,23 @@
       public function Cartao_Boleto(){
 
         if (isset($_POST['txt_submit_boleto'])) {
-          header('location: boletophp-master/boleto_bradesco.php');
+
+          // require_once 'boletophp-master/boleto_bradesco.php';
+
+          // $pagamento_boleto = new boletoBradesco();
+          //
+          // $pagamento_boleto->nome = $_POST['txt_nome'];
+          // $pagamento_boleto->cpf = $_POST['txt_cpf'];
+          // $pagamento_boleto->email = $_POST['txt_email'];
+          // $pagamento_boleto->valor = $_POST['txt_valor'];
+
+
+
+          header('location: views/pagamentos.php');
+
+          // $pagamento_boleto = $pagamento_boleto::gerar_boleto($pagamento_boleto);
+
+
           // code...
         }else {
           require_once 'views/api_pagarme.php';

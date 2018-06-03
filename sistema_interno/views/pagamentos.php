@@ -91,7 +91,7 @@
                            Valor: <input type="number" name="txt_valor" value="">
                            <br>
                          </div>
-                         <input type="submit" name="txt_submit_boleto" value="Imprimir">
+                         <input type="submit" name="txt_submit_boleto" value="Imprimir" onclick="boleto()">
                        </div>
                        <a href="pagamentos.php">
                          <div class="voltar_menu_pagamentos">
