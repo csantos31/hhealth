@@ -171,8 +171,8 @@
 
 
 
-<!--
 <div class="menu_mobile">
+<!--
     HOSPITAL -->
   <header>
   	<!-- <span>Author : <a href="http://glennsmith.me" target="_blank">Glenn Smith</a></span> -->
@@ -194,7 +194,7 @@
       <a href="<?= $path ?>trabalhe_conosco.php"><li>Trabalhe Conosco</li></a>
     </ul>
   </div>
-<!-- </div> -->
+</div>
 
 <script>
     window.onscroll = function(){
