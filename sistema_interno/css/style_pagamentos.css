@@ -90,7 +90,7 @@ p{
   padding-left: 40px;
 }
 
-#suporte_dados_cartao{
+#suporte_dados_cartao, #suporte_dados_boleto{
   min-height: 300px;
   height: auto;
   width: 100%;

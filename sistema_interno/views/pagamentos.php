@@ -80,7 +80,24 @@
                      </div>
 
                      <div id="suporte_dados_boleto">
-                       assa
+                       <div class="campos_pagamento_cartao">
+                         <div class="">
+                           Nome: <input type="text" name="txt_nome" value="" >
+                           <br>
+                           CPF: <input type="number" name="txt_cpf" value="">
+                           <br>
+                           Email: <input type="email" name="txt_email" value="">
+                           <br>
+                           Valor: <input type="number" name="txt_valor" value="">
+                           <br>
+                         </div>
+                         <input type="submit" name="txt_submit_boleto" value="Imprimir">
+                       </div>
+                       <a href="pagamentos.php">
+                         <div class="voltar_menu_pagamentos">
+                           Voltar
+                         </div>
+                       </a>
                      </div>
 
 

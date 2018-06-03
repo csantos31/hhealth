@@ -20,21 +20,28 @@
       }
 
 
-      public function Cartao(){
+      public function Cartao_Boleto(){
 
-        require_once 'views/api_pagarme.php';
+        if (isset($_POST['txt_submit_boleto'])) {
+          header('location: boletophp-master/boleto_bradesco.php');
+          // code...
+        }else {
+          require_once 'views/api_pagarme.php';
 
-        $pagamento_cartao = new PagamentoPagarme();
+          $pagamento_cartao = new PagamentoPagarme();
 
-        $pagamento_cartao->nome = $_POST['txt_nome'];
-        $pagamento_cartao->cpf = $_POST['txt_cpf'];
-        $pagamento_cartao->email = $_POST['txt_email'];
-        $pagamento_cartao->celular = $_POST['txt_celular'];
-        $pagamento_cartao->cartao = $_POST['txt_cartao'];
-        $pagamento_cartao->senha_cartao = $_POST['txt_senha_cartao'];
-        $pagamento_cartao->valor = $_POST['txt_valor'];
+          $pagamento_cartao->nome = $_POST['txt_nome'];
+          $pagamento_cartao->cpf = $_POST['txt_cpf'];
+          $pagamento_cartao->email = $_POST['txt_email'];
+          $pagamento_cartao->celular = $_POST['txt_celular'];
+          $pagamento_cartao->cartao = $_POST['txt_cartao'];
+          $pagamento_cartao->senha_cartao = $_POST['txt_senha_cartao'];
+          $pagamento_cartao->valor = $_POST['txt_valor'];
 
-        $pagamento_cartao = $pagamento_cartao::Pagar($pagamento_cartao);
+          $pagamento_cartao = $pagamento_cartao::Pagar($pagamento_cartao);
+        }
+
+
       }
 
   }

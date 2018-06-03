@@ -480,21 +480,13 @@
             break;
             case 'pagamento':
                 switch($modo){
-                        // case 'gerar_boleto':
-                        //     require_once('controllers/gerar_boleto_controller.php');
-                        //     require_once('boletophp-master/boleto_itau.php');
-                        //
-                        //     $controller_agendamento = new GerarBoleto();
-                        //     $controller_agendamento::GerandoBoleto();
-                        //
-                        // break;
 
                         case 'cartao':
                         require_once('controllers/formas_pagamentos.php');
                         // require_once('boletophp-master/boleto_itau.php');
 
                         $controller_agendamento = new Pagamentos();
-                        $controller_agendamento::Cartao();
+                        $controller_agendamento::Cartao_Boleto();
                           break;
                 }
                 break;
