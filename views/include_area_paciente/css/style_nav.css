@@ -1,3 +1,4 @@
+@media screen and (min-device-width: 1024px){
 /*
   Data:24/03/2018
   Desenvolvedor: Gleyver Coutinho Castro
@@ -35,7 +36,7 @@ background: #727070;
 #header_area_paciente{
     height: 200px;
     width: 100%;
-    
+
     z-index: 2;
 /*    position: absolute;*/
 }
@@ -131,7 +132,7 @@ background: #727070;
 
 #suporte_figure_logo img{
   height: 150px;
-  width: 150px; 
+  width: 150px;
 }
 
 /*---------------------------  menu da página -------------------------------*/
@@ -139,7 +140,7 @@ background: #727070;
   height: 60px;
   width: 100%;
   /*background-color: #F35140;*/
-    
+
 }
 
 /* Limitação do menu da página */
@@ -148,7 +149,7 @@ background: #727070;
     width: 100%;
     margin: auto;
 /*    background-color: #ccc;*/
-    
+
 }
 
 /* Para poder da o margin top*/
@@ -174,7 +175,7 @@ background: #727070;
     /*    background: #c2c2c2;*/
     z-index: 2;
     position: absolute;
-  
+
 }
 
 
@@ -188,7 +189,7 @@ background: #727070;
   list-style: none;
   padding-left: 50px;
 opacity: 1;
-    
+
 }
 .area{
     opacity:1;
@@ -196,23 +197,8 @@ opacity: 1;
 }
 /* Itens do menu */
 .item_menu{
-<<<<<<< HEAD
-    height: 40px;
-    width: 160px;
-    float: left;
-    margin-left: 15px;
-    /*    background-color: #c0c0c0;*/
-    color:#d11b1b;
-    list-style: none;
-    opacity: 1;
-    font-size: 30px;
-    line-height:50px;
-    padding-left: 40px;
-    
-    
-=======
-  height: 30px;
-  width: 160px;
+  height: 50px;
+  width: 210px;
   float: left;
   font-size: 14px;
   font-weight: bold;
@@ -221,8 +207,8 @@ opacity: 1;
   margin-left: 15px;
   background-color: #c0c0c0;
   list-style: none;
-  padding-left: 40px;
->>>>>>> 420c4afc7e53f913152ade9049f337035e5ef00e
+  text-align: center;
+  line-height: 50px;
 }
 
 #item_menu_historico{
@@ -251,4 +237,242 @@ a{
   font-size: 14px;
   font-weight: bold;
   font-family:Font Fabric;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-device-width: 520px) {
+
+      *{
+        margin:0px;
+        padding: 0px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+
+
+      body{
+          width:100%;
+          height:auto;
+      }
+
+      /* -------------------------------Cabeçalho da página ------------------------------*/
+      .opcaity_header{
+            width: 100%;
+            height: 140px;
+            position: absolute;
+            z-index: 1;
+            background: #727070;
+            opacity: 0.4;
+      }
+
+      #header_area_paciente{
+            width: 100%;
+            height: 100px;
+            z-index: 2;
+      }
+
+      /* div a qual segura itens do cabeçalho*/
+      #suporte_header{
+        height:140px;
+        width: 100%;
+        margin: auto;
+      }
+
+
+      /* Segura parte da imagem, "Bem vindo"*/
+      #suporte_parte_paciente{
+          height: 100px;
+          width: 60%;
+          margin-left: 40vw;
+          z-index: 2;
+          position:absolute;
+          font-size: 14px;
+          font-weight: bold;
+          font-family:Font Fabric;
+          margin-top: 20px;
+          color: white;
+
+      }
+
+
+      /*segura texto bem vindo*/
+      #suporte_texto_bem_vindo{
+          height: 30px;
+          width: 150px;
+          float: right;
+          margin-top: 10px;
+          margin-left: 5px;
+
+      }
+
+      /* Segura a parte de logout */
+      #suporte_logout{
+        height:30px;
+        width: 60px;
+        margin: auto;
+
+      }
+
+      /* div logout */
+      #logout_area_usuario{
+        height: 30px;
+        width: 100%;
+        margin-top: 40px;
+      /*  font-weight: bold;*/
+          font-size: 16px;
+        font-weight: bold;
+        font-family:Font Fabric;
+          color:white;
+      }
+
+      /* foto do paciente */
+      #figure_paciente{
+        height: 50px;
+        width: 50px;
+        /*background-color: #000;*/
+        margin-top: 10px;
+      }
+
+      #figure_paciente img{
+        height: 50px;
+        width: 50px;
+      }
+
+      /*Imagem_logo*/
+      #suporte_imagem{
+          height: 115px;
+          width: 100px;
+          margin-left: 10px;
+          z-index: 2;
+
+      }
+      /* Figura do logo do cabeçalho */
+      #suporte_figure_logo{
+        height: 100px;
+        width: 100px;
+      }
+
+      #suporte_figure_logo img{
+        height: 100px;
+        width: 100px;
+      }
+
+      /*---------------------------  menu da página -------------------------------*/
+      #nav_area_paciente{
+        height: 60px;
+        width: 100%;
+        margin-top: -60px;
+        /*background-color: #F35140;*/
+
+      }
+
+      /* Limitação do menu da página */
+      #content_nav{
+          height: 55px;
+          width: 100%;
+          margin: auto;
+      /*    background-color: #ccc;*/
+
+      }
+
+      /* Para poder da o margin top*/
+      #faixa_invisivel{
+          width: 100%;
+          height: 50px;
+          position: absolute;
+          z-index: 1;
+          opacity: 0.5;
+         background: #727070;
+      }
+
+      .menu{
+         height: 50px;
+          width: 100%;
+          margin:auto;
+          display: none;
+          /*    background: #c2c2c2;*/
+      }
+      /* Segura o menu*/
+      #suporte_menu{
+          height: 50px;
+          width: 100%;
+          /*    background: #c2c2c2;*/
+          z-index: 2;
+          position: absolute;
+
+      }
+
+
+      /*--------------- Formatando menu ----------*/
+      #item_menu_agendamento{
+        height: 30px;
+        width: 150px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 50px;
+      opacity: 1;
+
+      }
+      .area{
+          opacity:1;
+          color:black;
+      }
+      /* Itens do menu */
+      .item_menu{
+            height: 30px;
+            width: 160px;
+            float: left;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: verdana;
+            color: black;
+            margin-left: 15px;
+            background-color: #c0c0c0;
+            list-style: none;
+            padding-left: 40px;
+      }
+
+      #item_menu_historico{
+        height: 30px;
+        width: 180px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      #item_menu_receita{
+        height: 30px;
+        width: 130px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 70px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        font-family:Font Fabric;
+      }
 }

@@ -1,139 +1,270 @@
-#content_receitas{
-    width:1000px;
-    min-height:800px;
-    height:auto;
-    margin:auto;
-    background-color:#F1EFEF;
+@media screen and (min-device-width: 1024px){
+      #content_receitas{
+          width:1000px;
+          min-height:800px;
+          height:auto;
+          margin:auto;
+          background-color:#F1EFEF;
+      }
+
+      .titulo_receitas{
+          width:1000px;
+          height:38px;
+          margin-top:10px;
+          text-align: center;
+          padding-top:12px;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .conteudo_receitas{
+          width:1000px;
+          min-height: 500px;
+          height:auto;
+
+      }
+
+      .content_titulo_receita{/*content titulo receita*/
+          width:1000px;
+          height:50px;
+          margin-top:15px;
+      }
+
+      .titulo_nome{
+          width:550px;
+          height:40px;
+          margin-left:10px;
+          color: black;
+          padding-top:10px;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .titulo_data{
+          width:250px;
+          height:40px;
+          margin-left:10px;
+          padding-top:10px;
+          float:left;
+          color: black;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .titulo_acao_receita{
+          width:150px;
+          height:40px;
+          margin-left:10px;
+          padding-top:10px;
+          float:left;
+          color: black;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .content_conteudo_receitas{/*content conteudo receitas*/
+          width:1000px;
+          height:50px;
+          margin-top:10px;
+      }
+
+      .content_nome{
+          width:550px;
+          height:50px;
+          margin-left:10px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .content_data{
+          width:250px;
+          height:50px;
+          margin-left:10px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .acao_receita{
+          width:150px;
+          height:50px;
+          margin-left:10px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+          display:none;
+      }
+
+      .acao_receita img{
+          width:40px;
+          height:40px;
+          margin-left:50px;
+          margin-top:5px;
+      }
+
 }
 
-.titulo_receitas{
-    width:1000px;
-    height:38px;
-    margin-top:10px;
-    text-align: center;
-    padding-top:12px;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
+
+
+
+
+
+@media screen and (max-device-width: 520px) {
+      #content_receitas{
+          width:95%;
+          min-height:600px;
+          height:auto;
+          margin:auto;
+          background-color:#F1EFEF;
+      }
+
+      .titulo_receitas{
+          width:100%;
+          height:38px;
+          margin-top:10px;
+          text-align: center;
+          padding-top:12px;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .conteudo_receitas{
+          width:100%;
+          min-height: 500px;
+          height:auto;
+
+      }
+
+      .content_titulo_receita{/*content titulo receita*/
+          width:100%;
+          height:50px;
+          margin-top:15px;
+      }
+
+      .titulo_nome{
+          width:50%;
+          height:40px;
+          margin-left:10px;
+          color: black;
+          padding-top:10px;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .titulo_data{
+          width:42%;
+          height:40px;
+          margin-left:5px;
+          padding-top:10px;
+          float:left;
+          color: black;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .titulo_acao_receita{
+          width:150px;
+          height:40px;
+          margin-left:10px;
+          padding-top:10px;
+          float:left;
+          color: black;
+          font-size: 18px;
+          font-family: sans-serif;
+          text-align: center;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .content_conteudo_receitas{/*content conteudo receitas*/
+          width:100%;
+          height:50px;
+          margin-top:10px;
+      }
+
+      .content_nome{
+          width:50%;
+          height:50px;
+          margin-left:10px;
+          font-size: 12px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .content_data{
+          width:42%;
+          height:50px;
+          margin-left:5px;
+          font-size: 12px;
+          text-align: center;
+          line-height: 50px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+      }
+
+      .acao_receita{
+          width:150px;
+          height:50px;
+          margin-left:10px;
+          float:left;
+          border-top:solid 1px #000000;
+          border-left:solid 1px #000000;
+          border-right:solid 1px #000000;
+          border-bottom:solid 1px #000000;
+          display:none;
+      }
+
+      .acao_receita img{
+          width:40px;
+          height:40px;
+          margin-left:50px;
+          margin-top:5px;
+      }
+
 }
-
-.conteudo_receitas{
-    width:1000px;
-    min-height: 500px;
-    height:auto;
-   
-}
-
-.content_titulo_receita{/*content titulo receita*/
-    width:1000px;
-    height:50px;
-    margin-top:15px;
-}
-
-.titulo_nome{
-    width:550px;
-    height:40px;
-    margin-left:10px;
-    color: black;
-    padding-top:10px;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-align: center;
-    float:left;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-}
-
-.titulo_data{
-    width:250px;
-    height:40px;
-    margin-left:10px;
-    padding-top:10px;
-    float:left;
-    color: black;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-align: center;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-}
-
-.titulo_acao_receita{
-    width:150px;
-    height:40px;
-    margin-left:10px;
-    padding-top:10px;
-    float:left;
-    color: black;
-    font-size: 18px;
-    font-family: sans-serif;
-    text-align: center;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-}
-
-.content_conteudo_receitas{/*content conteudo receitas*/
-    width:1000px;
-    height:50px;
-    margin-top:10px;
-}
-
-.content_nome{
-    width:550px;
-    height:50px;
-    margin-left:10px;
-    float:left;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-}
-
-.content_data{
-    width:250px;
-    height:50px;
-    margin-left:10px;
-    float:left;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-}
-
-.acao_receita{
-    width:150px;
-    height:50px;
-    margin-left:10px;
-    float:left;
-    border-top:solid 1px #000000;
-    border-left:solid 1px #000000;
-    border-right:solid 1px #000000;
-    border-bottom:solid 1px #000000;
-    display:none;
-}
-
-.acao_receita img{
-    width:40px;
-    height:40px;
-    margin-left:50px;
-    margin-top:5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-

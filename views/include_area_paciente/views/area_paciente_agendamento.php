@@ -28,13 +28,13 @@ $dt_atual = date ("Y-m-d");
 
     include_once("../controllers/paciente_controller.php");
     include_once("../models/paciente_class.php");
-    
+
     $controller_paciente = new controllerPaciente();
-    $list = $controller_paciente::Buscar($_SESSION['id_paciente']); 
+    $list = $controller_paciente::Buscar($_SESSION['id_paciente']);
 
 
 
-    
+
         $dt_paciente=$list->dt_nasc;
         list($ano_paciente,$mes_paciente,$dia_paciente)=explode("-", $dt_paciente);
         list($ano_atual,$mes_atual,$dia_atual)=explode("-", $dt_atual);
@@ -63,12 +63,12 @@ $dt_atual = date ("Y-m-d");
     <meta charset="utf-8">
     <title>Agendamento</title>
     <link rel="stylesheet" href="../css/style_nav.css">
-      
+
     <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
-    
+    <meta name="viewport" content="initial-scale=1, maximun-scale=1">
     <!--mudar css de agendamento-->
     <link rel="stylesheet" type="text/css" href="../css/style_agendamento.css">
-    
+
     <link rel="stylesheet" href="../css/style_footer.css">
     <script src="../../../sistema_interno/js/jquery-3.2.1.min.js"></script>
 
@@ -215,7 +215,7 @@ $dt_atual = date ("Y-m-d");
       <div class="faixa_branca">
 
       </div>
-    
+
         <div class="titulo_agendamento">
             <strong>Agendamentos marcados</strong>
         </div>
@@ -253,7 +253,7 @@ $dt_atual = date ("Y-m-d");
             while($cont<count($list)){
         ?>
         <div class="content_conteudo_receitas"><!--receitas-->
-        
+
             <div class="content_nome"><!--nome-->
                 <?php echo($list[$cont]->funcionario)?>
             </div>
@@ -273,7 +273,7 @@ $dt_atual = date ("Y-m-d");
             <div class="content_hora"><!--hora-->
                 <?php echo($list[$cont]->hora)?>
             </div>
-        
+
         </div>
         <?php
             $cont++;
@@ -281,10 +281,10 @@ $dt_atual = date ("Y-m-d");
 
 
         ?>
-    </div>   
     </div>
-    
+    </div>
+
     <?php include_once('footer_paciente.php'); ?>
-    
+
   </body>
 </html>

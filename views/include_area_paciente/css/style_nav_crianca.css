@@ -1,185 +1,386 @@
-/*
-  Data:24/03/2018
-  Desenvolvedor: Gleyver Coutinho Castro
-  Obs: paginade estilização do cabeçalho e menu da pagína
-*/
+@media screen and (min-device-width: 1024px){
+      /*
+        Data:24/03/2018
+        Desenvolvedor: Gleyver Coutinho Castro
+        Obs: paginade estilização do cabeçalho e menu da pagína
+      */
 
-/*------------- Tags padrões -----------------*/
+      /*------------- Tags padrões -----------------*/
 
-/* Tag que modifica todas as divs */
-*{
-  margin:0px;
-  padding: 0px;
+      /* Tag que modifica todas as divs */
+      *{
+        margin:0px;
+        padding: 0px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+      /* -------------------------------Cabeçalho da página ------------------------------*/
+      #header_area_paciente{
+        height: 200px;
+        width: 100%;
+        background-color:rgb(176, 37, 39);
+      }
+
+      #faixa{
+        height: 40px;
+        width: 100%;
+        background-color: #F0F0F0;
+      }
+
+      /* div a qual segura itens do cabeçalho*/
+      #suporte_header{
+        height:200px;
+        width: 1200px;
+        background-color: #F0F0F0;
+        margin: auto;
+      }
+
+
+      /* Segura parte da imagem, "Bem vindo"*/
+      #suporte_parte_paciente{
+        height: 150px;
+        width: 330px;
+        background-color: #FFF;
+        float: right;
+        margin-right: 10px;
+      }
+
+      /*segura texto bem vindo*/
+      #suporte_texto_bem_vindo{
+        height: 30px;
+        width: 190px;
+        background-color: #FFF;
+        float: right;
+        margin-top: 30px;
+        margin-left: 5px;
+      }
+
+      /* Segura a parte de logout */
+      #suporte_logout{
+        height:30px;
+        width: 60px;
+        margin: auto;
+      }
+
+      /* div logout */
+      #logout_area_usuario{
+        height: 30px;
+        width: 100%;
+        margin-top: 40px;
+        font-weight: bold;
+      }
+
+      /* foto do paciente */
+      #figure_paciente{
+        height: 130px;
+        width: 130px;
+        /*background-color: #000;*/
+        margin-top: 20px;
+      }
+
+      #figure_paciente img{
+        height: 130px;
+        width: 130px;
+      }
+
+      /*Imagem_logo*/
+      #suporte_imagem{
+        height: 150px;
+        width: 150px;
+        background-color: #CCC;
+        margin-left: 50px;
+
+      }
+      /* Figura do logo do cabeçalho */
+      #suporte_figure_logo{
+        height: 150px;
+        width: 150px;
+      }
+
+      #suporte_figure_logo img{
+        height: 150px;
+        width: 150px;
+      }
+
+      /*---------------------------  menu da página -------------------------------*/
+      #nav_area_paciente{
+        height: 60px;
+        width: 100%;
+        /*background-color: #F35140;*/
+      }
+
+      /* Limitação do menu da página */
+      #content_nav{
+        height: 55px;
+        width: 1200px;
+        margin: auto;
+        background-color: #ccc;
+      }
+
+      /* Para poder da o margin top*/
+      #faixa_invisivel{
+        height: 0.1px;
+        width: 100%;
+      }
+
+      /* Segura o menu*/
+      #suporte_menu{
+        height: 50px;
+        width: 100%;
+        background: #c2c2c2;
+        margin-top: 10px;
+      }
+
+
+      /*--------------- Formatando menu ----------*/
+      #item_menu_agendamento{
+        height: 30px;
+        width: 150px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 50px;
+      }
+
+      /* Itens do menu */
+      .item_menu{
+        height: 30px;
+        width: 160px;
+        float: left;
+        margin-left: 15px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 40px;
+      }
+
+      #item_menu_historico{
+        height: 30px;
+        width: 180px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      #item_menu_receita{
+        height: 30px;
+        width: 130px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 70px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: verdana;
+      }
 }
 
-a{
-  text-decoration: none;
-}
-
-/* -------------------------------Cabeçalho da página ------------------------------*/
-#header_area_paciente{
-  height: 200px;
-  width: 100%;
-  background-color:rgb(176, 37, 39);
-}
-
-#faixa{
-  height: 40px;
-  width: 100%;
-  background-color: #F0F0F0;
-}
-
-/* div a qual segura itens do cabeçalho*/
-#suporte_header{
-  height:200px;
-  width: 1200px;
-  background-color: #F0F0F0;
-  margin: auto;
-}
 
 
-/* Segura parte da imagem, "Bem vindo"*/
-#suporte_parte_paciente{
-  height: 150px;
-  width: 330px;
-  background-color: #FFF;
-  float: right;
-  margin-right: 10px;
-}
-
-/*segura texto bem vindo*/
-#suporte_texto_bem_vindo{
-  height: 30px;
-  width: 190px;
-  background-color: #FFF;
-  float: right;
-  margin-top: 30px;
-  margin-left: 5px;
-}
-
-/* Segura a parte de logout */
-#suporte_logout{
-  height:30px;
-  width: 60px;
-  margin: auto;
-}
-
-/* div logout */
-#logout_area_usuario{
-  height: 30px;
-  width: 100%;
-  margin-top: 40px;
-  font-weight: bold;
-}
-
-/* foto do paciente */
-#figure_paciente{
-  height: 130px;
-  width: 130px;
-  /*background-color: #000;*/
-  margin-top: 20px;
-}
-
-#figure_paciente img{
-  height: 130px;
-  width: 130px;
-}
-
-/*Imagem_logo*/
-#suporte_imagem{
-  height: 150px;
-  width: 150px;
-  background-color: #CCC;
-  margin-left: 50px;
-
-}
-/* Figura do logo do cabeçalho */
-#suporte_figure_logo{
-  height: 150px;
-  width: 150px;
-}
-
-#suporte_figure_logo img{
-  height: 150px;
-  width: 150px; 
-}
-
-/*---------------------------  menu da página -------------------------------*/
-#nav_area_paciente{
-  height: 60px;
-  width: 100%;
-  /*background-color: #F35140;*/
-}
-
-/* Limitação do menu da página */
-#content_nav{
-  height: 55px;
-  width: 1200px;
-  margin: auto;
-  background-color: #ccc;
-}
-
-/* Para poder da o margin top*/
-#faixa_invisivel{
-  height: 0.1px;
-  width: 100%;
-}
-
-/* Segura o menu*/
-#suporte_menu{
-  height: 50px;
-  width: 100%;
-  background: #c2c2c2;
-  margin-top: 10px;
-}
 
 
-/*--------------- Formatando menu ----------*/
-#item_menu_agendamento{
-  height: 30px;
-  width: 150px;
-  float: left;
-  margin-left: 32px;
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 50px;
-}
 
-/* Itens do menu */
-.item_menu{
-  height: 30px;
-  width: 160px;
-  float: left;
-  margin-left: 15px;
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 40px;
-}
 
-#item_menu_historico{
-  height: 30px;
-  width: 180px;
-  float: left;
-  margin-left: 32px;
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 20px;
-}
 
-#item_menu_receita{
-  height: 30px;
-  width: 130px;
-  float: left;
-  margin-left: 32px;
-  background-color: #c0c0c0;
-  list-style: none;
-  padding-left: 70px;
-}
 
-a{
-  text-decoration: none;
-  color: #000;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: verdana;
+
+@media screen and (max-device-width: 520px) {
+      /*
+        Data:24/03/2018
+        Desenvolvedor: Gleyver Coutinho Castro
+        Obs: paginade estilização do cabeçalho e menu da pagína
+      */
+
+      /*------------- Tags padrões -----------------*/
+
+      /* Tag que modifica todas as divs */
+      *{
+        margin:0px;
+        padding: 0px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+
+      /* -------------------------------Cabeçalho da página ------------------------------*/
+      #header_area_paciente{
+            width: 100%;
+            height: 100px;
+            background-color:rgb(176, 37, 39);
+      }
+
+      #faixa{
+        height: 40px;
+        width: 100%;
+        background-color: #F0F0F0;
+      }
+
+      /* div a qual segura itens do cabeçalho*/
+      #suporte_header{
+        height:200px;
+        width: 1200px;
+        background-color: #F0F0F0;
+        margin: auto;
+      }
+
+
+      /* Segura parte da imagem, "Bem vindo"*/
+      #suporte_parte_paciente{
+        height: 150px;
+        width: 330px;
+        background-color: #FFF;
+        float: right;
+        margin-right: 10px;
+      }
+
+      /*segura texto bem vindo*/
+      #suporte_texto_bem_vindo{
+        height: 30px;
+        width: 190px;
+        background-color: #FFF;
+        float: right;
+        margin-top: 30px;
+        margin-left: 5px;
+      }
+
+      /* Segura a parte de logout */
+      #suporte_logout{
+        height:30px;
+        width: 60px;
+        margin: auto;
+      }
+
+      /* div logout */
+      #logout_area_usuario{
+        height: 30px;
+        width: 100%;
+        margin-top: 40px;
+        font-weight: bold;
+      }
+
+      /* foto do paciente */
+      #figure_paciente{
+        height: 130px;
+        width: 130px;
+        /*background-color: #000;*/
+        margin-top: 20px;
+      }
+
+      #figure_paciente img{
+        height: 130px;
+        width: 130px;
+      }
+
+      /*Imagem_logo*/
+      #suporte_imagem{
+        height: 150px;
+        width: 150px;
+        background-color: #CCC;
+        margin-left: 50px;
+
+      }
+      /* Figura do logo do cabeçalho */
+      #suporte_figure_logo{
+        height: 150px;
+        width: 150px;
+      }
+
+      #suporte_figure_logo img{
+        height: 150px;
+        width: 150px;
+      }
+
+      /*---------------------------  menu da página -------------------------------*/
+      #nav_area_paciente{
+        height: 60px;
+        width: 100%;
+        /*background-color: #F35140;*/
+      }
+
+      /* Limitação do menu da página */
+      #content_nav{
+        height: 55px;
+        width: 1200px;
+        margin: auto;
+        background-color: #ccc;
+      }
+
+      /* Para poder da o margin top*/
+      #faixa_invisivel{
+        height: 0.1px;
+        width: 100%;
+      }
+
+      /* Segura o menu*/
+      #suporte_menu{
+        height: 50px;
+        width: 100%;
+        background: #c2c2c2;
+        margin-top: 10px;
+      }
+
+
+      /*--------------- Formatando menu ----------*/
+      #item_menu_agendamento{
+        height: 30px;
+        width: 150px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 50px;
+      }
+
+      /* Itens do menu */
+      .item_menu{
+        height: 30px;
+        width: 160px;
+        float: left;
+        margin-left: 15px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 40px;
+      }
+
+      #item_menu_historico{
+        height: 30px;
+        width: 180px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 20px;
+      }
+
+      #item_menu_receita{
+        height: 30px;
+        width: 130px;
+        float: left;
+        margin-left: 32px;
+        background-color: #c0c0c0;
+        list-style: none;
+        padding-left: 70px;
+      }
+
+      a{
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        font-weight: bold;
+        font-family: verdana;
+      }
+
 }
