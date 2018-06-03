@@ -707,7 +707,9 @@
 
 @media screen and (max-device-width: 520px) {
 
-
+  /* .caixa_login_home{
+    display: none;
+  } */
       .w3-display-container{
             height: 300px;
       }

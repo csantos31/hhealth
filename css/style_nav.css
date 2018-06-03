@@ -1,5 +1,8 @@
 @media screen and (min-device-width: 1200px){
 
+  .menu_mobile{
+    display: none;
+  }
   a{
     color: #FFF;
   }
@@ -253,239 +256,79 @@ label[for="btn_menu"]{
 }
 
 
-
-
-
-
-
-
-
-
-
-
 @media screen and (max-device-width: 520px){
 
-
-
-      #menu_secundario{
-            display: none;
-      }
-
-  .header {
-        width: 100%;
-        height: 70px;
-        margin: auto;
-        position: fixed;
-        background-color: white;
-  }
-
-  .separador_responsivo{
-    width: 100%;
-    height: 70px;
-  }
-
-  .logo {
-        width: 70px;
-        height: 70px;
-        background-image: url(../imagens/logo_only_heart.png);
-        background-size: 70px;
-        padding: 0px;
-        float: left;
-
-  }
-
-  .logo_marca{
-      display: none;
-  }
-
-  .logo_marca_responsivo{
-      width: 30px;
-      height: 70px;
-      line-height: 70px;
-      margin-left: 5px;
-      margin-right: 40px;
-      text-decoration: none;
-      float: left;
-      color: #DA0000;
-      font-weight: bold;
-      font-size: 18px;
-      font-family: verdana;
-  }
-
-  .nav_menu{
-        width: 100%;
-        min-height: 50px;
-        height: auto;
-        float: right;
-        z-index: 999;
-        display: none;
-  }
-
-  .menu_nav{
-        width: 100%;
-        height: auto;
-        min-height: 50px;
-        margin-right: 15px;
-        padding: 0px;
-        text-align: center;
-        margin-top: 25px;
-        display: none;
-
-  }
-
-  .menu_nav li{
-      color: #DA0000;
-  }
-
-
-
-  li{
-    text-align: center;
-  }
-
-  a{
-    list-style: none;
-    color: black;
-    text-decoration: none;
-  }
-
-  .submenu_nav_hhealth{
-        display: none;
-
-  }
-
-  .submenu_nav_contatos{
-        display: none;
-  }
-
-  #menu_secundario{
+  .header{
     display: none;
   }
+  .menu_mobile{
+    display: block;
+  }
 
-}
+  body{
+    font-family: 'Noto Sans', sans-serif;
+  	margin:0;
+  	width:100%;
+  	height:100vh;
+    	background:#ffffff;
+  	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+  }
+  header{
+  	width:100%;
+  	background:#ffffff;
+  	height:60px;
+  	line-height:60px;
+  	border-bottom:1px solid #dddddd;
+  }
+  .hamburger{
+    background:none;
+    position:absolute;
+    top:0;
+    right:0;
+    line-height:45px;
+    padding:5px 15px 0px 15px;
+    color:#999;
+    border:0;
+    font-size:1.4em;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+  }
+  .cross{
+    background:none;
+    position:absolute;
+    top:0px;
+    right:0;
+    padding:7px 15px 0px 15px;
+    color:#999;
+    border:0;
+    font-size:3em;
+    line-height:65px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:10000000000000;
+  }
+  .menu{z-index:1000000; font-weight:bold; font-size:0.8em; width:100%; background:#f1f1f1;  position:absolute; text-align:center; font-size:12px;}
+  .menu ul {margin: 0; padding: 0; list-style-type: none; list-style-image: none;}
+  .menu li {display: block;   padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+  .menu li:hover{display: block;    background:#ffffff; padding:15px 0 15px 0; border-bottom:#dddddd 1px solid;}
+  .menu ul li a { text-decoration:none;  margin: 0px; color:#666;}
+  .menu ul li a:hover {  color: #666; text-decoration:none;}
+  .menu a{text-decoration:none; color:#666;}
+  .menu a:hover{text-decoration:none; color:#666;}
 
-
-@media screen and (max-device-width: 520px){
-
-      #btn_menu{
-              /* display: block; */
-          }
-
-      label[for="btn_menu"]{
-            color: #999999;
-            text-align: center;
-            font-size: 55px;
-            cursor: pointer;
-            width: 70px;
-            height: 70px;
-            display: block;
-            margin-top: 0px;
-            float: right;
-    }
-
-    .menu_mobile{
-          width: 100%;
-          height: 100%;
-    }
-
-
-    .nav_mobile{
-          width: 90vw;
-          min-height: 305px;
-          height: auto;
-          position: fixed;
-          margin-top: 70px;
-          background-color: aliceblue;
-          margin-left: 10vw;
-          float: right;
-          z-index: 999;
-          display: none;
-    }
-
-
-        #btn_menu:checked ~ .nav_mobile {
-              height: 70px;
-             z-index: 999;
-             position: fixed;
-             z-index: 999;
-             margin-left: 10vw;
-             margin-top: 50px;
-             display: block;
-          }
-
-
-
-      .item_mobile{
-            width: 100%;
-            min-height: 50px;
-            height: auto;
-            border-bottom: solid  1px #eaecef;
-            font-family: sans-serif;
-            font-size: 16px;
-            line-height: 50px;
-            font-weight: bold;
-            color: #DA0000;
-            list-style: none;
-      }
-
-      .submenu_mobile_hhealth{
-            display: none;
-      }
-
-      #btn_menu:checked> .menu_mobile{
-            width: 90vw;
-           min-height: 305px;
-           height: auto;
-           position: fixed;
-           margin-top: 70px;
-           background-color: aliceblue;
-           margin-left: 10vw;
-           float: right;
-           z-index: 999;
-           display: block;
-      }
-
-      .menu_mobile li:hover>.submenu_mobile_hhealth{
-            width: 100%;
-            min-height: 50px;
-            height: auto;
-            border-bottom: 1px;
-            font-family: sans-serif;
-            font-size: 32px;
-            line-height: 100px;
-            font-weight: bold;
-            color: #DA0000;
-            display: block;
-      }
-
-      .submenu_mobile_contatos{
-            display: none;
-      }
-
-      .menu_mobile li:hover>.submenu_mobile_contatos{
-            width: 100%;
-            min-height: 50px;
-            height: auto;
-            border-bottom: 1px;
-            font-family: sans-serif;
-            font-size: 32px;
-            line-height: 100px;
-            font-weight: bold;
-            color: #DA0000;
-            display: block;
-      }
-
-      .item_mobile_two{
-            width: 100%;
-            min-height: 50px;
-            height: auto;
-            border-bottom: 1px;
-            font-family: sans-serif;
-            font-size: 18px;
-            line-height: 50px;
-            font-weight: bold;
-            color: #DA0000;
-      }
+  .glyphicon-home{
+    color:white;
+    font-size:1.5em;
+    margin-top:5px;
+    margin:0 auto;
+  }
+  header{display:inline-block; font-size:12px;}
+  span{padding-left:20px;}
+  a{color:#336699;}
 
 
 }

@@ -15,6 +15,7 @@
         <link rel="stylesheet" type="text/css" href="../css/style_footer.css">
         <link rel="stylesheet" type="text/css" href="../css/style_unidades_hhealth.css">
         <meta name="viewport" content="initial-scale=1, maximun-scale=1">
+        <script src="../js/jquery-3.2.1.min.js"></script>
         <title>Hospital HHealth</title>
         <script>
         // Guardo valores de um array do php em variaveis do JavaScript
