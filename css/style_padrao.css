@@ -1237,6 +1237,7 @@
           border-radius: 20px;
           background-size: 350px 300px;
           background-repeat: no-repeat;
+          display: none;
       }
 
       #caixa_login_home label{

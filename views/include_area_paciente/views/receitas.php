@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="../css/style_nav.css">
     <link rel="stylesheet" href="../css/style_receitas.css">
     <link rel="stylesheet" href="../css/style_footer.css">
-
+    <meta name="viewport" content="initial-scale=1, maximun-scale=1">
     <script src="../../sistema_interno/js/jquery-3.2.1.min.js"></script>
     <script>/*Modal*/
       $(document).ready(function(){

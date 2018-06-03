@@ -65,7 +65,7 @@ $dt_atual = date ("Y-m-d");
     <link rel="stylesheet" href="../css/style_nav.css">
 
     <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
-
+    <meta name="viewport" content="initial-scale=1, maximun-scale=1">
     <!--mudar css de agendamento-->
     <link rel="stylesheet" type="text/css" href="../css/style_agendamento.css">
 
