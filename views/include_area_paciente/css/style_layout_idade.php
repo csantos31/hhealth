@@ -1,6 +1,6 @@
 
 <?php
-   
+
     header("Content-type: text/css; charset: UTF-8");
     session_start();
     date_default_timezone_set('America/Sao_Paulo');
@@ -15,13 +15,13 @@
 
     include_once("../controllers/paciente_controller.php");
     include_once("../models/paciente_class.php");
-    
+
     $controller_paciente = new controllerPaciente();
-    $list = $controller_paciente::Buscar($_SESSION['id_paciente']); 
+    $list = $controller_paciente::Buscar($_SESSION['id_paciente']);
 
 
 
-    
+
     $dt_paciente=$list->dt_nasc;
 
     //pega o dia, o mes e o ano da dt_nasc do paciente
@@ -45,8 +45,8 @@
             $background="../imagens/background_hospital.jpeg";
         }
     }
-        
-    
+
+
 
 ?>
 
