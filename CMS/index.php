@@ -7,7 +7,7 @@
     }
 
     if($_SESSION['id_funcionario']>0){
-         header('location:views_cms/tipo_quarto.php');
+         header('location:views_cms/crud_home.php');
    }else {
          // code...
          header('location:login.php'); 

@@ -393,7 +393,14 @@
                         $controller_gerenciamento_sobre::Editar();
 
                         break;
+                        
+                    case 'ativar':
+                        $controller_gerenciamento_sobre = new controllerSobre();
 
+                        $controller_gerenciamento_sobre::Ativar();
+
+                        break;
+                        
                     case 'desativar':
                         $controller_gerenciamento_sobre = new controllerSobre();
 

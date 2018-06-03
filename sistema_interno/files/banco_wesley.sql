@@ -1,10 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS `hhealth` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `hhealth`;
--- MySQL dump 10.13  Distrib 5.7.9, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: hhealth
 -- ------------------------------------------------------
--- Server version	5.6.10-log
+-- Server version	5.7.18-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -217,7 +217,7 @@ CREATE TABLE `tbl_auditoria` (
   `usuario` varchar(45) DEFAULT NULL,
   `acao` text,
   PRIMARY KEY (`id_auditoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -226,7 +226,7 @@ CREATE TABLE `tbl_auditoria` (
 
 LOCK TABLES `tbl_auditoria` WRITE;
 /*!40000 ALTER TABLE `tbl_auditoria` DISABLE KEYS */;
-INSERT INTO `tbl_auditoria` VALUES (1,'2018-04-26','10:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(2,'2018-04-26','10:25','1',' O usuario [josé], [inseriu] um usuário no banco '),(3,'2018-04-26','10:55','1',' O usuario [josé], [inseriu] um usuário no banco '),(4,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(5,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(6,'2018-04-26','10:57','1',' O usuario [josé], [inseriu] um usuário no banco '),(7,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(8,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(9,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(10,'2018-05-01','16:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(11,'2018-05-15','08:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(12,'2018-05-15','08:45','1',' O usuario [josé], [inseriu] um usuário no banco '),(13,'2018-05-15','08:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(14,'2018-05-15','08:50','1',' O usuario [josé], [inseriu] um usuário no banco '),(15,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(16,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(17,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(18,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(19,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(20,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(21,'2018-05-15','10:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(22,'2018-05-24','10:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(23,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(24,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(25,'2018-05-24','10:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(26,'2018-05-24','11:06','1',' O usuario [josé], [inseriu] um usuário no banco '),(27,'2018-05-24','11:08','1',' O usuario [josé], [inseriu] um usuário no banco ');
+INSERT INTO `tbl_auditoria` VALUES (1,'2018-04-26','10:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(2,'2018-04-26','10:25','1',' O usuario [josé], [inseriu] um usuário no banco '),(3,'2018-04-26','10:55','1',' O usuario [josé], [inseriu] um usuário no banco '),(4,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(5,'2018-04-26','10:56','1',' O usuario [josé], [inseriu] um usuário no banco '),(6,'2018-04-26','10:57','1',' O usuario [josé], [inseriu] um usuário no banco '),(7,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(8,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(9,'2018-05-01','16:13','1',' O usuario [josé], [inseriu] um usuário no banco '),(10,'2018-05-01','16:16','1',' O usuario [josé], [inseriu] um usuário no banco '),(11,'2018-05-15','08:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(12,'2018-05-15','08:45','1',' O usuario [josé], [inseriu] um usuário no banco '),(13,'2018-05-15','08:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(14,'2018-05-15','08:50','1',' O usuario [josé], [inseriu] um usuário no banco '),(15,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(16,'2018-05-15','08:52','1',' O usuario [josé], [inseriu] um usuário no banco '),(17,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(18,'2018-05-15','08:53','1',' O usuario [josé], [inseriu] um usuário no banco '),(19,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(20,'2018-05-15','08:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(21,'2018-05-15','10:54','1',' O usuario [josé], [inseriu] um usuário no banco '),(22,'2018-05-24','10:40','1',' O usuario [josé], [inseriu] um usuário no banco '),(23,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(24,'2018-05-24','10:41','1',' O usuario [josé], [inseriu] um usuário no banco '),(25,'2018-05-24','10:47','1',' O usuario [josé], [inseriu] um usuário no banco '),(26,'2018-05-24','11:06','1',' O usuario [josé], [inseriu] um usuário no banco '),(27,'2018-05-24','11:08','1',' O usuario [josé], [inseriu] um usuário no banco '),(28,'2018-06-02','18:51','1',' O usuario [josé], [inseriu] um usuário no banco '),(29,'2018-06-02','19:18','1',' O usuario [josé], [inseriu] um usuário no banco '),(30,'2018-06-02','19:19','1',' O usuario [josé], [inseriu] um usuário no banco '),(31,'2018-06-02','19:23','1',' O usuario [josé], [inseriu] um usuário no banco '),(32,'2018-06-02','19:26','1',' O usuario [josé], [inseriu] um usuário no banco '),(33,'2018-06-02','20:10','1',' O usuario [josé], [inseriu] um usuário no banco ');
 /*!40000 ALTER TABLE `tbl_auditoria` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +302,7 @@ CREATE TABLE `tbl_cargo` (
   PRIMARY KEY (`id_cargo`),
   KEY `fk_nivel_cargo_idx` (`id_nivel_funcionario`),
   CONSTRAINT `fk_nivel_cargo` FOREIGN KEY (`id_nivel_funcionario`) REFERENCES `tbl_nivel_funcionario` (`id_nivel_funcionario`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -311,7 +311,7 @@ CREATE TABLE `tbl_cargo` (
 
 LOCK TABLES `tbl_cargo` WRITE;
 /*!40000 ALTER TABLE `tbl_cargo` DISABLE KEYS */;
-INSERT INTO `tbl_cargo` VALUES (1,2,'Chefe Administrativo ','chefia os bgkh tudo',1),(2,2,'cargo','cargo sem descrição ',0),(3,2,'chefe chefe','asdas',1);
+INSERT INTO `tbl_cargo` VALUES (1,2,'Chefe Administrativo ','chefia os bgkh tudo',0),(2,2,'cargo','cargo sem descrição ',0),(3,7,'chefe não acessa senha','asdas 2',1),(4,6,'administrador','teste',1),(5,8,'nada','nada',1);
 /*!40000 ALTER TABLE `tbl_cargo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -669,7 +669,7 @@ CREATE TABLE `tbl_exame` (
 
 LOCK TABLES `tbl_exame` WRITE;
 /*!40000 ALTER TABLE `tbl_exame` DISABLE KEYS */;
-INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Exame de pé','                                \r\n                          Este é um exame de pé feito por pessoas','                                \r\n          Tem que ter um pé para fazer esse exame.                  ',0,0),(3,'Exame de Vista','                     É um exame feito para comprovar se o paciente tem algum problema de visão.           \r\n                            ','                                \r\n                            Caso o paciente use ente deverá ir sem no dia ou tirar no hospital.',0,0),(4,'Exame de braço','Um exame de braço é feito para fazer um teste no braço                           \r\n                            ','                                \r\n                            ',0,1),(5,'HEMOGRAMA','                                \r\n               O hemograma é o exame para avaliar as três principais linhagens de células do sangue (hemácias, leucócitos e plaquetas). É o mais complexo e o que merece maiores explicações. Concentre-se apenas naqueles que explicarei.             ','                                \r\n                            Estar em jejum, não beber água nas duas horas que antecede o exame. ',0,1),(6,'Hemácias (glóbulos vermelhos)','                                \r\n                            São levados em conta principalmente os valores do hematócrito e da hemoglobina. Valores um pouco fora da faixa de referência podem não ter significado clínico. Mulheres podem ter hematócrito/hemoglobina um pouco mais baixo devido a perdas de sangue na menstruação. Fumantes costumam tê-los um pouco elevado devido a pior oxigenação do sangue pelos seus pulmões. Repito: esses valores devem sempre ser interpretados','                                \r\n                            Não tomar remédio antes.',0,1),(7,'Plaquetas','                             São as células responsáveis pelo processo de coagulação do sangue. Elevações são chamadas de trombocitose e a diminuição de trombocitopenia. Pacientes com plaquetas muito baixas são mais propensos a sangramentos. Plaquetas muito elevadas podem favorecer a formação de trombos.   \r\n                            ','                                \r\n                            ',0,1),(8,'COLESTEROL','      O colesterol total é composto da soma das frações HDL+LDL+VLDL.\r\n\r\nHDL – colesterol bom. Protege os vasos da aterosclerose (Placas de gordura). Quanto mais elevado melhor.\r\n\r\nLDL e VLDL – Colesterol ruim, formador da aterosclerose que obstrui os vasos sanguíneos e leva a doenças como infarto. Quanto mais baixo melhor.\r\n\r\nTriglicerídeos – Estão relacionados ao VLDL. Normalmente equivale a 5x o seu valor. Um paciente com 150 mg/dl de triglicerídeos apresenta 30 mg/dl de VLDL.\r\n\r\nHá algum tempo se sabe que o colesterol total não é tão importante quanto os valores de suas frações. Pois vejamos 2 pacientes distintos:\r\n\r\n1- HDL = 70, LDL= 100, VLDL= 30. Colesterol total = 200 mg/dl\r\n2- HDL = 20, LDL = 160, VLDL = 20. Colesterol total = 200 mg/dl                          \r\n                            ','                                \r\n                            ',0,1),(9,'UREIA e CREATININA','                                \r\n          São as análise que avaliam a função dos rins.\r\n\r\nSeus valores são usados para cálculos do volume de sangue filtrado pelos rins a cada minuto. Os melhores laboratórios já fazem esse cálculo automaticamente para o médico e normalmente vem com o nome de “clearance de creatinina” ou “taxa de filtração glomerular”.\r\n\r\nValores aumentados de ureia e creatinina indicam diminuição da filtração pelo rim.\r\nValores menores que 60 ml/minuto de clearance de creatinina indicam insuficiência renal.\r\n\r\nEste é um dos exames que mais requerem interpretação do médico, pois o mesmo valor de creatinina pode ser normal para uma pessoa, e significar insuficiência renal para outra.                  ','                                \r\n                            ',0,1),(10,'GLICOSE','                                \r\n                     A dosagem de glicose é importante para o diagnóstico ou controle do tratamento do diabetes mellitus. Só tem valor se realizada com um jejum mínimo de 8 horas.\r\n\r\nValores menores que 100 mg/dl são normais\r\nValores entre 100 e 125 mg/dl são considerados pré-diabetes.\r\nValores acima de 126 mg/dl são compatíveis com diabetes (deve ser sempre repetido para confirmação do diagnóstico)       ','                                \r\n                            ',0,1),(11,'TGO (AST) TGP (ALP)','               São exames para se avaliar o fígado. Valores elevados indicam lesão das células hepáticas. Normalmente traduzem algum tipo de hepatite, seja viral, medicamentosa ou isquêmica.                 \r\n                            ','                                \r\n                            ',1,1);
+INSERT INTO `tbl_exame` VALUES (1,'sdfasdf','sdfsadfsd','asdfsadfasd',0,0),(2,'Exame de pé','                                \r\n                          Este é um exame de pé feito por pessoas','                                \r\n          Tem que ter um pé para fazer esse exame.                  ',0,0),(3,'Exame de Vista','                     É um exame feito para comprovar se o paciente tem algum problema de visão.           \r\n                            ','                                \r\n                            Caso o paciente use ente deverá ir sem no dia ou tirar no hospital.',0,0),(4,'Exame de braço','Um exame de braço é feito para fazer um teste no braço                           \r\n                            ','                                \r\n                            ',0,0),(5,'HEMOGRAMA','                                \r\n               O hemograma é o exame para avaliar as três principais linhagens de células do sangue (hemácias, leucócitos e plaquetas). É o mais complexo e o que merece maiores explicações. Concentre-se apenas naqueles que explicarei.             ','                                \r\n                            Estar em jejum, não beber água nas duas horas que antecede o exame. ',0,0),(6,'Hemácias (glóbulos vermelhos)','                                \r\n                            São levados em conta principalmente os valores do hematócrito e da hemoglobina. Valores um pouco fora da faixa de referência podem não ter significado clínico. Mulheres podem ter hematócrito/hemoglobina um pouco mais baixo devido a perdas de sangue na menstruação. Fumantes costumam tê-los um pouco elevado devido a pior oxigenação do sangue pelos seus pulmões. Repito: esses valores devem sempre ser interpretados','                                \r\n                            Não tomar remédio antes.',0,0),(7,'Plaquetas','                             São as células responsáveis pelo processo de coagulação do sangue. Elevações são chamadas de trombocitose e a diminuição de trombocitopenia. Pacientes com plaquetas muito baixas são mais propensos a sangramentos. Plaquetas muito elevadas podem favorecer a formação de trombos.   \r\n                            ','                                \r\n                            ',0,0),(8,'COLESTEROL','      O colesterol total é composto da soma das frações HDL+LDL+VLDL.\r\n\r\nHDL – colesterol bom. Protege os vasos da aterosclerose (Placas de gordura). Quanto mais elevado melhor.\r\n\r\nLDL e VLDL – Colesterol ruim, formador da aterosclerose que obstrui os vasos sanguíneos e leva a doenças como infarto. Quanto mais baixo melhor.\r\n\r\nTriglicerídeos – Estão relacionados ao VLDL. Normalmente equivale a 5x o seu valor. Um paciente com 150 mg/dl de triglicerídeos apresenta 30 mg/dl de VLDL.\r\n\r\nHá algum tempo se sabe que o colesterol total não é tão importante quanto os valores de suas frações. Pois vejamos 2 pacientes distintos:\r\n\r\n1- HDL = 70, LDL= 100, VLDL= 30. Colesterol total = 200 mg/dl\r\n2- HDL = 20, LDL = 160, VLDL = 20. Colesterol total = 200 mg/dl                          \r\n                            ','                                \r\n                            ',0,0),(9,'UREIA e CREATININA','                                \r\n          São as análise que avaliam a função dos rins.\r\n\r\nSeus valores são usados para cálculos do volume de sangue filtrado pelos rins a cada minuto. Os melhores laboratórios já fazem esse cálculo automaticamente para o médico e normalmente vem com o nome de “clearance de creatinina” ou “taxa de filtração glomerular”.\r\n\r\nValores aumentados de ureia e creatinina indicam diminuição da filtração pelo rim.\r\nValores menores que 60 ml/minuto de clearance de creatinina indicam insuficiência renal.\r\n\r\nEste é um dos exames que mais requerem interpretação do médico, pois o mesmo valor de creatinina pode ser normal para uma pessoa, e significar insuficiência renal para outra.                  ','                                \r\n                            ',0,0),(10,'GLICOSE','                                \r\n                     A dosagem de glicose é importante para o diagnóstico ou controle do tratamento do diabetes mellitus. Só tem valor se realizada com um jejum mínimo de 8 horas.\r\n\r\nValores menores que 100 mg/dl são normais\r\nValores entre 100 e 125 mg/dl são considerados pré-diabetes.\r\nValores acima de 126 mg/dl são compatíveis com diabetes (deve ser sempre repetido para confirmação do diagnóstico)       ','                                \r\n                            ',0,0),(11,'TGO (AST) TGP (ALP)','                                                                               São exames para se avaliar o fígado.   teste            \r\n                            \r\n                            \r\n                            ','                     teste                                                                           \r\n                            \r\n                            \r\n                            ',1,1);
 /*!40000 ALTER TABLE `tbl_exame` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -761,7 +761,7 @@ CREATE TABLE `tbl_funcionario` (
 
 LOCK TABLES `tbl_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_funcionario` VALUES (1,1,38,'xablau3,333','lola','1999-01-31','5454','45454',1),(2,1,38,'wesley','marques','1999-01-31','5454','45454',1);
+INSERT INTO `tbl_funcionario` VALUES (1,4,38,'xablau3,333','lola','1999-01-31','5454','45454',1),(2,4,38,'wesleyy','marquess','1999-01-31','5454','45454',1);
 /*!40000 ALTER TABLE `tbl_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -841,7 +841,7 @@ CREATE TABLE `tbl_home` (
 
 LOCK TABLES `tbl_home` WRITE;
 /*!40000 ALTER TABLE `tbl_home` DISABLE KEYS */;
-INSERT INTO `tbl_home` VALUES (1,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você estiver',0,1),(2,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você for, Hhealth, cuidará de você!',0,0),(3,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','cfb b',1,1),(4,'imagem_home/download.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','vacilao',0,1),(5,'imagem_home/corda.jpg','imagem_home/download.jpg','imagem_home/carrinho.jpg','asdasd',0,1),(6,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','wesleyy',0,1);
+INSERT INTO `tbl_home` VALUES (1,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você estiver',1,1),(2,'imagem_home/cardiologia.jpg','imagem_home/acupuntura.jpg','imagem_home/cirurgia5.jpg','Onde você for, Hhealth, cuidará de você!',0,0),(3,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','cfb b',0,1),(4,'imagem_home/download.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','vacilao',0,1),(5,'imagem_home/corda.jpg','imagem_home/download.jpg','imagem_home/carrinho.jpg','asdasd',0,1),(6,'imagem_home/corda.jpg','imagem_home/403734003-yoyo-wallpapers.jpg','imagem_home/carrinho.jpg','wesleyy',0,1);
 /*!40000 ALTER TABLE `tbl_home` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1014,11 +1014,22 @@ CREATE TABLE `tbl_nivel_funcionario` (
   `nivel` varchar(45) DEFAULT NULL,
   `descricao` text,
   `ativo` tinyint(4) DEFAULT '1',
-  `id_permissao` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_nivel_funcionario`),
-  KEY `fk_usuario_permit_idx` (`id_permissao`),
-  CONSTRAINT `fk_usuario_permit` FOREIGN KEY (`id_permissao`) REFERENCES `usuario_medico_administrador` (`id_usuario_medico_administrador`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `cargo` tinyint(4) DEFAULT NULL,
+  `especialidade` tinyint(4) DEFAULT NULL,
+  `funcionario` tinyint(4) DEFAULT NULL,
+  `agendamento` tinyint(4) DEFAULT NULL,
+  `paciente_pendente` tinyint(4) DEFAULT NULL,
+  `paciente_ativo` tinyint(4) DEFAULT NULL,
+  `remedio` tinyint(4) DEFAULT NULL,
+  `receita` tinyint(4) DEFAULT NULL,
+  `internacao` tinyint(4) DEFAULT NULL,
+  `quarto` tinyint(4) DEFAULT NULL,
+  `tipo_quarto` tinyint(4) DEFAULT NULL,
+  `nivel_usuario` tinyint(4) DEFAULT NULL,
+  `pagamento` tinyint(4) DEFAULT NULL,
+  `senha` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id_nivel_funcionario`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1027,7 +1038,7 @@ CREATE TABLE `tbl_nivel_funcionario` (
 
 LOCK TABLES `tbl_nivel_funcionario` WRITE;
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` DISABLE KEYS */;
-INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0,NULL),(2,'CDC','Cria e edita conteúdos para o site',1,NULL),(3,'vv','ss',1,NULL),(4,'funcionaaaadvg2gd22','asdasdas200',1,NULL);
+INSERT INTO `tbl_nivel_funcionario` VALUES (1,'administrador','Administra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no siteAdministra tudo no site',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,'CDC','Cria e edita conteúdos para o site',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(3,'vv','ss',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,'funcionaaaadvg2gd22','asdasdas200',0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(5,'teste','teste',1,1,1,1,0,1,1,0,1,0,1,1,0,1,NULL),(6,'Administrador','Administra todos os niveis',1,1,1,1,1,1,1,1,1,1,1,1,1,1,1),(7,'não acessa senha','não acessa senha',1,1,1,1,1,1,1,1,1,1,1,1,1,1,0),(8,'nada','nada',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),(9,'teste2','teste',0,1,1,0,1,0,1,0,0,1,0,0,0,1,1);
 /*!40000 ALTER TABLE `tbl_nivel_funcionario` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1462,7 +1473,7 @@ CREATE TABLE `tbl_sobre` (
   `status_imagem` char(1) CHARACTER SET latin1 DEFAULT NULL,
   `link_video` text CHARACTER SET latin1,
   PRIMARY KEY (`id_sobre`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -1471,7 +1482,7 @@ CREATE TABLE `tbl_sobre` (
 
 LOCK TABLES `tbl_sobre` WRITE;
 /*!40000 ALTER TABLE `tbl_sobre` DISABLE KEYS */;
-INSERT INTO `tbl_sobre` VALUES (3,'dtwd','wrywer','ewryery','eryery','imagem_sobre/sobre.png','imagem_sobre/sobre.png','imagem_sobre/sobre.png',0,1,0,NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `tbl_sobre` VALUES (3,'A empresa HHealth com mais de 20 anos de experiência em serviços de saúde, realizando inúmeros atendimentos de urgência e emergência por ano, oferece a seus pacientes os mais avançados recursos diagnósticos buscando satisfação do paciente e excelência no atendimento. O hospital conta com tecnologia avançada, disponibilizando ao paciente diversos equipamentos de última geração que dão segurança e eficiência no tratamento. Conta também com os melhores profissionais sempre à disposição tudo para o cuidado da saúde e garantir o bem estar do paciente.','O Hospital HHealth tem como missão melhorar a qualidade de vida das pessoas por meio da saúde, além de é claro, salvar a vida delas.','A HHealth quer manter-se tão importante quanto é na área da saúde desse país e melhorar em detalhes pois eles realizam grandes mudanças quando observados de modo holístico.','A HHealth tem como valores otimismo e determinação e responsabilidade para com as pessoas que utilizarem seus serviços.','imagem_sobre/missao.jpg','imagem_sobre/visao.jpg','imagem_sobre/valores.jpg',1,1,0,NULL,NULL,NULL,NULL,NULL,NULL),(11,'teste','teste','teste','teste','imagem_sobre/novorio.jpg','imagem_sobre/novorio.jpg','imagem_sobre/novorio.jpg',0,0,0,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `tbl_sobre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1720,6 +1731,14 @@ INSERT INTO `usuario_medico_administrador` VALUES (1,'Administração de conteú
 UNLOCK TABLES;
 
 --
+-- Dumping events for database 'hhealth'
+--
+
+--
+-- Dumping routines for database 'hhealth'
+--
+
+--
 -- Final view structure for view `agendamento_paciente_funcionario`
 --
 
@@ -1764,4 +1783,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-28 11:28:52
+-- Dump completed on 2018-06-03  8:56:55

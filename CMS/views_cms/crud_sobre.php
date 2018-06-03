@@ -82,7 +82,7 @@ if(isset($niv)){
             }
             
             //Excluir
-            function Excluir(idIten){
+            function Desativar(idIten){
                 //anula a ação do submit tradicional "botao" ou F5
                 //event.preventDefault();
                 $.ajax({
@@ -95,7 +95,19 @@ if(isset($niv)){
                 });
             }
             
-            
+            //Excluir
+            function Excluir(idIten){
+                //anula a ação do submit tradicional "botao" ou F5
+                //event.preventDefault();
+                $.ajax({
+                    type:"GET",
+                    data: {id:idIten},
+                    url: "../router.php?controller=sobre&modo=deletar&id="+idIten,
+                    success: function(dados){
+                        $('.tabela_nivel_usuario').html(dados);
+                    }
+                });
+            }
             
             
             
@@ -221,11 +233,23 @@ if(isset($niv)){
                                                 <img src="<?=$caminho?>imagens/edit.png">
                                             </a>
                                         </div>
+                                        <?php
+                                        if($list[$cont]->status==1){
+                                            $imagem = "turn_on";
+                                        }else{
+                                            $imagem="shutdown";
+                                        }
+                                        
+                                        ?>
                                         <div class="shut">
+                                            <a href="#" class="excluir" onclick="Desativar(<?php echo($list[$cont]->id_sobre);?>)">
+                                                <img src="<?=$caminho?>imagens/<?php echo($imagem)?>.png">
+                                            </a>
                                             <a href="#" class="excluir" onclick="Excluir(<?php echo($list[$cont]->id_sobre);?>)">
-                                                <img src="<?=$caminho?>imagens/shutdown.png">
+                                                <img src="<?=$caminho?>imagens/close.png">
                                             </a>
                                         </div>
+                                        
                                     </div>
                                 </div>
                                 <?php

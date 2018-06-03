@@ -77,7 +77,7 @@ if(isset($_GET['modo'])){
 
                  $.ajax({
                     type: "POST",
-                    url: "../router.php?controller=quarto&modo="+modo+"&id="+id,
+                    url: "../router.php?controller=cargo&modo="+modo+"&id="+id,
                     //alert (url);
                     data: new FormData($("#form")[0]),
                     cache:false,

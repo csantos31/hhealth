@@ -31,8 +31,8 @@
                           $controller_sobre = new controllerSobre();
                           $list = $controller_sobre::Listar();
                           $cont=0;
-                          if($cont<count($list)){
-
+                          while($cont<count($list)){
+                              if($list[$cont]->status==1){
                           ?>
                            <div class="faixa1">
                                  <?php echo($list[$cont]->sobre);?>
@@ -85,6 +85,7 @@
                                  </div>
                            </div>
                            <?php
+                              }
                              $cont++;
                          }
                          ?>

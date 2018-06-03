@@ -102,7 +102,7 @@
 
                             $cont=0;
                             while($cont<count($list)){
-
+                                if($list[$cont]->status==1){
                           ?>
 
                            <div class="suporte_unidade">
@@ -122,6 +122,7 @@
 
                            </div>
                            <?php
+                                }
                                 $cont++;
                             }
                           ?>
