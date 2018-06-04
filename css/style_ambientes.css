@@ -2,6 +2,12 @@
 *{
   padding: 0px;
   margin: 0px auto;
+  color: black;
+}
+
+a{
+      text-decoration: none;
+      color: black;
 }
 
 .main{
@@ -82,13 +88,6 @@
 
 }
 
-a{
-
-   text-decoration: none;
-   color: #FF0000;
-   font-weight:bold;
-
-}
 
 .link_menu:hover{
 
@@ -270,7 +269,10 @@ a{
         box-sizing: border-box;
       }
 
-
+      a{
+            text-decoration: none;
+            color: black;
+      }
 
       .main{
           width:100%;
@@ -343,14 +345,6 @@ a{
 
 
           list-style: none;
-
-      }
-
-      a{
-
-         text-decoration: none;
-         color: #FF0000;
-         font-weight:bold;
 
       }
 

@@ -5,6 +5,11 @@
     text-align: justify;
 }
 
+a{
+      text-decoration: none;
+      color: black;
+}
+
 .main{
     width:100%;
     height:auto;
@@ -244,6 +249,7 @@
       .content{
           width:98%;
           min-height:1100px;
+
           height:auto;
           margin:auto;
 
@@ -423,5 +429,7 @@
       /*    border-radius: 10px;*/
       }
 
-
+      .footer{
+            color: black;
+      }
 }
