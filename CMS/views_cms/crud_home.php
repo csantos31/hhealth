@@ -108,9 +108,9 @@ include($caminho.'../verifica.php');
         <div class="main">  <!--Div main que segura todas as div-->
 
 
-            <div class="content_cms">
+            
                 <?php include('menu_cms.php')?>
-
+            <div class="content_cms">
                 <div class="content_home_cms"><!--conteudo da home do cms-->
                   <!-- Include once do menu lateral -->
                   <?php include_once('menu_lateral_cms.php'); ?>

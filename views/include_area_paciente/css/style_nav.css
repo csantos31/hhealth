@@ -30,7 +30,7 @@ body{
     width: 100%;
     position: absolute;
     z-index: 1;
-background: #727070;
+    background: #727070;
     opacity: 0.4;
 }
 #header_area_paciente{
