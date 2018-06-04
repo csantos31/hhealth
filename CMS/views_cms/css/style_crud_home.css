@@ -14,7 +14,7 @@
 }
 
 .content_cms{
-    width:100%;
+    width:1900px;
     min-height: 1200px;
     height:auto;
     margin:auto;
@@ -24,11 +24,10 @@
 /*-------------------CONTEUDO CMS---------------------------*/
 .content_home_cms{/*conteudo do cms*/
     width:1900px;
-    width:1900px;
-    min-height:900px;
-    height:auto;
+/*  min-height:900px;*/
+    height:900px;
     margin:auto;
-    position:relative;
+/*    position:relative;*/
 }
 
 
@@ -43,6 +42,7 @@
     margin-left:50px;
     margin-top:20px;
     float:left;
+    overflow-x: hidden;
 }
 
 .titulo_conteudo{/*titulo*/

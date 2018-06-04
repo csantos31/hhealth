@@ -4,9 +4,11 @@
 }
 
 .menu_lateral_cms{/*menu lateral*/
-      width:20%;
-    height:750px;
+    width:20%;
+    height:auto;
+    margin-top:5px;
     float: left;
+    background-color: #a09f9f;
 }
 
 .conteudo_home_cms{/*conteudo home*/
@@ -19,12 +21,19 @@
 }
 
 .linha{
-    width:100%;
+    width:98.9%;
     min-height: 60px;
+    height:auto;
     overflow: hidden;
     margin-left: 5px;
-    background-color:#D9D9D9;
+    background-color:#a09f9f;
     margin-top:5px;
+    color:#fff;
+}
+
+.linha:hover{
+    background-color:#666666;
+    color:#fff;
 }
 
 .img_menu_lateral{
