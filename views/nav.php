@@ -63,26 +63,27 @@
 
                   </ul>
               </li>
+              <a href="<?= $path ?>dicas_saude.php">
+                  <li class="item_nav botao_snip">
+                      SAÚDE
+                  </li>
+              </a>
 
+              <a href="<?= $path ?>unidades_hhealth.php">
+                  <li class="item_nav botao_snip">
+                     UNIDADES
+                  </li>
+              </a>
+              <a href="<?= $path ?>exames.php">
               <li class="item_nav botao_snip">
-                  <a href="<?= $path ?>dicas_saude.php">SAÚDE</a>
+                 EXAMES 
               </li>
-
-
+                </a>
+              <a href="<?= $path ?>convenios.php">
               <li class="item_nav botao_snip">
-                <a href="<?= $path ?>unidades_hhealth.php"> UNIDADES</a>
+                  CONVÊNIOS
               </li>
-
-
-              <li class="item_nav botao_snip">
-                <a href="<?= $path ?>exames.php"> EXAMES </a>
-              </li>
-
-
-              <li class="item_nav botao_snip">
-                  <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
-              </li>
-
+              </a>
               <li class="item_nav botao_snip">
                   CONTATOS
                 <ul class="submenu_nav_contatos">
@@ -128,26 +129,28 @@
 
                   </ul>
               </li>
-
+            <a href="<?= $path ?>dicas_saude.php">
                 <li class="item_nav botao_snip">
-                    <a href="<?= $path ?>dicas_saude.php"> SAÚDE</a>
+                     SAÚDE
                 </li>
-
-
+            </a>
+            
+            <a href="<?= $path ?>unidades_hhealth.php">
                 <li class="item_nav botao_snip">
-                    <a href="<?= $path ?>unidades_hhealth.php">UNIDADES</a>
+                    UNIDADES
                 </li>
-
-
+            </a>
+            <a href="<?= $path ?>exames.php">
                 <li class="item_nav botao_snip">
-                  <a href="<?= $path ?>exames.php">EXAMES</a>
+                  EXAMES
                 </li>
-
-
+            </a>
+            
+            <a href="<?= $path ?>convenios.php">
                 <li class="item_nav botao_snip">
-                    <a href="<?= $path ?>convenios.php">CONVÊNIOS</a>
+                    CONVÊNIOS
                 </li>
-
+            </a>
               <li class="item_nav botao_snip">
                   CONTATOS
                 <ul class="submenu_nav_contatos">

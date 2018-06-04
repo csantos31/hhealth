@@ -137,6 +137,7 @@
 /*tabela visualização nivel*/
 
 
+
 .tabela_nivel_usuario{
     width:100%;
     min-height:500px;
@@ -227,6 +228,11 @@
     width: 50px;
     min-height: 35px;
     height: auto;
+}
+
+.content_campos{
+    width:1400px;
+    height:auto;
 }
 
 .campo_acoes{
