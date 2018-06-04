@@ -140,21 +140,28 @@
 			$select = $PDO_conex->query($sql);
 
 			//Executa o script no banco de dados
-			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
-				//Se der true redireciona a tela
+             if(!empty($select)){
+                    if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+                    //Se der true redireciona a tela
 
 
-				$senha = new Senha();
+                    $senha = new Senha();
 
-				$senha->id_senha = $rs['id_senha'];
-				$senha->emergencia = $rs['emergencia'];
-                $senha->senha = $rs['senha'];
-                $senha->atual = $rs['atual'];
-                $senha->ativo = $rs['ativo'];
+                    $senha->id_senha = $rs['id_senha'];
+                    $senha->emergencia = $rs['emergencia'];
+                    $senha->senha = $rs['senha'];
+                    $senha->atual = $rs['atual'];
+                    $senha->ativo = $rs['ativo'];
 
-                return $senha;
+                    if(!empty($senha)){
+                        return $senha;    
+                    }
 
-			}
+
+
+                }    
+             }
+			
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();

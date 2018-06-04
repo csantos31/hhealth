@@ -7,7 +7,7 @@
     if(isset($_GET['controller'])){
         $controller_senha = new controllerSenha();
          $pass = $controller_senha::chamarSenhaAtual();
-        echo $pass->senha;
+       // echo $pass->senha;
         exit();
     }
                     
@@ -29,7 +29,7 @@
                             console.log(dados);
                            if (dados != 'null') {
                               $('#vm_l').html("");
-                              $('#vm_l').append(dados);
+                             // $('#vm_l').append(dados);
                             }else{
                               $('#vm_l').html("");
                               $('#vm_l').append("...");
