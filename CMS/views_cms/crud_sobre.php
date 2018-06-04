@@ -150,6 +150,7 @@ if(isset($niv)){
                     
 
                         <div class="tabela_nivel_usuario"><!--tabela nivel-->
+                            <div class="content_campos">
                             <div class="content_titulo_tabela_niveis">
                                 <div class="titulo_niveis">
                                     <a>Sobre</a>
@@ -252,6 +253,7 @@ if(isset($niv)){
                                         
                                     </div>
                                 </div>
+                            </div>
                                 <?php
                                     $cont +=1;
                                 }
