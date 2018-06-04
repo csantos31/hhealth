@@ -13,14 +13,14 @@
                 $pass = $senha::SelectSenha();
                 if(!empty($pass)){
                     echo $pass->senha;
-                    //echo "ahs";
+                    echo "ahs";
                 }else{
-                  $pass = "null";
-                  //echo "null";
+                  $pass = null;
+                  echo "null";
                 }
             }else{
                 echo $pass->senha;
-                //echo "ha2";
+                echo "ha2";
             }
             return $pass;
         }

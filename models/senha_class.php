@@ -140,7 +140,7 @@
 			$select = $PDO_conex->query($sql);
 
 			//Executa o script no banco de dados
-             if(!empty($select)){
+           
                     if($rs = $select->fetch(PDO::FETCH_ASSOC)){
                     //Se der true redireciona a tela
 
@@ -160,7 +160,7 @@
 
 
                 }    
-             }
+             
 			
 
 			//Fecha a conexão com o banco de dados
