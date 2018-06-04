@@ -112,9 +112,9 @@
                            <br>
                            Número do celular: <input type="text" name="txt_celular" value="" maxlength="22" id="numero_celular">
                            <br>
-                           Cartao: <input type="number" name="txt_cartao" value="" maxlength="16">
+                           Cartao: <input type="text" name="txt_cartao" value="" maxlength="16">
                            <br>
-                           Senha do Cartao: <input type="number" name="txt_senha_cartao" value="" maxlength="6">
+                           Senha do Cartao: <input type="password" name="txt_senha_cartao" value="" maxlength="6">
                            <br>
                            Valor: <input type="number" name="txt_valor" value="">
                            <br>
