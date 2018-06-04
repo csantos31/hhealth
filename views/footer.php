@@ -110,11 +110,23 @@
             <div class="linha_branca">
 
             </div>
+            <div class="aplicativo">
+                 <div class="txt_app">
+                       Baixe Nosso APP
+                 </div>
+                 <div class="img_app">
+                       <a href="#">
+                             <img src="imagens/play-button.png" alt="">
+                       </a>
+
+                 </div>
+           </div>
           <div class="faixa4_footer"><!--footer faixa4-->
             <div class="limitador_faixa4_footer">
                   © COPYRIGHT 2018
             </div>
           </div>
+
       </div>
 
 </div>
