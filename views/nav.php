@@ -172,14 +172,26 @@
 
 
 <div class="menu_mobile">
+
 <!--
     HOSPITAL -->
   <header>
+        <a href="<?= $hom ?>">
+             <div class="logo">
+
+             </div>
+        </a>
+          <div class="logo_marca_responsivo">
+           HHEALTH
+        </div>
   	<!-- <span>Author : <a href="http://glennsmith.me" target="_blank">Glenn Smith</a></span> -->
     <button class="hamburger">&#9776;</button>
     <button class="cross">&#735;</button>
   </header>
 
+  <div class="separador_responsivo">
+
+  </div>
   <div class="menu">
     <ul>
       <a href="<?= $hom ?>"><li>Home</li></a>

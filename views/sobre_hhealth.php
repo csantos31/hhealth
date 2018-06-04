@@ -12,8 +12,9 @@
       <body>
             <div class="main"><!--Div Main que segura todas as divs-->
                  <div class="suporte_menu">
+                       <?php require_once('nav.php'); ?>
                        <div class="menu"><!--**MENU**-->
-                          <?php require_once('nav.php'); ?>
+
                       </div>
                  </div>
                 <div class="div_suporte_conteudo">

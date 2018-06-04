@@ -280,7 +280,44 @@ label[for="btn_menu"]{
   	height:60px;
   	line-height:60px;
   	border-bottom:1px solid #dddddd;
+      z-index: 900;
   }
+
+  .separador_responsivo{
+width: 40%;
+height: 58px;
+z-index: 999;
+margin-top: -60px;
+}
+
+.logo {
+   width: 58px;
+   height: 58px;
+   background-image: url(../imagens/logo_only_heart.png);
+   background-size: 58px;
+   padding: 0px;
+   float: left;
+
+}
+
+.logo_marca{
+ display: none;
+}
+
+.logo_marca_responsivo{
+ width: 30px;
+ height: 70px;
+ line-height: 70px;
+ margin-left: 5px;
+ margin-right: 40px;
+ text-decoration: none;
+ float: left;
+ color: #DA0000;
+ font-weight: bold;
+ font-size: 18px;
+ font-family: verdana;
+}
+
   .hamburger{
     background:none;
     position:absolute;
