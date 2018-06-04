@@ -54,7 +54,7 @@ ADICIONAR O CAMPO 'STATUS' NOS SCRIPTS
         /*Lista todos os registro no BD*/
 		public function Select(){
 			//Query para selecionar a tabela contatos
-			$sql="SELECT * FROM tbl_unidade ORDER BY id_unidade DESC;";
+			$sql="SELECT * FROM tbl_unidade where ativo = 1;";
 
 			//Instancio o banco e crio uma variavel
 			$conex = new Mysql_db();
