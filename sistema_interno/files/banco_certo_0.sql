@@ -475,7 +475,7 @@ CREATE TABLE `tbl_dica_saude` (
 
 LOCK TABLES `tbl_dica_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_dica_saude` DISABLE KEYS */;
-INSERT INTO `tbl_dica_saude` VALUES (1,'34124','adfsa','imagem_dica_saude/dermatologia.jpg',1,1),(2,'Dica para o coração','                                                                \r\n                VI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalq            ','imagem_dica_saude/ortopedia.jpg',1,1),(3,'Radiologia','                                                                \r\n                  VI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalq          ','imagem_dica_saude/endoscopia.jpg',1,1),(4,'Alguma coisa ogia','                 VI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalq                                               \r\n                            ','imagem_dica_saude/ginecologia.jpg',1,1);
+INSERT INTO `tbl_dica_saude` VALUES (1,'34124','adfsa','imagem_dica_saude/dermatologia.jpg',1,1),(2,'Dica para o coração','                                                                \r\n                VI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalq            ','imagem_dica_saude/ortopedia.jpg',1,1),(3,'Radiologia','As novas sensações do Exercício em Casa, trazidas pelo professor Djan, o Fit Max e o Step Line, têm chamado atenção dos nossos alunos que gostam de passos métricos e dançantes, como no Step, ou de nossos alunos que preferem treinar com golpes de artes marciais, como quem curte soltar um gancho, um jab e […]','imagem_dica_saude/dicas_saude4.jpg',1,1),(4,'Dieta','Seu corpo tem que aprender qual a hora de dormir, acordar e comer. Isso fará ele funcionar melhor, irá evitar a fome frequente e as idas noturnas à geladeira, que são as que mais engordam. Além disso, descansar pelo menos 7 horas por noite dá ânimo para cumprir os compromissos, fazer mais exercícios e resistir às tentações.','imagem_dica_saude/dicas_saude3.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_dica_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -537,7 +537,7 @@ CREATE TABLE `tbl_endereco` (
 
 LOCK TABLES `tbl_endereco` WRITE;
 /*!40000 ALTER TABLE `tbl_endereco` DISABLE KEYS */;
-INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco xxx','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'asd','GLEYVER','asdfsda',23,'fsadfasd','sdafasdf',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'gsd','sdg','sdgsd',15,'sdgsd','dg',NULL),(52,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(53,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(54,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(55,'sdfas','fasdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(56,'sdfas','teste','asdfasd',13,'sadfsdf','sdfsdf',NULL),(57,'sdfas','fasdfasd','asdfasd',16,'sadfsdf','sdfsdf',NULL),(58,'sdfas','fasdfasd','asdfasd',22,'sadfsdf','sdfsdf',NULL),(59,'sdfas','fasdfasd, asdfasd','asdfasd',17,'sadfsdf','sdfsdf',NULL),(60,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(61,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL);
+INSERT INTO `tbl_endereco` VALUES (38,'066830000','endereco xxx','0',1,'itapevi','gioia',NULL),(39,'06654879','teste','asd',16,'fsadfasd','asd',NULL),(40,'06654879','mudei','asdfsda',12,'fsadfasd','sdafasdf',NULL),(41,'79585445','GLEYVER','200',11,'fsadfasd','Jd Maria',NULL),(42,'06654879','mudei','asdfsda',22,'asd','sdafasdf',NULL),(43,'06654879','mudei','asdfsda',14,'fsadfasd','asd',NULL),(44,'asd','mudei aki','asd',25,'fsadfasd','sdafasdf',NULL),(45,'06654879','mudei','asdfsda',24,'fsadfasd','sdafasdf',NULL),(46,'06654879','mudei','asdfsda',21,'fsadfasd','asd',NULL),(47,'1','2','3',19,'5','4',NULL),(48,'06654879','1','2',25,'4','3',NULL),(49,'teste','teste','testeteste',24,'fsadfasd','asd',NULL),(50,'wesley','wesley wesley','asd',25,'asd','asd',NULL),(51,'06654795','Rua da prata','229',9,'Barueri','Jd Prata',NULL),(52,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(53,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(54,'06343-350','Rua Barretos','935',33,'Carapicuíba','gioia',NULL),(55,'sdfas','fasdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(56,'sdfas','teste','asdfasd',13,'sadfsdf','sdfsdf',NULL),(57,'sdfas','fasdfasd','asdfasd',16,'sadfsdf','sdfsdf',NULL),(58,'sdfas','fasdfasd','asdfasd',22,'sadfsdf','sdfsdf',NULL),(59,'sdfas','fasdfasd, asdfasd','asdfasd',17,'sadfsdf','sdfsdf',NULL),(60,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL),(61,'sdfas','fasdfasd, asdfasd, asdfasd','asdfasd',12,'sadfsdf','sdfsdf',NULL);
 /*!40000 ALTER TABLE `tbl_endereco` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1469,7 +1469,7 @@ CREATE TABLE `tbl_slide_saude` (
 
 LOCK TABLES `tbl_slide_saude` WRITE;
 /*!40000 ALTER TABLE `tbl_slide_saude` DISABLE KEYS */;
-INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/endocrinologia.jpg',1,1),(2,'imagem_slide_saude/403734003-yoyo-wallpapers.jpg',0,0),(3,'imagem_slide_saude/carrinho.jpg',1,1);
+INSERT INTO `tbl_slide_saude` VALUES (1,'imagem_slide_saude/dicas_saude2.jpg',1,1),(2,'imagem_slide_saude/403734003-yoyo-wallpapers.jpg',0,0),(3,'imagem_slide_saude/dicas_saude1.jpg',1,1);
 /*!40000 ALTER TABLE `tbl_slide_saude` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1668,7 +1668,7 @@ CREATE TABLE `tbl_unidade` (
 
 LOCK TABLES `tbl_unidade` WRITE;
 /*!40000 ALTER TABLE `tbl_unidade` DISABLE KEYS */;
-INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','Osasco',1,0,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/hospital-jandira.jpg','Jandira',1,1,NULL,NULL,NULL,NULL),(3,51,'imagem_unidade/4992868.jpg','Itapevi',1,1,NULL,NULL,NULL,NULL),(4,56,'imagem_unidade/carrinho.jpg','wesley222',1,1,125522,41241,'                                                    asd            \r\n                            \r\n                            ','165235');
+INSERT INTO `tbl_unidade` VALUES (1,39,'imagem_unidade/download2.jpg','Osasco',1,0,NULL,NULL,NULL,NULL),(2,41,'imagem_unidade/ambientes3.jpg','Osasco',1,1,12312,3412,'Unidade de Osasco\r\n                            ','123123412'),(3,51,'imagem_unidade/ambientes1.jpg','Barueri',1,1,12312,12321,'Unidade de Barueri                            ','21341234'),(4,56,'imagem_unidade/ambiente3.jpg','Unidade Jandira',1,1,125522,41241,'Unidade de jandira  ','165235');
 /*!40000 ALTER TABLE `tbl_unidade` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -1801,4 +1801,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-04  9:43:25
+-- Dump completed on 2018-06-04 10:21:42
