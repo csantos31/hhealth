@@ -10,10 +10,10 @@ class Mysql_db{
     //metodo mágico
     public function __construct(){
 
-        $this -> server = "localhost";
-        $this -> user = "root";
-        $this -> password = "bcd127";
-        $this -> dataBaseName = "hhealth";
+        $this ->server = "localhost";
+        $this ->user = "root";
+        $this ->password = "";
+        $this ->dataBaseName = "hhealth";
     }
 
     //Conectar com o BD

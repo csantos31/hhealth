@@ -115,7 +115,7 @@
                        Baixe Nosso APP
                  </div>
                  <div class="img_app">
-                       <a href="#">
+                       <a href="<?= $path?>apphhealth.apk">
                              <img src="imagens/play-button.png" alt="">
                        </a>
 
