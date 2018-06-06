@@ -12,7 +12,7 @@ class Mysql_db{
 
         $this -> server = "localhost";
         $this -> user = "root";
-        $this -> password = "";
+        $this -> password = "bcd127";
         $this -> dataBaseName = "hhealth";
     }
 
