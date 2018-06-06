@@ -19,10 +19,10 @@
         }
 
         public function Novo($id_endereco){
-     			     require_once('modulo_img.php');
+             require_once('modulo_img.php');
 
-                 //Instancia da classe Contato
-     			     $paciente = new Paciente();
+         //Instancia da classe Contato
+             $paciente = new Paciente();
 
                  /*
              public id_convenio
@@ -57,7 +57,45 @@
             //Chama o metodo Insert da classe Contato
             //Existe também a posibilidade de chamar o metodo da seguinte forma:
             //$contato::Insert($contato);
-            $paciente::Insert($paciente);
+            $id_paciente = $paciente::Insert($paciente);
+            
+            return $id_paciente;
+
+ 		}
+        
+        public function NovoLogin($id_paciente){
+
+         //Instancia da classe Contato
+             $paciente = new Paciente();
+
+                 /*
+             public id_convenio
+             public id_endereco;
+             public nome;
+             public sobrenome;
+             public dt_nasc;
+             public rg;
+             public cpf;
+            **** public carteirinha_convenio;
+            **** public foto;
+             public status;
+
+                 */
+
+            
+
+
+     			        //Carregando os dados digitados pelo usuário nos atributos da classe
+            $paciente->id_paciente = $id_paciente;
+            $paciente->login = $_POST['txt_login'];
+            $paciente->senha = $_POST['txt_senha'];
+            
+
+
+            //Chama o metodo Insert da classe Contato
+            //Existe também a posibilidade de chamar o metodo da seguinte forma:
+            //$contato::Insert($contato);
+            $paciente::InsertLogin($paciente);
 
  		}
         

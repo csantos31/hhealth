@@ -74,7 +74,13 @@ session_start();
     			//Executa o script no banco de dados
     			if($PDO_conex->query($sql)){
     				//Se der true redireciona a tela
-    				echo "<script>location.reload();</script>";
+                    $paciente = new Paciente();
+                
+                    $id_paciente = $paciente::SelectLast();
+
+                    return $id_paciente;
+                    
+    				//echo "<script>location.reload();</script>";
     			}else {
     				//Mensagem de erro
                     echo $sql;
@@ -85,6 +91,64 @@ session_start();
     			$conex->Desconectar();
 
     		}
+        
+        public function InsertLogin($paciente){
+            $sql = "INSERT INTO tbl_usuario_paciente(id_paciente,id_nivel_acesso,usuario,senha)
+            VALUES ('".$paciente->id_paciente."',1,'".$paciente->login."','".$paciente->senha."')";
+            
+            //Instancio o banco e crio uma variavel
+            $conex = new Mysql_db();
+
+            /*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+            na variavel que $PDO_conex*/
+            $PDO_conex = $conex->Conectar();
+
+            //Executa o script no banco de dados
+            if($PDO_conex->query($sql)){
+                //Se der true redireciona a tela
+                
+                //echo "<script>location.reload();</script>";
+                echo $sql;
+            }else {
+                //Mensagem de erro
+                echo $sql;
+                echo "Error inserir no Banco de Dados";
+            }
+
+            //Fecha a conexão com o banco de dados
+            $conex->Desconectar();
+        }
+        public function SelectLast(){
+			$sql = "SELECT id_paciente FROM tbl_paciente ORDER BY id_paciente DESC LIMIT 1";
+
+			//Instancio o banco e crio uma variavel
+			$conex = new Mysql_db();
+
+			/*Chama o método para conectar no banco de dados e guarda o retorno da conexao
+			na variavel que $PDO_conex*/
+			$PDO_conex = $conex->Conectar();
+
+			$select = $PDO_conex->query($sql);
+
+			//Executa o script no banco de dados
+			if($rs = $select->fetch(PDO::FETCH_ASSOC)){
+				//Se der true redireciona a tela
+
+
+				$paciente = new Paciente();
+
+				$paciente = $rs['id_paciente'];
+
+                return $paciente;
+
+			}else {
+				//Mensagem de erro
+				echo "Error ao selecionar no Banco de Dados";
+			}
+
+			//Fecha a conexão com o banco de dados
+			$conex->Desconectar();
+		}
         /*Busca um registro especifico no BD*/
 		public function SelectById($paciente){
 			$sql = "SELECT * FROM tbl_paciente WHERE id_paciente =". $paciente->id_paciente;

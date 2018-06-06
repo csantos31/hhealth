@@ -135,13 +135,20 @@ if(isset($_GET['modo'])){
                                 <input value="<?= $sobrenome ?>" required type="text" class="input_big" style="width:400px;" placeholder="SOBRENOME" name="txt_sobrenome" id="txt_sobrenome">
                             </div>
                         </div>
+                        <div class="campo_p" style="margin-top:30px; height:auto;"><!--campos--> <!--nome-->
+                            <div class="input_campo">
+                                <input value="<?= $sobrenome ?>" required type="text" class="input_big" style="width:200px;" placeholder="LOGIN" name="txt_login" id="txt_sobrenome">
+                            </div>
+                            <div class="input_campo">
+                                <input value="<?= $sobrenome ?>" required type="text" class="input_big" style="width:200px;" placeholder="SENHA" name="txt_senha" id="txt_sobrenome">
+                            </div>
+                            
+                        </div>
                         <div class="campo_p"><!--campos--> <!--nome-->
                             <label>Data de nascimento</label>
                             <div class="input_campo_p">
                                 <input value="<?= $dt_nasc ?>" required type="date" class="input_med2" placeholder="DATA DE NASCIMENTO" name="txt_dt_nasc" id="txt_dt_nasc">
                             </div>
-                        </div>
-                        <div class="campo_p"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
                                 <input value="<?= $rg ?>" required type="text" class="input_med" placeholder="RG" name="txt_rg" id="txt_rg">
                             </div>
@@ -170,24 +177,24 @@ if(isset($_GET['modo'])){
                             </div>
                         </div>
                         <div id="foto_convenio" class="campo_p"><!--campos--> <!--nome-->
-                            <div class="input_campo_p">
+                            <div class="input_campo_p" style="margin-top:-60px;">
                                 <b>Insira a imagem comprovante do convênio:</b>
                                 <input type="file" name="fle_foto2" id="file_convenio">
                             </div>
                         </div>
                         <div class="campo_p" style="width:200px;"><!--campos--> <!--nome-->
                             <div class="input_campo_p">
-                                <input value="<?= $cep ?>" required type="text" class="input_med2" placeholder="CEP" name="txt_cep" id="txt_cep">
+                                <input value="<?= $logradouro ?>" required type="text" class="input_big" style="width:400px;margin-left:-300px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
                             </div>
                         </div>
                         <div class="campo" style="width:200px;float:left;"><!--campos--> <!--nome-->
                             <div class="input_campo">
-                                <input value="<?= $logradouro ?>" required type="text" class="input_big" style="width:400px;" placeholder="LOGRADOURO" name="txt_logradouro" id="txt_logradouro">
+                                <input value="<?= $cep ?>" required type="text" class="input_med2" placeholder="CEP" style="width:200px;" name="txt_cep" id="txt_cep">
                             </div>
                         </div>
                         <div id='meu_num' class="campo_p">
                           <div class="input_campo_p">
-                              <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" name="txt_numero" id="txt_numero">
+                              <input value="<?= $numero ?>" required type="text" class="input_med2" placeholder="NÚMERO" style="margin-left:100px;"  name="txt_numero" id="txt_numero">
                           </div>
                         </div>
                         <div class="campo_p"><!--campos--> <!--nome-->

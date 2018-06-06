@@ -40,7 +40,7 @@ class Endereco{
                 
                 return $id_endereco;
                 //echo $sql;
-				echo "<script>location.reload();</script>";
+				//echo "<script>location.reload();</script>";
 			}else {
 				//Mensagem de erro
                 echo $sql;

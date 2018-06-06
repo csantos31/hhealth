@@ -57,7 +57,8 @@
                     require_once('controllers/paciente_controller.php');
                     require_once('models/paciente_class.php');
                     $controller_paciente = new controllerPaciente();
-                    $controller_paciente::Novo($id_endereco);
+                    $id_paciente = $controller_paciente::Novo($id_endereco);
+                    $controller_paciente::NovoLogin($id_paciente);
 
                     break;
 
