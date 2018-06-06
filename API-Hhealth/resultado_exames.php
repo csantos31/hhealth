@@ -1,4 +1,5 @@
 <?php
+
 // Importando classe de conexão com o Banco de dados
 require_once('conexao.php');
 
@@ -8,8 +9,10 @@ $conexao = new Mysql_db();
 // Chama metódo para conectar ao banco
 $stmt = $conexao->Conectar();
 
+$id_paciente = $_GET['id_paciente'];
+
 // Faço a query do banco
-$query = "SELECT nome FROM tbl_funcionario WHERE id_cargo = 4;";
+$query = "SELECT * FROM tbl_resultado_exame WHERE id_paciente ='$id_paciente';";
 
 // insiro os parametros dentro da query
 // Executa query no banco de dados
@@ -21,14 +24,13 @@ $teste = $executa_query -> rowCount();
 
 $lista = array();
 // Se retorna uma linha da query quer dizer que existe usuário
-while ($visualizar_medico= $executa_query->fetch(PDO::FETCH_ASSOC)) {
+while ($visualizar_unidade= $executa_query->fetch(PDO::FETCH_ASSOC)) {
 
   // Retorna Json que diz que pode efetuar o login
-  $lista[] = $visualizar_medico;
+  $lista[] = $visualizar_unidade;
   //
 }
-
-  echo json_encode(array("medicos"=>$lista));
+  echo json_encode($lista);
 
 //Desconecto do banco de dados
 $conexao::Desconectar();
