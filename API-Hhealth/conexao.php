@@ -5,10 +5,10 @@
   class Mysql_db{
 
     public function Conectar(){
-      $host = "localhost";
-      $dbname = "hhealth";
-      $username = "root";
-      $password = "";
+      $host = "192.168.1.1";
+      $dbname = "dbhospitalhhealth";
+      $username = "hospitalhhealth";
+      $password = "hhealth123";
 
       try {
 
