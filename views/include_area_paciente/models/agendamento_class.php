@@ -19,7 +19,7 @@ class Agendamento
       }
 
       // Lista toos os registros do banco de dados
-      public function Select(){
+      public function Select($dados_agendamento){
 
             //Query para selecionar a tabela contatos
 
@@ -28,7 +28,7 @@ class Agendamento
                   INNER JOIN tbl_paciente AS p  ON a.id_paciente = p.id_paciente
                   INNER JOIN tbl_especialidade AS e ON a.id_especialidade = e.id_especialidade
                   INNER JOIN tbl_funcionario AS f ON a.id_funcionario = f.id_funcionario
-                  INNER JOIN tbl_unidade AS u ON a.id_unidade = u.id_unidade WHERE p.id_paciente = '12'
+                  INNER JOIN tbl_unidade AS u ON a.id_unidade = u.id_unidade WHERE p.id_paciente = '".$dados_agendamento->id_paciente."'
                   ORDER BY id_agendamento_consulta DESC;";
 
              // echo $sql1;
@@ -71,10 +71,13 @@ class Agendamento
             if (isset($list)) {
                   # code...
                   return $list;
+            }else{
+                echo "Você ainda não tem agendamento";
             }
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();
       }
+
 
     public function Insert($dados_agendamento){
         //variavel sql

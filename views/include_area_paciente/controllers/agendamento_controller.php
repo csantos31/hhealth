@@ -47,15 +47,15 @@
 
 		}
 
-		public function Listar(){
+		public function Listar($id){
 			//Instancia da classe contatos
 			$agendamento = new Agendamento();
 
 			//Chama o método para selecionar os registros
+            $agendamento->id_paciente = $id;
 
 
-
-			return $agendamento::Select();
+			return $agendamento::Select($agendamento);
 		}
 
     public function ListarEstados(){

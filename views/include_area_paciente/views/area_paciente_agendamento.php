@@ -244,7 +244,7 @@ $dt_atual = date ("Y-m-d");
             include_once($caminho .'../models/agendamento_class.php');
 
             $controller_agendamento = new controller_agendamento();
-            $list = $controller_agendamento::Listar();
+            $list = $controller_agendamento::Listar($_SESSION['id_paciente']);
 
             $cont=0;
             while($cont<count($list)){

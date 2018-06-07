@@ -1,5 +1,61 @@
 <?php
     require('verifica_paciente.php');
+    require_once('../controllers/paciente_controller.php');
+    require_once('../models/paciente_class.php');
+
+
+    @session_start();
+    date_default_timezone_set('America/Sao_Paulo');
+    $dt_atual = date ("Y-m-d");
+    $ano_atual=null;
+    $mes_atual=null;
+    $dia_atual=null;
+    $dt_paciente=null;
+    $ano_paciente=null;
+    $mes_paciente=null;
+    $dia_paciente=null;
+
+
+    
+    $controller_paciente = new controllerPaciente();
+    $listar = $controller_paciente::Buscar($_SESSION['id_paciente']);
+
+    $id_endereco=$listar->id_endereco;
+    $nome = $listar->nome;
+    $sobrenome = $listar->sobrenome;
+    $dt_paciente=$listar->dt_nasc;  
+    $rg = $listar->rg;
+    $cpf = $listar->cpf;
+    $carterinha_convenio = $listar-> carterinha_convenio;
+
+    
+
+    //pega o dia, o mes e o ano da dt_nasc do paciente
+    list($ano_paciente,$mes_paciente,$dia_paciente)=explode("-", $dt_paciente);
+    //pega o dia, o mes e o ano da data atual
+    list($ano_atual,$mes_atual,$dia_atual)=explode("-", $dt_atual);
+
+    //converte string para int
+    //var_dump( $ano_paciente );
+    //var_dump( $ano_atual );
+
+
+    if($ano_paciente<$ano_atual){
+        $idade = $ano_atual - $ano_paciente;
+    }else{
+        $idade= "idade invalida";
+    }
+
+    require_once('../../../models/endereco_class.php');
+    require_once('../../../controllers/endereco_controller.php');
+    $controller_endereco = new controller_endereco();
+    $listar2 = $controller_endereco::Buscar2($id_endereco);
+
+    $cidade = $listar2->cidade;
+    $logradouro = $listar2->logradouro;
+    $numero = $listar2->numero;
+    $bairro = $listar2 ->bairro;
+    $cep = $listar2 ->cep;
 
 ?>
 
@@ -33,11 +89,11 @@
                     </div>
                     <div class="segurainfo">
                         <div class="campos" >Nome:</div> 
-                        <div class="dados" >João Dos Santos</div>
+                        <div class="dados" ><?php echo $nome;?> <?php echo $sobrenome ?></div>
                     </div>
                     <div class="segurainfo">
                         <div class="campos" >Idade:</div> 
-                        <div class="dados" >18 anos</div>
+                        <div class="dados" ><?php echo $idade?></div>
                     </div>
                     <div class="segurainfo">
                         <div class="campos" >Celular:</div> 
@@ -60,11 +116,11 @@
                 </div>
                 <div class="segurainfo">
                     <div class="campos" >Cpf:</div>  
-                    <div class="dados" >000.000.000 - 00</div>
+                    <div class="dados" ><?php echo $cpf ?></div>
                 </div>
                 <div class="segurainfo">
                     <div class="campos" >Rg:</div>  
-                    <div class="dados" >00.000.000 - 0</div>
+                    <div class="dados" ><?php echo $rg ?></div>
                 </div>
 
                 <div class="subtitulos">
@@ -73,25 +129,25 @@
                 <div class="segurainfo">
                     <div class="campos2" >Logradouro:</div>
                     <div class="dados" >
-                        R. Engenheiro Renê Benedito da Silva , 101
+                        <?php echo $logradouro;?>
                     </div>
                 </div>
                 <div class="segurainfo">
                     <div class="campos" >Bairro:</div>
                     <div class="dados" >
-                        Parque Boa Esperança
+                        <?php echo $bairro;?>
                     </div>
                 </div>
                 <div class="segurainfo">
                     <div class="campos" >Cidade:</div>
                     <div class="dados" >
-                        Itapevi
+                        <?php echo $cidade;?>
                     </div>
                 </div>
                 <div class="segurainfo">
-                    <div class="campos" >Bairro:</div>
+                    <div class="campos" >CEP:</div>
                     <div class="dados" >
-                        São Paulo
+                        <?php echo $cep;?>
                     </div>
                 </div>
                 <a href="cadastro_paciente.php">

@@ -5,6 +5,10 @@
   Obs: Página HTML do menu e cabeçalho da area do paciente
 
  -->
+<?php 
+                  
+                  
+                  ?>
 <link rel="stylesheet" type="text/css" href="../css/style_layout_idade.php" media="screen" />
     <!-- Cabeçalho da página -->
     <div class="opcaity_header">
@@ -21,7 +25,7 @@
             <div id="suporte_parte_paciente">
               <div id="suporte_texto_bem_vindo">
                 <!-- Bem vindo -->
-                <strong>Bem Vindo, João </strong><?php echo ""; ?>
+                <strong>Bem Vindo, João </strong>
 
                 <!-- logout ,da pagina -->
                 <div id="suporte_logout">
