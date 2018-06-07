@@ -46,8 +46,8 @@
         <!-- <script type="text/javascript">
             $(document).ready(function(){
                 $("#numero_celular").mask("+999.999.999-99");
-            }); -->
-        </script>
+            });
+        </script> -->
 
     </head>
     <body>
@@ -68,34 +68,34 @@
                      <div id="alinha_conteudo_opcao">
                        <a href="#" class="escolha_opcao" onclick="Mudarestadoboleto('alinha_conteudo_opcao')">
                          <div class="alinha_letra">
-                           BOLETO
+                           <img style="margin-left:-15px;" src="../imagens/boleto.png"/>
                          </div>
                        </a>
 
                        <a href="#" class="escolha_opcao" onclick="Mudarestado('alinha_conteudo_opcao')">
                          <div class="alinha_letra">
-                           CARTÃO
+                           <img src="../imagens/cartao.png">
                          </div>
                        </a>
                      </div>
 
                      <div id="suporte_dados_boleto">
                        <div class="campos_pagamento_cartao">
-                         <div class="">
+                         <div class="campos">
                            Nome: <input type="text" name="txt_nome" value="" >
                            <br>
-                           CPF: <input type="number" name="txt_cpf" value="">
+                           CPF: <input type="number" name="txt_cpf" value="" >
                            <br>
                            Email: <input type="email" name="txt_email" value="">
                            <br>
                            Valor: <input type="number" name="txt_valor" value="">
                            <br>
                          </div>
-                         <input type="submit" name="txt_submit_boleto" value="Imprimir" onclick="boleto()">
+                         <input type="submit" name="txt_submit_boleto" value="Imprimir" onclick="boleto()" >
                        </div>
                        <a href="pagamentos.php">
                          <div class="voltar_menu_pagamentos">
-                           Voltar
+                           <img style="width:30px;height:30px;" src="../imagens/voltar.png">
                          </div>
                        </a>
                      </div>
@@ -103,7 +103,7 @@
 
                      <div id="suporte_dados_cartao">
                        <div class="campos_pagamento_cartao">
-                         <div class="">
+                         <div class="campos">
                            Nome: <input type="text" name="txt_nome" value="" >
                            <br>
                            CPF: <input type="number" name="txt_cpf" value="">
@@ -123,7 +123,7 @@
                        </div>
                        <a href="pagamentos.php">
                          <div class="voltar_menu_pagamentos">
-                           Voltar
+                           <img style="width:30px;height:30px;" src="../imagens/voltar.png">
                          </div>
                        </a>
                     </div>

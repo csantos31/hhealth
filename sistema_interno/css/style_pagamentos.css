@@ -88,13 +88,20 @@ p{
 .alinha_letra{
   line-height: 100px;
   padding-left: 40px;
+    
 }
+
+.alinha_letra img{
+    width:90px;
+    height:100px;
+    margin-left:-10px;
+}
+
 
 #suporte_dados_cartao, #suporte_dados_boleto{
   min-height: 300px;
   height: auto;
   width: 100%;
-  background-color: #c2c2c2;
   display: none;
   margin-top: 40px;
 }
@@ -102,8 +109,6 @@ p{
 .voltar_menu_pagamentos{
   height: 22px;
   width: 70px;
-  color: red;
-  background-color: #000000;
 }
 
 .campos_pagamento_cartao{
@@ -112,4 +117,37 @@ p{
   width: 500px;
   margin: auto;
   background-color: #FFFFFF;
+}
+
+.campos{
+    font-family: verdana,'BenchNine', Arial, sans-serif;
+    font-size: 1em;
+    font-size: 18px;
+    color:#999;
+}
+
+.campos [type=text],[type=number],[type=email],[type=password]{
+    width:300px;height:30px;margin-top:10px;padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.campos_pagamento_cartao [type=submit]{
+    width:100px;
+    height:50px;
+    background-color:red;
+    border:0px;
+    margin-top:50px;
+    margin-left:300px;
+    font-family: verdana,'BenchNine', Arial, sans-serif;
+    font-size: 1em;
+    font-size: 18px;
+    color:#fff;
+}
+
+.campos_pagamento_cartao [type=submit]:hover{
+    -webkit-box-shadow: 2px 3px 50px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 3px 50px -4px rgba(0,0,0,0.75);
+box-shadow: 2px 3px 50px -4px rgba(0,0,0,0.75);
+    
 }
