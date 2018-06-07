@@ -17,7 +17,7 @@
     float:left;
     text-align: center;
     font-family: sans-serif;
-    font-size:30px; 
+    font-size:30px;
     color:#000000;
 }
 
@@ -202,7 +202,10 @@
 }
 
 .campo_niveis{
-    width:15.1%;
+    white-space: nowrap;
+    width: 13.4em;
+    text-overflow: ellipsis;
+    overflow: hidden;
     min-height: 35px;
     height: auto;
     margin-left: 2.7px;
