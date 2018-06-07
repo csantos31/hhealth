@@ -29,6 +29,7 @@ class Agendamento
                   INNER JOIN tbl_especialidade AS e ON a.id_especialidade = e.id_especialidade
                   INNER JOIN tbl_funcionario AS f ON a.id_funcionario = f.id_funcionario
                   INNER JOIN tbl_unidade AS u ON a.id_unidade = u.id_unidade WHERE p.id_paciente = '".$dados_agendamento->id_paciente."'
+                  AND a.ativo = '1'
                   ORDER BY id_agendamento_consulta DESC;";
 
              // echo $sql1;
