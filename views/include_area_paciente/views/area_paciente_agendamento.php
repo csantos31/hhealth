@@ -32,9 +32,6 @@ $dt_atual = date ("Y-m-d");
     $controller_paciente = new controllerPaciente();
     $list = $controller_paciente::Buscar($_SESSION['id_paciente']);
 
-
-
-
         $dt_paciente=$list->dt_nasc;
         list($ano_paciente,$mes_paciente,$dia_paciente)=explode("-", $dt_paciente);
         list($ano_atual,$mes_atual,$dia_atual)=explode("-", $dt_atual);

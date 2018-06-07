@@ -46,7 +46,7 @@
             $list = $auditoria_controller::Buscar($_SESSION['id_paciente']);
 
             $cont = 0;
-
+            
             while ($cont < count($list)) {
                   # code...
 

@@ -16,7 +16,7 @@
 //  $senha = $_GET['senha'];
 
   // Faço query de preparação para depois executa-lá no banco
-  $query = "SELECT * FROM hhealth.tbl_usuario_paciente WHERE usuario='$cpf' AND
+  $query = "SELECT * FROM tbl_usuario_paciente WHERE usuario='$cpf' AND
   senha='$senha';";
 
   // echo $query;

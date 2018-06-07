@@ -10,10 +10,15 @@ class Mysql_db{
     //metodo mágico
     public function __construct(){
 
-        $this ->server = "localhost";
-        $this ->user = "root";
-        $this ->password = "bcd127";
-        $this ->dataBaseName = "hhealth";
+      // $this -> server = "192.168.1.1";
+      // $this -> user = "hospitalhhealth";
+      // $this -> password = "hhealth123";
+      // $this -> dataBaseName = "dbhospitalhhealth";
+
+      $this -> server = "localhost";
+      $this -> user = "root";
+      $this -> password = "";
+      $this -> dataBaseName = "hhealth";
     }
 
     //Conectar com o BD
@@ -24,7 +29,7 @@ class Mysql_db{
 
             //Abre a conexao com o BD utilizando a biblioteca PDO
             $conexao = new PDO('mysql:host='.$this -> server.';dbname='.$this -> dataBaseName, $this -> user, $this -> password);
-
+            $conexao->query("SET NAMES utf8;");
             return $conexao;
 
         }catch(PDOExcreption $Error){

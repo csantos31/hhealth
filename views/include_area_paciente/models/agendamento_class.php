@@ -15,16 +15,23 @@ class Agendamento
       {
             # code...
             include_once('bd_class.php');
-            
+
       }
 
       // Lista toos os registros do banco de dados
       public function Select(){
 
             //Query para selecionar a tabela contatos
-            
-            $sql1="SELECT a.id_agendamento_consulta,p.nome as nome_paciente,e.especialidade,f.nome as nome_funcionario,u.nome_unidade,a.data,a.hora FROM tbl_agendamento_consultas as a,tbl_paciente as p,tbl_especialidade as e,tbl_funcionario as f,tbl_unidade as u WHERE p.id_paciente = a.id_paciente AND e.id_especialidade=a.id_especialidade AND f.id_funcionario=a.id_funcionario AND u.id_unidade=a.id_unidade";
 
+            $sql1="SELECT DISTINCT a.id_agendamento_consulta,p.nome AS nome_paciente,e.especialidade,f.nome AS nome_funcionario,u.nome_unidade,a.data,
+                  a.hora FROM tbl_agendamento_consultas AS a
+                  INNER JOIN tbl_paciente AS p  ON a.id_paciente = p.id_paciente
+                  INNER JOIN tbl_especialidade AS e ON a.id_especialidade = e.id_especialidade
+                  INNER JOIN tbl_funcionario AS f ON a.id_funcionario = f.id_funcionario
+                  INNER JOIN tbl_unidade AS u ON a.id_unidade = u.id_unidade WHERE p.id_paciente = '12'
+                  ORDER BY id_agendamento_consulta DESC;";
+
+             // echo $sql1;
             //Instancio o banco e cria uma variavel
             $conex = new Mysql_db_include_paciente();
 
@@ -68,11 +75,11 @@ class Agendamento
             //Fechar a conexão com o banco de dados
             $conex->Desconectar();
       }
-    
+
     public function Insert($dados_agendamento){
         //variavel sql
         $sql = "INSERT INTO tbl_agendamento_consultas(id_paciente,id_especialidade,id_funcionario,id_unidade,data,hora) VALUES ('".$dados_agendamento->id_paciente."','".$dados_agendamento->id_especialidade."','".$dados_agendamento->id_funcionario."','".$dados_agendamento->id_unidade."','".$dados_agendamento->data."','".$dados_agendamento->hora."');";
-        
+
         $dados_agendamento->acao = "Inseriu";
         //Instancio o banco e cria uma variavel
         $conex = new Mysql_db_include_paciente();
@@ -82,9 +89,9 @@ class Agendamento
 
         //Executa o select no banco de dados e guarda o retorno na variavel select
         //$select = $PDO_conex->query($sql);
-        
+
         if($PDO_conex->query($sql)){
-        
+
             //echo $sql;
             echo ("<script>location.reload();</script>");
 
@@ -95,14 +102,14 @@ class Agendamento
         }
           //Fechar a conexão com o banco de dados
           $conex->Desconectar();
-        
+
     }
-    
+
     /*Desativar o registro no BD*/
         public function DesativarPorId($dados_agendamento){
             //$sql1 = "UPDATE tbl_home set status=0";
             $sql = "UPDATE tbl_agendamento_consultas set ativo=0 WHERE id_agendamento_consulta=".$dados_saude->id_dica_saude;
-            
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db_include_paciente();
 
@@ -114,7 +121,7 @@ class Agendamento
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 				//echo "Error atualizar no Banco de Dados";
@@ -123,14 +130,14 @@ class Agendamento
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
-            
+
         }
-        
+
         /*Desativar o registro no BD*/
         public function AtivarPorId($dados_agendamento){
             //$sql1 = "UPDATE tbl_home set status=0";
             $sql = "UPDATE tbl_agendamento_consultas set ativo=1 WHERE id_agendamento_consulta=".$dados_agendamento->id_agendamento_consulta;
-            
+
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db_include_paciente();
 
@@ -142,7 +149,7 @@ class Agendamento
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
-                
+
 			}else {
 				//Mensagem de erro
 //				/echo "Error atualizar no Banco de Dados";
@@ -151,7 +158,7 @@ class Agendamento
 
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();
-            
+
         }
 
 }
