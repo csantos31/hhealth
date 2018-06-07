@@ -40,7 +40,7 @@ require('../verifica.php');
                 $.ajax({
                     type:"GET",
                     data: {id:idIten},
-                    url: "../router.php?controller=agendamento&modo=desativar&id="+idIten,
+                    url: "../router.php?controller=agendamento&modo=ativar&id="+idIten,
                     success: function(dados){
                         //console.log(dados);
                         $('.col_2').html(dados);
@@ -132,10 +132,10 @@ require('../verifica.php');
                                             $imagem=null;
                                             if($list[$cont]->ativo==1){
                                                 $ativar="Desativar";
-                                                $imagem='../imagens/desligar.png';
+                                                $imagem='../imagens/ligar.png';
                                             }else if($list[$cont]->ativo==0){
                                                 $ativar="Ativar";
-                                                $imagem='../imagens/ligar.png';
+                                                $imagem='../imagens/desligar.png';
                                             }
                                     
                                             ?>

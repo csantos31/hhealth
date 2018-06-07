@@ -64,7 +64,7 @@
 			$agendamento->id_agendamento_consulta = $idAgendamento;
 
 			//CHAMA O MÉTODO DA MODEL PARA APAGAR O REGISTRO
-			$agendamento::AtivarPorId($agendamento);
+			$agendamento::DesativarPorId($agendamento);
             
 
 		}

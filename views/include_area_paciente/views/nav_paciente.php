@@ -6,6 +6,33 @@
 
  -->
 <?php 
+    require_once('../controllers/paciente_controller.php');
+    require_once('../models/paciente_class.php');
+
+
+    @session_start();
+    date_default_timezone_set('America/Sao_Paulo');
+    $dt_atual = date ("Y-m-d");
+    $ano_atual=null;
+    $mes_atual=null;
+    $dia_atual=null;
+    $dt_paciente=null;
+    $ano_paciente=null;
+    $mes_paciente=null;
+    $dia_paciente=null;
+
+
+    
+    $controller_paciente = new controllerPaciente();
+    $listar = $controller_paciente::Buscar($_SESSION['id_paciente']);
+
+    $id_endereco=$listar->id_endereco;
+    $nome = $listar->nome;
+    $sobrenome = $listar->sobrenome;
+    $dt_paciente=$listar->dt_nasc;  
+    $rg = $listar->rg;
+    $cpf = $listar->cpf;
+    $carterinha_convenio = $listar-> carterinha_convenio;
                   
                   
                   ?>
@@ -25,7 +52,7 @@
             <div id="suporte_parte_paciente">
               <div id="suporte_texto_bem_vindo">
                 <!-- Bem vindo -->
-                <strong>Bem Vindo, João </strong>
+                <strong>Bem Vindo, <?php echo $nome?> </strong>
 
                 <!-- logout ,da pagina -->
                 <div id="suporte_logout">

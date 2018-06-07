@@ -111,7 +111,7 @@ class Agendamento
     /*Desativar o registro no BD*/
         public function DesativarPorId($dados_agendamento){
             //$sql1 = "UPDATE tbl_home set status=0";
-            $sql = "UPDATE tbl_agendamento_consultas set ativo=0 WHERE id_agendamento_consulta=".$dados_saude->id_dica_saude;
+            $sql = "UPDATE tbl_agendamento_consultas set ativo=0 WHERE id_agendamento_consulta=".$dados_agendamento->id_agendamento_consulta;
 
             //Instancio o banco e crio uma variavel
 			$conex = new Mysql_db_include_paciente();
@@ -124,6 +124,7 @@ class Agendamento
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
+                //echo $sql;
 
 			}else {
 				//Mensagem de erro
@@ -152,6 +153,7 @@ class Agendamento
 			if($PDO_conex->query($sql)){
 				//Se der true redireciona a tela
 				echo "<script>location.reload();</script>";
+                //echo $sql;
 
 			}else {
 				//Mensagem de erro

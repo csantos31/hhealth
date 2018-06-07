@@ -38,8 +38,8 @@
 
 			}else {
 				//Mensagem de erro
-				echo "Error inserir no Banco de Dados";
-                echo $sql;
+				//echo "Error inserir no Banco de Dados";
+                //echo $sql;
 			}
             //Fechar a conexão com o banco de dados
 
@@ -79,7 +79,7 @@
             if(isset($auditoria)){
                 return $auditoria;
             }else{
-                echo "Erro ao inserir no banco de dados";
+                //echo "Erro ao inserir no banco de dados";
             }
 			//Fecha a conexão com o banco de dados
 			$conex->Desconectar();

@@ -46,6 +46,7 @@
             $list = $auditoria_controller::Buscar($_SESSION['id_paciente']);
 
             $cont = 0;
+        if($list){
             
             while ($cont < count($list)) {
                   # code...
@@ -61,6 +62,9 @@
 
             $cont +=1;
             }
+        }else{
+            echo "Você ainda não tem nenhum histórico";
+        }
       ?>
       <div class="faixa_branca">
       </div>
